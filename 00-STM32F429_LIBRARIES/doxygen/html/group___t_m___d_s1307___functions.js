@@ -1,0 +1,25 @@
+var group___t_m___d_s1307___functions =
+[
+    [ "TM_DS1307_Bcd2Bin", "group___t_m___d_s1307___functions.html#gac8e392532e359d6ec8429bbdd0482a38", null ],
+    [ "TM_DS1307_Bin2Bcd", "group___t_m___d_s1307___functions.html#ga0118306a3b96a5783d7f66eec2566949", null ],
+    [ "TM_DS1307_CheckMinMax", "group___t_m___d_s1307___functions.html#gafbc701fab6a3cb08f99111ff364e5187", null ],
+    [ "TM_DS1307_DisableOutputPin", "group___t_m___d_s1307___functions.html#ga453e93bd2ae24dc1689df80a70ce2021", null ],
+    [ "TM_DS1307_EnableOutputPin", "group___t_m___d_s1307___functions.html#ga5d77de3b1e05d89f79f14ac32b66e7ca", null ],
+    [ "TM_DS1307_GetDate", "group___t_m___d_s1307___functions.html#ga29e662b8e64589f43bcabbe9df5ed92c", null ],
+    [ "TM_DS1307_GetDateTime", "group___t_m___d_s1307___functions.html#gab0fdf35320d822ff6cdaa6ff056420c7", null ],
+    [ "TM_DS1307_GetDay", "group___t_m___d_s1307___functions.html#gafc36c1a97429e5ed58835080fec073ce", null ],
+    [ "TM_DS1307_GetHours", "group___t_m___d_s1307___functions.html#ga601cb6ca9b2d4a5ff305c668010b1de8", null ],
+    [ "TM_DS1307_GetMinutes", "group___t_m___d_s1307___functions.html#gafb44defca2576624ee9519098bb60730", null ],
+    [ "TM_DS1307_GetMonth", "group___t_m___d_s1307___functions.html#ga93109f8bf064d62497becb33075a9e8a", null ],
+    [ "TM_DS1307_GetSeconds", "group___t_m___d_s1307___functions.html#gad28a49094949adf81bdbb24415a1fc1e", null ],
+    [ "TM_DS1307_GetYear", "group___t_m___d_s1307___functions.html#gac84bedce58ec2850e047911d24dd5e52", null ],
+    [ "TM_DS1307_Init", "group___t_m___d_s1307___functions.html#gab68f5b3219e3865f15e846391cfdfe96", null ],
+    [ "TM_DS1307_SetDate", "group___t_m___d_s1307___functions.html#gafa83b9ab59284cb9ad1253f4284be3a0", null ],
+    [ "TM_DS1307_SetDateTime", "group___t_m___d_s1307___functions.html#ga69d464889eaca6ec0cec3e032437c818", null ],
+    [ "TM_DS1307_SetDay", "group___t_m___d_s1307___functions.html#ga305cc3454fd55d0b4ec453628b1a7a23", null ],
+    [ "TM_DS1307_SetHours", "group___t_m___d_s1307___functions.html#gad7fa9469b066cdbd7811d6d27187706b", null ],
+    [ "TM_DS1307_SetMinutes", "group___t_m___d_s1307___functions.html#ga1eecb435a42558b14c802264b110b9a7", null ],
+    [ "TM_DS1307_SetMonth", "group___t_m___d_s1307___functions.html#ga7786110d959ad551fe29936b66da591d", null ],
+    [ "TM_DS1307_SetSeconds", "group___t_m___d_s1307___functions.html#gadec7a4c155fdf422909bec0aace656f8", null ],
+    [ "TM_DS1307_SetYear", "group___t_m___d_s1307___functions.html#ga143881eec15a304032e164e1dc006008", null ]
+];
