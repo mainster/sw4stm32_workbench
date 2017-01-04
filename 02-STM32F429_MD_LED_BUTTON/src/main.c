@@ -16,6 +16,7 @@
 /* Include my libraries here */
 #include "defines.h"
 #include "tm_stm32f4_disco.h"
+#include "tm_stm32f4_dac.h"
 
 int main(void) {
 	/* Initialize System */
