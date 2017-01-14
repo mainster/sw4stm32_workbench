@@ -69,6 +69,7 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.626884533.2145552031" name="core_cm7.h" rcbsApplicability="disable" resourcePath="CMSIS/core/core_cm7.h" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
@@ -169,4 +170,10 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug"/>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/05-STM32F4_USART_PRINTF"/>
+		</configuration>
+	</storageModule>
 </cproject>

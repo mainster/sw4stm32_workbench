@@ -31,6 +31,11 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>STM32F4_LIBRARY_MDB</name>
+			<type>2</type>
+			<location>/home/mainster/CODES_local/sw4stm32_workbench/STM32F4_LIBRARY_MDB</location>
+		</link>
+		<link>
 			<name>00-STM32F429_LIBRARIES_MDB_MINIMAL/attributes.h</name>
 			<type>1</type>
 			<locationURI>PARENT-5-PROJECT_LOC/home/mainster/CODES_local/sw4stm32_workbench/00-STM32F429_LIBRARIES_MDB_MINIMAL/attributes.h</locationURI>
@@ -104,11 +109,6 @@
 			<name>00-STM32F429_LIBRARIES_MDB_MINIMAL/tm_stm32f4_usart.h</name>
 			<type>1</type>
 			<locationURI>PARENT-5-PROJECT_LOC/home/mainster/CODES_local/sw4stm32_workbench/00-STM32F429_LIBRARIES_MDB_MINIMAL/tm_stm32f4_usart.h</locationURI>
-		</link>
-		<link>
-			<name>src/00-STM32F429_LIBRARIES_MDB_MINIMAL</name>
-			<type>2</type>
-			<locationURI>WORKSPACE_LOC/00-STM32F429_LIBRARIES_MDB_MINIMAL</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

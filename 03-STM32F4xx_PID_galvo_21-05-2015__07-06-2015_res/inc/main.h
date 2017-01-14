@@ -13,6 +13,7 @@
 #define __MAIN_H 100
 
 #include "defines.h"
+#include "attributes.h"
 #include "mdb_gpio.h"
 #include "pid.h"
 
@@ -59,7 +60,8 @@ typedef enum {
 
 /* ================================================================================ */
 enum cmd_items { 
-	KP, KI, KD, W, UNKNOWN };		///< Enumeration for switch-by-string casees 
+	KP, KI, KD, W, UNKNOWN
+};		///< Enumeration for switch-by-string casees
 
 /* ================================================================================ */
 static struct items									///< Struct for switch by string casees  

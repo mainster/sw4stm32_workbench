@@ -28,8 +28,8 @@
  * Different compilers uses different special keywords for functions/variables. etc.
  * For this purpose that file has been made. On one place to all possible attributes used in my libs.
  */
-#ifndef TM_ATTRIBUTES_H
-#define TM_ATTRIBUTES_H
+#ifndef ATTRIBUTES_H
+#define ATTRIBUTES_H
 
 /* Check for GNUC */
 #if defined (__GNUC__)

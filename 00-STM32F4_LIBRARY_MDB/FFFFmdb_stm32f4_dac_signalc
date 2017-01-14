@@ -5,7 +5,7 @@
  *	@email		Manuel.delBasso@googlemail.com
  *	@ide			Keil uVision 5
  */
-#include "mdb_stm32f4_dac_signal.h"
+#include "mdb_stm32f4_dac_
 #include "tm_stm32f4_dac.h"
 TM_DAC_SIGNAL_Result_t TM_DAC_SIGNAL_SetCustomSignal(TM_DAC_SIGNAL_Channel_t DACx, uint16_t* Signal_Data, uint16_t Signal_Length, double frequency);
 

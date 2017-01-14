@@ -149,10 +149,10 @@ __weak void TimingDelay_Decrement(void) {
   * @param  None
   * @retval None
   */
-void SysTick_Handler(void)
-{
-	TimingDelay_Decrement();
-}
+//void SysTick_Handler(void)
+//{
+//	TimingDelay_Decrement();
+//}
 
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */

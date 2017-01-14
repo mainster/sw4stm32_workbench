@@ -1,6 +1,6 @@
 #include "mdb_stm32f4_dac.h"
 
-#include "tm_stm32f4_dac.h"                  // Device header
+#include "stm32f4xx_dac.h"             // Device header
 //#include "tm_stm32f4_dac_signal.h"
 
 
@@ -10,21 +10,22 @@
   * @param  None
   * @retval None
   */
-void DAC_DMA_SineWaveConfig(TM_DAC_Channel_t DACx, 
-            FunctionalState NewStateDAC, FunctionalState NewStateDMA)
+void DAC_DMA_SineWaveConfig(DAC_InitTypeDef DAC_InitStructure, FunctionalState NewStateDAC, FunctionalState NewStateDMA)
 {
     uint32_t DAC_DHR12Rx_ADDRESS = 0;
   DMA_InitTypeDef DMA_InitStructure;
   DAC_InitTypeDef DAC_InitStructure;
-    
+
+  DAC_DHR12Rx_ADDRESS = DAC_DHR12R1_ADDRESS;
+//  DAC_DHR12Rx_ADDRESS = DAC_DHR12R2_ADDRESS;
+
   /* DAC channel2 Configuration */
   DAC_InitStructure.DAC_Trigger = DAC_Trigger_T6_TRGO;
   DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_None;
   DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
-  DAC_Init(DACx, &DAC_InitStructure);
+  DAC_Init(DAC_DHR12Rx_ADDRESS, DACx, &DAC_InitStructure);
 
     if (DACx == TM_DAC1) {
-        DAC_DHR12Rx_ADDRESS = DAC_DHR12R1_ADDRESS;
     }
     
     if (DACx == TM_DAC2) {   
@@ -107,7 +108,7 @@ void DAC_Ch1_EscalatorConfig(void)
   * @param  None
   * @retval None
   */
-void DAC_TriangleConfig(TM_DAC_Channel_t DACx)
+void DAC_TriangleConfig()
 {
  /* DAC channelx Configuration */
   DAC_InitStructure.DAC_Trigger = DAC_Trigger_T6_TRGO;

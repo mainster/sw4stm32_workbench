@@ -18,6 +18,9 @@ struct triangWave triStruct;
 
 //extern struct triangWave triStruct;
 
+void dummyDeclare (void) {
+	line1[0][0]=0;
+}
 
 //extern int16_t Cosine[TABLESIZE];
 

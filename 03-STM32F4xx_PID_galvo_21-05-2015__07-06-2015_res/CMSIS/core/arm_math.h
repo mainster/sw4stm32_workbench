@@ -1863,9 +1863,7 @@ extern "C"
    * @param[in]     resetStateFlag  flag to reset the state. 0 = no change in state 1 = reset the state.
    * @return none.
    */
-  void arm_pid_init_f32(
-  arm_pid_instance_f32 * S,
-  int32_t resetStateFlag);
+  void arm_pid_init_f32( arm_pid_instance_f32 * S, int32_t resetStateFlag);
 
   /**
    * @brief  Reset function for the floating-point PID Control.

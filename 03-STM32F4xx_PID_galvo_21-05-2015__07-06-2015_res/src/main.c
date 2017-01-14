@@ -1,13 +1,14 @@
 /**
- *	Keil project for XY-GalvoScanner
- *  29-04-2015
+ * @file					main.c
  *
+ * @date				Jan 4, 2017
+ *	@author			Manuel Del Basso (mainster)
+ *	@email				manuel.delbasso@gmail.com
  *
- *	@author		Manuel Del Basso
- *	@email		Manuel.DelBasso@googlemail.com  
- *	@ide		Keil uVision 5
- *	@packs		STM32F4xx Keil packs version 2.2.0 or greater required
- *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ *	@ide					System Workbench ac6 (eclipse stm32)
+ *	@stdperiph		STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ *
+ * @brief				Main function for project XY-GalvoScanner. 29.04.2015
  *
  *	Additional defines in "Options for Target" > "C/C++" > "Defines"
  *		- ARM_MATH_CM4
@@ -21,7 +22,6 @@
 
 #include "adc_dac_dma.h"
 #include "arm_architect.h"
-#include "arm_math.h"
 #include "defines.h"
 #include "main.h"
 #include "mdb_gpio.h"
@@ -44,6 +44,7 @@
 #include "isr_callbacks.h"
 #include "actuators.h"
 
+#include "arm_math.h"
 
 struct global g;
 extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
@@ -179,6 +180,7 @@ int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 #define ASS_SAFEVALUE_DEFAULT         0
 #define ASS_TRIPPING_TIME_DEFAULT    0.750f      // s
 
+#define TS                             10.0e-6
 
 //#define ASS_100US                   100
 // ==============================================================
@@ -194,7 +196,7 @@ int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 // ==============================================================
     
 //#define 
-//	 GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_SET) :\
+//	 GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_SET)
 //	 GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_RESET))
 
 //#define 
@@ -247,12 +249,17 @@ void resetPID (void) {
 	calc_coeff(&pidDataY, BACK_SQUARE);
 }
 
-
-
 double lastVal=0;
 
+/**< Check Architecture */
+#define __TARGET_ARCH_ARM		0
 
 int main(void) {
+
+	items_list[0].name = "dummy";
+	itemsm_list[0].name = "dummy";
+	itemsw_list[0].name = "dummy";
+
    /**< Define private main variables */
     TM_PWM_TIM_t TIM_Data;    ///< Timer data for PWM 
     volatile uint8_t c = 0;
@@ -271,6 +278,7 @@ int main(void) {
     /**< Initialize PID system, float32_t format */
     arm_pid_init_f32(&PIDX, 1);
     arm_pid_init_f32(&PIDY, 1);
+
 
  
     /**< Initialize discovery button and leds */
@@ -369,11 +377,11 @@ int main(void) {
             fastConsoleCase(&PIDY);     
             
             for (uint8_t k=0; k < 20; k++) {
-                if (TM_USART_BufferFull(USART1)) {
-                    printf( MSG_GUI_UART1_RECV_BUFF_FULL );
-                    fastConsoleCase(&PIDY); 
-                    TM_USART_ClearBuffer(USART1);
-                };
+//                if (TM_USART_BufferFull(USART1)) {
+//                    printf( MSG_GUI_UART1_RECV_BUFF_FULL );
+//                    fastConsoleCase(&PIDY);
+//                    TM_USART_ClearBuffer(USART1);
+//                };
                 Delayms((uint32_t)g.refresh/20);
             }
 //            if ((ass.state == ASS_CHARGING_INTEGRATOR) && (! ass.tripped)) {
@@ -1403,16 +1411,14 @@ void gpio_init_mco2(void) {
 //            pidErr_y =  pidDataY.W_remf - POS_Y_FLOAT;              
 //        }
 //        if (g.setpointSrc == REMOTE_OPENLOOP) {     ///< PID bypassed, remote setpoint feed throgh 
-//            updateActuator_f( /*pidDataY.W_remf*/ \
-//                                pidDataY.W_remf, pidDataY.W_remf);
+//            updateActuator_f( /*pidDataY.W_remf*/pidDataY.W_remf, pidDataY.W_remf);
 //            break;
 //        }
 //        if (g.setpointSrc == REMOTE_INTERNAL_MIXED) {     ///< Mixed mode, summing internal + external setpoint 
 //            pidErr_x = ((float)(setpoint_tgl + pidDataX.W_remf)) - POS_X_FLOAT;
 //            pidErr_y = ((float)(setpoint_tgl + pidDataY.W_remf)) - POS_Y_FLOAT;
 //        }
-//        if (  (g.setpointSrc != INTERNAL_SETPOINT) && (g.setpointSrc != ANALOG_SETPOINT)  && \
-//              (g.setpointSrc != REMOTE_OPENLOOP)   && (g.setpointSrc == REMOTE_OPENLOOP) ) {
+//        if (  (g.setpointSrc != INTERNAL_SETPOINT) && (g.setpointSrc != ANALOG_SETPOINT)  && (g.setpointSrc != REMOTE_OPENLOOP)   && (g.setpointSrc == REMOTE_OPENLOOP) ) {
 //             /* Error state, halt */
 //             TM_DISCO_LedOn(LED_GREEN);
 //             TM_DISCO_LedOn(LED_RED);
@@ -1420,8 +1426,7 @@ void gpio_init_mco2(void) {
 //        
 //        /**< Calculate PID here */
 //        DBG_PID_TIMING_TOG();
-//        updateActuator_f(   arm_pid_f32(&PIDY, pidErr_y), \
-//                            arm_pid_f32(&PIDY, pidErr_y));
+//        updateActuator_f(   arm_pid_f32(&PIDY, pidErr_y), arm_pid_f32(&PIDY, pidErr_y));
 //        DBG_PID_TIMING_TOG();
 
 //        break;

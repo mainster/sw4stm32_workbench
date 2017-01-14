@@ -15,31 +15,31 @@
 #include "stm32f4xx.h"
 /* Include my libraries here */
 #include "defines.h"
-#include "tm_stm32f4_disco.h"
-#include "tm_stm32f4_dac.h"
+#include "md_stm32f4_disco.h"
+//#include "tm_stm32f4_dac.h"
 
 int main(void) {
 	/* Initialize System */
 	SystemInit();
 
 	/* Initialize leds on board */
-	TM_DISCO_LedInit();
+	MD_DISCO_LedInit();
 
 	/* Initialize button on board */
-	TM_DISCO_ButtonInit();
+	MD_DISCO_ButtonInit();
 
     while(1) {
 		/* If button pressed, do stuff all the time button is pressed */
-    	if (TM_DISCO_ButtonPressed()) {
+    	if (MD_DISCO_ButtonPressed()) {
 			/* Turn on leds */
-    		TM_DISCO_LedOn(LED_RED | LED_GREEN);
+    		MD_DISCO_LedOn(LED_RED | LED_GREEN);
     	} else {
 			/* Turn off leds */
-    		TM_DISCO_LedOff(LED_RED | LED_GREEN);
+    		MD_DISCO_LedOff(LED_RED | LED_GREEN);
     	}
 
 		/* Do the stuff only once when button is pressed */
-		if (TM_DISCO_ButtonOnPressed()) {
+		if (MD_DISCO_ButtonOnPressed()) {
 			/* Do here stuff only once */
 			/* This function will return 0 until you release button and press it again */
 			/* For example, you can send data here to USART, but only once when button is pressed */
@@ -47,7 +47,7 @@ int main(void) {
 		}
 
 		/* Do the stuff only once when button is released */
-		if (TM_DISCO_ButtonOnReleased()) {
+		if (MD_DISCO_ButtonOnReleased()) {
 			/* DO here stuff only once */
 			/* This function will return 0 until you press button and release it again */
 			GPIOD->BSRRH = LED_BLUE;
