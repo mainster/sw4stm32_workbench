@@ -204,7 +204,7 @@ void DAC_DeInit(void)
   * @retval None
   */
 void DAC_Init(uint32_t DAC_Channel, DAC_InitTypeDef* DAC_InitStruct)
-{
+void DAC_Init(DAC_DHR12Rx_ADDRESS, DAC_InitStructure); {
   uint32_t tmpreg1 = 0, tmpreg2 = 0;
 
   /* Check the DAC parameters */

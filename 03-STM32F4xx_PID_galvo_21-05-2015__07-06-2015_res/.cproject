@@ -25,27 +25,32 @@
 							<option id="fr.ac6.managedbuild.option.gnu.cross.fpu.1007199242" name="Floating point hardware" superClass="fr.ac6.managedbuild.option.gnu.cross.fpu" value="fr.ac6.managedbuild.option.gnu.cross.fpu.fpv4-sp-d16" valueType="enumerated"/>
 							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.1495203000" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi" value="fr.ac6.managedbuild.option.gnu.cross.floatabi.hard" valueType="enumerated"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross.326141357" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
-							<builder buildPath="${workspace_loc:/05-STM32F4_USART_PRINTF}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.542616724" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="fr.ac6.managedbuild.builder.gnu.cross"/>
+							<builder buildPath="${workspace_loc:/05-STM32F4_USART_PRINTF}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.542616724" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="fr.ac6.managedbuild.builder.gnu.cross">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Debug"/>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release"/>
+								</outputEntries>
+							</builder>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.962548039" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler">
 								<option id="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level.1450219297" name="Optimization Level" superClass="fr.ac6.managedbuild.gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false"/>
 								<option id="gnu.c.compiler.option.debugging.level.73558615" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1428294752" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/mainster/CODES_local/sw4stm32_workbench/00-STM32F429_LIBRARIES_MDB_MINIMAL"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../00-STM32F4_LIBRARY_MDB&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/StdPeriph_Driver/inc&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1376624728" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="STM32F429ZITx"/>
-									<listOptionValue builtIn="false" value=" __FPU_PRESENT"/>
-									<listOptionValue builtIn="false" value="ARM_MATH_CM4"/>
-									<listOptionValue builtIn="false" value="STM32F429I_DISC1"/>
-									<listOptionValue builtIn="false" value="STM32F4"/>
 									<listOptionValue builtIn="false" value="STM32"/>
 									<listOptionValue builtIn="false" value="DEBUG"/>
-									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
+									<listOptionValue builtIn="false" value="STM32F4"/>
+									<listOptionValue builtIn="false" value="STM32F429ZITx"/>
+									<listOptionValue builtIn="false" value="STM32F429I_DISC1"/>
 									<listOptionValue builtIn="false" value="STM32F429_439xx"/>
+									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
+									<listOptionValue builtIn="false" value="__FPU_PRESENT=1"/>
+									<listOptionValue builtIn="false" value="ARM_MATH_CM4"/>
 									<listOptionValue builtIn="false" value="USE_STM324x9I_EVAL"/>
 								</option>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.675943158" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
@@ -69,49 +74,17 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/StdPeriph_Driver/inc&quot;"/>
-									<listOptionValue builtIn="false" value="/home/mainster/CODES_local/sw4stm32_workbench/00-STM32F429_LIBRARIES_MDB_MINIMAL"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/../00-STM32F4_LIBRARY_MDB&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2094573345" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.assembler.input.759623665" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.626884533.1623158305" name="tm_stm32f4_timer.h" rcbsApplicability="disable" resourcePath="STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h" toolsToInvoke=""/>
-					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.626884533.1184042010" name="FFFFmdb_stm32f4_dac_signal.h" rcbsApplicability="disable" resourcePath="STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signal.h" toolsToInvoke=""/>
-					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.626884533.819081594" name="mdb_stm32f4_timer.h" rcbsApplicability="disable" resourcePath="STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.h" toolsToInvoke=""/>
-					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.626884533.1264479366" name="mdb_stm32f4_dac.h" rcbsApplicability="disable" resourcePath="STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h" toolsToInvoke=""/>
-					<folderInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.626884533.1685310792" name="/" resourcePath="Debug">
-						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.2118417775" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
-							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.2106723338.898457222" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu.2106723338"/>
-							<option id="fr.ac6.managedbuild.option.gnu.cross.board.1243910513.34563159" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board.1243910513"/>
-							<option id="fr.ac6.managedbuild.option.gnu.cross.fpu.1007199242.407476710" name="Floating point hardware" superClass="fr.ac6.managedbuild.option.gnu.cross.fpu.1007199242"/>
-							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.1495203000.1878800257" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi.1495203000"/>
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1589547021" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.962548039">
-								<option id="gnu.c.compiler.option.include.paths.1891169347" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/StdPeriph_Driver/inc&quot;"/>
-								</option>
-								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.1460990610" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
-								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.1623531122" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>
-							</tool>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.62926780" name="MCU G++ Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.204735622"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.786698148" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker.201989047"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.788985108" name="MCU G++ Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.32934474"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.933182158" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver.1098227731"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.2134957866" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.100700910">
-								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1311799815" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
-								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.assembler.input.664795453" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.input"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
 					<sourceEntries>
-						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="00-STM32F429_LIBRARIES_MDB_MINIMAL"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
-						<entry excluding="STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h|STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.c|STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c|STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.h|STM32F4_LIBRARY_MDB/tm_stm32f4_timer.c|STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h|STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signal.c|STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signal.h|00-STM32F429_LIBRARIES_MDB_MINIMAL/tm_stm32f4_dac_signal.c|00-STM32F429_LIBRARIES_MDB_MINIMAL/tm_stm32f4_dac_signal.h|00-STM32F429_LIBRARIES_MDB_PART|00-STM32F429_LIBRARIES_MDB_PART/tm_stm32f4_fatfs.h|00-STM32F429_LIBRARIES_MDB_PART/tm_stm32f4_fatfs.c|00-STM32F429_LIBRARIES|00-STM32F429_LIBRARIES/tm_stm32f4_usb_msc_host.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="00-STM32F429_LIBRARIES_MDB_PART|STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h|00-STM32F429_LIBRARIES_MDB_PART/tm_stm32f4_fatfs.h|00-STM32F429_LIBRARIES|STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signal.h|00-STM32F429_LIBRARIES/tm_stm32f4_usb_msc_host.h|STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.h|STM32F4_LIBRARY_MDB/tm_stm32f4_timer.c|00-STM32F429_LIBRARIES_MDB_MINIMAL/tm_stm32f4_dac_signal.h|STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.c|00-STM32F429_LIBRARIES_MDB_PART/tm_stm32f4_fatfs.c|STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signal.c|STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c|STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h|00-STM32F429_LIBRARIES_MDB_MINIMAL/tm_stm32f4_dac_signal.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
 				</configuration>

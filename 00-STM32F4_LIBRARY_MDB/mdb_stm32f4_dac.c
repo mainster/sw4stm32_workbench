@@ -14,7 +14,6 @@ void DAC_DMA_SineWaveConfig(DAC_InitTypeDef DAC_InitStructure, FunctionalState N
 {
     uint32_t DAC_DHR12Rx_ADDRESS = 0;
   DMA_InitTypeDef DMA_InitStructure;
-  DAC_InitTypeDef DAC_InitStructure;
 
   DAC_DHR12Rx_ADDRESS = DAC_DHR12R1_ADDRESS;
 //  DAC_DHR12Rx_ADDRESS = DAC_DHR12R2_ADDRESS;
@@ -23,7 +22,7 @@ void DAC_DMA_SineWaveConfig(DAC_InitTypeDef DAC_InitStructure, FunctionalState N
   DAC_InitStructure.DAC_Trigger = DAC_Trigger_T6_TRGO;
   DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_None;
   DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
-  DAC_Init(DAC_DHR12Rx_ADDRESS, DACx, &DAC_InitStructure);
+  DAC_Init(DAC_DHR12Rx_ADDRESS, DAC_InitStructure);
 
     if (DACx == TM_DAC1) {
     }
