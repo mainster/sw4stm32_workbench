@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>01-STM32F429_MD_LED_BUTTON</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+		<nature>fr.ac6.mcu.ide.core.MCUProjectNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Inc</name>
+			<type>2</type>
+			<locationURI>WORKSPACE_LOC/STM32Cube_FW_F4_V1.11.0/Drivers/STM32F4xx_HAL_Driver/Inc</locationURI>
+		</link>
+		<link>
+			<name>src/00-STM32F4_LIBRARY_MDB</name>
+			<type>2</type>
+			<locationURI>WORKSPACE_LOC/00-STM32F4_LIBRARY_MDB</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>
