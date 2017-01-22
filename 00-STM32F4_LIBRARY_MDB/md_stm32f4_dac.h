@@ -1,14 +1,13 @@
-#ifndef __MDB_STM32F4xx_DAC_H
-#define __MDB_STM32F4xx_DAC_H
+#ifndef __MB_STM32F4xx_DAC_H
+#define __MB_STM32F4xx_DAC_H
 
-#include "stm32f4xx.h"
-#include "stm32f4xx_rcc.h"
-#include "stm32f4xx_gpio.h"
 #include "stm32f4xx.h"                  // Device header
+#include <stm32f4xx_hal_gpio.h>
+#include "stm32f4xx_hal_rcc.h"
+#include "stm32f4xx_hal_dac.h"
 
-#include "../03-STM32F4xx_PID_galvo_2105_0706_ARMPLUG/inc/defines.h"
-#include "stm32f4xx_dac.h"
-//#include "md_stm32f4_dac.h"                  // Device header
+
+#include "md_stm32f4_dac.h"                  // Device header
 
 /** @addtogroup DAC_SignalGeneration
   * @{

@@ -8,10 +8,11 @@
  * Includes
  */
 #include "stm32f4xx.h"
+
+#include "../03-STM32F4xx_PID_galvo_2105_0706_ARMPLUG/inc/defines.h"
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 //#include "stm32f4xx_adc.h"
-#include "defines.h"
 
 /**
  * This values can be overwriten in defines.h file

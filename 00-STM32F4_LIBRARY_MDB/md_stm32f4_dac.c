@@ -1,6 +1,5 @@
 #include "md_stm32f4_dac.h"
 
-//#include "stm32f4xx_dac.h"             // Device header
 //#include "tm_stm32f4_dac_signal.h"
 
 
@@ -10,7 +9,7 @@
   * @param  None
   * @retval None
   */
-void DAC_DMA_SineWaveConfig(DAC_InitTypeDef DAC_InitStructure, FunctionalState NewStateDAC, FunctionalState NewStateDMA)
+void DAC_DMA_SineWaveConfig(DAC_InitTypeDef *DAC_InitStructure, FunctionalState NewStateDAC, FunctionalState NewStateDMA)
 {
     uint32_t DAC_DHR12Rx_ADDRESS = 0;
   DMA_InitTypeDef DMA_InitStructure;
