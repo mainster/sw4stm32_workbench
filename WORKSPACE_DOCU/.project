@@ -8,11 +8,4 @@
 	</buildSpec>
 	<natures>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>README.md</name>
-			<type>1</type>
-			<locationURI>WORKSPACE_LOC/README.md</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>
