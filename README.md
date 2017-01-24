@@ -38,3 +38,44 @@ A good choice to include 00-STM32F429_LIBRARIES_MDB_MINIMAL or other library sou
 - select "Import" - "General" - "File System"
 - select the resources directory (e.g. 00-STM32F429_LIBRARIES_MDB_MINIMAL)
 - and check options "Create top-level folder" and "Create links in workspace"
+
+# Default ac6 plugin Project #
+
+<kbd>New</kbd> > <kbd>C-Project</kbd> > <kbd>Ac6 STM32 MCU Project</kbd> > <kbd>Next</kbd> > <kbd>Next</kbd> > <kbd>Choose board</kbd> > <kbd>Standard Per... (StdPeriph)</kbd>  
+
+- [ ] Extract all firmware in separate folder
+- [x] Add low level drivers in the project
+- [x] As sources in the application project
+- [ ] As static external libraries
+
+
+```bash
+(Default Ac6 plugin Project)
+├── CMSIS
+│   ├── core
+│   └── device
+├── Debug
+│   ├── 04_STM32F4_MD_HELLO.bin
+│   ├── 04_STM32F4_MD_HELLO.elf
+│   ├── makefile
+│   ├── objects.list
+│   ├── objects.mk
+│   ├── output.map
+│   ├── sources.mk
+│   ├── src
+│   ├── startup
+│   └── StdPeriph_Driver
+├── inc
+│   └── stm32f4xx_it.h
+├── LinkerScript.ld
+├── src
+│   ├── main.c
+│   ├── syscalls.c
+│   └── system_stm32f4xx.c
+├── startup
+│   └── startup_stm32.s
+└── StdPeriph_Driver
+    ├── inc
+    ├── Release_Notes.html
+    └── src
+```
