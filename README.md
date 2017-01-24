@@ -79,6 +79,10 @@ The user library files from toplevel directory __00-STM32F4_LIBRARY_MDB__ are in
 - <kbd>04\_STM32F4\_MD\_HELLO</kbd> > <kbd>inc</kbd> > <kbd>(context menu)</kbd> > <kbd>New Folder</kbd> 
 - In the dialog, select <kbd>linked resource</kbd> and link the toplevel directory __00-STM32F4\_LIBRARY\_MDB__ via extended <kbd>${WORKSPACE\_LOC}/00-STM32F4\_LIBRARY\_MDB</kbd> environment variable.
 - Set resource filter to _*.h_
+- <kbd>04\_STM32F4\_MD\_HELLO</kbd> > <kbd>src</kbd> > <kbd>(context menu)</kbd> > <kbd>New Folder</kbd> 
+- In the dialog, select <kbd>linked resource</kbd> and link the toplevel directory __00-STM32F4\_LIBRARY\_MDB__ via extended <kbd>${WORKSPACE\_LOC}/00-STM32F4\_LIBRARY\_MDB</kbd> environment variable.
+- Set resource filter to _*.c_
+- In the project settings _C/C++ Build_ ... _Include paths (-I)_, add the linked resource filder. 
 - In main.c, auto-completion of ```#include "md_stm32f4_disco.h"``` should work now! 
 - Build project
 

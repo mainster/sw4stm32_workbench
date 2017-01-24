@@ -28,10 +28,10 @@
 								<option id="gnu.c.compiler.option.debugging.level.1311961213" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1150019622" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc/00-STM32F4_LIBRARY_MDB}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/StdPeriph_Driver/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc/00-STM32F4_LIBRARY_MDB}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1095875095" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F429ZITx"/>
@@ -74,7 +74,7 @@
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
-						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="00-STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
 				</configuration>
@@ -150,7 +150,7 @@
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="00-STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
 				</configuration>
