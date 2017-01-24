@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>04_STM32F4_MD_HELLO</name>
+	<name>01_STM32F4_MD_HELLO</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -38,7 +38,7 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1485229414895</id>
+			<id>0</id>
 			<name>inc/00-STM32F4_LIBRARY_MDB</name>
 			<type>5</type>
 			<matcher>
@@ -47,7 +47,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1485231584067</id>
+			<id>0</id>
 			<name>src/00-STM32F4_LIBRARY_MDB</name>
 			<type>5</type>
 			<matcher>

@@ -1,14 +1,17 @@
 /**
-  ******************************************************************************
-  * @file    main.c
-  * @author  Ac6
-  * @version V1.0
-  * @date    01-December-2013
-  * @brief   Default main function.
-  ******************************************************************************
-*/
-
-
+ * @file        main.c
+ *
+ * @date        24 Jan 2017
+ * @author      Manuel Del Basso (mainster)
+ * @email       manuel.delbasso@gmail.com
+ *
+ * @ide         System Workbench ac6 (eclipse stm32)
+ * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ *
+ * @brief       Extended "Hello World" example.
+ *
+ * Focuses the include strategy of toplevel user library files (e.g. "md_stm32f4_disco.h")
+ */
 #include "stm32f4xx.h"
 #include "stm324x9i_eval.h"
 #include "md_stm32f4_disco.h"
