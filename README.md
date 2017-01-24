@@ -1,7 +1,32 @@
 # sw4stm32_workbench #
 
+## Doxy snippet handling ##
 
-## Setup "System Workbench ac6" ##
+To document typedefs/structures, type <kbd>/**s</kbd> and hit <kbd>ctrl</kbd> + <kbd>space</kbd>.
+To document methodes/functions, type <kbd>/**f</kbd> and hit <kbd>ctrl</kbd> + <kbd>space</kbd>.
+
+```C
+/**s 
+typedef struct test_t {
+    int member1;
+    char *member2;
+} test;
+```
+<kbd>ctrl</kbd> + <kbd>space</kbd>
+```C 
+/**
+ * @brief   briefTypeDescripton
+ *
+ * DetailedExplanation.
+ * enclosing_method_arguments
+ *
+ */
+typedef struct test_t {
+    int member1;
+    char *member2;
+} test;
+```
+# Setup "System Workbench ac6" #
 
 - Install the eclipse based "System Workbench ac6 for STM32"
 - Invoke an initial start of sw4stm32_workbench
