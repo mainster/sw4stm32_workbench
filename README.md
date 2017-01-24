@@ -51,20 +51,12 @@ A good choice to include 00-STM32F429_LIBRARIES_MDB_MINIMAL or other library sou
 
 ```bash
 (Default Ac6 plugin Project)
+│
 ├── CMSIS
 │   ├── core
 │   └── device
 ├── Debug
-│   ├── 04_STM32F4_MD_HELLO.bin
-│   ├── 04_STM32F4_MD_HELLO.elf
-│   ├── makefile
-│   ├── objects.list
-│   ├── objects.mk
-│   ├── output.map
-│   ├── sources.mk
-│   ├── src
-│   ├── startup
-│   └── StdPeriph_Driver
+|   . 
 ├── inc
 │   └── stm32f4xx_it.h
 ├── LinkerScript.ld
@@ -78,4 +70,71 @@ A good choice to include 00-STM32F429_LIBRARIES_MDB_MINIMAL or other library sou
     ├── inc
     ├── Release_Notes.html
     └── src
+```
+
+# Include 00_STM32F4_LIBRARY_MDB #
+
+The user library files from toplevel directory __00-STM32F4_LIBRARY_MDB__ are included into project *04_STM32F4_MD_HELLO* via eclipse' _linked resources_:
+ 
+- <kbd>04\_STM32F4\_MD\_HELLO</kbd> > <kbd>inc</kbd> > <kbd>(context menu)</kbd> > <kbd>New Folder</kbd> 
+- In the dialog, select <kbd>linked resource</kbd> and link the toplevel directory __00-STM32F4\_LIBRARY\_MDB__ via extended <kbd>${WORKSPACE\_LOC}/00-STM32F4\_LIBRARY\_MDB</kbd> environment variable.
+- Set resource filter to _*.h_
+- In main.c, auto-completion of ```#include "md_stm32f4_disco.h"``` should work now! 
+- Build project
+
+```bash
+(workspace)
+.
+├── 00-STM32F4_LIBRARY_MDB
+│   ├── attributes.h
+│   ├── mdb_stm32f4_dac.c
+│   ├── mdb_stm32f4_dac.h
+│   ├── mdb_stm32f4_timer.c
+│   ├── mdb_stm32f4_timer.h
+│   ├── md_stm32f4_dac.c
+│   ├── md_stm32f4_dac.h
+│   ├── md_stm32f4_disco.c
+│   ├── md_stm32f4_disco.h
+│   ├── md_stm32f4_gpio.c
+│   ├── md_stm32f4_gpio.h
+│   ├── md_stm32f4_timer.c
+│   └── md_stm32f4_timer.h
+├── 04_STM32F4_MD_HELLO
+│   ├── CMSIS
+│   │   ├── core
+│   │   └── device
+├── |── Debug
+|   .   . 
+│   ├── inc
+│   │   ├── stm324x9i_eval.c
+│   │   ├── stm324x9i_eval.h
+│   │   ├── stm32_eval_legacy.h
+│   │   └── stm32f4xx_it.h
+│   ├── LinkerScript.ld
+│   ├── src
+│   │   ├── main.c
+│   │   ├── syscalls.c
+│   │   └── system_stm32f4xx.c
+│   ├── startup
+│   │   └── startup_stm32.s
+│   └── StdPeriph_Driver
+│       ├── inc
+│       ├── Release_Notes.html
+│       └── src
+├── README.md
+├── RemoteSystemsTempFiles
+├── STM32Cube_FW_F4_V1.11.0
+│   ├── Documentation
+│   │   └── STM32CubeF4GettingStarted.pdf
+│   ├── Drivers
+│   │   ├── BSP
+│   │   ├── CMSIS
+|   .   .
+|   .   .
+├── STM32F4xx_DSP_StdPeriph_Lib_V1.6.1
+│   ├── _htmresc
+│   │   ├── CMSIS_Logo_Final.jpg
+|   .   .
+|   .   .
+└── sw4-eclipse-prefs-18-01-2017.epf
 ```

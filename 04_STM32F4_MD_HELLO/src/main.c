@@ -10,10 +10,10 @@
 
 
 #include "stm32f4xx.h"
-			
+#include "stm324x9i_eval.h"
+#include "md_stm32f4_disco.h"
 
-int main(void)
-{
+int main(void) {
 
 	for(;;);
 }

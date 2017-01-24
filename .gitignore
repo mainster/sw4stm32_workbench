@@ -11,3 +11,5 @@ stm32fxxx_hal_libraries_mj/
 # ARM CMSIS Library components
 **/StdPeriph_Driver/*
 **/CMSIS/*
+trash/*
+README.html

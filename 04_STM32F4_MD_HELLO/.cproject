@@ -31,6 +31,7 @@
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/device&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/CMSIS/core&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/StdPeriph_Driver/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc/00-STM32F4_LIBRARY_MDB}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1095875095" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F429ZITx"/>
@@ -68,10 +69,12 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.1570457157" name="FFFFmdb_stm32f4_dac_signalc" rcbsApplicability="disable" resourcePath="src/00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc" toolsToInvoke=""/>
+					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.36633350" name="FFFFmdb_stm32f4_dac_signalh" rcbsApplicability="disable" resourcePath="src/00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
+						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
 				</configuration>
@@ -168,5 +171,12 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/04_STM32F4_MD_HELLO"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/04_STM32F4_MD_HELLO"/>
+		</configuration>
+	</storageModule>
 </cproject>

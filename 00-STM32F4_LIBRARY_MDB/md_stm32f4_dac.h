@@ -2,9 +2,9 @@
 #define __MB_STM32F4xx_DAC_H
 
 #include "stm32f4xx.h"                  // Device header
-#include <stm32f4xx_hal_gpio.h>
-#include "stm32f4xx_hal_rcc.h"
-#include "stm32f4xx_hal_dac.h"
+//#include <stm32f4xx_hal_gpio.h>
+//#include "stm32f4xx_hal_rcc.h"
+//#include "stm32f4xx_hal_dac.h"
 
 
 #include "md_stm32f4_dac.h"                  // Device header

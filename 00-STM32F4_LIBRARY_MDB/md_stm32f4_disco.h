@@ -20,7 +20,6 @@
 
 #include "stm32f4xx.h"
 
-#include "../03-STM32F4xx_PID_galvo_2105_0706_ARMPLUG/inc/defines.h"
 #include "md_stm32f4_gpio.h"
 
 /* Recognize DISCO eval board */
