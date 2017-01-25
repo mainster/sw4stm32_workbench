@@ -1,40 +1,41 @@
-/** 
- * @author  Tilen Majerle
- * @email   tilen@majerle.eu
- * @website http://stm32f4-discovery.com
- * @link    http://stm32f4-discovery.com/2015/03/library-53-gpio-for-stm32f4
- * @version v1.5
- * @ide     Keil uVision
- * @license GNU GPL v3
- * @brief   GPIO Library for STM32F4xx devices
+/**
+ * @file        md_stm32f4_gpio.h
  *
-@verbatim
-   ----------------------------------------------------------------------
-    Copyright (C) Tilen Majerle, 2015
-    
+ * @date        24 Jan 2017
+ * @author      Manuel Del Basso (mainster)
+ * @email       manuel.delbasso@gmail.com
+ *
+ * @ide         System Workbench ac6 (eclipse stm32)
+ * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ *
+ * @brief       GPIO basic manipulation
+ *
+ * @verbatim
+
+    ------------------------------------------------------------------------
+
+    Copyright (C) 2016  Manuel Del Basso
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
-    any later version.
-     
+    (at your option) any later version.
+
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-    
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
-   ----------------------------------------------------------------------
-@endverbatim
+
+    ------------------------------------------------------------------------
+
+ * @endverbatim
+ *
  */
 #ifndef MD_GPIO_H
 #define MD_GPIO_H 150
 
-/* C++ detection */
-#ifdef __cplusplus
-extern "C" {
-#endif
-	
 /**
  * @addtogroup MD_STM32F4xx_Libraries
  * @{
@@ -42,111 +43,81 @@ extern "C" {
 
 /**
  * @defgroup MD_GPIO
- * @brief    TM GPIO Library for STM32F4xx - http://stm32f4-discovery.com/2015/03/library-53-gpio-for-stm32f4
+ * @brief    GPIO basic manipulation
  * @{
  *
- * GPIO library can be used for GPIO pins. 
+ * GPIO basic library is used for GPIO phy manipulation.
  *
- * It features fast initialization methods as well pin input/output methods.
+ * It is a user level implementation of Std/HAL driver GPIO library.
  *
- * It can be used as replacement for STD/HAL drivers GPIO library.
+ * It provides
+ *  - register initialization methods
+ *  - I/O accessing functions
  *
- * \par Changelog
+ * \par Quest1
  *
-@verbatim
- Version 1.5
-  - June 10 2015
-  - Added 2 new functions for getting used GPIO pins
-  
- Version 1.4
-  - April 28, 2015
-  - Added support for PORT locking
-  
- Version 1.3
-  - March 23, 2015
-  - Totally independent from HAL / SPD drivers
-  - Library can be used with any drivers or totally itself
-  
- Version 1.2
-  - March 10, 2015
-  - Added functions MD_GPIO_SetPinAsInput and MD_GPIO_SetPinAsOutput
-  - Added functions MD_GPIO_GetPortSource and MD_GPIO_GetPinSource
-0
- Version 1.1
-  - March 09, 2015
-  - Added function to deinit pin. Pin is set to analog input which allows lowest current consumption
-  
- Version 1.0
-  - March 08, 2015
-  - Initial release
-@endverbatim
- *
- * \par Dependencies
- *
-@verbatim
- - STM32F4xx
- - STM32F4xx GPIO
- - defines.h
-@endverbatim
  */
 
 #include "stm32f4xx.h"
 #include "stm32f4xx_gpio.h"
 
+/* Handle C++ */
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * @defgroup MD_GPIO_Macros
- * @brief    GPIO Library macros
+ * @brief    Macro definitions for GPIO library
  * @{
  */
 
 /**
- * @brief GPIO Pins declarations 
- * @note  For HAL drivers compatibility
+ * @brief GPIO Pins register address definition
+ * @note  Compatibility layer to service STD_PERIPH driver library
  */
-  
-#ifndef GPIO_PIN_0
-#define GPIO_PIN_0		((uint16_t)0x0001)
-#define GPIO_PIN_1		((uint16_t)0x0002)
-#define GPIO_PIN_2		((uint16_t)0x0004)
-#define GPIO_PIN_3		((uint16_t)0x0008)
-#define GPIO_PIN_4		((uint16_t)0x0010)
-#define GPIO_PIN_5		((uint16_t)0x0020)
-#define GPIO_PIN_6		((uint16_t)0x0040)
-#define GPIO_PIN_7		((uint16_t)0x0080)
-#define GPIO_PIN_8		((uint16_t)0x0100)
-#define GPIO_PIN_9		((uint16_t)0x0200)
-#define GPIO_PIN_10		((uint16_t)0x0400)
-#define GPIO_PIN_11		((uint16_t)0x0800)
-#define GPIO_PIN_12		((uint16_t)0x1000)
-#define GPIO_PIN_13		((uint16_t)0x2000)
-#define GPIO_PIN_14		((uint16_t)0x4000)
-#define GPIO_PIN_15		((uint16_t)0x8000)
-#define GPIO_PIN_ALL	((uint16_t)0xFFFF)
+#ifndef GPIO_Pin_0
+#define GPIO_Pin_0      ((uint16_t)0x0001)
+#define GPIO_Pin_1      ((uint16_t)0x0002)
+#define GPIO_Pin_2      ((uint16_t)0x0004)
+#define GPIO_Pin_3      ((uint16_t)0x0008)
+#define GPIO_Pin_4      ((uint16_t)0x0010)
+#define GPIO_Pin_5      ((uint16_t)0x0020)
+#define GPIO_Pin_6      ((uint16_t)0x0040)
+#define GPIO_Pin_7      ((uint16_t)0x0080)
+#define GPIO_Pin_8      ((uint16_t)0x0100)
+#define GPIO_Pin_9      ((uint16_t)0x0200)
+#define GPIO_Pin_10     ((uint16_t)0x0400)
+#define GPIO_Pin_11     ((uint16_t)0x0800)
+#define GPIO_Pin_12     ((uint16_t)0x1000)
+#define GPIO_Pin_13     ((uint16_t)0x2000)
+#define GPIO_Pin_14     ((uint16_t)0x4000)
+#define GPIO_Pin_15     ((uint16_t)0x8000)
+#define GPIO_Pin_All    ((uint16_t)0xFFFF)
 #endif
 
 /**
- * @brief GPIO Pins declarations 
- * @note  For STD Periph drivers compatibility
+ * @brief GPIO Pins register address definition
+ * @note  Compatibility layer to service HAL driver library
  */
-
-#ifndef GPIO_Pin_0
-#define GPIO_Pin_0		((uint16_t)0x0001)
-#define GPIO_Pin_1		((uint16_t)0x0002)
-#define GPIO_Pin_2		((uint16_t)0x0004)
-#define GPIO_Pin_3		((uint16_t)0x0008)
-#define GPIO_Pin_4		((uint16_t)0x0010)
-#define GPIO_Pin_5		((uint16_t)0x0020)
-#define GPIO_Pin_6		((uint16_t)0x0040)
-#define GPIO_Pin_7		((uint16_t)0x0080)
-#define GPIO_Pin_8		((uint16_t)0x0100)
-#define GPIO_Pin_9		((uint16_t)0x0200)
-#define GPIO_Pin_10		((uint16_t)0x0400)
-#define GPIO_Pin_11		((uint16_t)0x0800)
-#define GPIO_Pin_12		((uint16_t)0x1000)
-#define GPIO_Pin_13		((uint16_t)0x2000)
-#define GPIO_Pin_14		((uint16_t)0x4000)
-#define GPIO_Pin_15		((uint16_t)0x8000)
-#define GPIO_Pin_All	((uint16_t)0xFFFF)
+#ifndef GPIO_PIN_0
+#define GPIO_PIN_0      ((uint16_t)0x0001)
+#define GPIO_PIN_1      ((uint16_t)0x0002)
+#define GPIO_PIN_2      ((uint16_t)0x0004)
+#define GPIO_PIN_3      ((uint16_t)0x0008)
+#define GPIO_PIN_4      ((uint16_t)0x0010)
+#define GPIO_PIN_5      ((uint16_t)0x0020)
+#define GPIO_PIN_6      ((uint16_t)0x0040)
+#define GPIO_PIN_7      ((uint16_t)0x0080)
+#define GPIO_PIN_8      ((uint16_t)0x0100)
+#define GPIO_PIN_9      ((uint16_t)0x0200)
+#define GPIO_PIN_10     ((uint16_t)0x0400)
+#define GPIO_PIN_11     ((uint16_t)0x0800)
+#define GPIO_PIN_12     ((uint16_t)0x1000)
+#define GPIO_PIN_13     ((uint16_t)0x2000)
+#define GPIO_PIN_14     ((uint16_t)0x4000)
+#define GPIO_PIN_15     ((uint16_t)0x8000)
+#define GPIO_PIN_ALL    ((uint16_t)0xFFFF)
 #endif
 
 /**
@@ -154,46 +125,47 @@ extern "C" {
  */
 
 /**
- * @defgroup MD_GPIO_Typedefs
- * @brief    GPIO Typedefs used for GPIO library for initialization purposes
+ * @defgroup    MD_GPIO_Typedefs
+ * @brief       GPIO Typedef is used to improve init/access method structure.
  * @{
  */
 
 /**
- * @brief GPIO Mode enumeration
+ * @brief   Explicitly enumerate driver/logic mode.
+ *
  */
 typedef enum {
-	MD_GPIO_Mode_IN = 0x00,  /*!< GPIO Pin as General Purpose Input */
-	MD_GPIO_Mode_OUT = 0x01, /*!< GPIO Pin as General Purpose Output */
-	MD_GPIO_Mode_AF = 0x02,  /*!< GPIO Pin as Alternate Function */
-	MD_GPIO_Mode_AN = 0x03,  /*!< GPIO Pin as Analog */
+    MD_GPIO_Mode_IN  = 0x00,	/*!< Port/Pin as general purpose input. */
+    MD_GPIO_Mode_OUT = 0x01,	/*!< Port/Pin as general purpose output. */
+    MD_GPIO_Mode_ALT = 0x02,	/*!< Port/Pin operates in alternate functions mode. */
+    MD_GPIO_Mode_ANA = 0x03,	/*!< Port/Pin operates in analog mode. */
 } MD_GPIO_Mode_t;
 
 /**
- * @brief GPIO Output type enumeration
+ * @brief   Explicitly enumerate GPIO driver output type.
  */
 typedef enum {
-	MD_GPIO_OType_PP = 0x00, /*!< GPIO Output Type Push-Pull */
-	MD_GPIO_OType_OD = 0x01  /*!< GPIO Output Type Open-Drain */
+    MD_GPIO_OType_PP = 0x00,	/*!< Output stage has active driver (push/pull) */
+    MD_GPIO_OType_OD = 0x01,	/*!< Output stage has only one active driver (open-drain) */
 } MD_GPIO_OType_t;
 
 /**
- * @brief  GPIO Speed enumeration
+ * @brief   Explicitly enumerate the driving strength (speed)
  */
 typedef enum {
-	MD_GPIO_Speed_Low = 0x00,    /*!< GPIO Speed Low */
-	MD_GPIO_Speed_Medium = 0x01, /*!< GPIO Speed Medium */
-	MD_GPIO_Speed_Fast = 0x02,   /*!< GPIO Speed Fast */
-	MD_GPIO_Speed_High = 0x03    /*!< GPIO Speed High */
+    MD_GPIO_Speed_Low    = 0x00,	/*!< Enumerate Low driving strength */
+    MD_GPIO_Speed_Medium = 0x01,	/*!< GPIO Speed Medium */
+    MD_GPIO_Speed_Fast   = 0x02,	/*!< GPIO Speed Fast */
+    MD_GPIO_Speed_High   = 0x03,	/*!< GPIO Speed High */
 } MD_GPIO_Speed_t;
 
 /**
- * @brief GPIO pull resistors enumeration
+ * @brief   GPIO pull resistors enumeration
  */
 typedef enum {
-	MD_GPIO_PuPd_NOPULL = 0x00, /*!< No pull resistor */
-	MD_GPIO_PuPd_UP = 0x01,     /*!< Pull up resistor enabled */
-	MD_GPIO_PuPd_DOWN = 0x02    /*!< Pull down resistor enabled */
+    MD_GPIO_PuPd_NOPULL = 0x00,	/*!< No pull resistor */
+    MD_GPIO_PuPd_UP = 0x01,	/*!< Pull up resistor enabled */
+    MD_GPIO_PuPd_DOWN = 0x02,	/*!< Pull down resistor enabled */
 } MD_GPIO_PuPd_t;
 
 /**
@@ -207,28 +179,26 @@ typedef enum {
  */
  
 /**
- * @brief  Initializes GPIO pins(s)
- * @note   This function also enables clock for GPIO port
- * @param  GPIOx: Pointer to GPIOx port you will use for initialization
- * @param  GPIO_Pin: GPIO pin(s) you will use for initialization
- * @param  GPIO_Mode: Select GPIO mode. This parameter can be a value of @ref MD_GPIO_Mode_t enumeration
- * @param  GPIO_OType: Select GPIO Output type. This parameter can be a value of @ref MD_GPIO_OType_t enumeration
- * @param  GPIO_PuPd: Select GPIO pull resistor. This parameter can be a value of @ref MD_GPIO_PuPd_t enumeration
- * @param  GPIO_Speed: Select GPIO speed. This parameter can be a value of @ref MD_GPIO_Speed_t enumeration
- * @retval None
+ * @brief      Initialize GPIO pins.
+ *
+ * @param      GPIOx       Pointer to GPIO module which should be initialized. 
+ * @param[in]  GPIO_Pin    Pass GPIO mask of pins which should be initialized.  
+ * @param[in]  GPIO_Mode   Pass GPIO logic/driver mode for GPIO_Pin (see @ref MD_GPIO_Mode_t enumeration typdef).
+ * @param[in]  GPIO_OType  Pass GPIO driver stage type for GPIO_Pin (see @ref MD_GPIO_OType_t enumeration typdef).
+ * @param[in]  GPIO_PuPd   Select GPIO pull resistors for GPIO_Pin (see @ref MD_GPIO_PuPd_t enumeration typdef).
+ * @param[in]  GPIO_Speed  Select GPIO driver speed for GPIO_Pin (see @ref MD_GPIO_Speed_t enumeration typdef).
  */
-extern void MD_GPIO_Init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_Mode_t GPIO_Mode, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed);
+void MD_GPIO_Init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_Mode_t GPIO_Mode, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed);
 
 /**
- * @brief  Initializes GPIO pins(s) as alternate function
- * @note   This function also enables clock for GPIO port
- * @param  GPIOx: Pointer to GPIOx port you will use for initialization
- * @param  GPIO_Pin: GPIO pin(s) you will use for initialization
- * @param  GPIO_OType: Select GPIO Output type. This parameter can be a value of @ref MD_GPIO_OType_t enumeration
- * @param  GPIO_PuPd: Select GPIO pull resistor. This parameter can be a value of @ref MD_GPIO_PuPd_t enumeration
- * @param  GPIO_Speed: Select GPIO speed. This parameter can be a value of @ref MD_GPIO_Speed_t enumeration
- * @param  Alternate: Alternate function you will use
- * @retval None
+ * @brief      Initialize GPIO pins for alternate port operation.
+ *
+ * @param      GPIOx        The gpi ox
+ * @param[in]  GPIO_Pin     The gpio pin
+ * @param[in]  GPIO_OType   The gpio o type
+ * @param[in]  GPIO_PuPd    The gpio pu pd
+ * @param[in]  GPIO_Speed   The gpio speed
+ * @param[in]  Alternate    The alternate
  */
 void MD_GPIO_InitAlternate(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t Alternate);
 
@@ -238,6 +208,14 @@ void MD_GPIO_InitAlternate(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType
  * @param  GPIOx: GPIOx PORT where you want to set pin as input
  * @param  GPIO_Pin: Select GPIO pin(s). You can select more pins with | (OR) operator to set them as input
  * @retval None
+ */
+
+
+/**
+ * @brief      { function_description }
+ *
+ * @param      GPIOx      The gpi ox
+ * @param[in]  GPIO_Pin   The gpio pin
  */
 void MD_GPIO_DeInit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
 
@@ -298,7 +276,7 @@ void MD_GPIO_SetPullResistor(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuP
  * @param  GPIO_Pin: Select GPIO pin(s). You can select more pins with | (OR) operator to set them low
  * @retval None
  */
-#define MD_GPIO_SetPinLow(GPIOx, GPIO_Pin)			((GPIOx)->BSRRH = (GPIO_Pin))
+#define MD_GPIO_SetPinLow(GPIOx, GPIO_Pin)          ((GPIOx)->BSRRH = (GPIO_Pin))
 
 /**
  * @brief  Sets pin(s) high
@@ -307,7 +285,7 @@ void MD_GPIO_SetPullResistor(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuP
  * @param  GPIO_Pin: Select GPIO pin(s). You can select more pins with | (OR) operator to set them high
  * @retval None
  */
-#define MD_GPIO_SetPinHigh(GPIOx, GPIO_Pin) 		((GPIOx)->BSRRL = (GPIO_Pin))
+#define MD_GPIO_SetPinHigh(GPIOx, GPIO_Pin)         ((GPIOx)->BSRRL = (GPIO_Pin))
 
 /**
  * @brief  Sets pin(s) value
@@ -317,7 +295,7 @@ void MD_GPIO_SetPullResistor(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuP
  * @param  val: If parameter is 0 then pin will be low, otherwise high
  * @retval None
  */
-#define MD_GPIO_SetPinValue(GPIOx, GPIO_Pin, val)	((val) ? MD_GPIO_SetPinHigh(GPIOx, GPIO_Pin) : MD_GPIO_SetPinLow(GPIOx, GPIO_Pin))
+#define MD_GPIO_SetPinValue(GPIOx, GPIO_Pin, val)   ((val) ? MD_GPIO_SetPinHigh(GPIOx, GPIO_Pin) : MD_GPIO_SetPinLow(GPIOx, GPIO_Pin))
 
 /**
  * @brief  Toggles pin(s)
@@ -326,7 +304,7 @@ void MD_GPIO_SetPullResistor(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuP
  * @param  GPIO_Pin: Select GPIO pin(s). You can select more pins with | (OR) operator to toggle them all at a time
  * @retval None
  */
-#define MD_GPIO_TogglePinValue(GPIOx, GPIO_Pin)		((GPIOx)->ODR ^= (GPIO_Pin))
+#define MD_GPIO_TogglePinValue(GPIOx, GPIO_Pin)     ((GPIOx)->ODR ^= (GPIO_Pin))
 
 /**
  * @brief  Sets value to entire GPIO PORT
@@ -335,7 +313,7 @@ void MD_GPIO_SetPullResistor(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuP
  * @param  value: Value for GPIO OUTPUT data
  * @retval None
  */
-#define MD_GPIO_SetPortValue(GPIOx, value)			((GPIOx)->ODR = (value))
+#define MD_GPIO_SetPortValue(GPIOx, value)          ((GPIOx)->ODR = (value))
 
 /**
  * @brief  Gets input data bit
@@ -344,7 +322,7 @@ void MD_GPIO_SetPullResistor(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuP
  * @param  GPIO_Pin: GPIO pin where you want to read value
  * @retval 1 in case pin is high, or 0 if low
  */
-#define MD_GPIO_GetInputPinValue(GPIOx, GPIO_Pin)	(((GPIOx)->IDR & (GPIO_Pin)) == 0 ? 0 : 1)
+#define MD_GPIO_GetInputPinValue(GPIOx, GPIO_Pin)   (((GPIOx)->IDR & (GPIO_Pin)) == 0 ? 0 : 1)
 
 /**
  * @brief  Gets output data bit
@@ -353,7 +331,7 @@ void MD_GPIO_SetPullResistor(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuP
  * @param  GPIO_Pin: GPIO pin where you want to read value
  * @retval 1 in case pin is high, or 0 if low
  */
-#define MD_GPIO_GetOutputPinValue(GPIOx, GPIO_Pin)	(((GPIOx)->ODR & (GPIO_Pin)) == 0 ? 0 : 1)
+#define MD_GPIO_GetOutputPinValue(GPIOx, GPIO_Pin)  (((GPIOx)->ODR & (GPIO_Pin)) == 0 ? 0 : 1)
 
 /**
  * @brief  Gets input value from entire GPIO PORT
@@ -361,7 +339,7 @@ void MD_GPIO_SetPullResistor(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuP
  * @param  GPIOx: GPIOx PORT where you want to read input data value
  * @retval Entire PORT INPUT register
  */
-#define MD_GPIO_GetPortInputValue(GPIOx)			((GPIOx)->IDR)
+#define MD_GPIO_GetPortInputValue(GPIOx)            ((GPIOx)->IDR)
 
 /**
  * @brief  Gets output value from entire GPIO PORT
@@ -369,7 +347,7 @@ void MD_GPIO_SetPullResistor(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuP
  * @param  GPIOx: GPIOx PORT where you want to read output data value
  * @retval Entire PORT OUTPUT register
  */
-#define MD_GPIO_GetPortOutputValue(GPIOx)			((GPIOx)->ODR)
+#define MD_GPIO_GetPortOutputValue(GPIOx)           ((GPIOx)->ODR)
 
 /**
  * @brief  Gets port source from desired GPIOx PORT

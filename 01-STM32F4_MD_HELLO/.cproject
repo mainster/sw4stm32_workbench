@@ -71,6 +71,20 @@
 					</folderInfo>
 					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.1570457157" name="FFFFmdb_stm32f4_dac_signalc" rcbsApplicability="disable" resourcePath="src/00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc" toolsToInvoke=""/>
 					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.36633350" name="FFFFmdb_stm32f4_dac_signalh" rcbsApplicability="disable" resourcePath="src/00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh" toolsToInvoke=""/>
+					<folderInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.1302662715" name="/" resourcePath="inc/00-STM32F4_LIBRARY_MDB">
+						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.1935317300" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
+							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.2097023914.1617940339" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu.2097023914"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.board.341994207.748610743" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board.341994207"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.fpu.1960902159.776369575" name="Floating point hardware" superClass="fr.ac6.managedbuild.option.gnu.cross.fpu.1960902159"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.123438802.1456271210" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi.123438802"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.2070491459" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.812686938"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.1328463157" name="MCU G++ Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.969451105"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.1598314949" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker.975684112"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.1614748187" name="MCU G++ Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.1519614162"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.1378063459" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver.618813817"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.1121170724" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.1510081585"/>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>

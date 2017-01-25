@@ -1,21 +1,4 @@
-/**	
- * |----------------------------------------------------------------------
- * | Copyright (C) Tilen Majerle, 2015
- * | 
- * | This program is free software: you can redistribute it and/or modify
- * | it under the terms of the GNU General Public License as published by
- * | the Free Software Foundation, either version 3 of the License, or
- * | any later version.
- * |  
- * | This program is distributed in the hope that it will be useful,
- * | but WITHOUT ANY WARRANTY; without even the implied warranty of
- * | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * | GNU General Public License for more details.
- * | 
- * | You should have received a copy of the GNU General Public License
- * | along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * |----------------------------------------------------------------------
- */
+
 #include "md_stm32f4_gpio.h"
 
 /* Private function */
@@ -26,9 +9,10 @@ void MD_GPIO_INT_EnableClock(GPIO_TypeDef* GPIOx);
 void MD_GPIO_INT_DisableClock(GPIO_TypeDef* GPIOx);
 void MD_GPIO_INT_Init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_Mode_t GPIO_Mode, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed);
 
+
 void MD_GPIO_Init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_Mode_t GPIO_Mode, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed) {
-	/* Check input */
-	if (GPIO_Pin == 0x00) {
+
+	if (GPIO_Pin == 0x00) {		
 		return;
 	}
 	
@@ -62,7 +46,7 @@ void MD_GPIO_InitAlternate(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType
 	}
 	
 	/* Do initialization */
-	MD_GPIO_INT_Init(GPIOx, GPIO_Pin, MD_GPIO_Mode_AF, GPIO_OType, GPIO_PuPd, GPIO_Speed);
+	MD_GPIO_INT_Init(GPIOx, GPIO_Pin, MD_GPIO_Mode_ALT, GPIO_OType, GPIO_PuPd, GPIO_Speed);
 }
 
 void MD_GPIO_DeInit(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin) {
@@ -217,7 +201,7 @@ void MD_GPIO_INT_Init(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, MD_GPIO_Mode_t GPI
 		GPIOx->MODER = (GPIOx->MODER & ~((uint32_t)(0x03 << (2 * pinpos)))) | ((uint32_t)(GPIO_Mode << (2 * pinpos)));
 		
 		/* Set only if output or alternate functions */
-		if (GPIO_Mode == MD_GPIO_Mode_OUT || GPIO_Mode == MD_GPIO_Mode_AF) {
+		if (GPIO_Mode == MD_GPIO_Mode_OUT || GPIO_Mode == MD_GPIO_Mode_ALT) {
 			/* Set GPIO OTYPE register */
 			GPIOx->OTYPER = (GPIOx->OTYPER & ~(uint16_t)(0x01 << pinpos)) | ((uint16_t)(GPIO_OType << pinpos));
 			

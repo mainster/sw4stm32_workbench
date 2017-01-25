@@ -36,7 +36,7 @@ typedef struct test_t {
  * enclosing_method_arguments
  *
  */
-int main(char *arg) {
+int main(int a, char **arg) {
 	/* Initialize System */
 	SystemInit();
 

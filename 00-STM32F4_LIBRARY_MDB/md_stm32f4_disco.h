@@ -1,14 +1,14 @@
 /**
- * @file					file:/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h
+ * @file        md_stm32f4_disco.h
  *
- * @date				4 Jan 2017
- *	@author			Manuel Del Basso (mainster)
- *	@email				manuel.delbasso@gmail.com
+ * @date        24 Jan 2017
+ * @author      Manuel Del Basso (mainster)
+ * @email       manuel.delbasso@gmail.com
  *
- *	@ide					System Workbench ac6 (eclipse stm32)
- *	@stdperiph		STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ * @ide         System Workbench ac6 (eclipse stm32)
+ * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  *
- * @brief				DESCRIPTION
+ * @brief       Defines to extend board support for STM32F429i-DISCO
  */
 
 #ifndef MD_STM32F4_DISCO_H

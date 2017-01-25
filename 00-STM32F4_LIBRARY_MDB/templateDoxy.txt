@@ -1,0 +1,6 @@
+GPIOx       Pointer to GPIO module which should be initialized. 
+GPIO_Pin    Pass GPIO mask of pins which should be initialized.  
+GPIO_Mode   Pass GPIO logic/driver mode for GPIO_Pin (see @ref MD_GPIO_Mode_t enumeration typdef).
+GPIO_OType  Pass GPIO driver stage type for GPIO_Pin (see @ref MD_GPIO_OType_t enumeration typdef).
+GPIO_PuPd   Select GPIO pull resistors for GPIO_Pin (see @ref MD_GPIO_PuPd_t enumeration typdef).
+GPIO_Speed  Select GPIO driver speed for GPIO_Pin (see @ref MD_GPIO_Speed_t enumeration typdef).
