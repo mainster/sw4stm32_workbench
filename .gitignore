@@ -12,4 +12,6 @@ stm32fxxx_hal_libraries_mj/
 **/StdPeriph_Driver/*
 **/CMSIS/*
 trash/*
+# Tests for builds with sublime
+01-STM32F4_MD_HELLO_MKFILE/
 README.html
