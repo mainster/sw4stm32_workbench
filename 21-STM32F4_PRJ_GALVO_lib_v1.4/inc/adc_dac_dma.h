@@ -1,15 +1,3 @@
-/**
- *	Keil project for XY-GalvoScanner
- *  29-04-2015
- *
- *
- *	@author		Manuel Del Basso
- *	@email		Manuel.DelBasso@googlemail.com  
- *	@ide		Keil uVision 5
- *	@packs		STM32F4xx Keil packs version 2.2.0 or greater required
- *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- */
- 
 #ifndef ADC_DAC_DMA_H_
 #define ADC_DAC_DMA_H_  100
 
@@ -18,9 +6,8 @@
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_adc.h"
 #include "stm32f4xx_dac.h"
-#include "defines.h"
-
 #include "md_stm32f4_dac.h"
+#include "defines.h"
 
 // ==============================================================
 //                          20-05-2015
@@ -67,35 +54,21 @@
     Zum testen, dualmode (prototyp v1.3)
     ADC2_CH03    setpoint=Isens_X  (PA3)
 
+    Initialize DAC outputs 
+    DAC1-> PA4  
+    DAC2-> PA5 
 */
 // ==============================================================
 //	                    ADC things
 // ==============================================================
-#define ADC_X_CHAN      ADC_Channel_6   // process y output (ADC)
-#define ADC_Y_CHAN      ADC_Channel_8   // process y output (ADC)
-#define ADC_Ix_CHAN     ADC_Channel_13  // I_sens_x
-#define ADC_Iy_CHAN     ADC_Channel_3   // I_sens_y
-#define ADC_W_CHAN      ADC_Channel_3   // Setpoint (external)
+#define ADC_X_CHANNEL 		ADC_Channel_6   // process y output (ADC)
+#define ADC_Y_CHANNEL 		ADC_Channel_8   // process y output (ADC)
+#define ADC_Ix_CHANNEL	ADC_Channel_13  // I_sens_x
+#define ADC_Iy_CHANNEL	ADC_Channel_3   // I_sens_y
+#define ADC_W_CHANNEL		ADC_Channel_3   // Setpoint (external)
 
 #define ADC_CCR_ADDRESS    ((uint32_t)0x40012308)
 // ==============================================================
-
-
-// ==============================================================
-// Warum define geändert? 01-06-2015 @@@MDB
-// ?????????????????????????????????????????
-// ==============================================================
-//#define DAC_Align_12b_R  CHAN_Align_12b_R
-// ==============================================================
-
-
-
-extern struct autoSaveSystem ass;
-
-/* Sets the ADC scan channels count 
- * This MUST be used in ADC init function, DMA init function and at the point 
- * where a complete buffer copy was taken */    
-#define ADC_N_REGULAR_CHANNELS  2
 
 /**< enumerate return types
  * Declare enumerations used as return type of function pointer 
@@ -105,30 +78,21 @@ extern struct autoSaveSystem ass;
 typedef enum {
     DEFAULT_WRITE_DAC,      ///< return by default function which is used for write access to DAC hardware
     TRIPPED_WRITE_DAC      ///< return by error handling function if ass is in tripped state
-} DAC_WP_t;
+} DAC_WritePointer_t;
 
+//extern struct global g;
 
-void NVIC_Configuration(void);  
-void TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, \
-                                        FunctionalState IntOn, \
-                                        uint16_t peri);
-
-void DMA_Configuration( __IO int16_t *MultiConvBuff, \
-                                             uint8_t memSize);
-void AnalogWatchdog_Configuration (void);
-void ADC_Configuration(void);
-void RCC_Configuration(void);
+static struct autoSaveSystem ass;
 
 void ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff);
 void ADC_ContScanMode_w_DMA (__IO int16_t *MultiConvBuff);
 void ADC_ContScanMode_w_DMA_timeTrigd (__IO int16_t *MultiConvBuff, uint8_t memSize);
 void DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val);
+//int DAC_SecureSetDualChanSigned(int16_t Data2, int16_t Data1);
+extern DAC_WritePointer_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
+DAC_WritePointer_t DAC_SetDualChanSigned_Tripped(int16_t Data2, int16_t Data1);
+DAC_WritePointer_t DAC_SetDualChanSigned(int16_t Data2, int16_t Data1);
 
-/* extern defined function pointer */
-extern  DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
-/* Primary function that (*DAC_SecureSetDualChanSigned) is pointing to */
-        DAC_WP_t DAC_SetDualChanSigned_Tripped  (int16_t Data2, int16_t Data1);
-/* Error condition function that (*DAC_SecureSetDualChanSigned) is pointing to */
-        DAC_WP_t DAC_SetDualChanSigned          (int16_t Data2, int16_t Data1);
+//int updateActuator_f(float I_set_x, float I_set_y);
 
 #endif

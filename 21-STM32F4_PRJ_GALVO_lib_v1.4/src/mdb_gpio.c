@@ -1,35 +1,16 @@
-/**
- *	Keil project for XY-GalvoScanner
- *  29-04-2015
- *
- *
- *	@author		Manuel Del Basso
- *	@email		Manuel.DelBasso@googlemail.com  
- *	@ide		Keil uVision 5
- *	@packs		STM32F4xx Keil packs version 2.2.0 or greater required
- *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- */
- 
- #include "mdb_gpio.h"
+#include "mdb_gpio.h"
 
 /**< Declaration of all used GPIOs
  * Needs to be ordered like in typedef GPIO_NAME_t 
  */
 MDB_GPIO_t  MDB_GPIO[] = {
-  { LED_GREEN_A,      GPIOG,  GPIO_Pin_13,  GPIO_Mode_OUT, GPIO_Speed_50MHz,  GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOG, GPIO_OFF},   
-  { LED_RED_A,        GPIOG,  GPIO_Pin_14,  GPIO_Mode_OUT, GPIO_Speed_50MHz,  GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOG, GPIO_OFF},   
-
-  { BEAM_INTERRUPT,   GPIOE,  GPIO_Pin_10,  GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
-  { TRIGGER_SRC,      GPIOE,  GPIO_Pin_12,  GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
-
-  { DBG_TIMING_PE2,   GPIOE,  GPIO_Pin_2,   GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
-  { DBG_TIMING_PE4,   GPIOE,  GPIO_Pin_4,   GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
-  { DBG_TIMING_PE6,   GPIOE,  GPIO_Pin_6,   GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
-
-  { ADC_X_CHAN_IO,    GPIOA,  GPIO_Pin_6,   GPIO_Mode_AIN, GPIO_Speed_100MHz, GPIO_OType_OD, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOA, GPIO_OFF},   
-  { ADC_Y_CHAN_IO,    GPIOB,  GPIO_Pin_0,   GPIO_Mode_AIN, GPIO_Speed_100MHz, GPIO_OType_OD, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOB, GPIO_OFF},   
-  { ADC_Ix_CHAN_IO,   GPIOC,  GPIO_Pin_3,   GPIO_Mode_AIN, GPIO_Speed_100MHz, GPIO_OType_OD, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOC, GPIO_OFF},   
-  { ADC_W_CHAN_IO,    GPIOA,  GPIO_Pin_3,   GPIO_Mode_AIN, GPIO_Speed_100MHz, GPIO_OType_OD, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOA, GPIO_OFF},   
+  {LED_GREEN_A      ,GPIOG, GPIO_Pin_13, GPIO_Mode_OUT, GPIO_Speed_50MHz,  GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOG, GPIO_OFF},   
+  {LED_RED_A        ,GPIOG, GPIO_Pin_14, GPIO_Mode_OUT, GPIO_Speed_50MHz,  GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOG, GPIO_OFF},   
+  {BEAM_INTERRUPT   ,GPIOE, GPIO_Pin_10, GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
+  {TRIGGER_SRC      ,GPIOE, GPIO_Pin_12, GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
+  {DBG_TIMING_PE2   ,GPIOE, GPIO_Pin_2,  GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
+  {DBG_TIMING_PE4   ,GPIOE, GPIO_Pin_4,  GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
+  {DBG_TIMING_PE6   ,GPIOE, GPIO_Pin_6,  GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
 };
 
 
@@ -51,7 +32,10 @@ void MDB_GPIO_BeamPin(MDB_GPIO_NAME_t name, MDB_GPIO_DRIVER_STATE_t newState) {
         GPIO_InitStructure.GPIO_OType = GPIO_OType_OD;
         GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_DOWN;
     }
+
+
     GPIO_Init(MDB_GPIO[name]._GPIO_PORT, &GPIO_InitStructure);
+   
 }
 
 

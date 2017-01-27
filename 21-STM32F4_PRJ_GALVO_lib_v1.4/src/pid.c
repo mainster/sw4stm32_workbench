@@ -138,7 +138,7 @@ int fpid_Controller(int16_t setPoint, int16_t processValue, \
     double Ki        = pid->Ki;
     double Kd        = pid->Kd;
     double Tf        = (double)pid->Tf / 1000000;     /**< Filter timeconstant [s] NOT [us] */
-	 double Ts        = (double)pid->Ts / 1000000;     /**< Sampletime [s] NOT [us] */
+	double Ts        = (double)pid->Ts / 1000000;     /**< Sampletime [s] NOT [us] */
     double y_p, y_i, y_d, y;
     
     /**< Calculate Pterm and limit error overflow. */
@@ -339,10 +339,10 @@ int pid_Controller(int16_t setPoint, int16_t processValue, struct PID_DATA *pid)
   }
 
 // Calculate Dterm 
-// y_d = Kd/Ts * (e - e_1); 					   // without 1. order filter
+// y_d = Kd/Ts * (e - e_1); 								// without 1. order filter
   y_d = Kd/Ts * (e-e_1)/((e-e_1)*Tf/Ts+1);	// 1. order filter
 
-// sum all terms
+// sum terms
   y = (y_p + y_i + y_d);
   if(y > UPPER_DAC_LIMIT){
     y = UPPER_DAC_LIMIT;
@@ -358,7 +358,7 @@ int pid_Controller(int16_t setPoint, int16_t processValue, struct PID_DATA *pid)
   	pid->W[k] = w;											// only for history
 	pid->P[k] = processValue;						// only for history
 #else
-    pid->W[k] = ADC_MultiConvBuff[INDEX_W];						// only for history
+    pid->W[k] = ADC_MultiConvBuff[INDEX_W];											// only for history
 	pid->P[k] = ADC_MultiConvBuff[INDEX_Py];						// only for history
 #endif
 

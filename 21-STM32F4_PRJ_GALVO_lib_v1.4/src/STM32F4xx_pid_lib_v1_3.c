@@ -54,7 +54,7 @@
 //          IMPORT from MATLAB code generated project pid_lib_v3
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#include "pid4.h"                /* Model's header file */
+//#include "pid_lib_v3.h"                /* Model's header file */
 #include "rtwtypes.h"                  /* MathWorks types */
 #include "stm32f4xx.h"
 
@@ -63,20 +63,20 @@
 void RCC_Configuration(void);
 
 /* Real-time model */
-extern RT_MODEL_pid4 *const pid4_M;
+//extern RT_MODEL_pid_lib_v3 *const pid_lib_v3_M;
 
 /* Set which subrates need to run this base step (base rate always runs).*/
-/* Defined in pid4.c file */
-extern void pid4_SetEventsForThisBaseStep(boolean_T*);
+/* Defined in pid_lib_v3.c file */
+extern void pid_lib_v3_SetEventsForThisBaseStep(boolean_T*);
 
 /* Flags for taskOverrun */
 static boolean_T OverrunFlags[1];
 
 /* Number of auto reload timer rotation computed */
-static uint32_t autoReloadTimerLoopVal_S = 10;
+static uint32_t autoReloadTimerLoopVal_S = 1;
 
 /* Remaining number of auto reload timer rotation to do */
-static uint32_t remainAutoReloadTimerLoopVal_S = 10;
+static uint32_t remainAutoReloadTimerLoopVal_S = 1;
 
 /****************************************************
    SysTick_Handler function
@@ -90,11 +90,11 @@ void TimingDelay_Decrement(void);
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-/* actual position */
-
-static struct triangWave_t triStruct;
+static struct global g;
+static struct triangWave triStruct;
 static struct autoSaveSystem ass;
 
+static DAC_WritePointer_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
 // ==============================================================
 //   This is needed in order to provide printf functionality
@@ -195,19 +195,12 @@ __IO float ADC_fBuff[5];
 #define POS_Y_FLOAT         (float) ADC_fBuff[INDEX_Py]	/* actual position */
 #define SETPOINT_Y_FLOAT	(float) ADC_fBuff[INDEX_W]	/* position we want to have */
 
-
 #define SIGNW -1
 
 #define INTERNAL_SETPOINT 
 #undef INTERNAL_SETPOINT 
 
-#if  defined (KEIL_IDE)
-	#pragma O0
-#elif  defined (__GNUC__)
-	#pragma GCC push_options
-	#pragma GCC optimize ("O0")
-#endif
-
+#pragma O0
     //float temps[EXPECTING_SENSORS];
     
 float pidErrBuff[2];        /* PID error buffer*/
@@ -226,13 +219,7 @@ __IO float toPlant;              /* next actuator value in Volt */
 
     int16_t test1 = UPPER_DAC_LIMIT_SIGNED;
     int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
-
-#if  defined (KEIL_IDE)
-	#pragma O2
-#elif  defined (__GNUC__)
-	#pragma GCC pop_options
-#endif
-
+#pragma O2
 
 /* Choose PID parameters */
 #define PID_PARAM_KP		0.5			/* Proporcional */
@@ -306,41 +293,6 @@ volatile float  KI_INIT, \
                 KD_INIT, \
                 TF_INIT = 0;
 
-
-static struct items items_list[] = {
-        { .name = "kp:", .id = KP },
-        { .name = "ki:", .id = KI },
-        { .name = "kd:", .id = KD },
-        { .name = "w::", .id = W  }
-};
-
-static struct itemsw itemsw_list[] = {
-        { .name = "sin", .idw = COS },
-        { .name = "tri", .idw = TRIANG },
-        { .name = "rec", .idw = SQUAREWAV },
-        { .name = "s2 ", .idw = QUADRATIC },
-        { .name = "is2", .idw = I_QUADRATIC },
-        { .name = "saw", .idw = SAWTOOTH},
-        { .name = "rem", .idw = CMD_REMOTE_SETPOINT},
-        { .name = "orm", .idw = CMD_OPENLOOP_REMOTE},
-        { .name = "ast", .idw = CMD_ANALOG_SETPOINT},
-        { .name = "ist", .idw = CMD_INTERNAL_SETPOINT},
-        { .name = "rfr", .idw = CMD_REFRESH_RATE},
-};
-
-static struct itemsm itemsm_list[] = {
-        { .name = "pid_init", .idm = misc_pid_init },
-        { .name = "pid_Controller", .idm = misc_pid_Controller },
-        { .name = "pid_Reset_Integrator", .idm = misc_pid_Reset_Integrator },
-        { .name = "update_pid_data", .idm = misc_update_pid_data  },
-        { .name = "safetyEnable" , .idm = misc_assOnOff_cmd  },
-        { .name = "safetyUpperLim", .idm = misc_assUpperLim_cmd  },
-        { .name = "safetyLowerLim", .idm = misc_assLowerLim_cmd  },
-        { .name = "safetyTripp", .idm = misc_assTrippTime_cmd  },
-        { .name = "safetyVal", .idm = misc_assSaveVal_cmd  },
-        { .name = "EnableBeam", .idm = misc_beamOn_cmd  },
-        { .name = "DisableBeam", .idm = misc_beamOff_cmd  },
-};
 
 
 //float W_INT_BUFF[33]= { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0 };
@@ -472,10 +424,7 @@ void DMA2_Stream0_IRQHandler(void) {
     for (__IO uint8_t k=0; k<4; k++) {
         ADC_fBuff[k] = (float) ((float) (ADC_MultiConvBuff[k] - AN_OFFSET) * LSB);     
     }
-    
-    pid4_U.ym = (real_T) ADC_fBuff[INDEX_Py];
-    
-    
+
 // ==============================================================
 //            Laser interrupter control
 // ==============================================================
@@ -627,13 +576,14 @@ __weak void TimingDelay_Decrement(void) {
 
 }
 
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//        IMPORT from MATLAB code generated project pid_lib_v3
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #pragma O0
 // ==============================================================
 //     IRQ callback:    SysTick Interrupt
 // ==============================================================
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//        IMPORT from MATLAB code generated project pid_lib_v3
-// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 void SysTick_Handler(void)
 {
     uint16_t ypid_uint=0;
@@ -656,7 +606,7 @@ void SysTick_Handler(void)
 
     /* Check base rate for overrun */
     if (OverrunFlags[0]) {
-        rtmSetErrorStatus(pid4_M, "Overrun");
+        rtmSetErrorStatus(pid_lib_v3_M, "Overrun");
         TM_DISCO_LedOn(LED_RED);
         return;
     }
@@ -665,28 +615,23 @@ void SysTick_Handler(void)
 
     /* Step the model for base rate */
 MDB_GPIO_Toggle(DBG_TIMING_PE6); 
-    pid4_step();
+    pid_lib_v3_step();
 MDB_GPIO_Toggle(DBG_TIMING_PE6); 
    
     /* Get model outputs here */
-    ypid_int = decodeDbl_toInt( pid4_Y.yc);
+    ypid_int = decodeDbl_toInt( pid_lib_v3_Y.Ypid );
     ypid_uint = ypid_int + AN_OFFSET;
     DAC_SetDualChanSigned( ypid_uint, ypid_uint );
-    //updateActuator_f( (float)pid4_Y.yc, (float)pid4_Y.yc);
-        
+    
     /* Indicate task for base rate complete */
     OverrunFlags[0] = FALSE;
 }
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //    END of    IMPORT from MATLAB code generated project pid_lib_v3
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#pragma O1
-
 double lastVal=0;
 
 int main(void) {
-	g.ampl = 0;
-
    /**< Define private main variables */
     TM_PWM_TIM_t TIM_Data;    ///< Timer data for PWM 
     volatile uint8_t c = 0;
@@ -820,10 +765,9 @@ int main(void) {
 
     /* Clock has to be configured first*/
     // RCC_Configuration();
-    
-//    pid4_U.ym = (float *) &ADC_fBuff[INDEX_Px];
+
     /* Model initialization call */
-    pid4_initialize();
+    pid_lib_v3_initialize();
 
 
     /* Systick configuration and enable SysTickHandler interrupt */
@@ -859,9 +803,9 @@ int main(void) {
                                 SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y); 
             Delayms(100);
         }
-         pid4_DW.pulseGenSw = 0x01;
+         pid_lib_v3_P.pulseGenEN_CurrentSetting = 0x01;
 //         TM_DISCO_LedOn(LED_RED);
-         printf("pid4.pulseGenEN_CurrentSetting = 0x01\n");
+         printf("pid_lib_v3_P.pulseGenEN_CurrentSetting = 0x01\n");
 
         while (! TM_DISCO_ButtonOnPressed()) {
         }
@@ -998,14 +942,62 @@ int beamCtrl(beamCtrlSource_t src, MDB_GPIO_STATE_t newState ) {
 
 
 
+/**
+ * @brief   Safely update actuator control signals
+ * Safely means in terms of missplaced or oscillating controller outputs.
+ * The analog watchdog peripheral takes care about "out of normal range" 
+ * events. If a converted position signal is out of range, the watchdog 
+ * handler starts time integration and after "out of range" integrator 
+ * reaches a defineable limit, the watchdog takes the system to into
+ * "Tripped" state.
+ * Therefor a global error flag becomes true AND the function pointer
+ * DAC_SetDualChanSigned() that points to a wraper function, gots to be
+ * replaced by a pointer that points to DAC_SetDualChanSigned_Tripped().
+ * In the DAC_SetDualChanSigned() function, that is pointed to in tripped 
+ * state, only outputs a zero level DAC-Signal to take external hardware 
+ * in a safe state.
+ */
+int updateActuator_f(float I_set_x, float I_set_y) {
+    int toPlant_intBuff[2] = { 0, 0 };
+    int *toPlant_int = &toPlant_intBuff[0];
+    
+    if (!ass.tripped) {     ///< only if ass state is NOT tripped
 
+        /**< decode the float values to an integral type */
+        *toPlant_int     = decode_toInt(I_set_x);
+        *(toPlant_int+1) = decode_toInt(I_set_y);
 
+        /**
+         * Check decoded values to be in DAC output range. Clipping 
+         * would be necessary 
+         */
+        for (uint8_t k=0; k<2; k++) {
+            if (*(toPlant_int+k) > UPPER_DAC_LIMIT_SIGNED)
+                    *(toPlant_int+k) = UPPER_DAC_LIMIT_SIGNED;
+            if (*(toPlant_int+k) < LOWER_DAC_LIMIT_SIGNED)
+                    *(toPlant_int+k) = LOWER_DAC_LIMIT_SIGNED;
+        }
+    } 
+    else{   
+    /**<><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>    
+       <>  This branch eror-handles an ass integrator_full event i.e.<>
+       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>    
+       <>                    FUSE TRIPPED                            <>
+       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<> */  
+       /* All safety related actions are done by the watchdog handler */ 
+    }
 
-
-
-
-
-
+   /**
+    * @brief    Return argument toPlant_int is of type int16_t because 
+    *           it holds the --un--biased DAC output register values...
+    *           This is a function pointer!
+    * Casting from (float32_t) toPlant to int16_t type introduces 
+    * rounding errors which couldn't be prevented! 
+    */
+    DAC_SecureSetDualChanSigned( *toPlant_int, *(toPlant_int+1));  
+        
+    return 0;
+}
 
 
 /*

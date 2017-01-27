@@ -1,23 +1,6 @@
-/**
- *	Keil project for XY-GalvoScanner
- *  29-04-2015
- *
- *
- *	@author		Manuel Del Basso
- *	@email		Manuel.DelBasso@googlemail.com  
- *	@ide		Keil uVision 5
- *	@packs		STM32F4xx Keil packs version 2.2.0 or greater required
- *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- *
- *	Additional defines in "Options for Target" > "C/C++" > "Defines"
- *		- ARM_MATH_CM4
- *		- __FPU_PRESENT = 1
- */
- 
 #include "tools.h"
 #include "defines.h"
-#include <stdio.h>
-#include <string.h>
+
 /**
   * @brief  split string at delimiter and return pointer to string array
   * @param  *str:   pointer to string that should be splitted
@@ -35,7 +18,7 @@ int strsplit(char *str, const char *delim) {
         }
             
         printf ("Token: %s\n", tok);
-        tok = (strtok(NULL, delim));
+        tok = strtok(NULL, delim);
         ret++;
     }
     

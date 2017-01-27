@@ -1,14 +1,3 @@
-/**
- *	Keil project for XY-GalvoScanner
- *  29-04-2015
- *
- *
- *	@author		Manuel Del Basso
- *	@email		Manuel.DelBasso@googlemail.com  
- *	@ide		Keil uVision 5
- *	@packs		STM32F4xx Keil packs version 2.2.0 or greater required
- *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- */
 #ifndef _MDB_GPIO_H
 #define _MDB_GPIO_H
 
@@ -25,23 +14,12 @@ typedef enum
   BEAM_INTERRUPT    = 2,    ///< Beam interrupter control pin
   TRIGGER_SRC       = 3,
   DBG_TIMING_PE2    = 4,
-  DBG_TIMING_PE4    = 5,    ///< Debug timing of ADC related tasks    
-  DBG_TIMING_PE6    = 6,    ///< Debug timing of PID algorithm
-  ADC_X_CHAN_IO     = 7,    ///< ADC AN PA6
-  ADC_Y_CHAN_IO     = 8,    ///< ADC AN PB0
-  ADC_Ix_CHAN_IO    = 9,    ///< ADC AN PC3
-  ADC_W_CHAN_IO     = 10,   ///< ADC AN PA3
-  
+  DBG_TIMING_PE4    = 5,
+  DBG_TIMING_PE6    = 6,
 } MDB_GPIO_NAME_t;
 
-#define  GPIO_COUNT   11
+#define  GPIO_COUNT   7
 
-#define DBG_PID_TIMING_TOG( )   (MDB_GPIO_Toggle(DBG_TIMING_PE6))
-#define DBG_PID_TIMING(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE6)) : \
-                                            (MDB_GPIO_Off(DBG_TIMING_PE6))
-#define DBG_ADC_TIMING_TOG( )   (MDB_GPIO_Toggle(DBG_TIMING_PE4))
-#define DBG_ADC_TIMING(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE4)) : \
-                                            (MDB_GPIO_Off(DBG_TIMING_PE4))
 
 /**< GPIO (init) states 
  */
@@ -76,6 +54,18 @@ void MDB_GPIO_On(MDB_GPIO_NAME_t name);
 void MDB_GPIO_Off(MDB_GPIO_NAME_t name);
 void MDB_GPIO_Init(void);
 void MDB_GPIO_BeamPin(MDB_GPIO_NAME_t name, MDB_GPIO_DRIVER_STATE_t newState);
+
+
+//--------------------------------------------------------------
+// Globale Funktionen
+//--------------------------------------------------------------
+//void UB_Led_Init(void);
+//void UB_Led_Off(LED_NAME_t led_name);
+//void UB_Led_On(LED_NAME_t led_name);
+//void UB_Led_Toggle(LED_NAME_t led_name);
+//void UB_Led_Switch(LED_NAME_t led_name, LED_STATUS_t wert);
+
+
 
 
 #endif

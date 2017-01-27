@@ -1,34 +1,5 @@
-/**
- *	Keil project for XY-GalvoScanner
- *  29-04-2015
- *
- *
- *	@author		Manuel Del Basso
- *	@email		Manuel.DelBasso@googlemail.com  
- *	@ide		Keil uVision 5
- *	@packs		STM32F4xx Keil packs version 2.2.0 or greater required
- *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- */
- 
 #ifndef DEFINES_H_
 #define DEFINES_H_
-
-
-/* =======================================================
- * ===== Find base addresses of peripheral registers =====
- * =======================================================
- *
- * stm32f4xx.h (1439):  #define PERIPH_BASE           ((uint32_t)0x40000000)
- *             (1463):  #define APB1PERIPH_BASE       PERIPH_BASE
- *             (1495):  #define DAC_BASE             (APB1PERIPH_BASE + 0x7400)
- *
- *          ==> Register address = 0x40007400 + Register_offset
- *
-#define DAC_DHR12R1_ADDRESS    0x40007408
-#define DAC_DHR12R2_ADDRESS    0x40007414
-#define DAC_DHR8R1_ADDRESS     0x40007410
- */
-
 
 // Address defines for adc_buffer
 //#define ADC1_CH0	0
@@ -40,12 +11,15 @@
 //#define ADC_U_VAL &adc_buff[1]
 //#define ADC_BACK_VAL &adc_buff[2]
 
-//#define ADC_Y_CHAN 		ADC_Channel_0
+//#define ADC_Y_CHANNEL 		ADC_Channel_0
 //#define ADC_U_CHANNEL 		ADC_Channel_6
 //#define ADC_BACK_CHANNEL 	ADC_Channel_3
 
 
-#undef KEIL_IDE
+/* TIM4 is used for delay functions */
+#define TM_DELAY_TIM				TIM5
+#define TM_DELAY_TIM_IRQ			TIM5_IRQn
+#define TM_DELAY_TIM_IRQ_HANDLER	TIM5_IRQHandler
 
 // ==============================================================
 //		                GPIO things
@@ -105,8 +79,8 @@
  */
 //                               0xffff * 5us = 0.3277ms = 3.05Hz
 
-#define TS			5			// Sample time [us]	//10khz
-#define SAMPLE_INTERVAL   (45*TS)		// 45MHz APBx timer clocks
+#define TS_US			40			// Sample time [us]	//10khz
+#define SAMPLE_INTERVAL   (45*TS_US)		// 45MHz APBx timer clocks
 
 
 // ==============================================================

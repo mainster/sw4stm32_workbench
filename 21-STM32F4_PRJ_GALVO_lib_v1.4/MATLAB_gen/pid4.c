@@ -1,0 +1,218 @@
+/*
+ * File: pid4.c
+ *
+ * Code generated for Simulink model :pid4.
+ *
+ * Model version      : 1.62
+ * Simulink Coder version    : 8.5 (R2013b) 08-Aug-2013
+ * TLC version       : 8.5 (Aug  6 2013)
+ * C/C++ source code generated on  : Mon May 18 20:24:07 2015
+ *
+ * Target selection: stm32F4xx.tlc
+ * Embedded hardware selection: STMicroelectronics->STM32F4xx 32-bit Cortex-M4
+ * Code generation objectives:
+ *    1. Traceability
+ *    2. Debugging
+ * Validation result: Not run
+ *
+ *
+ *
+ * ******************************************************************************
+ * * attention
+ * *
+ * * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+ * * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+ * * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+ * * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+ * * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+ * * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+ * *
+ * ******************************************************************************
+ */
+
+#include "pid4.h"
+#include "pid4_private.h"
+//#include "main.h"
+//#include "adc_dac_dma.h"
+#include "dac_update.h"
+
+/* Block signals and states (auto storage) */
+DW_pid4 pid4_DW;
+
+/* External inputs (root inport signals with auto storage) */
+ExtU_pid4 pid4_U;
+
+/* External outputs (root outports fed by signals with auto storage) */
+ExtY_pid4 pid4_Y;
+
+/* Real-time model */
+RT_MODEL_pid4 pid4_M_;
+RT_MODEL_pid4 *const pid4_M = &pid4_M_;
+
+/* Model step function */
+void pid4_step(void)
+{
+    real_T u;
+    real_T u_0;
+    real_T u_1;
+
+    /* DataStoreWrite: '<Root>/D_gain_Write' incorporates:
+     *  Constant: '<Root>/cKd'
+     */
+    pid4_DW.D = 0.000738;
+
+    /* DataStoreWrite: '<Root>/I_gain_Write' incorporates:
+     *  Constant: '<Root>/cKi'
+     */
+    pid4_DW.I = 19047.616603;
+
+    /* DataStoreWrite: '<Root>/Kb_fact_Write' incorporates:
+     *  Constant: '<Root>/cKb'
+     */
+    pid4_DW.kb = 0.99;
+
+    /* DataStoreWrite: '<Root>/N_coeff_Write' incorporates:
+     *  Constant: '<Root>/cN'
+     */
+    pid4_DW.N = 90909.090909090912;
+
+    /* DataStoreWrite: '<Root>/P_gain_Write' incorporates:
+     *  Constant: '<Root>/cKp'
+     */
+    pid4_DW.P = 7.884467;
+
+    /* DataStoreRead: '<S14>/P_Gain' */
+    pid4_DW.P_Gain = pid4_DW.P;
+
+    /* DiscretePulseGenerator: '<S2>/pulseGen' */
+    pid4_DW.pulseGen = ((real_T)pid4_DW.clockTickCounter < 5000.0) &&
+        (pid4_DW.clockTickCounter >= 0) ? 0.5 : 0.0;
+    if ((real_T)pid4_DW.clockTickCounter >= 10000.0 - 1.0) {
+        pid4_DW.clockTickCounter = 0;
+    } else {
+        pid4_DW.clockTickCounter++;
+    }
+
+    /* End of DiscretePulseGenerator: '<S2>/pulseGen' */
+
+    /* Sum: '<S2>/sumW' incorporates:
+     *  Constant: '<S2>/pulseSymConst'
+     */
+    pid4_DW.sumW = pid4_DW.pulseGen - 0.25;
+
+    /* ManualSwitch: '<S2>/pulseGenSw' incorporates:
+     *  Constant: '<S2>/pulseGenOffConstt'
+     */
+    if (((uint8_T)0U) == 1) {
+        pid4_DW.pulseGenSw = pid4_DW.sumW;
+    } else {
+        pid4_DW.pulseGenSw = 0.0;
+    }
+
+    /* End of ManualSwitch: '<S2>/pulseGenSw' */
+
+    /* Sum: '<Root>/sume' incorporates:
+     *  Inport: '<Root>/r1'
+     *  Inport: '<Root>/ym'
+     */
+    pid4_DW.error = (pid4_DW.pulseGenSw + pid4_U.r1) - pid4_U.ym;
+
+    /* Product: '<S14>/Proportionals' */
+    pid4_DW.Proportionals = pid4_DW.P_Gain * pid4_DW.error;
+
+    /* DiscreteIntegrator: '<S5>/integrate' */
+    pid4_DW.integrate = pid4_DW._xintergrator;
+
+    /* DataStoreRead: '<S16>/I_gain' */
+    pid4_DW.I_gain = pid4_DW.N;
+
+    /* DataStoreRead: '<S12>/D_gain' */
+    pid4_DW.D_gain = pid4_DW.D;
+
+    /* Product: '<S12>/Derivative' */
+    pid4_DW.Derivative = pid4_DW.D_gain * pid4_DW.error;
+
+    /* DiscreteIntegrator: '<S5>/filter' */
+    pid4_DW.filter = pid4_DW._xfilter;
+
+    /* Sum: '<S5>/sumd' */
+    pid4_DW.sumd = pid4_DW.Derivative - pid4_DW.filter;
+
+    /* Product: '<S16>/Filtercoeff' */
+    pid4_DW.Filtercoeff = pid4_DW.I_gain * pid4_DW.sumd;
+
+    /* Sum: '<S5>/sump' */
+    pid4_DW.sump = (pid4_DW.Proportionals + pid4_DW.integrate) +
+        pid4_DW.Filtercoeff;
+
+    /* Saturate: '<S5>/satPid' */
+    u = pid4_DW.sump;
+    u_0 = (-1.2);
+    u_1 = 1.2;
+    if (u >= u_1) {
+        /* Outport: '<Root>/yc' */
+        pid4_Y.yc = u_1;
+    } else if (u <= u_0) {
+        /* Outport: '<Root>/yc' */
+        pid4_Y.yc = u_0;
+    } else {
+        /* Outport: '<Root>/yc' */
+        pid4_Y.yc = u;
+    }
+
+    /* End of Saturate: '<S5>/satPid' */
+
+    /* DataStoreRead: '<S13>/I_gain' */
+    pid4_DW.I_gain_a = pid4_DW.I;
+
+    /* Product: '<S13>/Integral' */
+    pid4_DW.Integral = pid4_DW.I_gain_a * pid4_DW.error;
+
+    /* DataStoreRead: '<S15>/I_gain' */
+    pid4_DW.I_gain_o = pid4_DW.kb;
+
+    /* Sum: '<S5>/sums' */
+    pid4_DW.sums = pid4_Y.yc - pid4_DW.sump;
+
+    /* Product: '<S15>/antiwindup' */
+    pid4_DW.antiwindup = pid4_DW.I_gain_o * pid4_DW.sums;
+
+    /* Sum: '<S5>/sumI' */
+    pid4_DW.sumI = pid4_DW.Integral - pid4_DW.antiwindup;
+
+    /* Update for DiscreteIntegrator: '<S5>/integrate' */
+    pid4_DW._xintergrator += 1.0E-5 * pid4_DW.sumI;
+
+    /* Update for DiscreteIntegrator: '<S5>/filter' */
+    pid4_DW._xfilter += 1.0E-5 * pid4_DW.Filtercoeff;
+    
+
+}
+
+/* Model initialize function */
+void pid4_initialize(void)
+{
+    /* Registration code */
+
+    /* initialize error status */
+    rtmSetErrorStatus(pid4_M, (NULL));
+
+    /* states (dwork) */
+    (void) memset((void *)&pid4_DW, 0,
+                  sizeof(DW_pid4));
+
+    /* external inputs */
+    (void) memset((void *)&pid4_U, 0,
+                  sizeof(ExtU_pid4));
+
+    /* external outputs */
+    pid4_Y.yc = 0.0;
+
+    /* Start for DiscretePulseGenerator: '<S2>/pulseGen' */
+    pid4_DW.clockTickCounter = 0;
+}
+
+/* File trailer for Real-Time Workshop generated code.
+ *
+ * [EOF] pid4.c
+ */
