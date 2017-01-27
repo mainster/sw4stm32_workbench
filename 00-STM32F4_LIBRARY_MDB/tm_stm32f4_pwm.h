@@ -53,7 +53,7 @@
  * Notes on table above
  * 	- Not all timers are available on all STM32F4xx devices
  * 	- All timers have 16bit prescaler
- * 	- TIM6 and TIM7 don’t have PWM feature, they are only basic timers
+ * 	- TIM6 and TIM7 don't have PWM feature, they are only basic timers
  * 	- TIM2 and TIM5 are 32bit timers
  * 	- TIM9 and TIM12 have two PWM channels
  * 	- TIM10, TIM11, TIM13 and TIM14 have only one PWM channel
