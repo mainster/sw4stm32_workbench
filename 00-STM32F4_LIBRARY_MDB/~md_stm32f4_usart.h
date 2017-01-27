@@ -96,7 +96,7 @@
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_usart.h"
-#include "defines.h"
+//#include "defines.h"
 
 #if defined (STM32F40_41xxx)
 #define TM_USE_USART1

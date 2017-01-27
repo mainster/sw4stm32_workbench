@@ -321,15 +321,17 @@ int main(void) {
 
 	/**< All used GPIOs should be initialized by this call */
 	MDB_GPIO_Init();
-	beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
+//	beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
 
 	/**< Initialize PID system, float32_t format */
 //	arm_pid_init_f32(&PIDX, 1);
 //	arm_pid_init_f32(&PIDY, 1);
 
+#ifndef NO_FPU
 	arm_pid_instance_f32 pidInst;
 
 	arm_pid_init_f32(&pidInst, 1);
+#endif
 
 	/**< Initialize discovery button and leds */
 	MD_DISCO_ButtonInit();
@@ -338,7 +340,7 @@ int main(void) {
 	MD_DISCO_LedInit();
 
 	/**< Initialize USART1-> TX: PA9, RX: PA10. */
-	TM_USART_Init(USART1, TM_USART_PinsPack_1, 115200);
+	TM_USART_Init(USART1, (TM_USART_PinsPack_t) 0, 115200);
 
 	/**< Initialize TIM3, 1kHz frequency */
 	TM_PWM_InitTimer(TIM3, &TIM_Data, 1000);
@@ -794,14 +796,18 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 		switch(cmd) {
 		case KP:	{
 			pid->Kp = valueDecoded;
+#ifndef NO_FPU
 			arm_pid_init_f32(&PIDY, 0);
+#endif
 			printf("Kp % f set!\n", valueDecoded);
 		}
 		break;
 
 		case KI:	{
 			pid->Ki = valueDecoded;
+#ifndef NO_FPU
 			arm_pid_init_f32(&PIDY, 0);
+#endif
 			printf("Ki % f set!\n", valueDecoded);
 			//                            printf("Ki %s given\n", &sval[0]);
 		}
@@ -809,7 +815,9 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 
 		case KD:	{
 			pid->Kd = valueDecoded;
+#ifndef NO_FPU
 			arm_pid_init_f32(&PIDY, 0);
+#endif
 			printf("Kd % f set!\n", valueDecoded);
 			//                         printf("Kd %s given\n", &sval);
 		}
