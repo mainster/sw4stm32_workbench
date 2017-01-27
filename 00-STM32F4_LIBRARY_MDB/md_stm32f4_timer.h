@@ -1,4 +1,4 @@
-#ifndef __MD_TIMER_H_
+﻿#ifndef __MD_TIMER_H_
 #define __MD_TIMER_H_
 /**
  * Library dependencies

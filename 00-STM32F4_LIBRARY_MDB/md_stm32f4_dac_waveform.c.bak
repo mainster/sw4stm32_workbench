@@ -1,4 +1,4 @@
-﻿#include "md_stm32f4_dac_waveform.h"
+#include "md_stm32f4_dac_waveform.h"
 
 /**
  * @brief      DAC Channel SineWave Configuration

@@ -1,4 +1,4 @@
-﻿#include "md_stm32f4_usart.h"
+#include "md_stm32f4_usart.h"
 
 int8_t TM_USART_Buffer[8][TM_USART_BUFFER_SIZE];
 uint16_t tm_usart_buf_in[8] = {0, 0, 0, 0, 0, 0, 0, 0};

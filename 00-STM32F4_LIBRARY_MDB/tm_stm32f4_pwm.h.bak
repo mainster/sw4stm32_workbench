@@ -1,4 +1,4 @@
-﻿/**
+/**
  *	PWM library for STM32F4xx devices, supporting all possible timers with PWM feature
  *
  *	@author 	Tilen Majerle
