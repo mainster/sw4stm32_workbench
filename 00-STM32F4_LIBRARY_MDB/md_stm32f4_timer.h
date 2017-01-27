@@ -1,5 +1,5 @@
-#ifndef __DB_TIMER_H_ 
-#define __DB_TIMER_H_ 
+#ifndef __MD_TIMER_H_
+#define __MD_TIMER_H_
 /**
  * Library dependencies
 
@@ -8,8 +8,6 @@
  * Includes
  */
 #include "stm32f4xx.h"
-
-#include "../03-STM32F4xx_PID_galvo_2105_0706_ARMPLUG/inc/defines.h"
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 //#include "stm32f4xx_adc.h"
@@ -40,6 +38,7 @@ void timer3_interrupt_cmd(FunctionalState NewState);
 int TM_Timer2_Init_adc_sample_trigger(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 int TM_Timer2_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 int TM_Timer3_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
+int TM_Timer4_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 int TM_Timer6_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 
 

@@ -35,12 +35,17 @@
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1095875095" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F429ZITx"/>
+									<listOptionValue builtIn="false" value="__FPU_PRESENT"/>
+									<listOptionValue builtIn="false" value="ARM_MATH_CM4"/>
 									<listOptionValue builtIn="false" value="STM32F429I_DISC1"/>
 									<listOptionValue builtIn="false" value="STM32F4"/>
 									<listOptionValue builtIn="false" value="STM32"/>
 									<listOptionValue builtIn="false" value="DEBUG"/>
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 									<listOptionValue builtIn="false" value="STM32F429_439xx"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.405069676" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false" valueType="undefDefinedSymbols">
+									<listOptionValue builtIn="false" value="KEIL_IDE"/>
 								</option>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.240025978" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.666066082" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>
@@ -71,10 +76,12 @@
 					</folderInfo>
 					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.1570457157" name="FFFFmdb_stm32f4_dac_signalc" rcbsApplicability="disable" resourcePath="src/00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc" toolsToInvoke=""/>
 					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.36633350" name="FFFFmdb_stm32f4_dac_signalh" rcbsApplicability="disable" resourcePath="src/00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh" toolsToInvoke=""/>
+					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.1479967482" name="tm_stm32f4_usart_dma.h" rcbsApplicability="disable" resourcePath="inc/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h" toolsToInvoke=""/>
+					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.381276570" name="md_stm32f4_usart.h" rcbsApplicability="disable" resourcePath="inc/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.h" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
-						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
-						<entry excluding="main2.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.h|00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
+						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart_dma.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.c|main2.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
 				</configuration>
@@ -147,10 +154,11 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.release.1457889569.133557130" name="tm_stm32f4_usart_dma.h" rcbsApplicability="disable" resourcePath="inc/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
-						<entry excluding="main2.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
+						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart_dma.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.c|main2.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
 				</configuration>

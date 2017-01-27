@@ -1,5 +1,5 @@
-#ifndef __DB_TIMER_H_ 
-#define __DB_TIMER_H_ 
+#ifndef __TM_TIMER_H_ 
+#define __TM_TIMER_H_ 
 /**
  * Library dependencies
 
@@ -8,10 +8,10 @@
  * Includes
  */
 #include "stm32f4xx.h"
-
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 //#include "stm32f4xx_adc.h"
+#include "defines.h"
 
 /**
  * This values can be overwriten in defines.h file
@@ -38,9 +38,13 @@ void timer2_interrupt_cmd(FunctionalState NewState);
 void timer3_interrupt_cmd(FunctionalState NewState);					 
 int TM_Timer2_Init_adc_sample_trigger(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 int TM_Timer2_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
+int TM_Timer2_config_CC(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 int TM_Timer3_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
-int TM_Timer6_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
+int TM_Timer4_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
+int TM_Timer6_Config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
+int TM_Timer2_Init(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 
-
+/* Heartbeat */
+//int TM_Timer5_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) ;
 
 #endif

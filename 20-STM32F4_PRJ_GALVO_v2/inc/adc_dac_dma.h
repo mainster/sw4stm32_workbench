@@ -20,7 +20,7 @@
 #include "stm32f4xx_dac.h"
 #include "defines.h"
 
-#include "tm_stm32f4_dac.h"
+#include "md_stm32f4_dac.h"
 
 // ==============================================================
 //                          20-05-2015
@@ -122,7 +122,7 @@ void RCC_Configuration(void);
 void ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff);
 void ADC_ContScanMode_w_DMA (__IO int16_t *MultiConvBuff);
 void ADC_ContScanMode_w_DMA_timeTrigd (__IO int16_t *MultiConvBuff, uint8_t memSize);
-void DAC_SetSignedValue(TM_DAC_Channel_t DACx, int16_t val);
+void DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val);
 
 /* extern defined function pointer */
 extern  DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);

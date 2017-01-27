@@ -1,6 +1,4 @@
-#include "mdb_stm32f4_timer.h"
-//#include "misc.h"
-//#include ""
+#include "md_stm32f4_timer.h"
 
 
 void timer2_interrupt_cmd(FunctionalState NewState);					 
@@ -119,6 +117,35 @@ TIM_TimeBaseInitTypeDef timer_conf;
 // Enable the corresponding interrupt using the function TIM_ITConfig(TIMx, TIM_IT_Update) 
 	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);	
 	
+	timer3_interrupt_cmd(ENABLE);
+	return 0;
+}
+
+
+int TM_Timer4_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) {
+TIM_TimeBaseInitTypeDef timer_conf;
+
+// Enable TIM clock using RCC_APBxPeriphClockCmd(RCC_APBxPeriph_TIMx, ENABLE)
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, TimerRun);
+
+
+// Fill the TIM_TimeBaseInitStruct with the desired parameters.
+	timer_conf.TIM_Prescaler = 1;
+	timer_conf.TIM_CounterMode = TIM_CounterMode_Up;
+	timer_conf.TIM_Period = peri;
+	timer_conf.TIM_ClockDivision = TIM_CKD_DIV1;
+	timer_conf.TIM_RepetitionCounter = 0x00;
+
+// Call TIM_TimeBaseInit(TIMx, &TIM_TimeBaseInitStruct) to configure the Time Base unit
+// with the corresponding configuration
+	TIM_TimeBaseInit(TIM3, &timer_conf);
+
+	// Call the TIM_Cmd(ENABLE) function to enable the TIM counter.
+	TIM_Cmd(TIM3, ENABLE);
+
+// Enable the corresponding interrupt using the function TIM_ITConfig(TIMx, TIM_IT_Update)
+	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
+
 	timer3_interrupt_cmd(ENABLE);
 	return 0;
 }

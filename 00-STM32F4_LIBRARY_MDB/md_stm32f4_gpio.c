@@ -1,5 +1,5 @@
-
 #include "md_stm32f4_gpio.h"
+#include "stm32f4xx.h"
 
 /* Private function */
 static uint16_t GPIO_UsedPins[11] = {0,0,0,0,0,0,0,0,0,0,0};

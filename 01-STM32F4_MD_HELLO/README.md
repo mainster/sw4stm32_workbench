@@ -8,3 +8,5 @@
 - [X] As sources in the application project
 - [ ] As static external libraries
 
+# Symbolic link #
+The symbolic link inside the template folder (00-STM32F4_LIBRARY_MDB -> ../00-STM32F4_LIBRARY_MDB) is needed for compatibility with sublime-text and it's Open-Include plug-in 

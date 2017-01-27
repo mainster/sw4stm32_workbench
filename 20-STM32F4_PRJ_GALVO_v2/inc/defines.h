@@ -13,6 +13,23 @@
 #ifndef DEFINES_H_
 #define DEFINES_H_
 
+
+/* =======================================================
+ * ===== Find base addresses of peripheral registers =====
+ * =======================================================
+ *
+ * stm32f4xx.h (1439):  #define PERIPH_BASE           ((uint32_t)0x40000000)
+ *             (1463):  #define APB1PERIPH_BASE       PERIPH_BASE
+ *             (1495):  #define DAC_BASE             (APB1PERIPH_BASE + 0x7400)
+ *
+ *          ==> Register address = 0x40007400 + Register_offset
+ *
+#define DAC_DHR12R1_ADDRESS    0x40007408
+#define DAC_DHR12R2_ADDRESS    0x40007414
+#define DAC_DHR8R1_ADDRESS     0x40007410
+ */
+
+
 // Address defines for adc_buffer
 //#define ADC1_CH0	0
 //#define ADC1_EXT_W	1
@@ -26,6 +43,9 @@
 //#define ADC_Y_CHAN 		ADC_Channel_0
 //#define ADC_U_CHANNEL 		ADC_Channel_6
 //#define ADC_BACK_CHANNEL 	ADC_Channel_3
+
+
+#undef KEIL_IDE
 
 // ==============================================================
 //		                GPIO things

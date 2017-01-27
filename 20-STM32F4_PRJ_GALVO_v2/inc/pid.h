@@ -1,21 +1,38 @@
-/*This file has been prepared for Doxygen automatic documentation generation.*/
-/*! \file *********************************************************************
+/**
+ * @file        pid.h
  *
- * \brief Header file for pid.c.
+ * @date        16 Feb 2016
+ * @author      Manuel Del Basso (mainster)
+ * @email       manuel.delbasso@gmail.com
  *
- * - File:               pid.h
- * - Compiler:           IAR EWAAVR 4.11A
- * - Supported devices:  All AVR devices can be used.
- * - AppNote:            AVR221 - Discrete PID controller
+ * @ide         System Workbench ac6 (eclipse stm32)
+ * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  *
- * \author               Atmel Corporation: http://www.atmel.com \n
- *                       Support email: avr@atmel.com
+ * @brief       PID algorithms
  *
- * $Name$
- * $Revision: 456 $
- * $RCSfile$
- * $Date: 2006-02-16 12:46:13 +0100 (to, 16 feb 2006) $
- *****************************************************************************/
+ * @verbatim
+
+	------------------------------------------------------------------------
+
+	Copyright (C) 2016	Manuel Del Basso
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	------------------------------------------------------------------------
+
+ * @endverbatim
+ *
+ */
 
 #ifndef __PID_H
 #define __PID_H

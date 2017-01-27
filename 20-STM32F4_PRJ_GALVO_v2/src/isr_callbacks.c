@@ -1,21 +1,44 @@
 /**
- *	Keil project for XY-GalvoScanner
+ * @file        isr_callbacks.c
+ *
+ * @date        26 Jan 2017
+ * @author      Manuel Del Basso (mainster)
+ * @email       manuel.delbasso@gmail.com
+ *
+ * @ide         System Workbench ac6 (eclipse stm32)
+ * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ *
+ * @brief       Implementation of callback handlers
+ *
+ * @verbatim
 
- *  29-04-2015
+	------------------------------------------------------------------------
+
+	Copyright (C) 2016	Manuel Del Basso
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	------------------------------------------------------------------------
+
+ * @endverbatim
  *
- *
- *	@author		Manuel Del Basso
- *	@email		Manuel.DelBasso@googlemail.com  
- *	@ide		Keil uVision 5
- *	@packs		STM32F4xx Keil packs version 2.2.0 or greater required
- *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  */
 #include "stdint.h"
 #include "arm_math.h"
 #include "main.h"
 #include "pid.h"
 #include "signalGen.h"
-#include "tm_stm32f4_disco.h"
+#include "md_stm32f4_disco.h"
 #include "actuators.h"
 #include "isr_callbacks.h"
 
@@ -44,7 +67,7 @@ void DMA2_Stream0_IRQHandler(void) {
     DBG_ADC_TIMING(0);
 
    if (!ticks--) {
-      TM_DISCO_LedOff(LED_GREEN);
+      MD_DISCO_LedOff(LED_GREEN);
    }
 
   /* Test on DMA Stream Half Transfer interrupt */
@@ -55,7 +78,7 @@ void DMA2_Stream0_IRQHandler(void) {
     DMA_ClearITPendingBit(DMA2_Stream0, DMA_IT_HTIF0);
   
     /* Turn LED3 off: Half Transfer */
-    TM_DISCO_LedOff(LED_RED);
+    MD_DISCO_LedOff(LED_RED);
   
     /** 
      * Add code here to process the first half of ADC group scan-buffer 
@@ -74,7 +97,7 @@ void DMA2_Stream0_IRQHandler(void) {
     DMA_ClearITPendingBit(DMA2_Stream0, DMA_IT_TCIF0);
   
     /* Turn LED3 on: End of Transfer */
-    TM_DISCO_LedOn(LED_RED);
+    MD_DISCO_LedOn(LED_RED);
 
     /** 
      * Process Y-channel position signal here. 
@@ -148,8 +171,8 @@ void DMA2_Stream0_IRQHandler(void) {
         if (  (g.setpointSrc != INTERNAL_SETPOINT) && (g.setpointSrc != ANALOG_SETPOINT)  && \
               (g.setpointSrc != REMOTE_OPENLOOP)   && (g.setpointSrc == REMOTE_OPENLOOP) ) {
              /* Error state, halt */
-             TM_DISCO_LedOn(LED_GREEN);
-             TM_DISCO_LedOn(LED_RED);
+             MD_DISCO_LedOn(LED_GREEN);
+             MD_DISCO_LedOn(LED_RED);
         }
         
         /**< Calculate PID here */
@@ -163,13 +186,13 @@ void DMA2_Stream0_IRQHandler(void) {
 
     /* Set LEDs according to which angular position is greater */
 //    if ( POS_Y_FLOAT > SETPOINT_Y_FLOAT) {
-//        TM_DISCO_LedOn(LED_GREEN);
-//        TM_DISCO_LedOff(LED_RED);
+//        MD_DISCO_LedOn(LED_GREEN);
+//        MD_DISCO_LedOff(LED_RED);
 //    } else if ( POS_Y_FLOAT <  SETPOINT_Y_FLOAT) {
-//        TM_DISCO_LedOn(LED_RED);
-//        TM_DISCO_LedOff(LED_GREEN);
+//        MD_DISCO_LedOn(LED_RED);
+//        MD_DISCO_LedOff(LED_GREEN);
 //    } else {
-//        TM_DISCO_LedOff(LED_ALL);
+//        MD_DISCO_LedOff(LED_ALL);
 //    }
    
 }
@@ -185,7 +208,7 @@ void ADC_IRQHandler(void) {
         /* End of conversion interrupt occured */
 
 //        /* Error state */
-//        TM_DISCO_LedOn(LED_ALL);
+//        MD_DISCO_LedOn(LED_ALL);
 //        uint16_t W_now = ADC_MultiConvBuff[1];   // setpoint (Isens_y)
         while (1);;
 //        return;
@@ -311,7 +334,7 @@ void TIM2_IRQHandler(void) {
         return;
 	}
     /* Error state */
-//    TM_DISCO_LedOn(LED_ALL);
+//    MD_DISCO_LedOn(LED_ALL);
     while (1);;
 }
 

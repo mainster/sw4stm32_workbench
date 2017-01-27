@@ -677,7 +677,7 @@ void ADC_ContScanMode_w_DMA (__IO int16_t *MultiConvBuff) {
   *                 (-0x800 ... 0x7ff)  Data to be loaded.
   * @retval None
   */
-void DAC_SetSignedValue(TM_DAC_Channel_t DACx, int16_t val) {
+void DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val) {
     const short OFFS = 2047;
     
 	if(val > 2047)
@@ -685,7 +685,7 @@ void DAC_SetSignedValue(TM_DAC_Channel_t DACx, int16_t val) {
 	if(val < -2047)
         val = -2047;
            
-	if (DACx == TM_DAC1) {
+	if (DACx == MD_DAC1) {
 		DAC_SetChannel1Data(DAC_Align_12b_R, val + OFFS);
 	} else {
 		DAC_SetChannel2Data(DAC_Align_12b_R, val + OFFS);

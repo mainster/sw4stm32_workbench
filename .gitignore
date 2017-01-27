@@ -14,4 +14,5 @@ stm32fxxx_hal_libraries_mj/
 trash/*
 # Tests for builds with sublime
 01-STM32F4_MD_HELLO_MKFILE/
+99-*
 README.html
