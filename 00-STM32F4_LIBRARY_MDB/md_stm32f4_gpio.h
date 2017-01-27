@@ -34,7 +34,7 @@
  *
  */
 #ifndef MD_GPIO_H
-#define MD_GPIO_H 150
+#define MD_GPIO_H
 
 /**
  * @addtogroup MD_STM32F4xx_Libraries

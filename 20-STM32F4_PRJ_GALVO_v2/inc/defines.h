@@ -44,7 +44,6 @@
 //#define ADC_U_CHANNEL 		ADC_Channel_6
 //#define ADC_BACK_CHANNEL 	ADC_Channel_3
 
-
 #undef KEIL_IDE
 
 // ==============================================================

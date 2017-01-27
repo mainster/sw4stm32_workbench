@@ -47,14 +47,21 @@ void update_pid_data(	float Kp, float Ki, float Kd,
 void pid_Init_Tp(void) {
     volatile int tt;
     tt = 100;
-    printf("pid_Init_Tp called\n");
+    printf("pid_Init_Tp called: %i\n", tt);
 }
 void pid_Init_Tp_arg(int arg) {
     volatile int tt;
     tt = 100-arg;
-    printf("pid_Init_Tp_arg called\narg1: %i", arg);
+    printf("pid_Init_Tp_arg called\narg1: %i  tt: %i", arg, tt);
 }
-#pragma O0
+
+#if  defined (KEIL_IDE)
+	#pragma O0
+#elif  defined (__GNUC__)
+	#pragma GCC push_options
+	#pragma GCC optimize ("O0")
+#endif
+
 void pid_Init(	float Kp, float Ki, float Kd, 
 								uint16_t setTf, uint16_t setTs, 
 								struct PID_DATA *pid, PID_struct_type type ) {
@@ -91,8 +98,11 @@ void pid_Init(	float Kp, float Ki, float Kd,
     pid->W_rem = 0;
 
 }
-#pragma O2
-
+#if  defined (KEIL_IDE)
+	#pragma O2
+#elif  defined (__GNUC__)
+	#pragma GCC pop_options
+#endif
 
 /*! \brief Initialisation of fPID controller parameters.
  *
@@ -199,7 +209,8 @@ void calc_coeff (	struct PID_DATA *pid,
 	float Kp = pid->Kp;
 	float Ki = pid->Ki;
 	float Kd = pid->Kd;
-	float Tf = (float)pid->Tf / 1000000;						// Filter timeconstant [s] NOT [us]
+	/* FIXME */
+	float Tf __attribute__ ((unused)) = (float)pid->Tf / 1000000;						// Filter timeconstant [s] NOT [us]
 	float Ts = (float)pid->Ts / 1000000;						// Sampletime [s] NOT [us]
 	
 	switch (integration_method) {
@@ -235,7 +246,14 @@ void calc_coeff (	struct PID_DATA *pid,
  *
  															  4096							  4096																											*/
 //static int pid_Controller(int16_t setPoint, int16_t processValue, struct PID_DATA *pid) {
-#pragma O0
+
+#if  defined (KEIL_IDE)
+	#pragma O0
+#elif  defined (__GNUC__)
+	#pragma GCC push_options
+	#pragma GCC optimize ("O0")
+#endif
+
 int pid_Controller(int16_t setPoint, int16_t processValue, struct PID_DATA *pid) {
 
 #ifdef LARGE_PID
@@ -399,7 +417,12 @@ int pid_Controller(int16_t setPoint, int16_t processValue, struct PID_DATA *pid)
     return toPlant;
 #endif 
 }
-#pragma O2
+
+#if  defined (KEIL_IDE)
+	#pragma O2
+#elif  defined (__GNUC__)
+	#pragma GCC pop_options
+#endif
 
 /*! \brief Resets the integrator.
  *

@@ -42,9 +42,9 @@
 #include "md_stm32f4_dac.h"
 #include "md_stm32f4_dac_waveform.h"
 #include "mdb_gpio.h"
-#include "tm_stm32f4_delay.h"
-#include "tm_stm32f4_pwm.h"
-#include "tm_stm32f4_usart.h"
+//#include "tm_stm32f4_delay.h"
+//#include "tm_stm32f4_pwm.h"
+//#include "tm_stm32f4_usart.h"
 
 //#include "md_stm32f4_ds18b20.h"
 //#include "md_stm32f4_ili9341.h"
@@ -63,24 +63,24 @@ uint32_t ticks =0;
 // ==============================================================
 //   This is needed in order to provide printf functionality
 // ==============================================================
-        #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 
-        struct __FILE { int handle; /* Add whatever you need here */ };
-        FILE __stdout;
-            
-        PUTCHAR_PROTOTYPE
-        {
-            /* Place your implementation of fputc here */
-            /* e.g. write a character to the USART */
-            USART_SendData(USART1, (uint8_t) ch);
+struct __FILE { int handle; /* Add whatever you need here */ };
+FILE __stdout;
 
-            /* Loop until the end of transmission */
-            while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET)
-            {}
+PUTCHAR_PROTOTYPE
+{
+	/* Place your implementation of fputc here */
+	/* e.g. write a character to the USART */
+	USART_SendData(USART1, (uint8_t) ch);
 
-            return ch;
-        }
-	
+	/* Loop until the end of transmission */
+	while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET)
+	{}
+
+	return ch;
+}
+
 // ==============================================================
 //                         Prototypes 
 // ==============================================================
@@ -130,16 +130,16 @@ struct PID_DATA     pidDataY;
 volatile float UNIT_MIKRO = 1/1000000;
 volatile int16_t pidOut = 0;
 
-  
+
 /**< Define indices for ADC_MultiConvBuff[ ] acording to setpoint (INDEX_W) ans
  * process output (INDEX_P). */
 #ifndef INDEX_Py
-    #define INDEX_Px     0
-    #define INDEX_Py     1
-  #if (ADC_N_REGULAR_CHANNELS > 2)
-    #define INDEX_Ix     2
-    #define INDEX_W      3
-  #endif
+#define INDEX_Px     0
+#define INDEX_Py     1
+#if (ADC_N_REGULAR_CHANNELS > 2)
+#define INDEX_Ix     2
+#define INDEX_W      3
+#endif
 #endif
 
 
@@ -150,9 +150,9 @@ volatile int16_t pidOut = 0;
 
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
-    //float temps[EXPECTING_SENSORS];
-    
-    
+//float temps[EXPECTING_SENSORS];
+
+
 float setpoint_tgl = (1.25-0.4);
 
 
@@ -177,7 +177,7 @@ int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 // ==============================================================
 //                      beam interrupter
 // ==============================================================
- 
+
 // ==============================================================
 //                ass - auto shutdown system
 // ==============================================================
@@ -194,13 +194,13 @@ int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 // ==============================================================
 //      This indices HAVE TO STAY IN SYNC WITH Qt GUI SOURCES 
 // ==============================================================
-    volatile int NC = 3;		// index 0...2  (short command)
-    volatile int FS = 2;		// index 3...4	(fieldsep)
-    volatile int NV = 10;	    // index 5...14 (value)
+volatile int NC = 3;		// index 0...2  (short command)
+volatile int FS = 2;		// index 3...4	(fieldsep)
+volatile int NV = 10;	    // index 5...14 (value)
 // ==============================================================
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // ==============================================================
-    
+
 //#define 
 //	 GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_SET)
 //	 GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_RESET))
@@ -211,7 +211,7 @@ int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 /* Define static usart strings used as GUI error / status messages  
  */
 #define  MSG_GUI_UART1_RECV_BUFF_FULL   "@GUI:usart1RecvBuffFull\n"  ///< Inform Gui about a full usart1 buffer
- 
+
 
 // ==============================================================
 // ==============================================================
@@ -224,8 +224,8 @@ volatile int16_t P_now, W_now;
 
 volatile float  KP_INIT  =	1;
 volatile float  KI_INIT, \
-                KD_INIT, \
-                TF_INIT = 0;
+KD_INIT, \
+TF_INIT = 0;
 
 float pidErrBuff[2];        /* PID error buffer*/
 float toPlantBuff[2];        /* PID output buffer*/
@@ -244,7 +244,7 @@ __IO float ADC_fBuff[5];
 /* ---------- */
 /* Used Timer */
 /* ---------- */
-// (4)  MD_Timer4_config(ENABLE, ENABLE, 450 / g.freq);         waveformGeneration
+// (4)  TM_Timer4_config(ENABLE, ENABLE, 450 / g.freq);         waveformGeneration
 // (3)  TM_PWM_InitTimer(TIM3, &TIM_Data, 1000);
 // (2)  MD_Timer2_config(DISABLE, ENABLE, SAMPLE_INTERVAL);     Base sample rate
 
@@ -296,223 +296,231 @@ double lastVal=0;
 /**< Check Architecture */
 #define __TARGET_ARCH_ARM		0
 
+
+typedef enum {
+	TM2_USART_PinsPack_1,     /*!< Select PinsPack1 from Pinout table for specific USART */
+	TM2_USART_PinsPack_2,     /*!< Select PinsPack2 from Pinout table for specific USART */
+	TM2_USART_PinsPack_3,     /*!< Select PinsPack3 from Pinout table for specific USART */
+	TM2_USART_PinsPack_Custom /*!< Select custom pins for specific USART, callback will be called, look @ref TM_USART_InitCustomPinsCallback */
+} TM2_USART_PinsPack_t;
+
+
 int main(void) {
 
-	items_list[0].name = "dummy";
-	itemsm_list[0].name = "dummy";
-	itemsw_list[0].name = "dummy";
+	/**< Define private main variables */
+	TM_PWM_TIM_t TIM_Data;    ///< Timer data for PWM
+	//    volatile uint8_t c = 0;
+	//    volatile uint16_t rxval = 0;
+	//    volatile uint16_t test = 0;
 
-   /**< Define private main variables */
-    TM_PWM_TIM_t TIM_Data;    ///< Timer data for PWM 
-//    volatile uint8_t c = 0;
-//    volatile uint16_t rxval = 0;
-//    volatile uint16_t test = 0;
+	/**< Initialize System */
+	SystemInit();
 
-    /**< Initialize System */
-    SystemInit();       
-    
-    /**< Enable some AHB clock sources */
-    RCC_Configuration();
-    
-    /**< All used GPIOs should be initialized by this call */
-    MDB_GPIO_Init();    
- 
-    /**< Initialize PID system, float32_t format */
-    arm_pid_init_f32(&PIDX, 1);
-    arm_pid_init_f32(&PIDY, 1);
+	/**< Enable some AHB clock sources */
+	RCC_Configuration();
+
+	/**< All used GPIOs should be initialized by this call */
+	MDB_GPIO_Init();
+	beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
+
+	/**< Initialize PID system, float32_t format */
+//	arm_pid_init_f32(&PIDX, 1);
+//	arm_pid_init_f32(&PIDY, 1);
+
+	arm_pid_instance_f32 pidInst;
+
+	arm_pid_init_f32(&pidInst, 1);
+
+	/**< Initialize discovery button and leds */
+	MD_DISCO_ButtonInit();
+
+	/**< Initialize Leds */
+	MD_DISCO_LedInit();
+
+	/**< Initialize USART1-> TX: PA9, RX: PA10. */
+	TM_USART_Init(USART1, TM_USART_PinsPack_1, 115200);
+
+	/**< Initialize TIM3, 1kHz frequency */
+	TM_PWM_InitTimer(TIM3, &TIM_Data, 1000);
+
+	/**< Initialize TIM2, Channel 1, PinsPack 2 = PA5 */
+	TM_PWM_InitChannel(TIM3, TM_PWM_Channel_3, TM_PWM_PinsPack_2);  // ???? PB0
+
+	/* Set default duty cycle */
+	TM_PWM_SetChannelPercent(TIM3, &TIM_Data, TM_PWM_Channel_3, duty);
+
+	/**< Initialize Delay library. */
+	TM_DELAY_Init();
+
+	/**< Initialize TIM5, heart beat timer */
+	//MD_Timer5_config(ENABLE, ENABLE, 48000);        // 48MHz*1ms
+
+	/**< Initialize DAC outputs DAC1-> PA4  DAC2-> PA5 */
+	MD_DAC_Init(MD_DAC1);
+	MD_DAC_Init(MD_DAC2);
+
+	/**< Configure function address for initial target function  */
+	DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned;
+	printf("connect Write pointer to DAC output register\n");
 
 
- 
-    /**< Initialize discovery button and leds */
-    MD_DISCO_ButtonInit();
+	/* Configure the nested Vector interrupt controller */
+	NVIC_Configuration();
 
-    /**< Initialize Leds */
-    MD_DISCO_LedInit();
+	/**< Initialize TIM2 as part of sampling hw, also enable DMA trigger source */
+	TIM2_DMA_triggerConfiguration(DISABLE, ENABLE, SAMPLE_INTERVAL);
 
-    /**< Initialize USART1-> TX: PA9, RX: PA10. */
-    TM_USART_Init(USART1, TM_USART_PinsPack_1, 115200);			
+	/**< Configure DMA controller for ADC2memory */
+	DMA_Configuration(ADC_MultiConvBuff, ADC_N_REGULAR_CHANNELS);
 
-    /**< Initialize TIM3, 1kHz frequency */
-    TM_PWM_InitTimer(TIM3, &TIM_Data, 1000);
+	/**< Configure ADC channels for regular scan, DMA channel ... */
+	ADC_Configuration();
 
-    /**< Initialize TIM2, Channel 1, PinsPack 2 = PA5 */
-    TM_PWM_InitChannel(TIM3, TM_PWM_Channel_3, TM_PWM_PinsPack_2);  // ???? PB0
+	/**< Set initial values on global structs */
+	init_globalStructs();
 
-    /* Set default duty cycle */
-    TM_PWM_SetChannelPercent(TIM3, &TIM_Data, TM_PWM_Channel_3, duty);
-    
-    /**< Initialize Delay library. */
-    MD_DELAY_Init();    
+	/**< Configure analog watch dog for selected X/Y ADC channels (security feature) */
+	AnalogWatchdog_Configuration();
 
-   /**< Initialize TIM5, heart beat timer */
-    //MD_Timer5_config(ENABLE, ENABLE, 48000);        // 48MHz*1ms
-       
-   /**< Initialize DAC outputs DAC1-> PA4  DAC2-> PA5 */
-    MD_DAC_Init(MD_DAC1);       
-    MD_DAC_Init(MD_DAC2);       
+	/**< Set threshold for analog watch dog */
+	ADC_AnalogWatchdogThresholdsConfig(ADC1,
+			decode_toUint(ass.upperVal + AREF_BY2),
+			decode_toUint(ass.lowerVal + AREF_BY2));
 
-    /**< Configure function address for initial target function  */
-    DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned;    
-    printf("connect Write pointer to DAC output register\n");
-   
+	/**< Transmit boot up message to UART1 */
+	char *tok;
+	char *delimit = "\\";
+	tok = strtok(__FILE__, delimit);
+	tok = strtok (NULL, delimit);
 
-    /* Configure the nested Vector interrupt controller */
-    NVIC_Configuration();
+	printf("\n\n--- %s ---\n", tok);
+	printf("--- Compiled: %s  %s ---\n\n", __DATE__, __TIME__);
+	printf("__TARGET_ARCH_ARM: %s\n", TARGET_ARCH_ARM[__TARGET_ARCH_ARM]);
+	printf("__BASE_FILE__: %s\n", __FILE__);
 
-    /**< Initialize TIM2 as part of sampling hw, also enable DMA trigger source */
-    TIM2_DMA_triggerConfiguration(DISABLE, ENABLE, SAMPLE_INTERVAL);
-    
-    /**< Configure DMA controller for ADC2memory */
-    DMA_Configuration(ADC_MultiConvBuff, ADC_N_REGULAR_CHANNELS);
-
-    /**< Configure ADC channels for regular scan, DMA channel ... */
-    ADC_Configuration();
-    
-    /**< Set initial values on global structs */ 
-    init_globalStructs();
-
-    /**< Configure analog watch dog for selected X/Y ADC channels (security feature) */
-    AnalogWatchdog_Configuration();
-
-   /**< Set threshold for analog watch dog */
-    ADC_AnalogWatchdogThresholdsConfig(ADC1,    
-                                decode_toUint(ass.upperVal + AREF_BY2), 
-                                decode_toUint(ass.lowerVal + AREF_BY2));
-
-   /**< Transmit boot up message to UART1 */
-    char *tok;
-    char *delimit = "\\";
-    tok = strtok(__FILE__, delimit);
-    tok = strtok (NULL, delimit);
-
-    printf("\n\n--- %s ---\n", tok);
-    printf("--- Compiled: %s  %s ---\n\n", __DATE__, __TIME__);
-    printf("__TARGET_ARCH_ARM: %s\n", TARGET_ARCH_ARM[__TARGET_ARCH_ARM]);
-    printf("__BASE_FILE__: %s\n", __FILE__);
-
-    printf("items_list[%d].name: %s\t .id: %d", 0, items_list[0].name, items_list[0].id);
-/* ================================================================================        
- * ===============     ENABLE_ON_POWER-ON-SEQUENCE     ============================       
- * ================================================================================ */       
+	printf("items_list[%d].name: %s\t .id: %d", 0, items_list[0].name, items_list[0].id);
+	/* ================================================================================
+	 * ===============     ENABLE_ON_POWER-ON-SEQUENCE     ============================
+	 * ================================================================================ */
 
 	TIM_Cmd(TIM3, ENABLE);           ///< Enable PWM timer 3
-    TIM_Cmd(TIM2, ENABLE);          ///< Enable sampling timer 2
-    ADC_DMACmd(ADC1, ENABLE);       ///< Enable DMA functionality
-    ADC_Cmd(ADC1, ENABLE);          ///< Enable on-board hardware ADC 1
-    ADC_SoftwareStartConv(ADC1);    ///< Trigger the regular group scan 
-   
-   
-   
-   g.waveForm = CMD_TESTVECT;
-   
-   
-   
-    /**< Main loop */
+	TIM_Cmd(TIM2, ENABLE);          ///< Enable sampling timer 2
+	ADC_DMACmd(ADC1, ENABLE);       ///< Enable DMA functionality
+	ADC_Cmd(ADC1, ENABLE);          ///< Enable on-board hardware ADC 1
+	ADC_SoftwareStartConv(ADC1);    ///< Trigger the regular group scan
+
+
+
+	g.waveForm = CMD_TESTVECT;
+
+
+
+	/**< Main loop */
 
 	while (1) {
-    
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */    
-/*                      fast Console                               */
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */ 
-        while (! MD_DISCO_ButtonOnPressed()) {
-            //Console(&pidDataY, &fpidData, _INT_);    
-            fastConsoleCase(&PIDY);     
-            
-            for (uint8_t k=0; k < 20; k++) {
-//                if (TM_USART_BufferFull(USART1)) {
-//                    printf( MSG_GUI_UART1_RECV_BUFF_FULL );
-//                    fastConsoleCase(&PIDY);
-//                    TM_USART_ClearBuffer(USART1);
-//                };
-                Delayms((uint32_t)g.refresh/20);
-            }
-//            if ((ass.state == ASS_CHARGING_INTEGRATOR) && (! ass.tripped)) {
-            if (ass.integrator != lastVal) {
-                printf("%.8f\n", ass.integrator);
-            }
-            if ((ass.tripped) && (! ass.ack)) {
-                printf("Tripped!");
-                ass.ack = 1;
-                lastVal = ass.integrator;
-                MD_Timer4_config(ENABLE, ENABLE, 45000 / 3);
-            }
-            
-        }
 
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */    
-/*              fast Console / REMOTE_OPENLOOP                     */
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */ 
-        while (! MD_DISCO_ButtonOnPressed()) {
-            fastConsoleCase(&PIDY);            
-            g.setpointSrc = REMOTE_OPENLOOP;
+		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+		/*                      fast Console                               */
+		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+		while (! MD_DISCO_ButtonOnPressed()) {
+			//Console(&pidDataY, &fpidData, _INT_);
+			fastConsoleCase(&PIDY);
 
-            for (uint8_t k=0; k < 20; k++) {
-                if (TM_USART_BufferFull(USART1)) {
-                    printf( MSG_GUI_UART1_RECV_BUFF_FULL );
-                    fastConsoleCase(&PIDY); 
-                    TM_USART_ClearBuffer(USART1);
-                };
-                Delayms((uint32_t)g.refresh/20);
-            }     
+			for (uint8_t k=0; k < 20; k++) {
+				//                if (TM_USART_BufferFull(USART1)) {
+				//                    printf( MSG_GUI_UART1_RECV_BUFF_FULL );
+				//                    fastConsoleCase(&PIDY);
+				//                    TM_USART_ClearBuffer(USART1);
+				//                };
+				Delayms((uint32_t)g.refresh/20);
+			}
+			//            if ((ass.state == ASS_CHARGING_INTEGRATOR) && (! ass.tripped)) {
+			if (ass.integrator != lastVal) {
+				printf("%.8f\n", ass.integrator);
+			}
+			if ((ass.tripped) && (! ass.ack)) {
+				printf("Tripped!");
+				ass.ack = 1;
+				lastVal = ass.integrator;
+				TM_Timer4_config(ENABLE, ENABLE, 45000 / 3);
+			}
 
-            printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
-                SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);                        
-        }
-        
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */    
-/*              fast Console / W:  P:  Duty:                       */
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */   
-        while (! MD_DISCO_ButtonOnPressed()) {
-            //Console(&pidDataY, &fpidData, _INT_);    
-            fastConsoleCase(&PIDY);            
+		}
 
-            for (uint8_t k=0; k < 20; k++) {
-                if (TM_USART_BufferFull(USART1)) {
-                    printf( MSG_GUI_UART1_RECV_BUFF_FULL );
-                    fastConsoleCase(&PIDY); 
-                    TM_USART_ClearBuffer(USART1);
-                };
-                Delayms((uint32_t)g.refresh/20);
-            }     
+		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+		/*              fast Console / REMOTE_OPENLOOP                     */
+		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+		while (! MD_DISCO_ButtonOnPressed()) {
+			fastConsoleCase(&PIDY);
+			g.setpointSrc = REMOTE_OPENLOOP;
 
-            printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
-                SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);                        
-        }     
+			for (uint8_t k=0; k < 20; k++) {
+				if (TM_USART_BufferFull(USART1)) {
+					printf( MSG_GUI_UART1_RECV_BUFF_FULL );
+					fastConsoleCase(&PIDY);
+					TM_USART_ClearBuffer(USART1);
+				};
+				Delayms((uint32_t)g.refresh/20);
+			}
 
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */    
-/*              fast Console / W:  P:  Duty:                       */
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */     
-        while (! MD_DISCO_ButtonOnPressed()) {
-            //Console(&pidDataY, &fpidData, _INT_);    
-            fastConsoleCase(&PIDY);            
+			printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
+					SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
+		}
 
-            for (uint8_t k=0; k < 20; k++) {
-                if (TM_USART_BufferFull(USART1)) {
-                    printf( MSG_GUI_UART1_RECV_BUFF_FULL );
-                    fastConsoleCase(&PIDY); 
-                    TM_USART_ClearBuffer(USART1);
-                };
-                Delayms((uint32_t)g.refresh/20);
-            }     
+		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+		/*              fast Console / W:  P:  Duty:                       */
+		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+		while (! MD_DISCO_ButtonOnPressed()) {
+			//Console(&pidDataY, &fpidData, _INT_);
+			fastConsoleCase(&PIDY);
 
-            printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
-                SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);                        
-        }
-    }
+			for (uint8_t k=0; k < 20; k++) {
+				if (TM_USART_BufferFull(USART1)) {
+					printf( MSG_GUI_UART1_RECV_BUFF_FULL );
+					fastConsoleCase(&PIDY);
+					TM_USART_ClearBuffer(USART1);
+				};
+				Delayms((uint32_t)g.refresh/20);
+			}
+
+			printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
+					SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
+		}
+
+		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+		/*              fast Console / W:  P:  Duty:                       */
+		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+		while (! MD_DISCO_ButtonOnPressed()) {
+			//Console(&pidDataY, &fpidData, _INT_);
+			fastConsoleCase(&PIDY);
+
+			for (uint8_t k=0; k < 20; k++) {
+				if (TM_USART_BufferFull(USART1)) {
+					printf( MSG_GUI_UART1_RECV_BUFF_FULL );
+					fastConsoleCase(&PIDY);
+					TM_USART_ClearBuffer(USART1);
+				};
+				Delayms((uint32_t)g.refresh/20);
+			}
+
+			printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
+					SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
+		}
+	}
 }
 /*	
 	while (1) {
         / * Read temperature 1, reference temperature * /
 //        MD_DS18B20_Read(&OneWire, device[0], &SETPOINT_Y_FLOAT);
-        
+
 
         / * Format string * /
         printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
             SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
         Delayms(g.refresh);
     }
-    */
- /* End of main function */
+ */
+/* End of main function */
 
 
 
@@ -522,35 +530,35 @@ int main(void) {
  */ 
 void init_globalStructs(void) {
 
-   /**< Set PID parameters */
-    PIDX.Kp = PID_PARAM_KP;		/* Proporcional */
-    PIDX.Ki = PID_PARAM_KI;		/* Integral */
-    PIDX.Kd = PID_PARAM_KD;		/* Derivative */
-    PIDY.Kp = PID_PARAM_KP;		/* Proporcional */
-    PIDY.Ki = PID_PARAM_KI;		/* Integral */
-    PIDY.Kd = PID_PARAM_KD;		/* Derivative */
+	/**< Set PID parameters */
+	PIDX.Kp = PID_PARAM_KP;		/* Proporcional */
+	PIDX.Ki = PID_PARAM_KI;		/* Integral */
+	PIDX.Kd = PID_PARAM_KD;		/* Derivative */
+	PIDY.Kp = PID_PARAM_KP;		/* Proporcional */
+	PIDY.Ki = PID_PARAM_KI;		/* Integral */
+	PIDY.Kd = PID_PARAM_KD;		/* Derivative */
 
-   /**< Initialize autoShutdown system struct. */
-    ass.lowerVal = ASS_TRIPPING_LOWER_DEFAULT;
-    ass.upperVal = ASS_TRIPPING_UPPER_DEFAULT;
-    
-    ass.integrator = 0;
-    ass.safeVal = ASS_SAFEVALUE_DEFAULT ;
-    ass.tripped = 0;
-    ass.ack = 0;
-    ass.tripTime = ASS_TRIPPING_TIME_DEFAULT; // 750ms initial
-    ass.state = ASS_STATIONARY_INTEGRATOR;
-    ass.stateCtr = 0;
-    
-   /**< Initialize global structure */
-    g.waveForm = NN; g.duty = 999; g.freq = 999; g.lookAt = 999;
-    g.dacHw[MD_DAC1].upperLim = (int16_t)( 2113 - ADC_RNG/2 );
-    g.dacHw[MD_DAC1].lowerLim = (int16_t)( 1917 - ADC_RNG/2 );
-    g.dacHw[MD_DAC2].upperLim = (int16_t)( 2113 - ADC_RNG/2 );
-    g.dacHw[MD_DAC2].lowerLim = (int16_t)( 1917 - ADC_RNG/2 );
-    g.setpointSrc = REMOTE_INTERNAL_MIXED;
-    g.refresh = 20;    
-    g.beamEnabled = GPIO_ON;
+	/**< Initialize autoShutdown system struct. */
+	ass.lowerVal = ASS_TRIPPING_LOWER_DEFAULT;
+	ass.upperVal = ASS_TRIPPING_UPPER_DEFAULT;
+
+	ass.integrator = 0;
+	ass.safeVal = ASS_SAFEVALUE_DEFAULT ;
+	ass.tripped = 0;
+	ass.ack = 0;
+	ass.tripTime = ASS_TRIPPING_TIME_DEFAULT; // 750ms initial
+	ass.state = ASS_STATIONARY_INTEGRATOR;
+	ass.stateCtr = 0;
+
+	/**< Initialize global structure */
+	g.waveForm = NN; g.duty = 999; g.freq = 999; g.lookAt = 999;
+	g.dacHw[MD_DAC1].upperLim = (int16_t)( 2113 - ADC_RNG/2 );
+	g.dacHw[MD_DAC1].lowerLim = (int16_t)( 1917 - ADC_RNG/2 );
+	g.dacHw[MD_DAC2].upperLim = (int16_t)( 2113 - ADC_RNG/2 );
+	g.dacHw[MD_DAC2].lowerLim = (int16_t)( 1917 - ADC_RNG/2 );
+	g.setpointSrc = REMOTE_INTERNAL_MIXED;
+	g.refresh = 20;
+	g.beamEnabled = GPIO_ON;
 }
 
 
@@ -675,84 +683,89 @@ void init_globalStructs(void) {
 #define CMD_BUFF_SIZE       (NC+1)
 
 //void fastConsoleCase (volatile struct PID_DATA *pid) {
+#if  defined (KEIL_IDE)
+#pragma O0
+#elif  defined (__GNUC__)
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
+#endif
+
 void fastConsoleCase (arm_pid_instance_f32 *pid) {
-   /**< private member declarations */
+	/**< private member declarations */
 	char sUart[UART_BUFF_SIZE],		///< string buffer to hold received input string
-		 sCmd[CMD_BUFF_SIZE],		///< string buffer to hold selected command as substring
-         sVal[VALUE_BUFF_SIZE];     ///< string buffer to hold given value as substring
-    /**< 
-     * sVal holds the string representation of a received float value.
-     * For useing atof() , a buffer of 4xsizeof(int8_t)+1 [--> float32_t] or 8xsizeof(int8_t) [--> double]
-     * is necessary
-     */
+	sCmd[CMD_BUFF_SIZE],		///< string buffer to hold selected command as substring
+	sVal[VALUE_BUFF_SIZE];     ///< string buffer to hold given value as substring
+	/**<
+	 * sVal holds the string representation of a received float value.
+	 * For useing atof() , a buffer of 4xsizeof(int8_t)+1 [--> float32_t] or 8xsizeof(int8_t) [--> double]
+	 * is necessary
+	 */
 
 	char *pCmd = sCmd;		        ///< pointer for buffer arrays
 	char *pVal = sVal;		        ///< pointer for buffer arrays
-    
-    enum cmd_items cmd;
-    enum wav_items wav;
-    struct items *choice = NULL;
-    struct itemsw *choicew = NULL;
+
+	enum cmd_items cmd;
+	enum wav_items wav;
+	struct items *choice = NULL;
+	struct itemsw *choicew = NULL;
 
 	int i;
 
-    volatile uint8_t nChars = TM_USART_Gets( USART1, &sUart[0], UART_BUFF_SIZE);
+	volatile uint8_t nChars = TM_USART_Gets( USART1, &sUart[0], UART_BUFF_SIZE);
 
-   /**< Check for serial data frames >= UART_BUFF_SIZE */
+	/**< Check for serial data frames >= UART_BUFF_SIZE */
 	if (nChars < UART_BUFF_SIZE) {
-         MD_DISCO_LedOn(LED_RED);
-        memset(&sUart, 0, UART_BUFF_SIZE*sizeof(char));    ///< malloc the receive buffer
-        return;
-    }
-    
-   MD_DISCO_LedOff(LED_RED);
-   MD_DISCO_LedOn(LED_GREEN);
-   ticks =100000;    // 200k *10us = 2s
-  
-   /**< malloc() if a frame received where sizeoff() >= UART_BUFF_SIZE */
-    memset(&sCmd,0, CMD_BUFF_SIZE*sizeof(char));     ///< malloc command buffer
-    memset(&sVal,0, VALUE_BUFF_SIZE*sizeof(char));      ///< malloc value buffer
+		MD_DISCO_LedOn(LED_RED);
+		memset(&sUart, 0, UART_BUFF_SIZE*sizeof(char));    ///< malloc the receive buffer
+		return;
+	}
 
-   /**< Check leading character via receive buffer 
-     *      @   frame indicator for pid related config/param.
-     *      !   frame indicator for a misc command 
-     *      #   frame indicator for a signal generator command 
-     */
+	MD_DISCO_LedOff(LED_RED);
+	MD_DISCO_LedOn(LED_GREEN);
+	ticks =100000;    // 200k *10us = 2s
+
+	/**< malloc() if a frame received where sizeoff() >= UART_BUFF_SIZE */
+	memset(&sCmd,0, CMD_BUFF_SIZE*sizeof(char));     ///< malloc command buffer
+	memset(&sVal,0, VALUE_BUFF_SIZE*sizeof(char));      ///< malloc value buffer
+
+	/**< Check leading character via receive buffer
+	 *      @   frame indicator for pid related config/param.
+	 *      !   frame indicator for a misc command
+	 *      #   frame indicator for a signal generator command
+	 */
 	if ( sUart[0] == '@') {
-    /* pid related config/param */
+		/* pid related config/param */
 		strncpy( pCmd, &sUart[IDX_CMD], NC);		///< command substring 
 		strncpy( pVal, &sUart[IDX_VAL], NV);		///< Value substring
 
-        /* Check for end of char coded float representation 
-         * numeric char:            0...9
-         * decimal delimiter:       . or ,  !!!Take caution for forbidden thousands separator!!! 
-         * exponental indicator:    e or E
-         * signdness:               -
-         */
+		/* Check for end of char coded float representation
+		 * numeric char:            0...9
+		 * decimal delimiter:       . or ,  !!!Take caution for forbidden thousands separator!!!
+		 * exponental indicator:    e or E
+		 * signdness:               -
+		 */
 		for (uint8_t k=0; k <= NV; k++) {                   ///< Max NC numbers ... 
-            if ( ((*pVal >= '0') && (*pVal <= '9')) || \
-                  (*pVal == '.') || (*pVal == ',')  || \
-                  (*pVal == 'e') || (*pVal == 'E') || \
-                  (*pVal == '-') ) {    
-                pVal++;
-            }
-            else {
-                break;
-            }
+			if ( ((*pVal >= '0') && (*pVal <= '9')) || \
+					(*pVal == '.') || (*pVal == ',')  || \
+					(*pVal == 'e') || (*pVal == 'E') || \
+					(*pVal == '-') ) {
+				pVal++;
+			}
+			else {
+				break;
+			}
 		}
-		
-		*pVal='\0';	                ///< place EOF marker
-        pVal = &sVal[0];
 
-        while ( *pCmd != '=' ) {    ///< check for end of command  indicator '='
+		*pVal='\0';	                ///< place EOF marker
+		pVal = &sVal[0];
+
+		while ( *pCmd != '=' ) {    ///< check for end of command  indicator '='
 			pCmd++;
 		}		
 		*(pCmd-1)='\0';		        ///< place EOS marker									
-        pCmd = &sCmd[0];
+		pCmd = &sCmd[0];
 
-        /* parse sCmd buffer and enumerate the command/error */
+		/* parse sCmd buffer and enumerate the command/error */
 		for(i = 0, choice = NULL; i < sizeof items_list/sizeof (struct items); i++) {
 			if (strcasecmp(sCmd, items_list[i].name) == 0)
 			{
@@ -763,453 +776,459 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 
 		cmd = choice ? choice->id : UNKNOWN;
 
-        char sValtemp1[] = {"-0.7e-09"};
-        volatile float fl1 = atof(&sValtemp1[0]);
+		char sValtemp1[] = {"-0.7e-09"};
+
+		/* FIXME */
+		volatile float fl1 __attribute__ ((unused)) = atof(&sValtemp1[0]);
 
 #ifdef  FLOAT_PARAMETERS
-//            volatile float valueDecoded = (float)tmp/SLIDER_VAL_DEVIDER;
-            volatile float valueDecoded = atof( pVal );
+		//            volatile float valueDecoded = (float)tmp/SLIDER_VAL_DEVIDER;
+		volatile float valueDecoded = atof( pVal );
 
 #elif   DOUBLE_PARAMETERS
-            double valueDecoded = (double)tmp/SLIDER_VAL_DEVIDER;
+		double valueDecoded = (double)tmp/SLIDER_VAL_DEVIDER;
 #else 
-        error "datatype?"
+		error "datatype?"
 #endif
 
 		switch(cmd) {
-			case KP:	{   
-                            pid->Kp = valueDecoded;
-                            arm_pid_init_f32(&PIDY, 0);
-                            printf("Kp % f set!\n", valueDecoded);
-                        }	
-                        break;
+		case KP:	{
+			pid->Kp = valueDecoded;
+			arm_pid_init_f32(&PIDY, 0);
+			printf("Kp % f set!\n", valueDecoded);
+		}
+		break;
 
-			case KI:	{
-                            pid->Ki = valueDecoded;
-                            arm_pid_init_f32(&PIDY, 0);
-                            printf("Ki % f set!\n", valueDecoded);
-//                            printf("Ki %s given\n", &sval[0]);
-                        }	
-                        break;
+		case KI:	{
+			pid->Ki = valueDecoded;
+			arm_pid_init_f32(&PIDY, 0);
+			printf("Ki % f set!\n", valueDecoded);
+			//                            printf("Ki %s given\n", &sval[0]);
+		}
+		break;
 
-			case KD:	{
-                            pid->Kd = valueDecoded;
-                            arm_pid_init_f32(&PIDY, 0);
-                            printf("Kd % f set!\n", valueDecoded);
-   //                         printf("Kd %s given\n", &sval);
-                        }	
-                        break;
+		case KD:	{
+			pid->Kd = valueDecoded;
+			arm_pid_init_f32(&PIDY, 0);
+			printf("Kd % f set!\n", valueDecoded);
+			//                         printf("Kd %s given\n", &sval);
+		}
+		break;
 
-			case W:		{
-                            pidDataX.W_remf = valueDecoded;
-                            pidDataY.W_remf = valueDecoded;
-                            pidDataY.remoteCmdActive = 1;
-                            printf("W = % g\n", pidDataY.W_remf);
-                        }
-                        break;
+		case W:		{
+			pidDataX.W_remf = valueDecoded;
+			pidDataY.W_remf = valueDecoded;
+			pidDataY.remoteCmdActive = 1;
+			printf("W = % g\n", pidDataY.W_remf);
+		}
+		break;
 
-			default:
-						printf("unknown choice\n");
+		default:
+			printf("unknown choice\n");
 			break;
 		}
-        
-        
+
+
 	}
 	else {
-      
-
-      /** A trailing ! char in a new Rx frame indicates that a misc command
-       * follows...
-       */
-      if (sUart[0] == '#') {   ///< True if signal generator command received
-
-        /**
-         * Trailing # indicates a command frame for signal generation
-         *
-         * Frame Layout:
-         *    c     waveform
-         *    v     freq
-         *    d  dutycycle
-         *
-         * # c c c : = v v v v  d  d
-         * 0 1 2 3 4 5 6 7 8 9 10  11 12
-         *
-         *
-         *
-         * ------ Aus Qt software v8.3
-         * Frame Layout:
-         * cwaveform
-         * vfreq
-         * d dutycycle
-         *
-         * # c c c : = F F F F  d  d  A  A   A   A
-         * 0 1 2 3 4 5 6 7 8 9 10  11 12 13  14  15
-         *
-         * Amplitude als char coded float
-         *
-         * # c c c : = F F F F  d  d  A ..16x.. A
-         * 0 1 2 3 4 5 6 7 8 9 10  11 12 13  14  .... 27
-         *
-         */
-
-        //char  sWav[NC+1],    ///< string buffer to hold selected waveform as substring
-        //        sFreq[NV+1], ///< string buffer to hold given frequency as substring
-        //        sDuty[ND+1]; ///< string buffer to hold given duty cycle as substring
-
-        uint8_t NC = 3;      // index 0...3
-        //      uint8_t FS = 2;      // index 4...5 (fieldsep)
-        uint8_t NV = 4;      // index 6...9
-        uint8_t ND = 2;      // index 10...11
-        uint8_t NA = 16;     // index 12...15
-
-        char  sWav[NC + 1],  ///< string buffer to hold selected waveform as substring
-              sFreq[NV + 1], ///< string buffer to hold given frequency as substring
-              sDuty[ND + 1], ///< string buffer to hold given duty cycle as substring
-              sAmp[16];     ///< string buffer to hold given amplitude as substring
-
-      //            char *pWav = sWav;
-        char *pDuty = sDuty;
-        char *pFreq = sFreq;
-        char *pAmp = sAmp;
-
-        strncpy(sWav,  &sUart[1], NC);   ///< waveform substring
-        strncpy(sFreq, &sUart[6],  4);      ///< frequency substring
-        strncpy(sDuty, &sUart[10], 2);      ///< duty cycle substring
-        strncpy(sAmp, &sUart[12], 16);      ///< peak amplitude substring
 
 
-        /* Check for end of char coded float representation
-         * numeric char:            0...9
-         * decimal delimiter:       . or ,  !!!Take caution for forbidden thousands separator!!!
-         * exponental indicator:    e or E
-         * signdness:               -
-         */
-        for (uint8_t k = 0; k < NC; k++) { ///< check for end of value (padding) char ~
-          if ( *pCmd == RX_FRAME_PADDING_CHAR )
-            break;
-          pCmd++;
-        }
-        *(pCmd - 1) = '\0';   ///< place EOS marker
-        pCmd = &sCmd[0];
+		/** A trailing ! char in a new Rx frame indicates that a misc command
+		 * follows...
+		 */
+		if (sUart[0] == '#') {   ///< True if signal generator command received
 
-        for (uint8_t k = 0; k < NV; k++) { ///< check for end of command  indicator '='
-          if ( *pFreq == RX_FRAME_PADDING_CHAR )
-            break;
-          pFreq++;
-        }
-        *pFreq = '\0';     ///< place EOS marker
-        pFreq = &sFreq[0];
+			/**
+			 * Trailing # indicates a command frame for signal generation
+			 *
+			 * Frame Layout:
+			 *    c     waveform
+			 *    v     freq
+			 *    d  dutycycle
+			 *
+			 * # c c c : = v v v v  d  d
+			 * 0 1 2 3 4 5 6 7 8 9 10  11 12
+			 *
+			 *
+			 *
+			 * ------ Aus Qt software v8.3
+			 * Frame Layout:
+			 * cwaveform
+			 * vfreq
+			 * d dutycycle
+			 *
+			 * # c c c : = F F F F  d  d  A  A   A   A
+			 * 0 1 2 3 4 5 6 7 8 9 10  11 12 13  14  15
+			 *
+			 * Amplitude als char coded float
+			 *
+			 * # c c c : = F F F F  d  d  A ..16x.. A
+			 * 0 1 2 3 4 5 6 7 8 9 10  11 12 13  14  .... 27
+			 *
+			 */
 
-        for (uint8_t k = 0; k < ND; k++) { ///< check for end of command  indicator '='
-          if ( *pDuty == RX_FRAME_PADDING_CHAR )
-            break;
-          pDuty++;
-        }
-        *pDuty = '\0';     ///< place EOS marker
-        pDuty = &sDuty[0];
+			//char  sWav[NC+1],    ///< string buffer to hold selected waveform as substring
+			//        sFreq[NV+1], ///< string buffer to hold given frequency as substring
+			//        sDuty[ND+1]; ///< string buffer to hold given duty cycle as substring
 
-        for (uint8_t k = 0; k <= NA; k++) {                 ///< Max NC numbers ...
-          if ( ((*pAmp >= '0') && (*pAmp <= '9')) || \
-               (*pAmp == '.') || (*pAmp == ',')  || \
-               (*pAmp == 'e') || (*pAmp == 'E') || \
-               (*pAmp == '-') ) {
-            pAmp++;
-          }
-          else {
-            break;
-          }
-        }
-        *pAmp = '\0';   ///< place EOF marker
-        pAmp = &sWav[0];
+			uint8_t NC = 3;      // index 0...3
+			//      uint8_t FS = 2;      // index 4...5 (fieldsep)
+			uint8_t NV = 4;      // index 6...9
+			uint8_t ND = 2;      // index 10...11
+			uint8_t NA = 16;     // index 12...15
 
+			char  sWav[NC + 1],  ///< string buffer to hold selected waveform as substring
+			sFreq[NV + 1], ///< string buffer to hold given frequency as substring
+			sDuty[ND + 1], ///< string buffer to hold given duty cycle as substring
+			sAmp[16];     ///< string buffer to hold given amplitude as substring
 
-        /* parse sCmd buffer and enumerate the command/error */
-        for (i = 0, choicew = NULL; i < sizeof itemsw_list / sizeof (struct itemsw); i++) {
-          if (strcasecmp(sWav, itemsw_list[i].name) == 0)
-          {
-            choicew = itemsw_list + i;
-            break;
-          }
-        }
+			//            char *pWav = sWav;
+			char *pDuty = sDuty;
+			char *pFreq = sFreq;
+			char *pAmp = sAmp;
 
-        wav = choicew ? choicew->idw : NN;
-//    /**	
-//     * Check for invalied chars in command string
-//     *	Only [a-zA-Z] is threated as part of command string
-//     *
-//     */
-//            while ( (*pWav >= 0x41) && (*pWav <= 0x5A) || 
-//                            (*pWav >= 0x61) && (*pWav <= 0x7A) ) {	
-//                pWav++;
-//            }		
-
-//    /**
-//     * Same item structure used for PID-param and 
-//     * waveform generation commands! Don't forget 
-//     * to offset the for loop while while read in 
-//     * a waveform command.
-//     *
-//     */				
-//            for(i = 0, choicew = NULL; i < sizeof itemsw_list/sizeof (struct itemsw); i++)
-//            {
-//                if (strcasecmp(sWav, itemsw_list[i].name) == 0)
-//                {
-//                    choicew = itemsw_list + i;
-//                    break;
-//                }
-//            }    
-
-//            wav = choicew ? choicew->idw : NN;
-        volatile float valueDecoded = atof( pVal );
-
-            g.waveForm 	= wav;
-            g.freq		= atoi(sFreq);
-            g.duty 		= atoi(sDuty);
-            g.ampl_f 	= (float)atof(sAmp);
-            g.ampl      = (int) g.ampl_f * 1000;
-            
-            //g.ampl_f = (float)g.ampl / (float)AMPL_FLOAT_DIVISOR;
-            
-            if (g.ampl_f > (float)AREF_IN_VOLT/2)
-                g.ampl_f = (float)AREF_IN_VOLT/2;
-            if (g.ampl_f < -(float)AREF_IN_VOLT/2)
-                g.ampl_f = -(float)AREF_IN_VOLT/2;
-//            g.ampl_f = (float)g.ampl / (float)AMPL_FLOAT_DIVISOR;
-//            
-//            if (g.ampl_f > (float)AREF_IN_VOLT/2)
-//                g.ampl_f = (float)AREF_IN_VOLT/2;
-//            if (g.ampl_f < -(float)AREF_IN_VOLT/2)
-//                g.ampl_f = -(float)AREF_IN_VOLT/2;
-            
-    /**
-     *	Calculate the interval for lookup table index increment 
-     *	based on @SAMPLE_INTERVAL / TS, sizeof table and given 
-     *  waveform frequency.
-     *	
-     *	g.freq  	[Hz] 	
-     *	TS			[us]	* 10^(-6)	
-     *
-     *  g.lookAt = g.freq/(TABLESIZE * TS * 10^(-6))
-     *           = g.freq * 10^4 / TS        
-     */
+			strncpy(sWav,  &sUart[1], NC);   ///< waveform substring
+			strncpy(sFreq, &sUart[6],  4);      ///< frequency substring
+			strncpy(sDuty, &sUart[10], 2);      ///< duty cycle substring
+			strncpy(sAmp, &sUart[12], 16);      ///< peak amplitude substring
 
 
-    //        g.lookAt = (short) 1/((double)TABLESIZE * TS * 10^(-6));
-    //		g.lookAt = (uint32_t) g.freq * pow(10,6) / (TABLESIZE * TS);
-    //        printf(" g.lookAt: %i", g.lookAt);
+			/* Check for end of char coded float representation
+			 * numeric char:            0...9
+			 * decimal delimiter:       . or ,  !!!Take caution for forbidden thousands separator!!!
+			 * exponental indicator:    e or E
+			 * signdness:               -
+			 */
+			for (uint8_t k = 0; k < NC; k++) { ///< check for end of value (padding) char ~
+				if ( *pCmd == RX_FRAME_PADDING_CHAR )
+					break;
+				pCmd++;
+			}
+			*(pCmd - 1) = '\0';   ///< place EOS marker
+			pCmd = &sCmd[0];
 
-    //        g.lookAt = g.lookAt / 100;
-    //        printf(" g.lookAt/100: %i", g.lookAt);
-            g.tctr = g.lookAt;
+			for (uint8_t k = 0; k < NV; k++) { ///< check for end of command  indicator '='
+				if ( *pFreq == RX_FRAME_PADDING_CHAR )
+					break;
+				pFreq++;
+			}
+			*pFreq = '\0';     ///< place EOS marker
+			pFreq = &sFreq[0];
 
-    /**
-     *  Precalculate a lookup table based on normed array
-     *
-     */
-            for (uint16_t k=0; k<TABLESIZE; k++) {
-              calcTab[k] = (uint16_t) g.ampl * CosineN[k];  
-            };
-            
-            switch(wav) {
-                    case COS:			{
-                                            printf("Cosine \n");
-                                            pSeq = &Cosine[0];
-                                            g.pBase = pSeq;
-                                            g.gen = EN;
-                    }	
-                    break;
+			for (uint8_t k = 0; k < ND; k++) { ///< check for end of command  indicator '='
+				if ( *pDuty == RX_FRAME_PADDING_CHAR )
+					break;
+				pDuty++;
+			}
+			*pDuty = '\0';     ///< place EOS marker
+			pDuty = &sDuty[0];
 
-                    case TRIANG:		{
-                                            printf("Triangle \n");
-    //										pSeq = &Triangle[0];
-                                            /* 450/g.freq --> 100 Timer Ovf / periode */
-                                            triStruct.bottom = ((float)AREF_BY2 - g.ampl_f / 2);
-                                            triStruct.top = ((float)AREF_BY2 + g.ampl_f / 2);
-                                            triStruct.derivate = g.ampl_f / (float)100;
-//                                            g.pBase = pSeq;
-                                            g.waveForm = TRIANG;
-                                            triStruct.triCtr = 0;
-                                            MD_Timer4_config(ENABLE, ENABLE, 450 / g.freq);
-                                            g.gen = EN;
-                    }	
-                    break;
+			for (uint8_t k = 0; k <= NA; k++) {                 ///< Max NC numbers ...
+				if ( ((*pAmp >= '0') && (*pAmp <= '9')) || \
+						(*pAmp == '.') || (*pAmp == ',')  || \
+						(*pAmp == 'e') || (*pAmp == 'E') || \
+						(*pAmp == '-') ) {
+					pAmp++;
+				}
+				else {
+					break;
+				}
+			}
+			*pAmp = '\0';   ///< place EOF marker
+			pAmp = &sWav[0];
 
-                    case SQUAREWAV:	{
-                                            printf("Squarewave\n");
-                                            MD_Timer4_config(ENABLE, ENABLE, 45000 / g.freq);
-                                            g.setpointSrc = REMOTE_INTERNAL_MIXED;
-                                            g.waveForm = SQUAREWAV;
-                                            g.gen = EN;
-                                            pSeq_f = &squarewaveBuff[0];
-                    }	
-                    break;
 
-                    case QUADRATIC:	{
-                                            printf("Quadratic\n");
-                                            pSeq = &Quadratic[0];
-                                            g.gen = EN;
-                    }	
-                    break;
-                    
-                    case I_QUADRATIC:	{
-                                            printf("Inv Quadratic\n");
-                                            pSeq = &I_Quadratic[0];
-                                            g.gen = EN;
-                    }	
-                    break;
+			/* parse sCmd buffer and enumerate the command/error */
+			for (i = 0, choicew = NULL; i < sizeof itemsw_list / sizeof (struct itemsw); i++) {
+				if (strcasecmp(sWav, itemsw_list[i].name) == 0)
+				{
+					choicew = itemsw_list + i;
+					break;
+				}
+			}
 
-                    case SAWTOOTH:		{
-                                            printf("Sawtooth\n");
-                                            pSeq = &Sawtooth[0];
-                                            g.gen = EN;
-                    }	
-                    break;
+			wav = choicew ? choicew->idw : NN;
+			//    /**
+			//     * Check for invalied chars in command string
+			//     *	Only [a-zA-Z] is threated as part of command string
+			//     *
+			//     */
+			//            while ( (*pWav >= 0x41) && (*pWav <= 0x5A) ||
+			//                            (*pWav >= 0x61) && (*pWav <= 0x7A) ) {
+			//                pWav++;
+			//            }
 
-                    case CMD_REMOTE_SETPOINT: {
-                                            printf("CMD_REMOTE_SETPOINT\n");
-                                            g.setpointSrc = REMOTE_SETPOINT;
-                    }	
-                    break;
+			//    /**
+			//     * Same item structure used for PID-param and
+			//     * waveform generation commands! Don't forget
+			//     * to offset the for loop while while read in
+			//     * a waveform command.
+			//     *
+			//     */
+			//            for(i = 0, choicew = NULL; i < sizeof itemsw_list/sizeof (struct itemsw); i++)
+			//            {
+			//                if (strcasecmp(sWav, itemsw_list[i].name) == 0)
+			//                {
+			//                    choicew = itemsw_list + i;
+			//                    break;
+			//                }
+			//            }
 
-                    case CMD_OPENLOOP_REMOTE: {
-                                            printf("CMD_OPENLOOP_REMOTE\n");
-                                            g.setpointSrc = REMOTE_OPENLOOP;
-                    }	
-                    break;
+			//            wav = choicew ? choicew->idw : NN;
+			/* FIXME */
+			volatile float valueDecoded __attribute__ ((unused)) = atof( pVal );
 
-                    case CMD_ANALOG_SETPOINT: {
-                                            printf("CMD_ANALOG_SETPOINT\n");
-                                            g.setpointSrc = ANALOG_SETPOINT;
-                    }	
-                    break;
+			g.waveForm 	= wav;
+			g.freq		= atoi(sFreq);
+			g.duty 		= atoi(sDuty);
+			g.ampl_f 	= (float)atof(sAmp);
+			g.ampl      = (int) g.ampl_f * 1000;
 
-                    case CMD_INTERNAL_SETPOINT: {
-                                            printf("CMD_INTERNAL_SETPOINT\n");
-                                            g.setpointSrc = INTERNAL_SETPOINT;
-                    }	
-                    break;
+			//g.ampl_f = (float)g.ampl / (float)AMPL_FLOAT_DIVISOR;
 
-                    case CMD_TESTVECT: {
-                                            printf("CMD_TESTVECT\n");
-//                                            g.setpointSrc = INTERNAL_SETPOINT;
-                                             dir = 1;
-                                            g.waveForm = CMD_TESTVECT;
-                                            MD_Timer4_config(ENABLE, ENABLE, 45000 / g.freq);
-                    }	
-                    break;                    
+			if (g.ampl_f > (float)AREF_IN_VOLT/2)
+				g.ampl_f = (float)AREF_IN_VOLT/2;
+			if (g.ampl_f < -(float)AREF_IN_VOLT/2)
+				g.ampl_f = -(float)AREF_IN_VOLT/2;
+			//            g.ampl_f = (float)g.ampl / (float)AMPL_FLOAT_DIVISOR;
+			//
+			//            if (g.ampl_f > (float)AREF_IN_VOLT/2)
+			//                g.ampl_f = (float)AREF_IN_VOLT/2;
+			//            if (g.ampl_f < -(float)AREF_IN_VOLT/2)
+			//                g.ampl_f = -(float)AREF_IN_VOLT/2;
 
-                    case CMD_MATLAB_LINK: {
-                                            /* Matlab link integrieren 
-                                             * #mat:=1~~~0~1.6635~~~..  vector #1, beam off, xpos=1.6635
-                                             * #mat:=2~~~0~1.2635~~~.. 
-                                             * #mat:=3~~~1~-1.663~~~..  vector #1, beam on, xpos=-1.663
-                                             */
-                    }	
-                    break;                    
-                    
-                    default: {
-                                            printf("unknown choice\n");
-                                            g.waveForm = NN;
-                                            g.duty 	= 999;
-                                            g.freq	= 999;
-                                            g.lookAt = 999;
-                                            g.pBase 	= pSeq;
-                                            g.tctr	= 999;
-                                            g.gen		= DIS;
-                    }
-                    
-                    /* Disable waveform generation if wgm-off command received */
-            }
-            
-    //		g.pBase = (uint32_t)&pSeq;
-            
-            
-            
-        }
-        else {                   ///< True if a misc command received
-/** 
- * Trailing ! indicates that a misc command frame was received
- *
- * Frame Layout: 
- * 	c	command
- *
- * ! c c c c c c c c c c  c  c 
- * 0 1 2 3 4 5 6 7 8 9 10 11 12 
- *        
- */       
+			/**
+			 *	Calculate the interval for lookup table index increment
+			 *	based on @SAMPLE_INTERVAL / TS, sizeof table and given
+			 *  waveform frequency.
+			 *
+			 *	g.freq  	[Hz]
+			 *	TS			[us]	* 10^(-6)
+			 *
+			 *  g.lookAt = g.freq/(TABLESIZE * TS * 10^(-6))
+			 *           = g.freq * 10^4 / TS
+			 */
+
+
+			//        g.lookAt = (short) 1/((double)TABLESIZE * TS * 10^(-6));
+			//		g.lookAt = (uint32_t) g.freq * pow(10,6) / (TABLESIZE * TS);
+			//        printf(" g.lookAt: %i", g.lookAt);
+
+			//        g.lookAt = g.lookAt / 100;
+			//        printf(" g.lookAt/100: %i", g.lookAt);
+			g.tctr = g.lookAt;
+
+			/**
+			 *  Precalculate a lookup table based on normed array
+			 *
+			 */
+			for (uint16_t k=0; k<TABLESIZE; k++) {
+				calcTab[k] = (uint16_t) g.ampl * CosineN[k];
+			};
+
+			switch(wav) {
+			case COS:			{
+				printf("Cosine \n");
+				pSeq = &Cosine[0];
+				g.pBase = pSeq;
+				g.gen = EN;
+			}
+			break;
+
+			case TRIANG:		{
+				printf("Triangle \n");
+				//										pSeq = &Triangle[0];
+				/* 450/g.freq --> 100 Timer Ovf / periode */
+				triStruct.bottom = ((float)AREF_BY2 - g.ampl_f / 2);
+				triStruct.top = ((float)AREF_BY2 + g.ampl_f / 2);
+				triStruct.derivate = g.ampl_f / (float)100;
+				//                                            g.pBase = pSeq;
+				g.waveForm = TRIANG;
+				triStruct.triCtr = 0;
+				TM_Timer4_config(ENABLE, ENABLE, 450 / g.freq);
+				g.gen = EN;
+			}
+			break;
+
+			case SQUAREWAV:	{
+				printf("Squarewave\n");
+				TM_Timer4_config(ENABLE, ENABLE, 45000 / g.freq);
+				g.setpointSrc = REMOTE_INTERNAL_MIXED;
+				g.waveForm = SQUAREWAV;
+				g.gen = EN;
+				pSeq_f = &squarewaveBuff[0];
+			}
+			break;
+
+			case QUADRATIC:	{
+				printf("Quadratic\n");
+				pSeq = &Quadratic[0];
+				g.gen = EN;
+			}
+			break;
+
+			case I_QUADRATIC:	{
+				printf("Inv Quadratic\n");
+				pSeq = &I_Quadratic[0];
+				g.gen = EN;
+			}
+			break;
+
+			case SAWTOOTH:		{
+				printf("Sawtooth\n");
+				pSeq = &Sawtooth[0];
+				g.gen = EN;
+			}
+			break;
+
+			case CMD_REMOTE_SETPOINT: {
+				printf("CMD_REMOTE_SETPOINT\n");
+				g.setpointSrc = REMOTE_SETPOINT;
+			}
+			break;
+
+			case CMD_OPENLOOP_REMOTE: {
+				printf("CMD_OPENLOOP_REMOTE\n");
+				g.setpointSrc = REMOTE_OPENLOOP;
+			}
+			break;
+
+			case CMD_ANALOG_SETPOINT: {
+				printf("CMD_ANALOG_SETPOINT\n");
+				g.setpointSrc = ANALOG_SETPOINT;
+			}
+			break;
+
+			case CMD_INTERNAL_SETPOINT: {
+				printf("CMD_INTERNAL_SETPOINT\n");
+				g.setpointSrc = INTERNAL_SETPOINT;
+			}
+			break;
+
+			case CMD_TESTVECT: {
+				printf("CMD_TESTVECT\n");
+				//                                            g.setpointSrc = INTERNAL_SETPOINT;
+				dir = 1;
+				g.waveForm = CMD_TESTVECT;
+				TM_Timer4_config(ENABLE, ENABLE, 45000 / g.freq);
+			}
+			break;
+
+			case CMD_MATLAB_LINK: {
+				/* Matlab link integrieren
+				 * #mat:=1~~~0~1.6635~~~..  vector #1, beam off, xpos=1.6635
+				 * #mat:=2~~~0~1.2635~~~..
+				 * #mat:=3~~~1~-1.663~~~..  vector #1, beam on, xpos=-1.663
+				 */
+			}
+			break;
+
+			default: {
+				printf("unknown choice\n");
+				g.waveForm = NN;
+				g.duty 	= 999;
+				g.freq	= 999;
+				g.lookAt = 999;
+				g.pBase 	= pSeq;
+				g.tctr	= 999;
+				g.gen		= DIS;
+			}
+
+			/* Disable waveform generation if wgm-off command received */
+			}
+
+			//		g.pBase = (uint32_t)&pSeq;
+
+
+
+		}
+		else {                   ///< True if a misc command received
+			/**
+			 * Trailing ! indicates that a misc command frame was received
+			 *
+			 * Frame Layout:
+			 * 	c	command
+			 *
+			 * ! c c c c c c c c c c  c  c
+			 * 0 1 2 3 4 5 6 7 8 9 10 11 12
+			 *
+			 */
 #define MISC_CMD_LENGTH     35  // + trailing !
-            enum misc_items misc;
-            struct itemsm *choicem = NULL;
+			enum misc_items misc;
+			struct itemsm *choicem = NULL;
 
-            ///< string buffer to hold given command substring
-            char sMisc[MISC_CMD_LENGTH + 1]; 
-            char *pMisc = sMisc;
-            
-            strncpy(sMisc, 	&sUart[1],  MISC_CMD_LENGTH);	///< command substring
-            
-            /**< Check for valied characters and substitute first unvalied char
-             * by EOS char
-             */
+			///< string buffer to hold given command substring
+			char sMisc[MISC_CMD_LENGTH + 1];
+			char *pMisc = sMisc;
 
-            while ( (*pMisc >= 'A') && (*pMisc <= 'Z') || \
-                    (*pMisc >= 'a') && (*pMisc <= 'z') || \
-                    (*pMisc >= '0') && (*pMisc <= '9') || \
-                    (*pMisc == '-') || (*pMisc == '_') || \
-                    (*pMisc == '.') || (*pMisc == ',') || \
-                    (*pMisc == 'e') || (*pMisc == 'E') ){	    
+			strncpy(sMisc, 	&sUart[1],  MISC_CMD_LENGTH);	///< command substring
 
-                pMisc++;
-            }
-            
-            *pMisc='\0';				///< End of string
+			/**< Check for valied characters and substitute first unvalied char
+			 * by EOS char
+			 */
+
+			while ( ((*pMisc >= 'A') && (*pMisc <= 'Z')) || \
+					((*pMisc >= 'a') && (*pMisc <= 'z')) || \
+					((*pMisc >= '0') && (*pMisc <= '9')) || \
+					((*pMisc == '-') || (*pMisc == '_')) || \
+					((*pMisc == '.') || (*pMisc == ',')) || \
+					((*pMisc == 'e') || (*pMisc == 'E')) ){
+
+				pMisc++;
+			}
+
+			*pMisc='\0';				///< End of string
 
 
-            for(i = 0, choicem = NULL; i < sizeof itemsm_list/sizeof (struct itemsm); i++)
-            {
-                if (strcasecmp(sMisc, itemsm_list[i].name) == 0)
-                {
-                    choicem = itemsm_list + i;
-                    break;
-                }
-            }    
+			for(i = 0, choicem = NULL; i < sizeof itemsm_list/sizeof (struct itemsm); i++)
+			{
+				if (strcasecmp(sMisc, itemsm_list[i].name) == 0)
+				{
+					choicem = itemsm_list + i;
+					break;
+				}
+			}
 
-            misc = choicem ? choicem->idm : misc_NN;
-            
-            g.miscReq 	= misc;
-            
-            switch (misc) {
-                case misc_assOnOff_cmd:
-                    break;                
-                case misc_assUpperLim_cmd:     
-                    break;                
-                case misc_assLowerLim_cmd:     
-                    break;                
-                case misc_assTrippTime_cmd:     
-                    break;                
-                case misc_assSaveVal_cmd:     
-                    break;                
+			misc = choicem ? choicem->idm : misc_NN;
 
-                case misc_pid_init:     
-//                    pid_Init(KP_INIT, KI_INIT, KD_INIT, TF_INIT, TS, &pidDataY, NONBUFFERED);
-                    resetPID();
-                    break;
-                case misc_beamOff_cmd:   
-                        MDB_GPIO_BeamPin(BEAM_INTERRUPT, GPIO_DRIVER_OFF);
-                    break;
-                case misc_beamOn_cmd:   
-                        MDB_GPIO_BeamPin(BEAM_INTERRUPT, GPIO_DRIVER_ON);
-                    break;
-                    
-                default:
-                    printf("function unknown\n");
-            }
-        }
-        memset(&sUart,0, UART_BUFF_SIZE*sizeof(char));
-    }
+			g.miscReq 	= misc;
+
+			switch (misc) {
+			case misc_assOnOff_cmd:
+				break;
+			case misc_assUpperLim_cmd:
+				break;
+			case misc_assLowerLim_cmd:
+				break;
+			case misc_assTrippTime_cmd:
+				break;
+			case misc_assSaveVal_cmd:
+				break;
+
+			case misc_pid_init:
+				//                    pid_Init(KP_INIT, KI_INIT, KD_INIT, TF_INIT, TS, &pidDataY, NONBUFFERED);
+				resetPID();
+				break;
+			case misc_beamOff_cmd:
+				MDB_GPIO_BeamPin(BEAM_INTERRUPT, GPIO_DRIVER_OFF);
+				break;
+			case misc_beamOn_cmd:
+				MDB_GPIO_BeamPin(BEAM_INTERRUPT, GPIO_DRIVER_ON);
+				break;
+
+			default:
+				printf("function unknown\n");
+			}
+		}
+		memset(&sUart,0, UART_BUFF_SIZE*sizeof(char));
+	}
 
 }
+#if  defined (KEIL_IDE)
+#pragma O2
+#elif  defined (__GNUC__)
 #pragma GCC pop_options
-
+#endif
 
 
 
@@ -1226,18 +1245,18 @@ void gpio_init(void) {
 	GPIO_InitDef.GPIO_Speed = GPIO_Speed_100MHz;
 	//Initialize pins
 	GPIO_Init(GPIOC, &GPIO_InitDef);
-	
-	// Init debug/timing IOs
-//	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
 
-//	GPIO_InitDef.GPIO_Pin = ((uint16_t)0x00ff);		// this can be or'd
-//	GPIO_InitDef.GPIO_OType = GPIO_OType_PP;
-//	GPIO_InitDef.GPIO_Mode = GPIO_Mode_OUT;
-//	GPIO_InitDef.GPIO_PuPd = GPIO_PuPd_NOPULL;
-//	GPIO_InitDef.GPIO_Speed = GPIO_Speed_100MHz;
-//	//Initialize pins
-//	GPIO_Init(GPIOE, &GPIO_InitDef);
-	
+	// Init debug/timing IOs
+	//	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
+
+	//	GPIO_InitDef.GPIO_Pin = ((uint16_t)0x00ff);		// this can be or'd
+	//	GPIO_InitDef.GPIO_OType = GPIO_OType_PP;
+	//	GPIO_InitDef.GPIO_Mode = GPIO_Mode_OUT;
+	//	GPIO_InitDef.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	//	GPIO_InitDef.GPIO_Speed = GPIO_Speed_100MHz;
+	//	//Initialize pins
+	//	GPIO_Init(GPIOE, &GPIO_InitDef);
+
 }
 
 
@@ -1291,7 +1310,7 @@ void gpio_init_mco2(void) {
         W_now = pidDataY.W_rem;
     }}}} 
 #endif    
-*/    
+ */
 
 //    gpio_init_mco1();
 //    RCC_MCO1Config(RCC_MCO1Source_HSE,RCC_MCO1Div_1);
@@ -1515,8 +1534,7 @@ void gpio_init_mco2(void) {
 //        if ((ass.integrator <= ass.lowerVal) || (ass.integrator >= ass.upperVal)) {   /**< check for integrator limit */
 //            if (! ass.tripped) {
 //                ass.tripped = 1;                    /**< Set "tripped" state if it is so */
-//                DAC_SecureSetDualChanSigned = \
-//                      &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "ass tripped" handler*/
+//                DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "ass tripped" handler*/
 //            }
 //            return;
 //        }

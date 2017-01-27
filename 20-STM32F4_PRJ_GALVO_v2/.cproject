@@ -44,7 +44,7 @@
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 									<listOptionValue builtIn="false" value="STM32F429_439xx"/>
 								</option>
-								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.405069676" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false" valueType="undefDefinedSymbols">
+								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.405069676" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false" valueType="undefDefinedSymbols">
 									<listOptionValue builtIn="false" value="KEIL_IDE"/>
 								</option>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.240025978" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
@@ -55,6 +55,12 @@
 								<option id="gnu.cpp.compiler.option.debugging.level.1973565612" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 							</tool>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.975684112" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker">
+								<option id="gnu.c.link.option.libs.767924775" name="Libraries (-l)" superClass="gnu.c.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="arm_cortexM4lf_math"/>
+								</option>
+								<option id="gnu.c.link.option.paths.376954293" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS/lib/GCC}&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.387745293" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>

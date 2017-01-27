@@ -55,7 +55,7 @@ void MDB_GPIO_BeamPin(MDB_GPIO_NAME_t name, MDB_GPIO_DRIVER_STATE_t newState) {
 }
 
 
-/**< Init all GPIOs listet in MDB_GPIO[]array
+/**< Init all GPIOs listed in MDB_GPIO[]array
  */
 void MDB_GPIO_Init(void) {
   GPIO_InitTypeDef  GPIO_InitStructure;

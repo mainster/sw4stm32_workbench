@@ -211,15 +211,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/main.c",
-			"settings":
-			{
-				"buffer_size": 1815,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -228,8 +219,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "insta",
+		"height": 172.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -401,7 +392,7 @@
 				"Markdown HTML Preview"
 			]
 		],
-		"width": 602.0
+		"width": 629.0
 	},
 	"console":
 	{
@@ -502,10 +493,40 @@
 	},
 	"expanded_folders":
 	[
-		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO"
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2"
 	],
 	"file_history":
 	[
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Default (Linux).sublime-mousemap",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
+		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_13-05-2015/User/main.c",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/attributes.h",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.c",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.h",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.c",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart_dma.c",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart_dma.h",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.h",
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/templateDoxy.txt",
+		"/home/mainster/scripts/move2src-inc.sh",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/move2src-inc.sh",
+		"/media/data/CODES/sw4stm32_workbench/makeLibsRo.sh",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/stm324x9i_eval.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/README.md",
+		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/README.md",
+		"/home/mainster/scripts/makeLibsRo.sh",
+		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO_MKFILE/.cproject",
+		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/src/main.c",
+		"/media/data/CODES/sw4stm32_workbench/.metadata/.plugins/org.eclipse.cdt.ui/01-STM32F4_MD_HELLO.build.log",
+		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO_MKFILE/makefile",
+		"/media/data/whz/projectGalvoDocu/README.md",
+		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/Debug/makefile",
+		"/home/mainster/.config/terminator/config",
 		"/home/mainster/CODES_local/sw4stm32_workbench/01-STM32F4_MD_HELLO/01-STM32F4_MD_HELLO.sublime-project",
 		"/home/mainster/CODES_local/sw4stm32_workbench/01-STM32F4_MD_HELLO/src/main.c",
 		"/home/mainster/scripts/psswitch.sh",
@@ -520,12 +541,9 @@
 		"/home/mainster/.config/sublime-text-3/Packages/User/Diagram.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/Table Editor/Default (Linux).sublime-keymap",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Open-Include.sublime-settings",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
 		"/home/mainster/.config/sublime-text-3/Packages/Open-Include/Open-Include.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/User/nonUserBaseConfigPlacer.sh",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c",
 		"/home/mainster/.config/sublime-text-3/Packages/ToggleFold/Default (Linux).sublime-keymap",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c",
 		"/home/mainster/.config/sublime-text-3/Packages/Open-Include/Default (Linux).sublime-keymap",
 		"/home/mainster/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
@@ -544,7 +562,6 @@
 		"/media/data/CODES/sw4stm32_workbench/.gitignore",
 		"/media/data/CODES/sw4stm32_workbench/README.md",
 		"/media/data/CODES/sw4stm32_workbench/WORKSPACE_DOCU/.README.md.html",
-		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/README.md",
 		"/home/mainster/.config/sublime-text-3/Packages/Gitignore/README.md",
 		"/home/mainster/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/mainster/.config/sublime-text-3/Packages/ShellCommand/ShellCommand.sublime-settings",
@@ -607,37 +624,11 @@
 		"/media/data/vems_mitch_944_brain/firmware/handler2k.h",
 		"/media/data/vems_mitch_944_brain/firmware/phasesignal.c",
 		"/media/data/vems_mitch_944_brain/firmware/adc.c",
-		"/media/data/vems_mitch_944_brain/firmware/fuelcalc.c",
-		"/media/data/vems_mitch_944_brain/firmware/helpers.c",
-		"/media/data/vems_mitch_944_brain/firmware/tables.c",
-		"/media/data/vems_mitch_944_brain/firmware/sys/kpafactor4115.h",
-		"/media/data/vems_mitch_944_brain/firmware/adc.h",
-		"/media/data/vems_mitch_944_brain/firmware/emulator/defines.h",
-		"/media/data/vems_mitch_944_brain/firmware/etc/kpafactor4115.h",
-		"/media/data/vems_mitch_944_brain/firmware/tables.h",
-		"/home/mainster/.config/sublime-text-3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
-		"/media/data/vems_mitch_944_brain/firmware/vems.sublime-project",
-		"/media/data/vems_mitch_944_brain/firmware/actuators.cr",
-		"/media/data/vems_mitch_944_brain/firmware/eventqueue.h",
-		"/usr/lib/avr/include/avr/crc16.h",
-		"/media/data/vems_mitch_944_brain/firmware/avr_make",
-		"/media/data/vems_mitch_944_brain/firmware/EmuMakefile",
-		"/usr/lib/avr/include/avr/signal.h",
-		"/media/data/vems_mitch_944_brain/firmware/doxygen.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/avr/adc.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/benchmark.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/vems.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/compile_time.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/heap.lst",
-		"/media/data/vems_mitch_944_brain/vems_firmware/heap.o",
-		"/media/data/vems_mitch_944_brain/vems_firmware/magicstr.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/varstr.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/my_make",
-		"/media/data/vems_mitch_944_brain/vems_firmware/timing.c"
+		"/media/data/vems_mitch_944_brain/firmware/fuelcalc.c"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 21.0
 	},
 	"find_in_files":
 	{
@@ -651,6 +642,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"command",
 			"PS1",
 			"ValueError",
 			"doxy_edit_settings",
@@ -735,37 +727,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1815,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								643,
-								643
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -817,7 +780,7 @@
 		"height": 88.0
 	},
 	"pinned_build_system": "Packages/Markdown Preview/Markdown.sublime-build",
-	"project": "01-STM32F4_MD_HELLO.sublime-project",
+	"project": "20-STM32F4_PRJ_GALVO_v2.sublime-project",
 	"replace":
 	{
 		"height": 38.0
@@ -862,7 +825,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 220.0,
+	"side_bar_width": 176.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

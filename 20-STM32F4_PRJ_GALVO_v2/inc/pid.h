@@ -39,6 +39,10 @@
 
 #include "stdint.h"
 
+#if ! (defined (KEIL_IDE) || defined (__GNUC__))
+	#error "Please specify an IDE or GNUC tools!"
+#endif
+
 #define 	BACK_SQUARE		20		// Integrationsmethode "Rueckckwaerts- Rechteck" //
 #define 	TRIANGLE			21		// Integrationsmethode "Trapez" //
 
@@ -53,8 +57,13 @@ typedef enum {
     BUFFERED,
     UNBUFFERED
 } PID_struct_type;
-#pragma GCC push_options
-#pragma GCC optimize ("O0")
+
+#if  defined (KEIL_IDE)
+	#pragma O0
+#elif  defined (__GNUC__)
+	#pragma GCC push_options
+	#pragma GCC optimize ("O0")
+#endif
 
 typedef struct PID_DATA{
     int16_t W[PID_BUFF_LENGTH];		/**< Setpoint history */
@@ -138,7 +147,11 @@ typedef struct FPID_DATA{
     
 } pidDatafloat_t;
 
-#pragma GCC pop_options
+#if  defined (KEIL_IDE)
+	#pragma O2
+#elif  defined (__GNUC__)
+	#pragma GCC pop_options
+#endif
 
 
 #define InitStruct(var, type) type var; memset(&var, 0, sizeof(type))
