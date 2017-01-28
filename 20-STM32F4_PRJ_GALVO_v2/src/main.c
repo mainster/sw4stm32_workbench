@@ -9,7 +9,7 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
- * @brief       Main function for project XY-GalvoScanner. 29.04.2015
+ * @brief       Main function for project XY-XY-Galvo. 29.04.2015
  *
  * @verbatim
 
@@ -63,10 +63,10 @@
 #include "tools.h"
 
 struct global g;
-extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 uint16_t vectorCtr = 0;
 int8_t dir = 1;
 uint32_t ticks = 0;
+extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
 // ==============================================================
 //   This is needed in order to provide printf functionality
@@ -74,11 +74,9 @@ uint32_t ticks = 0;
 #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 
 //struct __FILE { int handle; };
-
 FILE __stdout;
 
-PUTCHAR_PROTOTYPE
-{
+PUTCHAR_PROTOTYPE {
 	/* Place implementation of device specific fputc here */
 	USART_SendData(USART1, (uint8_t) ch);
 
@@ -167,22 +165,24 @@ float setpoint_tgl = (1.25 - 0.4);
 
 
 
-float duty = 0;             /* Duty cycle for PWM */
-arm_pid_instance_f32 PIDX;   /* ARM PID Instance, float_32 format */
-arm_pid_instance_f32 PIDY;   /* ARM PID Instance, float_32 format */
+float duty = 0;             //!< Duty cycle for PWM
+arm_pid_instance_f32 PIDX;   //!< ARM PID Instance, float_32 format
+arm_pid_instance_f32 PIDY;   //!< ARM PID Instance, float_32 format
 
 
-__IO float toPlant;              /* next actuator value in Volt */
-int16_t toPlant_int;       /* next actuator value integral type */
+__IO float toPlant;              //!< next actuator value in Volt
+int16_t toPlant_int;       //!< next actuator value integral type
 
 int16_t test1 = UPPER_DAC_LIMIT_SIGNED;
 int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 #pragma GCC pop_options
 
-/* Choose PID parameters */
-#define PID_PARAM_KP		0.5			/* Proporcional */
-#define PID_PARAM_KI		0.0		/* Integral */
-#define PID_PARAM_KD		0.0			/* Derivative */
+/**
+ * @brief	Choose PID parameters
+ */
+#define PID_PARAM_KP		0.5			//!< Proporcional
+#define PID_PARAM_KI		0.0		//!< Integral
+#define PID_PARAM_KD		0.0			//!< Derivative
 
 // ==============================================================
 //                      beam interrupter
@@ -291,8 +291,9 @@ static struct itemsm itemsm_list[] = {
 };
 
 void resetPID (void) {
-  pid_Init(KP_INIT, KI_INIT, KD_INIT, TF_INIT, TS, &pidDataY, UNBUFFERED);
-  calc_coeff(&pidDataY, BACK_SQUARE);
+	pid_Init (KP_INIT, KI_INIT, KD_INIT, TF_INIT, TS,
+	          &pidDataY, PID_StructType_Unbuffered);
+	PID_Calc_Coeffs(&pidDataY, PID_IntMethode_RwdRect);
 }
 
 

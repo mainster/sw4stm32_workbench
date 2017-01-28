@@ -9,9 +9,9 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
- * @brief       Waveform extension for DAC library.
+ * @brief       Waveform generation extension for DAC library.
  *
- * @verbatim
+	@verbatim
 
 	Copyright (C) 2016	Manuel Del Basso
 
@@ -30,8 +30,8 @@
 	@endverbatim
  *
  */
-#ifndef MD_STM32F4xx_DAC_H_
-#define MD_STM32F4xx_DAC_H_
+#ifndef _MD_DAC_H_
+#define _MD_DAC_H_
 
 #include "stm32f4xx.h"
 #include "stm32f4xx_dac.h"

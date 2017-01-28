@@ -1,5 +1,5 @@
 ﻿/**
- *	Keil project for XY-GalvoScanner
+ *	Keil project for XY-XY-Galvo
  *  29-04-2015
  *
  *

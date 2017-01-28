@@ -39,8 +39,8 @@
  */
 
 /**
- * @defgroup   MD_GPIO (group_title)
- * @brief      GPIO basic manipulation @{
+ * @addtogroup	MD_GPIO
+ * @brief      	GPIO basic manipulation @{
  *
  *             GPIO library is a user level implementation of Std/HAL driver
  *             GPIO library.
@@ -59,8 +59,8 @@
 //#endif
 
 /**
- * @defgroup   MD_GPIO_Macros (group_title)
- * @brief      GPIO library related macro definitions. @{
+ * @addtogroup	MD_GPIO_Macros
+ * @brief      	GPIO library macro definitions. @{
  */
 
 /**
@@ -111,14 +111,11 @@
 #define GPIO_Pin_All	((uint16_t)0xFFFF)
 #endif
 
-/**
- * @}
- */
+/** @} */	/* MD_GPIO_Macros */
 
 /**
- * @defgroup   MD_GPIO_Typedefs (group_title)
- * @brief      GPIO Typedef is used to improve initialization/access method
- *             structure. @{
+ * @addtogroup 	MD_GPIO_Typedefs
+ * @brief      	Used to improve initialization/access method structure. @{
  */
 
 /**
@@ -135,8 +132,8 @@ typedef enum {
 	MD_GPIO_Speed_Fast	 = 0x02, 	//!< GPIO Speed Fast
 	MD_GPIO_Speed_High	 = 0x03 	//!< GPIO Speed High
 } MD_GPIO_Speed_t;
-/**
 
+/**
  * @brief      Driver/logic modes enumerations.
  */
 enum MD_GPIO_Mode_enum {
@@ -173,14 +170,12 @@ typedef enum {
 	MD_GPIO_PuPd_Down = 0x02 		//!< Pull down resistor enabled
 } MD_GPIO_PuPd_t;
 
-/**
- * @} MD_GPIO_Typedefs
- */
+/** @} */	/* MD_GPIO_Typedefs */
 
 
 /**
- * @defgroup   MD_GPIO_Functions
- * @brief      GPIO functions @{
+ * @addtogroup	MD_GPIO_Functions
+ * @brief      	GPIO functions @{
  */
 
 /**
@@ -196,9 +191,6 @@ typedef enum {
 void MD_GPIO_Init(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin,
 				  MD_GPIO_Mode_t GPIO_Mode, MD_GPIO_OType_t GPIO_OType,
 				  MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed);
-
-
-
 
 /**
  * @brief      Initialize GPIO pins for alternate port operation.
@@ -374,19 +366,13 @@ uint16_t MD_GPIO_GetUsedPins(GPIO_TypeDef *GPIOx);
  */
 uint16_t MD_GPIO_GetFreePins(GPIO_TypeDef *GPIOx);
 
-/**
- * @}
- */
-/**
- * @}
- */
-/**
- * @}
- */
+/** @} */	/* MD_GPIO_Functions */
+/** @} */	/* MD_GPIO */
+/** @} */	/* MD_STM32F4_Libraries */
 
 /* C++ detection */
-//#ifdef __cplusplus
-//}
-//#endif
+#ifdef __cplusplus
+}
+#endif
 
 #endif

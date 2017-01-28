@@ -39,8 +39,8 @@
  */
 
 /**
- * @defgroup	MD_DISCO
- * @brief		Provides initialization and access methods for on-board LEDs and Button.
+ * @defgroup	MD_DISCO Discovery Board
+ * @brief		Provides initialization and access methods for on-board LEDs and Button. @{
  *
  * @par Dependencies
  *
@@ -193,16 +193,8 @@ uint8_t MD_DISCO_ButtonOnPressed(void);
  */
 uint8_t MD_DISCO_ButtonOnReleased(void);
 
-/**
- * @}
- */
+/** @} */
+/** @} */
+/** @} */
  
-/**
- * @}
- */
- 
-/**
- * @}
- */
-
 #endif

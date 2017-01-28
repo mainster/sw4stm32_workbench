@@ -48,10 +48,6 @@
 #include "tm_stm32f4_usart.h"
 
 
-/* Access macros for actual ADC values
- * ToDo:    Maybe this macros needs to be atomic! 
- */
-
 //external __IO int16_t ADC_MultiConvBuff[5];
 //external __IO float ADC_fBuff[5];
 
@@ -139,8 +135,14 @@ enum wav_items { 							///< Enumeration for switch-by-string casees
 };
 
 /* ================================================================================ */
-struct itemsw								///< Struct for switch-by-string casees
-{
+
+/**
+ * @brief      Lookup table to provide switch-by-string functionality.
+ *
+ *             Structure holds a string and id value to provide simple
+ *             switch-by-string functionality
+ */
+struct itemsw {
 	char *name;
 	enum wav_items idw;
 };
