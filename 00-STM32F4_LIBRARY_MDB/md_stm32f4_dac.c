@@ -1,18 +1,15 @@
 ﻿/**
  * @file        md_stm32f4_dac.c
  *
- * @date        26 Jan 2017
+ * @date        28 Jan 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
  * @ide         System Workbench ac6 (eclipse stm32)
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- *
- * @brief       DESCRIPTION
+ * @license		GNU GPL v3
  *
  * @verbatim
-
-	------------------------------------------------------------------------
 
 	Copyright (C) 2016	Manuel Del Basso
 
@@ -28,13 +25,10 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	------------------------------------------------------------------------
-
- * @endverbatim
+	@endverbatim
  *
  */
 #include "md_stm32f4_dac.h"
-#include "md_stm32f4_gpio.h"
 
 void MD_DAC_Init(MD_DAC_Channel_t DACx) {
 	DAC_InitTypeDef DAC_InitStruct;
@@ -48,7 +42,7 @@ void MD_DAC_Init(MD_DAC_Channel_t DACx) {
 	}
 
 	/* Initialize proper GPIO pin */
-	MD_GPIO_Init(GPIOA, gpioPin, MD_GPIO_Mode_ANA, MD_GPIO_OType_PP, MD_GPIO_PuPd_None, MD_GPIO_Speed_Fast);
+	MD_GPIO_Init (GPIOA, gpioPin, MD_GPIO_Mode_AF, GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_Fast);
 
 	/* Enable DAC clock */
 	RCC->APB1ENR |= RCC_APB1ENR_DACEN;

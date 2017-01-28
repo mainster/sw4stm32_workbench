@@ -145,6 +145,8 @@ struct itemsw								///< Struct for switch-by-string casees
 	enum wav_items idw;
 };
 
+void resetPID (void);
+
 
 // ==============================================================
 //            MISC command items struct

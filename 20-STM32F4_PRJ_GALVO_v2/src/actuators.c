@@ -73,34 +73,20 @@ int beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) {
 
 
 
-/**
- * @brief   Safely update actuator control signals
- * Safely means in terms of missplaced or oscillating controller outputs.
- * The analog watchdog peripheral takes care about "out of normal range" 
- * events. If a converted position signal is out of range, the watchdog 
- * handler starts time integration and after "out of range" integrator 
- * reaches a defineable limit, the watchdog takes the system to into
- * "Tripped" state.
- * Therefor a global error flag becomes true AND the function pointer
- * DAC_SetDualChanSigned() that points to a wraper function, gots to be
- * replaced by a pointer that points to DAC_SetDualChanSigned_Tripped().
- * In the DAC_SetDualChanSigned() function, that is pointed to in tripped 
- * state, only outputs a zero level DAC-Signal to take external hardware 
- * in a safe state.
- */
 int updateActuator_f(float I_set_x, float I_set_y) {
     int toPlant_intBuff[2] = { 0, 0 };
     int *toPlant_int = &toPlant_intBuff[0];
     
-    if (!ass.tripped) {     ///< only if ass state is NOT tripped
+    /* only if ass state is NOT tripped */
+    if (!ass.tripped) {     
 
-        /**< decode the float values to an integral type */
+        /* Decode the float values to an integral type */
         *toPlant_int     = decode_toInt(I_set_x);
         *(toPlant_int+1) = decode_toInt(I_set_y);
 
         /**
-         * Check decoded values to be in DAC output range. Clipping 
-         * would be necessary 
+         * Check decoded values against valied DAC output range. 
+         * Clipping would be necessary! 
          */
         for (uint8_t k=0; k<2; k++) {
             if (*(toPlant_int+k) > UPPER_DAC_LIMIT_SIGNED)
@@ -109,8 +95,8 @@ int updateActuator_f(float I_set_x, float I_set_y) {
                     *(toPlant_int+k) = LOWER_DAC_LIMIT_SIGNED;
         }
     } 
-    else{   
-    /**<><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>    
+    else {   
+    /* <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>    
        <>  This branch eror-handles an ass integrator_full event i.e.<>
        <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>    
        <>                    FUSE TRIPPED                            <>

@@ -7,12 +7,9 @@
 #include <stdio.h>
 #include <string.h>
 
+
 extern __IO uint16_t ADC_MultiConvBuff[5];
 extern __IO uint16_t ADC_Buff[5];
-
-
-//volatile float lastE;
-//volatile float Int ;
 
 
 // Update PID controller parameters
@@ -62,9 +59,8 @@ void pid_Init_Tp_arg(int arg) {
 	#pragma GCC optimize ("O0")
 #endif
 
-void pid_Init(	float Kp, float Ki, float Kd, 
-								uint16_t setTf, uint16_t setTs, 
-								struct PID_DATA *pid, PID_struct_type type ) {
+void pid_Init (float Kp, float Ki, float Kd, uint16_t setTf, uint16_t setTs,
+               struct PID_DATA *pid, PID_struct_type type ) {
 
 									// Set up PID controller parameters
 									
@@ -204,14 +200,16 @@ int fpid_Controller(int16_t setPoint, int16_t processValue, \
                 
                 
 
-void calc_coeff (	struct PID_DATA *pid, 
-									uint8_t integration_method) {
+void calc_coeff (struct PID_DATA *pid, uint8_t integration_method) {
 	float Kp = pid->Kp;
 	float Ki = pid->Ki;
 	float Kd = pid->Kd;
-	/* FIXME */
-	float Tf __attribute__ ((unused)) = (float)pid->Tf / 1000000;						// Filter timeconstant [s] NOT [us]
-	float Ts = (float)pid->Ts / 1000000;						// Sampletime [s] NOT [us]
+	/* FIXME:  Why? */
+  /* Filter timeconstant [s] NOT [us] */
+	float Tf __attribute__ ((unused)) = (float)pid->Tf / 1000000;
+
+  /* Sampletime [s] NOT [us] */
+	float Ts = (float)pid->Ts / 1000000;
 	
 	switch (integration_method) {
 		case BACK_SQUARE:	{														// "Rueckwaerts- Rechteck" //

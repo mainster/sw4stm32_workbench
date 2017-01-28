@@ -1,17 +1,37 @@
 /**
- *	Keil project for XY-GalvoScanner
- *  29-04-2015
+ * @file        adc_dac_dma.h
  *
+ * @date        28 Jan 2017
+ * @author      Manuel Del Basso (mainster)
+ * @email       manuel.delbasso@gmail.com
  *
- *	@author		Manuel Del Basso
- *	@email		Manuel.DelBasso@googlemail.com  
- *	@ide		Keil uVision 5
- *	@packs		STM32F4xx Keil packs version 2.2.0 or greater required
- *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ * @ide         System Workbench ac6 (eclipse stm32)
+ * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ * @license		GNU GPL v3
+ *
+ * @brief       Provides DMA related configuration and access functions for ADC and DAC.
+ *
+ * @verbatim
+
+	Copyright (C) 2016	Manuel Del Basso
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	@endverbatim
+ *
  */
- 
 #ifndef ADC_DAC_DMA_H_
-#define ADC_DAC_DMA_H_  100
+#define ADC_DAC_DMA_H_
 
 #include "stm32f4xx.h"
 #include "stm32f4xx_rcc.h"
@@ -28,7 +48,7 @@
 
 // Setpoint (external) 
 // Auf prototyp Signal v1.3 wurde dazu einer der
-// I_Sens_X/Y Kan�le benutzt 
+// I_Sens_X/Y Kanäle benutzt
 /*
  CHAN   ADC1    ADC2    ADC3
  ----------------------------
@@ -81,9 +101,6 @@
 // ==============================================================
 
 
-// ==============================================================
-// Warum define geändert? 01-06-2015 @@@MDB
-// ?????????????????????????????????????????
 // ==============================================================
 //#define DAC_Align_12b_R  CHAN_Align_12b_R
 // ==============================================================

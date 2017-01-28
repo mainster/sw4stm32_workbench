@@ -30,18 +30,29 @@
 	@endverbatim
  *
  */
-#ifndef MD_STM32F4_DISCO_H_
-#define MD_STM32F4_DISCO_H_
-
+#ifndef MD_DISCO_H_
+#define MD_DISCO_H_ 1110
 
 /**
  * @addtogroup MD_STM32F4_Libraries
  * @{
  */
 
+/**
+ * @defgroup	MD_DISCO
+ * @brief		Provides initialization and access methods for on-board LEDs and Button.
+ *
+ * @par Dependencies
+ *
+@verbatim
+ - STM32F4xx
+ - defines.h
+ - MD GPIO
+@endverbatim
+ */
 #include "stm32f4xx.h"
+#include "defines.h"
 #include "md_stm32f4_gpio.h"
-
 
 /* Definitions according to "STM32F429I-DISCO schematics" */
 #ifdef STM32F429ZI

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"int",
+				"int16_t"
+			],
+			[
 				"PKG",
 				"PKG_DOXYDOXYGEN_EVOLUTION"
 			],
@@ -212,31 +216,100 @@
 	"buffers":
 	[
 		{
-			"contents": "/**\n * @file        md_stm32f4_disco.h\n *\n * @date        27 Jan 2017\n * @author      Manuel Del Basso (mainster)\n * @email       manuel.delbasso@gmail.com\n *\n * @ide         System Workbench ac6 (eclipse stm32)\n * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required\n * @license\t\tGNU GPL v3\n *\n * @brief       Definitions to extend board support for STM32F429i-DISCO and equivalent boards.\n *\n * @verbatim\n\n\tCopyright (C) 2016\tManuel Del Basso\n\n\tThis program is free software: you can redistribute it and/or modify\n\tit under the terms of the GNU General Public License as published by\n\tthe Free Software Foundation, either version 3 of the License, or\n\t(at your option) any later version.\n\n\tThis program is distributed in the hope that it will be useful,\n\tbut WITHOUT ANY WARRANTY; without even the implied warranty of\n\tMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n\tGNU General Public License for more details.\n\tYou should have received a copy of the GNU General Public License\n\talong with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n\t@endverbatim\n *\n */\n#ifndef MD_STM32F4_DISCO_H_\n#define MD_STM32F4_DISCO_H_\n\n/**\n * Library dependencies\n * - STM32F4xx\n * - MD GPIO\n */\n\n/**\n * @addtogroup MD_STM32F4_Libraries\n * @{\n */\n\n#include \"stm32f4xx.h\"\n#include \"md_stm32f4_gpio.h\"\n\n/* Definitions according to \"STM32F429I-DISCO schematics\" */\n#ifdef STM32F429ZI\n\t/* STM32F429 discovery kit onboard LEDs */\n\t#define MD_DISCO_LED_PORT\t\t\tGPIOG\n\t#define LED_GREEN\t\t\t\t\tGPIO_PIN_13\n\t#define LED_RED\t\t\t\t\t\tGPIO_PIN_14\n\t#define LED_ALL\t\t\t\t\t\tLED_GREEN | LED_RED\n\t#define MD_DISCO_LED_PINS\t\t\tLED_GREEN | LED_RED\n\t\t\n\t/* STM32F429 discovery kit onboard button */\n\t#define MD_DISCO_BUTTON_PORT\t\tGPIOA\n\t#define MD_DISCO_BUTTON_PIN\t\t\tGPIO_PIN_0\n\t#define MD_DISCO_BUTTON_PULL\t\tMD_GPIO_PuPd_DOWN\n\t#define MD_DISCO_BUTTON_PRESSED\t\t1\n#endif\n\n/**\n * @defgroup MD_DISCO_Functions\n * @brief    Library Functions\n * @{\n */\n\n/**\n * @brief      Configure all pins for on-board LEDs as outputs.\n */\nvoid MD_DISCO_LedInit(void);\n\n/**\n * @brief      Configure button pin direction to input.\n */\nvoid MD_DISCO_ButtonInit(void);\n\n/**\n * @brief  Turns on LED on board\n * @note   STM32F4x9-Eval board uses inverse logic for leds\n * @param  led: LED you want to turn on\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @retval None\n */\n#ifndef MD_DISCO_SWAP_LOGIC\n\t#define MD_DISCO_LedOn(led)        MD_GPIO_SetPinHigh(MD_DISCO_LED_PORT, (led))\n#else\n\t#define MD_DISCO_LedOn(led)        MD_GPIO_SetPinLow(MD_DISCO_LED_PORT, (led))\n#endif\n\n/**\n * @brief  Turns off LED on board\n * @note   STM32F4x9-Eval board uses inverse logic for leds\n * @param  led: LED you want to turn off\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @retval None\n */\n#ifndef MD_DISCO_SWAP_LOGIC\n\t#define MD_DISCO_LedOff(led)       MD_GPIO_SetPinLow(MD_DISCO_LED_PORT, (led))\n#else\n\t#define MD_DISCO_LedOff(led)       MD_GPIO_SetPinHigh(MD_DISCO_LED_PORT, (led))\n#endif\n\n/**\n * @brief  Toggles LED on board\n * @param  led: LED you want to toggle\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @retval None\n */\n#define MD_DISCO_LedToggle(led)        MD_GPIO_TogglePinValue(MD_DISCO_LED_PORT, (led))\n\n/**\n * @brief  Checks if led is on\n * @note   STM32F4x9-Eval board uses inverse logic for leds\n * @param  led: Led you want to checking\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @retval 1 if led is on or 0 if not\n */\n#ifndef MD_DISCO_SWAP_LOGIC\n#define MD_DISCO_LedIsOn(led)          MD_GPIO_GetOutputPinValue(MD_DISCO_LED_PORT, (led))\n#else\n#define MD_DISCO_LedIsOn(led)          !MD_GPIO_GetOutputPinValue(MD_DISCO_LED_PORT, (led))\n#endif\n\n/**\n * @brief  Sets led value\n * @param  led: LED you want to set value\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @param  state: Set or clear led \n *            - 0: led is off\n *            - > 0: led is on\n * @retval None\n */\n#define MD_DISCO_SetLed(led, state)    ((state) ? MD_DISCO_LedOn(led): MD_DISCO_LedOff(led))\n\n/**\n * @brief  Checks if user button is pressed\n * @param  None\n * @retval Button status\n *            - 0: Button is not pressed\n *            - > 0: Button is pressed\n */\n#define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)\n\n/**\n * @brief  Checks if button was pressed now, but was not already pressed before\n * @param  None\n * @retval Button on pressed value\n *           - 0: In case that button has been already pressed on last call or was not pressed at all yet\n *           - > 0: Button was pressed, but state before was released\n */\nuint8_t MD_DISCO_ButtonOnPressed(void);\n\n/**\n * @brief  Checks if button was released now, but was already pressed before\n * @param  None\n * @retval Button on released value\n *           - 0: In case that button has been already released on last call or was not released at all yet\n *           - > 0: Button was released, but state before was pressed\n */\nuint8_t MD_DISCO_ButtonOnReleased(void);\n\n/**\n * @}\n */\n \n/**\n * @}\n */\n \n/**\n * @}\n */\n\n#endif\n",
-			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
-			"file_size": 5747,
-			"file_write_time": 131300246279796598,
+			"file": "src/main.c",
 			"settings":
 			{
-				"buffer_size": 5726,
+				"buffer_size": 46594,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
+			"file": "src/pid.c",
 			"settings":
 			{
-				"buffer_size": 14263,
+				"buffer_size": 15628,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c",
+			"file": "inc/pid.h",
 			"settings":
 			{
-				"buffer_size": 6201,
+				"buffer_size": 9622,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "inc/adc_dac_dma.h",
+			"settings":
+			{
+				"buffer_size": 5136,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
+			"settings":
+			{
+				"buffer_size": 13589,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n * @file        md_stm32f4_dac.h\n *\n * @date        28 Jan 2017\n * @author      Manuel Del Basso (mainster)\n * @email       manuel.delbasso@gmail.com\n *\n * @ide         System Workbench ac6 (eclipse stm32)\n * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required\n * @license\t\tGNU GPL v3\n *\n * @brief       Project XA-Galvo scanner specific digital to analog converter methods.\n *\n * @verbatim\n\n\tCopyright (C) 2016\tManuel Del Basso\n\n\tThis program is free software: you can redistribute it and/or modify\n\tit under the terms of the GNU General Public License as published by\n\tthe Free Software Foundation, either version 3 of the License, or\n\t(at your option) any later version.\n\n\tThis program is distributed in the hope that it will be useful,\n\tbut WITHOUT ANY WARRANTY; without even the implied warranty of\n\tMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n\tGNU General Public License for more details.\n\tYou should have received a copy of the GNU General Public License\n\talong with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n\t@endverbatim\n *\n */\n#ifndef _MD_DAC_H_\n#define _MD_DAC_H_\n\n/* C++ detection */\n#ifdef __cplusplus\nextern C {\n#endif\n\n/**\n * @addtogroup MD_STM32F4_Libraries\n * @{\n */\n\n/**\n * @defgroup MD_DAC\n * @brief    DAC library for STM32F4xx - http://stm32f4-discovery.com/2014/04/library-07-da-converter-on-stm32f4xx/\n * @{\n *\n * This library provides 12-bit digital to analog output, values from 0 to 4095\n *\n * @par Pinout\n *\n@verbatim\nDAC\tchannel\t\tSTM32F4xx\n\nDAC1\t\t\tPA4\nDAC2\t\t\tPA5\n@endverbatim\n *\n * \\par Changelog\n *\n@verbatim\n Version 1.1\n  - March 12, 2015\n  - Support for my new GPIO library\n\n Version 1.0\n  - First release\n@endverbatim\n *\n * \\par Dependencies\n *\n@verbatim\n - STM32F4xx\n - STM32F4xx DAC\n - defines.h\n - TM GPIO\n@endverbatim\n */\n\n/**\n * Includes\n */\n#include \"stm32f4xx.h\"\n#include \"stm32f4xx_dac.h\"\n#include \"defines.h\"\n#include \"md_stm32f4_gpio.h\"\n\n/**\n * @defgroup MD_DAC_Typedefs\n * @brief    Library Typedefs\n * @{\n */\n\n/**\n * @brief  Select which DAC channel\n */\ntypedef enum {\n\tMD_DAC1, /*!< DAC channel 1 */\n\tMD_DAC2  /*!< DAC channel 2 */\n} MD_DAC_Channel_t;\n\n/**\n * @}\n */\n\n/**\n * @defgroup MD_DAC_Functions\n * @brief    Library Functions\n * @{\n */\n\n/**\n * @brief  Initializes DAC channel and it's pin\n * @param  DACx: DAC Channel you will use. This parameter can be a value of @ref MD_DAC_Channel_t enumeration\n * @retval None\n */\nvoid MD_DAC_Init(MD_DAC_Channel_t DACx);\n\n/**\n * @brief  Sets analog value to ADCx\n * @param  DACx: DAC Channel you will use. This parameter can be a value of @ref MD_DAC_Channel_t enumeration\n * @param  value: 12-bit unsigned value for 12-bit DAC\n * @retval None\n */\nvoid MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value);\n\n/**\n * @}\n */\n\n/**\n * @}\n */\n\n/**\n * @}\n */\n\n///* C++ detection */\n//#ifdef __cplusplus\n//}\n//#endif\n\n\n#endif /* MD_STM32F4_DAC_H_ */\n",
+			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
+			"file_size": 2912,
+			"file_write_time": 131300558614085243,
+			"settings":
+			{
+				"buffer_size": 2909,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/mdb_gpio.h",
+			"settings":
+			{
+				"buffer_size": 3317,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/mdb_gpio.c",
+			"settings":
+			{
+				"buffer_size": 6055,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mainster/.config/sublime-text-3/Packages/SublimeAStyleFormatter/SublimeAStyleFormatter.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 19610,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/actuators.h",
+			"settings":
+			{
+				"buffer_size": 2600,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/actuators.c",
+			"settings":
+			{
+				"buffer_size": 3812,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
@@ -249,10 +322,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 172.0,
-		"last_filter": "",
+		"height": 72.0,
+		"last_filter": "forma",
 		"selected_items":
 		[
+			[
+				"forma",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"for",
+				"SublimeAStyleFormatter: Format Current File"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -524,10 +605,15 @@
 	"expanded_folders":
 	[
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB"
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src"
 	],
 	"file_history":
 	[
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeAStyleFormatter.sublime-settings",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c",
 		"/home/mainster/CODES_local/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/STM32F4_MaJerle/00-STM32F429_LIBRARIES_orig/tm_stm32f4_gpio.h",
 		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015/User/stm32f4xx_conf.h",
 		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015/User/defines.h",
@@ -651,15 +737,11 @@
 		"/media/data/vems_mitch_944_brain/firmware/sys/barofac4250.h",
 		"/media/data/vems_mitch_944_brain/firmware/sys/matfactor.h",
 		"/media/data/vems_mitch_944_brain/firmware/sys/thermfactor.h",
-		"/media/data/vems_mitch_944_brain/firmware/dispatcher.c",
-		"/media/data/vems_mitch_944_brain/firmware/dispatcher.h",
-		"/media/data/vems_mitch_944_brain/firmware/varstr.h",
-		"/media/data/vems_mitch_944_brain/firmware/comm.c",
-		"/media/data/vems_mitch_944_brain/firmware/scancodes.h"
+		"/media/data/vems_mitch_944_brain/firmware/dispatcher.c"
 	],
 	"find":
 	{
-		"height": 21.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -670,9 +752,25 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			" Alternate",
+			"\\/\\*(\\!<.*)\\*\\/",
+			"(\\/\\*\\!<.*)\\*\\/",
+			"u?int(16|8)_t",
+			"\\t//",
+			"(//\\!<.*\\.) \\*\\/",
+			"^\\. \\*\\/",
+			" \\*\\/",
+			"\\/\\*\\*< ",
+			" {1,}\\. \\*\\/",
+			"([^\\.]) \\*\\/$",
+			"remoteCmdActive",
+			"\t   ",
+			" {4}",
+			"resetPID",
+			"^([^ \\t][a-zA-Z\\-]*)",
 			"command",
 			"PS1",
 			"ValueError",
@@ -723,9 +821,23 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			" AltFunct",
+			"//\\1",
+			"\\1",
+			"float",
+			"//",
+			"\\1",
+			" */",
+			"",
+			"//!< ",
+			"//!<",
+			". */",
+			"\\1. */",
+			"\\t",
+			"\\t\"\\1\"",
 			"GPIO",
 			"\\1,\\t/*",
 			"\\1\\t/*",
@@ -758,53 +870,113 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
+					"file": "src/main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5726,
+						"buffer_size": 46594,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2197,
-								2197
+								2674,
+								2674
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 337.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/pid.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15628,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2843,
+								2843
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 936.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "inc/pid.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9622,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2631,
+								2631
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 624.0,
+						"translation.y": 390.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
+					"buffer": 3,
+					"file": "inc/adc_dac_dma.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14263,
+						"buffer_size": 5136,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4764,
-								4764
+								0,
+								0
 							]
 						],
 						"settings":
@@ -814,32 +986,32 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2067.0,
+						"translation.y": 624.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c",
+					"buffer": 4,
+					"file": "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6201,
+						"buffer_size": 13589,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1292,
-								1292
+								68,
+								68
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax",
+							"syntax": "Packages/C++/C++.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -847,6 +1019,190 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "inc/mdb_gpio.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								433,
+								433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/mdb_gpio.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1067,
+								1067
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/SublimeAStyleFormatter/SublimeAStyleFormatter.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19610,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3531,
+								3531
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 975.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 9,
+					"file": "inc/actuators.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2600,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1350,
+								1350
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 209.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/actuators.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3812,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2126,
+								2126
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 195.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -869,11 +1225,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -886,6 +1249,10 @@
 	"output.ShellCommand":
 	{
 		"height": 88.0
+	},
+	"output.astyle_error_message":
+	{
+		"height": 0.0
 	},
 	"output.exec":
 	{
@@ -903,7 +1270,7 @@
 	"project": "20-STM32F4_PRJ_GALVO_v2.sublime-project",
 	"replace":
 	{
-		"height": 38.0
+		"height": 62.0
 	},
 	"save_all_on_build": false,
 	"select_file":

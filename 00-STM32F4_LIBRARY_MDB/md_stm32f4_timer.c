@@ -6,7 +6,7 @@ void timer3_interrupt_cmd(FunctionalState NewState);
 int TM_Timer2_Init_adc_sample_trigger(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 int TM_Timer2_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 int TM_Timer3_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
-int TM_Timer6_Config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
+int TM_Timer6_Config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) __attribute__ ((unused));
 
 
                      

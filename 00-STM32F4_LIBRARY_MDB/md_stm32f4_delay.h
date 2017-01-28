@@ -33,20 +33,14 @@
 #ifndef MD_STM32F4_DELAY_H_
 #define MD_STM32F4_DELAY_H_
 
-/**
- * Library dependencies
- * - STM32F4xx
- * - STM32F4xx RCC
- * - defines.h
- */
-/**
- * Includes
- */
+/* Includes */
 #include "stm32f4xx.h"
 #include "stm32f4xx_rcc.h"
 #include "defines.h"
 
-static __IO uint32_t MD_TimingDelay;
+//CMSIS_glob_defs
+//static __IO uint32_t MD_TimingDelay;
+//static uint32_t MD_TimingDelayNoIo;
 
 /**
  * This variable can be used in main

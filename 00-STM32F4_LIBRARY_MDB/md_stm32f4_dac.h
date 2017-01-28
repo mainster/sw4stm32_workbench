@@ -1,18 +1,17 @@
 ﻿/**
  * @file        md_stm32f4_dac.h
  *
- * @date        26 Jan 2017
+ * @date        28 Jan 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
  * @ide         System Workbench ac6 (eclipse stm32)
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ * @license		GNU GPL v3
  *
- * @brief       DESCRIPTION
+ * @brief       Project XA-Galvo scanner specific digital to analog converter methods.
  *
- * @verbatim
-
-	------------------------------------------------------------------------
+ @verbatim
 
 	Copyright (C) 2016	Manuel Del Basso
 
@@ -28,14 +27,11 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	------------------------------------------------------------------------
-
- * @endverbatim
+	@endverbatim
  *
  */
-#ifndef __MD_STM32F4_DAC_H_
-#define __MD_STM32F4_DAC_H_
-
+#ifndef MD_DAC_H_
+#define MD_DAC_H_
 
 /* C++ detection */
 #ifdef __cplusplus
@@ -49,10 +45,10 @@ extern C {
 
 /**
  * @defgroup MD_DAC
- * @brief    DAC library for STM32F4xx - http://stm32f4-discovery.com/2014/04/library-07-da-converter-on-stm32f4xx/
+ * @brief    DAC library
  * @{
  *
- * This library provides 12-bit digital to analog output, values from 0 to 4095
+ * This library provides 12-bit digital to analog outputs.
  *
  * @par Pinout
  *
@@ -62,19 +58,7 @@ DAC	channel		STM32F4xx
 DAC1			PA4
 DAC2			PA5
 @endverbatim
- *
- * \par Changelog
- *
-@verbatim
- Version 1.1
-  - March 12, 2015
-  - Support for my new GPIO library
-
- Version 1.0
-  - First release
-@endverbatim
- *
- * \par Dependencies
+ * @par Dependencies
  *
 @verbatim
  - STM32F4xx
@@ -88,9 +72,9 @@ DAC2			PA5
  * Includes
  */
 #include "stm32f4xx.h"
-#include "stm32f4xx_dac.h"
+//#include "stm32f4xx_dac.h"
 #include "defines.h"
-//#include "tm_stm32f4_gpio.h"
+#include "md_stm32f4_gpio.h"
 
 /**
  * @defgroup MD_DAC_Typedefs
@@ -107,7 +91,7 @@ typedef enum {
 } MD_DAC_Channel_t;
 
 /**
- * @}
+ * @}	MD_DAC_Typedefs		(end)
  */
 
 /**
@@ -132,21 +116,21 @@ void MD_DAC_Init(MD_DAC_Channel_t DACx);
 void MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value);
 
 /**
- * @}
+ * @}	MD_DAC_Functions	(end)
  */
 
 /**
- * @}
+ * @}	MD_DAC	(end)
  */
 
 /**
- * @}
+ * @}	MD_STM32F4_Libraries	(end)
  */
 
-///* C++ detection */
-//#ifdef __cplusplus
-//}
-//#endif
+/* C++ detection */
+#ifdef __cplusplus
+}
+#endif
 
 
 #endif /* MD_STM32F4_DAC_H_ */
