@@ -1,43 +1,62 @@
 ﻿/**
  * @file        md_stm32f4_disco.h
  *
- * @date        24 Jan 2017
+ * @date        27 Jan 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
  * @ide         System Workbench ac6 (eclipse stm32)
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ * @license		GNU GPL v3
  *
- * @brief       Defines to extend board support for STM32F429i-DISCO
- */
+ * @brief       Definitions to extend board support for STM32F429i-DISCO and equivalent boards.
+ *
+ * @verbatim
 
-#ifndef MD_STM32F4_DISCO_H
-#define MD_STM32F4_DISCO_H
+	Copyright (C) 2016	Manuel Del Basso
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	@endverbatim
+ *
+ */
+#ifndef MD_STM32F4_DISCO_H_
+#define MD_STM32F4_DISCO_H_
+
+
 /**
- * @addtogroup MD_STM32F4xx_Libraries
+ * @addtogroup MD_STM32F4_Libraries
  * @{
  */
 
 #include "stm32f4xx.h"
-
 #include "md_stm32f4_gpio.h"
 
-/* Recognize DISCO eval board */
-#if defined(STM32F429_439xx) || defined(STM32F429ZI)
-	/* STM32F429 Discovery support */
+
+/* Definitions according to "STM32F429I-DISCO schematics" */
+#ifdef STM32F429ZI
+	/* STM32F429 discovery kit on-board LEDs */
+	#define MD_DISCO_LED_PORT			GPIOG
 	#define LED_GREEN					GPIO_PIN_13
 	#define LED_RED						GPIO_PIN_14
-	#define LED_ORANGE					0
-	#define LED_BLUE					0
 	#define LED_ALL						LED_GREEN | LED_RED
-	
-	#define MD_DISCO_LED_PORT			GPIOG
 	#define MD_DISCO_LED_PINS			LED_GREEN | LED_RED
-
+		
+	/* STM32F429 discovery kit on-board button */
 	#define MD_DISCO_BUTTON_PORT		GPIOA
 	#define MD_DISCO_BUTTON_PIN			GPIO_PIN_0
+	#define MD_DISCO_BUTTON_PULL		MD_GPIO_PuPd_Down
 	#define MD_DISCO_BUTTON_PRESSED		1
-	#define MD_DISCO_BUTTON_PULL		MD_GPIO_PuPd_DOWN
 #endif
 
 /**
@@ -47,9 +66,7 @@
  */
 
 /**
- * @brief  Configures LED pins as outputs
- * @param  None
- * @retval None
+ * @brief      Configure all pins for on-board LEDs as outputs.
  */
 void MD_DISCO_LedInit(void);
 

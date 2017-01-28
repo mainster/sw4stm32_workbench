@@ -43,7 +43,7 @@ extern C {
 #endif
 
 /**
- * @addtogroup MD_STM32F4xx_Libraries
+ * @addtogroup MD_STM32F4_Libraries
  * @{
  */
 

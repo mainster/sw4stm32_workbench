@@ -352,7 +352,7 @@ int main(void) {
 	TM_PWM_SetChannelPercent(TIM3, &TIM_Data, TM_PWM_Channel_3, duty);
 
 	/**< Initialize Delay library. */
-	TM_DELAY_Init();
+//	TM_DELAY_Init();
 
 	/**< Initialize TIM5, heart beat timer */
 	//MD_Timer5_config(ENABLE, ENABLE, 48000);        // 48MHz*1ms

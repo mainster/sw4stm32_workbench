@@ -211,6 +211,23 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "inc/main.h",
+			"settings":
+			{
+				"buffer_size": 7585,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/main.c",
+			"settings":
+			{
+				"buffer_size": 86458,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -219,10 +236,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 172.0,
-		"last_filter": "",
+		"height": 392.0,
+		"last_filter": "prv",
 		"selected_items":
 		[
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -262,10 +283,6 @@
 			[
 				"fold",
 				"Code Folding: Fold Tag Attributes"
-			],
-			[
-				"prv",
-				"PackageResourceViewer: Extract Package"
 			],
 			[
 				"rem",
@@ -392,7 +409,7 @@
 				"Markdown HTML Preview"
 			]
 		],
-		"width": 629.0
+		"width": 614.0
 	},
 	"console":
 	{
@@ -493,10 +510,13 @@
 	},
 	"expanded_folders":
 	[
-		"/media/data/CODES/sw4stm32_workbench/21-STM32F4_PRJ_GALVO_lib_v1.4"
+		"/media/data/CODES/sw4stm32_workbench/21-STM32F4_PRJ_GALVO_lib_v1.4",
+		"/media/data/CODES/sw4stm32_workbench/21-STM32F4_PRJ_GALVO_lib_v1.4/inc",
+		"/media/data/CODES/sw4stm32_workbench/21-STM32F4_PRJ_GALVO_lib_v1.4/src"
 	],
 	"file_history":
 	[
+		"/home/mainster/.config/sublime-text-3/Packages/Switch File Deluxe/README.md",
 		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Default (Linux).sublime-mousemap",
 		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
@@ -623,8 +643,7 @@
 		"/media/data/vems_mitch_944_brain/firmware/eventqueue.c",
 		"/media/data/vems_mitch_944_brain/firmware/handler2k.h",
 		"/media/data/vems_mitch_944_brain/firmware/phasesignal.c",
-		"/media/data/vems_mitch_944_brain/firmware/adc.c",
-		"/media/data/vems_mitch_944_brain/firmware/fuelcalc.c"
+		"/media/data/vems_mitch_944_brain/firmware/adc.c"
 	],
 	"find":
 	{
@@ -727,8 +746,69 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "inc/main.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								771,
+								771
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 351.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 86458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3627.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],

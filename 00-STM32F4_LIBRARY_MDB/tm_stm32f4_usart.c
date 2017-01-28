@@ -478,12 +478,12 @@ void TM_USART1_InitPins(TM_USART_PinsPack_t pinspack) {
 	/* Init pins */
 #if defined(GPIOA)
 	if (pinspack == TM_USART_PinsPack_1) {
-		MD_GPIO_InitAlternate(GPIOA, GPIO_Pin_9 | GPIO_Pin_10, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_USART1);
+		MD_GPIO_InitAlternate(GPIOA, GPIO_Pin_9 | GPIO_Pin_10, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_USART1);
 	}
 #endif
 #if defined(GPIOB)
 	if (pinspack == TM_USART_PinsPack_2) {
-		MD_GPIO_InitAlternate(GPIOB, GPIO_Pin_6 | GPIO_Pin_7, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_USART1);
+		MD_GPIO_InitAlternate(GPIOB, GPIO_Pin_6 | GPIO_Pin_7, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_USART1);
 	}
 #endif
 	if (pinspack == TM_USART_PinsPack_Custom) {
@@ -498,12 +498,12 @@ void TM_USART2_InitPins(TM_USART_PinsPack_t pinspack) {
 	/* Init pins */
 #if defined(GPIOA)
 	if (pinspack == TM_USART_PinsPack_1) {
-		MD_GPIO_InitAlternate(GPIOA, GPIO_Pin_2 | GPIO_Pin_3, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_USART2);
+		MD_GPIO_InitAlternate(GPIOA, GPIO_Pin_2 | GPIO_Pin_3, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_USART2);
 	}
 #endif
 #if defined(GPIOD)
 	if (pinspack == TM_USART_PinsPack_2) {
-		MD_GPIO_InitAlternate(GPIOD, GPIO_Pin_5 | GPIO_Pin_6, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_USART2);
+		MD_GPIO_InitAlternate(GPIOD, GPIO_Pin_5 | GPIO_Pin_6, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_USART2);
 	}
 #endif
 	if (pinspack == TM_USART_PinsPack_Custom) {
@@ -518,17 +518,17 @@ void TM_USART3_InitPins(TM_USART_PinsPack_t pinspack) {
 	/* Init pins */
 #if defined(GPIOB)
 	if (pinspack == TM_USART_PinsPack_1) {
-		MD_GPIO_InitAlternate(GPIOB, GPIO_Pin_10 | GPIO_Pin_11, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_USART3);
+		MD_GPIO_InitAlternate(GPIOB, GPIO_Pin_10 | GPIO_Pin_11, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_USART3);
 	}
 #endif
 #if defined(GPIOC)
 	if (pinspack == TM_USART_PinsPack_2) {
-		MD_GPIO_InitAlternate(GPIOC, GPIO_Pin_10 | GPIO_Pin_11, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_USART3);
+		MD_GPIO_InitAlternate(GPIOC, GPIO_Pin_10 | GPIO_Pin_11, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_USART3);
 	}
 #endif
 #if defined(GPIOD)
 	if (pinspack == TM_USART_PinsPack_3) {
-		MD_GPIO_InitAlternate(GPIOD, GPIO_Pin_8 | GPIO_Pin_9, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_USART3);
+		MD_GPIO_InitAlternate(GPIOD, GPIO_Pin_8 | GPIO_Pin_9, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_USART3);
 	}
 #endif
 	if (pinspack == TM_USART_PinsPack_Custom) {
@@ -543,12 +543,12 @@ void TM_UART4_InitPins(TM_USART_PinsPack_t pinspack) {
 	/* Init pins */
 #if defined(GPIOA)
 	if (pinspack == TM_USART_PinsPack_1) {
-		MD_GPIO_InitAlternate(GPIOA, GPIO_Pin_0 | GPIO_Pin_1, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_UART4);
+		MD_GPIO_InitAlternate(GPIOA, GPIO_Pin_0 | GPIO_Pin_1, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_UART4);
 	}
 #endif
 #if defined(GPIOC)
 	if (pinspack == TM_USART_PinsPack_2) {
-		MD_GPIO_InitAlternate(GPIOC, GPIO_Pin_10 | GPIO_Pin_11, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_UART4);
+		MD_GPIO_InitAlternate(GPIOC, GPIO_Pin_10 | GPIO_Pin_11, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_UART4);
 	}
 #endif
 	if (pinspack == TM_USART_PinsPack_Custom) {
@@ -563,8 +563,8 @@ void TM_UART5_InitPins(TM_USART_PinsPack_t pinspack) {
 	/* Init pins */
 #if defined(GPIOC) && defined(GPIOD)
 	if (pinspack == TM_USART_PinsPack_1) {
-		MD_GPIO_InitAlternate(GPIOC, GPIO_Pin_12, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_UART5);
-		MD_GPIO_InitAlternate(GPIOD, GPIO_Pin_2, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_UART5);
+		MD_GPIO_InitAlternate(GPIOC, GPIO_Pin_12, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_UART5);
+		MD_GPIO_InitAlternate(GPIOD, GPIO_Pin_2, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_UART5);
 	}
 #endif
 	if (pinspack == TM_USART_PinsPack_Custom) {
@@ -579,12 +579,12 @@ void TM_USART6_InitPins(TM_USART_PinsPack_t pinspack) {
 	/* Init pins */
 #if defined(GPIOC)
 	if (pinspack == TM_USART_PinsPack_1) {
-		MD_GPIO_InitAlternate(GPIOC, GPIO_Pin_6 | GPIO_Pin_7, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_USART6);
+		MD_GPIO_InitAlternate(GPIOC, GPIO_Pin_6 | GPIO_Pin_7, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_USART6);
 	}
 #endif
 #if defined(GPIOG)
 	if (pinspack == TM_USART_PinsPack_2) {
-		MD_GPIO_InitAlternate(GPIOG, GPIO_Pin_14 | GPIO_Pin_9, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_USART6);
+		MD_GPIO_InitAlternate(GPIOG, GPIO_Pin_14 | GPIO_Pin_9, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_USART6);
 	}
 #endif
 	if (pinspack == TM_USART_PinsPack_Custom) {
@@ -599,12 +599,12 @@ void TM_UART7_InitPins(TM_USART_PinsPack_t pinspack) {
 	/* Init pins */
 #if defined(GPIOE)
 	if (pinspack == TM_USART_PinsPack_1) {
-		MD_GPIO_InitAlternate(GPIOE, GPIO_Pin_8 | GPIO_Pin_7, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_UART7);
+		MD_GPIO_InitAlternate(GPIOE, GPIO_Pin_8 | GPIO_Pin_7, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_UART7);
 	}
 #endif
 #if defined(GPIOF)
 	if (pinspack == TM_USART_PinsPack_2) {
-		MD_GPIO_InitAlternate(GPIOF, GPIO_Pin_7 | GPIO_Pin_6, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_UART7);
+		MD_GPIO_InitAlternate(GPIOF, GPIO_Pin_7 | GPIO_Pin_6, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_UART7);
 	}
 #endif
 	if (pinspack == TM_USART_PinsPack_Custom) {
@@ -619,7 +619,7 @@ void TM_UART8_InitPins(TM_USART_PinsPack_t pinspack) {
 	/* Init pins */
 #if defined(GPIOE)
 	if (pinspack == TM_USART_PinsPack_1) {
-		MD_GPIO_InitAlternate(GPIOE, GPIO_Pin_1 | GPIO_Pin_0, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_High, GPIO_AF_UART8);
+		MD_GPIO_InitAlternate(GPIOE, GPIO_Pin_1 | GPIO_Pin_0, MD_GPIO_OType_PP, MD_GPIO_PuPd_Up, MD_GPIO_Speed_High, GPIO_AF_UART8);
 	}
 #endif
 	if (pinspack == TM_USART_PinsPack_Custom) {

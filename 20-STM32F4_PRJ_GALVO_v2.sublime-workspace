@@ -491,14 +491,8 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB"
-	],
 	"file_history":
 	[
-		"/tmp/.fr-EHOxiA/tm_stm32f4_delay.c",
-		"/home/mainster/CODES_local/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/STM32F4_MaJerle/00-STM32F429_LIBRARIES_orig/tm_stm32f4_gpio.c",
 		"/home/mainster/CODES_local/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/STM32F4_MaJerle/00-STM32F429_LIBRARIES_orig/tm_stm32f4_gpio.h",
 		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015/User/stm32f4xx_conf.h",
 		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015/User/defines.h",
@@ -624,11 +618,13 @@
 		"/media/data/vems_mitch_944_brain/firmware/sys/thermfactor.h",
 		"/media/data/vems_mitch_944_brain/firmware/dispatcher.c",
 		"/media/data/vems_mitch_944_brain/firmware/dispatcher.h",
-		"/media/data/vems_mitch_944_brain/firmware/varstr.h"
+		"/media/data/vems_mitch_944_brain/firmware/varstr.h",
+		"/media/data/vems_mitch_944_brain/firmware/comm.c",
+		"/media/data/vems_mitch_944_brain/firmware/scancodes.h"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 21.0
 	},
 	"find_in_files":
 	{
@@ -734,7 +730,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 21.0
 	},
 	"input":
 	{
@@ -763,27 +759,15 @@
 		]
 	},
 	"menu_visible": true,
-	"output.ShellCommand":
-	{
-		"height": 88.0
-	},
-	"output.exec":
-	{
-		"height": 0.0
-	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"output.markdown":
-	{
-		"height": 88.0
-	},
 	"pinned_build_system": "Packages/Markdown Preview/Markdown.sublime-build",
-	"project": "00-STM32F4_LIBRARY_MDB.sublime-project",
+	"project": "20-STM32F4_PRJ_GALVO_v2.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 38.0
 	},
 	"save_all_on_build": false,
 	"select_file":

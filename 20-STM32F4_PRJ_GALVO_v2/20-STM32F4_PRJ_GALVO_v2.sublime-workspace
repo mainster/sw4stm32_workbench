@@ -212,66 +212,33 @@
 	"buffers":
 	[
 		{
-			"file": "inc/main.h",
+			"contents": "/**\n * @file        md_stm32f4_disco.h\n *\n * @date        27 Jan 2017\n * @author      Manuel Del Basso (mainster)\n * @email       manuel.delbasso@gmail.com\n *\n * @ide         System Workbench ac6 (eclipse stm32)\n * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required\n * @license\t\tGNU GPL v3\n *\n * @brief       Definitions to extend board support for STM32F429i-DISCO and equivalent boards.\n *\n * @verbatim\n\n\tCopyright (C) 2016\tManuel Del Basso\n\n\tThis program is free software: you can redistribute it and/or modify\n\tit under the terms of the GNU General Public License as published by\n\tthe Free Software Foundation, either version 3 of the License, or\n\t(at your option) any later version.\n\n\tThis program is distributed in the hope that it will be useful,\n\tbut WITHOUT ANY WARRANTY; without even the implied warranty of\n\tMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n\tGNU General Public License for more details.\n\tYou should have received a copy of the GNU General Public License\n\talong with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n\t@endverbatim\n *\n */\n#ifndef MD_STM32F4_DISCO_H_\n#define MD_STM32F4_DISCO_H_\n\n/**\n * Library dependencies\n * - STM32F4xx\n * - MD GPIO\n */\n\n/**\n * @addtogroup MD_STM32F4_Libraries\n * @{\n */\n\n#include \"stm32f4xx.h\"\n#include \"md_stm32f4_gpio.h\"\n\n/* Definitions according to \"STM32F429I-DISCO schematics\" */\n#ifdef STM32F429ZI\n\t/* STM32F429 discovery kit onboard LEDs */\n\t#define MD_DISCO_LED_PORT\t\t\tGPIOG\n\t#define LED_GREEN\t\t\t\t\tGPIO_PIN_13\n\t#define LED_RED\t\t\t\t\t\tGPIO_PIN_14\n\t#define LED_ALL\t\t\t\t\t\tLED_GREEN | LED_RED\n\t#define MD_DISCO_LED_PINS\t\t\tLED_GREEN | LED_RED\n\t\t\n\t/* STM32F429 discovery kit onboard button */\n\t#define MD_DISCO_BUTTON_PORT\t\tGPIOA\n\t#define MD_DISCO_BUTTON_PIN\t\t\tGPIO_PIN_0\n\t#define MD_DISCO_BUTTON_PULL\t\tMD_GPIO_PuPd_DOWN\n\t#define MD_DISCO_BUTTON_PRESSED\t\t1\n#endif\n\n/**\n * @defgroup MD_DISCO_Functions\n * @brief    Library Functions\n * @{\n */\n\n/**\n * @brief      Configure all pins for on-board LEDs as outputs.\n */\nvoid MD_DISCO_LedInit(void);\n\n/**\n * @brief      Configure button pin direction to input.\n */\nvoid MD_DISCO_ButtonInit(void);\n\n/**\n * @brief  Turns on LED on board\n * @note   STM32F4x9-Eval board uses inverse logic for leds\n * @param  led: LED you want to turn on\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @retval None\n */\n#ifndef MD_DISCO_SWAP_LOGIC\n\t#define MD_DISCO_LedOn(led)        MD_GPIO_SetPinHigh(MD_DISCO_LED_PORT, (led))\n#else\n\t#define MD_DISCO_LedOn(led)        MD_GPIO_SetPinLow(MD_DISCO_LED_PORT, (led))\n#endif\n\n/**\n * @brief  Turns off LED on board\n * @note   STM32F4x9-Eval board uses inverse logic for leds\n * @param  led: LED you want to turn off\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @retval None\n */\n#ifndef MD_DISCO_SWAP_LOGIC\n\t#define MD_DISCO_LedOff(led)       MD_GPIO_SetPinLow(MD_DISCO_LED_PORT, (led))\n#else\n\t#define MD_DISCO_LedOff(led)       MD_GPIO_SetPinHigh(MD_DISCO_LED_PORT, (led))\n#endif\n\n/**\n * @brief  Toggles LED on board\n * @param  led: LED you want to toggle\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @retval None\n */\n#define MD_DISCO_LedToggle(led)        MD_GPIO_TogglePinValue(MD_DISCO_LED_PORT, (led))\n\n/**\n * @brief  Checks if led is on\n * @note   STM32F4x9-Eval board uses inverse logic for leds\n * @param  led: Led you want to checking\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @retval 1 if led is on or 0 if not\n */\n#ifndef MD_DISCO_SWAP_LOGIC\n#define MD_DISCO_LedIsOn(led)          MD_GPIO_GetOutputPinValue(MD_DISCO_LED_PORT, (led))\n#else\n#define MD_DISCO_LedIsOn(led)          !MD_GPIO_GetOutputPinValue(MD_DISCO_LED_PORT, (led))\n#endif\n\n/**\n * @brief  Sets led value\n * @param  led: LED you want to set value\n *            - LED_RED: Red led\n *            - LED_GREEN: Green led\n *            - LED_BLUE: Blue led\n *            - LED_ORANGE: Orange led\n *            - LED_ALL: All leds\n * @param  state: Set or clear led \n *            - 0: led is off\n *            - > 0: led is on\n * @retval None\n */\n#define MD_DISCO_SetLed(led, state)    ((state) ? MD_DISCO_LedOn(led): MD_DISCO_LedOff(led))\n\n/**\n * @brief  Checks if user button is pressed\n * @param  None\n * @retval Button status\n *            - 0: Button is not pressed\n *            - > 0: Button is pressed\n */\n#define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)\n\n/**\n * @brief  Checks if button was pressed now, but was not already pressed before\n * @param  None\n * @retval Button on pressed value\n *           - 0: In case that button has been already pressed on last call or was not pressed at all yet\n *           - > 0: Button was pressed, but state before was released\n */\nuint8_t MD_DISCO_ButtonOnPressed(void);\n\n/**\n * @brief  Checks if button was released now, but was already pressed before\n * @param  None\n * @retval Button on released value\n *           - 0: In case that button has been already released on last call or was not released at all yet\n *           - > 0: Button was released, but state before was pressed\n */\nuint8_t MD_DISCO_ButtonOnReleased(void);\n\n/**\n * @}\n */\n \n/**\n * @}\n */\n \n/**\n * @}\n */\n\n#endif\n",
+			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
+			"file_size": 5747,
+			"file_write_time": 131300246279796598,
 			"settings":
 			{
-				"buffer_size": 9575,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "README.md",
-			"settings":
-			{
-				"buffer_size": 1320,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/main.c",
-			"settings":
-			{
-				"buffer_size": 48114,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "/**\n * @file        attributes.h\n *\n * @date        26 Jan 2017\n * @author      Manuel Del Basso (mainster)\n * @email       manuel.delbasso@gmail.com\n *\n * @ide         System Workbench ac6 (eclipse stm32)\n * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required\n *\n * @brief       Platform/Compiler dependent definitions\n * \n * @verbatim\n\n\t------------------------------------------------------------------------\n\n\tCopyright (C) 2016\tManuel Del Basso\n\n\tThis program is free software: you can redistribute it and/or modify\n\tit under the terms of the GNU General Public License as published by\n\tthe Free Software Foundation, either version 3 of the License, or\n\t(at your option) any later version.\n\n\tThis program is distributed in the hope that it will be useful,\n\tbut WITHOUT ANY WARRANTY; without even the implied warranty of\n\tMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n\tGNU General Public License for more details.\n\tYou should have received a copy of the GNU General Public License\n\talong with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n\t------------------------------------------------------------------------\n\n * @endverbatim\n *\n */\n#ifndef ATTRIBUTES_H\n#define ATTRIBUTES_H\n\n/**\n * Build by GNU Compiler Collection?\n */\n#if defined (__GNUC__)\n\t/**\n\t * The keyword __attribute__ allows you to specify special attributes when \n\t * making a declaration.\n\t * \n\t * The weak attribute causes the declaration to be emitted as a weak symbol\n\t * rather than a global. This is primarily useful in defining library\n\t * functions which can be overridden in user code, though it can also be\n\t * used with non-function declarations. Weak symbols are supported for ELF\n\t * targets, and also for a.out targets when using the GNU assembler and\n\t * linker.\n\t */\n\t#ifndef    __weak\t\t\n\t\t#define   __weak  __attribute__((weak))\n\t#endif\t\n\n\t/**\n\t * The packed attribute specifies that a variable or structure field should\n\t * have the smallest possible alignment--one byte for a variable, and one\n\t * bit for a field, unless you specify a larger value with the aligned\n\t * attribute. Here is a structure in which the field x is packed, so that it\n\t * immediately follows a:\n\t *\n\t * struct foo {\n\t * \t char a;\n\t * \t int x[2] __attribute__ ((packed));\n\t * };\n\t * \n\t */ \n\t#ifndef\t__packed\t\n\t\t#define \t__packed \t__attribute__((__packed__))\n\t#endif\t\n#endif\n\n#endif\n",
-			"file": "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/attributes8.h",
-			"file_size": 2412,
-			"file_write_time": 131299989331534401,
-			"settings":
-			{
-				"buffer_size": 2409,
+				"buffer_size": 5726,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/mainster/scripts/reencodeSources.sh",
+			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
 			"settings":
 			{
-				"buffer_size": 3171,
-				"encoding": "UTF-8",
+				"buffer_size": 14263,
+				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/media/data/CODES/sw4stm32_workbench/STM32Cube_FW_F4_V1.11.0/Projects/STM32F4-Discovery/Templates/Src/system_stm32f4xx.c",
+			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c",
 			"settings":
 			{
-				"buffer_size": 9629,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h",
-			"settings":
-			{
-				"buffer_size": 2129,
-				"line_ending": "Windows"
+				"buffer_size": 6201,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -557,11 +524,21 @@
 	"expanded_folders":
 	[
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src"
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB"
 	],
 	"file_history":
 	[
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/tm_stm32f4_pwm.h",
+		"/home/mainster/CODES_local/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/STM32F4_MaJerle/00-STM32F429_LIBRARIES_orig/tm_stm32f4_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015/User/stm32f4xx_conf.h",
+		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015/User/defines.h",
+		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015/User/main.h",
+		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_13-05-2015/User/tools.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/main.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/README.md",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/attributes.h",
 		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Default (Linux).sublime-mousemap",
 		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
@@ -582,7 +559,6 @@
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/move2src-inc.sh",
 		"/media/data/CODES/sw4stm32_workbench/makeLibsRo.sh",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/stm324x9i_eval.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/README.md",
 		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/README.md",
 		"/home/mainster/scripts/makeLibsRo.sh",
 		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO_MKFILE/.cproject",
@@ -679,16 +655,7 @@
 		"/media/data/vems_mitch_944_brain/firmware/dispatcher.h",
 		"/media/data/vems_mitch_944_brain/firmware/varstr.h",
 		"/media/data/vems_mitch_944_brain/firmware/comm.c",
-		"/media/data/vems_mitch_944_brain/firmware/scancodes.h",
-		"/media/data/vems_mitch_944_brain/firmware/etc/airdenfactor.h",
-		"/media/data/vems_mitch_944_brain/firmware/etc/barofac4115.h",
-		"/media/data/vems_mitch_944_brain/firmware/etc/barofac4250.h",
-		"/media/data/vems_mitch_944_brain/firmware/etc/injopentable.h",
-		"/media/data/vems_mitch_944_brain/firmware/etc/thermfactor.h",
-		"/media/data/vems_mitch_944_brain/firmware/eventqueue.c",
-		"/media/data/vems_mitch_944_brain/firmware/handler2k.h",
-		"/media/data/vems_mitch_944_brain/firmware/phasesignal.c",
-		"/media/data/vems_mitch_944_brain/firmware/adc.c"
+		"/media/data/vems_mitch_944_brain/firmware/scancodes.h"
 	],
 	"find":
 	{
@@ -791,114 +758,24 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "inc/main.h",
+					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9575,
+						"buffer_size": 5726,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3476,
-								3476
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 1287.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1320,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								645,
-								645
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"parser": "markdown",
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"target": "disk"
-						},
-						"translation.x": 0.0,
-						"translation.y": 17.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 48114,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								35007,
-								35007
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 14352.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/attributes8.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2409,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								2197,
+								2197
 							]
 						],
 						"settings":
@@ -907,98 +784,69 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/mainster/scripts/reencodeSources.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3171,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3125,
-								3125
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ShellScriptImproved/Shell-Unix-Generic.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 209.0,
+						"translation.y": 624.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/media/data/CODES/sw4stm32_workbench/STM32Cube_FW_F4_V1.11.0/Projects/STM32F4-Discovery/Templates/Src/system_stm32f4xx.c",
+					"buffer": 1,
+					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9629,
+						"buffer_size": 14263,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9628,
-								9628
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3107.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2129,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								4764,
+								4764
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2067.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6201,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1292,
+								1292
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1064,10 +912,6 @@
 		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"main",
-				"src/main.c"
-			]
 		],
 		"width": 0.0
 	},
@@ -1101,7 +945,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 176.0,
+	"side_bar_width": 237.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

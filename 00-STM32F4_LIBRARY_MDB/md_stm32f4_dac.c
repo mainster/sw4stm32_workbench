@@ -48,7 +48,7 @@ void MD_DAC_Init(MD_DAC_Channel_t DACx) {
 	}
 
 	/* Initialize proper GPIO pin */
-	MD_GPIO_Init(GPIOA, gpioPin, MD_GPIO_Mode_ANA, MD_GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_Fast);
+	MD_GPIO_Init(GPIOA, gpioPin, MD_GPIO_Mode_ANA, MD_GPIO_OType_PP, MD_GPIO_PuPd_None, MD_GPIO_Speed_Fast);
 
 	/* Enable DAC clock */
 	RCC->APB1ENR |= RCC_APB1ENR_DACEN;

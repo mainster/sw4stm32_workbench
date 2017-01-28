@@ -1,16 +1,47 @@
-﻿#ifndef __MD_STM32F4xx_DAC_H
-#define __MD_STM32F4xx_DAC_H
+﻿/**
+ * @file        md_stm32f4_dac_waveform.h
+ *
+ * @date        27 Jan 2017
+ * @author      Manuel Del Basso (mainster)
+ * @email       manuel.delbasso@gmail.com
+ *
+ * @ide         System Workbench ac6 (eclipse stm32)
+ * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ * @license		GNU GPL v3
+ *
+ * @brief       Waveform extension for DAC library.
+ *
+ * @verbatim
+
+	Copyright (C) 2016	Manuel Del Basso
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	@endverbatim
+ *
+ */
+#ifndef MD_STM32F4xx_DAC_H_
+#define MD_STM32F4xx_DAC_H_
 
 #include "stm32f4xx.h"
 #include "stm32f4xx_dac.h"
 #include "md_stm32f4_dac.h"
 
 /** @addtogroup DAC_SignalGeneration
-  * @{
-  */ 
+ * 	@{
+ */
 
-/* Private typedef -----------------------------------------------------------*/
-/* Private define ------------------------------------------------------------*/
+/* Private defines and typedefs */
 
 /* 
  * DM00031020.pdf 14.5.15 DAC register map.
@@ -21,11 +52,9 @@
 #define DAC_DHR8R2_ADDRESS     0x4000741C
 
 
-/* Private macro -------------------------------------------------------------*/
-/* Private variables ---------------------------------------------------------*/
+/* Private variables */
 DAC_InitTypeDef     DAC_InitStructure;
 DMA_InitTypeDef     DMA_InitStructure;
-
 
 void DAC_DMA_SineWaveConfig(MD_DAC_Channel_t DACx,
                             FunctionalState NewStateDAC, 

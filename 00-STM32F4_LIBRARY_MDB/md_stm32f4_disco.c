@@ -17,7 +17,7 @@ static volatile uint8_t MD_INT_DISCO_ButtonPressed = 0;
 
 void MD_DISCO_LedInit(void) {
 	/* Set pins as output */
-	MD_GPIO_Init(MD_DISCO_LED_PORT, LED_ALL, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_High);
+	MD_GPIO_Init(MD_DISCO_LED_PORT, LED_ALL, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_None, MD_GPIO_Speed_High);
 	
 	/* Turn leds off */
 	MD_DISCO_LedOff(LED_ALL);
