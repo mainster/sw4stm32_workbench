@@ -139,14 +139,14 @@ volatile float UNIT_MIKRO = 1 / 1000000;
 volatile int16_t pidOut = 0;
 
 
-/**< Define indices for ADC_MultiConvBuff[ ] acording to setpoint (INDEX_W) ans
+/**< Define indices for ADC_MultiConvBuff[ ] acording to setpoint (INDEX_Wx) ans
  * process output (INDEX_P). */
 #ifndef INDEX_Py
 #define INDEX_Px     0
 #define INDEX_Py     1
 #if (ADC_N_REGULAR_CHANNELS > 2)
 #define INDEX_Ix     2
-#define INDEX_W      3
+#define INDEX_Wx      3
 #endif
 #endif
 
@@ -393,8 +393,8 @@ int main(void) {
 
 	/**< Set threshold for analog watch dog */
 	ADC_AnalogWatchdogThresholdsConfig(ADC1,
-	                                   decode_toUint(ass.upperVal + AREF_BY2),
-	                                   decode_toUint(ass.lowerVal + AREF_BY2));
+	                                   decode_toUint(ass.upperVal + VA_BIAS),
+	                                   decode_toUint(ass.lowerVal + VA_BIAS));
 
 	/**< Transmit boot up message to UART1 */
 	char *tok;
@@ -1054,8 +1054,8 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 				printf("Triangle \n");
 				//										pSeq = &Triangle[0];
 				/* 450/g.freq --> 100 Timer Ovf / periode */
-				triStruct.bottom = ((float)AREF_BY2 - g.ampl_f / 2);
-				triStruct.top = ((float)AREF_BY2 + g.ampl_f / 2);
+				triStruct.bottom = ((float)VA_BIAS - g.ampl_f / 2);
+				triStruct.top = ((float)VA_BIAS + g.ampl_f / 2);
 				triStruct.derivate = g.ampl_f / (float)100;
 				//                                            g.pBase = pSeq;
 				g.waveForm = TRIANG;
@@ -1254,7 +1254,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
         W_now = pidDataY.W_int;
     }  else {
     if (g.setpointSrc == ANALOG_SETPOINT) {
-        W_now = ADC_fBuff[INDEX_W];
+        W_now = ADC_fBuff[INDEX_Wx];
     }  else {
     if (g.setpointSrc == REMOTE_SETPOINT) {
         W_now = pidDataY.W_rem;
@@ -1397,7 +1397,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 //* also holds the new values
 //*/
 //    for (__IO uint8_t k=0; k<4; k++) {
-//        ADC_fBuff[k] = (float) ((float) (ADC_MultiConvBuff[k] - AN_OFFSET) * LSB);
+//        ADC_fBuff[k] = (float) ((float) (ADC_MultiConvBuff[k] - AN_BIAS_INT) * VLSB);
 //    }
 
 //// ==============================================================

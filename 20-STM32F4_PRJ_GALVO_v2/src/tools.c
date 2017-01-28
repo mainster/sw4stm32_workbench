@@ -44,22 +44,22 @@ int strsplit(char *str, const char *delim) {
 
 int16_t decode_toInt(float value) {
     
-    return (int16_t)((float)value/LSB);
+    return (int16_t)((float)value/VLSB);
 }
 
 
 uint16_t decode_toUint(float value) {
     
-    return (uint16_t)((float)value/LSB);
+    return (uint16_t)((float)value/VLSB);
 }
 
 int16_t decodeDbl_toInt(double value) {
     
-    return (int16_t)((double)value/LSB);
+    return (int16_t)((double)value/VLSB);
 }
 
 
 uint16_t decodeDbl_toUint(double value) {
     
-    return (uint16_t)((double)value/LSB);
+    return (uint16_t)((double)value/VLSB);
 }

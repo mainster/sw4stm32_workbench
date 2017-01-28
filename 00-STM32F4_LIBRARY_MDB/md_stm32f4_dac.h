@@ -44,11 +44,11 @@ extern C {
  */
 
 /**
- * @defgroup MD_DAC
- * @brief    DAC library
+ * @addtogroup MD_DAC
+ * @brief      Provides user space methodes to interact with DAC hardware.
  * @{
  *
- * This library provides 12-bit digital to analog outputs.
+ * @brief      This library provides 12-bit digital to analog outputs.
  *
  * @par Pinout
  *
@@ -58,6 +58,7 @@ DAC	channel		STM32F4xx
 DAC1			PA4
 DAC2			PA5
 @endverbatim
+
  * @par Dependencies
  *
 @verbatim
@@ -77,8 +78,8 @@ DAC2			PA5
 #include "md_stm32f4_gpio.h"
 
 /**
- * @defgroup MD_DAC_Typedefs
- * @brief    Library Typedefs
+ * @addtogroup 	MD_DAC_Typedefs
+ * @brief    	DAC related library Typedefs.
  * @{
  */
 
@@ -95,37 +96,32 @@ typedef enum {
  */
 
 /**
- * @defgroup MD_DAC_Functions
- * @brief    Library Functions
+ * @addtogroup 	MD_DAC_Functions
+ * @brief    	DAC related library Functions
  * @{
  */
 
 /**
- * @brief  Initializes DAC channel and it's pin
- * @param  DACx: DAC Channel you will use. This parameter can be a value of @ref MD_DAC_Channel_t enumeration
- * @retval None
+ * @brief      Initializes DAC channel and it's pin
+ *
+ * @param      DACx   DAC Channel you will use. See enumeration @ref MD_DAC_Channel_t. 
  */
 void MD_DAC_Init(MD_DAC_Channel_t DACx);
 
 /**
- * @brief  Sets analog value to ADCx
- * @param  DACx: DAC Channel you will use. This parameter can be a value of @ref MD_DAC_Channel_t enumeration
- * @param  value: 12-bit unsigned value for 12-bit DAC
- * @retval None
+ * @brief      Sets analog value to ADCx.
+ *
+ * @param      DACx    DAC Channel you will use. See enumeration @ref MD_DAC_Channel_t. 
+ * @param      value   12-bit unsigned value for 12-bit DAC
  */
 void MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value);
 
-/**
- * @}	MD_DAC_Functions	(end)
- */
+/** @} */   //!< MD_DAC_Functions
 
-/**
- * @}	MD_DAC	(end)
- */
+/** @} */   //!< MD_DAC
 
-/**
- * @}	MD_STM32F4_Libraries	(end)
- */
+/** @} */   //!< MD_STM32F4_Libraries
+
 
 /* C++ detection */
 #ifdef __cplusplus

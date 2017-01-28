@@ -71,8 +71,8 @@
 #endif
 
 /**
- * @defgroup MD_DISCO_Functions
- * @brief    Library Functions
+ * @addtogroup	MD_DISCO_Functions
+ * @brief    	STM32F429i-Disc evaluation hardware library functions.
  * @{
  */
 

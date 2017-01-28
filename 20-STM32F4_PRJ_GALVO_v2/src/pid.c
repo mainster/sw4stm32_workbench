@@ -258,9 +258,9 @@ int pid_Controller(int16_t setPoint, int16_t processValue, struct PID_DATA *pid)
 	 * DMA controller. Speeds up the algorithm but results in an unbuffered
 	 * behavior.
 	 *
-	 * volatile int e = ADC_MultiConvBuff[INDEX_W] - ADC_MultiConvBuff[INDEX_Py];
+	 * volatile int e = ADC_MultiConvBuff[INDEX_Wx] - ADC_MultiConvBuff[INDEX_Py];
 	 */
-	volatile int e = ADC_Buff[INDEX_W] - ADC_Buff[INDEX_Py];
+	volatile int e = ADC_Buff[INDEX_Wx] - ADC_Buff[INDEX_Py];
 #endif
 
 	/* Load last error ( e(k-1) ) from instance structure. */
@@ -374,7 +374,7 @@ pid->E[k] = e;										  // actual error write back
 pid->W[k] = w;										  // only for history
 pid->P[k] = processValue;					   // only for history
 #else
-pid->W[k] = ADC_MultiConvBuff[INDEX_W];					 // only for history
+pid->W[k] = ADC_MultiConvBuff[INDEX_Wx];					 // only for history
 pid->P[k] = ADC_MultiConvBuff[INDEX_Py];						// only for history
 #endif
 

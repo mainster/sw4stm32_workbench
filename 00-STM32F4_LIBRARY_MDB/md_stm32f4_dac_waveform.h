@@ -36,26 +36,59 @@
 #include "stm32f4xx.h"
 #include "stm32f4xx_dac.h"
 #include "md_stm32f4_dac.h"
+#include "defines.h"
 
-/** @addtogroup DAC_SignalGeneration
- * 	@{
+/**
+ * @addtogroup MD_STM32F4_Libraries
+ * @{
  */
 
-/* Private defines and typedefs */
+/**
+ * @addtogroup DAC_SignalGen
+ * @{
+ */
 
-/* 
- * DM00031020.pdf 14.5.15 DAC register map.
+/**
+ * @addtogroup DAC_SignalGen_Macros
+ * @{
+ */
+
+/**
+ * @brief      DAC module hardware register address definition.
+ *
+ *             Address definitions for DAC data hold registers (8-Bit and
+ *             12-Bit). To provide direct __IO register access for DAC data
+ *             registers.
+ * @ref DM00031020.pdf: 14.5.15 DAC register map.
  */
 #define DAC_DHR12R1_ADDRESS    0x40007408
 #define DAC_DHR12R2_ADDRESS    0x40007414
 #define DAC_DHR8R1_ADDRESS     0x40007410
 #define DAC_DHR8R2_ADDRESS     0x4000741C
 
+/** @} *//* DAC_SignalGen_Macros */
 
-/* Private variables */
+/**
+ * @addtogroup DAC_SignalGen_Variables
+ * @{
+ */
 DAC_InitTypeDef     DAC_InitStructure;
 DMA_InitTypeDef     DMA_InitStructure;
 
+/** @} *//* DAC_SignalGen_Variables */
+
+/**
+ * @addtogroup DAC_SignalGen_Functions
+ * @{
+ */
+
+/**
+ * @brief      Configuration method  
+ *
+ * @param[in]  DACx          The da cx
+ * @param[in]  NewStateDAC   The new state dac
+ * @param[in]  NewStateDMA   The new state dma
+ */
 void DAC_DMA_SineWaveConfig(MD_DAC_Channel_t DACx,
                             FunctionalState NewStateDAC, 
                             FunctionalState NewStateDMA);
@@ -64,4 +97,7 @@ void DAC_Chx_NoiseConfig(MD_DAC_Channel_t DACx);
 void DAC_TriangleConfig(MD_DAC_Channel_t DACx);
 void DAC_Chx (MD_DAC_Channel_t DACx);
 
+/** @} */	/* DAC_SignalGen_Functions */
+/** @} */	/* DAC_SignalGen */
+/** @} */	/* MD_STM32F4_Libraries */
 #endif

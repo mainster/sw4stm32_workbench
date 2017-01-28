@@ -39,7 +39,7 @@
  */
 
 /**
- * @addtogroup	MD_GPIO
+ * @addtogroup MD_GPIO
  * @brief      	GPIO basic manipulation @{
  *
  *             GPIO library is a user level implementation of Std/HAL driver
@@ -59,7 +59,7 @@
 //#endif
 
 /**
- * @addtogroup	MD_GPIO_Macros
+ * @addtogroup MD_GPIO_Macros
  * @brief      	GPIO library macro definitions. @{
  */
 
@@ -114,7 +114,7 @@
 /** @} */	/* MD_GPIO_Macros */
 
 /**
- * @addtogroup 	MD_GPIO_Typedefs
+ * @addtogroup MD_GPIO_Typedefs
  * @brief      	Used to improve initialization/access method structure. @{
  */
 
@@ -174,7 +174,7 @@ typedef enum {
 
 
 /**
- * @addtogroup	MD_GPIO_Functions
+ * @addtogroup MD_GPIO_Functions
  * @brief      	GPIO functions @{
  */
 

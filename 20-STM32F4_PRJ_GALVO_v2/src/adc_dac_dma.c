@@ -58,7 +58,7 @@ DAC_WP_t DAC_SetDualChanSigned(int16_t Data2, int16_t Data1) {
    /* ===========================================================================
     * DO NOT ACCESS THIS FUNCTION BY DIRECT FUNCTION CALL !!!
     * =========================================================================== */
-    DAC_SetDualChannelData(DAC_Align_12b_R, Data2 + AN_OFFSET, Data1 + AN_OFFSET);
+    DAC_SetDualChannelData(DAC_Align_12b_R, Data2 + AN_BIAS_INT, Data1 + AN_BIAS_INT);
     
     return DEFAULT_WRITE_DAC;
 }
@@ -71,8 +71,8 @@ DAC_WP_t DAC_SetDualChanSigned(int16_t Data2, int16_t Data1) {
 DAC_WP_t DAC_SetDualChanSigned_Tripped(int16_t dummy1, int16_t dummy2) {
     uint16_t data2, data1;
     
-    data2 = decode_toUint(ass.safeVal + AREF_BY2);
-    data1 = decode_toUint(ass.safeVal + AREF_BY2);
+    data2 = decode_toUint(ass.safeVal + VA_BIAS);
+    data1 = decode_toUint(ass.safeVal + VA_BIAS);
     
     DAC_SetDualChannelData( DAC_Align_12b_R, data2, data1);
     

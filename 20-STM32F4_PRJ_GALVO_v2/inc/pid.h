@@ -146,7 +146,7 @@ TF_INIT = 0;
 /** @} */ 	/* XY-Galvo_PID_Variables */
 
 /**
- * @addtogroup 	XY-Galvo_PID_Typedefs
+ * @addtogroup XY-Galvo_PID_Typedefs
  * @brief    	PID method type definitions.
  * @{
  */
@@ -328,7 +328,7 @@ extern struct PID_DATA	 pidDataX, pidDataY;
 /** @} */ 	/* XY-Galvo_PID_Typedefs */
 
 /**
- * @addtogroup 	XY-Galvo_PID_Functions
+ * @addtogroup XY-Galvo_PID_Functions
  * @brief    	PID functions and methods.
  * @{
  */

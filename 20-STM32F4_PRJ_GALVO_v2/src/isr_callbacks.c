@@ -8,11 +8,9 @@
  * @ide         System Workbench ac6 (eclipse stm32)
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  *
- * @brief       Implementation of callback handlers
+ * @brief       Callback handler implementations.
  *
- * @verbatim
-
-	------------------------------------------------------------------------
+    @verbatim
 
 	Copyright (C) 2016	Manuel Del Basso
 
@@ -28,9 +26,7 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	------------------------------------------------------------------------
-
- * @endverbatim
+    @endverbatim
  *
  */
 #include "stdint.h"
@@ -112,15 +108,17 @@ void DMA2_Stream0_IRQHandler(void) {
 
 
 
-/**< Das analoge symmetrische Positionssignal muss vor der AD- Wandlung einen positiven 
- * Offset erhalten wegen des Eingangsspannungsbereichs der intergrierten ADC-Zellen.
- * Analog wird also das sym. Pos. Signal um AREF/2 nach oben geschoben.
- * Hier wird der Offset digital wieder abgezogen damit auch Regler-Intern mit symmetrischen 
- * Sequenzen gearbeitet werden kann. 
- * 
- * ==>  Fuer die DAC-Hardware gilt das Gleiche, der +Offset (von vor ADC) wird also nach dem 
- *      DA-Wandler analog wieder subtrahiert. Darum muss dem intern symmetrischen Signal
- *      vor dem beschreiben des DAC-Data-hold-registers wieder AREF/2 aufaddiert werden.
+/**
+ * Das analoge symmetrische Positionssignal muss vor der AD- Wandlung einen
+ * positiven Offset erhalten wegen des Eingangsspannungsbereichs der
+ * intergrierten ADC-Zellen. Analog wird also das sym. Pos. Signal um AREF/2
+ * nach oben geschoben. Hier wird der Offset digital wieder abgezogen damit auch
+ * Regler-Intern mit symmetrischen Sequenzen gearbeitet werden kann.
+ *
+ * ==>  Fuer die DAC-Hardware gilt das Gleiche, der +Offset (von vor ADC) wird
+ * also nach dem DA-Wandler analog wieder subtrahiert. Darum muss dem intern
+ * symmetrischen Signal vor dem beschreiben des DAC-Data-hold-registers wieder
+ * AREF/2 aufaddiert werden.
  */
  
 /**< 
@@ -129,7 +127,7 @@ void DMA2_Stream0_IRQHandler(void) {
 * also holds the new values 
 */
     for (__IO uint8_t k=0; k < ADC_N_REGULAR_CHANNELS; k++) {
-        ADC_fBuff[k] = (float) ((float) (ADC_MultiConvBuff[k] - AN_OFFSET) * LSB);     
+        ADC_fBuff[k] = (float) ((float) (ADC_MultiConvBuff[k] - AN_BIAS_INT) * VLSB);     
     }
 
 // --------------------------------------------------------------
