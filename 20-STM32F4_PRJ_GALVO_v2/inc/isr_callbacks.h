@@ -35,6 +35,7 @@
 
 #include "main.h"
 #include "defines.h"
+#include "adc_dac_dma.h"
 
 /**
  * @addtogroup MD_APP

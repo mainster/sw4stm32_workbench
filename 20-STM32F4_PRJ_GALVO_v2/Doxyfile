@@ -32,7 +32,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "XY-Galvo Scanner"
+PROJECT_NAME           = Scanner
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -118,17 +118,7 @@ REPEAT_BRIEF           = YES
 # the entity):The $name class, The $name widget, The $name file, is, provides,
 # specifies, contains, represents, a, an and the.
 
-ABBREVIATE_BRIEF       = "The $name class_02:48:33_02:49:15_2017-01-29_024957_2017-01-29_025022_02:52:01_02:52:21" \
-                         "The $name widget_02:48:33_02:49:15_2017-01-29_024957_2017-01-29_025022_02:52:01_02:52:21" \
-                         "The $name file_02:48:33_02:49:15_2017-01-29_024957_2017-01-29_025022_02:52:01_02:52:21" \
-                         is \
-                         provides \
-                         specifies \
-                         contains \
-                         represents \
-                         a \
-                         an \
-                         the
+ABBREVIATE_BRIEF       = 
 
 # If the ALWAYS_DETAILED_SEC and REPEAT_BRIEF tags are both set to YES then
 # doxygen will generate a detailed section even if there is only a brief
@@ -238,7 +228,7 @@ TAB_SIZE               = 4
 # "Side Effects:". You can put \n's in the value part of an alias to insert
 # newlines.
 
-ALIASES                = "email=@par E-Mail: mailme@memail_02:48:33_02:49:15_2017-01-29_024957_2017-01-29_025022_02:52:01_02:52:21"
+ALIASES                = "\"sideeffect=@par Side Effects:\n\""
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
 # A mapping has the form "name=value". For example adding "class=itcl::class"
