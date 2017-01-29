@@ -81,7 +81,7 @@
 //	char *pVal = sVal;		        ///< pointer for buffer arrays
 //
 //	cmd_items_t cmd;
-//	wav_items_t wav;
+//	WavItems_t wav;
 //	struct items *choice = NULL;
 //	itemsw_t *choicew = NULL;
 //
@@ -538,7 +538,7 @@
 //			 */
 //#define MISC_CMD_LENGTH     35  // + trailing !
 //			misc_items_t misc;
-//			struct itemsm *choicem = NULL;
+//			MiscCmds_t *choicem = NULL;
 //
 //			///< string buffer to hold given command substring
 //			char sMisc[MISC_CMD_LENGTH + 1];
@@ -563,7 +563,7 @@
 //			*pMisc = '\0';				///< End of string
 //
 //
-//			for (i = 0, choicem = NULL; i < sizeof itemsm_list / sizeof (struct itemsm); i++)
+//			for (i = 0, choicem = NULL; i < sizeof itemsm_list / sizeof (MiscCmds_t); i++)
 //			{
 //				if (strcasecmp(sMisc, itemsm_list[i].name) == 0)
 //				{

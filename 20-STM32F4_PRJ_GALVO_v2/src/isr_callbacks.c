@@ -201,6 +201,12 @@ void DMA2_Stream0_IRQHandler(void) {
 //     IRQ callback:    ADC end-of-conversion 
 //                      Analog Watchdog IRQ
 // ==============================================================
+
+/**
+ * @brief      Analog to digital End-of-conversion callback handler.
+ * 
+ * Provides realtime service functionality to the closed loop sampling process.  
+ */
 void ADC_IRQHandler(void) {
     if (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == SET) {
         ADC_ClearITPendingBit(ADC1, ADC_IT_EOC);
@@ -222,7 +228,9 @@ void ADC_IRQHandler(void) {
             asg.state = ASS_CHARGING_INTEGRATOR;
             printf("ASS:charging_start...\n");
         }
-        if ((asg.integrator <= asg.lowerVal) || (asg.integrator >= asg.upperVal)) {   /**< check for integrator limit */
+        /**
+         * @brief      Check ASG for integrator limit */
+        if ((asg.integrator <= asg.lowerVal) || (asg.integrator >= asg.upperVal)) {   
             if (! asg.tripped) {
                 asg.tripped = 1;                    /**< Set "tripped" state if it is so */
                 DAC_SecureSetDualChanSigned = \
@@ -238,22 +246,6 @@ void ADC_IRQHandler(void) {
     printf("bad ADC IntReq source\n");
 }
 	
-//if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {
-//		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
-//        
-//        /* Check which waveform mode is active */
-//        if (g.waveForm == SQUAREWAV) {
-//            if (vectorCtr >= NVECTORS) {
-//                vectorCtr = 0;
-//            }
-//            setpoint_tgl = (float)line1[vectorCtr][1] * g.ampl_f;
-//            if (line1[vectorCtr++][0] == 0) 
-//                beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
-//            else
-//                beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_ON );
-
-//        }
-//    }
 
 
 // ==============================================================

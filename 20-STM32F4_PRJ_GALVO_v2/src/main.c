@@ -9,7 +9,7 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
- * @brief       Main function for project XY-MD_APP. 29.04.2015
+ * @brief       Main source implementation (29-04-2015)
  *
  * @verbatim
 
@@ -34,33 +34,11 @@
  *		- __FPU_PRESENT = 1
  */
 
-// /* Standard include */
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-
-// /* Library include */
-// #include "md_stm32f4_disco.h"
-// #include "md_stm32f4_timer.h"
-// #include "md_stm32f4_dac.h"
-// #include "md_stm32f4_dac_waveform.h"
-#include "defines.h"
-
-// /* Core include */
-//  FIXME:	Shouldn't be necessary at this point 
-#include "stm32f4xx.h"
-#include "stm32f4xx_adc.h"
-
-// /* Project specific include */
-#include "actuators.h"
-#include "adc_dac_dma.h"
-#include "arm_architect.h"
-#include "arm_math.h"
-#include "isr_callbacks.h"
+/* Include */
 #include "main.h"
-#include "pid.h"
-#include "signalGen.h"
-#include "tools.h"
+
+/* ARM architecture names */
+#include "arm_architect.h"
 
 struct global g;
 uint16_t vectorCtr = 0;
@@ -100,7 +78,7 @@ void init_globalStructs(void);
 // void gpio_init_mco2(void);
 
 //void exportInternalClks(void);
-//static void Console (struct PID_DATA *pid, struct FPID_DATA *fpid, structType type);
+//static void Console (struct PID_DATA *pid, struct FPID_DATA *fpid, PidStructType_t type);
 //void consoleCase (struct PID_DATA *pid);
 //void adc12_init (uint16_t gpio_pin_adc1,
 
@@ -274,7 +252,7 @@ static itemsw_t itemsw_list[] = {
 
 };
 
-static struct itemsm itemsm_list[] = {
+static MiscCmds_t itemsm_list[] = {
 	{ .name = "pid_init", .idm = misc_pid_init },
 	{ .name = "pid_Controller", .idm = misc_pid_Controller },
 	{ .name = "pid_Reset_Integrator", .idm = misc_pid_Reset_Integrator },
@@ -724,8 +702,8 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 	char *pCmd = sCmd;		        ///< pointer for buffer arrays
 	char *pVal = sVal;		        ///< pointer for buffer arrays
 
-	enum cmd_items cmd;
-	wav_items_t wav;
+	CmdItem_t cmd;
+	WavItems_t wav;
 	struct items *choice = NULL;
 	itemsw_t *choicew = NULL;
 
@@ -1181,8 +1159,8 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 			 *
 			 */
 #define MISC_CMD_LENGTH     35  // + trailing !
-			misc_items_t misc;
-			struct itemsm *choicem = NULL;
+			MiscItem_t misc;
+			MiscCmds_t *choicem = NULL;
 
 			///< string buffer to hold given command substring
 			char sMisc[MISC_CMD_LENGTH + 1];
@@ -1207,7 +1185,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 			*pMisc = '\0';				///< End of string
 
 
-			for (i = 0, choicem = NULL; i < sizeof itemsm_list / sizeof (struct itemsm); i++)
+			for (i = 0, choicem = NULL; i < sizeof itemsm_list / sizeof (MiscCmds_t); i++)
 			{
 				if (strcasecmp(sMisc, itemsm_list[i].name) == 0)
 				{
