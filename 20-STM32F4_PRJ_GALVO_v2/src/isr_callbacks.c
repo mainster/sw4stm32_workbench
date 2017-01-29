@@ -216,21 +216,21 @@ void ADC_IRQHandler(void) {
     /* Analog watchdog interrupt occured */
     if (ADC_GetFlagStatus(ADC1, ADC_FLAG_AWD) == SET) {
         ADC_ClearITPendingBit(ADC1, ADC_IT_AWD);
-        if ((ass.state == ASS_STATIONARY_INTEGRATOR) ||
-            (ass.state == ASS_DISCHARGING_INTEGRATOR)) {
-            ass.state = ASS_CHARGING_INTEGRATOR;
+        if ((asg.state == ASS_STATIONARY_INTEGRATOR) ||
+            (asg.state == ASS_DISCHARGING_INTEGRATOR)) {
+            asg.state = ASS_CHARGING_INTEGRATOR;
             printf("ASS:charging_start...\n");
         }
-        if ((ass.integrator <= ass.lowerVal) || (ass.integrator >= ass.upperVal)) {   /**< check for integrator limit */
-            if (! ass.tripped) {
-                ass.tripped = 1;                    /**< Set "tripped" state if it is so */
+        if ((asg.integrator <= asg.lowerVal) || (asg.integrator >= asg.upperVal)) {   /**< check for integrator limit */
+            if (! asg.tripped) {
+                asg.tripped = 1;                    /**< Set "tripped" state if it is so */
                 DAC_SecureSetDualChanSigned = \
-                      &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "ass tripped" handler*/
+                      &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "asg tripped" handler*/
             }
             return;
         }
         else {                                  /**< else increment integrator */
-            ass.integrator+= ass.upperVal * (double)TS*1e-6/(ass.tripTime);
+            asg.integrator+= asg.upperVal * (double)TS*1e-6/(asg.tripTime);
         }
         return;
     }
@@ -262,7 +262,7 @@ void TIM4_IRQHandler(void) {
     if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {
         TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
 
-        if (ass.tripped) {
+        if (asg.tripped) {
             MDB_GPIO_Toggle(BEAM_INTERRUPT);
         }
 

@@ -110,7 +110,7 @@ typedef enum {
 typedef struct {
     double  	integrator;  	//!< runtime integrator - holds the "amount" of overcurrent - states
     float   	lowerVal;    	//!< [V] Lower value ADC_f less than this value triggers the ass*/
-    float   	safeVal;     	//!< [V] If ass tripped, this output value becomes active*/
+    float   	safeVal;     	//!< [V] If asg tripped, this output value becomes active*/
     float   	tripTime;    	//!< [ms] Time constant, used to change tripping characteristics at runtime
     float   	upperVal;    	//!< [V] Upper value ADC_f greater than this value triggers the ass*/
     uint8_t 	ack;        	//!< acknowlage tripped stat

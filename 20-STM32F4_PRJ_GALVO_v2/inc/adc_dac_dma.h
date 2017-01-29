@@ -126,7 +126,7 @@
  * the write pointer points to!. */
 typedef enum {
     DEFAULT_WRITE_DAC,      ///< return by default function which is used for write access to DAC hardware
-    TRIPPED_WRITE_DAC      ///< return by error handling function if ass is in tripped state
+    TRIPPED_WRITE_DAC      ///< return by error handling function if asg is in tripped state
 } DAC_WP_t;
 
 

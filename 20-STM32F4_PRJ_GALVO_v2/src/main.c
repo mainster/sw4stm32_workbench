@@ -112,7 +112,7 @@ void init_globalStructs(void);
 #define RX_FRAME_PADDING_CHAR   '~'
 
 /* The function pointer updateActuator is used as non-privileged access function
- * to internal DAC output registers. After ass detects a tripping condition ,
+ * to internal DAC output registers. After asg detects a tripping condition ,
  * updateActuator function-pointer targets to updateActuator_fused_callback */
 //int (*updateActuator)                (float, float);
 //int (*updateActuator_callback)       (float, float);
@@ -405,8 +405,8 @@ int main(void) {
 
 	/**< Set threshold for analog watch dog */
 	ADC_AnalogWatchdogThresholdsConfig(ADC1,
-	                                   decode_toUint(ass.upperVal + VA_BIAS),
-	                                   decode_toUint(ass.lowerVal + VA_BIAS));
+	                                   decode_toUint(asg.upperVal + VA_BIAS),
+	                                   decode_toUint(asg.lowerVal + VA_BIAS));
 
 	/**< Transmit boot up message to UART1 */
 	char *tok;
@@ -455,14 +455,14 @@ int main(void) {
 				//                };
 				Delayms((uint32_t)g.refresh / 20);
 			}
-			//            if ((ass.state == ASS_CHARGING_INTEGRATOR) && (! ass.tripped)) {
-			if (ass.integrator != lastVal) {
-				printf("%.8f\n", ass.integrator);
+			//            if ((asg.state == ASS_CHARGING_INTEGRATOR) && (! asg.tripped)) {
+			if (asg.integrator != lastVal) {
+				printf("%.8f\n", asg.integrator);
 			}
-			if ((ass.tripped) && (! ass.ack)) {
+			if ((asg.tripped) && (! asg.ack)) {
 				printf("Tripped!");
-				ass.ack = 1;
-				lastVal = ass.integrator;
+				asg.ack = 1;
+				lastVal = asg.integrator;
 				TM_Timer4_config(ENABLE, ENABLE, 45000 / 3);
 			}
 
@@ -560,15 +560,15 @@ void init_globalStructs(void) {
 	PIDY.Kd = PID_PARAM_KD;		/* Derivative */
 
 	/**< Initialize autoShutdown system struct. */
-	ass.lowerVal = ASS_TRIPPING_LOWER_DEFAULT;
-	ass.upperVal = ASS_TRIPPING_UPPER_DEFAULT;
+	asg.lowerVal = ASS_TRIPPING_LOWER_DEFAULT;
+	asg.upperVal = ASS_TRIPPING_UPPER_DEFAULT;
 
-	ass.integrator = 0;
-	ass.safeVal = ASS_SAFEVALUE_DEFAULT ;
-	ass.tripped = 0;
-	ass.ack = 0;
-	ass.tripTime = ASS_TRIPPING_TIME_DEFAULT; // 750ms initial
-	ass.state = ASS_STATIONARY_INTEGRATOR;
+	asg.integrator = 0;
+	asg.safeVal = ASS_SAFEVALUE_DEFAULT ;
+	asg.tripped = 0;
+	asg.ack = 0;
+	asg.tripTime = ASS_TRIPPING_TIME_DEFAULT; // 750ms initial
+	asg.state = ASS_STATIONARY_INTEGRATOR;
 
 	/**< Initialize global structure */
 	g.waveForm = NN; g.duty = 999; g.freq = 999; g.lookAt = 999;
@@ -628,7 +628,7 @@ void init_globalStructs(void) {
 //    int toPlant_intBuff[2] = { 0, 0 };
 //    int *toPlant_int = &toPlant_intBuff[0];
 //
-//    if (!ass.tripped) {     ///< only if ass state is NOT tripped
+//    if (!asg.tripped) {     ///< only if asg state is NOT tripped
 
 //        /**< decode the float values to an integral type */
 //        *toPlant_int     = decode_toInt(I_set_x);
@@ -647,7 +647,7 @@ void init_globalStructs(void) {
 //    }
 //    else{
 //    /**<><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>
-//       <>  This branch eror-handles an ass integrator_full event i.e.<>
+//       <>  This branch eror-handles an asg integrator_full event i.e.<>
 //       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>
 //       <>                    FUSE TRIPPED                            <>
 //       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<> */
@@ -1301,7 +1301,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 //    if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {
 //		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
 
-//        if (ass.tripped) {
+//        if (asg.tripped) {
 //            MDB_GPIO_Toggle(BEAM_INTERRUPT);
 //        }
 //
@@ -1491,20 +1491,20 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 //    /* Analog watchdog interrupt occured */
 //    if (ADC_GetFlagStatus(ADC1, ADC_FLAG_AWD) == SET) {
 //        ADC_ClearITPendingBit(ADC1, ADC_IT_AWD);
-//        if ((ass.state == ASS_STATIONARY_INTEGRATOR) ||
-//            (ass.state == ASS_DISCHARGING_INTEGRATOR)) {
-//            ass.state = ASS_CHARGING_INTEGRATOR;
+//        if ((asg.state == ASS_STATIONARY_INTEGRATOR) ||
+//            (asg.state == ASS_DISCHARGING_INTEGRATOR)) {
+//            asg.state = ASS_CHARGING_INTEGRATOR;
 //            printf("ASS:charging_start...\n");
 //        }
-//        if ((ass.integrator <= ass.lowerVal) || (ass.integrator >= ass.upperVal)) {   /**< check for integrator limit */
-//            if (! ass.tripped) {
-//                ass.tripped = 1;                    /**< Set "tripped" state if it is so */
-//                DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "ass tripped" handler*/
+//        if ((asg.integrator <= asg.lowerVal) || (asg.integrator >= asg.upperVal)) {   /**< check for integrator limit */
+//            if (! asg.tripped) {
+//                asg.tripped = 1;                    /**< Set "tripped" state if it is so */
+//                DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "asg tripped" handler*/
 //            }
 //            return;
 //        }
 //        else {                                  /**< else increment integrator */
-//            ass.integrator+= ass.upperVal * (double)TS*1e-6/(ass.tripTime);
+//            asg.integrator+= asg.upperVal * (double)TS*1e-6/(asg.tripTime);
 //        }
 //        return;
 //    }

@@ -51,7 +51,7 @@ extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
  * @brief   Set beam control source and new state
  */ 
 int beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) {
-    float test = ass.lowerVal;
+    float test = asg.lowerVal;
     
     if ((src == BEAM_CTRL_SOURCE_GLOBAL) && (newState != DNI)) {
         printf("Error, Beam source can't be GLOBAL if new state is not DNI");
@@ -79,8 +79,8 @@ int updateActuator_f(float I_set_x, float I_set_y) {
     int toPlant_intBuff[2] = { 0, 0 };
     int *toPlant_int = &toPlant_intBuff[0];
     
-    /* only if ass state is NOT tripped */
-    if (!ass.tripped) {     
+    /* only if asg state is NOT tripped */
+    if (!asg.tripped) {     
 
         /* Decode the float values to an integral type */
         *toPlant_int     = decode_toInt(I_set_x);
@@ -99,7 +99,7 @@ int updateActuator_f(float I_set_x, float I_set_y) {
     } 
     else {   
     /* <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>    
-       <>  This branch eror-handles an ass integrator_full event i.e.<>
+       <>  This branch eror-handles an asg integrator_full event i.e.<>
        <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>    
        <>                    FUSE TRIPPED                            <>
        <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<> */  
