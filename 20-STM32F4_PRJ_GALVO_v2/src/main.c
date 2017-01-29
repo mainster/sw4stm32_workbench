@@ -240,7 +240,7 @@ __IO float ADC_fBuff[5];
 #define NO1 1
 
 
-extern autoSaveSystem_t ass;
+extern autoSaveSystem_t asg;
 
 
 /* ---------- */

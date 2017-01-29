@@ -279,7 +279,7 @@ struct global {
  * @{
  */
 extern struct global g;
-//extern autoSaveSystem_t ass;
+//extern autoSaveSystem_t asg;
 extern struct triangWave triStruct;
 
 extern float setpoint_tgl;
