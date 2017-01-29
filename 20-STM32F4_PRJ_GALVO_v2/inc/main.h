@@ -65,7 +65,7 @@
  * @{
  */
 /**
- * @addtogroup MD_APP_Main
+ * @addtogroup APP_Main
  * @{
  */
 
@@ -90,7 +90,7 @@
 /** @} */
 
 /**
- * @addtogroup MD_APP_Main_Typedefs
+ * @addtogroup APP_Main_Typedefs
  * @{
  */
 
@@ -271,13 +271,11 @@ struct global {
 
 
 
-/** @} *///!< MD_APP_Main_Typedefs
-
-/* ================================================================================ */
+/** @} */
 
 
 /**
- * @addtogroup MD_APP_Main_Variables
+ * @addtogroup APP_Main_Variables
  * @{
  */
 extern struct global g;
@@ -288,7 +286,7 @@ extern float setpoint_tgl;
 extern float pidErrBuff[2];        /* PID error buffer*/
 extern float toPlantBuff[2];        /* PID output buffer*/
 
-/** @} *///!< MD_APP_Main_Typedefs
+/** @} */
 
 #if  defined (KEIL_IDE)
     #pragma O2
@@ -296,7 +294,7 @@ extern float toPlantBuff[2];        /* PID output buffer*/
     #pragma GCC pop_options
 #endif
 
-/** @} */   /* MD_APP_Main */
-/** @} */   /* MD_APP */
+/** @} */
+/** @} */
 
 #endif

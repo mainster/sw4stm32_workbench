@@ -131,8 +131,19 @@ typedef struct {
  *              guarding. @{
  */
 
+/* @par
+ *     @b ASG: A@bctuator @b S@bafestate @b G@buard
+ *
+ *              The ASG system is designed to protect the output drivers from
+ *              overload in case of actuator blocking states. The prototype
+ *              electronics also includes coil current measurement hardware to
+ *              provide actuator current feedback. In a project milestone to be
+ *              planned for later, the implementation of a model-driven
+ *              compensator (state space model) is being considered.  
+ */
+
 /**
- * @brief      Safely update actuator control signals. Sicherer z
+ * @brief      Safely update actuator control signals. 
  *
  *             Safely means in terms of missplaced or oscillating controller
  *             outputs. The analog watchdog peripheral takes care about
@@ -159,10 +170,10 @@ int updateActuator_f(float I_set_x, float I_set_y);
  *
  * @param[in]  src        The beam control source 
  * @param[in]  newState   The new state
- *
- * @return     { description_of_the_return_value }
  */
 int beamCtrl(beamCtrlSource_t src, tribool_state_t newState );
+
+/** @} */
 
 /** @} */
 
