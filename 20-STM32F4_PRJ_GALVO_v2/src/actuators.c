@@ -43,7 +43,7 @@
 //#include "md_stm32f4_disco.h"
 //#include "tools.h"
 
-extern autoSaveSystem_t ass;
+extern autoSaveSystem_t asg;
 
 extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 

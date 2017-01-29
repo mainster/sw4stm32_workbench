@@ -17,7 +17,7 @@
 //#include "pid.h"
 //#include "tools.h"
 
- autoSaveSystem_t ass;
+ autoSaveSystem_t asg;
 
 /**
  * Ob multimode fuer X und Y Position sinnvoll ist, muss getestet werden.
