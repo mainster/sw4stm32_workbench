@@ -11,13 +11,9 @@
  */
  
 #include "adc_dac_dma.h"
-//#include "stm32f4xx_dac.h"
-//#include "defines.h"
-//#include "main.h"
-//#include "pid.h"
-//#include "tools.h"
 
-autoSaveSystem_t asg;
+//autoSaveSystem_t asg;
+extern autoSaveSystem_t asg;
 
 /**
  * Ob multimode fuer X und Y Position sinnvoll ist, muss getestet werden.
