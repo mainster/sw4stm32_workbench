@@ -33,15 +33,17 @@
  * @endverbatim
  *
  */
-#include <stdio.h>
-#include "isr_callbacks.h"
+//#include <stdio.h>
+//#include "isr_callbacks.h"
 #include "actuators.h"
-#include "tm_stm32f4_usart.h"
-#include "adc_dac_dma.h"
+//#include "tm_stm32f4_usart.h"
+//#include "adc_dac_dma.h"
 #include "defines.h"
-#include "main.h"
-#include "md_stm32f4_disco.h"
-#include "tools.h"
+//#include "main.h"
+//#include "md_stm32f4_disco.h"
+//#include "tools.h"
+
+extern autoSaveSystem_t ass;
 
 extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 

@@ -53,7 +53,7 @@
 #include "main.h"
 
 /**
- * @addtogroup MD_App
+ * @addtogroup MD_APP
  * @{
  */
 

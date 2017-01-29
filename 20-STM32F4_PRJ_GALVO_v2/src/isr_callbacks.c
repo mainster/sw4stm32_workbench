@@ -46,7 +46,7 @@ extern float ADC_fBuff[5];
 extern int16_t ADC_MultiConvBuff[5];     
 extern arm_pid_instance_f32 PIDX __attribute__ ((unused));        /* ARM PID Instance, float_32 format */
 extern arm_pid_instance_f32 PIDY;        /* ARM PID Instance, float_32 format */
-extern struct autoSaveSystem ass;
+extern autoSaveSystem_t ass;
 extern uint32_t ticks;
 extern int8_t dir;
 

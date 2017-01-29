@@ -33,14 +33,17 @@
 #ifndef ADC_DAC_DMA_H_
 #define ADC_DAC_DMA_H_
 
-#include "stm32f4xx.h"
-#include "stm32f4xx_rcc.h"
-#include "stm32f4xx_gpio.h"
+#include "defines.h"
+#include "main.h"
+#include "md_stm32f4_dac.h"
+#include "pid.h"
 #include "stm32f4xx_adc.h"
 #include "stm32f4xx_dac.h"
-#include "defines.h"
-
-#include "md_stm32f4_dac.h"
+#include "stm32f4xx_gpio.h"
+#include "stm32f4xx_rcc.h"
+#include "stm32f4xx.h"
+#include "tools.h"
+#include "actuators.h"
 
 // ==============================================================
 //                          20-05-2015
@@ -101,13 +104,15 @@
 // ==============================================================
 
 
+
+
 // ==============================================================
 //#define DAC_Align_12b_R  CHAN_Align_12b_R
 // ==============================================================
 
 
 
-extern struct autoSaveSystem ass;
+//extern autoSaveSystem_t ass;
 
 /* Sets the ADC scan channels count 
  * This MUST be used in ADC init function, DMA init function and at the point 

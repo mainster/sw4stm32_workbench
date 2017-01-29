@@ -30,16 +30,15 @@
 	@endverbatim
  *
  */
-#ifndef _MDB_GPIO_H
-#define _MDB_GPIO_H
+#ifndef _MDB_GPIO_H_
+#define _MDB_GPIO_H_
 
 #include "stm32f4xx.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_rcc.h"
 
 
-typedef enum 
-{
+typedef enum {
   LED_GREEN_A       = 0,    ///< LED3 on STM32F429-Discovery
   LED_RED_A         = 1,    ///< LED4 on STM32F429-Discovery
   BEAM_INTERRUPT    = 2,    ///< Beam interrupter control pin
@@ -79,15 +78,17 @@ typedef enum {
 /**< GPIO structure
  */
 typedef struct {
-  MDB_GPIO_NAME_t   _GPIO_NAME;      ///< GPIO name
-  GPIO_TypeDef*     _GPIO_PORT;      ///< GPIO Port
-  const uint16_t   _GPIO_PIN;       ///< GPIO Pin address
-  GPIOMode_TypeDef  _GPIO_Mode;
-  GPIOSpeed_TypeDef _GPIO_Speed;
-  GPIOOType_TypeDef _GPIO_OType;
-  GPIOPuPd_TypeDef  _GPIO_PuPd;
-  const uint32_t   _GPIO_AHB_CLK;       ///< GPIO AHB peripheral clock source 
-  MDB_GPIO_STATE_t _GPIO_INIT;      ///< GPIO initial state
+
+  const uint16_t      _GPIO_PIN;       ///< GPIO Pin address
+  const uint32_t      _GPIO_AHB_CLK;       ///< GPIO AHB peripheral clock source 
+  GPIO_TypeDef*       _GPIO_PORT;      ///< GPIO Port
+  GPIOMode_TypeDef    _GPIO_Mode;
+  GPIOOType_TypeDef   _GPIO_OType;
+  GPIOPuPd_TypeDef    _GPIO_PuPd;
+  GPIOSpeed_TypeDef   _GPIO_Speed;
+  MDB_GPIO_NAME_t     _GPIO_NAME;      ///< GPIO name
+  MDB_GPIO_STATE_t    _GPIO_INIT;      ///< GPIO initial state
+
 } MDB_GPIO_t;
 
 void MDB_GPIO_Toggle(MDB_GPIO_NAME_t name);

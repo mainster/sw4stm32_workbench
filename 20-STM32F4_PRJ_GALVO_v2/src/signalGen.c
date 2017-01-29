@@ -1,5 +1,5 @@
 ﻿/**
- *	Keil project for XY-MD_App
+ *	Keil project for XY-MD_APP
  *  29-04-2015
  *
  *

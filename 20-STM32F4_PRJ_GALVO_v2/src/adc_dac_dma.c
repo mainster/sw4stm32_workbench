@@ -1,5 +1,5 @@
 ﻿/**
- *	Keil project for XY-MD_App
+ *	Keil project for XY-MD_APP
  *  29-04-2015
  *
  *
@@ -11,13 +11,13 @@
  */
  
 #include "adc_dac_dma.h"
-#include "stm32f4xx_dac.h"
-#include "defines.h"
-#include "main.h"
-#include "pid.h"
-#include "tools.h"
+//#include "stm32f4xx_dac.h"
+//#include "defines.h"
+//#include "main.h"
+//#include "pid.h"
+//#include "tools.h"
 
-struct autoSaveSystem ass;
+ autoSaveSystem_t ass;
 
 /**
  * Ob multimode fuer X und Y Position sinnvoll ist, muss getestet werden.

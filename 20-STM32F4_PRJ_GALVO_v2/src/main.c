@@ -9,7 +9,7 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
- * @brief       Main function for project XY-MD_App. 29.04.2015
+ * @brief       Main function for project XY-MD_APP. 29.04.2015
  *
  * @verbatim
 
@@ -34,24 +34,24 @@
  *		- __FPU_PRESENT = 1
  */
 
-/* Standard include */
+// /* Standard include */
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-/* Library include */
-#include "md_stm32f4_disco.h"
-#include "md_stm32f4_timer.h"
-#include "md_stm32f4_dac.h"
-#include "md_stm32f4_dac_waveform.h"
+// /* Library include */
+// #include "md_stm32f4_disco.h"
+// #include "md_stm32f4_timer.h"
+// #include "md_stm32f4_dac.h"
+// #include "md_stm32f4_dac_waveform.h"
 #include "defines.h"
 
-/* Core include */
-/* FIXME:	Shouldn't be necessary at this point */
+// /* Core include */
+//  FIXME:	Shouldn't be necessary at this point 
 #include "stm32f4xx.h"
 #include "stm32f4xx_adc.h"
 
-/* Project specific include */
+// /* Project specific include */
 #include "actuators.h"
 #include "adc_dac_dma.h"
 #include "arm_architect.h"
@@ -188,13 +188,7 @@ int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 //                      beam interrupter
 // ==============================================================
 
-// ==============================================================
-//                ass - auto shutdown system
-// ==============================================================
-#define ASS_TRIPPING_LOWER_DEFAULT    -1.22f
-#define ASS_TRIPPING_UPPER_DEFAULT    1.22f
-#define ASS_SAFEVALUE_DEFAULT         0
-#define ASS_TRIPPING_TIME_DEFAULT    0.750f      // s
+
 
 //#define TS                             10.0e-6
 
@@ -245,6 +239,10 @@ __IO float ADC_fBuff[5];
 
 #define NO1 1
 
+
+extern autoSaveSystem_t ass;
+
+
 /* ---------- */
 /* Used Timer */
 /* ---------- */
@@ -259,7 +257,7 @@ static struct items items_list[] = {
 	{ .name = "w::", .id = W  }
 };
 
-static struct itemsw itemsw_list[] = {
+static itemsw_t itemsw_list[] = {
 	{ .name = "sin", .idw = COS },
 	{ .name = "tri", .idw = TRIANG },
 	{ .name = "rec", .idw = SQUAREWAV },
@@ -303,15 +301,29 @@ double lastVal = 0;
 /**< Check Architecture */
 #define __TARGET_ARCH_ARM		0
 
-
+/**
+ * @brief      USART Pinout select enumeration.
+ *
+ * @note       In case of custom PinsPack usage, refer to @ref
+ *             TM_USART_InitCustomPinsCallback.
+ */
 typedef enum {
 	TM2_USART_PinsPack_1,     /*!< Select PinsPack1 from Pinout table for specific USART */
 	TM2_USART_PinsPack_2,     /*!< Select PinsPack2 from Pinout table for specific USART */
 	TM2_USART_PinsPack_3,     /*!< Select PinsPack3 from Pinout table for specific USART */
-	TM2_USART_PinsPack_Custom /*!< Select custom pins for specific USART, callback will be called, look @ref TM_USART_InitCustomPinsCallback */
+	TM2_USART_PinsPack_Custom /*!< Select custom pins for specific USART, callback will be called */
 } TM2_USART_PinsPack_t;
 
 
+
+/**
+ * @brief      Main function entry.
+ *
+ *             Invokes initial core and peripheral initialiation routines.
+ *             Provides endless loop functionality.
+ *             
+ * @callergraph
+ */
 int main(void) {
 
 	/**< Define private main variables */
@@ -714,11 +726,12 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 	char *pVal = sVal;		        ///< pointer for buffer arrays
 
 	enum cmd_items cmd;
-	enum wav_items wav;
+	wav_items_t wav;
 	struct items *choice = NULL;
-	struct itemsw *choicew = NULL;
+	itemsw_t *choicew = NULL;
 
 	int i;
+
 
 	volatile uint8_t nChars = TM_USART_Gets( USART1, &sUart[0], UART_BUFF_SIZE);
 
@@ -954,7 +967,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 
 
 			/* parse sCmd buffer and enumerate the command/error */
-			for (i = 0, choicew = NULL; i < sizeof itemsw_list / sizeof (struct itemsw); i++) {
+			for (i = 0, choicew = NULL; i < sizeof itemsw_list / sizeof (itemsw_t); i++) {
 				if (strcasecmp(sWav, itemsw_list[i].name) == 0)
 				{
 					choicew = itemsw_list + i;
@@ -980,7 +993,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 			//     * a waveform command.
 			//     *
 			//     */
-			//            for(i = 0, choicew = NULL; i < sizeof itemsw_list/sizeof (struct itemsw); i++)
+			//            for(i = 0, choicew = NULL; i < sizeof itemsw_list/sizeof (struct itemsw_t); i++)
 			//            {
 			//                if (strcasecmp(sWav, itemsw_list[i].name) == 0)
 			//                {

@@ -18,12 +18,12 @@
 #endif
 
 /**
- * @addtogroup MD_App
+ * @addtogroup MD_APP
  * @{
  */
 
 /**
- * @addtogroup APP_PID
+ * @addtogroup APP_Pid
  * @brief      PID compensator implementation. @{
  *
  *             PID implementation is used to handle control-loop functionality.
@@ -35,7 +35,7 @@
  */
 
 /**
- * @addtogroup APP_PID_Macros
+ * @addtogroup APP_Pid_Macros
  * @brief      PID methods related macro definitions. @{
  */
 
@@ -77,10 +77,10 @@
 #define FLOAT_MAX		1000
 #define MAX_F_I_TERM	(FLOAT_MAX / 2)
 
-/** @} */ 	/* APP_PID_Macros */
+/** @} */ 	/* APP_Pid_Macros */
 
 /**
- * @addtogroup APP_PID_Variables
+ * @addtogroup APP_Pid_Variables
  * @brief      PID compensator variables. @{
  */
 
@@ -113,12 +113,11 @@ KI_INIT = 0,
 KD_INIT = 0,
 TF_INIT = 0;
 
-/** @} */ 	/* APP_PID_Variables */
+/** @} */ 	/* APP_Pid_Variables */
 
 /**
- * @addtogroup APP_PID_Typedefs
- * @brief    	PID method type definitions.
- * @{
+ * @addtogroup  APP_Pid_Typedefs
+ * @brief       PID method type definitions. @{
  */
 
 /* Disable compiler optimization */
@@ -295,10 +294,10 @@ extern struct PID_DATA	 pidDataX, pidDataY;
 #pragma GCC pop_options
 #endif
 
-/** @} */ 	/* APP_PID_Typedefs */
+/** @} */ 	/* APP_Pid_Typedefs */
 
 /**
- * @addtogroup APP_PID_Functions
+ * @addtogroup APP_Pid_Functions
  * @brief    	PID functions and methods.
  * @{
  */
@@ -381,7 +380,7 @@ void PID_Calc_Coeffs (struct PID_DATA *pid, PID_IntMethode_t intMethode);
  * @param[in]  processValue   Pass actual process (e.g. plunt output) value.
  * @param      pid          Pointer to structure which holds PID instance data.
  *
- * @return     { description_of_the_return_value }
+ * @callergraph
  */
 int pid_Controller (int16_t setPoint, int16_t processValue, struct PID_DATA *pid);
 
@@ -409,9 +408,9 @@ void update_pid_data (float Kp, float Ki, float Kd,
 int fpid_Controller (int16_t setPoint, int16_t processValue,
 					 struct FPID_DATA *pid);
 
-/** @} */ 	/* APP_PID_Functions */
+/** @} */ 	/* APP_Pid_Functions */
 
-/** @} */ 	/* APP_PID */
+/** @} */ 	/* APP_Pid */
 
 /** @} */ 	/* MD_APP */
 

@@ -1,77 +1,42 @@
 /**
- * @file		defines.h
+ * @file        defines.h
  *
- * @date		28 Jan 2017
- * @author	  Manuel Del Basso (mainster)
- * @email	   manuel.delbasso@gmail.com
+ * @date        28 Jan 2017
+ * @author    Manuel Del Basso (mainster)
+ * @email      manuel.delbasso@gmail.com
  *
- * @ide		 System Workbench ac6 (eclipse stm32)
+ * @ide      System Workbench ac6 (eclipse stm32)
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- * @license		GNU GPL v3
+ * @license     GNU GPL v3
  *
- * @brief	   Global defines include file.
+ * @brief      Global defines include file.
  *
  * @verbatim
 
-	Copyright (C) 2016	Manuel Del Basso
+    Copyright (C) 2016  Manuel Del Basso
 
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	@endverbatim
+    @endverbatim
  *
  */
 #ifndef DEFINES_H_
 #define DEFINES_H_
 
-/**
- * @addtogroup General_Notes
- * @{
- */
+
 
 /**
- *
- * @brief      TRY
- 
-	===========================================================================
-	===========  Determine base addresses of peripheral registers  ============
-	===========================================================================
-
-	@link CMSIS/device/stm32f4xx.h:	
-		#define PERIPH_BASE			((uint32_t)0x40000000)
-		#define APB1PERIPH_BASE		PERIPH_BASE
-		#define DAC_BASE			(APB1PERIPH_BASE + 0x7400)
-
-	@ref DM00031020.pdf (14.5.15 DAC register map):
-	@link http://www.st.com/content/ccc/resource/technical/document/reference_manual/3d/6d/5a/66/b4/99/40/d4/DM00031020.pdf/files/DM00031020.pdf/jcr:content/translations/en.DM00031020.pdf
-		DAC_DHR12R1_Reg_Offset 	= 0x08	
-		DAC_DHR12R2_Reg_Offset 	= 0x14	
-		DAC_DHR8R1_Reg_Offset 	= 0x10	
-		DAC_DHR8R2_Reg_Offset 	= 0x1C	
-
-	RegisterAddress = DAC_BASE + Regg_Offset
-
-	#define DAC_DHR12R1_ADDRESS	0x40007408
-	#define DAC_DHR12R2_ADDRESS	0x40007414
-	#define DAC_DHR8R1_ADDRESS	 0x40007410
-
- @endverbatim
- *
- */
-
-/** @} */	//!< General_Notes
-
-/**
- * @addtogroup MD_App
+ * @addtogroup MD_APP
  * @{
  */
 
@@ -81,59 +46,59 @@
  */
 
 /**
- * @brief	  Keep preprocessor clean from KEIL_IDE symbols.
+ * @brief     Keep preprocessor clean from KEIL_IDE symbols.
  */
 #undef KEIL_IDE
 
 // ==============================================================
-//						GPIO things
+//                      GPIO things
 // ==============================================================
-#define hi 	Bit_SET
-#define lo	Bit_RESET
+#define hi  Bit_SET
+#define lo  Bit_RESET
 
-//#define DBG_IO		GPIOE
-//#define DBG0			GPIO_Pin_0
-//#define DBG1			GPIO_Pin_1
-//#define DBG2			GPIO_Pin_2
-//#define DBG3			GPIO_Pin_3
-//#define DBG4			GPIO_Pin_4
-//#define DBG5			GPIO_Pin_5
+//#define DBG_IO        GPIOE
+//#define DBG0          GPIO_Pin_0
+//#define DBG1          GPIO_Pin_1
+//#define DBG2          GPIO_Pin_2
+//#define DBG3          GPIO_Pin_3
+//#define DBG4          GPIO_Pin_4
+//#define DBG5          GPIO_Pin_5
 //#define 
-//DBG_PID_TIMING_PE6	GPIO_Pin_6
+//DBG_PID_TIMING_PE6    GPIO_Pin_6
 
 /** 
- * @brief	  Index definitions for adc_buffer[] access.
+ * @brief     Index definitions for adc_buffer[] access.
  */
-//#define ADC1_CH0		0
-//#define ADC1_EXT_W	1
-//#define ADC1_CH2		2
-//#define ADC1_CH3		3
+//#define ADC1_CH0      0
+//#define ADC1_EXT_W    1
+//#define ADC1_CH2      2
+//#define ADC1_CH3      3
 
 //#define ADC_Y_VAL &adc_buff[0]
 //#define ADC_U_VAL &adc_buff[1]
 //#define ADC_BACK_VAL &adc_buff[2]
 
-//#define ADC_Y_CHAN 		ADC_Channel_0
-//#define ADC_U_CHANNEL 	ADC_Channel_6
-//#define ADC_BACK_CHANNEL 	ADC_Channel_3
+//#define ADC_Y_CHAN        ADC_Channel_0
+//#define ADC_U_CHANNEL     ADC_Channel_6
+//#define ADC_BACK_CHANNEL  ADC_Channel_3
 
 /**
- * @brief	  Index definitions for ADC_MultiConvBuff[] access. 
+ * @brief     Index definitions for ADC_MultiConvBuff[] access. 
  */
-#define INDEX_Px	0		//!< Process output of channel X.
-#define INDEX_Py	1		//!< Process output of channel Y.
-#define INDEX_Ix	2		//!< Actuator coil current of channel X.
-#define INDEX_Iy			//!< Actuator coil current of channel Y (FIXME: Hardware).
-#define INDEX_Wx	3		//!< Set-point value for channel X.
-#define INDEX_Wy			//!< Set-point value for channel Y (FIXME: Hardware).
+#define INDEX_Px    0       //!< Process output of channel X.
+#define INDEX_Py    1       //!< Process output of channel Y.
+#define INDEX_Ix    2       //!< Actuator coil current of channel X.
+#define INDEX_Iy            //!< Actuator coil current of channel Y (FIXME: Hardware).
+#define INDEX_Wx    3       //!< Set-point value for channel X.
+#define INDEX_Wy            //!< Set-point value for channel Y (FIXME: Hardware).
 
 /**
- * @addtogroup MD_App_Analog
+ * @addtogroup MD_APP_Analog
  * @{
  */
 
 /**
- * @addtogroup MD_App_Analog_Macros
+ * @addtogroup MD_APP_Analog_Macros
  * @{
  */
 
@@ -151,7 +116,7 @@
  *             words: The angular displacement of the rotor can achieve in
  *             clockwise and counterclockwise direction.
  */
-#define ADC_RNG				0x0fff
+#define ADC_RNG             0x0fff
 
 /**
  * @brief      Analog reference input voltage definition. [V]
@@ -164,14 +129,14 @@
  *             reference source, they has to operate on a common analog
  *             reference signal.
  */
-#define AREF_IN_VOLT		(float) 2.5
+#define AREF_IN_VOLT        (float) 2.5
 
 
 /**
  * @brief      Bias level definition for the analog front-end. [V]
  * @note       See @ref ADC_RNG,
  */
-#define VA_BIAS				(float) 2.5/2
+#define VA_BIAS             (float) 2.5/2
 
 /**
  * @brief      Least significant bit voltage level representation. [V]
@@ -187,9 +152,9 @@
  *             point of start) to that topic can be found under 
  *             @link http://www.analog.com/en/analog-dialogue/articles/adc-input-noise.html
  *             
- * @note 	   This evaluates to @f$2.5V/(2^12-1) = 610.5uV/dig@f$.
+ * @note       This evaluates to @f$2.5V/(2^12-1) = 610.5uV/dig@f$.
  */
-#define VLSB				(float) ((float) AREF_IN_VOLT / ADC_RNG)
+#define VLSB                (float) ((float) AREF_IN_VOLT / ADC_RNG)
 
 /**
  * @brief      Analog offset or bias Voltage.
@@ -236,11 +201,11 @@
  */
 #define AMPL_FLOAT_DIVISOR      (int16_t)   1e3
 
-/** @} */   //!< MD_App_Analog_Macros
-/** @} */   //!< MD_App_Analog
+/** @} */   //!< MD_APP_Analog_Macros
+/** @} */   //!< MD_APP_Analog
 
 /**
- * @addtogroup APP_PID_Macros
+ * @addtogroup APP_Pid_Macros
  * @{
  */
 
@@ -260,8 +225,23 @@
 //                      Fast Console
 // ==============================================================
 
-/** @} */   //!< APP_PID_Macros
+/** @} */   //!< APP_Pid_Macros
 /** @} */   //!< APP_Global_Macros
+
+/**
+ * @addtogroup APP_Global_Typedefs
+ * @{
+ */
+
+typedef enum {
+    FALSE = 0,
+    TRUE,
+    DNI        //!< Do Not Interpret
+} tribool_state_t;
+
+/** @} */   //!< APP_Global_Typedefs
+
+
 /** @} */   //!< MD_APP 
 
 #endif 
