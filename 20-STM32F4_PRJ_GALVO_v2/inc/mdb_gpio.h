@@ -9,7 +9,7 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
- * @brief       Project XY-Galvo scanner specific pin mappings.
+ * @brief       Project MD_APP scanner specific pin mappings.
  *
  * @verbatim
 

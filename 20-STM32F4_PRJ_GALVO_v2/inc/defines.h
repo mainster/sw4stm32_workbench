@@ -40,17 +40,19 @@
 
 /**
  *
- @verbatim
+ * @brief      TRY
+ 
 	===========================================================================
 	===========  Determine base addresses of peripheral registers  ============
 	===========================================================================
 
-	@ref stm32f4xx.h:	
+	@link CMSIS/device/stm32f4xx.h:	
 		#define PERIPH_BASE			((uint32_t)0x40000000)
 		#define APB1PERIPH_BASE		PERIPH_BASE
 		#define DAC_BASE			(APB1PERIPH_BASE + 0x7400)
 
 	@ref DM00031020.pdf (14.5.15 DAC register map):
+	@link http://www.st.com/content/ccc/resource/technical/document/reference_manual/3d/6d/5a/66/b4/99/40/d4/DM00031020.pdf/files/DM00031020.pdf/jcr:content/translations/en.DM00031020.pdf
 		DAC_DHR12R1_Reg_Offset 	= 0x08	
 		DAC_DHR12R2_Reg_Offset 	= 0x14	
 		DAC_DHR8R1_Reg_Offset 	= 0x10	
@@ -69,12 +71,12 @@
 /** @} */	//!< General_Notes
 
 /**
- * @addtogroup XY-Galvo
+ * @addtogroup MD_App
  * @{
  */
 
 /**
- * @addtogroup XY-Galvo_Global_Macros
+ * @addtogroup APP_Global_Macros
  * @{
  */
 
@@ -126,12 +128,12 @@
 #define INDEX_Wy			//!< Set-point value for channel Y (FIXME: Hardware).
 
 /**
- * @addtogroup XY-Galvo_Analog
+ * @addtogroup MD_App_Analog
  * @{
  */
 
 /**
- * @addtogroup XY-Galvo_Analog_Macros
+ * @addtogroup MD_App_Analog_Macros
  * @{
  */
 
@@ -234,11 +236,11 @@
  */
 #define AMPL_FLOAT_DIVISOR      (int16_t)   1e3
 
-/** @} */   //!< XY-Galvo_Analog_Macros
-/** @} */   //!< XY-Galvo_Analog
+/** @} */   //!< MD_App_Analog_Macros
+/** @} */   //!< MD_App_Analog
 
 /**
- * @addtogroup XY-Galvo_PID_Macros
+ * @addtogroup APP_PID_Macros
  * @{
  */
 
@@ -258,8 +260,8 @@
 //                      Fast Console
 // ==============================================================
 
-/** @} */   //!< XY-Galvo_PID_Macros
-/** @} */   //!< XY-Galvo_Global_Macros
-/** @} */   //!< XY-Galvo 
+/** @} */   //!< APP_PID_Macros
+/** @} */   //!< APP_Global_Macros
+/** @} */   //!< MD_APP 
 
 #endif 

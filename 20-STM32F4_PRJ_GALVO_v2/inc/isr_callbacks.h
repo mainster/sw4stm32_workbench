@@ -37,12 +37,12 @@
 #include "defines.h"
 
 /**
- * @addtogroup XY-Galvo
+ * @addtogroup MD_App
  * @{
  */
 
 /**
- * @addtogroup 	Callback_Handlers
+ * @addtogroup 	APP_Callback_Handlers
  * @brief		Provides project specific callback handlers to service interrupt request.
  * @{
  */
@@ -56,8 +56,8 @@ void TIM4_IRQHandler(void);
 /* See implementation file for documentation comments. */
 void ADC_IRQHandler(void);
 
-/** @} *//* Callback_Handlers */
-/** @} *//* XY-Galvo */
+/** @} *//* APP_Callback_Handlers */
+/** @} *//* MD_APP */
 
 #endif
 

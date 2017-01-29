@@ -10,9 +10,7 @@
  *
  * @brief       Main header file
  *
- * @verbatim
-
-	------------------------------------------------------------------------
+   @verbatim
 
 	Copyright (C) 2016	Manuel Del Basso
 
@@ -28,13 +26,11 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	------------------------------------------------------------------------
-
- * @endverbatim
+   @endverbatim
  *
  */
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
 #include "defines.h"
 #include "attributes.h"
@@ -43,10 +39,14 @@
 #include "arm_math.h"
 #include "core_cm4.h"
 
+/**
+ * @addtogroup MD_App
+ * @{
+ */
+
 #include "md_stm32f4_delay.h"
 #include "tm_stm32f4_pwm.h"
 #include "tm_stm32f4_usart.h"
-
 
 //external __IO int16_t ADC_MultiConvBuff[5];
 //external __IO float ADC_fBuff[5];
@@ -147,12 +147,9 @@ struct itemsw {
 	enum wav_items idw;
 };
 
-// void resetPID (void);
-
-
 
 /**
- * @brief      MISC commands enumerations for switch-by-string cases.
+ * @brief      MISC commands enumerations for switch-by-string identifiers.
  */
 typedef enum { 
 	misc_NN,
@@ -174,7 +171,7 @@ typedef enum {
 struct itemsm
 {
 	char *name;
-	misc_items_t idm;
+	 misc_items_t idm;
 };
 
 /* ================================================================================ */
@@ -232,7 +229,7 @@ struct global {
 	float       dutyCyc;        //!< Duty cycle for waveform generation [%].	
 	dac_lim_t   dacHw[2];       //!< DAC1/DAC2 range values to implement hardware protection 
 	enum    setpoint_src_t     setpointSrc;
-	enum 	misc_items miscReq; /**< Holds the misc command requested by serial interface
+	misc_items_t miscReq; /**< Holds the misc command requested by serial interface
 	 * @NOTE   clear this member to misc_none at the end of the misc cmd */
 	uint16_t    refresh;       //!< refresh rate in ms for mainloop
 	float        ampl_f;        //!< float amplitude for generated waveform

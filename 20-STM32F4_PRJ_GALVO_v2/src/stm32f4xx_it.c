@@ -53,7 +53,7 @@
 #include "main.h"
 
 /**
- * @addtogroup XY-Galvo
+ * @addtogroup MD_App
  * @{
  */
 

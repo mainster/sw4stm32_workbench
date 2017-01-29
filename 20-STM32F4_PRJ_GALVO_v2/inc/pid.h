@@ -1,38 +1,8 @@
-/**
- * @file		pid.h
- *
- * @date		16 Feb 2016
- * @author	  Manuel Del Basso (mainster)
- * @email	   manuel.delbasso@gmail.com
- *
- * @ide		 System Workbench ac6 (eclipse stm32)
- * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- *
- * @brief	   PID algorithms
- *
- * @verbatim
 
-	------------------------------------------------------------------------
 
-	Copyright (C) 2016  Manuel Del Basso
 
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	------------------------------------------------------------------------
-
- * @endverbatim
- *
- */
 #ifndef _PID_H_
 #define _PID_H_
 
@@ -48,12 +18,12 @@
 #endif
 
 /**
- * @addtogroup XY-Galvo
+ * @addtogroup MD_App
  * @{
  */
 
 /**
- * @addtogroup XY-Galvo_PID
+ * @addtogroup APP_PID
  * @brief      PID compensator implementation. @{
  *
  *             PID implementation is used to handle control-loop functionality.
@@ -65,7 +35,7 @@
  */
 
 /**
- * @addtogroup XY-Galvo_PID_Macros
+ * @addtogroup APP_PID_Macros
  * @brief      PID methods related macro definitions. @{
  */
 
@@ -107,10 +77,10 @@
 #define FLOAT_MAX		1000
 #define MAX_F_I_TERM	(FLOAT_MAX / 2)
 
-/** @} */ 	/* XY-Galvo_PID_Macros */
+/** @} */ 	/* APP_PID_Macros */
 
 /**
- * @addtogroup XY-Galvo_PID_Variables
+ * @addtogroup APP_PID_Variables
  * @brief      PID compensator variables. @{
  */
 
@@ -143,10 +113,10 @@ KI_INIT = 0,
 KD_INIT = 0,
 TF_INIT = 0;
 
-/** @} */ 	/* XY-Galvo_PID_Variables */
+/** @} */ 	/* APP_PID_Variables */
 
 /**
- * @addtogroup XY-Galvo_PID_Typedefs
+ * @addtogroup APP_PID_Typedefs
  * @brief    	PID method type definitions.
  * @{
  */
@@ -325,10 +295,10 @@ extern struct PID_DATA	 pidDataX, pidDataY;
 #pragma GCC pop_options
 #endif
 
-/** @} */ 	/* XY-Galvo_PID_Typedefs */
+/** @} */ 	/* APP_PID_Typedefs */
 
 /**
- * @addtogroup XY-Galvo_PID_Functions
+ * @addtogroup APP_PID_Functions
  * @brief    	PID functions and methods.
  * @{
  */
@@ -361,7 +331,7 @@ void pid_Init_Tp_arg (int arg);
  *                     PID_struct_type enumeration).
  */
 void pid_Init (float Kp, float Ki, float Kd, uint16_t setTf,
-               uint16_t setTs, struct PID_DATA *pid, PID_StructType_t stType);
+			   uint16_t setTs, struct PID_DATA *pid, PID_StructType_t stType);
 
 
 /**
@@ -375,7 +345,7 @@ void pid_Init (float Kp, float Ki, float Kd, uint16_t setTf,
  * @param      pid     Pointer to structure which holds PID instance data.
  */
 void fpid_Init (double Kp, double Ki, double Kd, uint16_t setTf,
-                uint16_t setTs, struct FPID_DATA *pid);
+				uint16_t setTs, struct FPID_DATA *pid);
 
 /**
  * @brief      Clear integral part of PID model state.
@@ -388,7 +358,7 @@ void fpid_Init (double Kp, double Ki, double Kd, uint16_t setTf,
  *                      PID_struct_type enumeration).
  */
 void pid_Reset_Integrator (volatile struct PID_DATA *pid,
-                           PID_StructType_t stType);
+						   PID_StructType_t stType);
 
 /**
  * @brief      Pre-Calculates PID coeffizients.
@@ -425,7 +395,7 @@ int pid_Controller (int16_t setPoint, int16_t processValue, struct PID_DATA *pid
  * @param      pid     The pid
  */
 void update_pid_data (float Kp, float Ki, float Kd,
-                      uint16_t setTf, struct PID_DATA *pid);
+					  uint16_t setTf, struct PID_DATA *pid);
 
 /**
  * @brief      { function_description }
@@ -437,12 +407,12 @@ void update_pid_data (float Kp, float Ki, float Kd,
  * @return     { description_of_the_return_value }
  */
 int fpid_Controller (int16_t setPoint, int16_t processValue,
-                     struct FPID_DATA *pid);
+					 struct FPID_DATA *pid);
 
-/** @} */ 	/* XY-Galvo_PID_Functions */
+/** @} */ 	/* APP_PID_Functions */
 
-/** @} */ 	/* XY-Galvo_PID */
+/** @} */ 	/* APP_PID */
 
-/** @} */ 	/* XY-Galvo */
+/** @} */ 	/* MD_APP */
 
 #endif

@@ -1,5 +1,5 @@
 ﻿/**
- *	Keil project for XY-XY-Galvo
+ *	Keil project for XY-MD_App
  *  29-04-2015
  *
  *

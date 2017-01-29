@@ -30,8 +30,8 @@
 	@endverbatim
  *
  */
-#ifndef MD_DISCO_H_
-#define MD_DISCO_H_ 1110
+#ifndef _MD_DISCO_H_
+#define _MD_DISCO_H_ 
 
 /**
  * @addtogroup MD_STM32F4_Libraries
@@ -39,7 +39,7 @@
  */
 
 /**
- * @defgroup	MD_DISCO Discovery Board
+ * @addtogroup  MD_DISCO
  * @brief		Provides initialization and access methods for on-board LEDs and Button. @{
  *
  * @par Dependencies

@@ -9,7 +9,7 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
- * @brief       Main function for project XY-XY-Galvo. 29.04.2015
+ * @brief       Main function for project XY-MD_App. 29.04.2015
  *
  * @verbatim
 
@@ -1169,7 +1169,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 			 *
 			 */
 #define MISC_CMD_LENGTH     35  // + trailing !
-			enum misc_items misc;
+			misc_items_t misc;
 			struct itemsm *choicem = NULL;
 
 			///< string buffer to hold given command substring
