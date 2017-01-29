@@ -569,7 +569,6 @@ void init_globalStructs(void) {
 	ass.ack = 0;
 	ass.tripTime = ASS_TRIPPING_TIME_DEFAULT; // 750ms initial
 	ass.state = ASS_STATIONARY_INTEGRATOR;
-	ass.stateCtr = 0;
 
 	/**< Initialize global structure */
 	g.waveForm = NN; g.duty = 999; g.freq = 999; g.lookAt = 999;

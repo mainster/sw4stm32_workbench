@@ -17,3 +17,4 @@ trash/*
 99-*
 README.html
 *.swp
+**/doxygen

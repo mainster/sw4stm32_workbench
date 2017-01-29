@@ -108,17 +108,14 @@ typedef enum {
  *             thermal overloads.   
  */
 typedef struct {
-
     double  	integrator;  	//!< runtime integrator - holds the "amount" of overcurrent - states
     float   	lowerVal;    	//!< [V] Lower value ADC_f less than this value triggers the ass*/
     float   	safeVal;     	//!< [V] If ass tripped, this output value becomes active*/
     float   	tripTime;    	//!< [ms] Time constant, used to change tripping characteristics at runtime
     float   	upperVal;    	//!< [V] Upper value ADC_f greater than this value triggers the ass*/
     uint8_t 	ack;        	//!< acknowlage tripped stat
-    uint8_t 	stateCtr;
     uint8_t 	tripped;    	//!< tripped != 0 if tripping is active
     ass_int_state_t state;
-
 } autoSaveSystem_t;
 
 /** @} */
@@ -129,7 +126,13 @@ typedef struct {
  */
 
 /**
- * @brief      Safely update actuator control signals.
+ * @addtogroup  APP_Guarding
+ * @brief       This group includes all functions related to safety and
+ *              guarding. @{
+ */
+
+/**
+ * @brief      Safely update actuator control signals. Sicherer z
  *
  *             Safely means in terms of missplaced or oscillating controller
  *             outputs. The analog watchdog peripheral takes care about
