@@ -73,7 +73,7 @@
 //external __IO float ADC_fBuff[5];
 
 /**
- * @addtogroup APP_Main_Macros
+ * @addtogroup Main_Macros
  * @{
  */
 
@@ -90,7 +90,7 @@
 /** @} */
 
 /**
- * @addtogroup APP_Main_Typedefs
+ * @addtogroup Main_Typedefs
  * @{
  */
 
@@ -275,7 +275,7 @@ struct global {
 
 
 /**
- * @addtogroup APP_Main_Variables
+ * @addtogroup Main_Variables
  * @{
  */
 extern struct global g;

@@ -62,7 +62,7 @@
  */
 
 /**
- * @addtogroup  APP_Actuators_Macros 
+ * @addtogroup  Actuators_Macros 
  * @brief       Actuator methods related macro definitions. @{
  */
 
@@ -77,7 +77,7 @@
 /** @} */
 
 /**
- * @addtogroup  APP_Actuators_Typedefs 
+ * @addtogroup  Actuators_Typedefs 
  * @brief       Actuator methods related type definitions. @{
  */
 
@@ -121,17 +121,16 @@ typedef struct {
 /** @} */
 
 /**
- * @addtogroup  APP_Actuators_Functions 
+ * @addtogroup  Actuators_Functions 
  * @brief       Actuator function definitions. @{
  */
 
 /**
  * @addtogroup  APP_Guarding
  * @brief       This group includes all functions related to safety and
- *              guarding. @{
- */
-
-/* @par
+ *              guarding.
+ *
+ * @par
  *     @b ASG: A@bctuator @b S@bafestate @b G@buard
  *
  *              The ASG system is designed to protect the output drivers from
@@ -139,7 +138,7 @@ typedef struct {
  *              electronics also includes coil current measurement hardware to
  *              provide actuator current feedback. In a project milestone to be
  *              planned for later, the implementation of a model-driven
- *              compensator (state space model) is being considered.  
+ *              compensator (state space model) is being considered.  @{
  */
 
 /**
