@@ -9,7 +9,7 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
-   @verbatim
+  @verbatim
 
 	Copyright (C) 2016	Manuel Del Basso
 
@@ -28,8 +28,11 @@
 	@endverbatim
  *
  */
-
 #include "adc_dac_dma.h"
+
+
+//autoSaveSystem_t ASG;
+extern autoSaveSystem_t ASG;
 
 /**
  * @addtogroup MD_APP
@@ -37,55 +40,14 @@
  */
 
 /**
- * @addtogroup _Macros
+ * @addtogroup APP_Analog
  * @{
  */
 
 /**
- * @addtogroup _Typedefs
+ * @addtogroup Analog_Variables
  * @{
  */
-
-/**
- * @addtogroup _Variables
- * @{
- */
-
-/**
- * @addtogroup _Functions
- * @{
- */
-
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-
-//autoSaveSystem_t ASG;
-extern autoSaveSystem_t ASG;
-
-/**
- * Ob multimode fuer X und Y Position sinnvoll ist, muss getestet werden.
- * Multimode bedeutet, dass 2 oder sogar 3 Wandlungen synchron ablaufen. 
- * Wenn ein "start Conversion" trigger an ADC1 gesendet wird, starten ADC2
- * und ggf ADC3 ebenfalls eine Wandlung.
- * Der DMA controller kann so konfiguriert werden, dass bei einem DMA-request 
- * einer der 2(3) ADC-Werte ins SRAM geschrieben wird 
- * Oder dass bei einem DMA-request zwei ADC Werte (dual half-word) gleichzeitig
- * ins SRAM uebertragen werden. 
- *      => Sinnvoll zb. bei einem Zustandsregler, dort werden position und 
- *         und Wicklungsstrom vom gleichen Zeitpunkt benoetigt.  
- */
-
-//////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
 
 /**
  * @brief      Definition of DAC Write Access pointer.
@@ -95,32 +57,18 @@ extern autoSaveSystem_t ASG;
  *             fault state, the pointer reference changes to the ASG-tripped
  *             function" DAC_SetDualChanSigned_Tripped from which all actuator
  *             control signals are forced to output a predefined, safe value.
+ *
+ * @param[in]  Raw   DAC compensator algorithm output value for channel 2.
+ * @param[in]  Raw   DAC compensator algorithm output value for channel 1.
  */
 DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
+/** @} */
 
+/** @} */
 
+/** @} */
 
-/**
- * @brief      Dual DAC set channel wrapper function.
- *
- *             This function extends the DAC_SetDualChannelData function which
- *             is a part of CMSIS driver layer. The extension provides active
- *             range checks for @b FIXME: min max values\b provided by a serial
- *             command to protect connected Galvos against algorithm failures
- *             which can raise in overcurrent states.
- *
- * @attention  ============================================================================
- *             DO NOT ACCESS THIS FUNCTION BY DIRECT FUNCTION CALL !!! WRITE
- *             ACCESS TO DAC REGISTERS SHOULD BE HANDLED BY FUNCTION POINTER
- *             DAC_SecureSetDualChanSigned()
- *             ============================================================================
- *
- * @param[in]  Data2   Raw DAC compensator algorithm output value for channel 2.
- * @param[in]  Data1   Raw DAC compensator algorithm output value for channel 1.
- *
- * @return     "Fingerabdruck" zum bestimmen ob tripped oder nicht!
- */
 DAC_WP_t DAC_SetDualChanSigned(int16_t Data2, int16_t Data1) {
   // ===========================================================================
   //        DO NOT ACCESS THIS FUNCTION BY DIRECT FUNCTION CALL !!!

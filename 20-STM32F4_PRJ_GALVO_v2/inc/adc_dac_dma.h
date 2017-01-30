@@ -52,100 +52,107 @@
  */
 
 /**
- * @addtogroup _Macros
+ * @addtogroup APP_Analog
  * @{
  */
 
 /**
- * @addtogroup _Typedefs
+ * @par Pinout
+ * 
+ *     ==============================================================
+ *                               20-05-2015
+ *     ==============================================================
+ *     
+ *     // Setpoint (external) 
+ *     // Auf prototyp Signal v1.3 wurde dazu einer der
+ *     // I_Sens_X/Y Kanäle benutzt
+ *     /*
+ *      CHAN   ADC1    ADC2    ADC3
+ *      ----------------------------
+ *         0    PA0    PA0    PA0
+ *         1    PA1    PA1    PA1
+ *         2    PA2    PA2    PA2
+ *         3    PA3    PA3    PA3
+ *         4    PA4    PA4    PF6
+ *         5    PA5    PA5    PF7
+ *         6    PA6    PA6    PF8
+ *         7    PA7    PA7    PF9
+ *         8    PB0    PB0    PF10
+ *         9    PB1    PB1    PF3
+ *         10   PC0    PC0    PC0
+ *         11   PC1    PC1    PC1
+ *         12   PC2    PC2    PC2
+ *         13   PC3    PC3    PC3
+ *         14   PC4    PC4    PF4
+ *         15   PC5    PC5    PF5
+ *     
+ *         Signal v1.3 proto
+ *         ---------------
+ *         PC3     Isens_X
+ *         PA3     Isens_Y
+ *         PA6     pos_X
+ *     ----P-A-7---p-o-s_-Y--
+ *         PB0     pos_Y   
+ *     
+ *         Bei ADC dual-mode:
+ *         ADC1_CH06    pos_X  (PA6)
+ *         ADC2_CH07    pos_Y  (PB0)
+ *     
+ *         Zum testen, triplemode (prototyp v1.3)
+ *         ADC3_CH03    setpoint=Isens_X  (PA3)
+ *     
+ *         Zum testen, dualmode (prototyp v1.3)
+ *         ADC2_CH03    setpoint=Isens_X  (PA3)
+ *     
+ */
+
+/**
+ * @par TODO:
+ *     Ob multimode fuer X und Y Position sinnvoll ist, muss getestet werden.
+ *     Multimode bedeutet, dass 2 oder sogar 3 Wandlungen synchron ablaufen.
+ *     Wenn ein "start Conversion" trigger an ADC1 gesendet wird, starten ADC2
+ *     und ggf ADC3 ebenfalls eine Wandlung. Der DMA controller kann so
+ *     konfiguriert werden, dass bei einem DMA-request einer der 2(3) ADC-Werte
+ *     ins SRAM geschrieben wird Oder dass bei einem DMA-request zwei ADC Werte
+ *     (dual half-word) gleichzeitig ins SRAM uebertragen werden. => Sinnvoll
+ *     zb. bei einem Zustandsregler, dort werden position und und Wicklungsstrom
+ *     vom gleichen Zeitpunkt benoetigt.
+ */
+
+/**
+ * @addtogroup Analog_Macros
  * @{
  */
 
 /**
- * @addtogroup _Variables
- * @{
+ * @brief      Process output channel for y (ADC)
  */
+#define ADC_X_CHAN          ADC_Channel_6
 
 /**
- * @addtogroup _Functions
- * @{
+ * @brief      Process output channel for y (ADC)
  */
+#define ADC_Y_CHAN          ADC_Channel_8
 
+/**
+ * @brief      Actuator coil current sense channel x (I_sens_x)
+ */
+#define ADC_Ix_CHAN          ADC_Channel_13
 
-/** @} */
+/**
+ * @brief      Actuator coil current sense channel x (I_sens_y)
+ */
+#define ADC_Iy_CHAN          ADC_Channel_3
 
-/** @} */
+/**
+ * @brief      Alternate set-point input for channel x 
+ */
+#define ADC_W_CHAN          ADC_Channel_3
 
-/** @} */
-
-/** @} */
-
-/** @} */
-
-
-
-// ==============================================================
-//                          20-05-2015
-// ==============================================================
-
-// Setpoint (external) 
-// Auf prototyp Signal v1.3 wurde dazu einer der
-// I_Sens_X/Y Kanäle benutzt
-/*
- CHAN   ADC1    ADC2    ADC3
- ----------------------------
-    0    PA0    PA0    PA0
-    1    PA1    PA1    PA1
-    2    PA2    PA2    PA2
-    3    PA3    PA3    PA3
-    4    PA4    PA4    PF6
-    5    PA5    PA5    PF7
-    6    PA6    PA6    PF8
-    7    PA7    PA7    PF9
-    8    PB0    PB0    PF10
-    9    PB1    PB1    PF3
-    10   PC0    PC0    PC0
-    11   PC1    PC1    PC1
-    12   PC2    PC2    PC2
-    13   PC3    PC3    PC3
-    14   PC4    PC4    PF4
-    15   PC5    PC5    PF5
-
-    Signal v1.3 proto
-    ---------------
-    PC3     Isens_X
-    PA3     Isens_Y
-    PA6     pos_X
-----P-A-7---p-o-s_-Y--
-    PB0     pos_Y   
-
-    Bei ADC dual-mode:
-    ADC1_CH06    pos_X  (PA6)
-    ADC2_CH07    pos_Y  (PB0)
-
-    Zum testen, triplemode (prototyp v1.3)
-    ADC3_CH03    setpoint=Isens_X  (PA3)
-
-    Zum testen, dualmode (prototyp v1.3)
-    ADC2_CH03    setpoint=Isens_X  (PA3)
-
-*/
-// ==============================================================
-//	                    ADC things
-// ==============================================================
-#define ADC_X_CHAN      ADC_Channel_6   // process y output (ADC)
-#define ADC_Y_CHAN      ADC_Channel_8   // process y output (ADC)
-#define ADC_Ix_CHAN     ADC_Channel_13  // I_sens_x
-#define ADC_Iy_CHAN     ADC_Channel_3   // I_sens_y
-#define ADC_W_CHAN      ADC_Channel_3   // Setpoint (external)
-
+/**
+ * @brief      DMA peripheral base address.
+ */
 #define ADC_CCR_ADDRESS    ((uint32_t)0x40012308)
-// ==============================================================
-
-// ==============================================================
-//#define DAC_Align_12b_R  CHAN_Align_12b_R
-// ==============================================================
-//extern autoSaveSystem_t ass;
 
 /**
  * @brief      Sets the ADC scan channels count.
@@ -154,6 +161,20 @@
  *             the point where a complete buffer copy was taken
  */
 #define ADC_N_REGULAR_CHANNELS  2
+
+/** @} */
+
+/**
+ * @addtogroup Analog_Variables
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @addtogroup Analog_Typedefs
+ * @{
+ */
 
 /**
  * @brief      DAC output write functions return type enumerations
@@ -164,31 +185,86 @@
  *             the the write pointer points to!. 
  */
 typedef enum {
-    DEFAULT_WRITE_DAC,      ///< return by default function which is used for write access to DAC hardware
-    TRIPPED_WRITE_DAC      ///< return by error handling function if ASG is in tripped state
+    /**
+     * @enum Default return value under normal conditions when the function
+     * pointer (*DAC_SecureSetDualChanSigned) references to the unguarded
+     * DAC_SetDualChanSigned function which is used to provide write access to
+     * DAC hardware.
+     */
+    DEFAULT_WRITE_DAC,
+
+    /**
+     * @enum Return value if the ASG has been tripped and
+     * (*DAC_SecureSetDualChanSigned) references to
+     * DAC_SetDualChanSigned_Tripped.
+     */
+    TRIPPED_WRITE_DAC
+
 } DAC_WP_t;
+
+/** @} */
+
+/**
+ * @addtogroup Analog_Functions
+ * @{
+ */
+
+/**
+ * @brief      Dual DAC set channel wrapper function.
+ *
+ *             This function extends the DAC_SetDualChannelData function which
+ *             is a part of CMSIS driver layer. The extension provides active
+ *             range checks for @b FIXME: min max values\b provided by a serial
+ *             command to protect connected Galvos against algorithm failures
+ *             which can raise in overcurrent states.
+ *
+ * @attention  DO NOT ACCESS THIS FUNCTION VIA DIRECT FUNCTION CALL !!! WRITE
+ *             ACCESS TO DAC REGISTERS SHOULD BE HANDLED BY FUNCTION POINTER
+ *             DAC_SecureSetDualChanSigned.
+ *
+ * @param[in]  Data2   Raw DAC compensator algorithm output value for channel 2.
+ * @param[in]  Data1   Raw DAC compensator algorithm output value for channel 1.
+ *
+ * @return     "Fingerabdruck" zum bestimmen ob tripped oder nicht!
+ */
+DAC_WP_t DAC_SetDualChanSigned          (int16_t Data2, int16_t Data1);
+
+/**
+ * @brief      Safe state function.
+ *
+ *             Error condition function dereferenced via guarded DAC write
+ *             accessor (*DAC_SecureSetDualChanSigned).
+ *
+ * @param[in]  Data2   Raw DAC compensator algorithm output value for channel 2.
+ * @param[in]  Data1   Raw DAC compensator algorithm output value for channel 1.
+ *
+ * @return     "Fingerabdruck" zum bestimmen ob tripped oder nicht!
+ */
+DAC_WP_t DAC_SetDualChanSigned_Tripped  (int16_t Data2, int16_t Data1);
+
+/**
+ * Documented in implementation file.
+ * @file adc_dac_dma.c
+ */
+extern  DAC_WP_t  (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
 
 void NVIC_Configuration (void);  
-
 void TIM2_DMA_triggerConfiguration (FunctionalState TimerRun,
-                                   FunctionalState IntOn, uint16_t peri);
-
+                                    FunctionalState IntOn, uint16_t peri);
 void DMA_Configuration ( __IO int16_t *MultiConvBuff, uint8_t memSize);
 void AnalogWatchdog_Configuration  (void);
 void ADC_Configuration (void);
 void RCC_Configuration (void);
-
 void ADC_DMA_DualModeConfig (__IO int16_t *MultiConvBuff);
 void ADC_ContScanMode_w_DMA  (__IO int16_t *MultiConvBuff);
 void ADC_ContScanMode_w_DMA_timeTrigd  (__IO int16_t *MultiConvBuff, uint8_t memSize);
 void DAC_SetSignedValue (MD_DAC_Channel_t DACx, int16_t val);
 
-/* extern defined function pointer */
-extern  DAC_WP_t  (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
-/* Primary function that (*DAC_SecureSetDualChanSigned) is pointing to */
-        DAC_WP_t DAC_SetDualChanSigned_Tripped  (int16_t Data2, int16_t Data1);
-/* Error condition function that (*DAC_SecureSetDualChanSigned) is pointing to */
-        DAC_WP_t DAC_SetDualChanSigned          (int16_t Data2, int16_t Data1);
+/** @} */
+
+/** @} */
+
+/** @} */
 
 #endif
