@@ -200,7 +200,7 @@ int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 
 //#define TS                             10.0e-6
 
-//#define ASS_100US                   100
+//#define ASG_100US                   100
 // ==============================================================
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // ==============================================================
@@ -439,7 +439,7 @@ int main(void) {
 	 * ===============     ENABLE_ON_POWER-ON-SEQUENCE     ============================
 	 * ================================================================================ */
 
-	TIM_Cmd(TIM3, ENABLE);           ///< Enable PWM timer 3
+	TIM_Cmd(TIM3, ENABLE);          ///< Enable PWM timer 3
 	TIM_Cmd(TIM2, ENABLE);          ///< Enable sampling timer 2
 	ADC_DMACmd(ADC1, ENABLE);       ///< Enable DMA functionality
 	ADC_Cmd(ADC1, ENABLE);          ///< Enable on-board hardware ADC 1
@@ -470,7 +470,7 @@ int main(void) {
 				//                };
 				Delayms((uint32_t)g.refresh / 20);
 			}
-			//            if ((ASG.state == ASS_CHARGING_INTEGRATOR) && (! ASG.tripped)) {
+			//            if ((ASG.state == ASG_CHARGING_INTEGRATOR) && (! ASG.tripped)) {
 			if (ASG.integrator != lastVal) {
 				printf("%.8f\n", ASG.integrator);
 			}
@@ -575,15 +575,15 @@ void init_globalStructs(void) {
 	PIDY.Kd = PID_PARAM_KD;		/* Derivative */
 
 	/**< Initialize autoShutdown system struct. */
-	ASG.lowerVal = ASS_TRIPPING_LOWER_DEFAULT;
-	ASG.upperVal = ASS_TRIPPING_UPPER_DEFAULT;
+	ASG.lowerVal = ASG_TRIPPING_LOWER_DEFAULT;
+	ASG.upperVal = ASG_TRIPPING_UPPER_DEFAULT;
 
 	ASG.integrator = 0;
-	ASG.safeVal = ASS_SAFEVALUE_DEFAULT ;
+	ASG.safeVal = ASG_SAFEVALUE_DEFAULT ;
 	ASG.tripped = 0;
 	ASG.ack = 0;
-	ASG.tripTime = ASS_TRIPPING_TIME_DEFAULT; // 750ms initial
-	ASG.state = ASS_STATIONARY_INTEGRATOR;
+	ASG.tripTime = ASG_TRIPPING_TIME_DEFAULT; // 750ms initial
+	ASG.state = ASG_STATIONARY_INTEGRATOR;
 
 	/**< Initialize global structure */
 	g.waveForm = NN; g.duty = 999; g.freq = 999; g.lookAt = 999;
@@ -1491,9 +1491,9 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 //    /* Analog watchdog interrupt occured */
 //    if (ADC_GetFlagStatus(ADC1, ADC_FLAG_AWD) == SET) {
 //        ADC_ClearITPendingBit(ADC1, ADC_IT_AWD);
-//        if ((ASG.state == ASS_STATIONARY_INTEGRATOR) ||
-//            (ASG.state == ASS_DISCHARGING_INTEGRATOR)) {
-//            ASG.state = ASS_CHARGING_INTEGRATOR;
+//        if ((ASG.state == ASG_STATIONARY_INTEGRATOR) ||
+//            (ASG.state == ASG_DISCHARGING_INTEGRATOR)) {
+//            ASG.state = ASG_CHARGING_INTEGRATOR;
 //            printf("ASS:charging_start...\n");
 //        }
 //        if ((ASG.integrator <= ASG.lowerVal) || (ASG.integrator >= ASG.upperVal)) {   /**< check for integrator limit */

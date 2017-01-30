@@ -33,6 +33,23 @@
 #ifndef DEFINES_H_
 #define DEFINES_H_
 
+/**
+ * @defgroup   flags Compilerflags
+ */
+
+/**
+ * @def KEIL_IDE
+ * @ingroup    flags
+ *
+ * Compiler flag to tell if KEIL uVision IDE is used for the build process. For
+ * GCC, this flag has to be #undef'ed.
+ */
+#ifndef     KEIL_IDE
+  #define     KEIL_IDE
+  #undef      KEIL_IDE
+#else
+  #define     KEIL_IDE
+#endif
 
 /**
  * @addtogroup MD_APP
@@ -53,10 +70,6 @@
                         Global things
 ============================================================== */
 
-/**
- * @brief     Keep preprocessor clean from KEIL_IDE symbols.
- */
-#undef KEIL_IDE
 
 #define hi  Bit_SET
 #define lo  Bit_RESET

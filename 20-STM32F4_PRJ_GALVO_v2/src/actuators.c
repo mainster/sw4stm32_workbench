@@ -142,7 +142,7 @@ int updateActuator_f(float I_set_x, float I_set_y) {
 
    /**
     * @note       The return argument toPlant_int is of type int16_t because it
-    *             holds the @b un\bbiased DAC output register values...
+    *             holds the @b unbiased DAC output register values.
     *
     * This is a function pointer! Casting from (float32_t) toPlant to int16_t
     * type introduces rounding errors which couldn't be prevented!

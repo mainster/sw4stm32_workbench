@@ -37,59 +37,130 @@
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_rcc.h"
 
+/**
+ * @addtogroup MD_APP
+ * @{
+ */
 
+/**
+ * @addtogroup APP_GPIO
+ * @{
+ */
+
+/**
+ * @addtogroup GPIO_Macros
+ * @{
+ */
+
+/**
+ * @brief      Define the number of enumerated pins in MDB_GPIO_NAME_t  
+ */
+#define   GPIO_COUNT   11
+
+/**
+ * @brief      Provides pin toggle functionality for PID timing related
+ *             debugging purposes.
+ */
+#define   DBG_PID_TIMING_TOG()    (MDB_GPIO_Toggle(DBG_TIMING_PE6))
+
+/**
+ * @brief      Provides pin set/clear functionality for PID timing debugging
+ *             purposes.
+ *
+ * @param      s     0: Set debug port to state "off"
+ *                  >0: Set debug port to state "on"
+ */
+#define   DBG_PID_TIMING(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE6)) : \
+                                              (MDB_GPIO_Off(DBG_TIMING_PE6))
+
+/**
+ * @brief      Provides pin toggle functionality for ADC timing related
+ *             debugging purposes.
+ */
+#define   DBG_ADC_TIMING_TOG( )   (MDB_GPIO_Toggle(DBG_TIMING_PE4))
+
+/**
+ * @brief      Provides pin set/clear functionality for ADC timing debugging
+ *             purposes.
+ *
+ * @param      s     0: Set debug port to state "off"
+ *                  >0: Set debug port to state "on"
+ */
+#define   DBG_ADC_TIMING(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE4)) : \
+                                              (MDB_GPIO_Off(DBG_TIMING_PE4))
+
+/** @} */
+
+/**
+ * @addtogroup GPIO_Typedefs
+ * @{
+ */
+
+/**
+ * @brief      GPIO port pin naming enumerations.
+ */
 typedef enum {
-  LED_GREEN_A       = 0,    ///< LED3 on STM32F429-Discovery
-  LED_RED_A         = 1,    ///< LED4 on STM32F429-Discovery
-  BEAM_INTERRUPT    = 2,    ///< Beam interrupter control pin
-  TRIGGER_SRC       = 3,
-  DBG_TIMING_PE2    = 4,
-  DBG_TIMING_PE4    = 5,    ///< Debug timing of ADC related tasks    
-  DBG_TIMING_PE6    = 6,    ///< Debug timing of PID algorithm
-  ADC_X_CHAN_IO     = 7,    ///< ADC AN PA6
-  ADC_Y_CHAN_IO     = 8,    ///< ADC AN PB0
-  ADC_Ix_CHAN_IO    = 9,    ///< ADC AN PC3
-  ADC_W_CHAN_IO     = 10,   ///< ADC AN PA3
-  
+  LED_GREEN_A       = 0,    //!< LED3 on STM32F429-Discovery.
+  LED_RED_A         = 1,    //!< LED4 on STM32F429-Discovery.
+  BEAM_INTERRUPT    = 2,    //!< Beam interrupter control pin.
+  TRIGGER_SRC       = 3,    //!< Connected to Oscilloscope trigger in. 
+  DBG_TIMING_PE2    = 4,    //!< Not used!
+  DBG_TIMING_PE4    = 5,    //!< Debug timing of ADC related tasks.
+  DBG_TIMING_PE6    = 6,    //!< Debug timing of PID algorithm.
+  ADC_X_CHAN_IO     = 7,    //!< ADC AN PA6
+  ADC_Y_CHAN_IO     = 8,    //!< ADC AN PB0
+  ADC_Ix_CHAN_IO    = 9,    //!< ADC AN PC3
+  ADC_W_CHAN_IO     = 10,   //!< ADC AN PA3
 } MDB_GPIO_NAME_t;
 
-#define  GPIO_COUNT   11
-
-#define DBG_PID_TIMING_TOG( )   (MDB_GPIO_Toggle(DBG_TIMING_PE6))
-#define DBG_PID_TIMING(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE6)) : \
-                                            (MDB_GPIO_Off(DBG_TIMING_PE6))
-#define DBG_ADC_TIMING_TOG( )   (MDB_GPIO_Toggle(DBG_TIMING_PE4))
-#define DBG_ADC_TIMING(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE4)) : \
-                                            (MDB_GPIO_Off(DBG_TIMING_PE4))
-
-/**< GPIO (init) states 
+/**
+ * @brief      GPIO states enumerations.
  */
 typedef enum {
-  GPIO_OFF = 0,  // off
-  GPIO_ON        // on
+  GPIO_OFF = 0,  
+  GPIO_ON        
 } MDB_GPIO_STATE_t;
 
+/**
+ * @brief      GPIO modul driver state enumerations.
+ *
+ * @attention  This type is safety related. To prevent unwanted
+ *             beam-enabled-states in case of misspelled argument invocations on
+ *             MDB_GPIO_BeamPin.
+ */
 typedef enum {
-  GPIO_DRIVER_OFF = 0,  // off
-  GPIO_DRIVER_ON        // on
+  GPIO_DRIVER_OFF = 0,  
+  GPIO_DRIVER_ON        
 } MDB_GPIO_DRIVER_STATE_t;
 
-
-/**< GPIO structure
+/**
+ * @brief      GPIO structure
  */
 typedef struct {
-
-  const uint16_t      _GPIO_PIN;       ///< GPIO Pin address
-  const uint32_t      _GPIO_AHB_CLK;       ///< GPIO AHB peripheral clock source 
-  GPIO_TypeDef*       _GPIO_PORT;      ///< GPIO Port
+  const uint16_t      _GPIO_PIN;       //!< GPIO Pin address
+  const uint32_t      _GPIO_AHB_CLK;   //!< GPIO AHB peripheral clock source 
+  GPIO_TypeDef*       _GPIO_PORT;      //!< GPIO Port
   GPIOMode_TypeDef    _GPIO_Mode;
   GPIOOType_TypeDef   _GPIO_OType;
   GPIOPuPd_TypeDef    _GPIO_PuPd;
   GPIOSpeed_TypeDef   _GPIO_Speed;
-  MDB_GPIO_NAME_t     _GPIO_NAME;      ///< GPIO name
-  MDB_GPIO_STATE_t    _GPIO_INIT;      ///< GPIO initial state
-
+  MDB_GPIO_NAME_t     _GPIO_NAME;      //!< GPIO name
+  MDB_GPIO_STATE_t    _GPIO_INIT;      //!< GPIO initial state
 } MDB_GPIO_t;
+
+/** @} */
+
+/**
+ * @addtogroup GPIO_Variables
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @addtogroup GPIO_Functions
+ * @{
+ */
 
 void MDB_GPIO_Toggle(MDB_GPIO_NAME_t name);
 void MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MDB_GPIO_STATE_t newState);
@@ -99,5 +170,11 @@ void MDB_GPIO_Init(void);
 void MDB_GPIO_BeamPin(MDB_GPIO_NAME_t name, MDB_GPIO_DRIVER_STATE_t newState);
 void gpio_init_mco1(void);
 void gpio_init_mco2(void);
+
+/** @} */
+
+/** @} */
+
+/** @} */
 
 #endif

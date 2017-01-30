@@ -1,7 +1,7 @@
 /**
  * @file        md_stm32f4_gpio.h
  *
- * @date        27 Jan 2017
+ * @date        30 Jan 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
@@ -9,25 +9,25 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
- * @brief       GPIO basic manipulation
+ * @brief       Provides generic methods for GPIO module initialization and manipulation.
  *
-  @verbatim
+   @verbatim
 
- Copyright (C) 2016	Manuel Del Basso
+	Copyright (C) 2016	Manuel Del Basso
 
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
- @endverbatim
+	@endverbatim
  *
  */
 #ifndef MD_GPIO_H_
@@ -39,11 +39,11 @@
  */
 
 /**
- * @addtogroup MD_GPIO
- * @brief      	GPIO basic manipulation @{
+ * @addtogroup  MD_GPIO
+ * @brief       GPIO basic manipulation @{
  *
- *             GPIO library is a user level implementation of Std/HAL driver
- *             GPIO library.
+ *              GPIO library is a user level implementation of Std/HAL driver
+ *              GPIO library.
  *
  * @par It provides functions for
  *  - register initialization
@@ -53,14 +53,10 @@
 #include "stm32f4xx.h"
 #include "stm32f4xx_gpio.h"
 
-/* Handle C++ */
-//#ifdef __cplusplus
-//extern "C" {
-//#endif
-
 /**
- * @addtogroup MD_GPIO_Macros
- * @brief      	GPIO library macro definitions. @{
+ * @addtogroup  MD_GPIO_Macros
+ * @brief       GPIO library macro definitions.
+ * @{
  */
 
 /**
@@ -111,11 +107,11 @@
 #define GPIO_Pin_All	((uint16_t)0xFFFF)
 #endif
 
-/** @} */	/* MD_GPIO_Macros */
+/** @} */
 
 /**
- * @addtogroup MD_GPIO_Typedefs
- * @brief      	Used to improve initialization/access method structure. @{
+ * @addtogroup  MD_GPIO_Typedefs
+ * @brief       Used to improve initialization/access method structure. @{
  */
 
 /**

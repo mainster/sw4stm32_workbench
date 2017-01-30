@@ -193,8 +193,7 @@ void DMA2_Stream0_IRQHandler(void) {
           setpnt = pidDataX.W_remf;
         }
         if (g.setpointSrc == REMOTE_OPENLOOP) {     ///< PID bypassed, remote setpoint feed throgh 
-            updateActuator_f( /*pidDataY.W_remf*/ \
-          pidDataY.W_remf, pidDataY.W_remf);
+            updateActuator_f(pidDataY.W_remf, pidDataY.W_remf);
             break;
           }
         if (g.setpointSrc == REMOTE_INTERNAL_MIXED) {     ///< Mixed mode, summing internal + external setpoint 
@@ -211,8 +210,7 @@ void DMA2_Stream0_IRQHandler(void) {
 
         /**< Calculate PID here */
      DBG_PID_TIMING_TOG();
-     updateActuator_f(   setpnt,arm_pid_f32(&PIDY, pidErr_y) \
-      );
+     updateActuator_f (setpnt,arm_pid_f32(&PIDY, pidErr_y));
      DBG_PID_TIMING_TOG();
 
      break;
@@ -267,9 +265,9 @@ void DMA2_Stream0_IRQHandler(void) {
     /* Analog watchdog interrupt occured */
   if (ADC_GetFlagStatus(ADC1, ADC_FLAG_AWD) == SET) {
     ADC_ClearITPendingBit(ADC1, ADC_IT_AWD);
-    if ((ASG.state == ASS_STATIONARY_INTEGRATOR) ||
-      (ASG.state == ASS_DISCHARGING_INTEGRATOR)) {
-      ASG.state = ASS_CHARGING_INTEGRATOR;
+    if ((ASG.state == ASG_STATIONARY_INTEGRATOR) ||
+      (ASG.state == ASG_DISCHARGING_INTEGRATOR)) {
+      ASG.state = ASG_CHARGING_INTEGRATOR;
     printf("ASS:charging_start...\n");
   }
         /**

@@ -73,7 +73,7 @@
         #define DAC_BASE            (APB1PERIPH_BASE + 0x7400)
 
     
-    <a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/3d/6d/5a/66/b4/99/40/d4/DM00031020.pdf/files/DM00031020.pdf/jcr:content/translations/en.DM00031020.pdf"> DM00031020.pdf (14.5.15 DAC register map):</a>
+    <a href="</a>
         DAC_DHR12R1_Reg_Offset  = 0x08  
         DAC_DHR12R2_Reg_Offset  = 0x14  
         DAC_DHR8R1_Reg_Offset   = 0x10  

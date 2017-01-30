@@ -35,6 +35,7 @@
 #define ADC_DAC_DMA_H_
 
 #include "defines.h"
+#include "nvic_config.h"
 #include "main.h"
 #include "md_stm32f4_dac.h"
 #include "pid.h"
@@ -57,16 +58,16 @@
  */
 
 /**
- * @par Pinout
+ * @par Pin out
  * 
  *     ==============================================================
  *                               20-05-2015
  *     ==============================================================
  *     
- *     // Setpoint (external) 
+ *     // Set-point (external)
  *     // Auf prototyp Signal v1.3 wurde dazu einer der
  *     // I_Sens_X/Y Kanäle benutzt
- *     /*
+ *
  *      CHAN   ADC1    ADC2    ADC3
  *      ----------------------------
  *         0    PA0    PA0    PA0
@@ -137,12 +138,12 @@
 /**
  * @brief      Actuator coil current sense channel x (I_sens_x)
  */
-#define ADC_Ix_CHAN          ADC_Channel_13
+#define ADC_Ix_CHAN         ADC_Channel_13
 
 /**
  * @brief      Actuator coil current sense channel x (I_sens_y)
  */
-#define ADC_Iy_CHAN          ADC_Channel_3
+#define ADC_Iy_CHAN         ADC_Channel_3
 
 /**
  * @brief      Alternate set-point input for channel x 
@@ -186,17 +187,17 @@
  */
 typedef enum {
     /**
-     * @enum Default return value under normal conditions when the function
-     * pointer (*DAC_SecureSetDualChanSigned) references to the unguarded
-     * DAC_SetDualChanSigned function which is used to provide write access to
-     * DAC hardware.
+     * @brief      Default return value under normal conditions when the
+     *             function pointer (*DAC_SecureSetDualChanSigned) references to
+     *             the unguarded DAC_SetDualChanSigned function which is used to
+     *             provide write access to DAC hardware.
      */
     DEFAULT_WRITE_DAC,
 
     /**
-     * @enum Return value if the ASG has been tripped and
-     * (*DAC_SecureSetDualChanSigned) references to
-     * DAC_SetDualChanSigned_Tripped.
+     * @brief      Return value if the ASG has been tripped and
+     *             (*DAC_SecureSetDualChanSigned) references to
+     *             DAC_SetDualChanSigned_Tripped.
      */
     TRIPPED_WRITE_DAC
 
@@ -249,7 +250,6 @@ DAC_WP_t DAC_SetDualChanSigned_Tripped  (int16_t Data2, int16_t Data1);
 extern  DAC_WP_t  (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
 
-void NVIC_Configuration (void);  
 void TIM2_DMA_triggerConfiguration (FunctionalState TimerRun,
                                     FunctionalState IntOn, uint16_t peri);
 void DMA_Configuration ( __IO int16_t *MultiConvBuff, uint8_t memSize);

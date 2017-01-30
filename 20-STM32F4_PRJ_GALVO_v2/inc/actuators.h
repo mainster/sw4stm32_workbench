@@ -40,49 +40,9 @@
 #include "adc_dac_dma.h"
 #include "defines.h"
 #include "isr_callbacks.h"
-//#include "md_stm32f4_disco.h"
 #include "mdb_gpio.h"
 #include "pid.h"
-//#include "tm_stm32f4_usart.h"
 #include "tools.h"
-
-/**
- * @addtogroup MD_APP
- * @{
- */
-
-/**
- * @addtogroup _Macros
- * @{
- */
-
-/**
- * @addtogroup _Typedefs
- * @{
- */
-
-/**
- * @addtogroup _Variables
- * @{
- */
-
-/**
- * @addtogroup _Functions
- * @{
- */
-
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-
 
 /**
  * @addtogroup MD_APP
@@ -107,10 +67,10 @@
 /**
  * @brief      The Auto Shutdown System provides a security layer 
  */
-#define ASS_TRIPPING_LOWER_DEFAULT    	-1.22f
-#define ASS_TRIPPING_UPPER_DEFAULT    	1.22f
-#define ASS_SAFEVALUE_DEFAULT        	0
-#define ASS_TRIPPING_TIME_DEFAULT   	0.750f      // s
+#define ASG_TRIPPING_LOWER_DEFAULT    	-1.22f
+#define ASG_TRIPPING_UPPER_DEFAULT    	1.22f
+#define ASG_SAFEVALUE_DEFAULT        	0
+#define ASG_TRIPPING_TIME_DEFAULT   	0.750f      // s
 
 /** @} */
 
@@ -128,16 +88,16 @@ typedef enum {
 } beamCtrlSource_t;
 
 /**
- * @brief      Integrator state enumerations.
+ * @brief      ASG @ref ASG Integrator state enumerations.
  *
  *             To manipulate the fuse tripping transfer function (fuse
  *             characteristics) of the ASS, the process output to be secured, is
  *             feded to an integrator which have to be controlled.
  */
 typedef enum {
-    ASS_CHARGING_INTEGRATOR,   //!< ASS_CHARGING_INTEGRATOR
-    ASS_DISCHARGING_INTEGRATOR,//!< ASS_DISCHARGING_INTEGRATOR
-    ASS_STATIONARY_INTEGRATOR  //!< ASS_STATIONARY_INTEGRATOR
+    ASG_CHARGING_INTEGRATOR,   //!< ASG_CHARGING_INTEGRATOR
+    ASG_DISCHARGING_INTEGRATOR,//!< ASG_DISCHARGING_INTEGRATOR
+    ASG_STATIONARY_INTEGRATOR  //!< ASG_STATIONARY_INTEGRATOR
 } ass_int_state_t;
 
 
@@ -168,8 +128,7 @@ typedef struct {
  * @brief       This group includes all functions related to safety and
  *              guarding.
  *
- * @par
- *     \bASG\b: \bA\bctuator \bS\bafestate \bG\buard
+ * @par ASG - Actuator Safestate Guard
  *
  *              The ASG system is designed to protect the output drivers from
  *              overload in case of actuator blocking states. The prototype
