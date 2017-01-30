@@ -1,6 +1,4 @@
 
-defines.h:307: warning: end of file while inside a group
-
 tm_stm32f4_usart.h:44: warning: missing title after \defgroup TM_USART
 tm_stm32f4_usart.h:239: warning: missing title after \defgroup TM_USART_Typedefs
 tm_stm32f4_usart.h:272: warning: missing title after \defgroup TM_USART_Macros
@@ -10,20 +8,12 @@ tm_stm32f4_usart_dma.h:108: warning: missing title after \defgroup TM_USART_DMA_
 tm_stm32f4_usart_dma.h:166: warning: missing title after \defgroup TM_USART_DMA_Typedefs
 tm_stm32f4_usart_dma.h:176: warning: missing title after \defgroup TM_USART_DMA_Functions
 stm32f4xx_it.h' supplied as the second argument in the \file statement is not an input file
-main.h:111: warning: Compound items is not documented.
+main.h:121: warning: Compound items is not documented.
 signalGen.h:8: warning: Compound triangWave is not documented.
-main.h:178: warning: Compound MiscCmds_t is not documented.
 mdb_gpio.h:83: warning: Compound MDB_GPIO_t is not documented.
-main.h:184: warning: Compound DacLimit_t is not documented.
+main.h:206: warning: Compound DacLimit_t is not documented.
 adc_dac_dma.h:189: warning: Documentation for undefined enum `Default' found.
 adc_dac_dma.h:197: warning: Documentation for undefined enum `Return' found.
-main.h:168: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
-main.h:169: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
-main.h:170: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
-main.h:171: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
-main.h:172: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
-main.h:173: warning: Documentation for undefined enum `Beam' found.
-main.h:174: warning: Documentation for undefined enum `Beam' found.
 signalGen.h:25: warning: documented symbol `static int16_t Cosine' was not declared or defined.
 signalGen.h:31: warning: documented symbol `static float CosineN' was not declared or defined.
 signalGen.h:37: warning: documented symbol `static int16_t calcTab' was not declared or defined.
@@ -84,9 +74,8 @@ console.h:6: warning: Found unknown command `\email'
 console.h:8: warning: Found unknown command `\ide'
 console.h:9: warning: Found unknown command `\stdperiph'
 console.h:10: warning: Found unknown command `\license'
-defines.h:101: warning: Member lo (macro definition) of group Global_Macros is not documented.
-defines.h:300: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
-defines.h:146: warning: Member tribool_state_t (enumeration) of group APP_Global_Typedefs is not documented.
+defines.h:62: warning: Member lo (macro definition) of group Global_Macros is not documented.
+defines.h:279: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
 defines.h:6: warning: Found unknown command `\email'
 defines.h:8: warning: Found unknown command `\ide'
 defines.h:9: warning: Found unknown command `\stdperiph'
@@ -127,11 +116,11 @@ main.c:193: warning: Member PID_PARAM_KD (macro definition) of file main.c is no
 main.c:225: warning: Member MSG_GUI_UART1_RECV_BUFF_FULL (macro definition) of file main.c is not documented.
 main.c:255: warning: Member NO1 (macro definition) of file main.c is not documented.
 main.c:317: warning: Member __TARGET_ARCH_ARM (macro definition) of group Main_Functions is not documented.
-main.c:714: warning: Member IDX_VAL (macro definition) of group Main_Functions is not documented.
-main.c:716: warning: Member UART_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
-main.c:717: warning: Member VALUE_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
-main.c:718: warning: Member CMD_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
-main.c:1198: warning: Member MISC_CMD_LENGTH (macro definition) of file main.c is not documented.
+main.c:705: warning: Member IDX_VAL (macro definition) of group Main_Functions is not documented.
+main.c:707: warning: Member UART_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:708: warning: Member VALUE_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:709: warning: Member CMD_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:1211: warning: Member MISC_CMD_LENGTH (macro definition) of file main.c is not documented.
 main.c:92: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group Main_Functions is not documented.
 main.c:101: warning: Member gpio_init(void) (function) of group Main_Functions is not documented.
 main.c:306: warning: Member resetPID(void) (function) of group Main_Functions is not documented.
@@ -151,19 +140,18 @@ main2.c:19: warning: Found unknown command `\license'
 main2.c:45: warning: Found unknown command `\email'
 main2.c:47: warning: Found unknown command `\ide'
 main2.c:48: warning: Found unknown command `\stdperiph'
-main.h:80: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:81: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:82: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:84: warning: Member pidErr_x (macro definition) of group Main_Macros is not documented.
-main.h:85: warning: Member pidErr_y (macro definition) of group Main_Macros is not documented.
-main.h:86: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
-main.h:87: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
-main.h:106: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
-main.h:120: warning: Member WavItems_t (enumeration) of group Main_Typedefs is not documented.
+main.h:100: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:101: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:102: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:104: warning: Member pidErr_x (macro definition) of group Main_Macros is not documented.
+main.h:105: warning: Member pidErr_y (macro definition) of group Main_Macros is not documented.
+main.h:106: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
+main.h:107: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
+main.h:116: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
 main.h:84: warning: Member g (variable) of group Main_Variables is not documented.
-main.h:257: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
-main.h:258: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
-main.h:259: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
+main.h:267: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
+main.h:268: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
+main.h:269: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
 main.h:6: warning: Found unknown command `\email'
 main.h:8: warning: Found unknown command `\ide'
 main.h:9: warning: Found unknown command `\stdperiph'
@@ -530,24 +518,23 @@ isr_callbacks.c:363: warning: Member TIM2_IRQHandler(void) (function) of group I
 isr_callbacks.c:147: warning: Illegal command ref as part of a title section
 isr_callbacks.c:149: warning: unable to resolve reference to `SETPOINT_Y_FLOAT' for \ref command
 isr_callbacks.c:149: warning: unable to resolve reference to `POS_Y_FLOAT' for \ref command
-main.h:106: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
-main.h:120: warning: Member WavItems_t (enumeration) of group Main_Typedefs is not documented.
-main.h:224: warning: Found unknown command `\SAMPLE_TIME'
-main.h:142: warning: explicit link request to 'mat' could not be resolved
+main.h:116: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
+main.h:236: warning: Found unknown command `\SAMPLE_TIME'
+main.h:162: warning: explicit link request to 'mat' could not be resolved
 main.h:84: warning: Member g (variable) of group Main_Variables is not documented.
-main.h:257: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
-main.h:258: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
-main.h:259: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
+main.h:267: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
+main.h:268: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
+main.h:269: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
 signalGen.c:7: warning: Found unknown command `\email'
 signalGen.c:8: warning: Found unknown command `\ide'
 signalGen.c:9: warning: Found unknown command `\packs'
 signalGen.c:10: warning: Found unknown command `\stdperiph'
 main.c:82: warning: Member PUTCHAR_PROTOTYPE (macro definition) of group Main_Functions is not documented.
 main.c:317: warning: Member __TARGET_ARCH_ARM (macro definition) of group Main_Functions is not documented.
-main.c:714: warning: Member IDX_VAL (macro definition) of group Main_Functions is not documented.
-main.c:716: warning: Member UART_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
-main.c:717: warning: Member VALUE_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
-main.c:718: warning: Member CMD_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:705: warning: Member IDX_VAL (macro definition) of group Main_Functions is not documented.
+main.c:707: warning: Member UART_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:708: warning: Member VALUE_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:709: warning: Member CMD_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
 main.c:92: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group Main_Functions is not documented.
 main.c:101: warning: Member gpio_init(void) (function) of group Main_Functions is not documented.
 main.c:306: warning: Member resetPID(void) (function) of group Main_Functions is not documented.
@@ -560,7 +547,7 @@ main.c:87: warning: Member PUTCHAR_PROTOTYPE (variable) of group Main_Functions 
 main.c:95: warning: Member ch (variable) of group Main_Functions is not documented.
 main.c:275: warning: Member itemsw_list[] (variable) of group Main_Functions is not documented.
 main.c:292: warning: Member itemsm_list[] (variable) of group Main_Functions is not documented.
-main.c:858: warning: Found unknown command `\SAMPLE_INTERVAL'
+main.c:867: warning: Found unknown command `\SAMPLE_INTERVAL'
 system_stm32f4xx.c:321: warning: Member PLL_M (macro definition) of group STM32F4xx_System_Private_Defines is not documented.
 system_stm32f4xx.c:326: warning: Member PLL_Q (macro definition) of group STM32F4xx_System_Private_Defines is not documented.
 system_stm32f4xx.c:387: warning: Member AHBPrescTable[16] (variable) of group STM32F4xx_System_Private_Variables is not documented.
@@ -582,8 +569,8 @@ actuators.h:169: warning: Found unknown command `\bG'
 actuators.h:169: warning: Found unknown command `\buard'
 actuators.c:130: warning: Illegal command \bbiased as the argument of a \bbiased command
 adc-input-noise.html' for \link command
-defines.h:219: warning: Illegal command note as part of a \link
-defines.h:220: warning: Unexpected end of comment while inside link command
+defines.h:198: warning: Illegal command note as part of a \link
+defines.h:199: warning: Unexpected end of comment while inside link command
 
 adc_dac_dma.h:252: warning: Member NVIC_Configuration(void) (function) of group Analog_Functions is not documented.
 adc_dac_dma.h:253: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
@@ -596,16 +583,15 @@ adc_dac_dma.h:261: warning: Member ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t
 adc_dac_dma.h:262: warning: The following parameters of DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val) are not documented:
   parameter 'DACx'
 adc_dac_dma.c:99: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
-defines.h:101: warning: Member lo (macro definition) of group Global_Macros is not documented.
-defines.h:146: warning: Member tribool_state_t (enumeration) of group APP_Global_Typedefs is not documented.
-defines.h:300: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
-main.h:80: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:81: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:82: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:84: warning: Member pidErr_x (macro definition) of group Main_Macros is not documented.
-main.h:85: warning: Member pidErr_y (macro definition) of group Main_Macros is not documented.
-main.h:86: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
-main.h:87: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
+defines.h:62: warning: Member lo (macro definition) of group Global_Macros is not documented.
+defines.h:279: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
+main.h:100: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:101: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:102: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:104: warning: Member pidErr_x (macro definition) of group Main_Macros is not documented.
+main.h:105: warning: Member pidErr_y (macro definition) of group Main_Macros is not documented.
+main.h:106: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
+main.h:107: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
 pid.h:67: warning: Member MAX_INT (macro definition) of group APP_Pid_Macros is not documented.
 pid.h:68: warning: Member MAX_LONG (macro definition) of group APP_Pid_Macros is not documented.
 pid.h:69: warning: Member MAX_I_TERM (macro definition) of group APP_Pid_Macros is not documented.

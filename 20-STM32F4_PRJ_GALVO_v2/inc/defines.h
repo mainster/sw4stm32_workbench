@@ -35,52 +35,9 @@
 
 
 /**
- * @addtogroup 	MD_APP
- * @{
- */
-
-/**
- * @addtogroup _Macros
- * @{
- */
-
-/**
- * @addtogroup _Typedefs
- * @{
- */
-
-/**
- * @addtogroup _Variables
- * @{
- */
-
-/**
- * @addtogroup _Functions
- * @{
- */
-
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-
-
-
-/**
  * @addtogroup MD_APP
  * @{
  */
-
-// ==============================================================
-//                      Global things
-// ==============================================================
 
 /**
  * @addtogroup APP_Global
@@ -91,6 +48,10 @@
  * @addtogroup Global_Macros
  * @{
  */
+
+/* ==============================================================
+                        Global things
+============================================================== */
 
 /**
  * @brief     Keep preprocessor clean from KEIL_IDE symbols.
@@ -138,24 +99,43 @@
 
 /** @} */
 
+
 /**
- * @addtogroup APP_Global_Typedefs
+ * @addtogroup Global_Typedefs
  * @{
  */
 
+/**
+ * @brief      TriBool enumerations.
+ */
 typedef enum {
     FALSE = 0,
     TRUE,
-    DNI        //!< Do Not Interpret
+    DNI             //!< Do Not Interpret
 } tribool_state_t;
 
 /** @} */
 
+/**
+ * @addtogroup Global_Variables
+ * @{
+ */
+
 /** @} */
 
-// ==============================================================
-//                      Analog things
-// ==============================================================
+/**
+ * @addtogroup Global_Functions
+ * @{
+ */
+
+/** @} */
+
+/** @} */
+
+
+/* ==============================================================
+                        Analog things
+============================================================== */
 
 /**
  * @addtogroup APP_Analog
@@ -166,7 +146,6 @@ typedef enum {
  * @addtogroup Analog_Macros
  * @{
  */
-
 
 /**
  * @brief      ADC code range definition. [digits]
@@ -272,9 +251,9 @@ typedef enum {
 /** @} */
 
 
-// ==============================================================
-//                      PID things
-// ==============================================================
+/* ==============================================================
+                           PID things
+============================================================== */
 
 /**
  * @addtogroup APP_Pid
@@ -298,6 +277,8 @@ typedef enum {
 #define TS          2
 
 #define SAMPLE_INTERVAL   (45*TS)       // 45MHz APBx timer clocks
+
+/** @} */
 
 /** @} */
 

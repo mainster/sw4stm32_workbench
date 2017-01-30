@@ -238,28 +238,31 @@ void TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, \
   TIM_Cmd(TIM2, TimerRun);
 }
 
-
-/* ====================================================================================  
-                    NVI controller configuration  
-   ==================================================================================== */ 
+/**
+ * @brief      Nested vector interrupt controller initialisation.
+ */
 void NVIC_Configuration(void) {
-  NVIC_InitTypeDef  NVIC_InitStruct_DMA, \
-  NVIC_InitStruct_ADC, \
-  nvic_cfg;
+  /**
+    * @brief      { item_description }
+    */ 
+  NVIC_InitTypeDef  
+  NVIC_InitStruct_DMA,
+  NVIC_InitStruct_TIM,
+  NVIC_InitStruct_ADC;
   
-    /* Enable the DMA Stream IRQ Channel */
+  /* Enable the DMA Stream IRQ Channel */
   NVIC_InitStruct_DMA.NVIC_IRQChannel = DMA2_Stream0_IRQn;
   NVIC_InitStruct_DMA.NVIC_IRQChannelPreemptionPriority = 2;
   NVIC_InitStruct_DMA.NVIC_IRQChannelSubPriority = 1;
   NVIC_InitStruct_DMA.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStruct_DMA);
   
-    /* Enable the TIM2 IRQ Channel */
-  nvic_cfg.NVIC_IRQChannel = TIM2_IRQn;
-  nvic_cfg.NVIC_IRQChannelPreemptionPriority = 0;
-  nvic_cfg.NVIC_IRQChannelSubPriority = 0;
-  nvic_cfg.NVIC_IRQChannelCmd = ENABLE;
-  NVIC_Init(&nvic_cfg);
+  /* Enable the TIM2 IRQ Channel */
+  NVIC_InitStruct_TIM.NVIC_IRQChannel = TIM2_IRQn;
+  NVIC_InitStruct_TIM.NVIC_IRQChannelPreemptionPriority = 0;
+  NVIC_InitStruct_TIM.NVIC_IRQChannelSubPriority = 0;
+  NVIC_InitStruct_TIM.NVIC_IRQChannelCmd = ENABLE;
+  NVIC_Init(&NVIC_InitStruct_TIM);
 
     /* ADC Analog watchdog interrupt enable */
   NVIC_InitStruct_ADC.NVIC_IRQChannel = ADC_IRQn;

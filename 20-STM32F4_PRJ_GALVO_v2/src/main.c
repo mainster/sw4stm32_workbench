@@ -701,15 +701,6 @@ void init_globalStructs(void) {
  */
 
 
-/*! \brief Fast console command parser
- *
- * Interface to a flat implemented signal generator based on lookup tables
- * Implemented waveforms:
- *
- * Sin/Cos:			Measurements
- *
- */
-
 #define IDX_CMD     1       // index 0 is @ or ! or #
 #define IDX_VAL     5   // index 5 
 
@@ -725,16 +716,39 @@ void init_globalStructs(void) {
 #pragma GCC optimize ("O0")
 #endif
 
+/**
+ * @brief      Fast console command parser.
+ *
+ *             Interface to a signal generator based on lookup tables.
+ *             Implemented waveforms:	- Śin/Cos
+ *
+ * @param      pid   Pointer to a pid instance from dsp library.  
+ */
 void fastConsoleCase (arm_pid_instance_f32 *pid) {
-	/**< private member declarations */
-	char sUart[UART_BUFF_SIZE],		///< string buffer to hold received input string
-	     sCmd[CMD_BUFF_SIZE],		///< string buffer to hold selected command as substring
-	     sVal[VALUE_BUFF_SIZE];     ///< string buffer to hold given value as substring
-	/**<
-	 * sVal holds the string representation of a received float value.
-	 * For useing atof() , a buffer of 4xsizeof(int8_t)+1 [--> float32_t] or 8xsizeof(int8_t) [--> double]
-	 * is necessary
+	/**
+	 * @brief      private member declarations.
 	 */
+
+	/**
+	 * @brief      Char buffer to hold received value as substring.
+	 */
+	char sUart[UART_BUFF_SIZE];		 
+
+	/**
+	 * @brief      Char buffer to hold selected command as substring.
+	 */
+	char sCmd[CMD_BUFF_SIZE];
+
+	/**
+	 * @brief      Char buffer to hold given value as substring.
+	 *
+	 *             sVal holds the string representation of a received float
+	 *             value. For useing atof(), a buffer of
+	 *              - 4 x sizeof(int8_t)+1 (float32_t) or
+	 *              - 8 x sizeof(int8_t) (double) 
+	 *             is necessary.
+	 */ 
+	char sVal[VALUE_BUFF_SIZE];
 
 	char *pCmd = sCmd;		        ///< pointer for buffer arrays
 	char *pVal = sVal;		        ///< pointer for buffer arrays
@@ -745,7 +759,6 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 	itemsw_t *choicew = NULL;
 
 	int i;
-
 
 	volatile uint8_t nChars = TM_USART_Gets( USART1, &sUart[0], UART_BUFF_SIZE);
 
@@ -759,6 +772,9 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 	MD_DISCO_LedOff(LED_RED);
 	MD_DISCO_LedOn(LED_GREEN);
 	ticks = 100000;   // 200k *10us = 2s
+	/**
+	 * @brief      Char buffer to hold given value as substring.
+	 */
 
 	/**< malloc() if a frame received where sizeoff() >= UART_BUFF_SIZE */
 	memset(&sCmd, 0, CMD_BUFF_SIZE * sizeof(char));  ///< malloc command buffer
