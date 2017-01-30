@@ -52,6 +52,44 @@
  */
 
 /**
+ * @addtogroup _Macros
+ * @{
+ */
+
+/**
+ * @addtogroup _Typedefs
+ * @{
+ */
+
+/**
+ * @addtogroup _Variables
+ * @{
+ */
+
+/**
+ * @addtogroup _Functions
+ * @{
+ */
+
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+
+
+/**
+ * @addtogroup MD_APP
+ * @{
+ */
+
+/**
  * @addtogroup  APP_Actuators
  * @brief       Provides actuator related update and configuration methods. 
  * 
@@ -110,7 +148,7 @@ typedef enum {
 typedef struct {
     double  	integrator;  	//!< runtime integrator - holds the "amount" of overcurrent - states
     float   	lowerVal;    	//!< [V] Lower value ADC_f less than this value triggers the ass*/
-    float   	safeVal;     	//!< [V] If asg tripped, this output value becomes active*/
+    float   	safeVal;     	//!< [V] If ASG tripped, this output value becomes active*/
     float   	tripTime;    	//!< [ms] Time constant, used to change tripping characteristics at runtime
     float   	upperVal;    	//!< [V] Upper value ADC_f greater than this value triggers the ass*/
     uint8_t 	ack;        	//!< acknowlage tripped stat
@@ -126,12 +164,12 @@ typedef struct {
  */
 
 /**
- * @addtogroup  APP_Guarding
+ * @addtogroup  Actuators_Guarding
  * @brief       This group includes all functions related to safety and
  *              guarding.
  *
  * @par
- *     @b ASG: A@bctuator @b S@bafestate @b G@buard
+ *     \bASG\b: \bA\bctuator \bS\bafestate \bG\buard
  *
  *              The ASG system is designed to protect the output drivers from
  *              overload in case of actuator blocking states. The prototype

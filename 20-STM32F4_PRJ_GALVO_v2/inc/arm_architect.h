@@ -9,7 +9,8 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
- * @brief       Table 29. Thumb architecture versions in relation to ARM architecture versions. @link http://www.keil.com/support/man/docs/armccref/armccref_BABJFEFG.htm#BABFAHJH
+ * @brief       Table 29. Thumb architecture versions in relation to 
+ * <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0491c/BABJFEFG.html">ARM architecture versions</a>
  *
  * @par
  *

@@ -72,8 +72,8 @@
         #define APB1PERIPH_BASE     PERIPH_BASE
         #define DAC_BASE            (APB1PERIPH_BASE + 0x7400)
 
-    @ref DM00031020.pdf (14.5.15 DAC register map):
-    @link http://www.st.com/content/ccc/resource/technical/document/reference_manual/3d/6d/5a/66/b4/99/40/d4/DM00031020.pdf/files/DM00031020.pdf/jcr:content/translations/en.DM00031020.pdf
+    
+    <a href="http://www.st.com/content/ccc/resource/technical/document/reference_manual/3d/6d/5a/66/b4/99/40/d4/DM00031020.pdf/files/DM00031020.pdf/jcr:content/translations/en.DM00031020.pdf"> DM00031020.pdf (14.5.15 DAC register map):</a>
         DAC_DHR12R1_Reg_Offset  = 0x08  
         DAC_DHR12R2_Reg_Offset  = 0x14  
         DAC_DHR8R1_Reg_Offset   = 0x10  
@@ -90,20 +90,19 @@
  */
 
 /**
- * @brief      DAC module hardware register address definition.
+ * @brief      DAC module __IO register address definition.
  *
- *             Address definitions for DAC data hold registers (8-Bit and
+ *             Address definitions for "DAC data hold registers" (8-Bit and
  *             12-Bit). To provide direct __IO register access for DAC data
  *             registers.
- * @ref DM00031020.pdf: 14.5.15 DAC register map.
  */
 #define DAC_DHR12R1_ADDRESS    0x40007408
 #define DAC_DHR12R2_ADDRESS    0x40007414
 #define DAC_DHR8R1_ADDRESS     0x40007410
 #define DAC_DHR8R2_ADDRESS     0x4000741C
 
-/** @} */   //!< General_Notes
-/** @} */	//!< MD_DAC_SigGen_Macros
+/** @} */
+/** @} */
 
 /**
  * @addtogroup MD_DAC_SigGen_Variables
@@ -112,7 +111,7 @@
 DAC_InitTypeDef     DAC_InitStructure;
 DMA_InitTypeDef     DMA_InitStructure;
 
-/** @} *//* MD_DAC_SigGen_Variables */
+/** @} */
 
 /**
  * @addtogroup MD_DAC_SigGen_Functions
@@ -130,11 +129,29 @@ void DAC_DMA_SineWaveConfig(MD_DAC_Channel_t DACx,
                             FunctionalState NewStateDAC, 
                             FunctionalState NewStateDMA);
 
+/**
+ * @brief      DAC Channels noise config
+ *
+ * @param[in]  DACx   The da cx
+ */
 void DAC_Chx_NoiseConfig(MD_DAC_Channel_t DACx);
-void DAC_TriangleConfig(MD_DAC_Channel_t DACx);
-void DAC_Chx (MD_DAC_Channel_t DACx);
 
-/** @} */	/* MD_DAC_SigGen_Functions */
-/** @} */	/* MD_DAC_SigGen */
-/** @} */	/* MD_STM32F4_Libraries */
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  DACx   The da cx
+ */
+void DAC_TriangleConfig(MD_DAC_Channel_t DACx);
+
+// *
+//  * @brief      { function_description }
+//  *
+//  * @param[in]  DACx   The da cx
+ 
+// void DAC_Chx (MD_DAC_Channel_t DACx);
+
+/** @} */
+/** @} */
+/** @} */
+
 #endif

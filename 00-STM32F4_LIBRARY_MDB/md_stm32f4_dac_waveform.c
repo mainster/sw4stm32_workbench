@@ -1,11 +1,11 @@
 ﻿#include "md_stm32f4_dac_waveform.h"
 
 /**
- * @brief      DAC Channel SineWave Configuration
+ * @brief      DAC Channel SineWave Configuration.
  *
- * @param      DACx          The DAC channel to use
- * @param[in]  NewStateDAC   The new state dac
- * @param[in]  NewStateDMA   The new state dma
+ * @param      DACx          The DAC channel to use.
+ * @param[in]  NewStateDAC   The new state dac.
+ * @param[in]  NewStateDMA   The new state dma.
  */
 void DAC_CHx_DMA_SineWaveConfig(MD_DAC_Channel_t DACx,
 								FunctionalState NewStateDAC,
@@ -64,9 +64,9 @@ void DAC_CHx_DMA_SineWaveConfig(MD_DAC_Channel_t DACx,
 }
 
 /**
- * @brief  DAC Channel1 Escalator Configuration
- * @param  None
- * @retval None
+ * @brief      DAC Channel1 Escalator Configuration
+ *
+ * @param      DACx   The DAC channel to use.
  */
 void DAC_CHx_EscalatorConfig(MD_DAC_Channel_t DACx) {
 	uint32_t DAC_DHR8Rx_ADDRESS = 0;
@@ -123,11 +123,11 @@ void DAC_CHx_EscalatorConfig(MD_DAC_Channel_t DACx) {
 }
 
 /**
- * @brief  DAC Channel2 Triangle Configuration
- * @param  None
- * @retval None
+ * @brief      DAC Channels triangle configuration
+ *
+ * @param      DACx   The DAC channel to use.
  */
-void DAC_CHx_TriangleConfig(MD_DAC_Channel_t DACx) {
+void DAC_Chx_TriangleConfig(MD_DAC_Channel_t DACx) {
 	uint32_t DAC_DHR12Rx_ADDRESS = 0;
 
 	/* Initialization Structure */
@@ -164,12 +164,11 @@ void DAC_CHx_TriangleConfig(MD_DAC_Channel_t DACx) {
 }
 
 /**
- * @brief  DAC  Channel1 Noise Configuration
- * @param  None
- * @retval None
+ * @brief      DAC  Channel1 Noise Configuration
+ *
+ * @param      DACx          The DAC channel to use.
  */
-//void DAC_CHx_NoiseConfig(MD_DAC_Channel_t DACx)
-//{
+void DAC_Chx_NoiseConfig(MD_DAC_Channel_t DACx) {
 //	/* DAC channel1 Configuration */
 //	DACx->DAC_Trigger = DAC_Trigger_T6_TRGO;
 //	DACx->DAC_WaveGeneration = DAC_WaveGeneration_Noise;
@@ -182,8 +181,5 @@ void DAC_CHx_TriangleConfig(MD_DAC_Channel_t DACx) {
 //
 //	/* Set DAC Channel1 DHR12L register */
 //	DAC_SetChannel1Data(DAC_Align_12b_L, 0x7FF0);
-//}
+}
 
-/**
- * @}
- */

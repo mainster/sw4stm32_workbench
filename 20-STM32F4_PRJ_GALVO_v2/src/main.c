@@ -40,6 +40,36 @@
 /* ARM architecture names */
 #include "arm_architect.h"
 
+/**
+ * @addtogroup MD_APP
+ * @{
+ */
+
+/**
+ * @addtogroup APP_Main
+ * @{
+ */
+
+/**
+ * @addtogroup Main_Typedefs
+ * @{
+ */
+
+/**
+ * @addtogroup Main_Variables
+ * @{
+ */
+
+/**
+ * @addtogroup Main_Functions
+ * @{
+ */
+
+
+
+
+
+
 struct global g;
 uint16_t vectorCtr = 0;
 int8_t dir = 1;
@@ -90,7 +120,7 @@ void init_globalStructs(void);
 #define RX_FRAME_PADDING_CHAR   '~'
 
 /* The function pointer updateActuator is used as non-privileged access function
- * to internal DAC output registers. After asg detects a tripping condition ,
+ * to internal DAC output registers. After ASG detects a tripping condition ,
  * updateActuator function-pointer targets to updateActuator_fused_callback */
 //int (*updateActuator)                (float, float);
 //int (*updateActuator_callback)       (float, float);
@@ -206,19 +236,26 @@ volatile uint16_t multiADC[2];
 float pidErrBuff[2];        /* PID error buffer*/
 float toPlantBuff[2];        /* PID output buffer*/
 
-/**< ADC dual mode DMA receive buffer. */
+/**
+ * @brief      ADC dual mode DMA access buffer.
+ * 
+ * This __IO buffer 
+ */
 __IO int16_t ADC_MultiConvBuff[5];
-/* ADC values access buffer
- * Because we use a float based instance of PID, we need to cast the
- * ADC_MultiConvBuff[0] buffer from integral type to float !!!
+
+/**
+ * @brief      ADC values access buffer.
+ *
+ *             Because we use a float based instance of PID, we need to cast the
+ *             ADC_MultiConvBuff[0] buffer from integral type to float !!!
  */
 __IO float ADC_fBuff[5];
-//
+
 
 #define NO1 1
 
 
-extern autoSaveSystem_t asg;
+extern autoSaveSystem_t ASG;
 
 
 /* ---------- */
@@ -383,8 +420,8 @@ int main(void) {
 
 	/**< Set threshold for analog watch dog */
 	ADC_AnalogWatchdogThresholdsConfig(ADC1,
-	                                   decode_toUint(asg.upperVal + VA_BIAS),
-	                                   decode_toUint(asg.lowerVal + VA_BIAS));
+	                                   decode_toUint(ASG.upperVal + VA_BIAS),
+	                                   decode_toUint(ASG.lowerVal + VA_BIAS));
 
 	/**< Transmit boot up message to UART1 */
 	char *tok;
@@ -433,14 +470,14 @@ int main(void) {
 				//                };
 				Delayms((uint32_t)g.refresh / 20);
 			}
-			//            if ((asg.state == ASS_CHARGING_INTEGRATOR) && (! asg.tripped)) {
-			if (asg.integrator != lastVal) {
-				printf("%.8f\n", asg.integrator);
+			//            if ((ASG.state == ASS_CHARGING_INTEGRATOR) && (! ASG.tripped)) {
+			if (ASG.integrator != lastVal) {
+				printf("%.8f\n", ASG.integrator);
 			}
-			if ((asg.tripped) && (! asg.ack)) {
+			if ((ASG.tripped) && (! ASG.ack)) {
 				printf("Tripped!");
-				asg.ack = 1;
-				lastVal = asg.integrator;
+				ASG.ack = 1;
+				lastVal = ASG.integrator;
 				TM_Timer4_config(ENABLE, ENABLE, 45000 / 3);
 			}
 
@@ -538,15 +575,15 @@ void init_globalStructs(void) {
 	PIDY.Kd = PID_PARAM_KD;		/* Derivative */
 
 	/**< Initialize autoShutdown system struct. */
-	asg.lowerVal = ASS_TRIPPING_LOWER_DEFAULT;
-	asg.upperVal = ASS_TRIPPING_UPPER_DEFAULT;
+	ASG.lowerVal = ASS_TRIPPING_LOWER_DEFAULT;
+	ASG.upperVal = ASS_TRIPPING_UPPER_DEFAULT;
 
-	asg.integrator = 0;
-	asg.safeVal = ASS_SAFEVALUE_DEFAULT ;
-	asg.tripped = 0;
-	asg.ack = 0;
-	asg.tripTime = ASS_TRIPPING_TIME_DEFAULT; // 750ms initial
-	asg.state = ASS_STATIONARY_INTEGRATOR;
+	ASG.integrator = 0;
+	ASG.safeVal = ASS_SAFEVALUE_DEFAULT ;
+	ASG.tripped = 0;
+	ASG.ack = 0;
+	ASG.tripTime = ASS_TRIPPING_TIME_DEFAULT; // 750ms initial
+	ASG.state = ASS_STATIONARY_INTEGRATOR;
 
 	/**< Initialize global structure */
 	g.waveForm = NN; g.duty = 999; g.freq = 999; g.lookAt = 999;
@@ -606,7 +643,7 @@ void init_globalStructs(void) {
 //    int toPlant_intBuff[2] = { 0, 0 };
 //    int *toPlant_int = &toPlant_intBuff[0];
 //
-//    if (!asg.tripped) {     ///< only if asg state is NOT tripped
+//    if (!ASG.tripped) {     ///< only if ASG state is NOT tripped
 
 //        /**< decode the float values to an integral type */
 //        *toPlant_int     = decode_toInt(I_set_x);
@@ -625,7 +662,7 @@ void init_globalStructs(void) {
 //    }
 //    else{
 //    /**<><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>
-//       <>  This branch eror-handles an asg integrator_full event i.e.<>
+//       <>  This branch eror-handles an ASG integrator_full event i.e.<>
 //       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>
 //       <>                    FUSE TRIPPED                            <>
 //       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<> */
@@ -1235,55 +1272,63 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 #pragma GCC pop_options
 #endif
 
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
 
 
 
-/*
-#ifdef MULTI_SETPOINT
-    if (g.setpointSrc == INTERNAL_SETPOINT) {
-        W_now = pidDataY.W_int;
-    }  else {
-    if (g.setpointSrc == ANALOG_SETPOINT) {
-        W_now = ADC_fBuff[INDEX_Wx];
-    }  else {
-    if (g.setpointSrc == REMOTE_SETPOINT) {
-        W_now = pidDataY.W_rem;
-    }  else {
-    if (g.setpointSrc == REMOTE_OPENLOOP) {
-        W_now = pidDataY.W_rem;
-    }}}}
-#endif
- */
+
+// #ifdef MULTI_SETPOINT
+//     if (g.setpointSrc == INTERNAL_SETPOINT) {
+//         W_now = pidDataY.W_int;
+//     }  else {
+//     if (g.setpointSrc == ANALOG_SETPOINT) {
+//         W_now = ADC_fBuff[INDEX_Wx];
+//     }  else {
+//     if (g.setpointSrc == REMOTE_SETPOINT) {
+//         W_now = pidDataY.W_rem;
+//     }  else {
+//     if (g.setpointSrc == REMOTE_OPENLOOP) {
+//         W_now = pidDataY.W_rem;
+//     }}}}
+// #endif
 
 //    gpio_init_mco1();
 //    RCC_MCO1Config(RCC_MCO1Source_HSE,RCC_MCO1Div_1);
 //    gpio_init();
 
 
-//
+
 
 // ==============================================================
 //     IRQ callback:    Timer 5 overrun     Heartbeat timer
 // ==============================================================
-//void TIM5_IRQHandler(void) {
+// void TIM5_IRQHandler(void) {
 //    if (TIM_GetITStatus(TIM5, TIM_IT_Update) != RESET) {
-//		TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
-//
+// 		TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
+
 //    }
-//}
+// }
 // ==============================================================
 //     IRQ callback:    Timer 4 overrun     Waveform Generator
 // ==============================================================
-//#ifdef NO1
-//void TIM4_IRQHandler(void) {
+// #ifdef NO1
+// void TIM4_IRQHandler(void) {
 //    if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {
-//		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+// 		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
 
-//        if (asg.tripped) {
+//        if (ASG.tripped) {
 //            MDB_GPIO_Toggle(BEAM_INTERRUPT);
 //        }
-//
-//        /* Check which waveform mode is active */
+
+//         Check which waveform mode is active 
 //        if (g.waveForm == SQUAREWAV) {
 //            if (*pSeq_f == '\0') {
 //                pSeq_f = &squarewaveBuff[0];
@@ -1294,7 +1339,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 //            beamCtrl(BEAM_CTRL_SOURCE_MANUAL, (*pInt++) ? GPIO_ON : GPIO_OFF );
 //            return;
 //        }
-//
+
 //        if (g.waveForm == TRIANG) {
 //            if (setpoint_tgl  <= triStruct.top) {
 //                setpoint_tgl += triStruct.derivate;
@@ -1304,16 +1349,16 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 //            }
 //        }
 //    }
-//}
-//#else
-//void TIM4_IRQHandler(void) {
-//fff
-//volatile float ft=0;
+// }
+// #else
+// void TIM4_IRQHandler(void) {
+// fff
+// volatile float ft=0;
 
 //    if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {
-//		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
-//
-//        /* Check which waveform mode is active */
+// 		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+
+//        /* Check which waveform mode is active 
 //        if (g.waveForm == SQUAREWAV) {
 //            if (vectorCtr >= NVECTORS) {
 //                vectorCtr = 0;
@@ -1326,47 +1371,8 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 
 //        }
 //    }
-//}
-//#endif
-//// ==============================================================
-////    IRQ callback:    DMA2_Stream0 transmission-complete
-//// ==============================================================
-////     PID: This callback initiates compensator calculation
-//// ==============================================================
-//void DMA2_Stream0_IRQHandler(void) {
-//    /**< Since this is the only irq flag for this handler, clear direct. */
-//    DMA_ClearITPendingBit(DMA2_Stream0, DMA_IT_TC);
-//    DMA_ITConfig(DMA2_Stream0, DMA_IT_TC, DISABLE);
-//    DBG_ADC_TIMING(0);
-
-
-
-//  /* Test on DMA Stream Half Transfer interrupt */
-//  if(DMA_GetITStatus(DMA2_Stream0, DMA_IT_HTIF0))
-//  {
-//    DBG_PID_TIMING(1);
-//    /* Clear DMA Stream Half Transfer interrupt pending bit */
-//    DMA_ClearITPendingBit(DMA2_Stream0, DMA_IT_HTIF0);
-//
-//    /* Turn LED3 off: Half Transfer */
-//    MD_DISCO_LedOff(LED_RED);
-//
-//    // Add code here to process first half of buffer (ping)
-//  }
-//
-//  /* Test on DMA Stream Transfer Complete interrupt */
-//  if(DMA_GetITStatus(DMA2_Stream0, DMA_IT_TCIF0))
-//  {
-//    /* Clear DMA Stream Transfer Complete interrupt pending bit */
-//    DBG_ADC_TIMING(0);
-//    DBG_PID_TIMING(0);
-//    DMA_ClearITPendingBit(DMA2_Stream0, DMA_IT_TCIF0);
-//
-//    /* Turn LED3 on: End of Transfer */
-//    MD_DISCO_LedOn(LED_RED);
-
-//    // Add code here to process second half of buffer (pong)
-//  }
+// }
+// #endif
 
 
 
@@ -1469,20 +1475,20 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 //    /* Analog watchdog interrupt occured */
 //    if (ADC_GetFlagStatus(ADC1, ADC_FLAG_AWD) == SET) {
 //        ADC_ClearITPendingBit(ADC1, ADC_IT_AWD);
-//        if ((asg.state == ASS_STATIONARY_INTEGRATOR) ||
-//            (asg.state == ASS_DISCHARGING_INTEGRATOR)) {
-//            asg.state = ASS_CHARGING_INTEGRATOR;
+//        if ((ASG.state == ASS_STATIONARY_INTEGRATOR) ||
+//            (ASG.state == ASS_DISCHARGING_INTEGRATOR)) {
+//            ASG.state = ASS_CHARGING_INTEGRATOR;
 //            printf("ASS:charging_start...\n");
 //        }
-//        if ((asg.integrator <= asg.lowerVal) || (asg.integrator >= asg.upperVal)) {   /**< check for integrator limit */
-//            if (! asg.tripped) {
-//                asg.tripped = 1;                    /**< Set "tripped" state if it is so */
-//                DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "asg tripped" handler*/
+//        if ((ASG.integrator <= ASG.lowerVal) || (ASG.integrator >= ASG.upperVal)) {   /**< check for integrator limit */
+//            if (! ASG.tripped) {
+//                ASG.tripped = 1;                    /**< Set "tripped" state if it is so */
+//                DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "ASG tripped" handler*/
 //            }
 //            return;
 //        }
 //        else {                                  /**< else increment integrator */
-//            asg.integrator+= asg.upperVal * (double)TS*1e-6/(asg.tripTime);
+//            ASG.integrator+= ASG.upperVal * (double)TS*1e-6/(ASG.tripTime);
 //        }
 //        return;
 //    }

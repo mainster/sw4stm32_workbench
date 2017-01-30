@@ -34,14 +34,61 @@
 #define DEFINES_H_
 
 
+/**
+ * @addtogroup 	MD_APP
+ * @{
+ */
+
+/**
+ * @addtogroup _Macros
+ * @{
+ */
+
+/**
+ * @addtogroup _Typedefs
+ * @{
+ */
+
+/**
+ * @addtogroup _Variables
+ * @{
+ */
+
+/**
+ * @addtogroup _Functions
+ * @{
+ */
+
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+
+
 
 /**
  * @addtogroup MD_APP
  * @{
  */
 
+// ==============================================================
+//                      Global things
+// ==============================================================
+
 /**
- * @addtogroup APP_Global_Macros
+ * @addtogroup APP_Global
+ * @{
+ */
+
+/**
+ * @addtogroup Global_Macros
  * @{
  */
 
@@ -50,9 +97,6 @@
  */
 #undef KEIL_IDE
 
-// ==============================================================
-//                      GPIO things
-// ==============================================================
 #define hi  Bit_SET
 #define lo  Bit_RESET
 
@@ -92,15 +136,37 @@
 #define INDEX_Wx    3       //!< Set-point value for channel X.
 #define INDEX_Wy            //!< Set-point value for channel Y (FIXME: Hardware).
 
+/** @} */
+
 /**
- * @addtogroup MD_APP_Analog
+ * @addtogroup APP_Global_Typedefs
+ * @{
+ */
+
+typedef enum {
+    FALSE = 0,
+    TRUE,
+    DNI        //!< Do Not Interpret
+} tribool_state_t;
+
+/** @} */
+
+/** @} */
+
+// ==============================================================
+//                      Analog things
+// ==============================================================
+
+/**
+ * @addtogroup APP_Analog
  * @{
  */
 
 /**
- * @addtogroup MD_APP_Analog_Macros
+ * @addtogroup Analog_Macros
  * @{
  */
+
 
 /**
  * @brief      ADC code range definition. [digits]
@@ -201,47 +267,40 @@
  */
 #define AMPL_FLOAT_DIVISOR      (int16_t)   1e3
 
-/** @} */   //!< MD_APP_Analog_Macros
-/** @} */   //!< MD_APP_Analog
+/** @} */
+
+/** @} */
+
+
+// ==============================================================
+//                      PID things
+// ==============================================================
 
 /**
- * @addtogroup APP_Pid_Macros
+ * @addtogroup APP_Pid
  * @{
  */
 
 /**
- * @brief      Sample time for PID algorithm timing. [us]
- * 
- * Determines the  
+ * @addtogroup Pid_Macros
+ * @{
  */
-#define TS          5           // Sample time [us] //10khz
-//int (*fup11) (float*);
-//                             0xffff * 5us = 0.3277ms = 3.05Hz
+
+/**
+ * @brief      Sample time for PID algorithm timing.
+ *
+ *             Determines the systems overall bandwidth.
+ * @note       Unit: µs
+ * @note       11/2016: Verify higher control throughput on Texas Instruments
+ *             C2000 Series <a href="http://www.ti.com/product/TMS320F28335">
+ *             TMS320F28335 "Delfino" DSC. </a>
+ */
+#define TS          2
 
 #define SAMPLE_INTERVAL   (45*TS)       // 45MHz APBx timer clocks
 
+/** @} */
 
-// ==============================================================
-//                      Fast Console
-// ==============================================================
-
-/** @} */   //!< APP_Pid_Macros
-/** @} */   //!< APP_Global_Macros
-
-/**
- * @addtogroup APP_Global_Typedefs
- * @{
- */
-
-typedef enum {
-    FALSE = 0,
-    TRUE,
-    DNI        //!< Do Not Interpret
-} tribool_state_t;
-
-/** @} */   //!< APP_Global_Typedefs
-
-
-/** @} */   //!< MD_APP 
+/** @} */
 
 #endif 

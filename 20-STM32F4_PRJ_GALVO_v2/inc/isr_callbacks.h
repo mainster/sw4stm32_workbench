@@ -43,8 +43,34 @@
  */
 
 /**
- * @addtogroup 	APP_Callback_Handlers
+ * @addtogroup 	APP_IRQ_Handler
  * @brief		Provides project specific callback handlers to service interrupt requests.
+ * @{
+ */
+
+/**
+ * @addtogroup IRQ_Handler_Macros
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @addtogroup IRQ_Handler_Typedefs
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @addtogroup IRQ_Handler_Variables
+ * @{
+ */
+
+/** @} */
+
+/**
+ * @addtogroup IRQ_Handler_Functions
  * @{
  */
 
@@ -56,6 +82,8 @@ void TIM4_IRQHandler(void);
 
 /* See implementation file for documentation comments. */
 void ADC_IRQHandler(void);
+
+/** @} */
 
 /** @} */
 

@@ -1,7 +1,7 @@
 /**
  * @file        adc_dac_dma.h
  *
- * @date        28 Jan 2017
+ * @date        30 Jan 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
@@ -11,7 +11,7 @@
  *
  * @brief       Provides DMA related configuration and access functions for ADC and DAC.
  *
- * @verbatim
+   @verbatim
 
 	Copyright (C) 2016	Manuel Del Basso
 
@@ -30,6 +30,7 @@
 	@endverbatim
  *
  */
+
 #ifndef ADC_DAC_DMA_H_
 #define ADC_DAC_DMA_H_
 
@@ -44,6 +45,44 @@
 #include "stm32f4xx.h"
 #include "tools.h"
 #include "actuators.h"
+
+/**
+ * @addtogroup MD_APP
+ * @{
+ */
+
+/**
+ * @addtogroup _Macros
+ * @{
+ */
+
+/**
+ * @addtogroup _Typedefs
+ * @{
+ */
+
+/**
+ * @addtogroup _Variables
+ * @{
+ */
+
+/**
+ * @addtogroup _Functions
+ * @{
+ */
+
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+
 
 // ==============================================================
 //                          20-05-2015
@@ -103,51 +142,50 @@
 #define ADC_CCR_ADDRESS    ((uint32_t)0x40012308)
 // ==============================================================
 
-
-
-
 // ==============================================================
 //#define DAC_Align_12b_R  CHAN_Align_12b_R
 // ==============================================================
-
-
-
 //extern autoSaveSystem_t ass;
 
-/* Sets the ADC scan channels count 
- * This MUST be used in ADC init function, DMA init function and at the point 
- * where a complete buffer copy was taken */    
+/**
+ * @brief      Sets the ADC scan channels count.
+ *
+ *             This MUST be used in ADC init function, DMA init function and at
+ *             the point where a complete buffer copy was taken
+ */
 #define ADC_N_REGULAR_CHANNELS  2
 
-/**< enumerate return types
- * Declare enumerations used as return type of function pointer 
- * DAC_SecureSetDualChanSigned(). Polling the return argument of 
- * DAC_SecureSetDualChanSigned() could be used to determine, where the
- * the write pointer points to!. */
+/**
+ * @brief      DAC output write functions return type enumerations
+ *
+ *             Uused as return type of function pointer @ref
+ *             DAC_SecureSetDualChanSigned(). Polling the return argument of
+ *             DAC_SecureSetDualChanSigned() could be used to determine, where
+ *             the the write pointer points to!. 
+ */
 typedef enum {
     DEFAULT_WRITE_DAC,      ///< return by default function which is used for write access to DAC hardware
-    TRIPPED_WRITE_DAC      ///< return by error handling function if asg is in tripped state
+    TRIPPED_WRITE_DAC      ///< return by error handling function if ASG is in tripped state
 } DAC_WP_t;
 
 
-void NVIC_Configuration(void);  
-void TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, \
-                                        FunctionalState IntOn, \
-                                        uint16_t peri);
+void NVIC_Configuration (void);  
 
-void DMA_Configuration( __IO int16_t *MultiConvBuff, \
-                                             uint8_t memSize);
-void AnalogWatchdog_Configuration (void);
-void ADC_Configuration(void);
-void RCC_Configuration(void);
+void TIM2_DMA_triggerConfiguration (FunctionalState TimerRun,
+                                   FunctionalState IntOn, uint16_t peri);
 
-void ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff);
-void ADC_ContScanMode_w_DMA (__IO int16_t *MultiConvBuff);
-void ADC_ContScanMode_w_DMA_timeTrigd (__IO int16_t *MultiConvBuff, uint8_t memSize);
-void DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val);
+void DMA_Configuration ( __IO int16_t *MultiConvBuff, uint8_t memSize);
+void AnalogWatchdog_Configuration  (void);
+void ADC_Configuration (void);
+void RCC_Configuration (void);
+
+void ADC_DMA_DualModeConfig (__IO int16_t *MultiConvBuff);
+void ADC_ContScanMode_w_DMA  (__IO int16_t *MultiConvBuff);
+void ADC_ContScanMode_w_DMA_timeTrigd  (__IO int16_t *MultiConvBuff, uint8_t memSize);
+void DAC_SetSignedValue (MD_DAC_Channel_t DACx, int16_t val);
 
 /* extern defined function pointer */
-extern  DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
+extern  DAC_WP_t  (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 /* Primary function that (*DAC_SecureSetDualChanSigned) is pointing to */
         DAC_WP_t DAC_SetDualChanSigned_Tripped  (int16_t Data2, int16_t Data1);
 /* Error condition function that (*DAC_SecureSetDualChanSigned) is pointing to */

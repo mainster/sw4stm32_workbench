@@ -1,0 +1,714 @@
+
+defines.h:307: warning: end of file while inside a group
+
+tm_stm32f4_usart.h:44: warning: missing title after \defgroup TM_USART
+tm_stm32f4_usart.h:239: warning: missing title after \defgroup TM_USART_Typedefs
+tm_stm32f4_usart.h:272: warning: missing title after \defgroup TM_USART_Macros
+tm_stm32f4_usart.h:470: warning: missing title after \defgroup TM_USART_Functions
+tm_stm32f4_usart_dma.h:44: warning: missing title after \defgroup TM_USART_DMA
+tm_stm32f4_usart_dma.h:108: warning: missing title after \defgroup TM_USART_DMA_Macros
+tm_stm32f4_usart_dma.h:166: warning: missing title after \defgroup TM_USART_DMA_Typedefs
+tm_stm32f4_usart_dma.h:176: warning: missing title after \defgroup TM_USART_DMA_Functions
+stm32f4xx_it.h' supplied as the second argument in the \file statement is not an input file
+main.h:111: warning: Compound items is not documented.
+signalGen.h:8: warning: Compound triangWave is not documented.
+main.h:178: warning: Compound MiscCmds_t is not documented.
+mdb_gpio.h:83: warning: Compound MDB_GPIO_t is not documented.
+main.h:184: warning: Compound DacLimit_t is not documented.
+main.h:168: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
+main.h:169: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
+main.h:170: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
+main.h:171: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
+main.h:172: warning: Documentation for undefined enum `AutoSafetyShutdown' found.
+main.h:173: warning: Documentation for undefined enum `Beam' found.
+main.h:174: warning: Documentation for undefined enum `Beam' found.
+signalGen.h:25: warning: documented symbol `static int16_t Cosine' was not declared or defined.
+signalGen.h:31: warning: documented symbol `static float CosineN' was not declared or defined.
+signalGen.h:37: warning: documented symbol `static int16_t calcTab' was not declared or defined.
+signalGen.h:43: warning: documented symbol `static int16_t Quadratic' was not declared or defined.
+signalGen.h:49: warning: documented symbol `static int16_t I_Quadratic' was not declared or defined.
+signalGen.h:55: warning: documented symbol `static int16_t Sawtooth' was not declared or defined.
+signalGen.h:62: warning: documented symbol `static float squarewaveBuff' was not declared or defined.
+signalGen.h:76: warning: documented symbol `static float line1' was not declared or defined.
+signalGen.h:93: warning: documented symbol `static float line11' was not declared or defined.
+stm32f4xx_it.c:161: warning: Found unknown command `\with'
+stm32f4xx_it.c:161: warning: Found unknown command `\with'
+system_stm32f4xx.c:560: warning: Found unknown command `\Note'
+actuators.c:80: warning: Member ASG (variable) of group IRQ_Handler_Variables is not documented.
+actuators.c:6: warning: Found unknown command `\email'
+actuators.c:8: warning: Found unknown command `\ide'
+actuators.c:9: warning: Found unknown command `\stdperiph'
+actuators.h:111: warning: Member ASS_TRIPPING_UPPER_DEFAULT (macro definition) of group Actuators_Macros is not documented.
+actuators.h:112: warning: Member ASS_SAFEVALUE_DEFAULT (macro definition) of group Actuators_Macros is not documented.
+actuators.h:113: warning: Member ASS_TRIPPING_TIME_DEFAULT (macro definition) of group Actuators_Macros is not documented.
+actuators.h:6: warning: Found unknown command `\email'
+actuators.h:8: warning: Found unknown command `\ide'
+actuators.h:9: warning: Found unknown command `\stdperiph'
+adc_dac_dma.c:109: warning: Member DAC_SetDualChanSigned(int16_t Data2, int16_t Data1) (function) of file adc_dac_dma.c is not documented.
+adc_dac_dma.c:123: warning: Member DAC_SetDualChanSigned_Tripped(int16_t dummy1, int16_t dummy2) (function) of file adc_dac_dma.c is not documented.
+adc_dac_dma.c:166: warning: Member ADC_Configuration(void) (function) of file adc_dac_dma.c is not documented.
+adc_dac_dma.c:208: warning: Member AnalogWatchdog_Configuration(void) (function) of file adc_dac_dma.c is not documented.
+adc_dac_dma.c:218: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of file adc_dac_dma.c is not documented.
+adc_dac_dma.c:258: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of file adc_dac_dma.c is not documented.
+adc_dac_dma.c:281: warning: Member NVIC_Configuration(void) (function) of file adc_dac_dma.c is not documented.
+adc_dac_dma.c:72: warning: Member ASG (variable) of file adc_dac_dma.c is not documented.
+adc_dac_dma.c:6: warning: Found unknown command `\email'
+adc_dac_dma.c:8: warning: Found unknown command `\ide'
+adc_dac_dma.c:9: warning: Found unknown command `\stdperiph'
+adc_dac_dma.c:10: warning: Found unknown command `\license'
+adc_dac_dma.c:732: warning: The following parameters of DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val) are not documented:
+  parameter 'DACx'
+adc_dac_dma.c:135: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
+adc_dac_dma.h:136: warning: Member ADC_X_CHAN (macro definition) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:137: warning: Member ADC_Y_CHAN (macro definition) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:138: warning: Member ADC_Ix_CHAN (macro definition) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:139: warning: Member ADC_Iy_CHAN (macro definition) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:140: warning: Member ADC_W_CHAN (macro definition) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:142: warning: Member ADC_CCR_ADDRESS (macro definition) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:166: warning: Member DAC_WP_t (enumeration) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:172: warning: Member NVIC_Configuration(void) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:173: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:177: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:179: warning: Member AnalogWatchdog_Configuration(void) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:180: warning: Member ADC_Configuration(void) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:183: warning: Member ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:184: warning: Member ADC_ContScanMode_w_DMA(__IO int16_t *MultiConvBuff) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:185: warning: Member ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:191: warning: Member DAC_SetDualChanSigned_Tripped(int16_t Data2, int16_t Data1) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:193: warning: Member DAC_SetDualChanSigned(int16_t Data2, int16_t Data1) (function) of file adc_dac_dma.h is not documented.
+adc_dac_dma.h:6: warning: Found unknown command `\email'
+adc_dac_dma.h:8: warning: Found unknown command `\ide'
+adc_dac_dma.h:9: warning: Found unknown command `\stdperiph'
+adc_dac_dma.h:10: warning: Found unknown command `\license'
+adc_dac_dma.h:186: warning: The following parameters of DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val) are not documented:
+  parameter 'DACx'
+adc_dac_dma.c:135: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
+arm_architect.h:49: warning: Member TARGET_ARCH_ARM[] (variable) of file arm_architect.h is not documented.
+arm_architect.h:6: warning: Found unknown command `\email'
+arm_architect.h:8: warning: Found unknown command `\ide'
+arm_architect.h:9: warning: Found unknown command `\stdperiph'
+arm_architect.h:10: warning: Found unknown command `\license'
+attributes.h:6: warning: Found unknown command `\email'
+attributes.h:8: warning: Found unknown command `\ide'
+attributes.h:9: warning: Found unknown command `\stdperiph'
+console.c:6: warning: Found unknown command `\email'
+console.c:8: warning: Found unknown command `\ide'
+console.c:9: warning: Found unknown command `\stdperiph'
+console.c:10: warning: Found unknown command `\license'
+console.h:6: warning: Found unknown command `\email'
+console.h:8: warning: Found unknown command `\ide'
+console.h:9: warning: Found unknown command `\stdperiph'
+console.h:10: warning: Found unknown command `\license'
+defines.h:101: warning: Member lo (macro definition) of group Global_Macros is not documented.
+defines.h:300: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
+defines.h:146: warning: Member tribool_state_t (enumeration) of group APP_Global_Typedefs is not documented.
+defines.h:6: warning: Found unknown command `\email'
+defines.h:8: warning: Found unknown command `\ide'
+defines.h:9: warning: Found unknown command `\stdperiph'
+defines.h:10: warning: Found unknown command `\license'
+isr_callbacks.c:71: warning: Member __attribute__((unused)) (function) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:363: warning: Member TIM2_IRQHandler(void) (function) of group IRQ_Handler_Functions is not documented.
+isr_callbacks.c:72: warning: Member PIDY (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:74: warning: Member setpoint_tgl (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:74: warning: Member pidDataX (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:74: warning: Member pidDataY (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:78: warning: Member ADC_fBuff[5] (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:79: warning: Member ADC_MultiConvBuff[5] (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:80: warning: Member ASG (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:81: warning: Member ticks (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:82: warning: Member dir (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:6: warning: Found unknown command `\email'
+isr_callbacks.c:8: warning: Found unknown command `\ide'
+isr_callbacks.c:9: warning: Found unknown command `\stdperiph'
+isr_callbacks.c:363: warning: Member TIM2_IRQHandler(void) (function) of group IRQ_Handler_Functions is not documented.
+isr_callbacks.h:6: warning: Found unknown command `\email'
+isr_callbacks.h:8: warning: Found unknown command `\ide'
+isr_callbacks.h:9: warning: Found unknown command `\stdperiph'
+isr_callbacks.h:10: warning: Found unknown command `\license'
+main.c:82: warning: Member PUTCHAR_PROTOTYPE (macro definition) of group Main_Functions is not documented.
+main.c:120: warning: Member RX_FRAME_PADDING_CHAR (macro definition) of file main.c is not documented.
+main.c:131: warning: Member ALGO_OLD (macro definition) of file main.c is not documented.
+main.c:132: warning: Member ADJUSTING_SETPOINT (macro definition) of file main.c is not documented.
+main.c:133: warning: Member SPEED_SETPOINT (macro definition) of file main.c is not documented.
+main.c:134: warning: Member ALGORITHM (macro definition) of file main.c is not documented.
+main.c:144: warning: Member SLIDER_VAL_DEVIDER (macro definition) of file main.c is not documented.
+main.c:153: warning: Member INDEX_Px (macro definition) of file main.c is not documented.
+main.c:154: warning: Member INDEX_Py (macro definition) of file main.c is not documented.
+main.c:162: warning: Member SIGNW (macro definition) of file main.c is not documented.
+main.c:164: warning: Member INTERNAL_SETPOINT (macro definition) of file main.c is not documented.
+main.c:191: warning: Member PID_PARAM_KP (macro definition) of file main.c is not documented.
+main.c:192: warning: Member PID_PARAM_KI (macro definition) of file main.c is not documented.
+main.c:193: warning: Member PID_PARAM_KD (macro definition) of file main.c is not documented.
+main.c:225: warning: Member MSG_GUI_UART1_RECV_BUFF_FULL (macro definition) of file main.c is not documented.
+main.c:248: warning: Member NO1 (macro definition) of file main.c is not documented.
+main.c:310: warning: Member __TARGET_ARCH_ARM (macro definition) of group Main_Functions is not documented.
+main.c:707: warning: Member IDX_VAL (macro definition) of group Main_Functions is not documented.
+main.c:709: warning: Member UART_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:710: warning: Member VALUE_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:711: warning: Member CMD_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:1191: warning: Member MISC_CMD_LENGTH (macro definition) of file main.c is not documented.
+main.c:92: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group Main_Functions is not documented.
+main.c:101: warning: Member gpio_init(void) (function) of group Main_Functions is not documented.
+main.c:299: warning: Member resetPID(void) (function) of group Main_Functions is not documented.
+main.c:363: warning: Member g (variable) of group Main_Functions is not documented.
+main.c:74: warning: Member vectorCtr (variable) of group Main_Functions is not documented.
+main.c:75: warning: Member dir (variable) of group Main_Functions is not documented.
+main.c:76: warning: Member ticks (variable) of group Main_Functions is not documented.
+main.c:85: warning: Member __stdout (variable) of group Main_Functions is not documented.
+main.c:87: warning: Member PUTCHAR_PROTOTYPE (variable) of group Main_Functions is not documented.
+main.c:95: warning: Member ch (variable) of group Main_Functions is not documented.
+main.c:268: warning: Member itemsw_list[] (variable) of group Main_Functions is not documented.
+main.c:285: warning: Member itemsm_list[] (variable) of group Main_Functions is not documented.
+main2.c:15: warning: Found unknown command `\email'
+main2.c:17: warning: Found unknown command `\ide'
+main2.c:18: warning: Found unknown command `\stdperiph'
+main2.c:19: warning: Found unknown command `\license'
+main2.c:45: warning: Found unknown command `\email'
+main2.c:47: warning: Found unknown command `\ide'
+main2.c:48: warning: Found unknown command `\stdperiph'
+main.h:80: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:81: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:82: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:84: warning: Member pidErr_x (macro definition) of group Main_Macros is not documented.
+main.h:85: warning: Member pidErr_y (macro definition) of group Main_Macros is not documented.
+main.h:86: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
+main.h:87: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
+main.h:106: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
+main.h:120: warning: Member WavItems_t (enumeration) of group Main_Typedefs is not documented.
+main.h:84: warning: Member g (variable) of group Main_Variables is not documented.
+main.h:257: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
+main.h:258: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
+main.h:259: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
+main.h:6: warning: Found unknown command `\email'
+main.h:8: warning: Found unknown command `\ide'
+main.h:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_dac.c:6: warning: Found unknown command `\email'
+md_stm32f4_dac.c:8: warning: Found unknown command `\ide'
+md_stm32f4_dac.c:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_dac.c:10: warning: Found unknown command `\license'
+md_stm32f4_dac.h:6: warning: Found unknown command `\email'
+md_stm32f4_dac.h:8: warning: Found unknown command `\ide'
+md_stm32f4_dac.h:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_dac.h:10: warning: Found unknown command `\license'
+md_stm32f4_dac_waveform.h:101: warning: Member DAC_DHR12R2_ADDRESS (macro definition) of group General_Notes is not documented.
+md_stm32f4_dac_waveform.h:102: warning: Member DAC_DHR8R1_ADDRESS (macro definition) of group General_Notes is not documented.
+md_stm32f4_dac_waveform.h:103: warning: Member DAC_DHR8R2_ADDRESS (macro definition) of group General_Notes is not documented.
+md_stm32f4_dac_waveform.h:133: warning: Member DAC_Chx_NoiseConfig(MD_DAC_Channel_t DACx) (function) of group MD_DAC_SigGen_Functions is not documented.
+md_stm32f4_dac_waveform.h:134: warning: Member DAC_TriangleConfig(MD_DAC_Channel_t DACx) (function) of group MD_DAC_SigGen_Functions is not documented.
+md_stm32f4_dac_waveform.h:135: warning: Member DAC_Chx(MD_DAC_Channel_t DACx) (function) of group MD_DAC_SigGen_Functions is not documented.
+md_stm32f4_dac_waveform.h:112: warning: Member DAC_InitStructure (variable) of group MD_DAC_SigGen_Variables is not documented.
+md_stm32f4_dac_waveform.h:113: warning: Member DMA_InitStructure (variable) of group MD_DAC_SigGen_Variables is not documented.
+md_stm32f4_dac_waveform.h:6: warning: Found unknown command `\email'
+md_stm32f4_dac_waveform.h:8: warning: Found unknown command `\ide'
+md_stm32f4_dac_waveform.h:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_dac_waveform.h:10: warning: Found unknown command `\license'
+md_stm32f4_delay.c:60: warning: Member SysTick_Handler(void) (function) of file md_stm32f4_delay.c is not documented.
+md_stm32f4_delay.c:33: warning: Member MD_TimingDelay (variable) of file md_stm32f4_delay.c is not documented.
+md_stm32f4_delay.c:34: warning: Member MD_Time (variable) of file md_stm32f4_delay.c is not documented.
+md_stm32f4_delay.c:35: warning: Member MD_DELAY_Initialized (variable) of file md_stm32f4_delay.c is not documented.
+md_stm32f4_delay.c:6: warning: Found unknown command `\email'
+md_stm32f4_delay.c:8: warning: Found unknown command `\ide'
+md_stm32f4_delay.c:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_delay.c:10: warning: Found unknown command `\license'
+md_stm32f4_delay.h:50: warning: Member MD_Time2 (variable) of file md_stm32f4_delay.h is not documented.
+md_stm32f4_delay.h:6: warning: Found unknown command `\email'
+md_stm32f4_delay.h:8: warning: Found unknown command `\ide'
+md_stm32f4_delay.h:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_delay.h:10: warning: Found unknown command `\license'
+md_stm32f4_disco.c:17: warning: Member MD_INT_DISCO_ButtonPressed (variable) of file md_stm32f4_disco.c is not documented.
+md_stm32f4_disco.c:6: warning: Found unknown command `\email'
+md_stm32f4_disco.c:8: warning: Found unknown command `\ide'
+md_stm32f4_disco.c:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_disco.h:6: warning: Found unknown command `\email'
+md_stm32f4_disco.h:8: warning: Found unknown command `\ide'
+md_stm32f4_disco.h:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_disco.h:10: warning: Found unknown command `\license'
+md_stm32f4_gpio.c:35: warning: Member MD_GPIO_INT_EnableClock(GPIO_TypeDef *GPIOx) (function) of file md_stm32f4_gpio.c is not documented.
+md_stm32f4_gpio.c:36: warning: Member MD_GPIO_INT_DisableClock(GPIO_TypeDef *GPIOx) (function) of file md_stm32f4_gpio.c is not documented.
+md_stm32f4_gpio.c:37: warning: Member MD_GPIO_INT_Init(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, MD_GPIO_Mode_t GPIO_Mode, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed) (function) of file md_stm32f4_gpio.c is not documented.
+md_stm32f4_gpio.c:6: warning: Found unknown command `\email'
+md_stm32f4_gpio.c:8: warning: Found unknown command `\ide'
+md_stm32f4_gpio.c:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_gpio.c:10: warning: Found unknown command `\license'
+md_stm32f4_gpio.h:72: warning: Member GPIO_PIN_1 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:73: warning: Member GPIO_PIN_2 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:74: warning: Member GPIO_PIN_3 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:75: warning: Member GPIO_PIN_4 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:76: warning: Member GPIO_PIN_5 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:77: warning: Member GPIO_PIN_6 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:78: warning: Member GPIO_PIN_7 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:79: warning: Member GPIO_PIN_8 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:80: warning: Member GPIO_PIN_9 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:81: warning: Member GPIO_PIN_10 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:82: warning: Member GPIO_PIN_11 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:83: warning: Member GPIO_PIN_12 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:84: warning: Member GPIO_PIN_13 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:85: warning: Member GPIO_PIN_14 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:86: warning: Member GPIO_PIN_15 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:87: warning: Member GPIO_PIN_ALL (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:96: warning: Member GPIO_Pin_1 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:97: warning: Member GPIO_Pin_2 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:98: warning: Member GPIO_Pin_3 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:99: warning: Member GPIO_Pin_4 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:100: warning: Member GPIO_Pin_5 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:101: warning: Member GPIO_Pin_6 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:102: warning: Member GPIO_Pin_7 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:103: warning: Member GPIO_Pin_8 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:104: warning: Member GPIO_Pin_9 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:105: warning: Member GPIO_Pin_10 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:106: warning: Member GPIO_Pin_11 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:107: warning: Member GPIO_Pin_12 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:108: warning: Member GPIO_Pin_13 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:109: warning: Member GPIO_Pin_14 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:110: warning: Member GPIO_Pin_15 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:111: warning: Member GPIO_Pin_All (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:321: warning: Member MD_GPIO_Mode_t (typedef) of group MD_GPIO_Typedefs is not documented.
+md_stm32f4_gpio.h:149: warning: Member MD_GPIO_Mode2_t (enumeration) of group MD_GPIO_Typedefs is not documented.
+md_stm32f4_gpio.h:6: warning: Found unknown command `\email'
+md_stm32f4_gpio.h:8: warning: Found unknown command `\ide'
+md_stm32f4_gpio.h:9: warning: Found unknown command `\stdperiph'
+md_stm32f4_gpio.h:10: warning: Found unknown command `\license'
+mdb_gpio.c:121: warning: Member MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) (function) of file mdb_gpio.c is not documented.
+mdb_gpio.c:128: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MDB_GPIO_STATE_t newState) (function) of file mdb_gpio.c is not documented.
+mdb_gpio.c:139: warning: Member gpio_init_mco1(void) (function) of file mdb_gpio.c is not documented.
+mdb_gpio.c:155: warning: Member gpio_init_mco2(void) (function) of file mdb_gpio.c is not documented.
+mdb_gpio.c:6: warning: Found unknown command `\email'
+mdb_gpio.c:8: warning: Found unknown command `\ide'
+mdb_gpio.c:9: warning: Found unknown command `\stdperiph'
+mdb_gpio.c:10: warning: Found unknown command `\license'
+mdb_gpio.h:56: warning: Member GPIO_COUNT (macro definition) of file mdb_gpio.h is not documented.
+mdb_gpio.h:58: warning: Member DBG_PID_TIMING_TOG() (macro definition) of file mdb_gpio.h is not documented.
+mdb_gpio.h:59: warning: Member DBG_PID_TIMING(s) (macro definition) of file mdb_gpio.h is not documented.
+mdb_gpio.h:61: warning: Member DBG_ADC_TIMING_TOG() (macro definition) of file mdb_gpio.h is not documented.
+mdb_gpio.h:41: warning: Member MDB_GPIO_NAME_t (enumeration) of file mdb_gpio.h is not documented.
+mdb_gpio.h:70: warning: Member MDB_GPIO_STATE_t (enumeration) of file mdb_gpio.h is not documented.
+mdb_gpio.h:75: warning: Member MDB_GPIO_DRIVER_STATE_t (enumeration) of file mdb_gpio.h is not documented.
+mdb_gpio.h:97: warning: Member MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) (function) of file mdb_gpio.h is not documented.
+mdb_gpio.h:98: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MDB_GPIO_STATE_t newState) (function) of file mdb_gpio.h is not documented.
+mdb_gpio.h:103: warning: Member gpio_init_mco1(void) (function) of file mdb_gpio.h is not documented.
+mdb_gpio.h:104: warning: Member gpio_init_mco2(void) (function) of file mdb_gpio.h is not documented.
+mdb_gpio.h:6: warning: Found unknown command `\email'
+mdb_gpio.h:8: warning: Found unknown command `\ide'
+mdb_gpio.h:9: warning: Found unknown command `\stdperiph'
+mdb_gpio.h:10: warning: Found unknown command `\license'
+stm32_eval_legacy.h:44: warning: Member STM3220F_LCD_Init (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:47: warning: Member Button_WAKEUP (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:48: warning: Member Button_TAMPER (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:49: warning: Member Button_KEY (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:50: warning: Member Button_RIGHT (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:51: warning: Member Button_LEFT (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:52: warning: Member Button_UP (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:53: warning: Member Button_DOWN (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:54: warning: Member Button_SEL (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:55: warning: Member Mode_GPIO (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:56: warning: Member Mode_EXTI (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:57: warning: Member Button_Mode_TypeDef (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:58: warning: Member JOY_CENTER (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:59: warning: Member JOY_State_TypeDef (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:62: warning: Member LCD_RSNWR_GPIO_CLK (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:63: warning: Member LCD_SPI_GPIO_PORT (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:64: warning: Member LCD_SPI_GPIO_CLK (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:65: warning: Member R0 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:66: warning: Member R1 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:67: warning: Member R2 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:68: warning: Member R3 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:69: warning: Member R4 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:70: warning: Member R5 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:71: warning: Member R6 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:72: warning: Member R7 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:73: warning: Member R8 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:74: warning: Member R9 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:75: warning: Member R10 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:76: warning: Member R12 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:77: warning: Member R13 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:78: warning: Member R14 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:79: warning: Member R15 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:80: warning: Member R16 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:81: warning: Member R17 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:82: warning: Member R18 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:83: warning: Member R19 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:84: warning: Member R20 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:85: warning: Member R21 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:86: warning: Member R22 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:87: warning: Member R23 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:88: warning: Member R24 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:89: warning: Member R25 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:90: warning: Member R26 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:91: warning: Member R27 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:92: warning: Member R28 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:93: warning: Member R29 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:94: warning: Member R30 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:95: warning: Member R31 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:96: warning: Member R32 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:97: warning: Member R33 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:98: warning: Member R34 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:99: warning: Member R36 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:100: warning: Member R37 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:101: warning: Member R40 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:102: warning: Member R41 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:103: warning: Member R43 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:104: warning: Member R45 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:105: warning: Member R48 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:106: warning: Member R49 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:107: warning: Member R50 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:108: warning: Member R51 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:109: warning: Member R52 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:110: warning: Member R53 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:111: warning: Member R54 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:112: warning: Member R55 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:113: warning: Member R56 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:114: warning: Member R57 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:115: warning: Member R59 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:116: warning: Member R60 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:117: warning: Member R61 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:118: warning: Member R62 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:119: warning: Member R63 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:120: warning: Member R64 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:121: warning: Member R65 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:122: warning: Member R66 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:123: warning: Member R67 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:124: warning: Member R68 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:125: warning: Member R69 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:126: warning: Member R70 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:127: warning: Member R71 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:128: warning: Member R72 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:129: warning: Member R73 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:130: warning: Member R74 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:131: warning: Member R75 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:132: warning: Member R76 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:133: warning: Member R77 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:134: warning: Member R78 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:135: warning: Member R79 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:136: warning: Member R80 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:137: warning: Member R81 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:138: warning: Member R82 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:139: warning: Member R83 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:140: warning: Member R96 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:141: warning: Member R97 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:142: warning: Member R106 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:143: warning: Member R118 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:144: warning: Member R128 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:145: warning: Member R129 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:146: warning: Member R130 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:147: warning: Member R131 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:148: warning: Member R132 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:149: warning: Member R133 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:150: warning: Member R134 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:151: warning: Member R135 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:152: warning: Member R136 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:153: warning: Member R137 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:154: warning: Member R139 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:155: warning: Member R140 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:156: warning: Member R141 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:157: warning: Member R143 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:158: warning: Member R144 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:159: warning: Member R145 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:160: warning: Member R146 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:161: warning: Member R147 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:162: warning: Member R148 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:163: warning: Member R149 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:164: warning: Member R150 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:165: warning: Member R151 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:166: warning: Member R152 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:167: warning: Member R153 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:168: warning: Member R154 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:169: warning: Member R157 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:170: warning: Member R192 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:171: warning: Member R193 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:172: warning: Member R227 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:173: warning: Member R229 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:174: warning: Member R231 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:175: warning: Member R239 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:176: warning: Member White (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:177: warning: Member Black (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:178: warning: Member Grey (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:179: warning: Member Blue (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:180: warning: Member Blue2 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:181: warning: Member Red (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:182: warning: Member Magenta (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:183: warning: Member Green (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:184: warning: Member Cyan (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:185: warning: Member Yellow (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:186: warning: Member Line0 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:187: warning: Member Line1 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:188: warning: Member Line2 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:189: warning: Member Line3 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:190: warning: Member Line4 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:191: warning: Member Line5 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:192: warning: Member Line6 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:193: warning: Member Line7 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:194: warning: Member Line8 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:195: warning: Member Line9 (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:196: warning: Member Horizontal (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32_eval_legacy.h:197: warning: Member Vertical (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32f4xx_it.c:161: warning: Found unknown command `\with'
+stm32f4xx_it.c:6: warning: Found unknown command `\email'
+stm32f4xx_it.c:8: warning: Found unknown command `\ide'
+stm32f4xx_it.c:9: warning: Found unknown command `\stdperiph'
+stm32f4xx_it.c:10: warning: Found unknown command `\license'
+system_stm32f4xx.c:321: warning: Member PLL_M (macro definition) of group STM32F4xx_System_Private_Defines is not documented.
+system_stm32f4xx.c:326: warning: Member PLL_Q (macro definition) of group STM32F4xx_System_Private_Defines is not documented.
+system_stm32f4xx.c:560: warning: Found unknown command `\Note'
+system_stm32f4xx.c:387: warning: Member AHBPrescTable[16] (variable) of group STM32F4xx_System_Private_Variables is not documented.
+tm_stm32f4_usart.h:96: warning: Illegal command ref as part of a title section
+tm_stm32f4_usart.h:283: warning: Member USART_BUFFER_SIZE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:288: warning: Member TM_USART1_BUFFER_SIZE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:291: warning: Member TM_USART2_BUFFER_SIZE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:294: warning: Member TM_USART3_BUFFER_SIZE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:297: warning: Member TM_UART4_BUFFER_SIZE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:300: warning: Member TM_UART5_BUFFER_SIZE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:303: warning: Member TM_USART6_BUFFER_SIZE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:306: warning: Member TM_UART7_BUFFER_SIZE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:309: warning: Member TM_UART8_BUFFER_SIZE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:314: warning: Member USART_NVIC_PRIORITY (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:320: warning: Member TM_USART1_HARDWARE_FLOW_CONTROL (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:323: warning: Member TM_USART1_MODE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:326: warning: Member TM_USART1_PARITY (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:329: warning: Member TM_USART1_STOP_BITS (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:332: warning: Member TM_USART1_WORD_LENGTH (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:337: warning: Member TM_USART2_HARDWARE_FLOW_CONTROL (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:340: warning: Member TM_USART2_MODE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:343: warning: Member TM_USART2_PARITY (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:346: warning: Member TM_USART2_STOP_BITS (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:349: warning: Member TM_USART2_WORD_LENGTH (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:354: warning: Member TM_USART3_HARDWARE_FLOW_CONTROL (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:357: warning: Member TM_USART3_MODE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:360: warning: Member TM_USART3_PARITY (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:363: warning: Member TM_USART3_STOP_BITS (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:366: warning: Member TM_USART3_WORD_LENGTH (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:371: warning: Member TM_UART4_HARDWARE_FLOW_CONTROL (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:374: warning: Member TM_UART4_MODE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:377: warning: Member TM_UART4_PARITY (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:380: warning: Member TM_UART4_STOP_BITS (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:383: warning: Member TM_UART4_WORD_LENGTH (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:388: warning: Member TM_UART5_HARDWARE_FLOW_CONTROL (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:391: warning: Member TM_UART5_MODE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:394: warning: Member TM_UART5_PARITY (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:397: warning: Member TM_UART5_STOP_BITS (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:400: warning: Member TM_UART5_WORD_LENGTH (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:405: warning: Member TM_USART6_HARDWARE_FLOW_CONTROL (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:408: warning: Member TM_USART6_MODE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:411: warning: Member TM_USART6_PARITY (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:414: warning: Member TM_USART6_STOP_BITS (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:417: warning: Member TM_USART6_WORD_LENGTH (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:422: warning: Member TM_UART7_HARDWARE_FLOW_CONTROL (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:425: warning: Member TM_UART7_MODE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:428: warning: Member TM_UART7_PARITY (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:431: warning: Member TM_UART7_STOP_BITS (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:434: warning: Member TM_UART7_WORD_LENGTH (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:439: warning: Member TM_UART8_HARDWARE_FLOW_CONTROL (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:442: warning: Member TM_UART8_MODE (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:445: warning: Member TM_UART8_PARITY (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:448: warning: Member TM_UART8_STOP_BITS (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:451: warning: Member TM_UART8_WORD_LENGTH (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:458: warning: Member USART_WAIT(USARTx) (macro definition) of group TM_USART_Macros is not documented.
+tm_stm32f4_usart.h:599: warning: Found unknown command `\ef'
+tm_stm32f4_usart_dma.h:115: warning: Member USART1_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:116: warning: Member USART1_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:121: warning: Member USART2_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:122: warning: Member USART2_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:127: warning: Member USART3_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:128: warning: Member USART3_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:133: warning: Member UART4_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:134: warning: Member UART4_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:139: warning: Member UART5_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:140: warning: Member UART5_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:145: warning: Member USART6_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:146: warning: Member USART6_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:151: warning: Member UART7_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:152: warning: Member UART7_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:157: warning: Member UART8_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
+tm_stm32f4_usart_dma.h:158: warning: Member UART8_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
+stm32f4xx_it.c:161: warning: Found unknown command `\with'
+stm32f4xx_it.c:107: warning: argument 'None' of command @param is not found in the argument list of BusFault_Handler(void)
+stm32f4xx_it.c:142: warning: argument 'None' of command @param is not found in the argument list of DebugMon_Handler(void)
+stm32f4xx_it.c:81: warning: argument 'None' of command @param is not found in the argument list of HardFault_Handler(void)
+stm32f4xx_it.c:94: warning: argument 'None' of command @param is not found in the argument list of MemManage_Handler(void)
+stm32f4xx_it.c:72: warning: argument 'None' of command @param is not found in the argument list of NMI_Handler(void)
+stm32f4xx_it.c:151: warning: argument 'None' of command @param is not found in the argument list of PendSV_Handler(void)
+stm32f4xx_it.c:133: warning: argument 'None' of command @param is not found in the argument list of SVC_Handler(void)
+stm32f4xx_it.c:161: warning: Found unknown command `\with'
+stm32f4xx_it.c:160: warning: argument 'None' of command @param is not found in the argument list of TimingDelay_Decrement(void)
+stm32f4xx_it.c:120: warning: argument 'None' of command @param is not found in the argument list of UsageFault_Handler(void)
+isr_callbacks.c:71: warning: Member __attribute__((unused)) (function) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:72: warning: Member PIDY (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:74: warning: Member setpoint_tgl (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:74: warning: Member pidDataX (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:74: warning: Member pidDataY (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:78: warning: Member ADC_fBuff[5] (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:79: warning: Member ADC_MultiConvBuff[5] (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:80: warning: Member ASG (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:81: warning: Member ticks (variable) of group IRQ_Handler_Variables is not documented.
+isr_callbacks.c:82: warning: Member dir (variable) of group IRQ_Handler_Variables is not documented.
+signalGen.c:7: warning: Found unknown command `\email'
+signalGen.c:8: warning: Found unknown command `\ide'
+signalGen.c:9: warning: Found unknown command `\packs'
+signalGen.c:10: warning: Found unknown command `\stdperiph'
+isr_callbacks.c:363: warning: Member TIM2_IRQHandler(void) (function) of group IRQ_Handler_Functions is not documented.
+isr_callbacks.c:147: warning: Illegal command ref as part of a title section
+isr_callbacks.c:149: warning: unable to resolve reference to `SETPOINT_Y_FLOAT' for \ref command
+isr_callbacks.c:149: warning: unable to resolve reference to `POS_Y_FLOAT' for \ref command
+main.h:106: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
+main.h:120: warning: Member WavItems_t (enumeration) of group Main_Typedefs is not documented.
+main.h:224: warning: Found unknown command `\SAMPLE_TIME'
+main.h:142: warning: explicit link request to 'mat' could not be resolved
+main.h:84: warning: Member g (variable) of group Main_Variables is not documented.
+main.h:257: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
+main.h:258: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
+main.h:259: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
+signalGen.c:7: warning: Found unknown command `\email'
+signalGen.c:8: warning: Found unknown command `\ide'
+signalGen.c:9: warning: Found unknown command `\packs'
+signalGen.c:10: warning: Found unknown command `\stdperiph'
+main.c:82: warning: Member PUTCHAR_PROTOTYPE (macro definition) of group Main_Functions is not documented.
+main.c:310: warning: Member __TARGET_ARCH_ARM (macro definition) of group Main_Functions is not documented.
+main.c:707: warning: Member IDX_VAL (macro definition) of group Main_Functions is not documented.
+main.c:709: warning: Member UART_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:710: warning: Member VALUE_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:711: warning: Member CMD_BUFF_SIZE (macro definition) of group Main_Functions is not documented.
+main.c:92: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group Main_Functions is not documented.
+main.c:101: warning: Member gpio_init(void) (function) of group Main_Functions is not documented.
+main.c:299: warning: Member resetPID(void) (function) of group Main_Functions is not documented.
+main.c:363: warning: Member g (variable) of group Main_Functions is not documented.
+main.c:74: warning: Member vectorCtr (variable) of group Main_Functions is not documented.
+main.c:75: warning: Member dir (variable) of group Main_Functions is not documented.
+main.c:76: warning: Member ticks (variable) of group Main_Functions is not documented.
+main.c:85: warning: Member __stdout (variable) of group Main_Functions is not documented.
+main.c:87: warning: Member PUTCHAR_PROTOTYPE (variable) of group Main_Functions is not documented.
+main.c:95: warning: Member ch (variable) of group Main_Functions is not documented.
+main.c:268: warning: Member itemsw_list[] (variable) of group Main_Functions is not documented.
+main.c:285: warning: Member itemsm_list[] (variable) of group Main_Functions is not documented.
+main.c:851: warning: Found unknown command `\SAMPLE_INTERVAL'
+system_stm32f4xx.c:321: warning: Member PLL_M (macro definition) of group STM32F4xx_System_Private_Defines is not documented.
+system_stm32f4xx.c:326: warning: Member PLL_Q (macro definition) of group STM32F4xx_System_Private_Defines is not documented.
+system_stm32f4xx.c:387: warning: Member AHBPrescTable[16] (variable) of group STM32F4xx_System_Private_Variables is not documented.
+system_stm32f4xx.c:560: warning: Found unknown command `\Note'
+system_stm32f4xx.c:560: warning: Found unknown command `\Note'
+system_stm32f4xx.c:558: warning: argument 'None' of command @param is not found in the argument list of SetSysClock(void)
+system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
+system_stm32f4xx.c:412: warning: argument 'None' of command @param is not found in the argument list of SystemInit(void)
+actuators.h:111: warning: Member ASS_TRIPPING_UPPER_DEFAULT (macro definition) of group Actuators_Macros is not documented.
+actuators.h:112: warning: Member ASS_SAFEVALUE_DEFAULT (macro definition) of group Actuators_Macros is not documented.
+actuators.h:113: warning: Member ASS_TRIPPING_TIME_DEFAULT (macro definition) of group Actuators_Macros is not documented.
+actuators.h:169: warning: Found unknown command `\bASG'
+actuators.h:169: warning: expected whitespace after : command
+actuators.h:169: warning: Found unknown command `\bA'
+actuators.h:169: warning: Found unknown command `\bctuator'
+actuators.h:169: warning: Found unknown command `\bS'
+actuators.h:169: warning: Found unknown command `\bafestate'
+actuators.h:169: warning: Found unknown command `\bG'
+actuators.h:169: warning: Found unknown command `\buard'
+defines.h:101: warning: Member lo (macro definition) of group Global_Macros is not documented.
+defines.h:146: warning: Member tribool_state_t (enumeration) of group APP_Global_Typedefs is not documented.
+adc-input-noise.html' for \link command
+defines.h:219: warning: Illegal command note as part of a \link
+defines.h:220: warning: Unexpected end of comment while inside link command
+
+defines.h:300: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
+main.h:80: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:81: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:82: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
+main.h:84: warning: Member pidErr_x (macro definition) of group Main_Macros is not documented.
+main.h:85: warning: Member pidErr_y (macro definition) of group Main_Macros is not documented.
+main.h:86: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
+main.h:87: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
+pid.h:67: warning: Member MAX_INT (macro definition) of group APP_Pid_Macros is not documented.
+pid.h:68: warning: Member MAX_LONG (macro definition) of group APP_Pid_Macros is not documented.
+pid.h:69: warning: Member MAX_I_TERM (macro definition) of group APP_Pid_Macros is not documented.
+pid.h:76: warning: Member LOWER_SAT (macro definition) of group APP_Pid_Macros is not documented.
+pid.h:77: warning: Member FLOAT_MAX (macro definition) of group APP_Pid_Macros is not documented.
+pid.h:78: warning: Member MAX_F_I_TERM (macro definition) of group APP_Pid_Macros is not documented.
+pid.h:91: warning: Member P_now (variable) of group APP_Pid_Variables is not documented.
+pid.h:363: warning: argument 'Kp' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
+pid.h:363: warning: argument 'Ki' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
+pid.h:363: warning: argument 'Kd' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
+pid.h:321: warning: argument 'type' of command @param is not found in the argument list of pid_Init(float Kp, float Ki, float Kd, uint16_t setTf, uint16_t setTs, struct PID_DATA *pid, PID_StructType_t stType)
+pid.h:328: warning: unable to resolve reference to `PID_struct_type' for \ref command
+pid.h:332: warning: The following parameters of pid_Init(float Kp, float Ki, float Kd, uint16_t setTf, uint16_t setTs, struct PID_DATA *pid, PID_StructType_t stType) are not documented:
+  parameter 'stType'
+pid.h:355: warning: unable to resolve reference to `PID_struct_type' for \ref command
+system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
+system_stm32f4xx.c:412: warning: argument 'None' of command @param is not found in the argument list of SystemInit(void)
+md_stm32f4_dac_waveform.h:101: warning: Member DAC_DHR12R2_ADDRESS (macro definition) of group General_Notes is not documented.
+md_stm32f4_dac_waveform.h:102: warning: Member DAC_DHR8R1_ADDRESS (macro definition) of group General_Notes is not documented.
+md_stm32f4_dac_waveform.h:103: warning: Member DAC_DHR8R2_ADDRESS (macro definition) of group General_Notes is not documented.
+md_stm32f4_dac_waveform.h:123: warning: unable to resolve reference to `DM00031020.pdf:' for \ref command
+md_stm32f4_dac_waveform.h:112: warning: Member DAC_InitStructure (variable) of group MD_DAC_SigGen_Variables is not documented.
+md_stm32f4_dac_waveform.h:113: warning: Member DMA_InitStructure (variable) of group MD_DAC_SigGen_Variables is not documented.
+md_stm32f4_dac_waveform.h:133: warning: Member DAC_Chx_NoiseConfig(MD_DAC_Channel_t DACx) (function) of group MD_DAC_SigGen_Functions is not documented.
+md_stm32f4_dac_waveform.h:134: warning: Member DAC_TriangleConfig(MD_DAC_Channel_t DACx) (function) of group MD_DAC_SigGen_Functions is not documented.
+md_stm32f4_dac_waveform.h:135: warning: Member DAC_Chx(MD_DAC_Channel_t DACx) (function) of group MD_DAC_SigGen_Functions is not documented.
+md_stm32f4_disco.h:170: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonPressed()
+md_stm32f4_disco.h:85: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonInit(void)
+md_stm32f4_disco.h:179: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonOnPressed(void)
+md_stm32f4_disco.h:188: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonOnReleased(void)
+md_stm32f4_gpio.h:72: warning: Member GPIO_PIN_1 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:73: warning: Member GPIO_PIN_2 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:74: warning: Member GPIO_PIN_3 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:75: warning: Member GPIO_PIN_4 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:76: warning: Member GPIO_PIN_5 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:77: warning: Member GPIO_PIN_6 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:78: warning: Member GPIO_PIN_7 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:79: warning: Member GPIO_PIN_8 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:80: warning: Member GPIO_PIN_9 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:81: warning: Member GPIO_PIN_10 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:82: warning: Member GPIO_PIN_11 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:83: warning: Member GPIO_PIN_12 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:84: warning: Member GPIO_PIN_13 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:85: warning: Member GPIO_PIN_14 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:86: warning: Member GPIO_PIN_15 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:87: warning: Member GPIO_PIN_ALL (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:96: warning: Member GPIO_Pin_1 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:97: warning: Member GPIO_Pin_2 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:98: warning: Member GPIO_Pin_3 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:99: warning: Member GPIO_Pin_4 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:100: warning: Member GPIO_Pin_5 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:101: warning: Member GPIO_Pin_6 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:102: warning: Member GPIO_Pin_7 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:103: warning: Member GPIO_Pin_8 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:104: warning: Member GPIO_Pin_9 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:105: warning: Member GPIO_Pin_10 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:106: warning: Member GPIO_Pin_11 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:107: warning: Member GPIO_Pin_12 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:108: warning: Member GPIO_Pin_13 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:109: warning: Member GPIO_Pin_14 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:110: warning: Member GPIO_Pin_15 (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:111: warning: Member GPIO_Pin_All (macro definition) of group MD_GPIO_Macros is not documented.
+md_stm32f4_gpio.h:321: warning: Member MD_GPIO_Mode_t (typedef) of group MD_GPIO_Typedefs is not documented.
+md_stm32f4_gpio.h:149: warning: Member MD_GPIO_Mode2_t (enumeration) of group MD_GPIO_Typedefs is not documented.
+md_stm32f4_gpio.h:184: warning: unable to resolve reference to `MD_GPIO_Mode_t' for \ref command
+md_stm32f4_gpio.h:196: warning: argument 'GPIO_Mode' of command @param is not found in the argument list of MD_GPIO_InitAlternate(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t AltFunct)
+md_stm32f4_gpio.h:198: warning: unable to resolve reference to `MD_GPIO_Mode_t' for \ref command
+tm_stm32f4_usart.h:39: warning: Found unknown command `\email'
+tm_stm32f4_usart.h:40: warning: Found unknown command `\website'
+' for \link command
+tm_stm32f4_usart.h:42: warning: Illegal command version as part of a \link
+tm_stm32f4_usart.h:43: warning: Illegal command ide as part of a \link
+tm_stm32f4_usart.h:44: warning: Illegal command license as part of a \link
+tm_stm32f4_usart.h:45: warning: Illegal command verbatim as part of a \link
+tm_stm32f4_usart.h:62: warning: Illegal command endverbatim as part of a \link
+tm_stm32f4_usart.h:63: warning: Unexpected end of comment while inside link command
+
+main2.c:28: warning: Member member1 (variable) of class test_t is not documented.
+main2.c:29: warning: Member member2 (variable) of class test_t is not documented.
+tm_stm32f4_pwm.h:131: warning: Member Period (variable) of class TM_PWM_TIM_t is not documented.
+tm_stm32f4_pwm.h:132: warning: Member Prescaler (variable) of class TM_PWM_TIM_t is not documented.
+tm_stm32f4_pwm.h:133: warning: Member Frequency (variable) of class TM_PWM_TIM_t is not documented.
+tm_stm32f4_pwm.h:134: warning: Member Micros (variable) of class TM_PWM_TIM_t is not documented.
+tm_stm32f4_timer_properties.h:92: warning: Member TimerFrequency (variable) of class TM_TIMER_PROPERTIES_t is not documented.
+tm_stm32f4_timer_properties.h:93: warning: Member MaxPeriod (variable) of class TM_TIMER_PROPERTIES_t is not documented.
+tm_stm32f4_timer_properties.h:94: warning: Member MaxPrescaler (variable) of class TM_TIMER_PROPERTIES_t is not documented.
+tm_stm32f4_timer_properties.h:95: warning: Member Period (variable) of class TM_TIMER_PROPERTIES_t is not documented.
+tm_stm32f4_timer_properties.h:96: warning: Member Prescaler (variable) of class TM_TIMER_PROPERTIES_t is not documented.
+tm_stm32f4_timer_properties.h:97: warning: Member Frequency (variable) of class TM_TIMER_PROPERTIES_t is not documented.
+tm_stm32f4_usart_dma.c:23: warning: Member DMA_Channel (variable) of class TM_USART_DMA_INT_t is not documented.
+tm_stm32f4_usart_dma.c:24: warning: Member DMA_Stream (variable) of class TM_USART_DMA_INT_t is not documented.
+tm_stm32f4_usart.c:25: warning: Member Buffer (variable) of class TM_USART_t is not documented.
+tm_stm32f4_usart.c:26: warning: Member Size (variable) of class TM_USART_t is not documented.
+tm_stm32f4_usart.c:27: warning: Member Num (variable) of class TM_USART_t is not documented.
+tm_stm32f4_usart.c:28: warning: Member In (variable) of class TM_USART_t is not documented.
+tm_stm32f4_usart.c:29: warning: Member Out (variable) of class TM_USART_t is not documented.
+tm_stm32f4_usart.c:30: warning: Member Initialized (variable) of class TM_USART_t is not documented.
+tm_stm32f4_usart.c:31: warning: Member StringDelimiter (variable) of class TM_USART_t is not documented.
+signalGen.h:9: warning: Member triCtr (variable) of class triangWave is not documented.
+signalGen.h:11: warning: Member top (variable) of class triangWave is not documented.

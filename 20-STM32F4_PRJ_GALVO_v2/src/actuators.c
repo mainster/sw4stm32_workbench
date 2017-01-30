@@ -33,18 +33,51 @@
  * @endverbatim
  *
  */
-//#include <stdio.h>
-//#include "isr_callbacks.h"
-#include "actuators.h"
-//#include "tm_stm32f4_usart.h"
-//#include "adc_dac_dma.h"
-#include "defines.h"
-//#include "main.h"
-//#include "md_stm32f4_disco.h"
-//#include "tools.h"
 
-//extern autoSaveSystem_t asg;
-autoSaveSystem_t asg;
+/* Includes */
+#include "actuators.h"
+#include "defines.h"
+
+/**
+ * @addtogroup MD_APP
+ * @{
+ */
+
+/**
+ * @addtogroup _Macros
+ * @{
+ */
+
+/**
+ * @addtogroup _Typedefs
+ * @{
+ */
+
+/**
+ * @addtogroup _Variables
+ * @{
+ */
+
+/**
+ * @addtogroup _Functions
+ * @{
+ */
+
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+/** @} */
+
+
+
+//extern autoSaveSystem_t ASG;
+autoSaveSystem_t ASG;
 
 extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
@@ -52,7 +85,7 @@ extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
  * @brief   Set beam control source and new state
  */ 
 int beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) {
-    float test = asg.lowerVal;
+    float test = ASG.lowerVal;
     
     if ((src == BEAM_CTRL_SOURCE_GLOBAL) && (newState != DNI)) {
         printf("Error, Beam source can't be GLOBAL if new state is not DNI");
@@ -80,8 +113,8 @@ int updateActuator_f(float I_set_x, float I_set_y) {
     int toPlant_intBuff[2] = { 0, 0 };
     int *toPlant_int = &toPlant_intBuff[0];
     
-    /* only if asg state is NOT tripped */
-    if (!asg.tripped) {     
+    /* only if ASG state is NOT tripped */
+    if (!ASG.tripped) {     
 
         /* Decode the float values to an integral type */
         *toPlant_int     = decode_toInt(I_set_x);
@@ -100,7 +133,7 @@ int updateActuator_f(float I_set_x, float I_set_y) {
     } 
     else {   
     /* <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>    
-       <>  This branch eror-handles an asg integrator_full event i.e.<>
+       <>  This branch eror-handles an ASG integrator_full event i.e.<>
        <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>    
        <>                    FUSE TRIPPED                            <>
        <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<> */  
@@ -108,11 +141,11 @@ int updateActuator_f(float I_set_x, float I_set_y) {
     }
 
    /**
-    * @brief    Return argument toPlant_int is of type int16_t because 
-    *           it holds the --un--biased DAC output register values...
-    *           This is a function pointer!
-    * Casting from (float32_t) toPlant to int16_t type introduces 
-    * rounding errors which couldn't be prevented! 
+    * @note       The return argument toPlant_int is of type int16_t because it
+    *             holds the @b un\bbiased DAC output register values...
+    *
+    * This is a function pointer! Casting from (float32_t) toPlant to int16_t
+    * type introduces rounding errors which couldn't be prevented!
     */
     DAC_SecureSetDualChanSigned( *toPlant_int, *(toPlant_int+1));  
         
