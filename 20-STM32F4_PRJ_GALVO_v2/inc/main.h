@@ -38,7 +38,7 @@
 #include <string.h>
 
 #include "attributes.h"
-#include "defines.h"
+#include "globals.h"
 
 /* Library includes */
 #include "md_stm32f4_delay.h"
@@ -72,23 +72,26 @@
  * @{
  */
 
+/**
+ * @brief      Check compiler selection flags.
+ */
 #if ! (defined (KEIL_IDE) || defined (__GNUC__))
-    #error "Please specify an IDE or GNUC tools!"
+#error "Please specify an IDE or GNUC tools!"
 #endif
 
 #if  defined (KEIL_IDE)
-    #pragma O0
+#pragma O0
 #elif  defined (__GNUC__)
-    #pragma GCC push_options
-    #pragma GCC optimize ("O0")
+#pragma GCC push_options
+#pragma GCC optimize ("O0")
 #endif
 
 /* Compiler code optimization disabled */
 
 #if  defined (KEIL_IDE)
-    #pragma O2
+#pragma O2
 #elif  defined (__GNUC__)
-    #pragma GCC pop_options
+#pragma GCC pop_options
 #endif
 
 
@@ -97,13 +100,39 @@
  * @{
  */
 
-#define POS_X_FLOAT         ADC_fBuff [INDEX_Px]         /* actual position */
-#define POS_Y_FLOAT         ADC_fBuff [INDEX_Py]         /* actual position */
-#define SETPOINT_Y_FLOAT    ADC_fBuff [INDEX_Wx]         /* position we want to have */
+/**
+ * @brief      Atomic read access macro for "actual x-position".
+ */
+#define POS_X_FLOAT         ADC_fBuff [INDEX_Px]
 
+/**
+ * @brief      Atomic read access macro for "actual y-position".
+ */
+#define POS_Y_FLOAT         ADC_fBuff [INDEX_Py]
+
+/**
+ * @brief      Atomic read access macro for "analog set-point position".
+ */
+#define SETPOINT_Y_FLOAT    ADC_fBuff [INDEX_Wx]
+
+/**
+ * @brief      Atomic access macro for actual channel-x error signal.
+ */
 #define pidErr_x            pidErrBuff [0]
+
+/**
+ * @brief      Atomic access macro for actual channel-y error signal.
+ */
 #define pidErr_y            pidErrBuff [1]
+
+/**
+ * @brief      Atomic access macro for actual channel-x compensator output signal.
+ */
 #define toPlant_x           toPlantBuff [0]
+
+/**
+ * @brief      Atomic access macro for actual channel-y compensator output signal.
+ */
 #define toPlant_y           toPlantBuff [1]
 
 /** @} */
@@ -113,99 +142,115 @@
  * @{
  */
 
-typedef enum { 
-    KP, KI, KD, W, UNKNOWN
-} CmdItem_t;      //!< Enumeration for switch-by-string casees
-
-//Struct for switch by string casees
-struct items {
-    char *name;
-    CmdItem_t id;
-};
+/**
+ * @brief      Direct compensator terminal command enumerations.
+ *
+ *             Update compensator parameters and set-point values via remote
+ *             terminal.
+ */
+typedef enum {
+    KP,             //!< Set proportional gain.
+    KI,             //!< Set integral gain.
+    KD,             //!< Set derivative gain.
+    W,              //!< Set set-point.
+    UNKNOWN         //!< Unknown command received.
+} CmdItem_t;
 
 /**
- * @brief      { item_description }
+ * @brief      Data type to link between command strings and an enumerated, and
+ *             therefore integral type, command identifier.
  */
-// typedef enum {
-//     _FLOAT_,
-//     _INT_,
-//     _UINT_
-// } PidStructType_t;
+typedef struct {
+    char *name;     //!< Remote command string buffer.
+    CmdItem_t id;   //!< Corresponding command identifier. .
+} items_t;
 
+/**
+ * @defgroup   testSig Test Signals
+ *
+ * Generate Test signals for comparison with lecture stuff (survey sheet).
+ * "What kind of controller is required for quadratic setpoint ...". (See
+ * lecture HsKA, RT2, H. Brunner)
+ */
 
+/**
+ * @brief      Waveform and set-point source selector command item enumerations.
+ *
+ *             Identifiers for differen waveforms and set-point sources.
+ */
+typedef enum {
+    NN,                     //!< Unknown remote frame received.
+    EN,                     //!< Generator enable.
+    DIS,                    //!< Generator disable.
+    COS,                    //!< Generate waveform "Cosine"     @ingroup testSig.
+    TRIANG,                 //!< Generate waveform "Triangle"   @ingroup testSig.
+    SQUAREWAV,              //!< Generate waveform "Squarewave" @ingroup testSig.
+    SAWTOOTH,               //!< Generate waveform "Sawtooth"   @ingroup testSig.
+    QUADRATIC,              //!< Generate waveform "Quadratic"  @ingroup testSig.
+    I_QUADRATIC,            //!< Generate waveform "Inverse Quadratic" @ingroup testSig.
+    CMD_REMOTE_SETPOINT,    //!< Command: Switch set-point source to "Remote".
+    CMD_OPENLOOP_REMOTE,    //!< Command: Switch set-point source to "Openloop remote".
+    CMD_ANALOG_SETPOINT,    //!< Command: Switch set-point source to "Analog".
+    CMD_INTERNAL_SETPOINT,  //!< Command: Switch set-point source to "Internal".
+    CMD_TESTVECT,           //!< Command: Switch set-point source to "Test vector" @ingroup testSig.
+    CMD_REFRESH_RATE,       //!< Command: Set set-point refresh rate
 
-// ==============================================================
-//            wave command items struct
-// ==============================================================
-typedef enum {                            //!< Enumeration for switch-by-string casees 
-    NN,                                         //!< unknown wave form received     
-    EN,                                         //!< Generator enable
-    DIS,                                        //!< Generator disable
-    COS, TRIANG, SQUAREWAV,             //!< Usable waveforms
-    
     /**
-     * @brief      Quadratic: Testsignal zum vergleich.
+     * @brief      Enter MATLAB link-up.
      *
-     *             Testsignal zum vergleich mit Üersichtsblatt
-     *             "Was für Regler notwendig um quadratischen sollwertverl...".
-     *             (siehe Vorlesung HsKA, RT2, H. Brunner)
-     */
-    QUADRATIC, I_QUADRATIC, SAWTOOTH,   
-    CMD_REMOTE_SETPOINT,
-    CMD_OPENLOOP_REMOTE,
-    CMD_ANALOG_SETPOINT,
-    CMD_INTERNAL_SETPOINT,
-    CMD_REFRESH_RATE,
-    CMD_TESTVECT,
-
-    /** 
-     * @brief      { item_description }CMD_MATLAB_LINK
+     *             When linked to MATLAB interface, another set-point command
+     *             data format is used.
      *
-     * \# c c c : = F F F F  d  d  A ..16x.. A
-     * \#mat:=25~~0~
+     * @note       About frame layout
      *
+     *             #mat:=1~~~1~1.6635~~~..  vector #1, beam on, xpos=1.6635
+     *             #mat:=2~~~0~0.2635~~~..  vector #2, beam off, xpos=0.6635
+     *             #mat:=3~~~1~-1.663~~~..  vector #3, beam on, xpos=-1.663
      */
     CMD_MATLAB_LINK
 } WavItems_t;
 
 
 /**
- * @brief      Lookup table to provide switch-by-string functionality.
- *
- *             Structure holds a string and id value to provide simple
- *             switch-by-string functionality
+ * @brief      Data type to link between waveform selection strings and an
+ *             enumerated, and therefore integral type, waveform selection
+ *             identifier.
  */
 typedef struct {
-    char *name;
-    WavItems_t idw;
+    char *name;                 //!< Remote waveform selection string buffer.
+    WavItems_t idw;             //!< Corresponding waveform selection identifier.
 } itemsw_t;
 
 
 /**
- * @brief      MISC command items enumerations for switch-by-string identifiers.
+ * @brief      Miscellaneous (MISC) command item enumerations.
+ *
+ *             Different remote commandments are declared here.
  */
-typedef enum { 
-    misc_NN,
-    misc_none,
-    misc_pid_init, 
-    misc_pid_Controller,
-    misc_pid_Reset_Integrator,
-    misc_update_pid_data,
-    misc_assOnOff_cmd,          //!< AutoSafetyShutdown Enable/Disable cmd
-    misc_assUpperLim_cmd,       //!< AutoSafetyShutdown set Upper Limit command
-    misc_assLowerLim_cmd,       //!< AutoSafetyShutdown set Lower Limit command
-    misc_assTrippTime_cmd,      //!< AutoSafetyShutdown set Tripping time command
-    misc_assSaveVal_cmd,        //!< AutoSafetyShutdown set Safe value command
-    misc_beamOn_cmd,            //!< Beam enable disable command enumeration
-    misc_beamOff_cmd,           //!< Beam enable disable command enumeration
-} MiscItem_t; 
+typedef enum {
+    misc_NN,                    //!< Unknown remote frame received.
+    misc_none,                  //!< Used to acknowledge after misc command has been processed
+    misc_pid_init,              //!< (Re) Initialize pid instances.
+    misc_pid_Controller,        //!< For later use, feature is in progress.
+    misc_pid_Reset_Integrator,  //!< Reset integration buffer of pid instances.  
+    misc_update_pid_data,       //!< For later use, feature is in progress.
+    misc_asgOnOff_cmd,          //!< AutoSafetyShutdown Enable/Disable cmd.
+    misc_asgUpperLim_cmd,       //!< AutoSafetyShutdown set Upper Limit command.
+    misc_asgLowerLim_cmd,       //!< AutoSafetyShutdown set Lower Limit command.
+    misc_asgTrippTime_cmd,      //!< AutoSafetyShutdown set Tripping time command.
+    misc_asgSaveVal_cmd,        //!< AutoSafetyShutdown set Safe value command.
+    misc_beamOn_cmd,            //!< Beam enable disable command enumeration.
+    misc_beamOff_cmd,           //!< Beam enable disable command enumeration.
+} MiscItem_t;
 
 /**
- * @brief      Miscellaneous (Misc) command structure typedef. 
+ * @brief      Data type to link between miscellaneous (Misc) selection strings
+ *             and an enumerated, and therefore integral type, waveform
+ *             selection identifier.
  */
 typedef struct {
-    char *name;
-    MiscItem_t idm;
+    char *name;                 //!< Remote misc command string buffer.
+    MiscItem_t idm;             //!< Corresponding misc command identifier.
 } MiscCmds_t;
 
 /* ================================================================================ */
@@ -215,23 +260,23 @@ typedef struct {
 } DacLimit_t;
 
 /* ================================================================================ */
-////!< typedef for different setpoint source select
+////!< typedef for different setpoint source select.
 //typedef enum {
 //    INTERNAL_SETPOINT,          //!< Setpoint signal generated by software...
-//    ANALOG_SETPOINT,            //!< Setpoint by analog waveform, converted by I_L adc line yet
-//    REMOTE_SETPOINT,            //!< Setpoint commands/Signal over serial interface, NO internal setpoint sources
-//    REMOTE_OPENLOOP,            //!< No active PID - Feed remote setpoint to hardware
-//    REMOTE_INTERNAL_MIXED       //!< Iternal setpoint + remote setpoint
+//    ANALOG_SETPOINT,            //!< Setpoint by analog waveform, converted by I_L adc line yet.
+//    REMOTE_SETPOINT,            //!< Setpoint commands/Signal over serial interface, NO internal setpoint sources.
+//    REMOTE_OPENLOOP,            //!< No active PID - Feed remote setpoint to hardware.
+//    REMOTE_INTERNAL_MIXED       //!< Iternal setpoint + remote setpoint.
 //} SetPointSrc_t;
 //!< typedef for different setpoint source select
 
 
 typedef enum {
     INTERNAL_SETPOINT,          //!< Setpoint signal generated by software...
-    ANALOG_SETPOINT,            //!< Setpoint by analog waveform, converted by I_L adc line yet
-    REMOTE_SETPOINT,            //!< Setpoint commands/Signal over serial interface, NO internal setpoint sources
-    REMOTE_OPENLOOP,            //!< No active PID - Feed remote setpoint to hardware
-    REMOTE_INTERNAL_MIXED       //!< Iternal setpoint + remote setpoint
+    ANALOG_SETPOINT,            //!< Setpoint by analog waveform, converted by I_L adc line yet.
+    REMOTE_SETPOINT,            //!< Setpoint commands/Signal over serial interface, NO internal setpoint sources.
+    REMOTE_OPENLOOP,            //!< No active PID - Feed remote setpoint to hardware.
+    REMOTE_INTERNAL_MIXED       //!< Iternal setpoint + remote setpoint.
 } SetPointSrc_t;
 
 
@@ -253,13 +298,13 @@ typedef struct {
     int16_t         *pBase;         //!< Base address holder for look up ptr.
     uint16_t        duty;           //!< Duty parameter (uint16_t).
     float           dutyCyc;        //!< Duty cycle for waveform generation [%].
-    DacLimit_t      dacHw[2];       //!< DAC1/DAC2 range limits. Used to implement hardware protection
+    DacLimit_t      dacHw[2];       //!< DAC1/DAC2 range limits. Used to implement hardware protection.
     SetPointSrc_t   setpointSrc;
 
-    uint16_t    refresh;            //!< refresh rate in ms for mainloop
-    float        ampl_f;            //!< float amplitude for generated waveform
-    MDB_GPIO_STATE_t    beamEnabled;//!< On Off Flag for Laser beam
-} global_t;  
+    uint16_t    refresh;            //!< refresh rate in ms for mainloop.
+    float        ampl_f;            //!< float amplitude for generated waveform.
+    MDB_GPIO_STATE_t    beamEnabled;//!< On Off Flag for Laser beam.
+} global_t;
 
 /** @} */
 
