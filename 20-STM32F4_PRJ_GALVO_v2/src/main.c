@@ -7,13 +7,13 @@
  *
  * @ide         System Workbench ac6 (eclipse stm32)
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- * @license		GNU GPL v3
+ * @license     GNU GPL v3
  *
  * @brief       Main source implementation (29-04-2015)
  *
  * @verbatim
 
-	Copyright (C) 2016	Manuel Del Basso
+	Copyright (C) 2016  Manuel Del Basso
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -29,9 +29,9 @@
 
 	@endverbatim
  *
- *	Additional symbol definitions under "C/C++" > "Symbols"
- *		- ARM_MATH_CM4
- *		- __FPU_PRESENT = 1
+ *  Additional symbol definitions under "C/C++" > "Symbols"
+ *      - ARM_MATH_CM4
+ *      - __FPU_PRESENT = 1
  */
 
 /* Include */
@@ -96,7 +96,7 @@ PUTCHAR_PROTOTYPE {
 	while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET)
 	{}
 
-	return ch;
+return ch;
 }
 
 // ==============================================================
@@ -116,9 +116,9 @@ void init_globalStructs(void);
 //void consoleCase (struct PID_DATA *pid);
 //void adc12_init (uint16_t gpio_pin_adc1,
 
-//		uint16_t gpio_pin_adc2,
-//		uint16_t EndOfConvInt,
-//		ADC_TypeDef* ADCxEOT);
+//      uint16_t gpio_pin_adc2,
+//      uint16_t EndOfConvInt,
+//      ADC_TypeDef* ADCxEOT);
 
 
 #define RX_FRAME_PADDING_CHAR   '~'
@@ -132,10 +132,10 @@ void init_globalStructs(void);
 // ==============================================================
 //                  Compensator things
 // ==============================================================
-#define ALGO_OLD 				10
-#define ADJUSTING_SETPOINT	    11		// Stellungsalgorithmus
-#define SPEED_SETPOINT			12		// Geschwindigkeitsalgorithmus
-#define ALGORITHM 	ADJUSTING_SETPOINT
+#define ALGO_OLD                10
+#define ADJUSTING_SETPOINT      11      // Stellungsalgorithmus
+#define SPEED_SETPOINT          12      // Geschwindigkeitsalgorithmus
+#define ALGORITHM   ADJUSTING_SETPOINT
 
 /* Get two PID_DATA struct instances */
 struct PID_DATA     pidDataX;
@@ -190,11 +190,11 @@ int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 #pragma GCC pop_options
 
 /**
- * @brief	Choose PID parameters
+ * @brief   Choose PID parameters
  */
-#define PID_PARAM_KP		0.5			//!< Proporcional
-#define PID_PARAM_KI		0.0		//!< Integral
-#define PID_PARAM_KD		0.0			//!< Derivative
+#define PID_PARAM_KP        0.5         //!< Proporcional
+#define PID_PARAM_KI        0.0     //!< Integral
+#define PID_PARAM_KD        0.0         //!< Derivative
 
 // ==============================================================
 //                      beam interrupter
@@ -210,16 +210,16 @@ int16_t test2 = LOWER_DAC_LIMIT_SIGNED;
 // ==============================================================
 //      This indices HAVE TO STAY IN SYNC WITH Qt GUI SOURCES
 // ==============================================================
-volatile int NC = 3;		// index 0...2  (short command)
-volatile int FS = 2;		// index 3...4	(fieldsep)
-volatile int NV = 10;	    // index 5...14 (value)
+volatile int NC = 3;        // index 0...2  (short command)
+volatile int FS = 2;        // index 3...4  (fieldsep)
+volatile int NV = 10;       // index 5...14 (value)
 // ==============================================================
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // ==============================================================
 
 //#define
-//	 GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_SET)
-//	 GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_RESET))
+//   GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_SET)
+//   GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_RESET))
 
 //#define
 //                                ((GPIO_TypeDef*)DBG_IO, IO_PIN)
@@ -250,8 +250,8 @@ __IO int16_t ADC_MultiConvBuff[5];
 /**
  * @brief      ADC values access buffer.
  *
- *             Because we use a float based instance of PID, we need to cast the
- *             ADC_MultiConvBuff[0] buffer from integral type to float !!!
+ * @attention  Because a float based instance of PID is used, casting of ADC_MultiConvBuff
+ *             buffer values is necessary.
  */
 __IO float ADC_fBuff[5];
 
@@ -269,7 +269,7 @@ extern autoSaveSystem_t ASG;
 // (3)  TM_PWM_InitTimer(TIM3, &TIM_Data, 1000);
 // (2)  MD_Timer2_config(DISABLE, ENABLE, SAMPLE_INTERVAL);     Base sample rate
 
-static struct items items_list[] = {
+static items_t items_list[] = {
 	{ .name = "kp:", .id = KP },
 	{ .name = "ki:", .id = KI },
 	{ .name = "kd:", .id = KD },
@@ -298,18 +298,18 @@ static MiscCmds_t itemsm_list[] = {
 	{ .name = "pid_Controller", .idm = misc_pid_Controller },
 	{ .name = "pid_Reset_Integrator", .idm = misc_pid_Reset_Integrator },
 	{ .name = "update_pid_data", .idm = misc_update_pid_data  },
-	{ .name = "safetyEnable" , .idm = misc_assOnOff_cmd  },
-	{ .name = "safetyUpperLim", .idm = misc_assUpperLim_cmd  },
-	{ .name = "safetyLowerLim", .idm = misc_assLowerLim_cmd  },
-	{ .name = "safetyTripp", .idm = misc_assTrippTime_cmd  },
-	{ .name = "safetyVal", .idm = misc_assSaveVal_cmd  },
+	{ .name = "safetyEnable" , .idm = misc_asgOnOff_cmd  },
+	{ .name = "safetyUpperLim", .idm = misc_asgUpperLim_cmd  },
+	{ .name = "safetyLowerLim", .idm = misc_asgLowerLim_cmd  },
+	{ .name = "safetyTripp", .idm = misc_asgTrippTime_cmd  },
+	{ .name = "safetyVal", .idm = misc_asgSaveVal_cmd  },
 	{ .name = "EnableBeam", .idm = misc_beamOn_cmd  },
 	{ .name = "DisableBeam", .idm = misc_beamOff_cmd  },
 };
 
 void resetPID (void) {
 	pid_Init (KP_INIT, KI_INIT, KD_INIT, TF_INIT, TS,
-	          &pidDataY, PID_StructType_Unbuffered);
+		&pidDataY, PID_StructType_Unbuffered);
 	PID_Calc_Coeffs(&pidDataY, PID_IntMethode_RwdRect);
 }
 
@@ -318,7 +318,7 @@ void resetPID (void) {
 double lastVal = 0;
 
 /**< Check Architecture */
-#define __TARGET_ARCH_ARM		0
+#define __TARGET_ARCH_ARM       0
 
 /**
  * @brief      USART Pinout select enumeration.
@@ -363,11 +363,11 @@ int main(void) {
 
 	/**< All used GPIOs should be initialized by this call */
 	MDB_GPIO_Init();
-//	beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
+//  beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
 
 	/**< Initialize PID system, float32_t format */
-//	arm_pid_init_f32(&PIDX, 1);
-//	arm_pid_init_f32(&PIDY, 1);
+//  arm_pid_init_f32(&PIDX, 1);
+//  arm_pid_init_f32(&PIDY, 1);
 
 #ifndef NO_FPU
 	arm_pid_instance_f32 pidInst;
@@ -394,7 +394,7 @@ int main(void) {
 	TM_PWM_SetChannelPercent(TIM3, &TIM_Data, TM_PWM_Channel_3, duty);
 
 	/**< Initialize Delay library. */
-//	TM_DELAY_Init();
+//  TM_DELAY_Init();
 
 	/**< Initialize TIM5, heart beat timer */
 	//MD_Timer5_config(ENABLE, ENABLE, 48000);        // 48MHz*1ms
@@ -428,8 +428,8 @@ int main(void) {
 
 	/**< Set threshold for analog watch dog */
 	ADC_AnalogWatchdogThresholdsConfig(ADC1,
-	                                   decode_toUint(ASG.upperVal + VA_BIAS),
-	                                   decode_toUint(ASG.lowerVal + VA_BIAS));
+		decode_toUint(ASG.upperVal + VA_BIAS),
+		decode_toUint(ASG.lowerVal + VA_BIAS));
 
 	/**< Transmit boot up message to UART1 */
 	char *tok;
@@ -508,7 +508,7 @@ int main(void) {
 			}
 
 			printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
-			       SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
+				SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
 		}
 
 		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -528,7 +528,7 @@ int main(void) {
 			}
 
 			printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
-			       SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
+				SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
 		}
 
 		/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
@@ -548,21 +548,21 @@ int main(void) {
 			}
 
 			printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
-			       SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
+				SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
 		}
 	}
 }
 /*
 	while (1) {
-        / * Read temperature 1, reference temperature * /
+		/ * Read temperature 1, reference temperature * /
 //        MD_DS18B20_Read(&OneWire, device[0], &SETPOINT_Y_FLOAT);
 
 
-        / * Format string * /
-        printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
-            SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
-        Delayms(g.refresh);
-    }
+		/ * Format string * /
+		printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
+			SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
+		Delayms(g.refresh);
+	}
  */
 /* End of main function */
 
@@ -579,12 +579,12 @@ int main(void) {
 void init_globalStructs(void) {
 
 	/**< Set PID parameters */
-	PIDX.Kp = PID_PARAM_KP;		/* Proporcional */
-	PIDX.Ki = PID_PARAM_KI;		/* Integral */
-	PIDX.Kd = PID_PARAM_KD;		/* Derivative */
-	PIDY.Kp = PID_PARAM_KP;		/* Proporcional */
-	PIDY.Ki = PID_PARAM_KI;		/* Integral */
-	PIDY.Kd = PID_PARAM_KD;		/* Derivative */
+	PIDX.Kp = PID_PARAM_KP;     /* Proporcional */
+	PIDX.Ki = PID_PARAM_KI;     /* Integral */
+	PIDX.Kd = PID_PARAM_KD;     /* Derivative */
+	PIDY.Kp = PID_PARAM_KP;     /* Proporcional */
+	PIDY.Ki = PID_PARAM_KI;     /* Integral */
+	PIDY.Kd = PID_PARAM_KD;     /* Derivative */
 
 	/**< Initialize autoShutdown system struct. */
 	ASG.lowerVal = ASG_TRIPPING_LOWER_DEFAULT;
@@ -646,7 +646,7 @@ void init_globalStructs(void) {
  * @brief      Fast console command parser.
  *
  *             Interface to a signal generator based on lookup tables.
- *             Implemented waveforms:	- Śin/Cos
+ *             Implemented waveforms:   - Śin/Cos
  *
  * @param      pid   Pointer to a pid instance from dsp library.  
  */
@@ -658,7 +658,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 	/**
 	 * @brief      Char buffer to hold received value as substring.
 	 */
-	char sUart[UART_BUFF_SIZE];		 
+	char sUart[UART_BUFF_SIZE];      
 
 	/**
 	 * @brief      Char buffer to hold selected command as substring.
@@ -676,12 +676,12 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 	 */ 
 	char sVal[VALUE_BUFF_SIZE];
 
-	char *pCmd = sCmd;		        ///< pointer for buffer arrays
-	char *pVal = sVal;		        ///< pointer for buffer arrays
+	char *pCmd = sCmd;              ///< pointer for buffer arrays
+	char *pVal = sVal;              ///< pointer for buffer arrays
 
 	CmdItem_t cmd;
 	WavItems_t wav;
-	struct items *choice = NULL;
+	items_t *choice = NULL;
 	itemsw_t *choicew = NULL;
 
 	int i;
@@ -713,8 +713,8 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 	 */
 	if ( sUart[0] == '@') {
 		/* pid related config/param */
-		strncpy( pCmd, &sUart[IDX_CMD], NC);		///< command substring
-		strncpy( pVal, &sUart[IDX_VAL], NV);		///< Value substring
+		strncpy( pCmd, &sUart[IDX_CMD], NC);        ///< command substring
+		strncpy( pVal, &sUart[IDX_VAL], NV);        ///< Value substring
 
 		/* Check for end of char coded float representation
 		 * numeric char:            0...9
@@ -724,27 +724,27 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 		 */
 		for (uint8_t k = 0; k <= NV; k++) {                 ///< Max NC numbers ...
 			if ( ((*pVal >= '0') && (*pVal <= '9')) || \
-			        (*pVal == '.') || (*pVal == ',')  || \
-			        (*pVal == 'e') || (*pVal == 'E') || \
-			        (*pVal == '-') ) {
+				(*pVal == '.') || (*pVal == ',')  || \
+				(*pVal == 'e') || (*pVal == 'E') || \
+				(*pVal == '-') ) {
 				pVal++;
-			}
-			else {
-				break;
-			}
 		}
+		else {
+			break;
+		}
+	}
 
-		*pVal = '\0';	              ///< place EOF marker
+		*pVal = '\0';                 ///< place EOF marker
 		pVal = &sVal[0];
 
 		while ( *pCmd != '=' ) {    ///< check for end of command  indicator '='
 			pCmd++;
-		}
-		*(pCmd - 1) = '\0';		    ///< place EOS marker
+	}
+		*(pCmd - 1) = '\0';         ///< place EOS marker
 		pCmd = &sCmd[0];
 
 		/* parse sCmd buffer and enumerate the command/error */
-		for (i = 0, choice = NULL; i < sizeof items_list / sizeof (struct items); i++) {
+		for (i = 0, choice = NULL; i < sizeof items_list / sizeof (items_t); i++) {
 			if (strcasecmp(sCmd, items_list[i].name) == 0)
 			{
 				choice = items_list + i;
@@ -770,44 +770,44 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 #endif
 
 		switch (cmd) {
-		case KP:	{
-			pid->Kp = valueDecoded;
+			case KP:    {
+				pid->Kp = valueDecoded;
 #ifndef NO_FPU
-			arm_pid_init_f32(&PIDY, 0);
+				arm_pid_init_f32(&PIDY, 0);
 #endif
-			printf("Kp % f set!\n", valueDecoded);
-		}
-		break;
+				printf("Kp % f set!\n", valueDecoded);
+			}
+			break;
 
-		case KI:	{
-			pid->Ki = valueDecoded;
+			case KI:    {
+				pid->Ki = valueDecoded;
 #ifndef NO_FPU
-			arm_pid_init_f32(&PIDY, 0);
+				arm_pid_init_f32(&PIDY, 0);
 #endif
-			printf("Ki % f set!\n", valueDecoded);
+				printf("Ki % f set!\n", valueDecoded);
 			//                            printf("Ki %s given\n", &sval[0]);
-		}
-		break;
+			}
+			break;
 
-		case KD:	{
-			pid->Kd = valueDecoded;
+			case KD:    {
+				pid->Kd = valueDecoded;
 #ifndef NO_FPU
-			arm_pid_init_f32(&PIDY, 0);
+				arm_pid_init_f32(&PIDY, 0);
 #endif
-			printf("Kd % f set!\n", valueDecoded);
+				printf("Kd % f set!\n", valueDecoded);
 			//                         printf("Kd %s given\n", &sval);
-		}
-		break;
+			}
+			break;
 
-		case W:		{
-			pidDataX.W_remf = valueDecoded;
-			pidDataY.W_remf = valueDecoded;
-			pidDataY.remoteCmdActive = 1;
-			printf("W = % g\n", pidDataY.W_remf);
-		}
-		break;
+			case W:     {
+				pidDataX.W_remf = valueDecoded;
+				pidDataY.W_remf = valueDecoded;
+				pidDataY.remoteCmdActive = 1;
+				printf("W = % g\n", pidDataY.W_remf);
+			}
+			break;
 
-		default:
+			default:
 			printf("unknown choice\n");
 			break;
 		}
@@ -817,12 +817,15 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 	else {
 
 
-		/** A trailing ! char in a new Rx frame indicates that a misc command
+		/** 
+		 * A trailing ! char in a new Rx frame indicates that a misc command
 		 * follows...
 		 */
 		if (sUart[0] == '#') {   ///< True if signal generator command received
 
 			/**
+			 * @par  Command frame layout
+			 * 
 			 * Trailing # indicates a command frame for signal generation
 			 *
 			 * Frame Layout:
@@ -851,33 +854,28 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 			 *
 			 */
 
-			//char  sWav[NC+1],    ///< string buffer to hold selected waveform as substring
-			//        sFreq[NV+1], ///< string buffer to hold given frequency as substring
-			//        sDuty[ND+1]; ///< string buffer to hold given duty cycle as substring
-
 			uint8_t NC = 3;      // index 0...3
-			//      uint8_t FS = 2;      // index 4...5 (fieldsep)
 			uint8_t NV = 4;      // index 6...9
 			uint8_t ND = 2;      // index 10...11
 			uint8_t NA = 16;     // index 12...15
 
-			char  sWav[NC + 1],  ///< string buffer to hold selected waveform as substring
-			      sFreq[NV + 1], ///< string buffer to hold given frequency as substring
-			      sDuty[ND + 1], ///< string buffer to hold given duty cycle as substring
-			      sAmp[16];     ///< string buffer to hold given amplitude as substring
+			char sWav[NC + 1],      //!< string buffer to hold selected waveform as substring
+				 sFreq[NV + 1],     //!< string buffer to hold given frequency as substring
+				 sDuty[ND + 1],     //!< string buffer to hold given duty cycle as substring
+				 sAmp[16];          //!< string buffer to hold given amplitude as substring
 
-			//            char *pWav = sWav;
 			char *pDuty = sDuty;
 			char *pFreq = sFreq;
 			char *pAmp = sAmp;
 
-			strncpy(sWav,  &sUart[1], NC);   ///< waveform substring
-			strncpy(sFreq, &sUart[6],  4);      ///< frequency substring
-			strncpy(sDuty, &sUart[10], 2);      ///< duty cycle substring
-			strncpy(sAmp, &sUart[12], 16);      ///< peak amplitude substring
+			strncpy(sWav,  &sUart[1], NC);      //!< waveform substring
+			strncpy(sFreq, &sUart[6],  4);      //!< frequency substring
+			strncpy(sDuty, &sUart[10], 2);      //!< duty cycle substring
+			strncpy(sAmp, &sUart[12], 16);      //!< peak amplitude substring
 
 
-			/* Check for end of char coded float representation
+			/**
+			 * Check for end of char coded float representation.
 			 * numeric char:            0...9
 			 * decimal delimiter:       . or ,  !!!Take caution for forbidden thousands separator!!!
 			 * exponental indicator:    e or E
@@ -909,159 +907,139 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 
 			for (uint8_t k = 0; k <= NA; k++) {                 ///< Max NC numbers ...
 				if ( ((*pAmp >= '0') && (*pAmp <= '9')) || \
-				        (*pAmp == '.') || (*pAmp == ',')  || \
-				        (*pAmp == 'e') || (*pAmp == 'E') || \
-				        (*pAmp == '-') ) {
+					(*pAmp == '.') || (*pAmp == ',')  || \
+					(*pAmp == 'e') || (*pAmp == 'E') || \
+					(*pAmp == '-') ) {
 					pAmp++;
-				}
-				else {
-					break;
-				}
 			}
-			*pAmp = '\0';   ///< place EOF marker
-			pAmp = &sWav[0];
+			else 
+				break;
+		}
+
+		*pAmp = '\0';   ///< place EOF marker
+		pAmp = &sWav[0];
 
 
-			/* parse sCmd buffer and enumerate the command/error */
-			for (i = 0, choicew = NULL; i < sizeof itemsw_list / sizeof (itemsw_t); i++) {
-				if (strcasecmp(sWav, itemsw_list[i].name) == 0)
-				{
-					choicew = itemsw_list + i;
-					break;
-				}
+		/* parse sCmd buffer and enumerate the command/error */
+		for (i = 0, choicew = NULL; i < sizeof itemsw_list / sizeof (itemsw_t); i++) {
+			if (strcasecmp(sWav, itemsw_list[i].name) == 0)
+			{
+				choicew = itemsw_list + i;
+				break;
 			}
+		}
 
-			wav = choicew ? choicew->idw : NN;
-			//    /**
-			//     * Check for invalied chars in command string
-			//     *	Only [a-zA-Z] is threated as part of command string
-			//     *
-			//     */
-			//            while ( (*pWav >= 0x41) && (*pWav <= 0x5A) ||
-			//                            (*pWav >= 0x61) && (*pWav <= 0x7A) ) {
-			//                pWav++;
-			//            }
+		wav = choicew ? choicew->idw : NN;
+		//    /**
+		//     * Check for invalied chars in command string
+		//     *    Only [a-zA-Z] is threated as part of command string
+		//     *
+		//     */
+		//            while ( (*pWav >= 0x41) && (*pWav <= 0x5A) ||
+		//                            (*pWav >= 0x61) && (*pWav <= 0x7A) ) {
+		//                pWav++;
+		//            }
 
-			//    /**
-			//     * Same item structure used for PID-param and
-			//     * waveform generation commands! Don't forget
-			//     * to offset the for loop while while read in
-			//     * a waveform command.
-			//     *
-			//     */
-			//            for(i = 0, choicew = NULL; i < sizeof itemsw_list/sizeof (struct itemsw_t); i++)
-			//            {
-			//                if (strcasecmp(sWav, itemsw_list[i].name) == 0)
-			//                {
-			//                    choicew = itemsw_list + i;
-			//                    break;
-			//                }
-			//            }
+		//    /**
+		//     * Same item structure used for PID-param and
+		//     * waveform generation commands! Don't forget
+		//     * to offset the for loop while while read in
+		//     * a waveform command.
+		//     *
+		//     */
+		//            for(i = 0, choicew = NULL; i < sizeof itemsw_list/sizeof (struct itemsw_t); i++)
+		//            {
+		//                if (strcasecmp(sWav, itemsw_list[i].name) == 0)
+		//                {
+		//                    choicew = itemsw_list + i;
+		//                    break;
+		//                }
+		//            }
 
-			//            wav = choicew ? choicew->idw : NN;
-			/* FIXME */
-			volatile float valueDecoded __attribute__ ((unused)) = atof( pVal );
+		//            wav = choicew ? choicew->idw : NN;
+		/* FIXME */
+		volatile float valueDecoded __attribute__ ((unused)) = atof( pVal );
 
-			g.waveForm 	= wav;
-			g.freq		= atoi(sFreq);
-			g.duty 		= atoi(sDuty);
-			g.ampl_f 	= (float)atof(sAmp);
-			g.ampl      = (int) g.ampl_f * 1000;
+		g.waveForm  = wav;
+		g.freq      = atoi(sFreq);
+		g.duty      = atoi(sDuty);
+		g.ampl_f    = (float)atof(sAmp);
+		g.ampl      = (int) g.ampl_f * 1000;
 
-			//g.ampl_f = (float)g.ampl / (float)AMPL_FLOAT_DIVISOR;
+		//g.ampl_f = (float)g.ampl / (float)AMPL_FLOAT_DIVISOR;
 
-			if (g.ampl_f > (float)AREF_IN_VOLT / 2)
-				g.ampl_f = (float)AREF_IN_VOLT / 2;
-			if (g.ampl_f < -(float)AREF_IN_VOLT / 2)
-				g.ampl_f = -(float)AREF_IN_VOLT / 2;
-			//            g.ampl_f = (float)g.ampl / (float)AMPL_FLOAT_DIVISOR;
-			//
-			//            if (g.ampl_f > (float)AREF_IN_VOLT/2)
-			//                g.ampl_f = (float)AREF_IN_VOLT/2;
-			//            if (g.ampl_f < -(float)AREF_IN_VOLT/2)
-			//                g.ampl_f = -(float)AREF_IN_VOLT/2;
+		if (g.ampl_f > (float)AREF_IN_VOLT / 2)
+			g.ampl_f = (float)AREF_IN_VOLT / 2;
+		if (g.ampl_f < -(float)AREF_IN_VOLT / 2)
+			g.ampl_f = -(float)AREF_IN_VOLT / 2;
 
-			/**
-			 *	Calculate the interval for lookup table index increment
-			 *	based on SAMPLE_INTERVAL / TS, sizeof table and given
-			 *  waveform frequency.
-			 *
-			 *	g.freq  	[Hz]
-			 *	TS			[us]	* 10^(-6)
-			 *
-			 *  g.lookAt = g.freq/(TABLESIZE * TS * 10^(-6))
-			 *           = g.freq * 10^4 / TS
-			 */
+		/**
+		 *  Calculate the interval for lookup table index increment
+		 *  based on SAMPLE_INTERVAL / TS, sizeof table and given
+		 *  waveform frequency.
+		 *
+		 *  g.freq      [Hz]
+		 *  TS          [us]    * 10^(-6)
+		 *
+		 *  g.lookAt = g.freq/(TABLESIZE * TS * 10^(-6))
+		 *           = g.freq * 10^4 / TS
+		 */
 
+		g.tctr = g.lookAt;
 
-			//        g.lookAt = (short) 1/((double)TABLESIZE * TS * 10^(-6));
-			//		g.lookAt = (uint32_t) g.freq * pow(10,6) / (TABLESIZE * TS);
-			//        printf(" g.lookAt: %i", g.lookAt);
+		/**
+		 *  Precalculate a lookup table based on normed cosine array values. 
+		 */
+		for (uint16_t k = 0; k < TABLESIZE; k++) {
+			calcTab[k] = (uint16_t) g.ampl * CosineN[k];
+		};
 
-			//        g.lookAt = g.lookAt / 100;
-			//        printf(" g.lookAt/100: %i", g.lookAt);
-			g.tctr = g.lookAt;
-
-			/**
-			 *  Precalculate a lookup table based on normed array
-			 *
-			 */
-			for (uint16_t k = 0; k < TABLESIZE; k++) {
-				calcTab[k] = (uint16_t) g.ampl * CosineN[k];
-			};
-
-			switch (wav) {
-			case COS:			{
+		switch (wav) {
+			case COS:           {
 				printf("Cosine \n");
 				pSeq = &Cosine[0];
 				g.pBase = pSeq;
-				g.gen = EN;
 			}
 			break;
 
-			case TRIANG:		{
+			case TRIANG:        {
 				printf("Triangle \n");
-				//										pSeq = &Triangle[0];
-				/* 450/g.freq --> 100 Timer Ovf / periode */
+			//  pSeq = &Triangle[0];
+			/* 450/g.freq --> 100 Timer Ovf / periode */
 				triStruct.bottom = ((float)VA_BIAS - g.ampl_f / 2);
 				triStruct.top = ((float)VA_BIAS + g.ampl_f / 2);
 				triStruct.derivate = g.ampl_f / (float)100;
-				//                                            g.pBase = pSeq;
+			//  g.pBase = pSeq;
 				g.waveForm = TRIANG;
 				triStruct.triCtr = 0;
 				TM_Timer4_config(ENABLE, ENABLE, 450 / g.freq);
-				g.gen = EN;
 			}
 			break;
 
-			case SQUAREWAV:	{
+			case SQUAREWAV: {
 				printf("Squarewave\n");
 				TM_Timer4_config(ENABLE, ENABLE, 45000 / g.freq);
 				g.setpointSrc = REMOTE_INTERNAL_MIXED;
 				g.waveForm = SQUAREWAV;
-				g.gen = EN;
 				pSeq_f = &squarewaveBuff[0];
 			}
 			break;
 
-			case QUADRATIC:	{
+			case QUADRATIC: {
 				printf("Quadratic\n");
 				pSeq = &Quadratic[0];
-				g.gen = EN;
 			}
 			break;
 
-			case I_QUADRATIC:	{
+			case I_QUADRATIC:   {
 				printf("Inv Quadratic\n");
 				pSeq = &I_Quadratic[0];
-				g.gen = EN;
 			}
 			break;
 
-			case SAWTOOTH:		{
+			case SAWTOOTH:      {
 				printf("Sawtooth\n");
 				pSeq = &Sawtooth[0];
-				g.gen = EN;
 			}
 			break;
 
@@ -1091,7 +1069,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 
 			case CMD_TESTVECT: {
 				printf("CMD_TESTVECT\n");
-				//                                            g.setpointSrc = INTERNAL_SETPOINT;
+			//                                            g.setpointSrc = INTERNAL_SETPOINT;
 				dir = 1;
 				g.waveForm = CMD_TESTVECT;
 				TM_Timer4_config(ENABLE, ENABLE, 45000 / g.freq);
@@ -1099,39 +1077,49 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 			break;
 
 			case CMD_MATLAB_LINK: {
-				/* Matlab link integrieren
-				 * #mat:=1~~~0~1.6635~~~..  vector #1, beam off, xpos=1.6635
-				 * #mat:=2~~~0~1.2635~~~..
-				 * #mat:=3~~~1~-1.663~~~..  vector #1, beam on, xpos=-1.663
-				 */
+			/**
+			 * TDOD:    Implement MATLAB link-up!
+			 * 
+			 * #mat:=1~~~1~1.6635~~~..  vector #1, beam on,  xpos=1.6635
+			 * #mat:=2~~~0~0.2635~~~..  vector #2, beam off, xpos=0.6635
+			 * #mat:=3~~~1~-1.663~~~..  vector #3, beam on,  xpos=-1.663
+			 */
 			}
 			break;
 
+		/**
+		 * Disable waveform generation if wgm-off command received or if
+		 * command is unknown.
+		 */
 			default: {
 				printf("unknown choice\n");
 				g.waveForm = NN;
-				g.duty 	= 999;
-				g.freq	= 999;
+				g.duty   = 999;
+				g.freq   = 999;
 				g.lookAt = 999;
-				g.pBase 	= pSeq;
-				g.tctr	= 999;
-				g.gen		= DIS;
+				g.pBase  = pSeq;
+				g.tctr   = 999;
+				g.gen    = DIS;
 			}
-
-				/* Disable waveform generation if wgm-off command received */
-			}
-
-			//		g.pBase = (uint32_t)&pSeq;
-
-
-
 		}
+
+		/**
+		 * Enable generator.
+		 */
+		if ((wav == COS) || 
+			(wav == TRIANG) || 
+			(wav == SQUAREWAV) || 
+			(wav == QUADRATIC) || 
+			(wav == I_QUADRATIC) || 
+			(wav == SAWTOOTH)) 
+			g.gen = EN;
+	}
 		else {                   ///< True if a misc command received
 			/**
 			 * Trailing ! indicates that a misc command frame was received
 			 *
 			 * Frame Layout:
-			 * 	c	command
+			 *  c   command
 			 *
 			 * ! c c c c c c c c c c  c  c
 			 * 0 1 2 3 4 5 6 7 8 9 10 11 12
@@ -1145,23 +1133,23 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 			char sMisc[MISC_CMD_LENGTH + 1];
 			char *pMisc = sMisc;
 
-			strncpy(sMisc, 	&sUart[1],  MISC_CMD_LENGTH);	///< command substring
+			strncpy(sMisc,  &sUart[1],  MISC_CMD_LENGTH);   ///< command substring
 
 			/**< Check for valied characters and substitute first unvalied char
 			 * by EOS char
 			 */
 
 			while ( ((*pMisc >= 'A') && (*pMisc <= 'Z')) || \
-			        ((*pMisc >= 'a') && (*pMisc <= 'z')) || \
-			        ((*pMisc >= '0') && (*pMisc <= '9')) || \
-			        ((*pMisc == '-') || (*pMisc == '_')) || \
-			        ((*pMisc == '.') || (*pMisc == ',')) || \
-			        ((*pMisc == 'e') || (*pMisc == 'E')) ) {
+				((*pMisc >= 'a') && (*pMisc <= 'z')) || \
+				((*pMisc >= '0') && (*pMisc <= '9')) || \
+				((*pMisc == '-') || (*pMisc == '_')) || \
+				((*pMisc == '.') || (*pMisc == ',')) || \
+				((*pMisc == 'e') || (*pMisc == 'E')) ) {
 
 				pMisc++;
-			}
+		}
 
-			*pMisc = '\0';				///< End of string
+			*pMisc = '\0';              ///< End of string
 
 
 			for (i = 0, choicem = NULL; i < sizeof itemsm_list / sizeof (MiscCmds_t); i++)
@@ -1175,32 +1163,32 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 
 			misc = choicem ? choicem->idm : misc_NN;
 
-			g.miscReq 	= misc;
+			g.miscReq   = misc;
 
 			switch (misc) {
-			case misc_assOnOff_cmd:
+				case misc_asgOnOff_cmd:
 				break;
-			case misc_assUpperLim_cmd:
+				case misc_asgUpperLim_cmd:
 				break;
-			case misc_assLowerLim_cmd:
+				case misc_asgLowerLim_cmd:
 				break;
-			case misc_assTrippTime_cmd:
+				case misc_asgTrippTime_cmd:
 				break;
-			case misc_assSaveVal_cmd:
+				case misc_asgSaveVal_cmd:
 				break;
 
-			case misc_pid_init:
+				case misc_pid_init:
 				//                    pid_Init(KP_INIT, KI_INIT, KD_INIT, TF_INIT, TS, &pidDataY, NONBUFFERED);
 				resetPID();
 				break;
-			case misc_beamOff_cmd:
+				case misc_beamOff_cmd:
 				MDB_GPIO_BeamPin(BEAM_INTERRUPT, GPIO_DRIVER_OFF);
 				break;
-			case misc_beamOn_cmd:
+				case misc_beamOn_cmd:
 				MDB_GPIO_BeamPin(BEAM_INTERRUPT, GPIO_DRIVER_ON);
 				break;
 
-			default:
+				default:
 				printf("function unknown\n");
 			}
 		}
@@ -1324,7 +1312,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 // ==============================================================
 // void TIM5_IRQHandler(void) {
 //    if (TIM_GetITStatus(TIM5, TIM_IT_Update) != RESET) {
-// 		TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
+//      TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
 
 //    }
 // }
@@ -1334,7 +1322,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 // #ifdef NO1
 // void TIM4_IRQHandler(void) {
 //    if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {
-// 		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+//      TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
 
 //        if (ASG.tripped) {
 //            MDB_GPIO_Toggle(BEAM_INTERRUPT);
@@ -1368,7 +1356,7 @@ void fastConsoleCase (arm_pid_instance_f32 *pid) {
 // volatile float ft=0;
 
 //    if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {
-// 		TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+//      TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
 
 //        /* Check which waveform mode is active 
 //        if (g.waveForm == SQUAREWAV) {

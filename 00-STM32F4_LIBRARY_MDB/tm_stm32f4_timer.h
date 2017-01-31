@@ -11,10 +11,10 @@
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_gpio.h"
 //#include "stm32f4xx_adc.h"
-#include "defines.h"
+#include "globals.h"
 
 /**
- * This values can be overwriten in defines.h file
+ * This values can be overwriten in globals.h file
  */
 
 //#ifndef TM_ADC3_RESOLUTION

@@ -36,7 +36,7 @@
 /* Includes */
 #include "stm32f4xx.h"
 #include "stm32f4xx_rcc.h"
-#include "defines.h"
+#include "globals.h"
 
 //CMSIS_glob_defs
 //static __IO uint32_t MD_TimingDelay;

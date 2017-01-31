@@ -46,12 +46,12 @@
  *
 @verbatim
  - STM32F4xx
- - defines.h
+ - globals.h
  - MD GPIO
 @endverbatim
  */
 #include "stm32f4xx.h"
-#include "defines.h"
+#include "globals.h"
 #include "md_stm32f4_gpio.h"
 
 /* Definitions according to "STM32F429I-DISCO schematics" */

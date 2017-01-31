@@ -38,7 +38,7 @@
  * - STM32F4xx
  * - STM32F4xx RCC
  * - STM32F4xx TIM
- * - defines.h
+ * - globals.h
  */
 /**
  * Includes
@@ -46,7 +46,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_tim.h"
-#include "defines.h"
+#include "globals.h"
 
 /**
  * Result enumeration

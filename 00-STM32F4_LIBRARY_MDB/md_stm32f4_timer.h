@@ -13,7 +13,7 @@
 //#include "stm32f4xx_adc.h"
 
 /**
- * This values can be overwriten in defines.h file
+ * This values can be overwriten in globals.h file
  */
 
 //#ifndef TM_ADC3_RESOLUTION

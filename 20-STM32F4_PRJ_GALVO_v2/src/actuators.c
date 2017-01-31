@@ -36,7 +36,7 @@
 
 /* Includes */
 #include "actuators.h"
-#include "defines.h"
+#include "globals.h"
 
 /**
  * @addtogroup MD_APP

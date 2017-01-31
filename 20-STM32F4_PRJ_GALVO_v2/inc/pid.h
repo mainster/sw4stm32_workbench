@@ -11,7 +11,7 @@
 #include <string.h>
 #include <stdint.h>
 #include "stm32f4xx.h"
-#include "defines.h"
+#include "globals.h"
 
 #if ! (defined (KEIL_IDE) || defined (__GNUC__))
 #error "Please specify an IDE or GNUC tools!"

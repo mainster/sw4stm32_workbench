@@ -1,5 +1,5 @@
 /**
- * @file        defines.h
+ * @file        globals.h
  *
  * @date        28 Jan 2017
  * @author    Manuel Del Basso (mainster)

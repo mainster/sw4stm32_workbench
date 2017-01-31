@@ -36,7 +36,7 @@
 #include "stm32f4xx.h"
 #include "stm32f4xx_dac.h"
 #include "md_stm32f4_dac.h"
-#include "defines.h"
+#include "globals.h"
 
 /**
  * @addtogroup MD_STM32F4_Libraries

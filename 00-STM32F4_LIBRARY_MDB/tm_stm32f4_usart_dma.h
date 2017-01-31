@@ -87,7 +87,7 @@ UART8      | DMA1 | DMA Stream 0 | DMA Channel 5
 @verbatim
  - STM32F4xx
  - STM32F4xx DMA
- - defines.h
+ - globals.h
  - TM USART
  - string.h
 @endverbatim
@@ -95,7 +95,7 @@ UART8      | DMA1 | DMA Stream 0 | DMA Channel 5
 
 #include "stm32f4xx.h"
 #include "stm32f4xx_dma.h"
-#include "defines.h"
+#include "globals.h"
 #include "tm_stm32f4_usart.h"
 #include "string.h"
 

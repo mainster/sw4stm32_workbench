@@ -50,7 +50,7 @@ extern "C" {
  * \par USART receive interrupt handlers
  *
  * Every USART channel has it's own receive interrupt which stores incoming data into cyclic buffer.
- * If you want to use your own receive handler, then you have to open defines.h files and set a define.
+ * If you want to use your own receive handler, then you have to open globals.h files and set a define.
 @verbatim
 //Use custom IRQ Receive handler
 //Change X with possible U(S)ARTs: USART1, USART2, USART3, UART4, UART5, USART6, UART7, UART8
@@ -73,14 +73,14 @@ void TM_X_ReceiveHandler(uint8_t c) {
 //Set buffer sie for all buffers
 #define USART_BUFFER_SIZE number_of_bytes
 @endverbatim
- * in your project's defines.h file. This will set default length for each buffer.
+ * in your project's globals.h file. This will set default length for each buffer.
  * So if you are working with F429 (it has 8 U(S)ARTs) then you will use 8kB RAM if 
  * you set define above to 1024.
  *
  * As of version 2.0, you can now set different buffer sizes for different U(S)ARTs.
  * If you don't change anything, then all USART's have buffer length of value, stored in
  * <code>USART_BUFFER_SIZE</code> define. If you want let's say just for USART1 to be 1kB, but others default value,
- * you can add define below in defines.h file:
+ * you can add define below in globals.h file:
 @verbatim
 //Buffer length for USART1 is 1kB, for others is still TM_USART_BUFFER_SIZE
 #define TM_USART1_BUFFER_SIZE 1024
@@ -126,7 +126,7 @@ UART8        |PE1    PE0     |-      -       |-      -
  * In this section, you can change USART functionality.
  * Do this only in case you know what are you doing!
  * 
- * Open \ref defines.h file, copy define you want to change and fill settings
+ * Open \ref globals.h file, copy define you want to change and fill settings
 @verbatim
 //Change X with possible U(S)ARTs: USART1, USART2, USART3, UART4, UART5, USART6, UART7, UART8
 //Set flow control
@@ -194,7 +194,7 @@ UART8        |PE1    PE0     |-      -       |-      -
  - STM32F4xx GPIO
  - STM32F4xx USART
  - attributes.h
- - defines.h
+ - globals.h
  - TM GPIO
 @endverbatim
  */
@@ -204,7 +204,7 @@ UART8        |PE1    PE0     |-      -       |-      -
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_usart.h"
 #include "attributes.h"
-#include "defines.h"
+#include "globals.h"
 #include "md_stm32f4_gpio.h"
 
 /* F405/407/415/417/F446 */
@@ -273,7 +273,7 @@ typedef enum {
  * @brief    USART default values for defines
  * @{
  *
- * All values can be overwritten in your project's defines.h file.
+ * All values can be overwritten in your project's globals.h file.
  * 
  * Do this only in case you know what are you doing.
  */
@@ -314,7 +314,7 @@ typedef enum {
 #define USART_NVIC_PRIORITY				0x06
 #endif
 
-/* U(S)ART settings, can be changed in your defines.h project file */
+/* U(S)ART settings, can be changed in your globals.h project file */
 /* USART1 default settings */
 #ifndef TM_USART1_HARDWARE_FLOW_CONTROL
 #define TM_USART1_HARDWARE_FLOW_CONTROL		TM_USART_HardwareFlowControl_None

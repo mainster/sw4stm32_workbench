@@ -34,7 +34,7 @@
 #define CONSOLE_H_
 
 #include "arm_math.h"
-#include "defines.h"
+#include "globals.h"
 
 /**
  * @addtogroup MD_APP

@@ -67,7 +67,7 @@
  * - STM32F4xx RCC
  * - STM32F4xx GPIO
  * - STM32F4xx TIM
- * - defines.h
+ * - globals.h
  * - TM TIMER PROPERTIES
  */
 /**
@@ -78,7 +78,7 @@
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_tim.h"
 #include "tm_stm32f4_timer_properties.h"
-#include "defines.h"
+#include "globals.h"
 
 /**
  * Result enumeration

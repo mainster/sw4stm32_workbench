@@ -34,7 +34,7 @@
 #ifndef ADC_DAC_DMA_H_
 #define ADC_DAC_DMA_H_
 
-#include "defines.h"
+#include "globals.h"
 #include "nvic_config.h"
 #include "main.h"
 #include "md_stm32f4_dac.h"

@@ -64,7 +64,7 @@ DAC2			PA5
 @verbatim
  - STM32F4xx
  - STM32F4xx DAC
- - defines.h
+ - globals.h
  - TM GPIO
 @endverbatim
  */
@@ -74,7 +74,7 @@ DAC2			PA5
  */
 #include "stm32f4xx.h"
 //#include "stm32f4xx_dac.h"
-#include "defines.h"
+#include "globals.h"
 #include "md_stm32f4_gpio.h"
 
 /**

@@ -34,7 +34,7 @@
 #define _ISR_CALLBACKS_H_
 
 #include "main.h"
-#include "defines.h"
+#include "globals.h"
 #include "adc_dac_dma.h"
 
 /**
