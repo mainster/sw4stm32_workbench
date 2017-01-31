@@ -238,7 +238,7 @@ typedef enum {
 /**
  * @brief      Global state structure definition.
  */
-struct global {
+typedef struct {
     uint32_t        lookAt;         //! Integer multiple of SAMPLE_TIME.
                                     //! @note       Use it as interval counter for lookup table index
                                     //!             increments.
@@ -259,7 +259,7 @@ struct global {
     uint16_t    refresh;            //!< refresh rate in ms for mainloop
     float        ampl_f;            //!< float amplitude for generated waveform
     MDB_GPIO_STATE_t    beamEnabled;//!< On Off Flag for Laser beam
-};  
+} global_t;  
 
 /** @} */
 
@@ -267,7 +267,7 @@ struct global {
  * @addtogroup Main_Variables
  * @{
  */
-extern struct global g;
+extern global_t g;
 extern struct triangWave triStruct;
 extern float setpoint_tgl;
 extern float pidErrBuff[2];         /* PID error buffer*/

@@ -49,41 +49,41 @@ isr_callbacks.c:80: warning: Member ASG (variable) of group IRQ_Handler_Variable
 isr_callbacks.c:81: warning: Member ticks (variable) of group IRQ_Handler_Variables is not documented.
 isr_callbacks.c:82: warning: Member dir (variable) of group IRQ_Handler_Variables is not documented.
 isr_callbacks.h:78: warning: Member TIM2_IRQHandler(void) (function) of group IRQ_Handler_Functions is not documented.
-main.c:83: warning: Member PUTCHAR_PROTOTYPE (macro definition) of group APP_Main is not documented.
-main.c:121: warning: Member RX_FRAME_PADDING_CHAR (macro definition) of file main.c is not documented.
-main.c:132: warning: Member ALGO_OLD (macro definition) of file main.c is not documented.
-main.c:133: warning: Member ADJUSTING_SETPOINT (macro definition) of file main.c is not documented.
-main.c:134: warning: Member SPEED_SETPOINT (macro definition) of file main.c is not documented.
-main.c:135: warning: Member ALGORITHM (macro definition) of file main.c is not documented.
-main.c:145: warning: Member SLIDER_VAL_DEVIDER (macro definition) of file main.c is not documented.
-main.c:154: warning: Member INDEX_Px (macro definition) of file main.c is not documented.
-main.c:155: warning: Member INDEX_Py (macro definition) of file main.c is not documented.
-main.c:163: warning: Member SIGNW (macro definition) of file main.c is not documented.
-main.c:165: warning: Member INTERNAL_SETPOINT (macro definition) of file main.c is not documented.
-main.c:192: warning: Member PID_PARAM_KP (macro definition) of file main.c is not documented.
-main.c:193: warning: Member PID_PARAM_KI (macro definition) of file main.c is not documented.
-main.c:194: warning: Member PID_PARAM_KD (macro definition) of file main.c is not documented.
-main.c:226: warning: Member MSG_GUI_UART1_RECV_BUFF_FULL (macro definition) of file main.c is not documented.
-main.c:256: warning: Member NO1 (macro definition) of file main.c is not documented.
-main.c:318: warning: Member __TARGET_ARCH_ARM (macro definition) of group APP_Main is not documented.
-main.c:627: warning: Member IDX_CMD (macro definition) of file main.c is not documented.
-main.c:628: warning: Member IDX_VAL (macro definition) of file main.c is not documented.
-main.c:630: warning: Member UART_BUFF_SIZE (macro definition) of file main.c is not documented.
-main.c:631: warning: Member VALUE_BUFF_SIZE (macro definition) of file main.c is not documented.
-main.c:632: warning: Member CMD_BUFF_SIZE (macro definition) of file main.c is not documented.
-main.c:1137: warning: Member MISC_CMD_LENGTH (macro definition) of file main.c is not documented.
-main.c:93: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group APP_Main is not documented.
-main.c:102: warning: Member gpio_init(void) (function) of group APP_Main is not documented.
-main.c:307: warning: Member resetPID(void) (function) of group APP_Main is not documented.
-main.c:361: warning: Member g (variable) of group Main_Variables is not documented.
-main.c:73: warning: Member vectorCtr (variable) of group Main_Variables is not documented.
-main.c:74: warning: Member dir (variable) of group Main_Variables is not documented.
-main.c:75: warning: Member ticks (variable) of group Main_Variables is not documented.
-main.c:86: warning: Member __stdout (variable) of group APP_Main is not documented.
-main.c:88: warning: Member PUTCHAR_PROTOTYPE (variable) of group APP_Main is not documented.
-main.c:96: warning: Member ch (variable) of group APP_Main is not documented.
-main.c:276: warning: Member itemsw_list[] (variable) of group APP_Main is not documented.
-main.c:293: warning: Member itemsm_list[] (variable) of group APP_Main is not documented.
+main.c:86: warning: Member PUTCHAR_PROTOTYPE (macro definition) of group APP_Main is not documented.
+main.c:124: warning: Member RX_FRAME_PADDING_CHAR (macro definition) of file main.c is not documented.
+main.c:135: warning: Member ALGO_OLD (macro definition) of file main.c is not documented.
+main.c:136: warning: Member ADJUSTING_SETPOINT (macro definition) of file main.c is not documented.
+main.c:137: warning: Member SPEED_SETPOINT (macro definition) of file main.c is not documented.
+main.c:138: warning: Member ALGORITHM (macro definition) of file main.c is not documented.
+main.c:148: warning: Member SLIDER_VAL_DEVIDER (macro definition) of file main.c is not documented.
+main.c:157: warning: Member INDEX_Px (macro definition) of file main.c is not documented.
+main.c:158: warning: Member INDEX_Py (macro definition) of file main.c is not documented.
+main.c:166: warning: Member SIGNW (macro definition) of file main.c is not documented.
+main.c:168: warning: Member INTERNAL_SETPOINT (macro definition) of file main.c is not documented.
+main.c:195: warning: Member PID_PARAM_KP (macro definition) of file main.c is not documented.
+main.c:196: warning: Member PID_PARAM_KI (macro definition) of file main.c is not documented.
+main.c:197: warning: Member PID_PARAM_KD (macro definition) of file main.c is not documented.
+main.c:229: warning: Member MSG_GUI_UART1_RECV_BUFF_FULL (macro definition) of file main.c is not documented.
+main.c:259: warning: Member NO1 (macro definition) of file main.c is not documented.
+main.c:321: warning: Member __TARGET_ARCH_ARM (macro definition) of group APP_Main is not documented.
+main.c:630: warning: Member IDX_CMD (macro definition) of file main.c is not documented.
+main.c:631: warning: Member IDX_VAL (macro definition) of file main.c is not documented.
+main.c:633: warning: Member UART_BUFF_SIZE (macro definition) of file main.c is not documented.
+main.c:634: warning: Member VALUE_BUFF_SIZE (macro definition) of file main.c is not documented.
+main.c:635: warning: Member CMD_BUFF_SIZE (macro definition) of file main.c is not documented.
+main.c:1140: warning: Member MISC_CMD_LENGTH (macro definition) of file main.c is not documented.
+main.c:96: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group APP_Main is not documented.
+main.c:105: warning: Member gpio_init(void) (function) of group APP_Main is not documented.
+main.c:310: warning: Member resetPID(void) (function) of group APP_Main is not documented.
+main.c:73: warning: Member g (variable) of group Main_Variables is not documented.
+main.c:74: warning: Member vectorCtr (variable) of group Main_Variables is not documented.
+main.c:75: warning: Member dir (variable) of group Main_Variables is not documented.
+main.c:76: warning: Member ticks (variable) of group Main_Variables is not documented.
+main.c:89: warning: Member __stdout (variable) of group APP_Main is not documented.
+main.c:91: warning: Member PUTCHAR_PROTOTYPE (variable) of group APP_Main is not documented.
+main.c:99: warning: Member ch (variable) of group APP_Main is not documented.
+main.c:279: warning: Member itemsw_list[] (variable) of group APP_Main is not documented.
+main.c:296: warning: Member itemsm_list[] (variable) of group APP_Main is not documented.
 main.h:100: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
 main.h:101: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
 main.h:102: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
@@ -92,7 +92,7 @@ main.h:105: warning: Member pidErr_y (macro definition) of group Main_Macros is 
 main.h:106: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
 main.h:107: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
 main.h:116: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
-main.h:84: warning: Member g (variable) of group Main_Variables is not documented.
+main.h:270: warning: Member g (variable) of group Main_Variables is not documented.
 main.h:272: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
 main.h:273: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
 main.h:274: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
@@ -469,16 +469,16 @@ isr_callbacks.h:78: warning: Member TIM2_IRQHandler(void) (function) of group IR
 isr_callbacks.c:147: warning: Illegal command ref as part of a title section
 isr_callbacks.c:149: warning: unable to resolve reference to `SETPOINT_Y_FLOAT' for \ref command
 isr_callbacks.c:149: warning: unable to resolve reference to `POS_Y_FLOAT' for \ref command
-main.c:83: warning: Member PUTCHAR_PROTOTYPE (macro definition) of group APP_Main is not documented.
-main.c:318: warning: Member __TARGET_ARCH_ARM (macro definition) of group APP_Main is not documented.
-main.c:93: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group APP_Main is not documented.
-main.c:102: warning: Member gpio_init(void) (function) of group APP_Main is not documented.
-main.c:307: warning: Member resetPID(void) (function) of group APP_Main is not documented.
-main.c:86: warning: Member __stdout (variable) of group APP_Main is not documented.
-main.c:88: warning: Member PUTCHAR_PROTOTYPE (variable) of group APP_Main is not documented.
-main.c:96: warning: Member ch (variable) of group APP_Main is not documented.
-main.c:276: warning: Member itemsw_list[] (variable) of group APP_Main is not documented.
-main.c:293: warning: Member itemsm_list[] (variable) of group APP_Main is not documented.
+main.c:86: warning: Member PUTCHAR_PROTOTYPE (macro definition) of group APP_Main is not documented.
+main.c:321: warning: Member __TARGET_ARCH_ARM (macro definition) of group APP_Main is not documented.
+main.c:96: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group APP_Main is not documented.
+main.c:105: warning: Member gpio_init(void) (function) of group APP_Main is not documented.
+main.c:310: warning: Member resetPID(void) (function) of group APP_Main is not documented.
+main.c:89: warning: Member __stdout (variable) of group APP_Main is not documented.
+main.c:91: warning: Member PUTCHAR_PROTOTYPE (variable) of group APP_Main is not documented.
+main.c:99: warning: Member ch (variable) of group APP_Main is not documented.
+main.c:279: warning: Member itemsw_list[] (variable) of group APP_Main is not documented.
+main.c:296: warning: Member itemsm_list[] (variable) of group APP_Main is not documented.
 main.h:100: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
 main.h:101: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
 main.h:102: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
@@ -487,14 +487,14 @@ main.h:105: warning: Member pidErr_y (macro definition) of group Main_Macros is 
 main.h:106: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
 main.h:107: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
 main.h:116: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
-main.h:84: warning: Member g (variable) of group Main_Variables is not documented.
+main.h:270: warning: Member g (variable) of group Main_Variables is not documented.
 main.h:272: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
 main.h:273: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
 main.h:274: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
-main.c:361: warning: Member g (variable) of group Main_Variables is not documented.
-main.c:73: warning: Member vectorCtr (variable) of group Main_Variables is not documented.
-main.c:74: warning: Member dir (variable) of group Main_Variables is not documented.
-main.c:75: warning: Member ticks (variable) of group Main_Variables is not documented.
+main.c:73: warning: Member g (variable) of group Main_Variables is not documented.
+main.c:74: warning: Member vectorCtr (variable) of group Main_Variables is not documented.
+main.c:75: warning: Member dir (variable) of group Main_Variables is not documented.
+main.c:76: warning: Member ticks (variable) of group Main_Variables is not documented.
 signalGen.c:9: warning: Found unknown command `\packs'
 mdb_gpio.h:165: warning: Member MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
 mdb_gpio.h:166: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MDB_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.

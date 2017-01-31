@@ -64,18 +64,21 @@
 
 /** @} */
 
+
 /**
  * @addtogroup Main_Variables
  * @{
  */
 
-struct global g;
+global_t g;
 uint16_t vectorCtr = 0;
 int8_t dir = 1;
 uint32_t ticks = 0;
 extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
 /** @} */
+
+
 
 // ==============================================================
 //   This is needed in order to provide printf functionality
