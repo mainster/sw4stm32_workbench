@@ -1,13 +1,5 @@
 
 stm32f4xx_it.h' supplied as the second argument in the \file statement is not an input file
-actuators.h:91: warning: unable to resolve reference to `ASG' for \ref command
-stm32f4xx_it.c:161: warning: Found unknown command `\with'
-stm32f4xx_it.c:161: warning: Found unknown command `\with'
-system_stm32f4xx.c:560: warning: Found unknown command `\Note'
-actuators.h:91: warning: unable to resolve reference to `ASG' for \ref command
-stm32f4xx_it.c:161: warning: Found unknown command `\with'
-system_stm32f4xx.c:560: warning: Found unknown command `\Note'
-defines.h:45: warning: explicit link request to 'undef' could not be resolved
 md_stm32f4_disco.h:170: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonPressed()
 md_stm32f4_disco.h:85: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonInit(void)
 md_stm32f4_disco.h:179: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonOnPressed(void)
@@ -17,7 +9,6 @@ md_stm32f4_gpio.h:192: warning: argument 'GPIO_Mode' of command @param is not fo
 md_stm32f4_gpio.h:194: warning: unable to resolve reference to `MD_GPIO_Mode_t' for \ref command
 ' for \link command
 
-stm32f4xx_it.c:161: warning: Found unknown command `\with'
 stm32f4xx_it.c:107: warning: argument 'None' of command @param is not found in the argument list of BusFault_Handler(void)
 stm32f4xx_it.c:142: warning: argument 'None' of command @param is not found in the argument list of DebugMon_Handler(void)
 stm32f4xx_it.c:81: warning: argument 'None' of command @param is not found in the argument list of HardFault_Handler(void)
@@ -25,14 +16,11 @@ stm32f4xx_it.c:94: warning: argument 'None' of command @param is not found in th
 stm32f4xx_it.c:72: warning: argument 'None' of command @param is not found in the argument list of NMI_Handler(void)
 stm32f4xx_it.c:151: warning: argument 'None' of command @param is not found in the argument list of PendSV_Handler(void)
 stm32f4xx_it.c:133: warning: argument 'None' of command @param is not found in the argument list of SVC_Handler(void)
-stm32f4xx_it.c:161: warning: Found unknown command `\with'
 stm32f4xx_it.c:160: warning: argument 'None' of command @param is not found in the argument list of TimingDelay_Decrement(void)
 stm32f4xx_it.c:120: warning: argument 'None' of command @param is not found in the argument list of UsageFault_Handler(void)
-actuators.h:91: warning: unable to resolve reference to `ASG' for \ref command
-actuators.h:91: warning: unable to resolve reference to `ASG' for \ref command
 adc-input-noise.html' for \link command
-defines.h:211: warning: Illegal command note as part of a \link
-defines.h:212: warning: Unexpected end of comment while inside link command
+defines.h:212: warning: Illegal command note as part of a \link
+defines.h:213: warning: Unexpected end of comment while inside link command
 
   parameter 'DACx'
 adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
@@ -40,8 +28,6 @@ signalGen.c:9: warning: Found unknown command `\packs'
 isr_callbacks.c:147: warning: Illegal command ref as part of a title section
 isr_callbacks.c:149: warning: unable to resolve reference to `SETPOINT_Y_FLOAT' for \ref command
 isr_callbacks.c:149: warning: unable to resolve reference to `POS_Y_FLOAT' for \ref command
-main.h:236: warning: Found unknown command `\SAMPLE_TIME'
-main.h:162: warning: explicit link request to 'mat' could not be resolved
 signalGen.c:9: warning: Found unknown command `\packs'
 pid.h:363: warning: argument 'Kp' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
 pid.h:363: warning: argument 'Ki' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
@@ -52,9 +38,6 @@ pid.h:328: warning: unable to resolve reference to `PID_struct_type' for \ref co
 pid.h:355: warning: unable to resolve reference to `PID_struct_type' for \ref command
 system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
 system_stm32f4xx.c:412: warning: argument 'None' of command @param is not found in the argument list of SystemInit(void)
-main.c:871: warning: Found unknown command `\SAMPLE_INTERVAL'
-system_stm32f4xx.c:560: warning: Found unknown command `\Note'
-system_stm32f4xx.c:560: warning: Found unknown command `\Note'
 system_stm32f4xx.c:558: warning: argument 'None' of command @param is not found in the argument list of SetSysClock(void)
 system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
 system_stm32f4xx.c:412: warning: argument 'None' of command @param is not found in the argument list of SystemInit(void)

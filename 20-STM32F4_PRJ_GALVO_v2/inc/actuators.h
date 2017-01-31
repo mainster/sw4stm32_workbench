@@ -35,7 +35,7 @@
  */
 #ifndef _ACTUATORS_H_
 #define _ACTUATORS_H_
- 
+
 #include <stdio.h>
 #include "adc_dac_dma.h"
 #include "defines.h"
@@ -44,6 +44,8 @@
 #include "pid.h"
 #include "tools.h"
 
+
+
 /**
  * @addtogroup MD_APP
  * @{
@@ -51,31 +53,66 @@
 
 /**
  * @addtogroup  APP_Actuators
- * @brief       Provides actuator related update and configuration methods. 
- * 
+ * @brief       Provides actuator related update and configuration methods.
+ *
  * @par Refreshable actuators:
- * 		- Variable current sources (channels X,Y) to drive the Galvo coils.
- * 		- Laseer beam 
+ * @li          Variable current sources to drive the Galvo coils.
+ * @li          Laser-beam interrupter @{
+ */
+
+/**
+ * @defgroup   ASG Actuator Safestate Guard (ASG)
+ *
+ * The ASG system is designed to protect the output drivers from overload in
+ * case of actuator blocking states. The prototype electronics also includes
+ * coil current measurement hardware to provide actuator current feedback. In a
+ * project milestone to be planned for later, the implementation of a
+ * model-driven compensator (state space model) is being considered.
+ */
+
+/**
+ * @addtogroup  ASG
  * @{
  */
 
 /**
- * @addtogroup  Actuators_Macros 
- * @brief       Actuator methods related macro definitions. @{
- */
-
-/**
- * @brief      The Auto Shutdown System provides a security layer 
+ * @brief      Lower ASG tripping limit (POR value). @SI{V}
+ *
+ *             ADC values across this limit are captured from the ASG.
  */
 #define ASG_TRIPPING_LOWER_DEFAULT    	-1.22f
+
+/**
+ * @brief      Upper ASG tripping limit (POR value). @SI{V}
+ *
+ *             ADC values across this limit are captured from the ASG.
+ */
 #define ASG_TRIPPING_UPPER_DEFAULT    	1.22f
-#define ASG_SAFEVALUE_DEFAULT        	0
-#define ASG_TRIPPING_TIME_DEFAULT   	0.750f      // s
+
+/**
+ * @brief      Float representation of DAC output value.
+ *
+ *             DAC output value in case of safe state (tripped ASG). @SI{V}
+ *
+ * @attention  This value needs to be calibrated once after altering parts of
+ *             the scanner hardware. In any case, this value has to result in
+ *             zero-actuator current!
+ */
+#define ASG_SAFEVALUE_DEFAULT        	-0.02f
+
+/**
+ * @brief      ASG integration time constant (POR value). @SI{s}
+ *
+ *             The ASG tripping behavior (in other words: ... it's fuse
+ *             characteristic) depends on integrator input amplitude and time
+ *             constant.
+ */
+#define ASG_TRIPPING_TIME_DEFAULT   	0.750f
 
 /** @} */
 
 /**
- * @addtogroup  Actuators_Typedefs 
+ * @addtogroup  Actuators_Typedefs
  * @brief       Actuator methods related type definitions. @{
  */
 
@@ -88,7 +125,7 @@ typedef enum {
 } beamCtrlSource_t;
 
 /**
- * @brief      ASG @ref ASG Integrator state enumerations.
+ * @brief      ASG Integrator state enumerations.
  *
  *             To manipulate the fuse tripping transfer function (fuse
  *             characteristics) of the ASS, the process output to be secured, is
@@ -103,7 +140,7 @@ typedef enum {
 
 /**
  * @brief      The Auto Safestate System provides a security layer to prevent
- *             thermal overloads.   
+ *             thermal overloads.
  */
 typedef struct {
     double  	integrator;  	//!< runtime integrator - holds the "amount" of overcurrent - states
@@ -119,7 +156,7 @@ typedef struct {
 /** @} */
 
 /**
- * @addtogroup  Actuators_Functions 
+ * @addtogroup  Actuators_Functions
  * @brief       Actuator function definitions. @{
  */
 
@@ -128,18 +165,11 @@ typedef struct {
  * @brief       This group includes all functions related to safety and
  *              guarding.
  *
- * @par ASG - Actuator Safestate Guard
- *
- *              The ASG system is designed to protect the output drivers from
- *              overload in case of actuator blocking states. The prototype
- *              electronics also includes coil current measurement hardware to
- *              provide actuator current feedback. In a project milestone to be
- *              planned for later, the implementation of a model-driven
- *              compensator (state space model) is being considered.  @{
+ * @par ASG -   @{
  */
 
 /**
- * @brief      Safely update actuator control signals. 
+ * @brief      Safely update actuator control signals.
  *
  *             Safely means in terms of missplaced or oscillating controller
  *             outputs. The analog watchdog peripheral takes care about
@@ -164,7 +194,7 @@ int updateActuator_f(float I_set_x, float I_set_y);
 /**
  * @brief      Set beam control source and new state
  *
- * @param[in]  src        The beam control source 
+ * @param[in]  src        The beam control source
  * @param[in]  newState   The new state
  */
 int beamCtrl(beamCtrlSource_t src, tribool_state_t newState );

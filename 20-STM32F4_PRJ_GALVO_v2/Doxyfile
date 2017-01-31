@@ -242,7 +242,20 @@ ALIASES                = "sideeffect=@par Side Effects:\n" \
                          "email=@b E-Mail: @b" \
                          "ide=@b IDE: @b " \
                          "license=@par License: @b" \
-                         "stdperiph=@par StdPeriph: @b"
+                         "stdperiph=@par StdPeriph: @b" \
+                         "si{1}=@f$\bigl[  \1  \bigr]@f$" \
+                         "SI{1}=<br><em>SI-Unit: </em> @f$[\1]@f$" \
+                         tex{1}="@f$\1@f$" \
+                         bd{1}="<b>\1</b>" \
+                         it{1}="<em>\1</em>" \
+
+# Fix: 
+# system_stm32f4xx.c: warning: Found unknown command `\with'
+# system_stm32f4xx.c: warning: Found unknown command `\Note'
+
+ALIASES               += "with=@par" \
+                         "Note=@note" \
+
 
 # This tag can be used to specify a number of word-keyword mappings (TCL only).
 # A mapping has the form "name=value". For example adding "class=itcl::class"
@@ -2329,7 +2342,7 @@ INCLUDED_BY_GRAPH      = YES
 # The default value is: NO.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-CALL_GRAPH             = NO
+CALL_GRAPH             = YES
 
 # If the CALLER_GRAPH tag is set to YES then doxygen will generate a caller
 # dependency graph for every global function or class method.
@@ -2341,7 +2354,7 @@ CALL_GRAPH             = NO
 # The default value is: NO.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-CALLER_GRAPH           = NO
+CALLER_GRAPH           = YES
 
 # If the GRAPHICAL_HIERARCHY tag is set to YES then doxygen will graphical
 # hierarchy of all classes instead of a textual one.

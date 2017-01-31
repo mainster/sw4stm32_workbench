@@ -142,6 +142,14 @@ typedef enum {                            //!< Enumeration for switch-by-string 
     EN,                                         //!< Generator enable
     DIS,                                        //!< Generator disable
     COS, TRIANG, SQUAREWAV,             //!< Usable waveforms
+    
+    /**
+     * @brief      Quadratic: Testsignal zum vergleich.
+     *
+     *             Testsignal zum vergleich mit Üersichtsblatt
+     *             "Was für Regler notwendig um quadratischen sollwertverl...".
+     *             (siehe Vorlesung HsKA, RT2, H. Brunner)
+     */
     QUADRATIC, I_QUADRATIC, SAWTOOTH,   
     CMD_REMOTE_SETPOINT,
     CMD_OPENLOOP_REMOTE,
@@ -153,13 +161,11 @@ typedef enum {                            //!< Enumeration for switch-by-string 
     /** 
      * @brief      { item_description }CMD_MATLAB_LINK
      *
-     * # c c c : = F F F F  d  d  A ..16x.. A
-     * #mat:=25~~0~
+     * \# c c c : = F F F F  d  d  A ..16x.. A
+     * \#mat:=25~~0~
      *
      */
     CMD_MATLAB_LINK
-    /**< Quadratic: testsignal zum vergleich mit Üersichtsblatt "Was für Regler notwendig um quadratischen sollwertverl...". (siehe Vorlesung H. Brunner) 
-     */
 } WavItems_t;
 
 
@@ -233,7 +239,7 @@ typedef enum {
  * @brief      Global state structure definition.
  */
 struct global {
-    uint32_t        lookAt;         //! Integer multiple of @SAMPLE_TIME.
+    uint32_t        lookAt;         //! Integer multiple of SAMPLE_TIME.
                                     //! @note       Use it as interval counter for lookup table index
                                     //!             increments.
     MiscItem_t      miscReq;        //! Holds the misc command requested by serial interface.
@@ -256,7 +262,6 @@ struct global {
 };  
 
 /** @} */
-
 
 /**
  * @addtogroup Main_Variables

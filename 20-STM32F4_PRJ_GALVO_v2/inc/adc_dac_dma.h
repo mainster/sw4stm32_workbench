@@ -53,7 +53,18 @@
  */
 
 /**
- * @addtogroup APP_Analog
+ * @defgroup   analog Analog subsystem
+ *
+ * The physical unit of process or plant output states to be an angular
+ * displacement, measured in @si{rad}. The position demodulator electronics
+ * encodes the angle values into a proportional voltage signal. After the signal
+ * conditioning circuits (anti-aliasing, biasing, etc), this signal is fed to
+ * the ADCs. The ideal transfer function from rotor position to the ADC input
+ * voltage, can be expressed as gain @tex{K_{PD}} with the unit @si{V/rad}.
+ */
+
+/**
+ * @addtogroup analog
  * @{
  */
 

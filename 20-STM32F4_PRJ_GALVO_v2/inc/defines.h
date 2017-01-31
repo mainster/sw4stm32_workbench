@@ -40,9 +40,10 @@
 /**
  * @def KEIL_IDE
  * @ingroup    flags
+ * @brief      Select compiler.
  *
- * Compiler flag to tell if KEIL uVision IDE is used for the build process. For
- * GCC, this flag has to be #undef'ed.
+ *             Compiler flag to tell if KEIL uVision IDE is used for the build
+ *             process. For GCC, this flag has to be @#undef'ed.
  */
 #ifndef     KEIL_IDE
   #define     KEIL_IDE
