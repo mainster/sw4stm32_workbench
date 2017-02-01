@@ -10,7 +10,7 @@
  *
  * @brief       Controlling beam and primary actuators.
  *
- * @verbatim
+   @verbatim
 
 	------------------------------------------------------------------------
 
@@ -33,57 +33,14 @@
  * @endverbatim
  *
  */
-
-/* Includes */
 #include "actuators.h"
 #include "globals.h"
 
-/**
- * @addtogroup MD_APP
- * @{
- */
-
-/**
- * @addtogroup _Macros
- * @{
- */
-
-/**
- * @addtogroup _Typedefs
- * @{
- */
-
-/**
- * @addtogroup _Variables
- * @{
- */
-
-/**
- * @addtogroup _Functions
- * @{
- */
-
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-
-
-//extern autoSaveSystem_t ASG;
 autoSaveSystem_t ASG;
 
 extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
-/** 
- * @brief   Set beam control source and new state
- */ 
+
 int beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) {
     float test = ASG.lowerVal;
     
@@ -106,7 +63,6 @@ int beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) {
     
     return -1;
 }
-
 
 
 int updateActuator_f(float I_set_x, float I_set_y) {

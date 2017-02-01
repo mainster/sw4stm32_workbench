@@ -63,12 +63,12 @@
 #include "tools.h"
 
 /**
- * @addtogroup MD_APP
+ * @addtogroup MD_APP Application
  * @{
  */
 
 /**
- * @addtogroup APP_Main
+ * @addtogroup APP_Main Main
  * @{
  */
 

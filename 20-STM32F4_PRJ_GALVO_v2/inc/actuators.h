@@ -169,8 +169,7 @@ typedef struct {
  * @addtogroup  Actuators_Guarding
  * @brief       This group includes all functions related to safety and
  *              guarding.
- *
- * @par ASG -   @{
+ *              @{
  */
 
 /**
@@ -197,7 +196,7 @@ typedef struct {
 int updateActuator_f(float I_set_x, float I_set_y);
 
 /**
- * @brief      Set beam control source and new state
+ * @brief      Set beam control source and new state.
  *
  * @param[in]  src        The beam control source
  * @param[in]  newState   The new state

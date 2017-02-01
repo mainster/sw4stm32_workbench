@@ -36,43 +36,6 @@
 #include "arm_math.h"
 #include "globals.h"
 
-/**
- * @addtogroup MD_APP
- * @{
- */
-
-/**
- * @addtogroup _Macros
- * @{
- */
-
-/**
- * @addtogroup _Typedefs
- * @{
- */
-
-/**
- * @addtogroup _Variables
- * @{
- */
-
-/**
- * @addtogroup _Functions
- * @{
- */
-
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-
 //#define IDX_CMD     1       // index 0 is @ or ! or #
 //#define IDX_VAL     5   // index 5
 //
