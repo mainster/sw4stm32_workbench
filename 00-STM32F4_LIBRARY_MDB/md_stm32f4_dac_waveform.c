@@ -1,12 +1,6 @@
 ﻿#include "md_stm32f4_dac_waveform.h"
 
-/**
- * @brief      DAC Channel SineWave Configuration.
- *
- * @param      DACx          The DAC channel to use.
- * @param[in]  NewStateDAC   The new state dac.
- * @param[in]  NewStateDMA   The new state dma.
- */
+
 void DAC_CHx_DMA_SineWaveConfig(MD_DAC_Channel_t DACx,
 								FunctionalState NewStateDAC,
 								FunctionalState NewStateDMA) {
@@ -63,11 +57,7 @@ void DAC_CHx_DMA_SineWaveConfig(MD_DAC_Channel_t DACx,
 	//  DAC_DMACmd(DAC_Channel_2, ENABLE);
 }
 
-/**
- * @brief      DAC Channel1 Escalator Configuration
- *
- * @param      DACx   The DAC channel to use.
- */
+
 void DAC_CHx_EscalatorConfig(MD_DAC_Channel_t DACx) {
 	uint32_t DAC_DHR8Rx_ADDRESS = 0;
 
@@ -123,7 +113,7 @@ void DAC_CHx_EscalatorConfig(MD_DAC_Channel_t DACx) {
 }
 
 /**
- * @brief      DAC Channels triangle configuration
+ * @brief      DAC Channel triangle configuration
  *
  * @param      DACx   The DAC channel to use.
  */

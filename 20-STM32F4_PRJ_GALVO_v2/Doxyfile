@@ -239,10 +239,10 @@ TAB_SIZE               = 4
 # newlines.
 
 ALIASES                = "sideeffect=@par Side Effects:\n" \
-                         "email=@b E-Mail: @b" \
-                         "ide=@b IDE: @b " \
-                         "license=@par License: @b" \
-                         "stdperiph=@par StdPeriph: @b" \
+                         "email=<br> E-Mail: " \
+                         "ide=@b IDE: " \
+                         "license=@par License: " \
+                         "stdperiph=@par StdPeriph: " \
                          "si{1}=@f$\bigl[  \1  \bigr]@f$" \
                          "SI{1}=<br><em>SI-Unit: </em> @f$[\1]@f$" \
                          tex{1}="@f$\1@f$" \

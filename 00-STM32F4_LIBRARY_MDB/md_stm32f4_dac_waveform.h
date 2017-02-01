@@ -119,39 +119,41 @@ DMA_InitTypeDef     DMA_InitStructure;
  */
 
 /**
- * @brief      Configuration method  
+ * @brief      DAC Channel SineWave Configuration.
  *
- * @param[in]  DACx          The da cx
- * @param[in]  NewStateDAC   The new state dac
- * @param[in]  NewStateDMA   The new state dma
+ * @param      DACx          The DAC channel to use.
+ * @param[in]  NewStateDAC   The new state dac.
+ * @param[in]  NewStateDMA   The new state dma.
  */
 void DAC_DMA_SineWaveConfig(MD_DAC_Channel_t DACx,
                             FunctionalState NewStateDAC, 
                             FunctionalState NewStateDMA);
 
 /**
- * @brief      DAC Channels noise config
+ * @brief      DAC Channel Escalator Configuration
  *
- * @param[in]  DACx   The da cx
+ * @param      DACx   The DAC channel to use.
+ */
+void DAC_CHx_EscalatorConfig(MD_DAC_Channel_t DACx);
+
+/**
+ * @brief      DAC  Channel1 Noise Configuration
+ *
+ * @param      DACx          The DAC channel to use.
  */
 void DAC_Chx_NoiseConfig(MD_DAC_Channel_t DACx);
 
 /**
- * @brief      { function_description }
+ * @brief      DAC Channel triangle configuration
  *
- * @param[in]  DACx   The da cx
+ * @param      DACx   The DAC channel to use.
  */
 void DAC_TriangleConfig(MD_DAC_Channel_t DACx);
 
-// *
-//  * @brief      { function_description }
-//  *
-//  * @param[in]  DACx   The da cx
- 
-// void DAC_Chx (MD_DAC_Channel_t DACx);
+/** @} */
 
 /** @} */
-/** @} */
+
 /** @} */
 
 #endif

@@ -296,7 +296,7 @@ void resetPID(void) {
 double lastVal = 0;
 
 /**< Check Architecture */
-#define __TARGET_ARCH_ARM       0
+#define __TARGET_ARCH_ARM
 
 /**
  * @brief      USART Pinout select enumeration.
@@ -305,10 +305,10 @@ double lastVal = 0;
  *             TM_USART_InitCustomPinsCallback.
  */
 typedef enum {
-	TM2_USART_PinsPack_1, /*!< Select PinsPack1 from Pinout table for specific USART */
-	TM2_USART_PinsPack_2, /*!< Select PinsPack2 from Pinout table for specific USART */
-	TM2_USART_PinsPack_3, /*!< Select PinsPack3 from Pinout table for specific USART */
-	TM2_USART_PinsPack_Custom /*!< Select custom pins for specific USART, callback will be called */
+	TM2_USART_PinsPack_1,      /*!< Select PinsPack1 from Pinout table for specific USART */
+	TM2_USART_PinsPack_2,      /*!< Select PinsPack2 from Pinout table for specific USART */
+	TM2_USART_PinsPack_3,      /*!< Select PinsPack3 from Pinout table for specific USART */
+	TM2_USART_PinsPack_Custom  /*!< Select custom pins for specific USART, callback will be called */
 } TM2_USART_PinsPack_t;
 
 /**

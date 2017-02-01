@@ -31,8 +31,8 @@
  *
  */
 
-#ifndef ADC_DAC_DMA_H_
-#define ADC_DAC_DMA_H_
+#ifndef _ADC_DAC_DMA_H_
+#define _ADC_DAC_DMA_H_
 
 #include "globals.h"
 #include "nvic_config.h"
@@ -52,14 +52,21 @@
  */
 
 /**
- * @defgroup   analog Analog subsystem
+ * @defgroup   analog Analog Subsystem
  *
- * The physical unit of process or plant output states to be an angular
- * displacement, measured in @si{rad}. The position demodulator electronics
- * encodes the angle values into a proportional voltage signal. After the signal
- * conditioning circuits (anti-aliasing, biasing, etc), this signal is fed to
- * the ADCs. The ideal transfer function from rotor position to the ADC input
- * voltage, can be expressed as gain @tex{K_{PD}} with the unit @si{V/rad}.
+ * @par Analog to digital converter:
+ *     The physical unit of the process or plant outputs states to be an angular
+ *     displacement, measured in @si{rad}. The position demodulator electronics
+ *     encodes the angle values into a proportional voltage signal. After the
+ *     signal conditioning circuits (anti-aliasing, biasing, etc), this signal
+ *     is fed to the ADCs. The ideal transfer function from rotor position to
+ *     the ADC input voltage, can be expressed as gain @tex{K_{PD}} with the
+ *     unit @si{V/rad}.
+ *
+ * @par Digital to analog converter:
+ *     An important factor in choosing the appropriate controller was the
+ *     integrated dual channel DAC peripheral. Two instances of digital PID
+ *     controllers are used to calculate the analog actuator control signals.
  */
 
 /**

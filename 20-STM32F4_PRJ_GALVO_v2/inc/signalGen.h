@@ -2,7 +2,7 @@
  * @file        signalGen.h
  *
  * @date
- * @author      Manuel Del Basso ()
+ * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
  * @ide         System Workbench ac6 (eclipse stm32)
