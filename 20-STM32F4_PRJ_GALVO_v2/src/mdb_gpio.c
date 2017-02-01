@@ -11,7 +11,7 @@
  *
  * @brief       DESCRIPTION
  *
- * @verbatim
+   @verbatim
 
 	Copyright (C) 2016	Manuel Del Basso
 
@@ -32,8 +32,9 @@
  */
  #include "mdb_gpio.h"
 
-/**< Declaration of all used GPIOs
- * Needs to be ordered like in typedef GPIO_NAME_t 
+/**
+ * @brief      Declaration of all used GPIOs Needs to be ordered like in typedef
+ *             GPIO_NAME_t
  */
 MDB_GPIO_t  MDB_GPIO[] = {
   { LED_GREEN_A,      GPIOG,  GPIO_Pin_13,  GPIO_Mode_OUT, GPIO_Speed_50MHz,  GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOG, GPIO_OFF},   
@@ -74,7 +75,8 @@ void MDB_GPIO_BeamPin(MDB_GPIO_NAME_t name, MDB_GPIO_DRIVER_STATE_t newState) {
     GPIO_Init(MDB_GPIO[name]._GPIO_PORT, &GPIO_InitStructure);
 }
 
-/**< Init all GPIOs listed in MDB_GPIO[]array
+/**
+ * @brief      Initialize all GPIOs from MDB_GPIO.
  */
 void MDB_GPIO_Init(void) {
   GPIO_InitTypeDef  GPIO_InitStructure;

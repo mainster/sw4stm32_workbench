@@ -54,20 +54,24 @@
 /**
  * @addtogroup  APP_Actuators
  * @brief       Provides actuator related update and configuration methods.
+ * @{
  *
  * @par Refreshable actuators:
  * @li          Variable current sources to drive the Galvo coils.
- * @li          Laser-beam interrupter @{
+ * @li          Laser-beam interrupter 
  */
 
 /**
  * @defgroup   ASG Actuator Safestate Guard (ASG)
+ * @brief      The ASG system is designed to protect the output drivers from
+ *             overload in case of actuator blocking states
  *
- * The ASG system is designed to protect the output drivers from overload in
- * case of actuator blocking states. The prototype electronics also includes
- * coil current measurement hardware to provide actuator current feedback. In a
- * project milestone to be planned for later, the implementation of a
- * model-driven compensator (state space model) is being considered.
+ *             The ASG system is designed to protect the output drivers from
+ *             overload in case of actuator blocking states. The prototype
+ *             electronics also includes coil current measurement hardware to
+ *             provide actuator current feedback. In a project milestone to be
+ *             planned for later, the implementation of a model-driven
+ *             compensator (state space model) is being considered.
  */
 
 /**
@@ -157,7 +161,8 @@ typedef struct {
 
 /**
  * @addtogroup  Actuators_Functions
- * @brief       Actuator function definitions. @{
+ * @brief       Actuator function definitions. 
+ * @{
  */
 
 /**

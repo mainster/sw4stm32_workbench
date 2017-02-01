@@ -134,18 +134,19 @@ typedef enum {
 } MDB_GPIO_DRIVER_STATE_t;
 
 /**
- * @brief      GPIO structure
+ * @brief      User level "per-GPIO" typedf to realize a "per GPIO"
+ *             configuration array MDB_GPIO.
  */
 typedef struct {
-  const uint16_t      _GPIO_PIN;       //!< GPIO Pin address
-  const uint32_t      _GPIO_AHB_CLK;   //!< GPIO AHB peripheral clock source 
-  GPIO_TypeDef*       _GPIO_PORT;      //!< GPIO Port
-  GPIOMode_TypeDef    _GPIO_Mode;
-  GPIOOType_TypeDef   _GPIO_OType;
-  GPIOPuPd_TypeDef    _GPIO_PuPd;
-  GPIOSpeed_TypeDef   _GPIO_Speed;
-  MDB_GPIO_NAME_t     _GPIO_NAME;      //!< GPIO name
-  MD_GPIO_STATE_t    _GPIO_INIT;      //!< GPIO initial state
+  const uint16_t      _GPIO_PIN;        //!< GPIO pin address.
+  const uint32_t      _GPIO_AHB_CLK;    //!< GPIO AHB peripheral clock source .
+  GPIO_TypeDef*       _GPIO_PORT;       //!< GPIO port pointer.
+  GPIOMode_TypeDef    _GPIO_Mode;       //!< GPIO mode.
+  GPIOOType_TypeDef   _GPIO_OType;      //!< GPIO output type.
+  GPIOPuPd_TypeDef    _GPIO_PuPd;       //!< GPIO pull resistor.
+  GPIOSpeed_TypeDef   _GPIO_Speed;      //!< GPIO driving strength.
+  MDB_GPIO_NAME_t     _GPIO_NAME;       //!< GPIO name
+  MD_GPIO_STATE_t     _GPIO_INIT;       //!< Initial GPIO state
 } MDB_GPIO_t;
 
 /** @} */

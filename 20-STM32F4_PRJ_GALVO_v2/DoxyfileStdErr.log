@@ -1,37 +1,37 @@
 
-stm32f4xx_it.h' supplied as the second argument in the \file statement is not an input file
+
+  parameter 'DACx'
+  parameter 'stType'
+' for \link command
+adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
+isr_callbacks.c:147: warning: Illegal command ref as part of a title section
 md_stm32f4_disco.h:170: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonPressed()
-md_stm32f4_disco.h:85: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonInit(void)
 md_stm32f4_disco.h:179: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonOnPressed(void)
 md_stm32f4_disco.h:188: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonOnReleased(void)
+md_stm32f4_disco.h:85: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonInit(void)
 md_stm32f4_gpio.h:180: warning: unable to resolve reference to `MD_GPIO_Mode_t' for \ref command
 md_stm32f4_gpio.h:192: warning: argument 'GPIO_Mode' of command @param is not found in the argument list of MD_GPIO_InitAlternate(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t AltFunct)
 md_stm32f4_gpio.h:194: warning: unable to resolve reference to `MD_GPIO_Mode_t' for \ref command
-' for \link command
-
-stm32f4xx_it.c:107: warning: argument 'None' of command @param is not found in the argument list of BusFault_Handler(void)
-stm32f4xx_it.c:142: warning: argument 'None' of command @param is not found in the argument list of DebugMon_Handler(void)
-stm32f4xx_it.c:81: warning: argument 'None' of command @param is not found in the argument list of HardFault_Handler(void)
-stm32f4xx_it.c:94: warning: argument 'None' of command @param is not found in the argument list of MemManage_Handler(void)
-stm32f4xx_it.c:72: warning: argument 'None' of command @param is not found in the argument list of NMI_Handler(void)
-stm32f4xx_it.c:151: warning: argument 'None' of command @param is not found in the argument list of PendSV_Handler(void)
-stm32f4xx_it.c:133: warning: argument 'None' of command @param is not found in the argument list of SVC_Handler(void)
-stm32f4xx_it.c:160: warning: argument 'None' of command @param is not found in the argument list of TimingDelay_Decrement(void)
-stm32f4xx_it.c:120: warning: argument 'None' of command @param is not found in the argument list of UsageFault_Handler(void)
-  parameter 'DACx'
-adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
-signalGen.c:9: warning: Found unknown command `\packs'
-isr_callbacks.c:147: warning: Illegal command ref as part of a title section
-signalGen.c:9: warning: Found unknown command `\packs'
-pid.h:363: warning: argument 'Kp' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
-pid.h:363: warning: argument 'Ki' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
-pid.h:363: warning: argument 'Kd' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
 pid.h:321: warning: argument 'type' of command @param is not found in the argument list of pid_Init(float Kp, float Ki, float Kd, uint16_t setTf, uint16_t setTs, struct PID_DATA *pid, PID_StructType_t stType)
 pid.h:328: warning: unable to resolve reference to `PID_struct_type' for \ref command
-  parameter 'stType'
 pid.h:355: warning: unable to resolve reference to `PID_struct_type' for \ref command
-system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
+pid.h:363: warning: argument 'Kd' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
+pid.h:363: warning: argument 'Ki' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
+pid.h:363: warning: argument 'Kp' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
+signalGen.c:9: warning: Found unknown command `\packs'
+signalGen.c:9: warning: Found unknown command `\packs'
+stm32f4xx_it.c:107: warning: argument 'None' of command @param is not found in the argument list of BusFault_Handler(void)
+stm32f4xx_it.c:120: warning: argument 'None' of command @param is not found in the argument list of UsageFault_Handler(void)
+stm32f4xx_it.c:133: warning: argument 'None' of command @param is not found in the argument list of SVC_Handler(void)
+stm32f4xx_it.c:142: warning: argument 'None' of command @param is not found in the argument list of DebugMon_Handler(void)
+stm32f4xx_it.c:151: warning: argument 'None' of command @param is not found in the argument list of PendSV_Handler(void)
+stm32f4xx_it.c:160: warning: argument 'None' of command @param is not found in the argument list of TimingDelay_Decrement(void)
+stm32f4xx_it.c:72: warning: argument 'None' of command @param is not found in the argument list of NMI_Handler(void)
+stm32f4xx_it.c:81: warning: argument 'None' of command @param is not found in the argument list of HardFault_Handler(void)
+stm32f4xx_it.c:94: warning: argument 'None' of command @param is not found in the argument list of MemManage_Handler(void)
+stm32f4xx_it.h' supplied as the second argument in the \file statement is not an input file
 system_stm32f4xx.c:412: warning: argument 'None' of command @param is not found in the argument list of SystemInit(void)
+system_stm32f4xx.c:412: warning: argument 'None' of command @param is not found in the argument list of SystemInit(void)
+system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
+system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
 system_stm32f4xx.c:558: warning: argument 'None' of command @param is not found in the argument list of SetSysClock(void)
-system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
-system_stm32f4xx.c:412: warning: argument 'None' of command @param is not found in the argument list of SystemInit(void)

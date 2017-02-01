@@ -62,7 +62,7 @@
  */
 
 /**
- * @addtogroup APP_Pid_Macros
+ * @addtogroup Pid_Macros
  * @brief      PID methods related macro definitions. @{
  */
 
@@ -107,7 +107,7 @@
 /** @} */ 	/* PID_Macros */
 
 /**
- * @addtogroup APP_Pid_Variables
+ * @addtogroup Pid_Variables
  * @brief      PID compensator variables. @{
  */
 
@@ -143,7 +143,7 @@ TF_INIT = 0;
 /** @} */ 	/* PID_Variables */
 
 /**
- * @addtogroup  APP_Pid_Typedefs
+ * @addtogroup  Pid_Typedefs
  * @brief       PID method type definitions. @{
  */
 
@@ -324,7 +324,7 @@ extern struct PID_DATA	 pidDataX, pidDataY;
 /** @} */ 	/* PID_Typedefs */
 
 /**
- * @addtogroup APP_Pid_Functions
+ * @addtogroup Pid_Functions
  * @brief    	PID functions and methods.
  * @{
  */

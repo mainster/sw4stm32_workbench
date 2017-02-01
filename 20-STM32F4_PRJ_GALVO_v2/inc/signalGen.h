@@ -55,11 +55,7 @@
  */
 #define N_TUPEL   3
 
-/**
- * @brief      Vector count macro definition.
- * 
- * Defines the number of 
- */
+/** @} */
 
 /**
  * @addtogroup Signal_Gen_Typedefs
@@ -79,55 +75,12 @@ struct triangWave {
     float       derivate;   /**< derivative to increase V-DAC by Amplitude after n Timer Ovf's */
 };
 
+/** @} */
+
 /**
- * @addtogroup Signal_Gen_Variables
+ * @addtogroup Signal_Gen_Arrays
  * @{
  */
-
-/**
- * @brief      External defined triangWave structure. 
- */
-extern struct triangWave triStruct;
-
-/**
- * @brief      DAC values sequence pointer.
- *
- *             This pointer is used in case of enabled waveform generator and
- *             provides dynamically switching between different waveforms.
- */
-static int16_t *pSeq = NULL;
-
-/**
- * @brief      DAC values sequence pointer for float represented waveform buffers.
- *
- *             This pointer is used in case of enabled waveform generator and
- *             provides dynamically switching between different waveforms.
- */
-static float *pSeq_f = NULL;
-
-/**
- * Feature in progress.
- * TODO: Implement.
- */
-static unsigned short cSeq __attribute__ ((unused));        
-
-/** @} */
-
-
-/**
- * @addtogroup Signal_Gen_Functions
- * @{
- */
-
-
-/** @} */
-
-/** @} */
-
-/** @} */
-
-
-
 
 /* TODO */
 static int16_t Cosine[] __attribute__ ((unused)) = {
@@ -138,7 +91,7 @@ static int16_t Cosine[] __attribute__ ((unused)) = {
 /* TODO */
 static float CosineN[ ] __attribute__ ((unused)) = {
     0, 4.338837e-01, 7.818315e-01, 9.749279e-01,
-	9.749279e-01, 7.818315e-01, 4.338837e-01, 1.224647e-16
+    9.749279e-01, 7.818315e-01, 4.338837e-01, 1.224647e-16
 };
 
 
@@ -169,10 +122,6 @@ static uint8_t interrupterBuff[] = { 0, 1, 0, 1 };
 
 /* TODO */
 static float squarewaveBuff[] __attribute__ ((unused)) =     { 1, -1, '\0' };
-
-/* TODO */
-static uint8_t *pInt __attribute__ ((unused)) = &interrupterBuff[0];
-
 
 // extern uint16_t vectorCtr;
 
@@ -217,12 +166,61 @@ static float line2[ ][N_TUPEL] __attribute__ ((unused)) = {
     {0.000000, 1.000000, 0.000000}
 };
 
+/** @} */
 
-    /** @} */
+/**
+ * @addtogroup Signal_Gen_Variables
+ * @{
+ */
 
-    /** @} */
+/**
+ * @brief      External defined triangWave structure.
+ */
+extern struct triangWave triStruct;
 
-    /** @} */
+/**
+ * @brief      DAC values sequence pointer.
+ *
+ *             This pointer is used in case of enabled waveform generator and
+ *             provides dynamically switching between different waveforms.
+ */
+static int16_t *pSeq = NULL;
+
+/**
+ * @brief      DAC values sequence pointer for float represented waveform buffers.
+ *
+ *             This pointer is used in case of enabled waveform generator and
+ *             provides dynamically switching between different waveforms.
+ */
+static float *pSeq_f = NULL;
+
+/**
+ * Feature in progress.
+ * TODO: Implement.
+ */
+static unsigned short cSeq __attribute__ ((unused));
+
+/**
+ * @brief      Signal generator Integer array pointer.
+ */
+static uint8_t *pInt __attribute__ ((unused)) = &interrupterBuff[0];
+
+/** @} */
+
+/**
+ * @addtogroup Signal_Gen_Functions
+ * @{
+ */
+
+/** @} */
+
+
+
+
+
+/** @} */
+
+/** @} */
 
 #endif
     

@@ -97,10 +97,10 @@ PUTCHAR_PROTOTYPE {
 // ==============================================================
 //                         Prototypes
 // ==============================================================
-void gpio_init(void) __attribute__ ((unused));
+// void gpio_init(void) __attribute__ ((unused));
 void fastConsoleCase(arm_pid_instance_f32 *pid);
-int updateActuator_f(float I_set_x, float I_set_y) __attribute__ ((unused));
-int beamCtrl(beamCtrlSource_t src, tribool_state_t newState) __attribute__ ((unused));
+// int updateActuator_f(float I_set_x, float I_set_y) __attribute__ ((unused));
+// int beamCtrl(beamCtrlSource_t src, tribool_state_t newState) __attribute__ ((unused));
 void init_globalStructs(void);
 
 // void gpio_init_mco1(void);
@@ -295,8 +295,10 @@ void resetPID(void) {
 
 double lastVal = 0;
 
-/**< Check Architecture */
-#define __TARGET_ARCH_ARM
+/**
+ * @brief Check target architecture
+ */
+#define __TARGET_ARCH_ARM	0
 
 /**
  * @brief      USART Pinout select enumeration.
