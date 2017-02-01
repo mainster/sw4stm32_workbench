@@ -119,7 +119,7 @@ typedef enum {
 typedef enum {
   GPIO_OFF = 0,  
   GPIO_ON        
-} MDB_GPIO_STATE_t;
+} MD_GPIO_STATE_t;
 
 /**
  * @brief      GPIO modul driver state enumerations.
@@ -145,7 +145,7 @@ typedef struct {
   GPIOPuPd_TypeDef    _GPIO_PuPd;
   GPIOSpeed_TypeDef   _GPIO_Speed;
   MDB_GPIO_NAME_t     _GPIO_NAME;      //!< GPIO name
-  MDB_GPIO_STATE_t    _GPIO_INIT;      //!< GPIO initial state
+  MD_GPIO_STATE_t    _GPIO_INIT;      //!< GPIO initial state
 } MDB_GPIO_t;
 
 /** @} */
@@ -163,7 +163,7 @@ typedef struct {
  */
 
 void MDB_GPIO_Toggle(MDB_GPIO_NAME_t name);
-void MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MDB_GPIO_STATE_t newState);
+void MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MD_GPIO_STATE_t newState);
 void MDB_GPIO_On(MDB_GPIO_NAME_t name);
 void MDB_GPIO_Off(MDB_GPIO_NAME_t name);
 void MDB_GPIO_Init(void);

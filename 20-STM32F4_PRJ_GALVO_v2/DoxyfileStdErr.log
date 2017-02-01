@@ -18,16 +18,10 @@ stm32f4xx_it.c:151: warning: argument 'None' of command @param is not found in t
 stm32f4xx_it.c:133: warning: argument 'None' of command @param is not found in the argument list of SVC_Handler(void)
 stm32f4xx_it.c:160: warning: argument 'None' of command @param is not found in the argument list of TimingDelay_Decrement(void)
 stm32f4xx_it.c:120: warning: argument 'None' of command @param is not found in the argument list of UsageFault_Handler(void)
-adc-input-noise.html' for \link command
-defines.h:212: warning: Illegal command note as part of a \link
-defines.h:213: warning: Unexpected end of comment while inside link command
-
   parameter 'DACx'
 adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
 signalGen.c:9: warning: Found unknown command `\packs'
 isr_callbacks.c:147: warning: Illegal command ref as part of a title section
-isr_callbacks.c:149: warning: unable to resolve reference to `SETPOINT_Y_FLOAT' for \ref command
-isr_callbacks.c:149: warning: unable to resolve reference to `POS_Y_FLOAT' for \ref command
 signalGen.c:9: warning: Found unknown command `\packs'
 pid.h:363: warning: argument 'Kp' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)
 pid.h:363: warning: argument 'Ki' of command @param is not found in the argument list of PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode)

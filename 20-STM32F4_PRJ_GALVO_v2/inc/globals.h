@@ -209,7 +209,7 @@ typedef enum {
  *             (Spurious-Free Dynamic Range) must considered carefully when
  *             designing analog and/or digital filter stages. A good summary (or
  *             point of start) to that topic can be found under 
- *             @link http://www.analog.com/en/analog-dialogue/articles/adc-input-noise.html
+ *             http://www.analog.com/en/analog-dialogue/articles/adc-input-noise.html
  *             
  * @note       This evaluates to @f$2.5V/(2^12-1) = 610.5uV/dig@f$.
  */

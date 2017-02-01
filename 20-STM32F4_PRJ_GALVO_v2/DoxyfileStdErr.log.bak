@@ -8,9 +8,7 @@ tm_stm32f4_usart_dma.h:108: warning: missing title after \defgroup TM_USART_DMA_
 tm_stm32f4_usart_dma.h:166: warning: missing title after \defgroup TM_USART_DMA_Typedefs
 tm_stm32f4_usart_dma.h:176: warning: missing title after \defgroup TM_USART_DMA_Functions
 stm32f4xx_it.h' supplied as the second argument in the \file statement is not an input file
-main.h:121: warning: Compound items is not documented.
 signalGen.h:8: warning: Compound triangWave is not documented.
-main.h:212: warning: Compound DacLimit_t is not documented.
 signalGen.h:25: warning: documented symbol `static int16_t Cosine' was not declared or defined.
 signalGen.h:31: warning: documented symbol `static float CosineN' was not declared or defined.
 signalGen.h:37: warning: documented symbol `static int16_t calcTab' was not declared or defined.
@@ -26,17 +24,23 @@ adc_dac_dma.c:179: warning: Member AnalogWatchdog_Configuration(void) (function)
 adc_dac_dma.c:189: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
 adc_dac_dma.c:229: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
 adc_dac_dma.c:35: warning: Member ASG (variable) of file adc_dac_dma.c is not documented.
-adc_dac_dma.h:264: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:266: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:267: warning: Member AnalogWatchdog_Configuration(void) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:268: warning: Member ADC_Configuration(void) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:270: warning: Member ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:271: warning: Member ADC_ContScanMode_w_DMA(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:272: warning: Member ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:263: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:265: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:266: warning: Member AnalogWatchdog_Configuration(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:267: warning: Member ADC_Configuration(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:269: warning: Member ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:270: warning: Member ADC_ContScanMode_w_DMA(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:271: warning: Member ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
 arm_architect.h:49: warning: Member TARGET_ARCH_ARM[] (variable) of file arm_architect.h is not documented.
-defines.h:75: warning: Member hi (macro definition) of group Global_Macros is not documented.
-defines.h:76: warning: Member lo (macro definition) of group Global_Macros is not documented.
-defines.h:293: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
+console.c:566: warning: Member MISC_CMD_LENGTH (macro definition) of file console.c is not documented.
+console.c:672: warning: Member MiscCmds_t (typedef) of file console.c is not documented.
+console.c:36: warning: Member ticks (variable) of group IRQ_Handler_Variables is not documented.
+console.c:36: warning: Member items_list[] (variable) of file console.c is not documented.
+console.c:47: warning: Member itemsw_list[] (variable) of file console.c is not documented.
+console.c:64: warning: Member itemsm_list[] (variable) of file console.c is not documented.
+globals.h:75: warning: Member hi (macro definition) of group Global_Macros is not documented.
+globals.h:76: warning: Member lo (macro definition) of group Global_Macros is not documented.
+globals.h:293: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
 isr_callbacks.c:71: warning: Member __attribute__((unused)) (function) of group IRQ_Handler_Variables is not documented.
 isr_callbacks.h:78: warning: Member TIM2_IRQHandler(void) (function) of group IRQ_Handler_Functions is not documented.
 isr_callbacks.c:72: warning: Member PIDY (variable) of group IRQ_Handler_Variables is not documented.
@@ -71,7 +75,7 @@ main.c:631: warning: Member IDX_VAL (macro definition) of file main.c is not doc
 main.c:633: warning: Member UART_BUFF_SIZE (macro definition) of file main.c is not documented.
 main.c:634: warning: Member VALUE_BUFF_SIZE (macro definition) of file main.c is not documented.
 main.c:635: warning: Member CMD_BUFF_SIZE (macro definition) of file main.c is not documented.
-main.c:1140: warning: Member MISC_CMD_LENGTH (macro definition) of file main.c is not documented.
+main.c:1128: warning: Member MISC_CMD_LENGTH (macro definition) of file main.c is not documented.
 main.c:96: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group APP_Main is not documented.
 main.c:105: warning: Member gpio_init(void) (function) of group APP_Main is not documented.
 main.c:310: warning: Member resetPID(void) (function) of group APP_Main is not documented.
@@ -84,18 +88,10 @@ main.c:91: warning: Member PUTCHAR_PROTOTYPE (variable) of group APP_Main is not
 main.c:99: warning: Member ch (variable) of group APP_Main is not documented.
 main.c:279: warning: Member itemsw_list[] (variable) of group APP_Main is not documented.
 main.c:296: warning: Member itemsm_list[] (variable) of group APP_Main is not documented.
-main.h:100: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:101: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:102: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:104: warning: Member pidErr_x (macro definition) of group Main_Macros is not documented.
-main.h:105: warning: Member pidErr_y (macro definition) of group Main_Macros is not documented.
-main.h:106: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
-main.h:107: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
-main.h:116: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
-main.h:270: warning: Member g (variable) of group Main_Variables is not documented.
-main.h:272: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
-main.h:273: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
-main.h:274: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
+main.h:312: warning: Member g (variable) of group Main_Variables is not documented.
+main.h:314: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
+main.h:315: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
+main.h:316: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
 md_stm32f4_dac_waveform.h:100: warning: Member DAC_DHR12R2_ADDRESS (macro definition) of group General_Notes is not documented.
 md_stm32f4_dac_waveform.h:101: warning: Member DAC_DHR8R1_ADDRESS (macro definition) of group General_Notes is not documented.
 md_stm32f4_dac_waveform.h:102: warning: Member DAC_DHR8R2_ADDRESS (macro definition) of group General_Notes is not documented.
@@ -145,11 +141,11 @@ md_stm32f4_gpio.h:107: warning: Member GPIO_Pin_All (macro definition) of group 
 md_stm32f4_gpio.h:321: warning: Member MD_GPIO_Mode_t (typedef) of group MD_GPIO_Typedefs is not documented.
 md_stm32f4_gpio.h:145: warning: Member MD_GPIO_Mode2_t (enumeration) of group MD_GPIO_Typedefs is not documented.
 mdb_gpio.c:121: warning: Member MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
-mdb_gpio.c:128: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MDB_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
+mdb_gpio.c:128: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MD_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
 mdb_gpio.c:139: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
 mdb_gpio.c:155: warning: Member gpio_init_mco2(void) (function) of group GPIO_Functions is not documented.
 mdb_gpio.h:165: warning: Member MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
-mdb_gpio.h:166: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MDB_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
+mdb_gpio.h:166: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MD_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
 mdb_gpio.h:171: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
 mdb_gpio.h:172: warning: Member gpio_init_mco2(void) (function) of group GPIO_Functions is not documented.
 stm32_eval_legacy.h:44: warning: Member STM3220F_LCD_Init (macro definition) of file stm32_eval_legacy.h is not documented.
@@ -437,23 +433,19 @@ stm32f4xx_it.c:151: warning: argument 'None' of command @param is not found in t
 stm32f4xx_it.c:133: warning: argument 'None' of command @param is not found in the argument list of SVC_Handler(void)
 stm32f4xx_it.c:160: warning: argument 'None' of command @param is not found in the argument list of TimingDelay_Decrement(void)
 stm32f4xx_it.c:120: warning: argument 'None' of command @param is not found in the argument list of UsageFault_Handler(void)
-adc-input-noise.html' for \link command
-defines.h:212: warning: Illegal command note as part of a \link
-defines.h:213: warning: Unexpected end of comment while inside link command
-
-adc_dac_dma.h:264: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:266: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:267: warning: Member AnalogWatchdog_Configuration(void) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:268: warning: Member ADC_Configuration(void) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:270: warning: Member ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:271: warning: Member ADC_ContScanMode_w_DMA(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:272: warning: Member ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:273: warning: The following parameters of DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val) are not documented:
+adc_dac_dma.h:263: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:265: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:266: warning: Member AnalogWatchdog_Configuration(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:267: warning: Member ADC_Configuration(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:269: warning: Member ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:270: warning: Member ADC_ContScanMode_w_DMA(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:271: warning: Member ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:272: warning: The following parameters of DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val) are not documented:
   parameter 'DACx'
 adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
-defines.h:75: warning: Member hi (macro definition) of group Global_Macros is not documented.
-defines.h:76: warning: Member lo (macro definition) of group Global_Macros is not documented.
-defines.h:293: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
+globals.h:75: warning: Member hi (macro definition) of group Global_Macros is not documented.
+globals.h:76: warning: Member lo (macro definition) of group Global_Macros is not documented.
+globals.h:293: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
 isr_callbacks.c:71: warning: Member __attribute__((unused)) (function) of group IRQ_Handler_Variables is not documented.
 isr_callbacks.c:72: warning: Member PIDY (variable) of group IRQ_Handler_Variables is not documented.
 isr_callbacks.c:74: warning: Member setpoint_tgl (variable) of group IRQ_Handler_Variables is not documented.
@@ -467,8 +459,6 @@ isr_callbacks.c:82: warning: Member dir (variable) of group IRQ_Handler_Variable
 signalGen.c:9: warning: Found unknown command `\packs'
 isr_callbacks.h:78: warning: Member TIM2_IRQHandler(void) (function) of group IRQ_Handler_Functions is not documented.
 isr_callbacks.c:147: warning: Illegal command ref as part of a title section
-isr_callbacks.c:149: warning: unable to resolve reference to `SETPOINT_Y_FLOAT' for \ref command
-isr_callbacks.c:149: warning: unable to resolve reference to `POS_Y_FLOAT' for \ref command
 main.c:86: warning: Member PUTCHAR_PROTOTYPE (macro definition) of group APP_Main is not documented.
 main.c:321: warning: Member __TARGET_ARCH_ARM (macro definition) of group APP_Main is not documented.
 main.c:96: warning: Member while(USART_GetFlagStatus(USART1, USART_FLAG_TC)==RESET) (function) of group APP_Main is not documented.
@@ -479,25 +469,17 @@ main.c:91: warning: Member PUTCHAR_PROTOTYPE (variable) of group APP_Main is not
 main.c:99: warning: Member ch (variable) of group APP_Main is not documented.
 main.c:279: warning: Member itemsw_list[] (variable) of group APP_Main is not documented.
 main.c:296: warning: Member itemsm_list[] (variable) of group APP_Main is not documented.
-main.h:100: warning: Member POS_X_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:101: warning: Member POS_Y_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:102: warning: Member SETPOINT_Y_FLOAT (macro definition) of group Main_Macros is not documented.
-main.h:104: warning: Member pidErr_x (macro definition) of group Main_Macros is not documented.
-main.h:105: warning: Member pidErr_y (macro definition) of group Main_Macros is not documented.
-main.h:106: warning: Member toPlant_x (macro definition) of group Main_Macros is not documented.
-main.h:107: warning: Member toPlant_y (macro definition) of group Main_Macros is not documented.
-main.h:116: warning: Member CmdItem_t (enumeration) of group Main_Typedefs is not documented.
-main.h:270: warning: Member g (variable) of group Main_Variables is not documented.
-main.h:272: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
-main.h:273: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
-main.h:274: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
+main.h:312: warning: Member g (variable) of group Main_Variables is not documented.
+main.h:314: warning: Member setpoint_tgl (variable) of group Main_Variables is not documented.
+main.h:315: warning: Member pidErrBuff[2] (variable) of group Main_Variables is not documented.
+main.h:316: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
 main.c:73: warning: Member g (variable) of group Main_Variables is not documented.
 main.c:74: warning: Member vectorCtr (variable) of group Main_Variables is not documented.
 main.c:75: warning: Member dir (variable) of group Main_Variables is not documented.
 main.c:76: warning: Member ticks (variable) of group Main_Variables is not documented.
 signalGen.c:9: warning: Found unknown command `\packs'
 mdb_gpio.h:165: warning: Member MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
-mdb_gpio.h:166: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MDB_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
+mdb_gpio.h:166: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MD_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
 mdb_gpio.h:171: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
 mdb_gpio.h:172: warning: Member gpio_init_mco2(void) (function) of group GPIO_Functions is not documented.
 pid.h:67: warning: Member MAX_INT (macro definition) of group APP_Pid_Macros is not documented.

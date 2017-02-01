@@ -51,7 +51,7 @@
  *  - Bit-banging I/O access
  */
 #include "stm32f4xx.h"
-#include "stm32f4xx_gpio.h"
+//#include "stm32f4xx_gpio.h"
 
 /**
  * @addtogroup  MD_GPIO_Macros

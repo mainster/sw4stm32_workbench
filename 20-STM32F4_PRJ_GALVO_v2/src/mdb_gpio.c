@@ -125,7 +125,7 @@ void MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) {
 //--------------------------------------------------------------
 // LED ein- oder ausschalten
 //--------------------------------------------------------------
-void MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MDB_GPIO_STATE_t newState)
+void MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MD_GPIO_STATE_t newState)
 {
   if(newState == GPIO_OFF) {
     MDB_GPIO_Off(name);
