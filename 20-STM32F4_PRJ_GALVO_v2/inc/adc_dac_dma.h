@@ -195,7 +195,7 @@
  */
 
 /**
- * @brief      DAC output write functions return type enumerations
+ * @brief      DAC output write functions return type enumeration
  *
  *             Uused as return type of function pointer @ref
  *             DAC_SecureSetDualChanSigned(). Polling the return argument of

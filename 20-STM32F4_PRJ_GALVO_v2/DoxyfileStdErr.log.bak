@@ -213,14 +213,14 @@ md_stm32f4_gpio.h:98: warning: Member GPIO_Pin_7 (macro definition) of group MD_
 md_stm32f4_gpio.h:98: warning: Member GPIO_Pin_7 (macro definition) of group MD_GPIO_Macros is not documented.
 md_stm32f4_gpio.h:99: warning: Member GPIO_Pin_8 (macro definition) of group MD_GPIO_Macros is not documented.
 md_stm32f4_gpio.h:99: warning: Member GPIO_Pin_8 (macro definition) of group MD_GPIO_Macros is not documented.
-mdb_gpio.c:121: warning: Member MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
-mdb_gpio.c:128: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MD_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
+mdb_gpio.c:121: warning: Member MDB_GPIO_Toggle(MD_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
+mdb_gpio.c:128: warning: Member MDB_GPIO_Switch(MD_GPIO_NAME_t name, MD_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
 mdb_gpio.c:139: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
 mdb_gpio.c:155: warning: Member gpio_init_mco2(void) (function) of group GPIO_Functions is not documented.
-mdb_gpio.h:165: warning: Member MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
-mdb_gpio.h:165: warning: Member MDB_GPIO_Toggle(MDB_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
-mdb_gpio.h:166: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MD_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
-mdb_gpio.h:166: warning: Member MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MD_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
+mdb_gpio.h:165: warning: Member MDB_GPIO_Toggle(MD_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
+mdb_gpio.h:165: warning: Member MDB_GPIO_Toggle(MD_GPIO_NAME_t name) (function) of group GPIO_Functions is not documented.
+mdb_gpio.h:166: warning: Member MDB_GPIO_Switch(MD_GPIO_NAME_t name, MD_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
+mdb_gpio.h:166: warning: Member MDB_GPIO_Switch(MD_GPIO_NAME_t name, MD_GPIO_STATE_t newState) (function) of group GPIO_Functions is not documented.
 mdb_gpio.h:171: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
 mdb_gpio.h:171: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
 mdb_gpio.h:172: warning: Member gpio_init_mco2(void) (function) of group GPIO_Functions is not documented.

@@ -53,7 +53,7 @@
  */
 
 /**
- * @brief      Define the number of enumerated pins in MDB_GPIO_NAME_t  
+ * @brief      Define the number of enumerated pins in MD_GPIO_NAME_t  
  */
 #define   GPIO_COUNT   11
 
@@ -97,7 +97,7 @@
  */
 
 /**
- * @brief      GPIO port pin naming enumerations.
+ * @brief      GPIO port pin naming enumeration.
  */
 typedef enum {
   LED_GREEN_A       = 0,    //!< LED3 on STM32F429-Discovery.
@@ -111,10 +111,10 @@ typedef enum {
   ADC_Y_CHAN_IO     = 8,    //!< ADC AN PB0
   ADC_Ix_CHAN_IO    = 9,    //!< ADC AN PC3
   ADC_W_CHAN_IO     = 10,   //!< ADC AN PA3
-} MDB_GPIO_NAME_t;
+} MD_GPIO_NAME_t;
 
 /**
- * @brief      GPIO states enumerations.
+ * @brief      GPIO states enumeration.
  */
 typedef enum {
   GPIO_OFF = 0,  
@@ -122,7 +122,7 @@ typedef enum {
 } MD_GPIO_STATE_t;
 
 /**
- * @brief      GPIO modul driver state enumerations.
+ * @brief      GPIO output driver state enumeration.
  *
  * @attention  This type is safety related. To prevent unwanted
  *             beam-enabled-states in case of misspelled argument invocations on
@@ -131,7 +131,7 @@ typedef enum {
 typedef enum {
   GPIO_DRIVER_OFF = 0,  
   GPIO_DRIVER_ON        
-} MDB_GPIO_DRIVER_STATE_t;
+} MD_GPIO_DRIVER_STATE_t;
 
 /**
  * @brief      User level "per-GPIO" typedf to realize a "per GPIO"
@@ -145,7 +145,7 @@ typedef struct {
   GPIOOType_TypeDef   _GPIO_OType;      //!< GPIO output type.
   GPIOPuPd_TypeDef    _GPIO_PuPd;       //!< GPIO pull resistor.
   GPIOSpeed_TypeDef   _GPIO_Speed;      //!< GPIO driving strength.
-  MDB_GPIO_NAME_t     _GPIO_NAME;       //!< GPIO name
+  MD_GPIO_NAME_t      _GPIO_NAME;       //!< GPIO name
   MD_GPIO_STATE_t     _GPIO_INIT;       //!< Initial GPIO state
 } MDB_GPIO_t;
 
@@ -163,12 +163,12 @@ typedef struct {
  * @{
  */
 
-void MDB_GPIO_Toggle(MDB_GPIO_NAME_t name);
-void MDB_GPIO_Switch(MDB_GPIO_NAME_t name, MD_GPIO_STATE_t newState);
-void MDB_GPIO_On(MDB_GPIO_NAME_t name);
-void MDB_GPIO_Off(MDB_GPIO_NAME_t name);
+void MDB_GPIO_Toggle(MD_GPIO_NAME_t name);
+void MDB_GPIO_Switch(MD_GPIO_NAME_t name, MD_GPIO_STATE_t newState);
+void MDB_GPIO_On(MD_GPIO_NAME_t name);
+void MDB_GPIO_Off(MD_GPIO_NAME_t name);
 void MDB_GPIO_Init(void);
-void MDB_GPIO_BeamPin(MDB_GPIO_NAME_t name, MDB_GPIO_DRIVER_STATE_t newState);
+void MDB_GPIO_BeamPin(MD_GPIO_NAME_t name, MD_GPIO_DRIVER_STATE_t newState);
 void gpio_init_mco1(void);
 void gpio_init_mco2(void);
 

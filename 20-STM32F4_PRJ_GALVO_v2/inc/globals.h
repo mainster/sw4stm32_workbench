@@ -120,7 +120,7 @@
  */
 
 /**
- * @brief      TriBool enumerations.
+ * @brief      TriBool enumeration.
  */
 typedef enum {
     FALSE = 0,

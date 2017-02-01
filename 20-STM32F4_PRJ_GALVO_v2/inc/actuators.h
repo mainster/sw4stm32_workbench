@@ -121,7 +121,7 @@
  */
 
 /**
- * @brief		Beam control source types enumerations.
+ * @brief		Beam control source types enumeration.
  */
 typedef enum {
     BEAM_CTRL_SOURCE_GLOBAL,	//!< BEAM_CTRL_SOURCE_GLOBAL
@@ -129,7 +129,7 @@ typedef enum {
 } beamCtrlSource_t;
 
 /**
- * @brief      ASG Integrator state enumerations.
+ * @brief      ASG Integrator state enumeration.
  *
  *             To manipulate the fuse tripping transfer function (fuse
  *             characteristics) of the ASS, the process output to be secured, is
