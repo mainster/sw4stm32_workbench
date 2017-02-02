@@ -36,13 +36,12 @@
 #include "actuators.h"
 #include "globals.h"
 
-autoSaveSystem_t ASG;
+ActuatorSafestateGuard_t ASG;
 
 extern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
 
 int beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) {
-    float test = ASG.lowerVal;
     
     if ((src == BEAM_CTRL_SOURCE_GLOBAL) && (newState != DNI)) {
         printf("Error, Beam source can't be GLOBAL if new state is not DNI");
@@ -58,7 +57,9 @@ int beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) {
         MDB_GPIO_Switch(BEAM_INTERRUPT, newState);
         return 0;
     }
-    
+
+    /* FIXME: TEST */
+    float test = ASG.lowerVal;
     g.dutyCyc = test;
     
     return -1;

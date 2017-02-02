@@ -11,7 +11,7 @@
  *
  * @brief       Analog processing related callback handler definition.
  *
- * @verbatim
+   @verbatim
 
 	Copyright (C) 2016	Manuel Del Basso
 
@@ -74,13 +74,13 @@
  * @{
  */
 
-/* See implementation file for documentation comments. */
+/* See implementation file for documentation. */
 void TIM2_IRQHandler(void);
 
-/* See implementation file for documentation comments. */
+/* See implementation file for documentation. */
 void TIM4_IRQHandler(void);
 
-/* See implementation file for documentation comments. */
+/* See implementation file for documentation. */
 void ADC_IRQHandler(void);
 
 /** @} */

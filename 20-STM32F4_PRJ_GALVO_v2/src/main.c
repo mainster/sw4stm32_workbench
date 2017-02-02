@@ -227,7 +227,7 @@ __IO float ADC_fBuff[5];
 
 #define NO1 1
 
-extern autoSaveSystem_t ASG;
+extern ActuatorSafestateGuard_t ASG;
 
 /* ---------- */
 /* Used Timer */
@@ -393,8 +393,8 @@ int main(void) {
 	AnalogWatchdog_Configuration();
 
 	/**< Set threshold for analog watch dog */
-	ADC_AnalogWatchdogThresholdsConfig(ADC1, decode_toUint(ASG.upperVal + VA_BIAS),
-			decode_toUint(ASG.lowerVal + VA_BIAS));
+	ADC_AnalogWatchdogThresholdsConfig(ADC1,decode_toUint(ASG.upperVal + VA_BIAS),
+											decode_toUint(ASG.lowerVal + VA_BIAS));
 
 	/**< Transmit boot up message to UART1 */
 	char *tok;
@@ -1442,7 +1442,7 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 //            ASG.state = ASG_CHARGING_INTEGRATOR;
 //            printf("ASS:charging_start...\n");
 //        }
-//        if ((ASG.integrator <= ASG.lowerVal) || (ASG.integrator >= ASG.upperVal)) {   /**< check for integrator limit */
+//        if ((ASG.integrator <= ASG.intUpperLimit) || (ASG.integrator >= ASG.IntUpperLimit)) {   /**< check for integrator limit */
 //            if (! ASG.tripped) {
 //                ASG.tripped = 1;                    /**< Set "tripped" state if it is so */
 //                DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "ASG tripped" handler*/
@@ -1450,7 +1450,7 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 //            return;
 //        }
 //        else {                                  /**< else increment integrator */
-//            ASG.integrator+= ASG.upperVal * (double)TS*1e-6/(ASG.tripTime);
+//            ASG.integrator+= ASG.IntUpperLimit * (double)TS*1e-6/(ASG.tripTime);
 //        }
 //        return;
 //    }

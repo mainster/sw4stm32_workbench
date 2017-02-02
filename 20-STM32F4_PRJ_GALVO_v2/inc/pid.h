@@ -50,10 +50,13 @@
  */
 
 /**
- * @addtogroup APP_Pid
- * @brief      PID compensator implementation. @{
+ * @addtogroup  APP_Pid PID Compensator
+ * @brief       Proportional-Integral-Derivative compensator initialization and
+ *              calculation implementations. @{
  *
- *             PID implementation is used to handle control-loop functionality.
+ *              PID implementation provides Proportional-Integral-Derivative
+ *              compensation functionality and belongs to the closed loop
+ *              system.
  *
  * @par It provides functions for
  *      - pid instance initialization

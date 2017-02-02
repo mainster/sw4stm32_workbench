@@ -37,7 +37,6 @@
 									<listOptionValue builtIn="false" value="STM32F429ZITx"/>
 									<listOptionValue builtIn="false" value="STM32F429ZI"/>
 									<listOptionValue builtIn="false" value="__SOFTFP__"/>
-									<listOptionValue builtIn="false" value="NO_FPU"/>
 									<listOptionValue builtIn="false" value="ARM_MATH_CM4"/>
 									<listOptionValue builtIn="false" value="STM32F429I_DISC1"/>
 									<listOptionValue builtIn="false" value="STM32F4"/>
@@ -48,6 +47,7 @@
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.405069676" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false" valueType="undefDefinedSymbols">
 									<listOptionValue builtIn="false" value="KEIL_IDE"/>
+									<listOptionValue builtIn="false" value="NO_FPU"/>
 								</option>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.240025978" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.666066082" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>

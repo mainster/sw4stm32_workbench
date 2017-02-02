@@ -52,7 +52,7 @@
  */
 
 /**
- * @addtogroup  APP_Actuators Actuators_Typedefs 
+ * @addtogroup  APP_Actuators Actuators
  * @brief       Provides actuator related update and configuration methods.
  * @{
  *
@@ -121,41 +121,48 @@
  */
 
 /**
- * @brief		Beam control source types enumeration.
+ * @brief		Beam control source enumeration.
  */
 typedef enum {
-    BEAM_CTRL_SOURCE_GLOBAL,	//!< BEAM_CTRL_SOURCE_GLOBAL
-    BEAM_CTRL_SOURCE_MANUAL 	//!< BEAM_CTRL_SOURCE_MANUAL
+    BEAM_CTRL_SOURCE_GLOBAL,	//!< Global laser beam control source. 
+    BEAM_CTRL_SOURCE_MANUAL 	//!< Manuel laser beam control source.
 } beamCtrlSource_t;
 
 /**
  * @brief      ASG Integrator state enumeration.
  *
  *             To manipulate the fuse tripping transfer function (fuse
- *             characteristics) of the ASS, the process output to be secured, is
+ *             characteristics) of the ASG, the process output to be secured, is
  *             feded to an integrator which have to be controlled.
  */
 typedef enum {
     ASG_CHARGING_INTEGRATOR,   //!< ASG_CHARGING_INTEGRATOR
     ASG_DISCHARGING_INTEGRATOR,//!< ASG_DISCHARGING_INTEGRATOR
-    ASG_STATIONARY_INTEGRATOR  //!< ASG_STATIONARY_INTEGRATOR
-} ass_int_state_t;
+    ASG_STATIONARY_INTEGRATOR  //! < ASG_STATIONARY_INTEGRATOR
+} ASG_INT_STATE_t;
 
 
 /**
- * @brief      The Auto Safestate System provides a security layer to prevent
+ * @brief      The Actuator Safestate Guard provides a security layer to prevent
  *             thermal overloads.
  */
 typedef struct {
-    double  	integrator;  	//!< runtime integrator - holds the "amount" of overcurrent - states
+    /**
+     * @brief      ASG "Out-of-range" integrator variable.
+     *
+     *             Used to integrate the amount of "Out-of-range" watchdog
+     *             events occured.
+     */
+    double  	integrator;  	
+
     float   	lowerVal;    	//!< [V] Lower value ADC_f less than this value triggers the ass*/
     float   	safeVal;     	//!< [V] If ASG tripped, this output value becomes active*/
     float   	tripTime;    	//!< [ms] Time constant, used to change tripping characteristics at runtime
     float   	upperVal;    	//!< [V] Upper value ADC_f greater than this value triggers the ass*/
     uint8_t 	ack;        	//!< acknowlage tripped stat
     uint8_t 	tripped;    	//!< tripped != 0 if tripping is active
-    ass_int_state_t state;
-} autoSaveSystem_t;
+    ASG_INT_STATE_t state;      //!< ASG integrator state (See ASG_INT_STATE_t) 
+} ActuatorSafestateGuard_t;
 
 /** @} */
 

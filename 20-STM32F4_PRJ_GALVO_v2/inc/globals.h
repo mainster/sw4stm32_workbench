@@ -58,7 +58,7 @@
  */
 
 /**
- * @addtogroup APP_Global
+ * @addtogroup APP_Global Global Declarations
  * @{
  */
 
@@ -132,13 +132,6 @@ typedef enum {
 
 /**
  * @addtogroup Global_Variables
- * @{
- */
-
-/** @} */
-
-/**
- * @addtogroup Global_Functions
  * @{
  */
 

@@ -44,7 +44,7 @@
  */
 
 /**
- * @addtogroup APP_Helper
+ * @addtogroup APP_Helper Helper
  * @{
  */
 

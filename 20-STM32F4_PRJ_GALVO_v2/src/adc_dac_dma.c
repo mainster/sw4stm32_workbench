@@ -31,8 +31,8 @@
 #include "adc_dac_dma.h"
 
 
-//autoSaveSystem_t ASG;
-extern autoSaveSystem_t ASG;
+//ActuatorSafestateGuard_t ASG;
+extern ActuatorSafestateGuard_t ASG;
 
 /**
  * @addtogroup MD_APP
@@ -89,7 +89,7 @@ DAC_WP_t DAC_SetDualChanSigned(int16_t Data2, int16_t Data1) {
 
 /* ===========================================================================
  *  DAC_SetDualChanSigned_Tripped() defines the error condition function
- *  Point to this function if an ASS error conditon (i.e. Tripped) ocured
+ *  Point to this function if an ASG error conditon (i.e. Tripped) ocured
  * =========================================================================== */
 DAC_WP_t DAC_SetDualChanSigned_Tripped(int16_t dummy1, int16_t dummy2) {
   uint16_t data2, data1;

@@ -77,9 +77,8 @@ extern struct PID_DATA  pidDataX;
 extern struct PID_DATA  pidDataY; 
 extern float ADC_fBuff[5];  
 extern int16_t ADC_MultiConvBuff[5];     
-extern autoSaveSystem_t ASG;
+extern ActuatorSafestateGuard_t ASG;
 extern uint32_t ticks;
-//extern int8_t dir;
 
 static uint16_t vectorCtr = 0;
 static int8_t dir = 1;
@@ -234,11 +233,6 @@ void DMA2_Stream0_IRQHandler(void) {
 }
 
 
-// ==============================================================
-//     IRQ callback:    ADC end-of-conversion 
-//                      Analog Watchdog IRQ
-// ==============================================================
-
 /**
  * @brief      Analog to digital converter IRQ callback handler.
  *
@@ -258,40 +252,68 @@ void ADC_IRQHandler(void) {
 		ADC_ClearITPendingBit(ADC1, ADC_IT_EOC);
 		/* End of conversion interrupt occured */
 
+		while (1);;
 		//        /* Error state */
 		//        MD_DISCO_LedOn(LED_ALL);
 		//        uint16_t W_now = ADC_MultiConvBuff[1];   // setpoint (Isens_y)
-		while (1);;
 		//        return;
 	}
 
 
-	/* Analog watchdog interrupt occured */
+	/**
+	 * @addtogroup  ASG Analog Watchdog
+	 * @brief       Check if an analog watchdog interrupt has been requested.
+	 *
+	 *              In case of an analog watchdog interrupt has occured, it must
+	 *              be determined wether if the ASG systems fuse has to be
+	 *              triggerd or if only the out-of-range integrator must be
+	 *              partially charged. @{
+	 */
 	if (ADC_GetFlagStatus(ADC1, ADC_FLAG_AWD) == SET) {
 		ADC_ClearITPendingBit(ADC1, ADC_IT_AWD);
-		if ((ASG.state == ASG_STATIONARY_INTEGRATOR) ||
-				(ASG.state == ASG_DISCHARGING_INTEGRATOR)) {
-			ASG.state = ASG_CHARGING_INTEGRATOR;
-			printf("ASS:charging_start...\n");
-		}
+		
 		/**
-		 * @brief      Check ASG for integrator limit */
-		if ((ASG.integrator <= ASG.lowerVal) || (ASG.integrator >= ASG.upperVal)) {
+		 * @brief      Check ASG out-of-range integrator for limit violations in upper and lower direction.
+		 */
+		if ((ASG.integrator <= ASG.lowerVal) ||
+			(ASG.integrator >= ASG.upperVal)) {
 			if (! ASG.tripped) {
-				ASG.tripped = 1;                    /**< Set "tripped" state if it is so */
-				DAC_SecureSetDualChanSigned = \
-						&DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "ASG tripped" handler*/
+
+				/**
+				 * @brief      Set ASG into "tripped" state.
+				 */
+				ASG.tripped = 1;
+
+				/**
+				 * @brief      Swap DAC output-register-write function pointer
+				 *             reference to the "ASG tripped" handler
+				 *             DAC_SetDualChanSigned_Tripped 
+				 */
+				DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned_Tripped;  
 			}
 			return;
 		}
-		else {                                  /**< else increment integrator */
+		else {
+			/**
+			 * @brief      If the ASG system isn't already registered to integrate
+			 *             in direction ASG_CHARGING_INTEGRATOR, alter the  ASG
+			 *             state correspondingly.
+			 */
+			if ((ASG.state == ASG_STATIONARY_INTEGRATOR) ||
+				(ASG.state == ASG_DISCHARGING_INTEGRATOR)) {
+				ASG.state = ASG_CHARGING_INTEGRATOR;
+				printf("ASS:charging_start...\n");
+			}
+
 			ASG.integrator+= ASG.upperVal * (double)TS*1e-6/(ASG.tripTime);
 		}
 		return;
 	}
+	
+	/** @} */
+	
 	printf("bad ADC IntReq source\n");
 }
-
 
 
 // ==============================================================

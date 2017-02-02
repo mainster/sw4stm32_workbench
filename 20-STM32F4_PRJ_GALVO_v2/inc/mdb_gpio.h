@@ -43,7 +43,7 @@
  */
 
 /**
- * @addtogroup APP_GPIO
+ * @addtogroup APP_GPIO General Purpose I/O
  * @{
  */
 

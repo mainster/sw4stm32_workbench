@@ -41,7 +41,7 @@
  */
 
 /**
- * @addtogroup APP_NVIC_Config
+ * @addtogroup APP_NVIC_Config Interrupt Controller
  * @{
  */
 
@@ -50,10 +50,14 @@
  * @{
  */
 
+/** @} */
+
 /**
  * @addtogroup NVIC_Config_Typedefs
  * @{
  */
+
+/** @} */
 
 /**
  * @addtogroup NVIC_Config_Variables
@@ -80,12 +84,6 @@ NVIC_InitStruct_ADC;	//!< ADC NVIC initialization struct.
  */
 void NVIC_Configuration (void);
 
-/** @} */
-
-
-/** @} */
-
-/** @} */
 
 /** @} */
 
