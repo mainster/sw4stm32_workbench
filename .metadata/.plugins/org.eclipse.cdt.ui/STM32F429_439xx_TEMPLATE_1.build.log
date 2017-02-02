@@ -1,0 +1,15 @@
+17:53:15 **** Build of configuration Debug for project STM32F429_439xx_TEMPLATE_1 ****
+make all 
+Building file: /media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Project/STM32F4xx_StdPeriph_Templates/main.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c99 -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -DUSE_STM324x9I_EVAL -I..\..\..\ -I..\..\..\..\..\Libraries\CMSIS\Device\ST\STM32F4xx\Include -I..\..\..\..\..\Libraries\STM32F4xx_StdPeriph_Driver\inc -I..\..\..\..\..\Utilities\STM32_EVAL\Common -I..\..\..\..\..\Utilities\STM32_EVAL\STM324x9I_EVAL -I..\..\..\..\..\Libraries\CMSIS\Include -Os -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"User/main.d" -MT"User/main.o" -o "User/main.o" "/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Project/STM32F4xx_StdPeriph_Templates/main.c"
+In file included from /media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Project/STM32F4xx_StdPeriph_Templates/main.c:29:0:
+/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Project/STM32F4xx_StdPeriph_Templates/main.h:33:23: fatal error: stm32f4xx.h: No such file or directory
+User/subdir.mk:21: recipe for target 'User/main.o' failed
+ #include "stm32f4xx.h"
+                       ^
+compilation terminated.
+make: *** [User/main.o] Error 1
+
+17:53:15 Build Finished (took 69ms)
+

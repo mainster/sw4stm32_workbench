@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.cdt.internal.ui.preferences.CTemplatePreferencePage$CEditTemplateDialog_dialogBounds">
+		<item value="603" key="DIALOG_WIDTH"/>
+		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="530" key="DIALOG_HEIGHT"/>
+		<item value="242" key="DIALOG_X_ORIGIN"/>
+		<item value="384" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="//!&lt;" key="selection"/>
+		<item value="true" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wrap"/>
+		<item value="true" key="wholeword"/>
+		<list key="findhistory">
+			<item value="///&lt;"/>
+			<item value="TABLESIZE"/>
+			<item value="nRows"/>
+			<item value="NVECTORS"/>
+			<item value="fastC"/>
+			<item value="NC"/>
+			<item value="PID_Calc_Coeffs"/>
+			<item value="\/\* +(.*) +\*\/"/>
+		</list>
+		<list key="replacehistory">
+			<item value="//!&lt;"/>
+			<item value="nRows"/>
+			<item value="//!&lt; \1"/>
+			<item value="//*!"/>
+			<item value="MD_GPIO_PuPd_NOPULL"/>
+			<item value="MD_"/>
+			<item value="coefficients"/>
+			<item value="set-point"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="548" key="DIALOG_WIDTH"/>
+		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="449" key="DIALOG_HEIGHT"/>
+		<item value="1062" key="DIALOG_X_ORIGIN"/>
+		<item value="166" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

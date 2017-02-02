@@ -1,0 +1,3 @@
+buildConsole/keepLog=true
+buildConsole/logLocation=/media/data/CODES/sw4stm32_workbench/.metadata/.plugins/org.eclipse.cdt.ui/00-MD_STM32F429_LIBRARIES.build.log
+eclipse.preferences.version=1

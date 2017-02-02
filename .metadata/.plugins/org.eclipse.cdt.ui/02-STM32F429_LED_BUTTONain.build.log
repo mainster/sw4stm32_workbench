@@ -1,0 +1,6 @@
+15:00:19 **** Build of configuration Debug for project 02-STM32F429_LED_BUTTONain ****
+make all 
+make: Nothing to be done for 'all'.
+
+15:00:19 Build Finished (took 118ms)
+

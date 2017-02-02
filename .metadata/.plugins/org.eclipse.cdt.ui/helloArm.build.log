@@ -1,0 +1,61 @@
+13:20:13 **** Build of configuration Debug for project helloArm ****
+make all 
+Building file: ../system/src/newlib/_cxx.cpp
+Invoking: MCU G++ Compiler
+/media/data/CODES/sw4stm32_workbench/helloArm/Debug
+arm-none-eabi-g++ -mthumb -mfloat-abi=soft -DDEBUG -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -I"/media/data/CODES/sw4stm32_workbench/helloArm/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/DEVICE"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"system/src/newlib/_cxx.d" -MT"system/src/newlib/_cxx.o" -o "system/src/newlib/_cxx.o" "../system/src/newlib/_cxx.cpp"
+Finished building: ../system/src/newlib/_cxx.cpp
+ 
+Building file: ../system/src/newlib/_exit.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/helloArm/Debug
+arm-none-eabi-gcc -mthumb -mfloat-abi=soft -DDEBUG -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -I"/media/data/CODES/sw4stm32_workbench/helloArm/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/DEVICE"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"system/src/newlib/_exit.d" -MT"system/src/newlib/_exit.o" -o "system/src/newlib/_exit.o" "../system/src/newlib/_exit.c"
+Finished building: ../system/src/newlib/_exit.c
+ 
+Building file: ../system/src/newlib/_sbrk.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/helloArm/Debug
+arm-none-eabi-gcc -mthumb -mfloat-abi=soft -DDEBUG -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -I"/media/data/CODES/sw4stm32_workbench/helloArm/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/DEVICE"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"system/src/newlib/_sbrk.d" -MT"system/src/newlib/_sbrk.o" -o "system/src/newlib/_sbrk.o" "../system/src/newlib/_sbrk.c"
+Finished building: ../system/src/newlib/_sbrk.c
+ 
+Building file: ../system/src/newlib/_startup.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/helloArm/Debug
+arm-none-eabi-gcc -mthumb -mfloat-abi=soft -DDEBUG -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -I"/media/data/CODES/sw4stm32_workbench/helloArm/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/DEVICE"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"system/src/newlib/_startup.d" -MT"system/src/newlib/_startup.o" -o "system/src/newlib/_startup.o" "../system/src/newlib/_startup.c"
+Finished building: ../system/src/newlib/_startup.c
+ 
+Building file: ../system/src/newlib/_syscalls.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/helloArm/Debug
+arm-none-eabi-gcc -mthumb -mfloat-abi=soft -DDEBUG -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -I"/media/data/CODES/sw4stm32_workbench/helloArm/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/DEVICE"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"system/src/newlib/_syscalls.d" -MT"system/src/newlib/_syscalls.o" -o "system/src/newlib/_syscalls.o" "../system/src/newlib/_syscalls.c"
+Finished building: ../system/src/newlib/_syscalls.c
+ 
+Building file: ../system/src/newlib/assert.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/helloArm/Debug
+arm-none-eabi-gcc -mthumb -mfloat-abi=soft -DDEBUG -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -I"/media/data/CODES/sw4stm32_workbench/helloArm/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/DEVICE"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"system/src/newlib/assert.d" -MT"system/src/newlib/assert.o" -o "system/src/newlib/assert.o" "../system/src/newlib/assert.c"
+Finished building: ../system/src/newlib/assert.c
+ 
+Building file: ../system/src/diag/Trace.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/helloArm/Debug
+arm-none-eabi-gcc -mthumb -mfloat-abi=soft -DDEBUG -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -I"/media/data/CODES/sw4stm32_workbench/helloArm/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/DEVICE"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"system/src/diag/Trace.d" -MT"system/src/diag/Trace.o" -o "system/src/diag/Trace.o" "../system/src/diag/Trace.c"
+Finished building: ../system/src/diag/Trace.c
+ 
+Building file: ../system/src/diag/trace_impl.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/helloArm/Debug
+arm-none-eabi-gcc -mthumb -mfloat-abi=soft -DDEBUG -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -I"/media/data/CODES/sw4stm32_workbench/helloArm/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis" -I"/media/data/CODES/sw4stm32_workbench/helloArm/system/include/DEVICE"  -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"system/src/diag/trace_impl.d" -MT"system/src/diag/trace_impl.o" -o "system/src/diag/trace_impl.o" "../system/src/diag/trace_impl.c"
+In file included from /media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis/cmsis_device.h:4:0,
+                 from ../system/src/diag/trace_impl.c:10:
+/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis/DEVICE.h:176:3: error: unknown type name '__IO'
+   __IO uint32_t EN;                         /*!< Offset: 0x0000   Timer Enable Register           */
+   ^
+/media/data/CODES/sw4stm32_workbench/helloArm/system/include/cmsis/DEVICE.h:176:17: error: expected ':', ',', ';', '}' or '__attribute__' before 'EN'
+   __IO uint32_t EN;                         /*!< Offset: 0x0000   Timer Enable Register           */
+                 ^
+make: *** [system/src/diag/trace_impl.o] Error 1
+system/src/diag/subdir.mk:21: recipe for target 'system/src/diag/trace_impl.o' failed
+
+13:20:15 Build Finished (took 2s.122ms)
+

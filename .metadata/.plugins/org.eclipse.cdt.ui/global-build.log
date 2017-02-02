@@ -1,0 +1,107 @@
+15:29:57 **** Clean-only build of configuration Debug for project 01-STM32F4_MD_HELLO ****
+make clean 
+rm -rf *
+ 
+
+15:29:57 Build Finished (took 180ms)
+
+15:29:58 **** Build of configuration Debug for project 01-STM32F4_MD_HELLO ****
+make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/inc" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/StdPeriph_Driver/inc" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c"
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c: In function 'MD_DISCO_LedInit':
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:21:15: error: 'MD_DISCO_LED_PORT' undeclared (first use in this function)
+  MD_GPIO_Init(MD_DISCO_LED_PORT, LED_ALL, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_High);
+               ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:21:15: note: each undeclared identifier is reported only once for each function it appears in
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:21:34: error: 'LED_ALL' undeclared (first use in this function)
+  MD_GPIO_Init(MD_DISCO_LED_PORT, LED_ALL, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_High);
+                                  ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c: In function 'MD_DISCO_ButtonInit':
+src/00-STM32F4_LIBRARY_MDB/subdir.mk:52: recipe for target 'src/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.o' failed
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:29:15: error: 'MD_DISCO_BUTTON_PORT' undeclared (first use in this function)
+  MD_GPIO_Init(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN, MD_GPIO_Mode_IN, MD_GPIO_OType_PP, MD_DISCO_BUTTON_PULL, MD_GPIO_Speed_Low);
+               ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:29:37: error: 'MD_DISCO_BUTTON_PIN' undeclared (first use in this function)
+  MD_GPIO_Init(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN, MD_GPIO_Mode_IN, MD_GPIO_OType_PP, MD_DISCO_BUTTON_PULL, MD_GPIO_Speed_Low);
+                                     ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:29:93: error: 'MD_DISCO_BUTTON_PULL' undeclared (first use in this function)
+  MD_GPIO_Init(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN, MD_GPIO_Mode_IN, MD_GPIO_OType_PP, MD_DISCO_BUTTON_PULL, MD_GPIO_Speed_Low);
+                                                                                             ^
+In file included from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h:55:0,
+                 from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:13:
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c: In function 'MD_DISCO_ButtonOnPressed':
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h:176:67: error: 'MD_DISCO_BUTTON_PORT' undeclared (first use in this function)
+ #define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)
+                                                                   ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h:375:56: note: in definition of macro 'MD_GPIO_GetInputPinValue'
+ #define MD_GPIO_GetInputPinValue(GPIOx, GPIO_Pin)   (((GPIOx)->IDR & (GPIO_Pin)) == 0 ? 0 : 1)
+                                                        ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:34:6: note: in expansion of macro 'MD_DISCO_ButtonPressed'
+  if (MD_DISCO_ButtonPressed()) {
+      ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h:176:89: error: 'MD_DISCO_BUTTON_PIN' undeclared (first use in this function)
+ #define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)
+                                                                                         ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h:375:71: note: in definition of macro 'MD_GPIO_GetInputPinValue'
+ #define MD_GPIO_GetInputPinValue(GPIOx, GPIO_Pin)   (((GPIOx)->IDR & (GPIO_Pin)) == 0 ? 0 : 1)
+                                                                       ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:34:6: note: in expansion of macro 'MD_DISCO_ButtonPressed'
+  if (MD_DISCO_ButtonPressed()) {
+      ^
+In file included from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:13:0:
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h:176:119: error: 'MD_DISCO_BUTTON_PRESSED' undeclared (first use in this function)
+ #define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)
+                                                                                                                       ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:34:6: note: in expansion of macro 'MD_DISCO_ButtonPressed'
+  if (MD_DISCO_ButtonPressed()) {
+      ^
+In file included from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h:55:0,
+                 from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:13:
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c: In function 'MD_DISCO_ButtonOnReleased':
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h:176:67: error: 'MD_DISCO_BUTTON_PORT' undeclared (first use in this function)
+ #define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)
+                                                                   ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h:375:56: note: in definition of macro 'MD_GPIO_GetInputPinValue'
+ #define MD_GPIO_GetInputPinValue(GPIOx, GPIO_Pin)   (((GPIOx)->IDR & (GPIO_Pin)) == 0 ? 0 : 1)
+                                                        ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:53:7: note: in expansion of macro 'MD_DISCO_ButtonPressed'
+  if (!MD_DISCO_ButtonPressed()) {
+       ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h:176:89: error: 'MD_DISCO_BUTTON_PIN' undeclared (first use in this function)
+ #define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)
+                                                                                         ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h:375:71: note: in definition of macro 'MD_GPIO_GetInputPinValue'
+ #define MD_GPIO_GetInputPinValue(GPIOx, GPIO_Pin)   (((GPIOx)->IDR & (GPIO_Pin)) == 0 ? 0 : 1)
+                                                                       ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:53:7: note: in expansion of macro 'MD_DISCO_ButtonPressed'
+  if (!MD_DISCO_ButtonPressed()) {
+       ^
+In file included from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:13:0:
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h:176:119: error: 'MD_DISCO_BUTTON_PRESSED' undeclared (first use in this function)
+ #define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)
+                                                                                                                       ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c:53:7: note: in expansion of macro 'MD_DISCO_ButtonPressed'
+  if (!MD_DISCO_ButtonPressed()) {
+       ^
+make: *** [src/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.o] Error 1

@@ -5,7 +5,6 @@ stm32f429i-disc1_stdperiph_lib/
 _olds_and_others/
 Packages/
 stm32fxxx_hal_libraries_mj/
-.metadata/
 **/Debug/*
 *.zip
 # ARM CMSIS Library components

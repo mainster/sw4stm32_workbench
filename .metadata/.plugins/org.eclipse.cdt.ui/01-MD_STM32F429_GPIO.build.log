@@ -1,0 +1,37 @@
+21:05:45 **** Build of configuration Debug for project 01-MD_STM32F429_GPIO ****
+make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/src" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/src" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/syscalls.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/src" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/syscalls.d" -MT"src/syscalls.o" -o "src/syscalls.o" "../src/syscalls.c"
+Finished building: ../src/syscalls.c
+ 
+Building file: ../src/system_stm32f4xx.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/src" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/system_stm32f4xx.d" -MT"src/system_stm32f4xx.o" -o "src/system_stm32f4xx.o" "../src/system_stm32f4xx.c"
+Finished building: ../src/system_stm32f4xx.c
+ 
+Building target: 01-MD_STM32F429_GPIO.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -L"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/Debug" -T"/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "01-MD_STM32F429_GPIO.elf" @"objects.list"  -lstm32f429i-disc1_stdperiph_lib
+src/main.o: In function `main':
+/media/data/CODES/sw4stm32_workbench/01-MD_STM32F429_GPIO/Debug/../src/main.c:23: undefined reference to `MD_DISCO_LedInit'
+collect2: error: ld returned 1 exit status
+makefile:38: recipe for target '01-MD_STM32F429_GPIO.elf' failed
+make: *** [01-MD_STM32F429_GPIO.elf] Error 1
+
+21:05:46 Build Finished (took 372ms)
+

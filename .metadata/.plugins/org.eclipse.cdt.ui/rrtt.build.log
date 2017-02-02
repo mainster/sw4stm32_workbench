@@ -1,0 +1,11 @@
+14:07:40 **** Incremental Build of configuration Debug for project rrtt ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "rrtt.elf"
+   text	   data	    bss	    dec	    hex	filename
+   8389	    160	    420	   8969	   2309	rrtt.elf
+Finished building: rrtt.siz
+ 
+
+14:07:40 Build Finished (took 73ms)
+

@@ -1,0 +1,13 @@
+01:07:59 **** Build of configuration Debug for project 80-STM32F4_IDE_TEST ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/80-STM32F4_IDE_TEST/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -I"/media/data/CODES/sw4stm32_workbench/80-STM32F4_IDE_TEST/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:12:23: fatal error: stm32f4xx.h: No such file or directory
+src/subdir.mk:24: recipe for target 'src/main.o' failed
+compilation terminated.
+make: *** [src/main.o] Error 1
+
+01:07:59 Build Finished (took 134ms)
+

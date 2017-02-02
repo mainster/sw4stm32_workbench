@@ -1,0 +1,17 @@
+13:10:08 **** Incremental Build of configuration Debug for project 03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015_res ****
+make all 
+Building file: ../src/actuators.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015_res/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DDEBUG -DSTM32F4 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DUSE_STDPERIPH_DRIVER -D__FPU_PRESENT=1 -DARM_MATH_CM4 -DUSE_STM324x9I_EVAL -I"/media/data/CODES/sw4stm32_workbench/03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015_res/inc" -I"/media/data/CODES/sw4stm32_workbench/03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015_res/../00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015_res/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015_res/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015_res/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/actuators.d" -MT"src/actuators.o" -o "src/actuators.o" "../src/actuators.c"
+In file included from /media/data/CODES/sw4stm32_workbench/03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015_res/inc/actuators.h:19:0,
+                 from ../src/actuators.c:14:
+/media/data/CODES/sw4stm32_workbench/03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015_res/inc/adc_dac_dma.h:23:28: fatal error: tm_stm32f4_dac.h: No such file or directory
+ #include "tm_stm32f4_dac.h"
+                            ^
+compilation terminated.
+src/subdir.mk:51: recipe for target 'src/actuators.o' failed
+make: *** [src/actuators.o] Error 1
+
+13:10:09 Build Finished (took 124ms)
+

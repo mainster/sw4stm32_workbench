@@ -1,0 +1,60 @@
+21:05:39 **** Build of configuration Debug for project 00-MD_STM32F429_LIBRARIES ****
+make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: ../startup/sysmem.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" -o "startup/sysmem.o" "../startup/sysmem.c"
+Finished building: ../startup/sysmem.c
+ 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/md_stm32f4_dac.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/md_stm32f4_dac.d" -MT"src/md_stm32f4_dac.o" -o "src/md_stm32f4_dac.o" "../src/md_stm32f4_dac.c"
+Finished building: ../src/md_stm32f4_dac.c
+ 
+Building file: ../src/md_stm32f4_disco.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/md_stm32f4_disco.d" -MT"src/md_stm32f4_disco.o" -o "src/md_stm32f4_disco.o" "../src/md_stm32f4_disco.c"
+Finished building: ../src/md_stm32f4_disco.c
+ 
+Building file: ../src/md_stm32f4_gpio.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/md_stm32f4_gpio.d" -MT"src/md_stm32f4_gpio.o" -o "src/md_stm32f4_gpio.o" "../src/md_stm32f4_gpio.c"
+Finished building: ../src/md_stm32f4_gpio.c
+ 
+Building file: ../src/md_stm32f4_timer.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/md_stm32f4_timer.d" -MT"src/md_stm32f4_timer.o" -o "src/md_stm32f4_timer.o" "../src/md_stm32f4_timer.c"
+Finished building: ../src/md_stm32f4_timer.c
+ 
+Building target: 00-MD_STM32F429_LIBRARIES.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"/media/data/CODES/sw4stm32_workbench/00-MD_STM32F429_LIBRARIES/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "00-MD_STM32F429_LIBRARIES.elf" @"objects.list"  
+/opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/bin/ld: warning: cannot find entry symbol Reset_Handler; defaulting to 08000000
+Finished building target: 00-MD_STM32F429_LIBRARIES.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "00-MD_STM32F429_LIBRARIES.elf" "00-MD_STM32F429_LIBRARIES.bin"
+arm-none-eabi-size "00-MD_STM32F429_LIBRARIES.elf"
+   text	   data	    bss	    dec	    hex	filename
+    360	   1076	   1056	   2492	    9bc	00-MD_STM32F429_LIBRARIES.elf
+ 
+
+21:05:40 Build Finished (took 572ms)
+

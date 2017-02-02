@@ -1,0 +1,23 @@
+02:55:53 **** Incremental Build of configuration Debug for project 06-STM32F4_USART_HYPERTERM ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/06-STM32F4_USART_HYPERTERM/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -DUSE_STM324x9I_EVAL -I"/media/data/CODES/sw4stm32_workbench/06-STM32F4_USART_HYPERTERM/inc" -I"/media/data/CODES/sw4stm32_workbench/06-STM32F4_USART_HYPERTERM/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/06-STM32F4_USART_HYPERTERM/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/06-STM32F4_USART_HYPERTERM/StdPeriph_Driver/inc" -I/home/mainster/CODES_local/sw4stm32_workbench/00-STM32F429_LIBRARIES_MDB_MINIMAL -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: 06-STM32F4_USART_HYPERTERM.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"/media/data/CODES/sw4stm32_workbench/06-STM32F4_USART_HYPERTERM/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -lm -o "06-STM32F4_USART_HYPERTERM.elf" @"objects.list"  
+Finished building target: 06-STM32F4_USART_HYPERTERM.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "06-STM32F4_USART_HYPERTERM.elf" "06-STM32F4_USART_HYPERTERM.bin"
+arm-none-eabi-size "06-STM32F4_USART_HYPERTERM.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2368	   1076	   1072	   4516	   11a4	06-STM32F4_USART_HYPERTERM.elf
+ 
+
+02:55:53 Build Finished (took 366ms)
+

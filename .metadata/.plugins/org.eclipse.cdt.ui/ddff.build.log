@@ -1,0 +1,104 @@
+11:57:45 **** Build of configuration Debug for project ddff ****
+make all 
+Building file: ../system/src/cmsis/system_stm32f4xx.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/src/cmsis/system_stm32f4xx.d" -MT"system/src/cmsis/system_stm32f4xx.o" -c -o "system/src/cmsis/system_stm32f4xx.o" "../system/src/cmsis/system_stm32f4xx.c"
+In file included from ../system/src/cmsis/system_stm32f4xx.c:67:0:
+../system/include/cmsis/stm32f4xx.h:173:3: error: #error "Please select first the target STM32F4xx device used in your application (in stm32f4xx.h file)"
+system/src/cmsis/subdir.mk:18: recipe for target 'system/src/cmsis/system_stm32f4xx.o' failed
+  #error "Please select first the target STM32F4xx device used in your application (in stm32f4xx.h file)"
+   ^
+../system/src/cmsis/system_stm32f4xx.c:137:3: error: unknown type name 'uint32_t'
+   uint32_t SystemCoreClock = 16000000;
+   ^
+../system/src/cmsis/system_stm32f4xx.c:138:7: error: unknown type name 'uint8_t'
+ const uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+       ^
+../system/src/cmsis/system_stm32f4xx.c: In function 'SystemInit':
+../system/src/cmsis/system_stm32f4xx.c:175:3: error: 'RCC' undeclared (first use in this function)
+   RCC->CR |= (uint32_t)0x00000001;
+   ^
+../system/src/cmsis/system_stm32f4xx.c:175:3: note: each undeclared identifier is reported only once for each function it appears in
+../system/src/cmsis/system_stm32f4xx.c:175:15: error: 'uint32_t' undeclared (first use in this function)
+   RCC->CR |= (uint32_t)0x00000001;
+               ^
+../system/src/cmsis/system_stm32f4xx.c:175:24: error: expected ';' before numeric constant
+   RCC->CR |= (uint32_t)0x00000001;
+                        ^
+../system/src/cmsis/system_stm32f4xx.c:181:24: error: expected ';' before numeric constant
+   RCC->CR &= (uint32_t)0xFEF6FFFF;
+                        ^
+../system/src/cmsis/system_stm32f4xx.c:187:24: error: expected ';' before numeric constant
+   RCC->CR &= (uint32_t)0xFFFBFFFF;
+                        ^
+../system/src/cmsis/system_stm32f4xx.c:200:3: error: 'SCB' undeclared (first use in this function)
+   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+   ^
+../system/src/cmsis/system_stm32f4xx.c:200:15: error: 'FLASH_BASE' undeclared (first use in this function)
+   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
+               ^
+../system/src/cmsis/system_stm32f4xx.c: In function 'SystemCoreClockUpdate':
+../system/src/cmsis/system_stm32f4xx.c:242:3: error: unknown type name 'uint32_t'
+   uint32_t tmp = 0, pllvco = 0, pllp = 2, pllsource = 0, pllm = 2;
+   ^
+../system/src/cmsis/system_stm32f4xx.c:245:9: error: 'RCC' undeclared (first use in this function)
+   tmp = RCC->CFGR & RCC_CFGR_SWS;
+         ^
+../system/src/cmsis/system_stm32f4xx.c:245:21: error: 'RCC_CFGR_SWS' undeclared (first use in this function)
+   tmp = RCC->CFGR & RCC_CFGR_SWS;
+                     ^
+../system/src/cmsis/system_stm32f4xx.c:74:26: error: 'uint32_t' undeclared (first use in this function)
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                          ^
+../system/src/cmsis/system_stm32f4xx.c:250:25: note: in expansion of macro 'HSI_VALUE'
+       SystemCoreClock = HSI_VALUE;
+                         ^
+../system/src/cmsis/system_stm32f4xx.c:74:35: error: expected ')' before numeric constant
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                                   ^
+../system/src/cmsis/system_stm32f4xx.c:250:25: note: in expansion of macro 'HSI_VALUE'
+       SystemCoreClock = HSI_VALUE;
+                         ^
+../system/src/cmsis/system_stm32f4xx.c:70:35: error: expected ')' before numeric constant
+   #define HSE_VALUE    ((uint32_t)25000000) /*!< Default value of the External oscillator in Hz */
+                                   ^
+../system/src/cmsis/system_stm32f4xx.c:253:25: note: in expansion of macro 'HSE_VALUE'
+       SystemCoreClock = HSE_VALUE;
+                         ^
+../system/src/cmsis/system_stm32f4xx.c:260:35: error: 'RCC_PLLCFGR_PLLSRC' undeclared (first use in this function)
+       pllsource = (RCC->PLLCFGR & RCC_PLLCFGR_PLLSRC) >> 22;
+                                   ^
+../system/src/cmsis/system_stm32f4xx.c:261:29: error: 'RCC_PLLCFGR_PLLM' undeclared (first use in this function)
+       pllm = RCC->PLLCFGR & RCC_PLLCFGR_PLLM;
+                             ^
+../system/src/cmsis/system_stm32f4xx.c:70:35: error: expected ')' before numeric constant
+   #define HSE_VALUE    ((uint32_t)25000000) /*!< Default value of the External oscillator in Hz */
+                                   ^
+../system/src/cmsis/system_stm32f4xx.c:266:19: note: in expansion of macro 'HSE_VALUE'
+         pllvco = (HSE_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
+                   ^
+../system/src/cmsis/system_stm32f4xx.c:266:56: error: 'RCC_PLLCFGR_PLLN' undeclared (first use in this function)
+         pllvco = (HSE_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
+                                                        ^
+../system/src/cmsis/system_stm32f4xx.c:74:35: error: expected ')' before numeric constant
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                                   ^
+../system/src/cmsis/system_stm32f4xx.c:271:19: note: in expansion of macro 'HSI_VALUE'
+         pllvco = (HSI_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
+                   ^
+../system/src/cmsis/system_stm32f4xx.c:274:32: error: 'RCC_PLLCFGR_PLLP' undeclared (first use in this function)
+       pllp = (((RCC->PLLCFGR & RCC_PLLCFGR_PLLP) >>16) + 1 ) *2;
+                                ^
+../system/src/cmsis/system_stm32f4xx.c:74:35: error: expected ')' before numeric constant
+   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
+                                   ^
+../system/src/cmsis/system_stm32f4xx.c:278:25: note: in expansion of macro 'HSI_VALUE'
+       SystemCoreClock = HSI_VALUE;
+                         ^
+../system/src/cmsis/system_stm32f4xx.c:283:37: error: 'RCC_CFGR_HPRE' undeclared (first use in this function)
+   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+                                     ^
+make: *** [system/src/cmsis/system_stm32f4xx.o] Error 1
+
+11:57:45 Build Finished (took 122ms)
+

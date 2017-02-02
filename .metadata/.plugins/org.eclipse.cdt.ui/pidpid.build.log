@@ -1,0 +1,73 @@
+18:55:02 **** Build of configuration Debug for project pidpid ****
+make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/stm32f4xx_it.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/stm32f4xx_it.d" -MT"src/stm32f4xx_it.o" -o "src/stm32f4xx_it.o" "../src/stm32f4xx_it.c"
+Finished building: ../src/stm32f4xx_it.c
+ 
+Building file: ../src/syscalls.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/syscalls.d" -MT"src/syscalls.o" -o "src/syscalls.o" "../src/syscalls.c"
+Finished building: ../src/syscalls.c
+ 
+Building file: ../src/system_stm32f4xx.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/system_stm32f4xx.d" -MT"src/system_stm32f4xx.o" -o "src/system_stm32f4xx.o" "../src/system_stm32f4xx.c"
+Finished building: ../src/system_stm32f4xx.c
+ 
+Building file: ../src/tm_stm32f4_delay.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/tm_stm32f4_delay.d" -MT"src/tm_stm32f4_delay.o" -o "src/tm_stm32f4_delay.o" "../src/tm_stm32f4_delay.c"
+Finished building: ../src/tm_stm32f4_delay.c
+ 
+Building file: ../src/tm_stm32f4_disco.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/tm_stm32f4_disco.d" -MT"src/tm_stm32f4_disco.o" -o "src/tm_stm32f4_disco.o" "../src/tm_stm32f4_disco.c"
+Finished building: ../src/tm_stm32f4_disco.c
+ 
+Building file: ../src/tm_stm32f4_ds18b20.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/tm_stm32f4_ds18b20.d" -MT"src/tm_stm32f4_ds18b20.o" -o "src/tm_stm32f4_ds18b20.o" "../src/tm_stm32f4_ds18b20.c"
+Finished building: ../src/tm_stm32f4_ds18b20.c
+ 
+Building file: ../src/tm_stm32f4_onewire.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/tm_stm32f4_onewire.d" -MT"src/tm_stm32f4_onewire.o" -o "src/tm_stm32f4_onewire.o" "../src/tm_stm32f4_onewire.c"
+Finished building: ../src/tm_stm32f4_onewire.c
+ 
+Building file: ../src/tm_stm32f4_pwm.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/tm_stm32f4_pwm.d" -MT"src/tm_stm32f4_pwm.o" -o "src/tm_stm32f4_pwm.o" "../src/tm_stm32f4_pwm.c"
+Finished building: ../src/tm_stm32f4_pwm.c
+ 
+Building file: ../src/tm_stm32f4_timer_properties.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/tm_stm32f4_timer_properties.d" -MT"src/tm_stm32f4_timer_properties.o" -o "src/tm_stm32f4_timer_properties.o" "../src/tm_stm32f4_timer_properties.c"
+Finished building: ../src/tm_stm32f4_timer_properties.c
+ 
+Building file: ../src/tm_stm32f4_usart.c
+Invoking: MCU GCC Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DARM_MATH_CM4 -D__FPU_PRESENT=1 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F429_439xx -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/CMSIS/Include" -I"/media/data/CODES/sw4stm32_workbench/pidpid/inc" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -c -MMD -MP -MF"src/tm_stm32f4_usart.d" -MT"src/tm_stm32f4_usart.o" -o "src/tm_stm32f4_usart.o" "../src/tm_stm32f4_usart.c"
+Finished building: ../src/tm_stm32f4_usart.c
+ 
+Building target: pidpid.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -L"/media/data/CODES/sw4stm32_workbench/stm32f429i-disc1_stdperiph_lib/Debug" -L"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries" -T"/media/data/CODES/sw4stm32_workbench/pidpid/LinkerScript.ld" -Wl,-Map=output.map -lm -o "pidpid.elf"  ./startup/startup_stm32.o  ./src/main.o ./src/stm32f4xx_it.o ./src/syscalls.o ./src/system_stm32f4xx.o ./src/tm_stm32f4_delay.o ./src/tm_stm32f4_disco.o ./src/tm_stm32f4_ds18b20.o ./src/tm_stm32f4_onewire.o ./src/tm_stm32f4_pwm.o ./src/tm_stm32f4_timer_properties.o ./src/tm_stm32f4_usart.o   -lstm32f429i-disc1_stdperiph_lib
+./src/main.o: In function `main':
+/media/data/CODES/sw4stm32_workbench/pidpid/Debug/../src/main.c:61: undefined reference to `arm_pid_init_f32'
+collect2: error: ld returned 1 exit status
+makefile:37: recipe for target 'pidpid.elf' failed
+make: *** [pidpid.elf] Error 1
+
+18:55:04 Build Finished (took 1s.977ms)
+

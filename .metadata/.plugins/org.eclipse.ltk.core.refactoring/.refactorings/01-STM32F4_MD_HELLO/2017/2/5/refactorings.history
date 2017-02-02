@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;01-STM32F4_MD_HELLO/inc/defines.h&apos; to &apos;globals.h&apos;" description="Rename resource &apos;defines.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="inc/defines.h" name="globals.h" stamp="1486045788421" updateReferences="true"/>
+</session>

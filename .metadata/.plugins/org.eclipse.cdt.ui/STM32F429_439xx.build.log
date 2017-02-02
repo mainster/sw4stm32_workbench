@@ -1,0 +1,6 @@
+19:14:35 **** Build of configuration Debug for project STM32F429_439xx ****
+make all 
+make: *** No rule to make target '/media/data/CODES/main.c', needed by 'User/main.o'.  Stop.
+
+19:14:35 Build Finished (took 138ms)
+

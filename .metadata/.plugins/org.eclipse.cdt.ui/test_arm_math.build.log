@@ -1,0 +1,7 @@
+07:06:53 **** Clean-only build of configuration Debug for project test_arm_math ****
+make clean 
+rm -rf *
+ 
+
+07:06:53 Build Finished (took 117ms)
+

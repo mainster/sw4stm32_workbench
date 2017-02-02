@@ -1,0 +1,46 @@
+06:27:11 **** Incremental Build of configuration Debug for project STM32F429I-DISCO-MDB ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DSTM32F429ZITx -DUSE_STM324x9I_EVAL -DARM_MATH_CM4 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/inc" -I"/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/StdPeriph_Driver/inc" -Os -g3 -Wall -fmessage-length=0 -v -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Using built-in specs.
+COLLECT_GCC=arm-none-eabi-gcc
+Target: arm-none-eabi
+Configured with: /home/build/work/GCC-5-0-build/src/gcc/configure --target=arm-none-eabi --prefix=/home/build/work/GCC-5-0-build/install-native --libexecdir=/home/build/work/GCC-5-0-build/install-native/lib --infodir=/home/build/work/GCC-5-0-build/install-native/share/doc/gcc-arm-none-eabi/info --mandir=/home/build/work/GCC-5-0-build/install-native/share/doc/gcc-arm-none-eabi/man --htmldir=/home/build/work/GCC-5-0-build/install-native/share/doc/gcc-arm-none-eabi/html --pdfdir=/home/build/work/GCC-5-0-build/install-native/share/doc/gcc-arm-none-eabi/pdf --enable-languages=c,c++ --enable-plugins --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-shared --disable-threads --disable-tls --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-arm-none-eabi --with-sysroot=/home/build/work/GCC-5-0-build/install-native/arm-none-eabi --build=i686-linux-gnu --host=i686-linux-gnu --with-gmp=/home/build/work/GCC-5-0-build/build-native/host-libs/usr --with-mpfr=/home/build/work/GCC-5-0-build/build-native/host-libs/usr --with-mpc=/home/build/work/GCC-5-0-build/build-native/host-libs/usr --with-isl=/home/build/work/GCC-5-0-build/build-native/host-libs/usr --with-cloog=/home/build/work/GCC-5-0-build/build-native/host-libs/usr --with-libelf=/home/build/work/GCC-5-0-build/build-native/host-libs/usr --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --with-pkgversion='GNU Tools for ARM Embedded Processors' --with-multilib-list=armv6-m,armv7-m,armv7e-m,armv7-r,armv8-m.base,armv8-m.main
+Thread model: single
+gcc version 5.4.1 20160609 (release) [ARM/embedded-5-branch revision 237715] (GNU Tools for ARM Embedded Processors) 
+COLLECT_GCC_OPTIONS='-mcpu=cortex-m4' '-mthumb' '-mfloat-abi=hard' '-mfpu=fpv4-sp-d16' '-std=c11' '-D' 'STM32F429ZITx' '-D' 'USE_STM324x9I_EVAL' '-D' 'ARM_MATH_CM4' '-D' 'STM32F4' '-D' 'STM32' '-D' 'DEBUG' '-D' 'USE_STDPERIPH_DRIVER' '-D' 'STM32F429_439xx' '-I' '/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/inc' '-I' '/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/CMSIS/device' '-I' '/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/CMSIS/core' '-I' '/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/StdPeriph_Driver/inc' '-Os' '-g3' '-Wall' '-fmessage-length=0' '-v' '-c' '-MMD' '-MP' '-MF' 'src/main.d' '-MT' 'src/main.o' '-o' 'src/main.o'
+ /opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/cc1 -quiet -v -I /media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/inc -I /media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/CMSIS/device -I /media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/CMSIS/core -I /media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/StdPeriph_Driver/inc -imultilib armv7e-m/fpu -iprefix /opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/ -isysroot /opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../arm-none-eabi -MMD src/main.d -MF src/main.d -MP -MT src/main.o -dD -D__USES_INITFINI__ -D STM32F429ZITx -D USE_STM324x9I_EVAL -D ARM_MATH_CM4 -D STM32F4 -D STM32 -D DEBUG -D USE_STDPERIPH_DRIVER -D STM32F429_439xx ../src/main.c -quiet -dumpbase main.c -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -auxbase-strip src/main.o -g3 -Os -Wall -std=c11 -version -fmessage-length=0 -o /tmp/ccw5K1rW.s
+GNU C11 (GNU Tools for ARM Embedded Processors) version 5.4.1 20160609 (release) [ARM/embedded-5-branch revision 237715] (arm-none-eabi)
+	compiled by GNU C version 4.7.4, GMP version 4.3.2, MPFR version 2.4.2, MPC version 0.8.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "/opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/5.4.1/include"
+ignoring nonexistent directory "/opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../arm-none-eabi/usr/local/include"
+ignoring duplicate directory "/opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/5.4.1/include-fixed"
+ignoring duplicate directory "/opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../lib/gcc/../../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/include"
+ignoring nonexistent directory "/opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../arm-none-eabi/usr/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/inc
+ /media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/CMSIS/device
+ /media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/CMSIS/core
+ /media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/StdPeriph_Driver/inc
+ /opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/include
+ /opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/include-fixed
+ /opt/sw4stm32/ac6/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.11.0.201610101240/tools/gcc-arm-none-eabi-5_4-2016q2/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/include
+End of search list.
+GNU C11 (GNU Tools for ARM Embedded Processors) version 5.4.1 20160609 (release) [ARM/embedded-5-branch revision 237715] (arm-none-eabi)
+	compiled by GNU C version 4.7.4, GMP version 4.3.2, MPFR version 2.4.2, MPC version 0.8.1
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 72d283e2a57bed5e603831a8b91eb195
+In file included from ../src/main.c:16:0:
+/media/data/CODES/sw4stm32_workbench/STM32F429I-DISCO-MDB/inc/main.h:17:30: fatal error: md_stm32f4_disco.h: No such file or directory
+ #include "md_stm32f4_disco.h"
+                              ^
+compilation terminated.
+src/subdir.mk:24: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+
+06:27:11 Build Finished (took 163ms)
+

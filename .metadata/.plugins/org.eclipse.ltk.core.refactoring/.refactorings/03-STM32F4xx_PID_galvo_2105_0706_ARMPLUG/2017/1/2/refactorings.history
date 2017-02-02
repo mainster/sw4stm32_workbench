@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;03-STM32F4xx_PID_galvo_2105_0706_ARMPLUG/include&apos; to &apos;inc&apos;" description="Rename resource &apos;include&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="include" name="inc" stamp="1484401814709" updateReferences="true"/>&#x0A;&#x0A;</session>

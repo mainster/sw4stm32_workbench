@@ -1,0 +1,26 @@
+03:04:24 **** Incremental Build of configuration Debug for project stm32f4disco_try1 ****
+make all 
+Building file: ../startup/sysmem.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/stm32f4disco_try1/Debug
+arm-none-eabi-gcc -mthumb -mfloat-abi=soft -std=c11 -DDEBUG -I"/media/data/CODES/sw4stm32_workbench/stm32f4disco_try1/inc" -O0 -g3 -Wall -fmessage-length=0 --specs=nosys.specs -ffunction-sections -c -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" -o "startup/sysmem.o" "../startup/sysmem.c"
+../startup/sysmem.c:54:27: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'asm'
+ register char * stack_ptr asm("sp");
+                           ^
+../startup/sysmem.c: In function '_sbrk':
+startup/subdir.mk:18: recipe for target 'startup/sysmem.o' failed
+../startup/sysmem.c:64:18: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'asm'
+  extern char end asm("end");
+                  ^
+../startup/sysmem.c:64:18: warning: implicit declaration of function 'asm' [-Wimplicit-function-declaration]
+../startup/sysmem.c:69:15: error: 'end' undeclared (first use in this function)
+   heap_end = &end;
+               ^
+../startup/sysmem.c:69:15: note: each undeclared identifier is reported only once for each function it appears in
+../startup/sysmem.c:72:24: error: 'stack_ptr' undeclared (first use in this function)
+  if (heap_end + incr > stack_ptr)
+                        ^
+make: *** [startup/sysmem.o] Error 1
+
+03:04:24 Build Finished (took 276ms)
+

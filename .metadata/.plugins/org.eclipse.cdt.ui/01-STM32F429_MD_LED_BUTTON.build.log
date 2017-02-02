@@ -1,0 +1,18 @@
+03:53:58 **** Incremental Build of configuration Debug for project 01-STM32F429_MD_LED_BUTTON ****
+make all 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/01-STM32F429_MD_LED_BUTTON/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -D__FPU_PRESENT=1 -DARM_MATH_CM4 -DUSE_STM324x9I_EVAL -I"/media/data/CODES/sw4stm32_workbench/01-STM32F429_MD_LED_BUTTON/inc" -I"/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Libraries/STM32F4xx_StdPeriph_Driver" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F429_MD_LED_BUTTON/../00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F429_MD_LED_BUTTON/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F429_MD_LED_BUTTON/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/01-STM32F429_MD_LED_BUTTON/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c"
+In file included from /media/data/CODES/sw4stm32_workbench/01-STM32F429_MD_LED_BUTTON/CMSIS/device/stm32f4xx.h:11412:0,
+                 from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h:4,
+                 from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:1:
+/media/data/CODES/sw4stm32_workbench/01-STM32F429_MD_LED_BUTTON/inc/stm32f4xx_conf.h:34:27: fatal error: stm32f4xx_adc.h: No such file or directory
+src/00-STM32F4_LIBRARY_MDB/subdir.mk:30: recipe for target 'src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o' failed
+ #include "stm32f4xx_adc.h"
+                           ^
+compilation terminated.
+make: *** [src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o] Error 1
+
+03:53:58 Build Finished (took 114ms)
+

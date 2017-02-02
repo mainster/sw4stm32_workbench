@@ -1,0 +1,13 @@
+05:13:45 **** Build of configuration Debug for project arm_math_test ****
+make all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/arm_math_test/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -I"/media/data/CODES/sw4stm32_workbench/arm_math_test/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:12:23: fatal error: stm32f4xx.h: No such file or directory
+compilation terminated.
+src/subdir.mk:24: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+
+05:13:45 Build Finished (took 69ms)
+

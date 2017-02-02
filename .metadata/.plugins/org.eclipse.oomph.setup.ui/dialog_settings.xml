@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SetupWizard">
+		<section name="ProgressPage">
+		</section>
+		<section name="ConfirmationPage">
+			<item value="true" key="showAll"/>
+		</section>
+		<section name="VariablePage">
+			<item value="true" key="fullPrompt"/>
+		</section>
+	</section>
+	<section name="org.eclipse.oomph.setup.ui.UnsignedContentDialog">
+		<item value="400" key="dialogHeight"/>
+		<item value="600" key="dialogWidth"/>
+	</section>
+	<section name="org.eclipse.oomph.setup.ui.LicenseDialog">
+		<item value="600" key="dialogHeight"/>
+		<item value="1000" key="dialogWidth"/>
+	</section>
+</section>

@@ -1,0 +1,11 @@
+12:07:16 **** Incremental Build of configuration Debug for project CMSIS_plugin_F4 ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "CMSIS_plugin_F4.elf"
+   text	   data	    bss	    dec	    hex	filename
+  10073	    160	    420	  10653	   299d	CMSIS_plugin_F4.elf
+Finished building: CMSIS_plugin_F4.siz
+ 
+
+12:07:16 Build Finished (took 66ms)
+

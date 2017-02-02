@@ -1,0 +1,31 @@
+//
+// This file is part of the GNU ARM Eclipse distribution.
+// Copyright (c) 2014 Liviu Ionescu.
+//
+
+// ----------------------------------------------------------------------------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "diag/Trace.h"
+
+#include "Timer.h"
+#include "BlinkLed.h"
+
+// ----------------------------------------------------------------------------
+//
+// Standalone STM32F4 led blink sample (trace via DEBUG).
+//
+// In debug configurations, demonstrate how to print a greeting message
+// on the trace device. In release configurations the message is
+// simply discarded.
+//
+// Then demonstrates how to blink a led with 1 Hz, using a
+// continuous loop and SysTick delays.
+//
+// Trace support is enabled by adding the TRACE macro definition.
+// By default the trace messages are forwarded to the DEBUG output,
+// but can be rerouted to any device or completely suppressed, by
+// changing the definitions required in system/src/diag/trace_impl.c
+// (currently OS_USE_TRACE_ITM, OS_USE_TRACE_SEMIHOSTING_DEBUG/_STDOUT).
+//

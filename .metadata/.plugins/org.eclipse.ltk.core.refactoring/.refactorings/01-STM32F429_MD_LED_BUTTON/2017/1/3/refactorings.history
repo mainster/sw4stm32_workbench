@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;02-STM32F429_MD_LED_BUTTON/notes.md&apos; to &apos;notes.mmd&apos;" description="Rename resource &apos;notes.md&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="notes.md" name="notes.mmd" stamp="1484747079712" updateReferences="true"/>
+</session>

@@ -1,0 +1,7 @@
+15:10:27 **** Clean-only build of configuration Debug for project 02-STM32F429_LED_BUTTON ****
+make clean 
+rm -rf *
+ 
+
+15:10:28 Build Finished (took 64ms)
+

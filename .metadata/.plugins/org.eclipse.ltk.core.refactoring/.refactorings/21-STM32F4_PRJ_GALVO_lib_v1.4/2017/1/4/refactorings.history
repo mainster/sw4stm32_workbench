@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;21-STM32F4_PRJ_GALVO_lib_v1.4/src/STM32F4xx_pid_lib_v1_4.c&apos; to &apos;main.c&apos;" description="Rename resource &apos;STM32F4xx_pid_lib_v1_4.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/STM32F4xx_pid_lib_v1_4.c" name="main.c" stamp="1485483615110" updateReferences="true"/>
+</session>
