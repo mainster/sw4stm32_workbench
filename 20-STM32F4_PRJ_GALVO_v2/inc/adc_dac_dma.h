@@ -52,7 +52,7 @@
  */
 
 /**
- * @defgroup   APP_Analog Analog Subsystem
+ * @defgroup   APP_Analog Analog
  *
  * @par Analog to digital converter:
  *     The physical unit of the process or plant outputs states to be an angular

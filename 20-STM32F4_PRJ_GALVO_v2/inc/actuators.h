@@ -52,7 +52,7 @@
  */
 
 /**
- * @addtogroup  APP_Actuators
+ * @addtogroup  APP_Actuators Actuators_Typedefs 
  * @brief       Provides actuator related update and configuration methods.
  * @{
  *

@@ -74,7 +74,7 @@ DAC2			PA5
  */
 #include "stm32f4xx.h"
 //#include "stm32f4xx_dac.h"
-#include "globals.h"
+#include <globals.h>
 #include "md_stm32f4_gpio.h"
 
 /**

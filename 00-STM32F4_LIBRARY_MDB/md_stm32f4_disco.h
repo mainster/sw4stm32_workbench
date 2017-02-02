@@ -50,8 +50,8 @@
  - MD GPIO
 @endverbatim
  */
-#include "stm32f4xx.h"
 #include "globals.h"
+#include "stm32f4xx.h"
 #include "md_stm32f4_gpio.h"
 
 /* Definitions according to "STM32F429I-DISCO schematics" */
