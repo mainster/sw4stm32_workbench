@@ -97,23 +97,9 @@ PUTCHAR_PROTOTYPE {
 // ==============================================================
 //                         Prototypes
 // ==============================================================
-// void gpio_init(void) __attribute__ ((unused));
 void fastConsoleCase(arm_pid_instance_f32 *pid);
-// int updateActuator_f(float I_set_x, float I_set_y) __attribute__ ((unused));
-// int beamCtrl(beamCtrlSource_t src, tribool_state_t newState) __attribute__ ((unused));
 void init_globalStructs(void);
 
-// void gpio_init_mco1(void);
-// void gpio_init_mco2(void);
-
-//void exportInternalClks(void);
-//static void Console (struct PID_DATA *pid, struct FPID_DATA *fpid, PidStructType_t type);
-//void consoleCase (struct PID_DATA *pid);
-//void adc12_init (uint16_t gpio_pin_adc1,
-
-//      uint16_t gpio_pin_adc2,
-//      uint16_t EndOfConvInt,
-//      ADC_TypeDef* ADCxEOT);
 
 #define RX_FRAME_PADDING_CHAR   '~'
 
@@ -344,6 +330,11 @@ int main(void) {
 	MDB_GPIO_Init();
 	//  beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
 
+	while (1) {
+		Delayms(500);
+		MDB_GPIO_Toggle(LED_GREEN_A);
+		MDB_GPIO_Toggle_m2(LED_RED_A);
+	}
 	/**< Initialize PID system, float32_t format */
 	//  arm_pid_init_f32(&PIDX, 1);
 	//  arm_pid_init_f32(&PIDY, 1);
@@ -704,11 +695,11 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 	memset(&sVal, 0, VALUE_BUFF_SIZE * sizeof(char));
 
 	/**
-	 * @brief Check leading character via receive buffer.
-	 *  @li @   frame indicator for pid related config/param.
-	 *  @li !   frame indicator for a misc command.
-	 *  @li #   frame indicator for a signal generator command.
-	 */
+     * @brief      Check leading character via receive buffer.
+     * @li         @@   frame indicator for pid related config/param.
+     * @li         \!   frame indicator for a misc command.
+     * @li         @#   frame indicator for a signal generator command.
+     */
 	if (sUart[0] == '@') {
 		/* pid related config/param */
 		strncpy(pCmd, &sUart[IDX_CMD], NC);        //!< command substring

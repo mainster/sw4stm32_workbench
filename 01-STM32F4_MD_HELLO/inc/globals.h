@@ -10,8 +10,8 @@
  *	@stdperiph	STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  */
  
-#ifndef DEFINES_H_
-#define DEFINES_H_
+#ifndef GLOBALS_H_
+#define GLOBALS_H_
 
 
 /* =======================================================

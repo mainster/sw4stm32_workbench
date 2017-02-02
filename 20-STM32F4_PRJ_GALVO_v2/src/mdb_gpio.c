@@ -38,16 +38,7 @@
  *             to be ordered like in typedef GPIO_NAME_t
  */
 MDB_GPIO_t  MDB_GPIO[] = {
-  { LED_GREEN_A,      
-    GPIOG,  
-    GPIO_Pin_13,  
-    GPIO_Mode_OUT, 
-    GPIO_Speed_50MHz,  
-    GPIO_OType_PP, 
-    GPIO_PuPd_NOPULL, 
-    RCC_AHB1Periph_GPIOG, 
-    GPIO_OFF
-  },   
+  { LED_GREEN_A,      GPIOG,  GPIO_Pin_13,  GPIO_Mode_OUT, GPIO_Speed_50MHz,  GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOG, GPIO_OFF},   
   { LED_RED_A,        GPIOG,  GPIO_Pin_14,  GPIO_Mode_OUT, GPIO_Speed_50MHz,  GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOG, GPIO_OFF},   
 
   { BEAM_INTERRUPT,   GPIOE,  GPIO_Pin_10,  GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   

@@ -163,9 +163,38 @@ typedef struct {
  * @{
  */
 
+/**
+ * @brief      Provides GPIO pin toggle functionality for MD_GPIO_NAME_t types
+ *             defined in MDB_GPIO.
+ *
+ * @param[in]  name   Pass the GPIO name of type MD_GPIO_NAME_t.
+ *
+ * @note       Use in consumption with MDB_GPIO.
+ */
 void MDB_GPIO_Toggle(MD_GPIO_NAME_t name);
+
+/**
+ * @brief      Provides GPIO on/off functionality.
+ *
+ * @param[in]  name       Pass the GPIO name of type MD_GPIO_NAME_t.
+ * @param[in]  newState   Pass the new state for GPIO name. 
+ */
 void MDB_GPIO_Switch(MD_GPIO_NAME_t name, MD_GPIO_STATE_t newState);
+
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  name   The name
+ */
 void MDB_GPIO_On(MD_GPIO_NAME_t name);
+
+//#define MDB_GPIO_On_m(name)     MDB_GPIO[name]._GPIO_PORT->BSRRL = MDB_GPIO[name]._GPIO_PIN
+//#define MDB_GPIO_Toggle_m(name) MDB_GPIO[name]._GPIO_PORT->ODR ^= MDB_GPIO[name]._GPIO_PIN
+
+#define   MDB_GPIO_Toggle_m2(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE6)) \
+												: (MDB_GPIO_Off(DBG_TIMING_PE6))
+
+
 void MDB_GPIO_Off(MD_GPIO_NAME_t name);
 void MDB_GPIO_Init(void);
 void MDB_GPIO_BeamPin(MD_GPIO_NAME_t name, MD_GPIO_DRIVER_STATE_t newState);
