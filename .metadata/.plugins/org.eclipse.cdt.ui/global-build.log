@@ -1,11 +1,11 @@
-18:06:10 **** Clean-only build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
+00:41:01 **** Clean-only build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
 make clean 
 rm -rf *
  
 
-18:06:10 Build Finished (took 77ms)
+00:41:01 Build Finished (took 76ms)
 
-18:06:12 **** Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
+00:41:02 **** Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
 make all 
 Building file: ../startup/startup_stm32.s
 Invoking: MCU GCC Assembler
@@ -71,32 +71,6 @@ Building file: ../src/actuators.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/actuators.d" -MT"src/actuators.o" -o "src/actuators.o" "../src/actuators.c"
-../src/actuators.c: In function 'beamCtrl':
-../src/actuators.c:45:21: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'intUpperLimit'
-     float test = ASG.intUpperLimit;
-                     ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h:40,
-                 from ../src/actuators.c:36:
-../src/actuators.c: At top level:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
-src/subdir.mk:51: recipe for target 'src/actuators.o' failed
- static float line1[ ][N_TUPEL] = {
-              ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
- static float *pSeq_f = NULL;
-               ^
-make: *** [src/actuators.o] Error 1
-18:09:34 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
-make all 
-Building file: ../src/actuators.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/actuators.d" -MT"src/actuators.o" -o "src/actuators.o" "../src/actuators.c"
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h:40,
@@ -140,48 +114,6 @@ Building file: ../src/isr_callbacks.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/isr_callbacks.d" -MT"src/isr_callbacks.o" -o "src/isr_callbacks.o" "../src/isr_callbacks.c"
-../src/isr_callbacks.c: In function 'ADC_IRQHandler':
-../src/isr_callbacks.c:290:29: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'intUpperLimit'
-   if ((ASG.integrator <= ASG.intUpperLimit) || 
-                             ^
-../src/isr_callbacks.c:291:26: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'IntUpperLimit'
-    (ASG.integrator >= ASG.IntUpperLimit)) {
-                          ^
-../src/isr_callbacks.c:309:24: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'IntUpperLimit'
-    ASG.integrator+= ASG.IntUpperLimit * (double)TS*1e-6/(ASG.tripTime);
-                        ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
-                 from ../src/isr_callbacks.c:34:
-../src/isr_callbacks.c: At top level:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-src/subdir.mk:51: recipe for target 'src/isr_callbacks.o' failed
-make: *** [src/isr_callbacks.o] Error 1
-18:17:04 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
-make all 
-Building file: ../src/isr_callbacks.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/isr_callbacks.d" -MT"src/isr_callbacks.o" -o "src/isr_callbacks.o" "../src/isr_callbacks.c"
-../src/isr_callbacks.c: In function 'ADC_IRQHandler':
-../src/isr_callbacks.c:308:24: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'IntUpperLimit'
-    ASG.integrator+= ASG.IntUpperLimit * (double)TS*1e-6/(ASG.tripTime);
-                        ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
-                 from ../src/isr_callbacks.c:34:
-../src/isr_callbacks.c: At top level:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-src/subdir.mk:51: recipe for target 'src/isr_callbacks.o' failed
-make: *** [src/isr_callbacks.o] Error 1
-18:41:57 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
-make all 
-Building file: ../src/isr_callbacks.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/isr_callbacks.d" -MT"src/isr_callbacks.o" -o "src/isr_callbacks.o" "../src/isr_callbacks.c"
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
                  from ../src/isr_callbacks.c:34:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
@@ -189,43 +121,6 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                  ^
 Finished building: ../src/isr_callbacks.c
  
-Building file: ../src/main.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:396:60: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'IntUpperLimit'
-  ADC_AnalogWatchdogThresholdsConfig(ADC1, decode_toUint(ASG.IntUpperLimit + VA_BIAS),
-                                                            ^
-../src/main.c:397:21: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'intUpperLimit'
-    decode_toUint(ASG.intUpperLimit + VA_BIAS));
-                     ^
-../src/main.c: In function 'init_globalStructs':
-../src/main.c:551:5: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'intUpperLimit'
-  ASG.intUpperLimit = ASG_TRIPPING_LOWER_DEFAULT;
-     ^
-../src/main.c:552:5: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'IntUpperLimit'
-  ASG.IntUpperLimit = ASG_TRIPPING_UPPER_DEFAULT;
-     ^
-src/subdir.mk:51: recipe for target 'src/main.o' failed
-make: *** [src/main.o] Error 1
-18:42:53 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
-make all 
-Building file: ../src/main.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'init_globalStructs':
-../src/main.c:551:5: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'intUpperLimit'
-  ASG.intUpperLimit = ASG_TRIPPING_LOWER_DEFAULT;
-     ^
-../src/main.c:552:5: error: 'ActuatorSafestateGuard_t {aka struct <anonymous>}' has no member named 'IntUpperLimit'
-  ASG.IntUpperLimit = ASG_TRIPPING_UPPER_DEFAULT;
-     ^
-make: *** [src/main.o] Error 1
-src/subdir.mk:51: recipe for target 'src/main.o' failed
-18:43:20 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
-make all 
 Building file: ../src/main.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug

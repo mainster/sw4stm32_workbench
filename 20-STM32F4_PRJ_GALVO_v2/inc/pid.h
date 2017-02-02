@@ -72,12 +72,12 @@
 /**
  * @brief      Size of PID structure internal buffers.
  */
-#define PID_BUFF_LENGTH		5
+#define PID_BUFF_LENGTH     5
 
 /**
  * @brief      Flag to enable/disable PID parameter data type "float".
  */
-#define FLOAT_PARAMETERS   	1
+#define FLOAT_PARAMETERS    1
 
 /**
  * @brief      Memory initialization macro. Can be used for structures and
@@ -93,21 +93,21 @@
  * @brief      Range limits for different data types. Needed to avoid
  *             sign/overflow problems
  */
-#define MAX_INT_16		INT16_MAX
-#define MAX_INT			INT16_MAX
-#define MAX_LONG		INT32_MAX
-#define MAX_I_TERM	  	(MAX_LONG / 2)
+#define MAX_INT_16      INT16_MAX
+#define MAX_INT         INT16_MAX
+#define MAX_LONG        INT32_MAX
+#define MAX_I_TERM      (MAX_LONG / 2)
 
 /**
  * @brief      Range limits for different data types. Needed to avoid
  *             sign/overflow problems
  */
-#define UPPER_SAT		100
-#define LOWER_SAT	   -100
-#define FLOAT_MAX		1000
-#define MAX_F_I_TERM	(FLOAT_MAX / 2)
+#define UPPER_SAT       100
+#define LOWER_SAT      -100
+#define FLOAT_MAX       1000
+#define MAX_F_I_TERM    (FLOAT_MAX / 2)
 
-/** @} */ 	/* PID_Macros */
+/** @} */   /* PID_Macros */
 
 /**
  * @addtogroup Pid_Variables
@@ -124,7 +124,7 @@ volatile int16_t P_now, W_now;
  * @var        float KP_INIT
  * @brief      Initial value of proportional gain.
  */
-static volatile float 	KP_INIT = 1;
+static volatile float   KP_INIT = 1;
 
 /**
  * @var        float KI_INIT
@@ -143,7 +143,7 @@ KI_INIT = 0,
 KD_INIT = 0,
 TF_INIT = 0;
 
-/** @} */ 	/* PID_Variables */
+/** @} */
 
 /**
  * @addtogroup  Pid_Typedefs
@@ -162,17 +162,17 @@ TF_INIT = 0;
  * @brief      Integration methods enumeration.
  */
 typedef enum {
-	PID_IntMethode_FwdRect = 19,	//!< Use method "Forward Rectangle".
-	PID_IntMethode_RwdRect = 20,	//!< Use method "Reward Rectangle".
-	PID_IntMethode_Trapez = 21,		//!< Use method "Trapezoidal".
+    PID_IntMethode_FwdRect = 19,    //!< Use method "Forward Rectangle".
+    PID_IntMethode_RwdRect = 20,    //!< Use method "Reward Rectangle".
+    PID_IntMethode_Trapez = 21,     //!< Use method "Trapezoidal".
 } PID_IntMethode_t;
 
 /**
  * @brief      PID structure type enumeration.
  */
 typedef enum {
-	PID_StructType_Buffered,
-	PID_StructType_Unbuffered,
+    PID_StructType_Buffered,
+    PID_StructType_Unbuffered,
 } PID_StructType_t;
 
 /**
@@ -183,45 +183,45 @@ typedef enum {
  */
 typedef struct PID_DATA {
 
-	float W_remf;					//!< Angle set-point value [float]. (Updated via Qt interface).
-	int16_t W_int;					//!< Internal set-point (Updated via Qt interface).
-	int16_t W_rem;					//!< Angle set-point value [int16]. (Updated via Qt interface).
-	int16_t W[PID_BUFF_LENGTH];		//!< Set-point history.
-	int16_t E[PID_BUFF_LENGTH];		//!< Error history: e(k)=w(k)-p(k).
-	int16_t ESUM[PID_BUFF_LENGTH];	//!< Error sum history: e(k)=e(k-1)+w-p.
-	int16_t P[PID_BUFF_LENGTH];		//!< Process value (sensor output).
-	int16_t Y[PID_BUFF_LENGTH];		//!< PID output history.
-	uint8_t remoteCmdActive;		//!< Flag. The commanding source of set-point value is stored in g.() */
-	uint16_t Tf;					//!< Time constant for 1. order D-term filter [us] (see MATLAB/Simulink).
-	uint16_t Ts;					//!< Sample time [us].
-	uint16_t ind;					//!< Index
+    float W_remf;                   //!< Angle set-point value [float]. (Updated via Qt interface).
+    int16_t W_int;                  //!< Internal set-point (Updated via Qt interface).
+    int16_t W_rem;                  //!< Angle set-point value [int16]. (Updated via Qt interface).
+    int16_t W[PID_BUFF_LENGTH];     //!< Set-point history.
+    int16_t E[PID_BUFF_LENGTH];     //!< Error history: e(k)=w(k)-p(k).
+    int16_t ESUM[PID_BUFF_LENGTH];  //!< Error sum history: e(k)=e(k-1)+w-p.
+    int16_t P[PID_BUFF_LENGTH];     //!< Process value (sensor output).
+    int16_t Y[PID_BUFF_LENGTH];     //!< PID output history.
+    uint8_t remoteCmdActive;        //!< Flag. The commanding source of set-point value is stored in g.() */
+    uint16_t Tf;                    //!< Time constant for 1. order D-term filter @si{us} (see MATLAB/Simulink).
+    uint16_t Ts;                    //!< Sample time @si{us}.
+    uint16_t ind;                   //!< Index
 
-	/**
-	 * FIXME:	Avoid overflow!
-	 * (W - P) !!<=!! maxError.
-	 */
-	int16_t maxError;				//!< Max. value of error signal */
+    /**
+     * FIXME:   Avoid overflow!
+     * (W - P) !!<=!! maxError.
+     */
+    int16_t maxError;               //!< Max. value of error signal */
 
-	/**
-	 * FIXME: 	Avoid overflow!
-	 * E(k) !!<=!! maxSumError.
-	 *
-	 * TODO:	Implement failsafe anti-windup system.
-	 */
-	int16_t maxSumError;			//!< Max. value of integral error.
+    /**
+     * FIXME:   Avoid overflow!
+     * E(k) !!<=!! maxSumError.
+     *
+     * TODO:    Implement failsafe anti-windup system.
+     */
+    int16_t maxSumError;            //!< Max. value of integral error.
 
 #ifdef FLOAT_PARAMETERS
-	float b0, b1, b2;				//!< PID algorithm coefficents [float].
-	float Kp;						//!< PID proportional gain [float].
-	float Ki;						//!< PID integral gain [float].
-	float Kd;						//!< PID derivative gain [float].
+    float b0, b1, b2;               //!< PID algorithm coefficents [float].
+    float Kp;                       //!< PID proportional gain [float].
+    float Ki;                       //!< PID integral gain [float].
+    float Kd;                       //!< PID derivative gain [float].
 #elif DOUBLE_PARAMETERS
-	double b0, b1, b2;				//!< PID algorithm coefficents [double].
-	double Kp;						//!< PID proportional gain [double].
-	double Ki;						//!< PID integral gain [double].
-	double Kd;						//!< PID derivative gain [double].
+    double b0, b1, b2;              //!< PID algorithm coefficents [double].
+    double Kp;                      //!< PID proportional gain [double].
+    double Ki;                      //!< PID integral gain [double].
+    double Kd;                      //!< PID derivative gain [double].
 #else
-	error "Select PID param. datatype FLOAT_PARAMETERS or DOUBLE_PARAMETERS"
+    error "Select PID param. datatype FLOAT_PARAMETERS or DOUBLE_PARAMETERS"
 #endif
 
 } pidData_t;
@@ -235,36 +235,36 @@ typedef struct PID_DATA {
  *             single PID instance.
  */
 typedef struct PID_DATA_NEW {
-	int16_t W;					//!< Angle set-point value [int16].
-	int16_t W_int;				//!< Internal set-point (Updated via Qt interface).
-	int16_t W_rem;				//!< Angle set-point value [int16]. (Updated via Qt interface).
-	int16_t Y;					//!< PID output value.
-	int16_t E;					//!< Actual error: e(k)=w(k)-p(k).
-	int16_t ESUM;				//!< Error sum: e(k)=e(k-1)+w-p.
-	int16_t P;					//!< Process value (sensor output).
-	uint16_t ind;				//!< Index.
-	uint8_t remoteCmdActive;	//!< Flag. The commanding source of set-point value is stored in g.() */
-	uint16_t Tf;				//!< Time constant for 1. order D-term filter [us] (see MATLAB/Simulink).
-	uint16_t Ts;				//!< Sample time [us].
+    int16_t W;                  //!< Angle set-point value [int16].
+    int16_t W_int;              //!< Internal set-point (Updated via Qt interface).
+    int16_t W_rem;              //!< Angle set-point value [int16]. (Updated via Qt interface).
+    int16_t Y;                  //!< PID output value.
+    int16_t E;                  //!< Actual error: e(k)=w(k)-p(k).
+    int16_t ESUM;               //!< Error sum: e(k)=e(k-1)+w-p.
+    int16_t P;                  //!< Process value (sensor output).
+    uint16_t ind;               //!< Index.
+    uint8_t remoteCmdActive;    //!< Flag. The commanding source of set-point value is stored in g.() */
+    uint16_t Tf;                //!< Time constant for 1. order D-term filter @si{us} (see MATLAB/Simulink).
+    uint16_t Ts;                //!< Sample time @si{us}.
 
-	/**
-	 * FIXME:	Avoid overflow!
-	 * (W - P) !!<=!! maxError.
-	 */
-	int16_t maxError;			//!< Max. value of error signal */
+    /**
+     * FIXME:   Avoid overflow!
+     * (W - P) !!<=!! maxError.
+     */
+    int16_t maxError;           //!< Max. value of error signal */
 
-	/**
-	 * FIXME: 	Avoid overflow!
-	 * E(k) !!<=!! maxSumError.
-	 *
-	 * TODO:	Implement fail-safe anti-windup system.
-	 */
-	int16_t maxSumError;		//!< Max. value of integral error.
+    /**
+     * FIXME:   Avoid overflow!
+     * E(k) !!<=!! maxSumError.
+     *
+     * TODO:    Implement fail-safe anti-windup system.
+     */
+    int16_t maxSumError;        //!< Max. value of integral error.
 
-	float b0, b1, b2;			//!< PID algorithm coefficients [float].
-	float Kp;					//!< PID proportional gain [float].
-	float Ki;					//!< PID integral gain [float].
-	float Kd;					//!< PID derivative gain [float].
+    float b0, b1, b2;           //!< PID algorithm coefficients [float].
+    float Kp;                   //!< PID proportional gain [float].
+    float Ki;                   //!< PID integral gain [float].
+    float Kd;                   //!< PID derivative gain [float].
 
 } pidData_t_NEW;
 
@@ -277,44 +277,44 @@ typedef struct PID_DATA_NEW {
  *             single PID instance.
  */
 typedef struct FPID_DATA {
-	int16_t	W_raw;
-	int16_t	Y_raw;
-	float raw2float;
-	float float2raw;
-	float MAX_Y_I_TERM;
-	float W;					//!< Angle set-point value [int16].
-	float Y;					//!< PID output value.
-	float E;					//!< Actual error: e(k)=w(k)-p(k).
-	float ESUM;					//!< Error sum: e(k)=e(k-1)+w-p.
-	float P;					//!< Process value (sensor output).
-	uint16_t Tf;				//!< Time constant for 1. order D-term filter [us] (see MATLAB/Simulink).
-	uint16_t Ts;				//!< Sample time [us].
+    int16_t W_raw;
+    int16_t Y_raw;
+    float raw2float;
+    float float2raw;
+    float MAX_Y_I_TERM;
+    float W;                    //!< Angle set-point value [int16].
+    float Y;                    //!< PID output value.
+    float E;                    //!< Actual error: e(k)=w(k)-p(k).
+    float ESUM;                 //!< Error sum: e(k)=e(k-1)+w-p.
+    float P;                    //!< Process value (sensor output).
+    uint16_t Tf;                //!< Time constant for 1. order D-term filter @si{us} (see MATLAB/Simulink).
+    uint16_t Ts;                //!< Sample time @si{us}.
 
-	/**
-	 * FIXME:	Avoid overflow!
-	 * (W - P) !!<=!! maxError.
-	 */
-	float maxError;				//!< Max. value of error signal */
+    /**
+     * FIXME:   Avoid overflow!
+     * (W - P) !!<=!! maxError.
+     */
+    float maxError;             //!< Max. value of error signal */
 
-	/**
-	 * FIXME: 	Avoid overflow!
-	 * E(k) !!<=!! maxSumError.
-	 *
-	 * TODO:	Implement fail-safe anti-windup system.
-	 */
-	float maxSumError;			//!< Max. value of integral error.
+    /**
+     * FIXME:   Avoid overflow!
+     * E(k) !!<=!! maxSumError.
+     *
+     * TODO:    Implement fail-safe anti-windup system.
+     */
+    float maxSumError;          //!< Max. value of integral error.
 
-	float b0, b1, b2;			//!< PID algorithm coefficients [float].
-	float Kp;					//!< PID proportional gain [float].
-	float Ki;					//!< PID integral gain [float].
-	float Kd;					//!< PID derivative gain [float].
+    float b0, b1, b2;           //!< PID algorithm coefficients [float].
+    float Kp;                   //!< PID proportional gain [float].
+    float Ki;                   //!< PID integral gain [float].
+    float Kd;                   //!< PID derivative gain [float].
 
 } pidDatafloat_t;
 
 /**
  * @brief      External declared PID instances.
  */
-extern struct PID_DATA	 pidDataX, pidDataY;
+extern struct PID_DATA   pidDataX, pidDataY;
 
 
 /* Re-Enable compiler optimization */
@@ -324,12 +324,11 @@ extern struct PID_DATA	 pidDataX, pidDataY;
 #pragma GCC pop_options
 #endif
 
-/** @} */ 	/* PID_Typedefs */
+/** @} */
 
 /**
  * @addtogroup Pid_Functions
- * @brief    	PID functions and methods.
- * @{
+ * @brief      PID methods related macro definitions. @{
  */
 
 /**
@@ -339,42 +338,42 @@ extern struct PID_DATA	 pidDataX, pidDataY;
  */
 void pid_Init_Tp (void);
 
+
 /**
- * @brief      { function_description }
+ * @brief      Initialiasation methode for integral type PID instance.
  *
- * @param[in]  arg   The argument
+ *             Initialisation of integral type PID controller parameters.
+ *             Initialise the variables used by the PID algorithm.
+ *
+ * @param      Kp       PID proportional gain value.
+ * @param      Ki       PID integral gain value.
+ * @param      Kd       PID derivate gain value.
+ * @param[in]  setTf    Initial value for 1.st order derivative term filter time
+ *                      constant @si{us}.
+ * @param[in]  setTs    Sample rate @si{us};
+ * @param      pid      Pointer to the instances PID structure.
+ * @param[in]  stType   Select buffered or unbuffered PID structure (See @ref
+ *                      PID_struct_type enumeration).
  */
-void pid_Init_Tp_arg (int arg);
+void pid_Init (float Kp, float Ki, float Kd, uint16_t setTf, uint16_t setTs, 
+               struct PID_DATA *pid, PID_StructType_t stType);
 
 
 /**
- * @brief      Float types PID instance initialization methode.
+ * @brief      Initialiasation methode for double type PID instance.
+ *
+ *             Initialisation of double type PID controller parameters.
+ *             Initialise the variables used by the PID algorithm.
  *
  * @param      Kp      PID proportional gain value.
  * @param      Ki      PID integral gain value.
  * @param      Kd      PID derivate gain value.
- * @param[in]  setTf   Initial value for 1.st order D-filter time constant [us].
- * @param[in]  setTs   Sample rate [us];
- * @param      pid     Pointer to structure which holds PID instance data.
- * @param[in]  type    Select buffered or unbuffered PID structure (See @ref
- *                     PID_struct_type enumeration).
- */
-void pid_Init (float Kp, float Ki, float Kd, uint16_t setTf,
-			   uint16_t setTs, struct PID_DATA *pid, PID_StructType_t stType);
-
-
-/**
- * @brief      Double types PID instance initialization methode.
- *
- * @param      Kp      PID proportional gain value.
- * @param      Ki      PID integral gain value.
- * @param      Kd      PID derivate gain value.
- * @param[in]  setTf   Initial value for 1.st order D-filter time constant [us].
- * @param[in]  setTs   Sample rate [us];
- * @param      pid     Pointer to structure which holds PID instance data.
+ * @param[in]  setTf   Initial value for 1.st order D-filter time constant @si{us}.
+ * @param[in]  setTs   Sample rate @si{us};
+ * @param      pid     Pointer to the instances PID structure.
  */
 void fpid_Init (double Kp, double Ki, double Kd, uint16_t setTf,
-				uint16_t setTs, struct FPID_DATA *pid);
+                uint16_t setTs, struct FPID_DATA *pid);
 
 /**
  * @brief      Clear integral part of PID model state.
@@ -382,12 +381,11 @@ void fpid_Init (double Kp, double Ki, double Kd, uint16_t setTf,
  *             Resets the runtime integrator of the PID compensator. Use for
  *             anti-windup system, after over current tripping etc.
  *
- * @param      pid      Pointer to structure which holds PID instance data.
+ * @param      pid      Pointer to the instances PID structure.
  * @param[in]  stType   Select buffered or unbuffered PID structure (See @ref
  *                      PID_struct_type enumeration).
  */
-void pid_Reset_Integrator (volatile struct PID_DATA *pid,
-						   PID_StructType_t stType);
+void pid_Reset_Integrator (volatile struct PID_DATA *pid, PID_StructType_t stType);
 
 /**
  * @brief      Pre-Calculates PID coeffizients.
@@ -395,53 +393,57 @@ void pid_Reset_Integrator (volatile struct PID_DATA *pid,
  *             Pre-Calculation of coeffizients after a parameter update can
  *             speedup the underlying algorithms.
  *
- * @param      pid          Pointer to structure which holds PID instance data.
+ * @param      pid          Pointer to the instances PID structure.
  * @param[in]  intMethode   The integration method
  */
 void PID_Calc_Coeffs (struct PID_DATA *pid, PID_IntMethode_t intMethode);
 
 /**
- * @brief      Invoke PID controller calculation.
+ * @brief      Update the compensator parameters of a given PID instance.
+ *
+ * @param[in]  Kp      New proportional gain value.
+ * @param[in]  Ki      New integral gain value.
+ * @param[in]  Kd      New derivative gain value.
+ * @param[in]  setTf   New 1st order filter time constant value.
+ * @param      pid     Pointer to the instances PID structure.
+ */
+void update_pid_data (float Kp, float Ki, float Kd,
+                      uint16_t setTf, struct PID_DATA *pid);
+
+/**
+ * @brief      Invoke integral type PID compensator calculation.
  *
  *             Invoke the control algorithm calculation processes for a single
- *             PID instance.
+ *             integral type PID instance.
  *
  * @param[in]  setPoint       Pass next set-point value via setPoint.
  * @param[in]  processValue   Pass actual process (e.g. plunt output) value.
- * @param      pid          Pointer to structure which holds PID instance data.
+ * @param      pid            Pointer to the instances PID structure. 
  *
- * @callergraph
+ * @return     Compensator output, next actuator control signal.   
  */
-int pid_Controller (int16_t setPoint, int16_t processValue, struct PID_DATA *pid);
+int pid_Controller (int16_t setPoint, int16_t processValue,
+                    struct PID_DATA *pid);
 
 /**
- * @brief      { function_description }
+ * @brief      Invoke integral type PID compensator calculation.
  *
- * @param[in]  Kp      { parameter_description }
- * @param[in]  Ki      { parameter_description }
- * @param[in]  Kd      { parameter_description }
- * @param[in]  setTf   The set tf
- * @param      pid     The pid
- */
-void update_pid_data (float Kp, float Ki, float Kd,
-					  uint16_t setTf, struct PID_DATA *pid);
-
-/**
- * @brief      { function_description }
+ *             Invoke the control algorithm calculation processes for a single
+ *             integral type PID instance.
  *
- * @param[in]  setPoint       The set point
- * @param[in]  processValue   The process value
- * @param      pid            The pid
+ * @param[in]  setPoint       Pass next set-point value via setPoint.
+ * @param[in]  processValue   Pass actual process (e.g. plunt output) value.
+ * @param      pid            Pointer to the instances PID structure. 
  *
- * @return     { description_of_the_return_value }
+ * @return     Compensator output, next actuator control signal.
  */
 int fpid_Controller (int16_t setPoint, int16_t processValue,
-					 struct FPID_DATA *pid);
+                     struct FPID_DATA *pid);
 
-/** @} */ 	/* PID_Functions */
+/** @} */
 
-/** @} */ 	/* PID_ */
+/** @} */
 
-/** @} */ 	/* MD_APP */
+/** @} */
 
 #endif

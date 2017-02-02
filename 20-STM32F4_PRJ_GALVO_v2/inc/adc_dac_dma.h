@@ -52,7 +52,8 @@
  */
 
 /**
- * @defgroup   APP_Analog Analog
+ * @addtogroup  APP_Analog Analog
+ * @{
  *
  * @par Analog to digital converter:
  *     The physical unit of the process or plant outputs states to be an angular
@@ -67,11 +68,23 @@
  *     An important factor in choosing the appropriate controller was the
  *     integrated dual channel DAC peripheral. Two instances of digital PID
  *     controllers are used to calculate the analog actuator control signals.
- */
-
-/**
- * @addtogroup APP_Analog
- * @{
+ *
+ *
+ * @par Timer-triggered ADC-scan mode with DMA to memory
+ *
+ * @attention   Initial start of ADC conversion:
+ *
+ * @li          Once initialized, first ADC conversion must be started by a
+ *              ADC_SoftwareStartConv or whereever the first channel of the
+ *              regular group runs (ADC1 ,2 ,3).
+ *
+ * @li          Timer controlled group scan restart is configured by
+ *              *.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T2_TRGO; This
+ *              means NOT that start-events for ADC regular scan are generated
+ *              by the Timer update ISR!!!
+ *
+ * @li          Configure TIM for generating Output Trigger events!
+ *              TIM_SelectOutputTrigger(TIM2,TIM_TRGOSource_Update);
  */
 
 /**
@@ -217,7 +230,6 @@ typedef enum {
      *             DAC_SetDualChanSigned_Tripped.
      */
     TRIPPED_WRITE_DAC
-
 } DAC_WP_t;
 
 /** @} */
@@ -243,9 +255,10 @@ typedef enum {
  * @param[in]  Data2   Raw DAC compensator algorithm output value for channel 2.
  * @param[in]  Data1   Raw DAC compensator algorithm output value for channel 1.
  *
- * @return     "Fingerabdruck" zum bestimmen ob tripped oder nicht!
+ * @return     "Fingerprint" to check whether the ASG system has triggered the
+ *             fuse or not!
  */
-DAC_WP_t DAC_SetDualChanSigned          (int16_t Data2, int16_t Data1);
+DAC_WP_t DAC_SetDualChanSigned (int16_t Data2, int16_t Data1);
 
 /**
  * @brief      Safe state function.
@@ -256,9 +269,10 @@ DAC_WP_t DAC_SetDualChanSigned          (int16_t Data2, int16_t Data1);
  * @param[in]  Data2   Raw DAC compensator algorithm output value for channel 2.
  * @param[in]  Data1   Raw DAC compensator algorithm output value for channel 1.
  *
- * @return     "Fingerabdruck" zum bestimmen ob tripped oder nicht!
+ * @return     "Fingerprint" to check whether the ASG system has triggered the
+ *             fuse or not!
  */
-DAC_WP_t DAC_SetDualChanSigned_Tripped  (int16_t Data2, int16_t Data1);
+DAC_WP_t DAC_SetDualChanSigned_Tripped (int16_t Data2, int16_t Data1);
 
 /**
  * Documented in implementation file.
@@ -266,12 +280,32 @@ DAC_WP_t DAC_SetDualChanSigned_Tripped  (int16_t Data2, int16_t Data1);
  */
 extern  DAC_WP_t  (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  TimerRun   The timer run
+ * @param[in]  IntOn      The int on
+ * @param[in]  peri       The peri
+ */
+void TIM2_DMA_Trigger_Config (FunctionalState TimerRun,
+                              FunctionalState IntOn, uint16_t peri);
 
-void TIM2_DMA_triggerConfiguration (FunctionalState TimerRun,
-                                    FunctionalState IntOn, uint16_t peri);
-void DMA_Configuration ( __IO int16_t *MultiConvBuff, uint8_t memSize);
-void AnalogWatchdog_Configuration  (void);
-void ADC_Configuration (void);
+/**
+ * @brief      { function_description }
+ *
+ * @param[in]  int16_t   The int 16 t
+ * @param[in]  memSize   This is an integer value, the DMA controller transfers
+ *                       memSize datagrams befor circulating. Also memSize ADC
+ *                       regular channels have to be configured within this init
+ *                       procedure (ADC_RegularChannelConfig)
+ */
+void DMA_Config ( __IO int16_t *MultiConvBuff, uint8_t memSize);
+void AN_Watchdog_Config (void);
+
+/**
+ * @brief      ADC common and regular scan group init
+ */
+void ADC_Scan_Group_Config (void);
 void RCC_Configuration (void);
 void ADC_DMA_DualModeConfig (__IO int16_t *MultiConvBuff);
 void ADC_ContScanMode_w_DMA  (__IO int16_t *MultiConvBuff);

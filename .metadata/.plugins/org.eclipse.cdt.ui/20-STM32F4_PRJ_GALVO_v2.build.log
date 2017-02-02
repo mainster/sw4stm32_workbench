@@ -1,5 +1,119 @@
-18:43:20 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
+00:41:02 **** Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
 make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/tm_stm32f4_pwm.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/tm_stm32f4_pwm.d" -MT"src/00-STM32F4_LIBRARY_MDB/tm_stm32f4_pwm.o" -o "src/00-STM32F4_LIBRARY_MDB/tm_stm32f4_pwm.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/tm_stm32f4_pwm.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/tm_stm32f4_pwm.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.d" -MT"src/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.o" -o "src/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.c
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.d" -MT"src/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.o" -o "src/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.c"
+Finished building: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.c
+ 
+Building file: ../src/actuators.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/actuators.d" -MT"src/actuators.o" -o "src/actuators.o" "../src/actuators.c"
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h:40,
+                 from ../src/actuators.c:36:
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
+ static float line1[ ][N_TUPEL] = {
+              ^
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
+ static int16_t *pSeq = NULL;
+                 ^
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
+ static float *pSeq_f = NULL;
+               ^
+Finished building: ../src/actuators.c
+ 
+Building file: ../src/adc_dac_dma.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/adc_dac_dma.d" -MT"src/adc_dac_dma.o" -o "src/adc_dac_dma.o" "../src/adc_dac_dma.c"
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
+                 from ../src/adc_dac_dma.c:31:
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
+ static float line1[ ][N_TUPEL] = {
+              ^
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
+ static int16_t *pSeq = NULL;
+                 ^
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
+ static float *pSeq_f = NULL;
+               ^
+Finished building: ../src/adc_dac_dma.c
+ 
+Building file: ../src/helper.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/helper.d" -MT"src/helper.o" -o "src/helper.o" "../src/helper.c"
+Finished building: ../src/helper.c
+ 
+Building file: ../src/isr_callbacks.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/isr_callbacks.d" -MT"src/isr_callbacks.o" -o "src/isr_callbacks.o" "../src/isr_callbacks.c"
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
+                 from ../src/isr_callbacks.c:34:
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
+ static int16_t *pSeq = NULL;
+                 ^
+Finished building: ../src/isr_callbacks.c
+ 
 Building file: ../src/main.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
@@ -661,5 +775,5 @@ arm-none-eabi-size "20-STM32F4_PRJ_GALVO_v2.elf"
    2512	   1300	   1072	   4884	   1314	20-STM32F4_PRJ_GALVO_v2.elf
  
 
-18:43:28 Build Finished (took 7s.581ms)
+00:41:12 Build Finished (took 9s.529ms)
 

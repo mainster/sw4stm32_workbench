@@ -275,9 +275,8 @@ typedef enum {
 /**
  * @brief      Sample time for PID algorithm timing.
  *
- *             Determines the systems overall bandwidth.
- * @note       Unit: µs
- * @note       11/2016: Verify higher control throughput on Texas Instruments
+ *             Determines the systems overall bandwidth. @SI{µs}
+ * @note       11/2016: Verify higher control loop throughput on Texas Instruments
  *             C2000 Series <a href="http://www.ti.com/product/TMS320F28335">
  *             TMS320F28335 "Delfino" DSC. </a>
  */

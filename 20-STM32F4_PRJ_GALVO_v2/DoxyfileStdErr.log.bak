@@ -5,19 +5,19 @@
 ' for \link command
 actuators.c:80: warning: Member ASG (variable) of group IRQ_Handler_Variables is not documented.
 adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
-adc_dac_dma.c:137: warning: Member ADC_Configuration(void) (function) of group Analog_Functions is not documented.
-adc_dac_dma.c:179: warning: Member AnalogWatchdog_Configuration(void) (function) of group Analog_Functions is not documented.
-adc_dac_dma.c:189: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
-adc_dac_dma.c:229: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
+adc_dac_dma.c:137: warning: Member ADC_Scan_Group_Config(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.c:179: warning: Member AN_Watchdog_Config(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.c:189: warning: Member DMA_Config(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
+adc_dac_dma.c:229: warning: Member TIM2_DMA_Trigger_Config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
 adc_dac_dma.c:35: warning: Member ASG (variable) of file adc_dac_dma.c is not documented.
-adc_dac_dma.h:263: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:263: warning: Member TIM2_DMA_triggerConfiguration(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:265: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:265: warning: Member DMA_Configuration(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:266: warning: Member AnalogWatchdog_Configuration(void) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:266: warning: Member AnalogWatchdog_Configuration(void) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:267: warning: Member ADC_Configuration(void) (function) of group Analog_Functions is not documented.
-adc_dac_dma.h:267: warning: Member ADC_Configuration(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:263: warning: Member TIM2_DMA_Trigger_Config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:263: warning: Member TIM2_DMA_Trigger_Config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:265: warning: Member DMA_Config(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:265: warning: Member DMA_Config(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:266: warning: Member AN_Watchdog_Config(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:266: warning: Member AN_Watchdog_Config(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:267: warning: Member ADC_Scan_Group_Config(void) (function) of group Analog_Functions is not documented.
+adc_dac_dma.h:267: warning: Member ADC_Scan_Group_Config(void) (function) of group Analog_Functions is not documented.
 adc_dac_dma.h:269: warning: Member ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
 adc_dac_dma.h:269: warning: Member ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.
 adc_dac_dma.h:270: warning: Member ADC_ContScanMode_w_DMA(__IO int16_t *MultiConvBuff) (function) of group Analog_Functions is not documented.

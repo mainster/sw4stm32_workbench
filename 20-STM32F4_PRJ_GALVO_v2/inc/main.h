@@ -318,6 +318,19 @@ extern float toPlantBuff[2];        /* PID output buffer*/
 
 /** @} */
 
+/**
+ * @addtogroup Main_Functions
+ * @{
+ */
+
+/**
+ * @brief      Set initial values (POR state) of the ASG system and the global
+ *             state structure members.
+ */
+void init_globalStructs(void);
+
+/** @} */
+
 /** @} */
 
 /** @} */
