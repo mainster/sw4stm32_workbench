@@ -37,7 +37,7 @@
 #include "globals.h"
 #include "nvic_config.h"
 #include "main.h"
-#include "md_stm32f4_dac.h"
+// #include "md_stm32f4_dac.h"
 #include "pid.h"
 #include "stm32f4xx_adc.h"
 #include "stm32f4xx_dac.h"
@@ -63,29 +63,8 @@
  *     is fed to the ADCs. The ideal transfer function from rotor position to
  *     the ADC input voltage, can be expressed as gain @tex{K_{PD}} with the
  *     unit @si{V/rad}.
- *
- * @par Digital to analog converter:
- *     An important factor in choosing the appropriate controller was the
- *     integrated dual channel DAC peripheral. Two instances of digital PID
- *     controllers are used to calculate the analog actuator control signals.
- *
- *
- * @par Timer-triggered ADC-scan mode with DMA to memory
- *
- * @attention   Initial start of ADC conversion:
- *
- * @li          Once initialized, first ADC conversion must be started by a
- *              ADC_SoftwareStartConv or whereever the first channel of the
- *              regular group runs (ADC1 ,2 ,3).
- *
- * @li          Timer controlled group scan restart is configured by
- *              *.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T2_TRGO; This
- *              means NOT that start-events for ADC regular scan are generated
- *              by the Timer update ISR!!!
- *
- * @li          Configure TIM for generating Output Trigger events!
- *              TIM_SelectOutputTrigger(TIM2,TIM_TRGOSource_Update);
  */
+
 
 /**
  * @par Pin out
@@ -154,44 +133,6 @@
  * @addtogroup Analog_Macros
  * @{
  */
-
-/**
- * @brief      Process output channel for y (ADC)
- */
-#define ADC_X_CHAN          ADC_Channel_6
-
-/**
- * @brief      Process output channel for y (ADC)
- */
-#define ADC_Y_CHAN          ADC_Channel_8
-
-/**
- * @brief      Actuator coil current sense channel x (I_sens_x)
- */
-#define ADC_Ix_CHAN         ADC_Channel_13
-
-/**
- * @brief      Actuator coil current sense channel x (I_sens_y)
- */
-#define ADC_Iy_CHAN         ADC_Channel_3
-
-/**
- * @brief      Alternate set-point input for channel x 
- */
-#define ADC_W_CHAN          ADC_Channel_3
-
-/**
- * @brief      DMA peripheral base address.
- */
-#define ADC_CCR_ADDRESS    ((uint32_t)0x40012308)
-
-/**
- * @brief      Sets the ADC scan channels count.
- *
- *             This MUST be used in ADC init function, DMA init function and at
- *             the point where a complete buffer copy was taken
- */
-#define ADC_N_REGULAR_CHANNELS  2
 
 /** @} */
 
@@ -279,38 +220,6 @@ DAC_WP_t DAC_SetDualChanSigned_Tripped (int16_t Data2, int16_t Data1);
  * @file adc_dac_dma.c
  */
 extern  DAC_WP_t  (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
-
-/**
- * @brief      { function_description }
- *
- * @param[in]  TimerRun   The timer run
- * @param[in]  IntOn      The int on
- * @param[in]  peri       The peri
- */
-void TIM2_DMA_Trigger_Config (FunctionalState TimerRun,
-                              FunctionalState IntOn, uint16_t peri);
-
-/**
- * @brief      { function_description }
- *
- * @param[in]  int16_t   The int 16 t
- * @param[in]  memSize   This is an integer value, the DMA controller transfers
- *                       memSize datagrams befor circulating. Also memSize ADC
- *                       regular channels have to be configured within this init
- *                       procedure (ADC_RegularChannelConfig)
- */
-void DMA_Config ( __IO int16_t *MultiConvBuff, uint8_t memSize);
-void AN_Watchdog_Config (void);
-
-/**
- * @brief      ADC common and regular scan group init
- */
-void ADC_Scan_Group_Config (void);
-void RCC_Configuration (void);
-void ADC_DMA_DualModeConfig (__IO int16_t *MultiConvBuff);
-void ADC_ContScanMode_w_DMA  (__IO int16_t *MultiConvBuff);
-void ADC_ContScanMode_w_DMA_timeTrigd  (__IO int16_t *MultiConvBuff, uint8_t memSize);
-void DAC_SetSignedValue (MD_DAC_Channel_t DACx, int16_t val);
 
 /** @} */
 

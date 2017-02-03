@@ -36,7 +36,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <stdint-gcc.h>
 #include "attributes.h"
 #include "globals.h"
 
@@ -54,6 +54,7 @@
 /* Specific includes */
 #include "actuators.h"
 #include "adc_dac_dma.h"
+#include "periph2dma_conf.h"
 #include "arm_math.h"
 #include "isr_callbacks.h"
 #include "mdb_gpio.h"
