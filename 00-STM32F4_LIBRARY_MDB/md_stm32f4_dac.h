@@ -33,9 +33,9 @@
 #ifndef MD_DAC_H_
 #define MD_DAC_H_
 
-/* C++ detection */
+
 #ifdef __cplusplus
-extern C {
+extern "C" {
 #endif
 
 /**
@@ -123,7 +123,7 @@ void MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value);
 /** @} */   //!< MD_STM32F4_Libraries
 
 
-/* C++ detection */
+
 #ifdef __cplusplus
 }
 #endif

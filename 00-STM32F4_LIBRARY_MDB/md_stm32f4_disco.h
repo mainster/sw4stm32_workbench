@@ -33,6 +33,10 @@
 #ifndef _MD_DISCO_H_
 #define _MD_DISCO_H_ 
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+ 	
 /**
  * @addtogroup MD_STM32F4_Libraries
  * @{
@@ -194,7 +198,13 @@ uint8_t MD_DISCO_ButtonOnPressed(void);
 uint8_t MD_DISCO_ButtonOnReleased(void);
 
 /** @} */
+
 /** @} */
+
 /** @} */
  
+#ifdef __cplusplus
+}
+#endif
+
 #endif

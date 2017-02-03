@@ -36,6 +36,10 @@
 #ifndef _ACTUATORS_H_
 #define _ACTUATORS_H_
 
+#ifdef __cplusplus
+   extern "C" {
+#endif 
+    
 #include <stdio.h>
 #include "adc_dac_dma.h"
 #include "globals.h"
@@ -43,8 +47,6 @@
 #include "mdb_gpio.h"
 #include "pid.h"
 #include "helper.h"
-
-
 
 /**
  * @addtogroup MD_APP
@@ -255,6 +257,10 @@ int beamCtrl(beamCtrlSource_t src, tribool_state_t newState );
 /** @} */
 
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

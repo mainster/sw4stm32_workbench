@@ -33,6 +33,10 @@
 #ifndef CONSOLE_H_
 #define CONSOLE_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+ 	
 #include "arm_math.h"
 #include "globals.h"
 
@@ -54,5 +58,9 @@
 //};
 //
 //void fastConsoleCase(arm_pid_instance_f32 *pid);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* CONSOLE_H_ */

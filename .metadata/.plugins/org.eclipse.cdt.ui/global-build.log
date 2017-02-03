@@ -1,11 +1,11 @@
-00:52:24 **** Clean-only build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
+02:13:53 **** Clean-only build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
 make clean 
 rm -rf *
  
 
-00:52:24 Build Finished (took 123ms)
+02:13:53 Build Finished (took 86ms)
 
-00:52:26 **** Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
+02:13:58 **** Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
 make all 
 Building file: ../startup/startup_stm32.s
 Invoking: MCU GCC Assembler
@@ -71,17 +71,17 @@ Building file: ../src/actuators.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/actuators.d" -MT"src/actuators.o" -o "src/actuators.o" "../src/actuators.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h:40,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:67:0,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:43,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h:44,
                  from ../src/actuators.c:36:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:133:14: warning: 'line1' defined but not used [-Wunused-variable]
  static float line1[ ][N_TUPEL] = {
               ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:191:17: warning: 'pSeq' defined but not used [-Wunused-variable]
  static int16_t *pSeq = NULL;
                  ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:199:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
  static float *pSeq_f = NULL;
                ^
 Finished building: ../src/actuators.c
@@ -90,16 +90,16 @@ Building file: ../src/adc_dac_dma.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/adc_dac_dma.d" -MT"src/adc_dac_dma.o" -o "src/adc_dac_dma.o" "../src/adc_dac_dma.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:67:0,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:43,
                  from ../src/adc_dac_dma.c:31:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:133:14: warning: 'line1' defined but not used [-Wunused-variable]
  static float line1[ ][N_TUPEL] = {
               ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:191:17: warning: 'pSeq' defined but not used [-Wunused-variable]
  static int16_t *pSeq = NULL;
                  ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:199:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
  static float *pSeq_f = NULL;
                ^
 Finished building: ../src/adc_dac_dma.c
@@ -114,9 +114,9 @@ Building file: ../src/isr_callbacks.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/isr_callbacks.d" -MT"src/isr_callbacks.o" -o "src/isr_callbacks.o" "../src/isr_callbacks.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:67:0,
                  from ../src/isr_callbacks.c:34:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:191:17: warning: 'pSeq' defined but not used [-Wunused-variable]
  static int16_t *pSeq = NULL;
                  ^
 Finished building: ../src/isr_callbacks.c
@@ -126,20 +126,8 @@ Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
 ../src/main.c: In function 'main':
-../src/main.c:331:2: warning: implicit declaration of function 'RCC_Configuration' [-Wimplicit-function-declaration]
-  RCC_Configuration();
-  ^
-../src/main.c:385:2: warning: implicit declaration of function 'TIM2_DMA_Trigger_Config' [-Wimplicit-function-declaration]
-  TIM2_DMA_Trigger_Config(DISABLE, ENABLE, SAMPLE_INTERVAL);
-  ^
 ../src/main.c:388:2: warning: implicit declaration of function 'DMA_Config' [-Wimplicit-function-declaration]
   DMA_Config(ADC_MultiConvBuff, ADC_N_REGULAR_CHANNELS);
-  ^
-../src/main.c:391:2: warning: implicit declaration of function 'ADC_Scan_Group_Config' [-Wimplicit-function-declaration]
-  ADC_Scan_Group_Config();
-  ^
-../src/main.c:397:2: warning: implicit declaration of function 'AN_Watchdog_Config' [-Wimplicit-function-declaration]
-  AN_Watchdog_Config();
   ^
 Finished building: ../src/main.c
  
@@ -147,7 +135,7 @@ Building file: ../src/mdb_gpio.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/mdb_gpio.d" -MT"src/mdb_gpio.o" -o "src/mdb_gpio.o" "../src/mdb_gpio.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2116:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOG               ((GPIO_TypeDef *) GPIOG_BASE)
@@ -163,7 +151,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:172:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_13                ((uint16_t)0x2000)  /* Pin 13 selected */
@@ -177,7 +165,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:41:31: note: in expansion of macro 'GPIO_Pin_13'
    { LED_GREEN_A,      GPIOG,  GPIO_Pin_13,  GPIO_Mode_OUT, GPIO_Speed_50MHz,  GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOG, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2116:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOG               ((GPIO_TypeDef *) GPIOG_BASE)
@@ -193,7 +181,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:173:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_14                ((uint16_t)0x4000)  /* Pin 14 selected */
@@ -207,7 +195,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:42:31: note: in expansion of macro 'GPIO_Pin_14'
    { LED_RED_A,        GPIOG,  GPIO_Pin_14,  GPIO_Mode_OUT, GPIO_Speed_50MHz,  GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOG, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2114:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
@@ -223,7 +211,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:169:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_10                ((uint16_t)0x0400)  /* Pin 10 selected */
@@ -237,7 +225,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:44:31: note: in expansion of macro 'GPIO_Pin_10'
    { BEAM_INTERRUPT,   GPIOE,  GPIO_Pin_10,  GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2114:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
@@ -253,7 +241,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:171:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_12                ((uint16_t)0x1000)  /* Pin 12 selected */
@@ -267,7 +255,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:45:31: note: in expansion of macro 'GPIO_Pin_12'
    { TRIGGER_SRC,      GPIOE,  GPIO_Pin_12,  GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2114:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
@@ -283,7 +271,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:161:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_2                 ((uint16_t)0x0004)  /* Pin 2 selected */
@@ -297,7 +285,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:47:31: note: in expansion of macro 'GPIO_Pin_2'
    { DBG_TIMING_PE2,   GPIOE,  GPIO_Pin_2,   GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2114:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
@@ -313,7 +301,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:163:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_4                 ((uint16_t)0x0010)  /* Pin 4 selected */
@@ -327,7 +315,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:48:31: note: in expansion of macro 'GPIO_Pin_4'
    { DBG_TIMING_PE4,   GPIOE,  GPIO_Pin_4,   GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2114:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOE               ((GPIO_TypeDef *) GPIOE_BASE)
@@ -343,7 +331,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:165:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_6                 ((uint16_t)0x0040)  /* Pin 6 selected */
@@ -357,7 +345,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:49:31: note: in expansion of macro 'GPIO_Pin_6'
    { DBG_TIMING_PE6,   GPIOE,  GPIO_Pin_6,   GPIO_Mode_OUT, GPIO_Speed_100MHz, GPIO_OType_PP, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOE, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2110:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
@@ -373,7 +361,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:165:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_6                 ((uint16_t)0x0040)  /* Pin 6 selected */
@@ -387,7 +375,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:51:31: note: in expansion of macro 'GPIO_Pin_6'
    { ADC_X_CHAN_IO,    GPIOA,  GPIO_Pin_6,   GPIO_Mode_AIN, GPIO_Speed_100MHz, GPIO_OType_OD, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOA, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2111:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOB               ((GPIO_TypeDef *) GPIOB_BASE)
@@ -403,7 +391,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:159:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_0                 ((uint16_t)0x0001)  /* Pin 0 selected */
@@ -417,7 +405,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:52:31: note: in expansion of macro 'GPIO_Pin_0'
    { ADC_Y_CHAN_IO,    GPIOB,  GPIO_Pin_0,   GPIO_Mode_AIN, GPIO_Speed_100MHz, GPIO_OType_OD, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOB, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2112:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOC               ((GPIO_TypeDef *) GPIOC_BASE)
@@ -433,7 +421,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:162:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_3                 ((uint16_t)0x0008)  /* Pin 3 selected */
@@ -447,7 +435,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
 ../src/mdb_gpio.c:53:31: note: in expansion of macro 'GPIO_Pin_3'
    { ADC_Ix_CHAN_IO,   GPIOC,  GPIO_Pin_3,   GPIO_Mode_AIN, GPIO_Speed_100MHz, GPIO_OType_OD, GPIO_PuPd_NOPULL, RCC_AHB1Periph_GPIOC, GPIO_OFF},   
                                ^
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40:0,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:2110:29: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
  #define GPIOA               ((GPIO_TypeDef *) GPIOA_BASE)
@@ -463,7 +451,7 @@ In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_
                        ^
 In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h:40:0,
                  from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:11412,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:36,
+                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:40,
                  from ../src/mdb_gpio.c:33:
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h:162:36: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
  #define GPIO_Pin_3                 ((uint16_t)0x0008)  /* Pin 3 selected */
@@ -489,435 +477,6 @@ Building file: ../src/periph2dma_conf.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/periph2dma_conf.d" -MT"src/periph2dma_conf.o" -o "src/periph2dma_conf.o" "../src/periph2dma_conf.c"
-In file included from ../src/periph2dma_conf.c:32:0:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:44:31: error: unknown type name 'FunctionalState'
- void TIM2_DMA_Trigger_Config (FunctionalState TimerRun,
-                               ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:45:31: error: unknown type name 'FunctionalState'
-                               FunctionalState IntOn, uint16_t peri);
-                               ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:45:54: error: unknown type name 'uint16_t'
-                               FunctionalState IntOn, uint16_t peri);
-                                                      ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:56:19: error: unknown type name '__IO'
- void DMA_Config ( __IO int16_t *MultiConvBuff, uint8_t memSize);
-                   ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:56:48: error: unknown type name 'uint8_t'
- void DMA_Config ( __IO int16_t *MultiConvBuff, uint8_t memSize);
-                                                ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:64:30: error: unknown type name '__IO'
- void ADC_DMA_DualModeConfig (__IO int16_t *MultiConvBuff);
-                              ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:65:31: error: unknown type name '__IO'
-src/subdir.mk:54: recipe for target 'src/periph2dma_conf.o' failed
- void ADC_ContScanMode_w_DMA  (__IO int16_t *MultiConvBuff);
-                               ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:66:41: error: unknown type name '__IO'
- void ADC_ContScanMode_w_DMA_timeTrigd  (__IO int16_t *MultiConvBuff, uint8_t memSize);
-                                         ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:66:70: error: unknown type name 'uint8_t'
- void ADC_ContScanMode_w_DMA_timeTrigd  (__IO int16_t *MultiConvBuff, uint8_t memSize);
-                                                                      ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:67:26: error: unknown type name 'MD_DAC_Channel_t'
- void DAC_SetSignedValue (MD_DAC_Channel_t DACx, int16_t val);
-                          ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:67:49: error: unknown type name 'int16_t'
- void DAC_SetSignedValue (MD_DAC_Channel_t DACx, int16_t val);
-                                                 ^
-../src/periph2dma_conf.c: In function 'ADC_Scan_Group_Config':
-../src/periph2dma_conf.c:40:3: error: unknown type name 'ADC_CommonInitTypeDef'
-   ADC_CommonInitTypeDef ADC_CommonInitStructure;
-   ^
-../src/periph2dma_conf.c:41:3: error: unknown type name 'ADC_InitTypeDef'
-   ADC_InitTypeDef ADC_InitStructure;
-   ^
-../src/periph2dma_conf.c:44:26: error: request for member 'ADC_Mode' in something not a structure or union
-   ADC_CommonInitStructure.ADC_Mode = ADC_Mode_Independent;
-                          ^
-../src/periph2dma_conf.c:44:38: error: 'ADC_Mode_Independent' undeclared (first use in this function)
-   ADC_CommonInitStructure.ADC_Mode = ADC_Mode_Independent;
-                                      ^
-../src/periph2dma_conf.c:44:38: note: each undeclared identifier is reported only once for each function it appears in
-../src/periph2dma_conf.c:45:26: error: request for member 'ADC_Prescaler' in something not a structure or union
-   ADC_CommonInitStructure.ADC_Prescaler = ADC_Prescaler_Div2;
-                          ^
-../src/periph2dma_conf.c:45:43: error: 'ADC_Prescaler_Div2' undeclared (first use in this function)
-   ADC_CommonInitStructure.ADC_Prescaler = ADC_Prescaler_Div2;
-                                           ^
-../src/periph2dma_conf.c:46:26: error: request for member 'ADC_DMAAccessMode' in something not a structure or union
-   ADC_CommonInitStructure.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
-                          ^
-../src/periph2dma_conf.c:46:47: error: 'ADC_DMAAccessMode_Disabled' undeclared (first use in this function)
-   ADC_CommonInitStructure.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
-                                               ^
-../src/periph2dma_conf.c:47:26: error: request for member 'ADC_TwoSamplingDelay' in something not a structure or union
-   ADC_CommonInitStructure.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
-                          ^
-../src/periph2dma_conf.c:47:50: error: 'ADC_TwoSamplingDelay_5Cycles' undeclared (first use in this function)
-   ADC_CommonInitStructure.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
-                                                  ^
-../src/periph2dma_conf.c:48:3: warning: implicit declaration of function 'ADC_CommonInit' [-Wimplicit-function-declaration]
-   ADC_CommonInit(&ADC_CommonInitStructure);
-   ^
-../src/periph2dma_conf.c:50:20: error: request for member 'ADC_Resolution' in something not a structure or union
-   ADC_InitStructure.ADC_Resolution = ADC_Resolution_12b;
-                    ^
-../src/periph2dma_conf.c:50:38: error: 'ADC_Resolution_12b' undeclared (first use in this function)
-   ADC_InitStructure.ADC_Resolution = ADC_Resolution_12b;
-                                      ^
-../src/periph2dma_conf.c:51:20: error: request for member 'ADC_ScanConvMode' in something not a structure or union
-   ADC_InitStructure.ADC_ScanConvMode = ENABLE;
-                    ^
-../src/periph2dma_conf.c:51:40: error: 'ENABLE' undeclared (first use in this function)
-   ADC_InitStructure.ADC_ScanConvMode = ENABLE;
-                                        ^
-../src/periph2dma_conf.c:52:20: error: request for member 'ADC_ContinuousConvMode' in something not a structure or union
-   ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;
-                    ^
-../src/periph2dma_conf.c:52:46: error: 'DISABLE' undeclared (first use in this function)
-   ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;
-                                              ^
-../src/periph2dma_conf.c:53:20: error: request for member 'ADC_ExternalTrigConvEdge' in something not a structure or union
-   ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_Rising;
-                    ^
-../src/periph2dma_conf.c:53:48: error: 'ADC_ExternalTrigConvEdge_Rising' undeclared (first use in this function)
-   ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_Rising;
-                                                ^
-../src/periph2dma_conf.c:54:20: error: request for member 'ADC_ExternalTrigConv' in something not a structure or union
-   ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T2_TRGO;
-                    ^
-../src/periph2dma_conf.c:54:44: error: 'ADC_ExternalTrigConv_T2_TRGO' undeclared (first use in this function)
-   ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T2_TRGO;
-                                            ^
-../src/periph2dma_conf.c:55:20: error: request for member 'ADC_DataAlign' in something not a structure or union
-   ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-                    ^
-../src/periph2dma_conf.c:55:37: error: 'ADC_DataAlign_Right' undeclared (first use in this function)
-   ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-                                     ^
-../src/periph2dma_conf.c:56:20: error: request for member 'ADC_NbrOfConversion' in something not a structure or union
-   ADC_InitStructure.ADC_NbrOfConversion = 0x02; /* 5 channels in total */
-                    ^
-../src/periph2dma_conf.c:57:3: warning: implicit declaration of function 'ADC_Init' [-Wimplicit-function-declaration]
-   ADC_Init(ADC1, &ADC_InitStructure);
-   ^
-../src/periph2dma_conf.c:57:12: error: 'ADC1' undeclared (first use in this function)
-   ADC_Init(ADC1, &ADC_InitStructure);
-            ^
-../src/periph2dma_conf.c:62:3: warning: implicit declaration of function 'ADC_RegularChannelConfig' [-Wimplicit-function-declaration]
-   ADC_RegularChannelConfig(ADC1, ADC_X_CHAN , 1, ADC_SampleTime_3Cycles);
-   ^
-../src/periph2dma_conf.c:62:34: error: 'ADC_X_CHAN' undeclared (first use in this function)
-   ADC_RegularChannelConfig(ADC1, ADC_X_CHAN , 1, ADC_SampleTime_3Cycles);
-                                  ^
-../src/periph2dma_conf.c:62:50: error: 'ADC_SampleTime_3Cycles' undeclared (first use in this function)
-   ADC_RegularChannelConfig(ADC1, ADC_X_CHAN , 1, ADC_SampleTime_3Cycles);
-                                                  ^
-../src/periph2dma_conf.c:63:34: error: 'ADC_Y_CHAN' undeclared (first use in this function)
-   ADC_RegularChannelConfig(ADC1, ADC_Y_CHAN , 2, ADC_SampleTime_3Cycles);
-                                  ^
-../src/periph2dma_conf.c:68:3: warning: implicit declaration of function 'ADC_DMARequestAfterLastTransferCmd' [-Wimplicit-function-declaration]
-   ADC_DMARequestAfterLastTransferCmd(ADC1, ENABLE);
-   ^
-../src/periph2dma_conf.c:71:3: warning: implicit declaration of function 'ADC_DMACmd' [-Wimplicit-function-declaration]
-   ADC_DMACmd(ADC1, ENABLE);
-   ^
-../src/periph2dma_conf.c:74:3: warning: implicit declaration of function 'ADC_Cmd' [-Wimplicit-function-declaration]
-   ADC_Cmd(ADC1, ENABLE);
-   ^
-../src/periph2dma_conf.c: In function 'AN_Watchdog_Config':
-../src/periph2dma_conf.c:81:3: warning: implicit declaration of function 'ADC_AnalogWatchdogSingleChannelConfig' [-Wimplicit-function-declaration]
-   ADC_AnalogWatchdogSingleChannelConfig(ADC1, ADC_Y_CHAN);
-   ^
-../src/periph2dma_conf.c:81:41: error: 'ADC1' undeclared (first use in this function)
-   ADC_AnalogWatchdogSingleChannelConfig(ADC1, ADC_Y_CHAN);
-                                         ^
-../src/periph2dma_conf.c:81:47: error: 'ADC_Y_CHAN' undeclared (first use in this function)
-   ADC_AnalogWatchdogSingleChannelConfig(ADC1, ADC_Y_CHAN);
-                                               ^
-../src/periph2dma_conf.c:82:3: warning: implicit declaration of function 'ADC_AnalogWatchdogThresholdsConfig' [-Wimplicit-function-declaration]
-   ADC_AnalogWatchdogThresholdsConfig(ADC1, 0x7ff, 0);
-   ^
-../src/periph2dma_conf.c:83:3: warning: implicit declaration of function 'ADC_AnalogWatchdogCmd' [-Wimplicit-function-declaration]
-   ADC_AnalogWatchdogCmd(ADC1, ADC_AnalogWatchdog_SingleRegEnable);
-   ^
-../src/periph2dma_conf.c:83:31: error: 'ADC_AnalogWatchdog_SingleRegEnable' undeclared (first use in this function)
-   ADC_AnalogWatchdogCmd(ADC1, ADC_AnalogWatchdog_SingleRegEnable);
-                               ^
-../src/periph2dma_conf.c: At top level:
-../src/periph2dma_conf.c:90:18: error: unknown type name '__IO'
- void DMA_Config( __IO int16_t *MultiConvBuff, uint8_t memSize) {
-                  ^
-../src/periph2dma_conf.c:90:47: error: unknown type name 'uint8_t'
- void DMA_Config( __IO int16_t *MultiConvBuff, uint8_t memSize) {
-                                               ^
-../src/periph2dma_conf.c:130:30: error: unknown type name 'FunctionalState'
- void TIM2_DMA_Trigger_Config(FunctionalState TimerRun, \
-                              ^
-../src/periph2dma_conf.c:131:36: error: unknown type name 'FunctionalState'
-                                    FunctionalState IntOn, uint16_t peri) {
-                                    ^
-../src/periph2dma_conf.c:131:59: error: unknown type name 'uint16_t'
-                                    FunctionalState IntOn, uint16_t peri) {
-                                                           ^
-../src/periph2dma_conf.c:553:25: error: unknown type name 'MD_DAC_Channel_t'
- void DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val) {
-                         ^
-../src/periph2dma_conf.c:553:48: error: unknown type name 'int16_t'
- void DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val) {
-                                                ^
-make: *** [src/periph2dma_conf.o] Error 1
-00:53:12 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
-make all 
-Building file: ../src/periph2dma_conf.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/periph2dma_conf.d" -MT"src/periph2dma_conf.o" -o "src/periph2dma_conf.o" "../src/periph2dma_conf.c"
-In file included from ../src/periph2dma_conf.c:32:0:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h:67:26: error: unknown type name 'MD_DAC_Channel_t'
- void DAC_SetSignedValue (MD_DAC_Channel_t DACx, int16_t val);
-                          ^
-../src/periph2dma_conf.c: In function 'ADC_Scan_Group_Config':
-../src/periph2dma_conf.c:62:34: error: 'ADC_X_CHAN' undeclared (first use in this function)
-   ADC_RegularChannelConfig(ADC1, ADC_X_CHAN , 1, ADC_SampleTime_3Cycles);
-                                  ^
-../src/periph2dma_conf.c:62:34: note: each undeclared identifier is reported only once for each function it appears in
-../src/periph2dma_conf.c:63:34: error: 'ADC_Y_CHAN' undeclared (first use in this function)
-   ADC_RegularChannelConfig(ADC1, ADC_Y_CHAN , 2, ADC_SampleTime_3Cycles);
-                                  ^
-../src/periph2dma_conf.c: In function 'AN_Watchdog_Config':
-../src/periph2dma_conf.c:81:47: error: 'ADC_Y_CHAN' undeclared (first use in this function)
-src/subdir.mk:54: recipe for target 'src/periph2dma_conf.o' failed
-   ADC_AnalogWatchdogSingleChannelConfig(ADC1, ADC_Y_CHAN);
-                                               ^
-../src/periph2dma_conf.c: At top level:
-../src/periph2dma_conf.c:553:25: error: unknown type name 'MD_DAC_Channel_t'
- void DAC_SetSignedValue(MD_DAC_Channel_t DACx, int16_t val) {
-                         ^
-make: *** [src/periph2dma_conf.o] Error 1
-00:53:47 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
-make all 
-Building file: ../src/actuators.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/actuators.d" -MT"src/actuators.o" -o "src/actuators.o" "../src/actuators.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h:40,
-                 from ../src/actuators.c:36:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
- static float line1[ ][N_TUPEL] = {
-              ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
- static float *pSeq_f = NULL;
-               ^
-Finished building: ../src/actuators.c
- 
-Building file: ../src/adc_dac_dma.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/adc_dac_dma.d" -MT"src/adc_dac_dma.o" -o "src/adc_dac_dma.o" "../src/adc_dac_dma.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
-                 from ../src/adc_dac_dma.c:31:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
- static float line1[ ][N_TUPEL] = {
-              ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
- static float *pSeq_f = NULL;
-               ^
-Finished building: ../src/adc_dac_dma.c
- 
-Building file: ../src/isr_callbacks.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/isr_callbacks.d" -MT"src/isr_callbacks.o" -o "src/isr_callbacks.o" "../src/isr_callbacks.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:62:0,
-                 from ../src/isr_callbacks.c:34:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-Finished building: ../src/isr_callbacks.c
- 
-Building file: ../src/main.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:331:2: warning: implicit declaration of function 'RCC_Configuration' [-Wimplicit-function-declaration]
-  RCC_Configuration();
-  ^
-../src/main.c:374:2: warning: implicit declaration of function 'MD_DAC_Init' [-Wimplicit-function-declaration]
-  MD_DAC_Init(MD_DAC1);
-  ^
-../src/main.c:374:14: error: 'MD_DAC1' undeclared (first use in this function)
-  MD_DAC_Init(MD_DAC1);
-              ^
-../src/main.c:374:14: note: each undeclared identifier is reported only once for each function it appears in
-../src/main.c:375:14: error: 'MD_DAC2' undeclared (first use in this function)
-  MD_DAC_Init(MD_DAC2);
-              ^
-../src/main.c:385:2: warning: implicit declaration of function 'TIM2_DMA_Trigger_Config' [-Wimplicit-function-declaration]
-  TIM2_DMA_Trigger_Config(DISABLE, ENABLE, SAMPLE_INTERVAL);
-  ^
-../src/main.c:388:2: warning: implicit declaration of function 'DMA_Config' [-Wimplicit-function-declaration]
-  DMA_Config(ADC_MultiConvBuff, ADC_N_REGULAR_CHANNELS);
-  ^
-../src/main.c:391:2: warning: implicit declaration of function 'ADC_Scan_Group_Config' [-Wimplicit-function-declaration]
-  ADC_Scan_Group_Config();
-  ^
-../src/main.c:397:2: warning: implicit declaration of function 'AN_Watchdog_Config' [-Wimplicit-function-declaration]
-  AN_Watchdog_Config();
-  ^
-../src/main.c: In function 'init_globalStructs':
-../src/main.c:573:10: error: 'MD_DAC1' undeclared (first use in this function)
-  g.dacHw[MD_DAC1].upperLim = (int16_t) (2113 - ADC_RNG / 2);
-          ^
-../src/main.c:575:10: error: 'MD_DAC2' undeclared (first use in this function)
-  g.dacHw[MD_DAC2].upperLim = (int16_t) (2113 - ADC_RNG / 2);
-          ^
-src/subdir.mk:54: recipe for target 'src/main.o' failed
-make: *** [src/main.o] Error 1
-00:54:20 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
-make all 
-Building file: ../src/actuators.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/actuators.d" -MT"src/actuators.o" -o "src/actuators.o" "../src/actuators.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:63:0,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h:40,
-                 from ../src/actuators.c:36:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
- static float line1[ ][N_TUPEL] = {
-              ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
- static float *pSeq_f = NULL;
-               ^
-Finished building: ../src/actuators.c
- 
-Building file: ../src/adc_dac_dma.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/adc_dac_dma.d" -MT"src/adc_dac_dma.o" -o "src/adc_dac_dma.o" "../src/adc_dac_dma.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:63:0,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
-                 from ../src/adc_dac_dma.c:31:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
- static float line1[ ][N_TUPEL] = {
-              ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
- static float *pSeq_f = NULL;
-               ^
-Finished building: ../src/adc_dac_dma.c
- 
-Building file: ../src/isr_callbacks.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/isr_callbacks.d" -MT"src/isr_callbacks.o" -o "src/isr_callbacks.o" "../src/isr_callbacks.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:63:0,
-                 from ../src/isr_callbacks.c:34:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-Finished building: ../src/isr_callbacks.c
- 
-Building file: ../src/main.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building file: ../src/periph2dma_conf.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/periph2dma_conf.d" -MT"src/periph2dma_conf.o" -o "src/periph2dma_conf.o" "../src/periph2dma_conf.c"
-../src/periph2dma_conf.c: In function 'ADC_Scan_Group_Config':
-../src/periph2dma_conf.c:62:34: error: 'ADC_X_CHAN' undeclared (first use in this function)
-   ADC_RegularChannelConfig(ADC1, ADC_X_CHAN , 1, ADC_SampleTime_3Cycles);
-                                  ^
-../src/periph2dma_conf.c:62:34: note: each undeclared identifier is reported only once for each function it appears in
-../src/periph2dma_conf.c:63:34: error: 'ADC_Y_CHAN' undeclared (first use in this function)
-   ADC_RegularChannelConfig(ADC1, ADC_Y_CHAN , 2, ADC_SampleTime_3Cycles);
-                                  ^
-../src/periph2dma_conf.c: In function 'AN_Watchdog_Config':
-../src/periph2dma_conf.c:81:47: error: 'ADC_Y_CHAN' undeclared (first use in this function)
-   ADC_AnalogWatchdogSingleChannelConfig(ADC1, ADC_Y_CHAN);
-                                               ^
-make: *** [src/periph2dma_conf.o] Error 1
-src/subdir.mk:54: recipe for target 'src/periph2dma_conf.o' failed
-01:00:11 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
-make all 
-Building file: ../src/actuators.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/actuators.d" -MT"src/actuators.o" -o "src/actuators.o" "../src/actuators.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:63:0,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h:40,
-                 from ../src/actuators.c:36:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
- static float line1[ ][N_TUPEL] = {
-              ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
- static float *pSeq_f = NULL;
-               ^
-Finished building: ../src/actuators.c
- 
-Building file: ../src/adc_dac_dma.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/adc_dac_dma.d" -MT"src/adc_dac_dma.o" -o "src/adc_dac_dma.o" "../src/adc_dac_dma.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:63:0,
-                 from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h:39,
-                 from ../src/adc_dac_dma.c:31:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
- static float line1[ ][N_TUPEL] = {
-              ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
- static float *pSeq_f = NULL;
-               ^
-Finished building: ../src/adc_dac_dma.c
- 
-Building file: ../src/isr_callbacks.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/isr_callbacks.d" -MT"src/isr_callbacks.o" -o "src/isr_callbacks.o" "../src/isr_callbacks.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:63:0,
-                 from ../src/isr_callbacks.c:34:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
- static int16_t *pSeq = NULL;
-                 ^
-Finished building: ../src/isr_callbacks.c
- 
-Building file: ../src/main.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-Finished building: ../src/main.c
- 
-Building file: ../src/periph2dma_conf.c
-Invoking: MCU GCC Compiler
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/periph2dma_conf.d" -MT"src/periph2dma_conf.o" -o "src/periph2dma_conf.o" "../src/periph2dma_conf.c"
 Finished building: ../src/periph2dma_conf.c
  
 Building file: ../src/pid.c
@@ -931,10 +490,10 @@ Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/signalGen.d" -MT"src/signalGen.o" -o "src/signalGen.o" "../src/signalGen.c"
 In file included from ../src/signalGen.c:32:0:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:191:17: warning: 'pSeq' defined but not used [-Wunused-variable]
  static int16_t *pSeq = NULL;
                  ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:199:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
  static float *pSeq_f = NULL;
                ^
 Finished building: ../src/signalGen.c
@@ -943,15 +502,15 @@ Building file: ../src/stm32f4xx_it.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/stm32f4xx_it.d" -MT"src/stm32f4xx_it.o" -o "src/stm32f4xx_it.o" "../src/stm32f4xx_it.c"
-In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:63:0,
+In file included from /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h:67:0,
                  from ../src/stm32f4xx_it.c:53:
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:129:14: warning: 'line1' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:133:14: warning: 'line1' defined but not used [-Wunused-variable]
  static float line1[ ][N_TUPEL] = {
               ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:187:17: warning: 'pSeq' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:191:17: warning: 'pSeq' defined but not used [-Wunused-variable]
  static int16_t *pSeq = NULL;
                  ^
-/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:195:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h:199:15: warning: 'pSeq_f' defined but not used [-Wunused-variable]
  static float *pSeq_f = NULL;
                ^
 Finished building: ../src/stm32f4xx_it.c
@@ -1232,3 +791,78 @@ arm-none-eabi-size "20-STM32F4_PRJ_GALVO_v2.elf"
    text	   data	    bss	    dec	    hex	filename
    2512	   1300	   1072	   4884	   1314	20-STM32F4_PRJ_GALVO_v2.elf
  
+02:15:14 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
+make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -D__cplusplus -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c"
+In file included from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:31:0:
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h:38:10: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ extern C {
+          ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:33:18: error: unknown type name 'MD_DAC_Channel_t'
+ void MD_DAC_Init(MD_DAC_Channel_t DACx) {
+                  ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:67:22: error: unknown type name 'MD_DAC_Channel_t'
+ void MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value) {
+                      ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:67:45: error: unknown type name 'uint16_t'
+ void MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value) {
+                                             ^
+make: *** [src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o] Error 1
+src/00-STM32F4_LIBRARY_MDB/subdir.mk:42: recipe for target 'src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o' failed
+02:18:32 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
+make all 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -D__cplusplus -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c"
+In file included from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:31:0:
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h:38:8: error: expected identifier or '(' before string constant
+ extern "C" {
+        ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:33:18: error: unknown type name 'MD_DAC_Channel_t'
+ void MD_DAC_Init(MD_DAC_Channel_t DACx) {
+                  ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:67:22: error: unknown type name 'MD_DAC_Channel_t'
+ void MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value) {
+                      ^
+src/00-STM32F4_LIBRARY_MDB/subdir.mk:42: recipe for target 'src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o' failed
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:67:45: error: unknown type name 'uint16_t'
+ void MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value) {
+                                             ^
+make: *** [src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o] Error 1
+02:18:43 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
+make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -D__cplusplus -DSTM32F429ZI -D__SOFTFP__ -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.d" -MT"src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" -o "src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o" "/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c"
+In file included from /media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:31:0:
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h:38:8: error: expected identifier or '(' before string constant
+ extern "C" {
+        ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:33:18: error: unknown type name 'MD_DAC_Channel_t'
+ void MD_DAC_Init(MD_DAC_Channel_t DACx) {
+                  ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:67:22: error: unknown type name 'MD_DAC_Channel_t'
+ void MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value) {
+                      ^
+/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c:67:45: error: unknown type name 'uint16_t'
+ void MD_DAC_SetValue(MD_DAC_Channel_t DACx, uint16_t value) {
+                                             ^
+src/00-STM32F4_LIBRARY_MDB/subdir.mk:42: recipe for target 'src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o' failed
+make: *** [src/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.o] Error 1

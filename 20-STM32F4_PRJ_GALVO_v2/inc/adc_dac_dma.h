@@ -34,6 +34,10 @@
 #ifndef _ADC_DAC_DMA_H_
 #define _ADC_DAC_DMA_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+    
 #include "globals.h"
 #include "nvic_config.h"
 #include "main.h"
@@ -226,5 +230,9 @@ extern  DAC_WP_t  (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);
 /** @} */
 
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

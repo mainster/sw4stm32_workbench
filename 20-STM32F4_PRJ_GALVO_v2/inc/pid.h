@@ -33,6 +33,10 @@
 #ifndef _PID_H_
 #define _PID_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+    
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -445,5 +449,10 @@ int fpid_Controller (int16_t setPoint, int16_t processValue,
 /** @} */
 
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif

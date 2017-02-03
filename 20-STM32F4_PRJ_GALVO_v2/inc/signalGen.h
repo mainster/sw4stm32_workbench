@@ -33,6 +33,10 @@
 #ifndef _SIGNALGEN_H
 #define _SIGNALGEN_H
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+    
 #include <stdio.h>
 
 /**
@@ -214,13 +218,13 @@ static uint8_t *pInt __attribute__ ((unused)) = &interrupterBuff[0];
 
 /** @} */
 
-
-
-
-
 /** @} */
 
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
     

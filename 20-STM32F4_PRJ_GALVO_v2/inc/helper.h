@@ -33,6 +33,10 @@
 #ifndef _HELPER_H_
 #define _HELPER_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+  
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -95,7 +99,8 @@ uint16_t decodeDbl_toUint(double value);
 
 /** @} */
 
-
-
+#ifdef __cplusplus
+}
+#endif
 
 #endif

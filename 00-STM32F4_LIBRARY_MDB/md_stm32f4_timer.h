@@ -1,9 +1,10 @@
-﻿#ifndef __MD_TIMER_H_
-#define __MD_TIMER_H_
-/**
- * Library dependencies
+﻿#ifndef _MD_TIMER_H_
+#define _MD_TIMER_H_
 
- */
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+
 /**
  * Includes
  */
@@ -42,5 +43,8 @@ int TM_Timer4_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t p
 int TM_Timer6_config(FunctionalState TimerRun, FunctionalState IntOn, uint16_t peri);
 
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -33,6 +33,10 @@
 #ifndef _ISR_CALLBACKS_H_
 #define _ISR_CALLBACKS_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+ 	
 #include "main.h"
 #include "globals.h"
 #include "adc_dac_dma.h"

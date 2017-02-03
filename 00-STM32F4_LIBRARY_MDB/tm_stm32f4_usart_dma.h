@@ -30,9 +30,9 @@
 #ifndef TM_USART_DMA_H
 #define TM_USART_DMA_H 100
 
-/* C++ detection */
+
 #ifdef __cplusplus
-extern C {
+extern "C" {
 #endif
 
 /**
@@ -249,7 +249,7 @@ uint8_t TM_USART_DMA_Sending(USART_TypeDef* USARTx);
  * @}
  */
 
-/* C++ detection */
+
 #ifdef __cplusplus
 }
 #endif

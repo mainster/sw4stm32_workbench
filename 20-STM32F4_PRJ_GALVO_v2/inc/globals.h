@@ -30,9 +30,12 @@
     @endverbatim
  *
  */
-#ifndef DEFINES_H_
-#define DEFINES_H_
+#ifndef _GLOBALS_H_
+#define _GLOBALS_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
 /**
  * @defgroup   flags Compilerflags
  */
@@ -289,5 +292,9 @@ typedef enum {
 /** @} */
 
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif 

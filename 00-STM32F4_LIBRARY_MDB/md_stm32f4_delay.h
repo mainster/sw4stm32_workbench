@@ -33,6 +33,10 @@
 #ifndef MD_STM32F4_DELAY_H_
 #define MD_STM32F4_DELAY_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+    
 /* Includes */
 #include "stm32f4xx.h"
 #include "stm32f4xx_rcc.h"
@@ -102,5 +106,8 @@ void MD_DELAY_EnableSystick(void);
  */
 void MD_DELAY_DisableSystick(void);
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* MD_STM32F4_DELAY_H_ */

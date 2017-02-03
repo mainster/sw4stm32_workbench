@@ -35,6 +35,10 @@
 
 #include "stm32f4xx.h"
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+
 /**
  * @addtogroup  MD_STM32F4_Libraries
  * @{
@@ -411,7 +415,7 @@ uint16_t MD_GPIO_GetFreePins(GPIO_TypeDef *GPIOx);
 
 /** @} */
 
-/* C++ detection */
+
 #ifdef __cplusplus
 }
 #endif

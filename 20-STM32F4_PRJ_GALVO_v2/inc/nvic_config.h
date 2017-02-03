@@ -33,6 +33,10 @@
 #ifndef _NVIC_CONFIG_H_
 #define _NVIC_CONFIG_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+ 	
 #include "misc.h"
 
 /**
@@ -90,5 +94,9 @@ void NVIC_Configuration (void);
 /** @} */
 
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* NVIC_CONFIG_H_ */

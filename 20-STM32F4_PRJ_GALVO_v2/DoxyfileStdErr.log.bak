@@ -4,7 +4,7 @@
   parameter 'stType'
 ' for \link command
 actuators.c:80: warning: Member ASG (variable) of group IRQ_Handler_Variables is not documented.
-adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
+adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Periph2DMA_Conf(void)
 adc_dac_dma.c:137: warning: Member ADC_Scan_Group_Config(void) (function) of group Analog_Functions is not documented.
 adc_dac_dma.c:179: warning: Member AN_Watchdog_Config(void) (function) of group Analog_Functions is not documented.
 adc_dac_dma.c:189: warning: Member DMA_Config(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of group Analog_Functions is not documented.

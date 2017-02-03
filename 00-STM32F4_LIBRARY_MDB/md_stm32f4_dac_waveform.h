@@ -33,6 +33,10 @@
 #ifndef _MD_DAC_H_
 #define _MD_DAC_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+    
 #include "stm32f4xx.h"
 #include "stm32f4xx_dac.h"
 #include "md_stm32f4_dac.h"
@@ -155,5 +159,9 @@ void DAC_TriangleConfig(MD_DAC_Channel_t DACx);
 /** @} */
 
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

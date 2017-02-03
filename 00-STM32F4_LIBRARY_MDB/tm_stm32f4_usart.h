@@ -30,7 +30,7 @@
 #ifndef TM_USART_H
 #define TM_USART_H
 
-/* C++ detection */
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -684,7 +684,7 @@ __weak void TM_UART8_ReceiveHandler(uint8_t c);
  * @}
  */
 
-/* C++ detection */
+
 #ifdef __cplusplus
 }
 #endif

@@ -33,6 +33,10 @@
 #ifndef _MDB_GPIO_H_
 #define _MDB_GPIO_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+  
 #include "stm32f4xx.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_rcc.h"
@@ -206,5 +210,9 @@ void gpio_init_mco2(void);
 /** @} */
 
 /** @} */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

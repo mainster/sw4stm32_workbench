@@ -3,7 +3,7 @@
   parameter 'DACx'
   parameter 'stType'
 ' for \link command
-adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Configuration(void)
+adc_dac_dma.c:106: warning: argument 'memSize' of command @param is not found in the argument list of RCC_Periph2DMA_Conf(void)
 isr_callbacks.c:147: warning: Illegal command ref as part of a title section
 md_stm32f4_disco.h:170: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonPressed()
 md_stm32f4_disco.h:179: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonOnPressed(void)

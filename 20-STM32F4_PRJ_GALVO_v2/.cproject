@@ -35,6 +35,7 @@
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1095875095" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F429ZITx"/>
+									<listOptionValue builtIn="false" value="__cplusplus"/>
 									<listOptionValue builtIn="false" value="STM32F429ZI"/>
 									<listOptionValue builtIn="false" value="__SOFTFP__"/>
 									<listOptionValue builtIn="false" value="ARM_MATH_CM4"/>

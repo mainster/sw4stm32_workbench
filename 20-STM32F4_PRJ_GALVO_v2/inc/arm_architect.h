@@ -46,6 +46,10 @@
 #ifndef _ARM_ARCHITECT_H_
 #define _ARM_ARCHITECT_H_
 
+#ifdef __cplusplus
+ extern "C" {
+#endif 
+    
 const char *TARGET_ARCH_ARM[] = {
     "v7-M, v7E-M", " ", " ", " ", 
     "v4, v4T",
@@ -53,5 +57,9 @@ const char *TARGET_ARCH_ARM[] = {
     "v6, v6K, v6Z, v6T2",
     "v7-R"
 };
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
