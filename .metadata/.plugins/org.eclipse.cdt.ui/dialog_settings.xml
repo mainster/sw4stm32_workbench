@@ -9,7 +9,7 @@
 	<item value="10" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.inner"/>
 	<item value="7" key="formatter_page.modify_dialog_tab_page.last_focus_index"/>
 	<item value="9" key="org.eclipse.cdt.uiformatter_page.line_wrapping_tab_page.last_category_index"/>
-	<item value="STM32F429ZI" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
+	<item value="__cplusplus" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<item value="3" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.option"/>
 	<item value="true" key="org.eclipse.cdt.ui.formatter_page.show_invisible_characters"/>
 	<item value="1139" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_width"/>

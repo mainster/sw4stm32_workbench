@@ -55,6 +55,8 @@
  * @{
  */
 
+#define RX_FRAME_PADDING_CHAR   '~'
+
 /** @} */
 
 /**
@@ -74,6 +76,11 @@ uint32_t ticks = 0;
 extern DAC_WP_t (*DAC_SecureSetDualChanSigned)(int16_t, int16_t);
 
 /** @} */
+
+/**
+ * @addtogroup Main_Function
+ * @{
+ */
 
 // ==============================================================
 //   This is needed in order to provide printf functionality
@@ -98,24 +105,21 @@ PUTCHAR_PROTOTYPE {
 //                         Prototypes
 // ==============================================================
 void fastConsoleCase(arm_pid_instance_f32 *pid);
-void init_globalStructs(void);
+
+/** @} */
 
 
-#define RX_FRAME_PADDING_CHAR   '~'
-
-/* The function pointer updateActuator is used as non-privileged access function
- * to internal DAC output registers. After ASG detects a tripping condition ,
- * updateActuator function-pointer targets to updateActuator_fused_callback */
-//int (*updateActuator)                (float, float);
-//int (*updateActuator_callback)       (float, float);
-//int (*updateActuator_fused_callback) (float, float);
 // ==============================================================
 //                  Compensator things
 // ==============================================================
+
+/**
+ * @brief      Use old implementation of PID algorithm.
+ */
 #define ALGO_OLD                10
 #define ADJUSTING_SETPOINT      11      // Stellungsalgorithmus
 #define SPEED_SETPOINT          12      // Geschwindigkeitsalgorithmus
-#define ALGORITHM   ADJUSTING_SETPOINT
+#define ALGORITHM   			ADJUSTING_SETPOINT
 
 /* Get two PID_DATA struct instances */
 struct PID_DATA pidDataX;
@@ -324,7 +328,7 @@ int main(void) {
 	SystemInit();
 
 	/**< Enable some AHB clock sources */
-	RCC_Configuration();
+	RCC_Periph2DMA_Conf();
 
 	/**< All used GPIOs should be initialized by this call */
 	MDB_GPIO_Init();
@@ -378,23 +382,23 @@ int main(void) {
 	NVIC_Configuration();
 
 	/**< Initialize TIM2 as part of sampling hw, also enable DMA trigger source */
-	TIM2_DMA_triggerConfiguration(DISABLE, ENABLE, SAMPLE_INTERVAL);
+	TIM2_DMA_Trigger_Config(DISABLE, ENABLE, SAMPLE_INTERVAL);
 
 	/**< Configure DMA controller for ADC2memory */
-	DMA_Configuration(ADC_MultiConvBuff, ADC_N_REGULAR_CHANNELS);
+	DMA_Config(ADC_MultiConvBuff, ADC_N_REGULAR_CHANNELS);
 
 	/**< Configure ADC channels for regular scan, DMA channel ... */
-	ADC_Configuration();
+	ADC_Scan_Group_Config();
 
 	/**< Set initial values on global structs */
 	init_globalStructs();
 
 	/**< Configure analog watch dog for selected X/Y ADC channels (security feature) */
-	AnalogWatchdog_Configuration();
+	AN_Watchdog_Config();
 
 	/**< Set threshold for analog watch dog */
-	ADC_AnalogWatchdogThresholdsConfig(ADC1,decode_toUint(ASG.upperVal + VA_BIAS),
-											decode_toUint(ASG.lowerVal + VA_BIAS));
+	ADC_AnalogWatchdogThresholdsConfig(ADC1,decode_toUint(ASG.upperThreshold + VA_BIAS),
+											decode_toUint(ASG.lowerThreshold + VA_BIAS));
 
 	/**< Transmit boot up message to UART1 */
 	char *tok;
@@ -534,9 +538,7 @@ int main(void) {
 
 /** @} */
 
-/**
- * @brief   Write initial states to different structures
- */
+
 void init_globalStructs(void) {
 
 	/**< Set PID parameters */
@@ -547,9 +549,12 @@ void init_globalStructs(void) {
 	PIDY.Ki = PID_PARAM_KI; /* Integral */
 	PIDY.Kd = PID_PARAM_KD; /* Derivative */
 
-	/**< Initialize autoShutdown system struct. */
-	ASG.lowerVal = ASG_TRIPPING_LOWER_DEFAULT;
-	ASG.upperVal = ASG_TRIPPING_UPPER_DEFAULT;
+	/** 
+	 * Initialize ASG system structure. 
+	 */
+	ASG.lowerThreshold 	= ASG_LOWER_THRESHOLD_DEFAULT;
+	ASG.upperThreshold 	= ASG_UPPER_THRESHOLD_DEFAULT;
+	ASG.trippingLevel	= ASG_INTEGRATOR_TRIPPING_DEFAULT;
 
 	ASG.integrator = 0;
 	ASG.safeVal = ASG_SAFEVALUE_DEFAULT;
@@ -558,7 +563,9 @@ void init_globalStructs(void) {
 	ASG.tripTime = ASG_TRIPPING_TIME_DEFAULT;   // 750ms initial
 	ASG.state = ASG_STATIONARY_INTEGRATOR;
 
-	/**< Initialize global structure */
+	/** 
+	 * Initialize the global state structure. 
+	 */
 	g.waveForm = NN;
 	g.duty = 999;
 	g.freq = 999;
@@ -1284,7 +1291,7 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 //     IRQ callback:    Timer 4 overrun     Waveform Generator
 // ==============================================================
 // #ifdef NO1
-// void TIM4_IRQHandler(void) {
+// void TIM4_IRQ_Handler(void) {
 //    if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {
 //      TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
 
@@ -1315,7 +1322,7 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 //    }
 // }
 // #else
-// void TIM4_IRQHandler(void) {
+// void TIM4_IRQ_Handler(void) {
 // fff
 // volatile float ft=0;
 
@@ -1421,7 +1428,7 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 ////     IRQ callback:    ADC end-of-conversion
 ////                      Analog Watchdog IRQ
 //// ==============================================================
-//void ADC_IRQHandler(void) {
+//void ADC_IRQ_Handler(void) {
 //    if (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == SET) {
 //        ADC_ClearITPendingBit(ADC1, ADC_IT_EOC);
 //        /* End of conversion interrupt occured */
@@ -1442,7 +1449,7 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 //            ASG.state = ASG_CHARGING_INTEGRATOR;
 //            printf("ASS:charging_start...\n");
 //        }
-//        if ((ASG.integrator <= ASG.intUpperLimit) || (ASG.integrator >= ASG.IntUpperLimit)) {   /**< check for integrator limit */
+//        if ((ASG.integrator <= ASG.upperThreshold) || (ASG.integrator >= ASG.upperThreshold)) {   /**< check for integrator limit */
 //            if (! ASG.tripped) {
 //                ASG.tripped = 1;                    /**< Set "tripped" state if it is so */
 //                DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the "ASG tripped" handler*/
@@ -1450,7 +1457,7 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 //            return;
 //        }
 //        else {                                  /**< else increment integrator */
-//            ASG.integrator+= ASG.IntUpperLimit * (double)TS*1e-6/(ASG.tripTime);
+//            ASG.integrator+= ASG.upperThreshold * (double)TS*1e-6/(ASG.tripTime);
 //        }
 //        return;
 //    }

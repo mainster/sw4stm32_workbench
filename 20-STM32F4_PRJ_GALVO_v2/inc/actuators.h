@@ -43,7 +43,7 @@
 #include <stdio.h>
 #include "adc_dac_dma.h"
 #include "globals.h"
-#include "isr_callbacks.h"
+#include "irq_callbacks.h"
 #include "mdb_gpio.h"
 #include "pid.h"
 #include "helper.h"

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="241" key="DIALOG_X_ORIGIN"/>
-		<item value="39" key="DIALOG_Y_ORIGIN"/>
-	</section>
 	<section name="org.eclipse.ui.preferences.keysPreferencePage">
 		<item value="true" key="actionSetFilter"/>
 		<item value="true" key="uncategorizedFilter"/>
@@ -12,6 +8,30 @@
 	<section name="EditorSelectionDialog">
 		<item value="false" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
 		<item value="winterwell.markdown.editors.MarkdownEditor" key="EditorSelectionDialog.STORE_ID_DESCR"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="eclox.ui.wizard.NewDoxyfile" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Other"/>
+		</list>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item value="1077" key="DIALOG_WIDTH"/>
+		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="828" key="DIALOG_HEIGHT"/>
+		<item value="166" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="FileExtensionDialogSettings">
+		<item value="525" key="DIALOG_WIDTH"/>
+		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="319" key="DIALOG_HEIGHT"/>
+		<item value="759" key="DIALOG_X_ORIGIN"/>
+		<item value="162" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="241" key="DIALOG_X_ORIGIN"/>
+		<item value="39" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="-1" key="dialogHeight"/>
@@ -31,19 +51,6 @@
 			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-18-01-2017.epf"/>
 			<item value="/tmp/theme-6093.epf"/>
 		</list>
-	</section>
-	<section name="NewWizardAction">
-		<item value="eclox.ui.wizard.NewDoxyfile" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
-		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.ui.Other"/>
-		</list>
-	</section>
-	<section name="InstallationDialogSettings">
-		<item value="1077" key="DIALOG_WIDTH"/>
-		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="828" key="DIALOG_HEIGHT"/>
-		<item value="166" key="DIALOG_X_ORIGIN"/>
-		<item value="0" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
 		<item value="0" key="sort"/>
@@ -69,21 +76,17 @@
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
 	</section>
+	<section name="ZipFileImportWizard">
+	</section>
 	<section name="PreferencesExportWizard">
-		<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-21-01-2017.epf" key=""/>
+		<item value="/media/data/CODES/sw4stm32_workbench/sw4-eclipse-prefs-03-02-2017.epf" key=""/>
 		<item value="false" key="WizardPreferencesExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID"/>
 		<item value="true" key="WizardPreferencesExportPage1.EXPORT_ALL_PREFERENCES_ID"/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="/media/data/CODES/sw4stm32_workbench/sw4-eclipse-prefs-03-02-2017.epf"/>
 			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-21-01-2017.epf"/>
 			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-18-01-2017.epf"/>
 		</list>
-	</section>
-	<section name="FileExtensionDialogSettings">
-		<item value="525" key="DIALOG_WIDTH"/>
-		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="319" key="DIALOG_HEIGHT"/>
-		<item value="759" key="DIALOG_X_ORIGIN"/>
-		<item value="162" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="FileSystemImportWizard">
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>

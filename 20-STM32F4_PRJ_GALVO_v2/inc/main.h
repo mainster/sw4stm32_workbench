@@ -60,7 +60,7 @@
 #include "adc_dac_dma.h"
 #include "periph2dma_conf.h"
 #include "arm_math.h"
-#include "isr_callbacks.h"
+#include "irq_callbacks.h"
 #include "mdb_gpio.h"
 #include "pid.h"
 #include "pid.h"

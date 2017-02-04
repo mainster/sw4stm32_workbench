@@ -62,10 +62,22 @@
 #define   GPIO_COUNT   11
 
 /**
- * @brief      Provides pin toggle functionality for PID timing related
- *             debugging purposes.
+ * @brief      Provides pin toggle functionality for timing related debugging
+ *             purposes.
  */
 #define   DBG_PID_TIMING_TOG()    (MDB_GPIO_Toggle(DBG_TIMING_PE6))
+
+/**
+ * @brief      Provides Tic functionality for timing related debugging
+ *             purposes.
+ */
+#define   DBG_PID_TIMING_TIC()    (MDB_GPIO_On(DBG_TIMING_PE6))
+
+/**
+ * @brief      Provides Toc functionality for timing related debugging
+ *             purposes.
+ */
+#define   DBG_PID_TIMING_TOC()    (MDB_GPIO_Off(DBG_TIMING_PE6))
 
 /**
  * @brief      Provides pin set/clear functionality for PID timing debugging

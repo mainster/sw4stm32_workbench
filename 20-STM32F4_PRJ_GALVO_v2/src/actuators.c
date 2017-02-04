@@ -59,7 +59,7 @@ int beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) {
     }
 
     /* FIXME: TEST */
-    float test = ASG.lowerVal;
+    float test = ASG.lowerThreshold;
     g.dutyCyc = test;
     
     return -1;

@@ -6387,3 +6387,13 @@ java.lang.StackOverflowError
 	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4717)
 	at org.eclipse.swt.internal.gtk.OS._gtk_widget_grab_focus(Native Method)
 	at org.eclipse.swt.internal.gtk.OS.gtk_widget_grab_focus(OS.java:14367)
+!SESSION 2017-02-04 01:59:57.379 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_111
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -data /media/data/CODES/sw4stm32_workbench -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-02-04 02:01:39.827
+!MESSAGE Indexed '24-STM32F4_USB_VCP' (45 sources, 94 headers) in 2.39 sec: 8,129 declarations; 32,993 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
