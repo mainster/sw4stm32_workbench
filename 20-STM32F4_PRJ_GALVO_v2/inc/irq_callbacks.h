@@ -1,5 +1,5 @@
 /**
- * @file        isr_callbacks.h
+ * @file        irq_callbacks.h
  *
  * @date        28 Jan 2017
  * @author      Manuel Del Basso (mainster)
@@ -30,8 +30,8 @@
 	@endverbatim
  *
  */
-#ifndef _ISR_CALLBACKS_H_
-#define _ISR_CALLBACKS_H_
+#ifndef _IRQ_CALLBACKS_H_
+#define _IRQ_CALLBACKS_H_
 
 #ifdef __cplusplus
  extern "C" {
@@ -47,7 +47,7 @@
  */
 
 /**
- * @addtogroup 	APP_IRQ_Handler
+ * @addtogroup 	APP_IRQ_Handler IRQ Handler
  * @brief		Provides project specific callback handlers to service interrupt requests.
  * @{
  */
@@ -79,13 +79,16 @@
  */
 
 /* See implementation file for documentation. */
-void TIM2_IRQHandler(void);
+void DMA2_STREAM_0_IRQ_Handler(void);
 
 /* See implementation file for documentation. */
-void TIM4_IRQHandler(void);
+void ADC_IRQ_Handler(void);
 
 /* See implementation file for documentation. */
-void ADC_IRQHandler(void);
+void TIM2_IRQ_Handler(void);
+
+/* See implementation file for documentation. */
+void TIM4_IRQ_Handler(void);
 
 /** @} */
 
