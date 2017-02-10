@@ -57,6 +57,11 @@
  * @{
  */
 
+/**
+ * @addtogroup exceptions Exceptions Handlers 
+ * @{
+ */
+
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -192,9 +197,9 @@ __weak void TimingDelay_Decrement(void) {
 {
 }*/
 
-/**
-  * @}
-  */ 
+/** @} */ 
+
+/** @} */ 
 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -10,10 +10,11 @@
 		<item value="false" key="BUILD_NOW"/>
 	</section>
 	<section name="ExternalProjectImportWizard">
-		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
-		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value=""/>
 			<item value="/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Project/STM32F4xx_StdPeriph_Templates/SW4STM32/STM32F429_439xx"/>
 			<item value="/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Project/STM32F4xx_StdPeriph_Templates/SW4STM32"/>
 			<item value="/media/data/CODES/sw4stm32_workbench/STM32F4xx_DSP_StdPeriph_Lib_V1.6.1/Project/STM32F4xx_StdPeriph_Templates/ORIG/SW4STM32"/>
@@ -24,6 +25,7 @@
 			<item value="/media/data/CODES/sw4stm32_workbench/first_working_Blinky"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC.zip"/>
 			<item value=""/>
 		</list>
 	</section>

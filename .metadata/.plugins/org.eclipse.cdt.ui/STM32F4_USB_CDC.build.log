@@ -1,0 +1,31 @@
+19:08:36 **** Incremental Build of configuration Default for project STM32F4_USB_CDC ****
+make all 
+make -C lib FLOAT_TYPE=hard
+make[1]: Entering directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib'
+make -C StdPeriph FLOAT_TYPE=hard
+make[2]: Entering directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/StdPeriph'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/StdPeriph'
+make -C USB_OTG FLOAT_TYPE=hard
+make[2]: Entering directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/USB_OTG'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/USB_OTG'
+make -C USB_Device/Core FLOAT_TYPE=hard
+make[2]: Entering directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/USB_Device/Core'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/USB_Device/Core'
+make -C USB_Device/Class/cdc FLOAT_TYPE=hard
+make[2]: Entering directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/USB_Device/Class/cdc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/USB_Device/Class/cdc'
+make -C fat_fs FLOAT_TYPE=hard
+make[2]: Entering directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/fat_fs'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib/fat_fs'
+make[1]: Leaving directory '/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/lib'
+~/sat/bin/arm-none-eabi-size build/stm32f4_usb_cdc.elf
+   text	   data	    bss	    dec	    hex	filename
+  41264	   2564	   5064	  48892	   befc	build/stm32f4_usb_cdc.elf
+
+19:08:36 Build Finished (took 66ms)
+

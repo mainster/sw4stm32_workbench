@@ -1,0 +1,8 @@
+./21-STM32Fxxx_USB_TO_UART/Targets/STM32F429_Discovery/project.hex
+./21-STM32Fxxx_USB_HOST_MSC_DUAL/Targets/STM32F429_Discovery/project.hex
+./21-STM32Fxxx_USB_DEVICE_CDC_HOST_HID/Targets/STM32F429_Discovery/project.hex
+./21-STM32Fxxx_USB_DEVICE_CDC/Targets/STM32F429_Discovery/project.hex
+./21-STM32Fxxx_USB_HOST_HID_MSC/Targets/STM32F429_Discovery/project.hex
+./21-STM32Fxxx_USB_HOST_HID_DUAL/Targets/STM32F429_Discovery/project.hex
+./21-STM32Fxxx_USB_DEVICE_MSC/Targets/STM32F429_Discovery/project.hex
+./21-STM32Fxxx_USB_DEVICE_CDC_HOST_HID_DYNAMIC_CHANGE/Targets/STM32F429_Discovery/project.hex

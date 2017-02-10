@@ -13,7 +13,7 @@
 // Hinweis  : auf dem PC muss der Treiber von ST
 //            "VirtualComportDriver" installiert sein (V:1.3.1)
 //            nur dann wird beim Verbinden ein VirtuellerComPort
-//            im Gerätemanager angezeigt
+//            im Gerï¿½temanager angezeigt
 //
 //            Beim Discovery-Modul funktioniert nur der
 //            USB-FullSpeed-Mode (USB-High-Speed geht nicht)
@@ -43,10 +43,10 @@ USB_OTG_CORE_HANDLE  USB_OTG_dev;
 // Init vom USB-OTG-Port als CDC-Device
 // (Virtueller ComPort)
 //--------------------------------------------------------------
-void UB_USB_CDC_Init(void)
+void UB_USB_CDC_Init(USB_OTG_CORE_ID_TypeDef coreID)
 {
   USB_CDC_STATUS=USB_CDC_DETACHED;
-  USBD_Init(&USB_OTG_dev, USB_OTG_FS_CORE_ID, &USR_desc, &USBD_CDC_cb, &USR_cb);
+  USBD_Init(&USB_OTG_dev, coreID, &USR_desc, &USBD_CDC_cb, &USR_cb);
 }
 
 //--------------------------------------------------------------

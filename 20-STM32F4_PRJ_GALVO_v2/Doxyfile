@@ -802,8 +802,8 @@ INPUT                  = /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GAL
                          /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB \
                          /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc \
                          /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src \
-                         /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver \
-                         /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS \
+                         # /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS \
+                         # /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver \
                          
 
 # This tag can be used to specify the character encoding of the source files

@@ -258,8 +258,8 @@ void DMA2_STREAM_0_IRQ_Handler (void) {
  * @anchor AnalogWatchdogIntHandler
  * @anchor ADC_EndOfConversionIntHandler
  */
-void ADC_IRQ_Handler (void) {
     //! [ADC_IRQ_Flag_Handling]
+void ADC_IRQ_Handler (void) {
     /*
      * @brief      End of conversion interrupt occured.
      *
@@ -272,7 +272,6 @@ void ADC_IRQ_Handler (void) {
         MD_DISCO_LedOn(LED_ALL);
         return;
     }
-    //! [ADC_IRQ_Flag_Handling]
 
     /**
      * @brief      Check if an analog watchdog interrupt has been requested.
@@ -324,15 +323,17 @@ void ADC_IRQ_Handler (void) {
              *             branch where the tripping limit has not been reached
              *             yet.
              */
-        ASG.integrator += ASG.trippingLevel * (double)(TS*1e-6)/(ASG.tripTime*1e-3);
+            ASG.integrator += ASG.trippingLevel * (double)(TS*1e-6)/(ASG.tripTime*1e-3);
+        }
+        return;
     }
-    return;
-}
 
     /** @} */
 
-printf("bad ADC IntReq source\n");
+    printf("bad ADC IntReq source\n");
+    //! [ADC_IRQ_Flag_Handling]
 }
+
 
 /**
  * @brief      Timer 4 overrun IRQ callback.

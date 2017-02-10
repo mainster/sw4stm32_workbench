@@ -59,7 +59,7 @@
 #include "md_stm32f4_gpio.h"
 
 /* Definitions according to "STM32F429I-DISCO schematics" */
-#ifdef STM32F429ZI
+#if defined(STM32F429ZI) || defined(STM32F429ZITx)
 	/* STM32F429 discovery kit on-board LEDs */
 	#define MD_DISCO_LED_PORT			GPIOG
 	#define LED_GREEN					GPIO_PIN_13
@@ -171,15 +171,6 @@ void MD_DISCO_ButtonInit(void);
 #define MD_DISCO_SetLed(led, state)    ((state) ? MD_DISCO_LedOn(led): MD_DISCO_LedOff(led))
 
 /**
- * @brief  Checks if user button is pressed
- * @param  None
- * @retval Button status
- *            - 0: Button is not pressed
- *            - > 0: Button is pressed
- */
-#define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)
-
-/**
  * @brief  Checks if button was pressed now, but was not already pressed before
  * @param  None
  * @retval Button on pressed value
@@ -196,6 +187,17 @@ uint8_t MD_DISCO_ButtonOnPressed(void);
  *           - > 0: Button was released, but state before was pressed
  */
 uint8_t MD_DISCO_ButtonOnReleased(void);
+
+/**
+ * @brief  Checks if user button is pressed
+ * @param  None
+ * @retval Button status
+ *            - 0: Button is not pressed
+ *            - > 0: Button is pressed
+ */
+#define MD_DISCO_ButtonPressed()       ((MD_GPIO_GetInputPinValue(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN) == 0) != MD_DISCO_BUTTON_PRESSED)
+
+
 
 /** @} */
 

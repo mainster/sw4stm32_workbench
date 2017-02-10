@@ -68,7 +68,7 @@
 #include "helper.h"
 
 /**
- * @addtogroup MD_APP Application
+ * @addtogroup MD_APP MD_Application
  * @{
  */
 

@@ -9,22 +9,23 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="SystemCoreClock" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="SystemCoreClock"/>
+			<item value="MD_GPIO_LED_RD"/>
 			<item value="ADC_X_CHAN"/>
 			<item value="MD_GPIO_Init"/>
 			<item value="///&lt;"/>
 			<item value="TABLESIZE"/>
 			<item value="nRows"/>
 			<item value="NVECTORS"/>
-			<item value="fastC"/>
-			<item value="NC"/>
 		</list>
 		<list key="replacehistory">
+			<item value="MD_GPIO_Cfg"/>
 			<item value="//!&lt;"/>
 			<item value="nRows"/>
 			<item value="//!&lt; \1"/>
@@ -32,7 +33,6 @@
 			<item value="MD_GPIO_PuPd_NOPULL"/>
 			<item value="MD_"/>
 			<item value="coefficients"/>
-			<item value="set-point"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

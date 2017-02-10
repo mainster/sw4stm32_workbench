@@ -1,0 +1,27 @@
+19:25:28 **** Build of configuration Release for project STM32F4_USB_CDC_self ****
+make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/Release
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/inc" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/StdPeriph_Driver/inc" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: ../src/BACKsystem_stm32f4xx.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/Release
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/inc" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/StdPeriph_Driver/inc" -O3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/BACKsystem_stm32f4xx.d" -MT"src/BACKsystem_stm32f4xx.o" -o "src/BACKsystem_stm32f4xx.o" "../src/BACKsystem_stm32f4xx.c"
+Finished building: ../src/BACKsystem_stm32f4xx.c
+ 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/Release
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32F429ZITx -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/inc" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/lib" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC_self/StdPeriph_Driver/inc" -O3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:10:27: fatal error: usbd_cdc_core.h: No such file or directory
+ #include "usbd_cdc_core.h"
+                           ^
+compilation terminated.
+make: *** [src/main.o] Error 1
+src/subdir.mk:39: recipe for target 'src/main.o' failed
+
+19:25:28 Build Finished (took 213ms)
+

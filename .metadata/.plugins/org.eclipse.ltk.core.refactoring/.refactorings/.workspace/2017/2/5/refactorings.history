@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;01-STM32F4_MD_HELLO/inc/globals.h&apos;" deleteContents="false" description="Delete resource &apos;01-STM32F4_MD_HELLO/inc/globals.h&apos;" element1="/01-STM32F4_MD_HELLO/inc/globals.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1486047553629"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;01-STM32F4_MD_HELLO/inc/globals.h&apos;" deleteContents="false" description="Delete resource &apos;01-STM32F4_MD_HELLO/inc/globals.h&apos;" element1="/01-STM32F4_MD_HELLO/inc/globals.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1486047553629"/>&#x0A;<refactoring comment="Delete resource &apos;STM32F4_USB_CDC_self/startup/startup_stm32.s&apos;" deleteContents="false" description="Delete resource &apos;STM32F4_USB_CDC_self/startup/startup_stm32.s&apos;" element1="/STM32F4_USB_CDC_self/startup/startup_stm32.s" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1486231668421"/>
 </session>

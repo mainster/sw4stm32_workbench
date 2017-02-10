@@ -29,6 +29,20 @@
   * @{
   */
 
+/**
+ * @addtogroup Documentation
+ * @{
+ */
+
+/**
+ * @brief      The hardware abstraction layer (CMSIS StdPeriph) documentation
+ *             can be obtained from
+ *             http://www.st.com/en/embedded-software/stm32cubef4.html
+ */
+#define MD_CMSIS_DOCU
+
+/** @} */
+
 /** @addtogroup stm32f4xx_system
   * @{
   */  

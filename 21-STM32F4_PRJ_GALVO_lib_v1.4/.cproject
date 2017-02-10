@@ -77,7 +77,6 @@
 					</folderInfo>
 					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.1570457157" name="FFFFmdb_stm32f4_dac_signalc" rcbsApplicability="disable" resourcePath="src/00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc" toolsToInvoke=""/>
 					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.36633350" name="FFFFmdb_stm32f4_dac_signalh" rcbsApplicability="disable" resourcePath="src/00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh" toolsToInvoke=""/>
-					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.1479967482" name="tm_stm32f4_usart_dma.h" rcbsApplicability="disable" resourcePath="inc/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h" toolsToInvoke=""/>
 					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1823759492.381276570" name="md_stm32f4_usart.h" rcbsApplicability="disable" resourcePath="inc/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.h" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
@@ -155,7 +154,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.release.1457889569.133557130" name="tm_stm32f4_usart_dma.h" rcbsApplicability="disable" resourcePath="inc/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h" toolsToInvoke=""/>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry excluding="00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>

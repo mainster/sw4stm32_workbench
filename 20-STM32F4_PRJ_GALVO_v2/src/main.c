@@ -304,7 +304,7 @@ typedef enum {
 } TM2_USART_PinsPack_t;
 
 /**
- * @addtogroup Main_Function
+ * @addtogroup Main_Functions
  * @{
  */
 
@@ -334,11 +334,6 @@ int main(void) {
 	MDB_GPIO_Init();
 	//  beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
 
-	while (1) {
-		Delayms(500);
-		MDB_GPIO_Toggle(LED_GREEN_A);
-		MDB_GPIO_Toggle_m2(LED_RED_A);
-	}
 	/**< Initialize PID system, float32_t format */
 	//  arm_pid_init_f32(&PIDX, 1);
 	//  arm_pid_init_f32(&PIDY, 1);
@@ -353,6 +348,15 @@ int main(void) {
 
 	/**< Initialize Leds */
 	MD_DISCO_LedInit();
+
+	/**< Initialize delay library */
+	MD_DELAY_Init();
+
+	while (1) {
+		Delayms(500);
+		MDB_GPIO_Toggle(LED_GREEN_A);
+		MDB_GPIO_Toggle_m2(LED_RED_A);
+	}
 
 	/**< Initialize USART1-> TX: PA9, RX: PA10. */
 	TM_USART_Init(USART1, (TM_USART_PinsPack_t) 0, 115200);
@@ -417,7 +421,7 @@ int main(void) {
 	 * ================================================================================ */
 
 	TIM_Cmd(TIM3, ENABLE);          //!< Enable PWM timer 3
-	TIM_Cmd(TIM2, ENABLE);          //!< Enable sampling timer 2
+	TIM_Cmd(TIM2, ENABLE);          //!< Enable sample timer 2
 	ADC_DMACmd(ADC1, ENABLE);       //!< Enable DMA functionality
 	ADC_Cmd(ADC1, ENABLE);          //!< Enable on-board hardware ADC 1
 	ADC_SoftwareStartConv(ADC1);    //!< Trigger the regular group scan

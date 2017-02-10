@@ -1,0 +1,6 @@
+19:08:35 **** Incremental Build of configuration Debug for project 01-STM32F4_AC6_HELLO ****
+make all 
+make: Nothing to be done for 'all'.
+
+19:08:36 Build Finished (took 116ms)
+

@@ -4,12 +4,152 @@
 		"selected_items":
 		[
 			[
-				"ma",
-				"main\tmain()"
+				"LED_RE",
+				"LED_RED_A"
+			],
+			[
+				"Std",
+				"StdPeriph_Driver/\tDir"
+			],
+			[
+				"end",
+				"endif\t(pid.h)"
+			],
+			[
+				"initi",
+				"initialization\t(md_stm32f4_gpio.h)"
+			],
+			[
+				"int16",
+				"int16_t"
+			],
+			[
+				"out",
+				"output"
+			],
+			[
+				"int",
+				"integrator"
+			],
+			[
+				"type",
+				"typedef"
+			],
+			[
+				"struc",
+				"structure\t(md_stm32f4_gpio.h)"
+			],
+			[
+				"occ",
+				"occured\t(isr_callbacks.c)"
+			],
+			[
+				"watch",
+				"watchdog"
+			],
+			[
+				"e",
+				"enumeration"
+			],
+			[
+				"initiali",
+				"initialization"
+			],
+			[
+				"Pu",
+				"PURPOSE"
+			],
+			[
+				"func",
+				"functionality"
+			],
+			[
+				"MD_GP",
+				"MD_GPIO_Init\t(md_stm32f4_gpio.h)"
+			],
+			[
+				"Ma",
+				"Main"
+			],
+			[
+				"Com",
+				"Compensator\t(main.c)"
+			],
+			[
+				"Seq",
+				"pSeq_f"
+			],
+			[
+				"incl",
+				"include\t(globals.h)"
 			],
 			[
 				"def",
-				"@defgroup\tDoxygen"
+				"definition"
+			],
+			[
+				"Implen",
+				"Implement\t(main.c)"
+			],
+			[
+				"rep",
+				"represented\t(globals.h)"
+			],
+			[
+				"tria",
+				"triangWave"
+			],
+			[
+				"not",
+				"@note\tDoxygen"
+			],
+			[
+				"enum",
+				"enumerations"
+			],
+			[
+				"decla",
+				"declarations\t(main.c)"
+			],
+			[
+				"misc",
+				"miscellaneous"
+			],
+			[
+				"instance",
+				"instances\t(main.c)"
+			],
+			[
+				"init",
+				"initialized\t(main.c)"
+			],
+			[
+				"Misc",
+				"Miscellaneous"
+			],
+			[
+				"wav",
+				"waveform"
+			],
+			[
+				"select",
+				"selection"
+			],
+			[
+				"enumeration",
+				"enumerations"
+			],
+			[
+				"co",
+				"commands"
+			],
+			[
+				"set",
+				"set-point"
+			],
+			[
+				"ma",
+				"main\tmain()"
 			],
 			[
 				"bord",
@@ -40,10 +180,6 @@
 				"galvo_pdfs/\tDir"
 			],
 			[
-				"enum",
-				"@enum\tDoxygen"
-			],
-			[
 				"add",
 				"@addtogroup\tDoxygen"
 			],
@@ -54,10 +190,6 @@
 			[
 				"PID",
 				"PID_IntMethode_t"
-			],
-			[
-				"int",
-				"int16_t"
 			],
 			[
 				"PKG",
@@ -264,74 +396,153 @@
 	"buffers":
 	[
 		{
-			"file": "inc/defines.h",
+			"contents": "Searching 839 files for \"Internal only, no remote offset or something else\"\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/isr_callbacks.c:\n  182  \t// --------------------------------------------------------------\n  183  \twhile (1) {\n  184: \t\tif (g.setpointSrc == INTERNAL_SETPOINT) {   ///< Internal only, no remote offset or something else\n  185  \t\t\tpidErr_x =  setpoint_tgl - POS_X_FLOAT;\n  186  \t\t\tpidErr_y =  setpoint_tgl - POS_Y_FLOAT;\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/main.c:\n 1379  //// ==============================================================\n 1380  //    while (1) {\n 1381: //        if (g.setpointSrc == INTERNAL_SETPOINT) {   //!< Internal only, no remote offset or something else\n 1382  //            pidErr_x =  setpoint_tgl - POS_X_FLOAT;\n 1383  //            pidErr_y =  setpoint_tgl - POS_Y_FLOAT;\n\n2 matches across 2 files\n\n\nSearching 839 files for \"DBG_PID_TIMING_TOG\"\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h:\n   66   *             debugging purposes.\n   67   */\n   68: #define   DBG_PID_TIMING_TOG()    (MDB_GPIO_Toggle(DBG_TIMING_PE6))\n   69  \n   70  /**\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/isr_callbacks.c:\n  222  \t\t * @brief      Invoke PID calculation and trigger Tic Toc \n  223  \t\t */\n  224: \t\tDBG_PID_TIMING_TOG();\n  225  \t\tupdateActuator_f (setpnt,arm_pid_f32(&PIDY, pidErr_y));\n  226: \t\tDBG_PID_TIMING_TOG();\n  227  \n  228  \t\tbreak;\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/main.c:\n 1405  //\n 1406  //        /**< Calculate PID here */\n 1407: //        DBG_PID_TIMING_TOG();\n 1408  //        updateActuator_f(   arm_pid_f32(&PIDY, pidErr_y), arm_pid_f32(&PIDY, pidErr_y));\n 1409: //        DBG_PID_TIMING_TOG();\n 1410  \n 1411  //        break;\n\n5 matches across 3 files\n\n\nSearching 839 files for \"ADC_IRQ\"\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h:\n  214    DMA1_Stream5_IRQn           = 16,     /*!< DMA1 Stream 5 global Interrupt                                    */\n  215    DMA1_Stream6_IRQn           = 17,     /*!< DMA1 Stream 6 global Interrupt                                    */\n  216:   ADC_IRQn                    = 18,     /*!< ADC1, ADC2 and ADC3 global Interrupts                             */\n  217  \n  218  #if defined(STM32F40_41xxx)\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/isr_callbacks.h:\n   86  \n   87  /* See implementation file for documentation. */\n   88: void ADC_IRQHandler(void);\n   89  \n   90  /** @} */\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/isr_callbacks.c:\n  257   * @anchor ADC_EndOfConversionIntHandler\n  258   */\n  259: void ADC_IRQHandler(void) {\n  260  \tif (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == SET) {\n  261  \t\tADC_ClearITPendingBit(ADC1, ADC_IT_EOC);\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/main.c:\n 1429  ////                      Analog Watchdog IRQ\n 1430  //// ==============================================================\n 1431: //void ADC_IRQHandler(void) {\n 1432  //    if (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == SET) {\n 1433  //        ADC_ClearITPendingBit(ADC1, ADC_IT_EOC);\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/nvic_config.c:\n   56     * @brief      ADC Analog watch-dog interrupt enable.\n   57     */\n   58:   NVIC_InitStruct_ADC.NVIC_IRQChannel = ADC_IRQn;\n   59    NVIC_InitStruct_ADC.NVIC_IRQChannelPreemptionPriority = 0;\n   60    NVIC_InitStruct_ADC.NVIC_IRQChannelSubPriority = 0;\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/periph2dma_conf.c:\n  291         * High priority needed because EOC IRQ determines the output sample precision\n  292         * through DAC hardware components. * /\n  293:       NVIC_InitStructure.NVIC_IRQChannel = ADC_IRQn;\n  294        NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x02;\n  295        NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x04;\n  ...\n  310                        ADC Analog watchdog interrupt enable\n  311       ==================================================================================== */\n  312:   NVIC_InitStructure.NVIC_IRQChannel = ADC_IRQn;\n  313    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;\n  314    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;\n  ...\n  444  \n  445    /* configure vectored interrupt controller */\n  446:   NVIC_InitStructure.NVIC_IRQChannel = ADC_IRQn;\n  447    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;\n  448    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;\n  ...\n  539    ADC_DMACmd(ADC1, ENABLE);\n  540    /* Configure NVIC */\n  541:   NVIC_InitStructure.NVIC_IRQChannel = ADC_IRQn;\n  542    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;\n  543    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0x0F;\n\n9 matches across 6 files\n\n\nSearching 839 files for \"DMA2_Stream0_IRQ_Handler\"\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/isr_callbacks.c:\n   96   *             PID: This callback provides compensator calculation.\n   97   */\n   98: void DMA2_Stream0_IRQ_Handler(void) {\n   99  \tvolatile float32_t setpnt=0;\n  100  \t/* FIXME: DMA_IT_TC */\n\n1 match in 1 file\n",
 			"settings":
 			{
-				"buffer_size": 8465,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"buffer_size": 5248,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
-			"file": "inc/nvic_config.h",
+			"file": "src/irq_callbacks.c",
 			"settings":
 			{
-				"buffer_size": 1982,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/nvic_config.c",
-			"settings":
-			{
-				"buffer_size": 2103,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/adc_dac_dma.h",
-			"settings":
-			{
-				"buffer_size": 8428,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/isr_callbacks.c",
-			"settings":
-			{
-				"buffer_size": 13210,
+				"buffer_size": 15278,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "inc/isr_callbacks.h",
+			"file": "inc/mdb_gpio.h",
 			"settings":
 			{
-				"buffer_size": 1919,
+				"buffer_size": 6256,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.h",
+			"file": "StdPeriph_Driver/inc/stm32f4xx_adc.h",
 			"settings":
 			{
-				"buffer_size": 3755,
-				"encoding": "UTF-8 with BOM",
+				"buffer_size": 32265,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "/**\n * @file        main.c\n *\n * @date        28 Jan 2017\n * @author      Manuel Del Basso (mainster)\n * @email       manuel.delbasso@gmail.com\n *\n * @ide         System Workbench ac6 (eclipse stm32)\n * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required\n * @license\t\tGNU GPL v3\n *\n * @brief       Main source implementation (29-04-2015)\n *\n * @verbatim\n\n\tCopyright (C) 2016\tManuel Del Basso\n\n\tThis program is free software: you can redistribute it and/or modify\n\tit under the terms of the GNU General Public License as published by\n\tthe Free Software Foundation, either version 3 of the License, or\n\t(at your option) any later version.\n\n\tThis program is distributed in the hope that it will be useful,\n\tbut WITHOUT ANY WARRANTY; without even the implied warranty of\n\tMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n\tGNU General Public License for more details.\n\tYou should have received a copy of the GNU General Public License\n\talong with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n\t@endverbatim\n *\n *\tAdditional symbol definitions under \"C/C++\" > \"Symbols\"\n *\t\t- ARM_MATH_CM4\n *\t\t- __FPU_PRESENT = 1\n */\n\n/* Include */\n#include \"main.h\"\n\n/* ARM architecture names */\n#include \"arm_architect.h\"\n\n/**\n * @addtogroup MD_APP\n * @{\n */\n\n/**\n * @addtogroup APP_Main\n * @{\n */\n\n/**\n * @addtogroup Main_Typedefs\n * @{\n */\n\n/**\n * @addtogroup Main_Variables\n * @{\n */\n\n/**\n * @addtogroup Main_Functions\n * @{\n */\n\n\n\n\n\n\nstruct global g;\nuint16_t vectorCtr = 0;\nint8_t dir = 1;\nuint32_t ticks = 0;\nextern DAC_WP_t (*DAC_SecureSetDualChanSigned) (int16_t, int16_t);\n\n// ==============================================================\n//   This is needed in order to provide printf functionality\n// ==============================================================\n#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)\n\n//struct __FILE { int handle; };\nFILE __stdout;\n\nPUTCHAR_PROTOTYPE {\n\t/* Place implementation of device specific fputc here */\n\tUSART_SendData(USART1, (uint8_t) ch);\n\n\t/* Polling loop until the end of transmission */\n\twhile (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET)\n\t{}\n\n\treturn ch;\n}\n\n// ==============================================================\n//                         Prototypes\n// ==============================================================\nvoid gpio_init(void) __attribute__ ((unused));\nvoid fastConsoleCase(arm_pid_instance_f32 *pid);\nint updateActuator_f(float I_set_x, float I_set_y) __attribute__ ((unused));\nint beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) __attribute__ ((unused));\nvoid init_globalStructs(void);\n\n// void gpio_init_mco1(void);\n// void gpio_init_mco2(void);\n\n//void exportInternalClks(void);\n//static void Console (struct PID_DATA *pid, struct FPID_DATA *fpid, PidStructType_t type);\n//void consoleCase (struct PID_DATA *pid);\n//void adc12_init (uint16_t gpio_pin_adc1,\n\n//\t\tuint16_t gpio_pin_adc2,\n//\t\tuint16_t EndOfConvInt,\n//\t\tADC_TypeDef* ADCxEOT);\n\n\n#define RX_FRAME_PADDING_CHAR   '~'\n\n/* The function pointer updateActuator is used as non-privileged access function\n * to internal DAC output registers. After ASG detects a tripping condition ,\n * updateActuator function-pointer targets to updateActuator_fused_callback */\n//int (*updateActuator)                (float, float);\n//int (*updateActuator_callback)       (float, float);\n//int (*updateActuator_fused_callback) (float, float);\n// ==============================================================\n//                  Compensator things\n// ==============================================================\n#define ALGO_OLD \t\t\t\t10\n#define ADJUSTING_SETPOINT\t    11\t\t// Stellungsalgorithmus\n#define SPEED_SETPOINT\t\t\t12\t\t// Geschwindigkeitsalgorithmus\n#define ALGORITHM \tADJUSTING_SETPOINT\n\n/* Get two PID_DATA struct instances */\nstruct PID_DATA     pidDataX;\nstruct PID_DATA     pidDataY;\n\n/**\n * This is the factor used in the gui to enlarge resolution on int-only\n * QSlider ranges\n */\n#define SLIDER_VAL_DEVIDER  10000UL\n\nvolatile float UNIT_MIKRO = 1 / 1000000;\nvolatile int16_t pidOut = 0;\n\n\n/**< Define indices for ADC_MultiConvBuff[ ] acording to setpoint (INDEX_Wx) ans\n * process output (INDEX_P). */\n#ifndef INDEX_Py\n#define INDEX_Px     0\n#define INDEX_Py     1\n#if (ADC_N_REGULAR_CHANNELS > 2)\n#define INDEX_Ix     2\n#define INDEX_Wx      3\n#endif\n#endif\n\n\n#define SIGNW -1\n\n#define INTERNAL_SETPOINT\n#undef INTERNAL_SETPOINT\n\n#pragma GCC push_options\n#pragma GCC optimize (\"O0\")\n//float temps[EXPECTING_SENSORS];\n\n\nfloat setpoint_tgl = (1.25 - 0.4);\n\n\n\nfloat duty = 0;             //!< Duty cycle for PWM\narm_pid_instance_f32 PIDX;   //!< ARM PID Instance, float_32 format\narm_pid_instance_f32 PIDY;   //!< ARM PID Instance, float_32 format\n\n\n__IO float toPlant;              //!< next actuator value in Volt\nint16_t toPlant_int;       //!< next actuator value integral type\n\nint16_t test1 = UPPER_DAC_LIMIT_SIGNED;\nint16_t test2 = LOWER_DAC_LIMIT_SIGNED;\n#pragma GCC pop_options\n\n/**\n * @brief\tChoose PID parameters\n */\n#define PID_PARAM_KP\t\t0.5\t\t\t//!< Proporcional\n#define PID_PARAM_KI\t\t0.0\t\t//!< Integral\n#define PID_PARAM_KD\t\t0.0\t\t\t//!< Derivative\n\n// ==============================================================\n//                      beam interrupter\n// ==============================================================\n\n\n\n//#define TS                             10.0e-6\n\n//#define ASG_100US                   100\n// ==============================================================\n// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n// ==============================================================\n//      This indices HAVE TO STAY IN SYNC WITH Qt GUI SOURCES\n// ==============================================================\nvolatile int NC = 3;\t\t// index 0...2  (short command)\nvolatile int FS = 2;\t\t// index 3...4\t(fieldsep)\nvolatile int NV = 10;\t    // index 5...14 (value)\n// ==============================================================\n// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n// ==============================================================\n\n//#define\n//\t GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_SET)\n//\t GPIO_WriteBit((GPIO_TypeDef*)DBG_IO, IO_PIN, Bit_RESET))\n\n//#define\n//                                ((GPIO_TypeDef*)DBG_IO, IO_PIN)\n\n/* Define static usart strings used as GUI error / status messages\n */\n#define  MSG_GUI_UART1_RECV_BUFF_FULL   \"@GUI:usart1RecvBuffFull\\n\"  ///< Inform Gui about a full usart1 buffer\n\n\n// ==============================================================\n// ==============================================================\n// ==============================================================\nvolatile uint16_t gW = 0;\nvolatile uint16_t gY = 0;\nvolatile uint16_t multiADC[2];\n\n\nfloat pidErrBuff[2];        /* PID error buffer*/\nfloat toPlantBuff[2];        /* PID output buffer*/\n\n/**\n * @brief      ADC dual mode DMA access buffer.\n * \n * This __IO buffer \n */\n__IO int16_t ADC_MultiConvBuff[5];\n\n/**\n * @brief      ADC values access buffer.\n *\n *             Because we use a float based instance of PID, we need to cast the\n *             ADC_MultiConvBuff[0] buffer from integral type to float !!!\n */\n__IO float ADC_fBuff[5];\n\n\n#define NO1 1\n\n\nextern autoSaveSystem_t ASG;\n\n\n/* ---------- */\n/* Used Timer */\n/* ---------- */\n// (4)  TM_Timer4_config(ENABLE, ENABLE, 450 / g.freq);         waveformGeneration\n// (3)  TM_PWM_InitTimer(TIM3, &TIM_Data, 1000);\n// (2)  MD_Timer2_config(DISABLE, ENABLE, SAMPLE_INTERVAL);     Base sample rate\n\nstatic struct items items_list[] = {\n\t{ .name = \"kp:\", .id = KP },\n\t{ .name = \"ki:\", .id = KI },\n\t{ .name = \"kd:\", .id = KD },\n\t{ .name = \"w::\", .id = W  }\n};\n\nstatic itemsw_t itemsw_list[] = {\n\t{ .name = \"sin\", .idw = COS },\n\t{ .name = \"tri\", .idw = TRIANG },\n\t{ .name = \"rec\", .idw = SQUAREWAV },\n\t{ .name = \"s2 \", .idw = QUADRATIC },\n\t{ .name = \"is2\", .idw = I_QUADRATIC },\n\t{ .name = \"saw\", .idw = SAWTOOTH},\n\t{ .name = \"rem\", .idw = CMD_REMOTE_SETPOINT},\n\t{ .name = \"orm\", .idw = CMD_OPENLOOP_REMOTE},\n\t{ .name = \"ast\", .idw = CMD_ANALOG_SETPOINT},\n\t{ .name = \"ist\", .idw = CMD_INTERNAL_SETPOINT},\n\t{ .name = \"rfr\", .idw = CMD_REFRESH_RATE},\n\t{ .name = \"vec\", .idw = CMD_TESTVECT},\n\t{ .name = \"mat\", .idw = CMD_MATLAB_LINK},\n\n};\n\nstatic MiscCmds_t itemsm_list[] = {\n\t{ .name = \"pid_init\", .idm = misc_pid_init },\n\t{ .name = \"pid_Controller\", .idm = misc_pid_Controller },\n\t{ .name = \"pid_Reset_Integrator\", .idm = misc_pid_Reset_Integrator },\n\t{ .name = \"update_pid_data\", .idm = misc_update_pid_data  },\n\t{ .name = \"safetyEnable\" , .idm = misc_assOnOff_cmd  },\n\t{ .name = \"safetyUpperLim\", .idm = misc_assUpperLim_cmd  },\n\t{ .name = \"safetyLowerLim\", .idm = misc_assLowerLim_cmd  },\n\t{ .name = \"safetyTripp\", .idm = misc_assTrippTime_cmd  },\n\t{ .name = \"safetyVal\", .idm = misc_assSaveVal_cmd  },\n\t{ .name = \"EnableBeam\", .idm = misc_beamOn_cmd  },\n\t{ .name = \"DisableBeam\", .idm = misc_beamOff_cmd  },\n};\n\nvoid resetPID (void) {\n\tpid_Init (KP_INIT, KI_INIT, KD_INIT, TF_INIT, TS,\n\t          &pidDataY, PID_StructType_Unbuffered);\n\tPID_Calc_Coeffs(&pidDataY, PID_IntMethode_RwdRect);\n}\n\n\n\ndouble lastVal = 0;\n\n/**< Check Architecture */\n#define __TARGET_ARCH_ARM\t\t0\n\n/**\n * @brief      USART Pinout select enumeration.\n *\n * @note       In case of custom PinsPack usage, refer to @ref\n *             TM_USART_InitCustomPinsCallback.\n */\ntypedef enum {\n\tTM2_USART_PinsPack_1,     /*!< Select PinsPack1 from Pinout table for specific USART */\n\tTM2_USART_PinsPack_2,     /*!< Select PinsPack2 from Pinout table for specific USART */\n\tTM2_USART_PinsPack_3,     /*!< Select PinsPack3 from Pinout table for specific USART */\n\tTM2_USART_PinsPack_Custom /*!< Select custom pins for specific USART, callback will be called */\n} TM2_USART_PinsPack_t;\n\n\n\n/**\n * @brief      Main function entry.\n *\n *             Invokes initial core and peripheral initialiation routines.\n *             Provides endless loop functionality.\n *             \n * \\callergraph\n */\nint main(void) {\n\n\t/**< Define private main variables */\n\tTM_PWM_TIM_t TIM_Data;    ///< Timer data for PWM\n\t//    volatile uint8_t c = 0;\n\t//    volatile uint16_t rxval = 0;\n\t//    volatile uint16_t test = 0;\n\n\t/**< Initialize System */\n\tSystemInit();\n\n\t/**< Enable some AHB clock sources */\n\tRCC_Configuration();\n\n\t/**< All used GPIOs should be initialized by this call */\n\tMDB_GPIO_Init();\n//\tbeamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );\n\n\t/**< Initialize PID system, float32_t format */\n//\tarm_pid_init_f32(&PIDX, 1);\n//\tarm_pid_init_f32(&PIDY, 1);\n\n#ifndef NO_FPU\n\tarm_pid_instance_f32 pidInst;\n\n\tarm_pid_init_f32(&pidInst, 1);\n#endif\n\n\t/**< Initialize discovery button and leds */\n\tMD_DISCO_ButtonInit();\n\n\t/**< Initialize Leds */\n\tMD_DISCO_LedInit();\n\n\t/**< Initialize USART1-> TX: PA9, RX: PA10. */\n\tTM_USART_Init(USART1, (TM_USART_PinsPack_t) 0, 115200);\n\n\t/**< Initialize TIM3, 1kHz frequency */\n\tTM_PWM_InitTimer(TIM3, &TIM_Data, 1000);\n\n\t/**< Initialize TIM2, Channel 1, PinsPack 2 = PA5 */\n\tTM_PWM_InitChannel(TIM3, TM_PWM_Channel_3, TM_PWM_PinsPack_2);  // ???? PB0\n\n\t/* Set default duty cycle */\n\tTM_PWM_SetChannelPercent(TIM3, &TIM_Data, TM_PWM_Channel_3, duty);\n\n\t/**< Initialize Delay library. */\n//\tTM_DELAY_Init();\n\n\t/**< Initialize TIM5, heart beat timer */\n\t//MD_Timer5_config(ENABLE, ENABLE, 48000);        // 48MHz*1ms\n\n\t/**< Initialize DAC outputs DAC1-> PA4  DAC2-> PA5 */\n\tMD_DAC_Init(MD_DAC1);\n\tMD_DAC_Init(MD_DAC2);\n\n\t/**< Configure function address for initial target function  */\n\tDAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned;\n\tprintf(\"connect Write pointer to DAC output register\\n\");\n\n\n\t/* Configure the nested Vector interrupt controller */\n\tNVIC_Configuration();\n\n\t/**< Initialize TIM2 as part of sampling hw, also enable DMA trigger source */\n\tTIM2_DMA_triggerConfiguration(DISABLE, ENABLE, SAMPLE_INTERVAL);\n\n\t/**< Configure DMA controller for ADC2memory */\n\tDMA_Configuration(ADC_MultiConvBuff, ADC_N_REGULAR_CHANNELS);\n\n\t/**< Configure ADC channels for regular scan, DMA channel ... */\n\tADC_Configuration();\n\n\t/**< Set initial values on global structs */\n\tinit_globalStructs();\n\n\t/**< Configure analog watch dog for selected X/Y ADC channels (security feature) */\n\tAnalogWatchdog_Configuration();\n\n\t/**< Set threshold for analog watch dog */\n\tADC_AnalogWatchdogThresholdsConfig(ADC1,\n\t                                   decode_toUint(ASG.upperVal + VA_BIAS),\n\t                                   decode_toUint(ASG.lowerVal + VA_BIAS));\n\n\t/**< Transmit boot up message to UART1 */\n\tchar *tok;\n\tchar *delimit = \"\\\\\";\n\ttok = strtok(__FILE__, delimit);\n\ttok = strtok (NULL, delimit);\n\n\tprintf(\"\\n\\n--- %s ---\\n\", tok);\n\tprintf(\"--- Compiled: %s  %s ---\\n\\n\", __DATE__, __TIME__);\n\tprintf(\"__TARGET_ARCH_ARM: %s\\n\", TARGET_ARCH_ARM[__TARGET_ARCH_ARM]);\n\tprintf(\"__BASE_FILE__: %s\\n\", __FILE__);\n\n\tprintf(\"items_list[%d].name: %s\\t .id: %d\", 0, items_list[0].name, items_list[0].id);\n\t/* ================================================================================\n\t * ===============     ENABLE_ON_POWER-ON-SEQUENCE     ============================\n\t * ================================================================================ */\n\n\tTIM_Cmd(TIM3, ENABLE);          ///< Enable PWM timer 3\n\tTIM_Cmd(TIM2, ENABLE);          ///< Enable sampling timer 2\n\tADC_DMACmd(ADC1, ENABLE);       ///< Enable DMA functionality\n\tADC_Cmd(ADC1, ENABLE);          ///< Enable on-board hardware ADC 1\n\tADC_SoftwareStartConv(ADC1);    ///< Trigger the regular group scan\n\n\n\n\tg.waveForm = CMD_TESTVECT;\n\n\n\n\t/**< Main loop */\n\n\twhile (1) {\n\n\t\t/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */\n\t\t/*                      fast Console                               */\n\t\t/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */\n\t\twhile (! MD_DISCO_ButtonOnPressed()) {\n\t\t\t//Console(&pidDataY, &fpidData, _INT_);\n\t\t\tfastConsoleCase(&PIDY);\n\n\t\t\tfor (uint8_t k = 0; k < 20; k++) {\n\t\t\t\t//                if (TM_USART_BufferFull(USART1)) {\n\t\t\t\t//                    printf( MSG_GUI_UART1_RECV_BUFF_FULL );\n\t\t\t\t//                    fastConsoleCase(&PIDY);\n\t\t\t\t//                    TM_USART_ClearBuffer(USART1);\n\t\t\t\t//                };\n\t\t\t\tDelayms((uint32_t)g.refresh / 20);\n\t\t\t}\n\t\t\t//            if ((ASG.state == ASG_CHARGING_INTEGRATOR) && (! ASG.tripped)) {\n\t\t\tif (ASG.integrator != lastVal) {\n\t\t\t\tprintf(\"%.8f\\n\", ASG.integrator);\n\t\t\t}\n\t\t\tif ((ASG.tripped) && (! ASG.ack)) {\n\t\t\t\tprintf(\"Tripped!\");\n\t\t\t\tASG.ack = 1;\n\t\t\t\tlastVal = ASG.integrator;\n\t\t\t\tTM_Timer4_config(ENABLE, ENABLE, 45000 / 3);\n\t\t\t}\n\n\t\t}\n\n\t\t/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */\n\t\t/*              fast Console / REMOTE_OPENLOOP                     */\n\t\t/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */\n\t\twhile (! MD_DISCO_ButtonOnPressed()) {\n\t\t\tfastConsoleCase(&PIDY);\n\t\t\tg.setpointSrc = REMOTE_OPENLOOP;\n\n\t\t\tfor (uint8_t k = 0; k < 20; k++) {\n\t\t\t\tif (TM_USART_BufferFull(USART1)) {\n\t\t\t\t\tprintf( MSG_GUI_UART1_RECV_BUFF_FULL );\n\t\t\t\t\tfastConsoleCase(&PIDY);\n\t\t\t\t\tTM_USART_ClearBuffer(USART1);\n\t\t\t\t};\n\t\t\t\tDelayms((uint32_t)g.refresh / 20);\n\t\t\t}\n\n\t\t\tprintf(\"W: % 3.2f\\tPy: % 3.2f\\tE: % 3.2f\\tDuty: % 3.2f%%\\n\", \\\n\t\t\t       SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);\n\t\t}\n\n\t\t/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */\n\t\t/*              fast Console / W:  P:  Duty:                       */\n\t\t/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */\n\t\twhile (! MD_DISCO_ButtonOnPressed()) {\n\t\t\t//Console(&pidDataY, &fpidData, _INT_);\n\t\t\tfastConsoleCase(&PIDY);\n\n\t\t\tfor (uint8_t k = 0; k < 20; k++) {\n\t\t\t\tif (TM_USART_BufferFull(USART1)) {\n\t\t\t\t\tprintf( MSG_GUI_UART1_RECV_BUFF_FULL );\n\t\t\t\t\tfastConsoleCase(&PIDY);\n\t\t\t\t\tTM_USART_ClearBuffer(USART1);\n\t\t\t\t};\n\t\t\t\tDelayms((uint32_t)g.refresh / 20);\n\t\t\t}\n\n\t\t\tprintf(\"W: % 3.2f\\tPy: % 3.2f\\tE: % 3.2f\\tDuty: % 3.2f%%\\n\", \\\n\t\t\t       SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);\n\t\t}\n\n\t\t/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */\n\t\t/*              fast Console / W:  P:  Duty:                       */\n\t\t/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */\n\t\twhile (! MD_DISCO_ButtonOnPressed()) {\n\t\t\t//Console(&pidDataY, &fpidData, _INT_);\n\t\t\tfastConsoleCase(&PIDY);\n\n\t\t\tfor (uint8_t k = 0; k < 20; k++) {\n\t\t\t\tif (TM_USART_BufferFull(USART1)) {\n\t\t\t\t\tprintf( MSG_GUI_UART1_RECV_BUFF_FULL );\n\t\t\t\t\tfastConsoleCase(&PIDY);\n\t\t\t\t\tTM_USART_ClearBuffer(USART1);\n\t\t\t\t};\n\t\t\t\tDelayms((uint32_t)g.refresh / 20);\n\t\t\t}\n\n\t\t\tprintf(\"W: % 3.2f\\tPy: % 3.2f\\tE: % 3.2f\\tDuty: % 3.2f%%\\n\", \\\n\t\t\t       SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);\n\t\t}\n\t}\n}\n/*\n\twhile (1) {\n        / * Read temperature 1, reference temperature * /\n//        MD_DS18B20_Read(&OneWire, device[0], &SETPOINT_Y_FLOAT);\n\n\n        / * Format string * /\n        printf(\"W: % 3.2f\\tPy: % 3.2f\\tE: % 3.2f\\tDuty: % 3.2f%%\\n\", \\\n            SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);\n        Delayms(g.refresh);\n    }\n */\n/* End of main function */\n\n\n\n\n/**\n * @brief   Write initial states to different structures\n */\nvoid init_globalStructs(void) {\n\n\t/**< Set PID parameters */\n\tPIDX.Kp = PID_PARAM_KP;\t\t/* Proporcional */\n\tPIDX.Ki = PID_PARAM_KI;\t\t/* Integral */\n\tPIDX.Kd = PID_PARAM_KD;\t\t/* Derivative */\n\tPIDY.Kp = PID_PARAM_KP;\t\t/* Proporcional */\n\tPIDY.Ki = PID_PARAM_KI;\t\t/* Integral */\n\tPIDY.Kd = PID_PARAM_KD;\t\t/* Derivative */\n\n\t/**< Initialize autoShutdown system struct. */\n\tASG.lowerVal = ASG_TRIPPING_LOWER_DEFAULT;\n\tASG.upperVal = ASG_TRIPPING_UPPER_DEFAULT;\n\n\tASG.integrator = 0;\n\tASG.safeVal = ASG_SAFEVALUE_DEFAULT ;\n\tASG.tripped = 0;\n\tASG.ack = 0;\n\tASG.tripTime = ASG_TRIPPING_TIME_DEFAULT; // 750ms initial\n\tASG.state = ASG_STATIONARY_INTEGRATOR;\n\n\t/**< Initialize global structure */\n\tg.waveForm = NN; g.duty = 999; g.freq = 999; g.lookAt = 999;\n\tg.dacHw[MD_DAC1].upperLim = (int16_t)( 2113 - ADC_RNG / 2 );\n\tg.dacHw[MD_DAC1].lowerLim = (int16_t)( 1917 - ADC_RNG / 2 );\n\tg.dacHw[MD_DAC2].upperLim = (int16_t)( 2113 - ADC_RNG / 2 );\n\tg.dacHw[MD_DAC2].lowerLim = (int16_t)( 1917 - ADC_RNG / 2 );\n\tg.setpointSrc = REMOTE_INTERNAL_MIXED;\n\tg.refresh = 20;\n\tg.beamEnabled = GPIO_ON;\n}\n\n\n\n\n\n///**\n// * @brief   Set beam control source and new state\n// */\n//int beamCtrl(beamCtrlSource_t src, MDB_GPIO_STATE_t newState ) {\n//    if ((src == BEAM_CTRL_SOURCE_GLOBAL) && (newState != DNI)) {\n//        printf(\"Error, Beam source can't be GLOBAL if new state is not DNI\");\n//        return -1;\n//    }\n\n//    if ((src == BEAM_CTRL_SOURCE_GLOBAL) && (newState == DNI)) {\n//        MDB_GPIO_Switch(BEAM_INTERRUPT, g.beamEnabled);\n//        return 0;\n//    }\n\n//    if (src == BEAM_CTRL_SOURCE_MANUAL) {\n//        MDB_GPIO_Switch(BEAM_INTERRUPT, newState);\n//        return 0;\n//    }\n//\n//    return -1;\n//}\n\n\n\n///**\n// * @brief   Safely update actuator control signals\n// * Safely means in terms of missplaced or oscillating controller outputs.\n// * The analog watchdog peripheral takes care about \"out of normal range\"\n// * events. If a converted position signal is out of range, the watchdog\n// * handler starts time integration and after \"out of range\" integrator\n// * reaches a defineable limit, the watchdog takes the system to into\n// * \"Tripped\" state.\n// * Therefor a global error flag becomes true AND the function pointer\n// * DAC_SetDualChanSigned() that points to a wraper function, gots to be\n// * replaced by a pointer that points to DAC_SetDualChanSigned_Tripped().\n// * In the DAC_SetDualChanSigned() function, that is pointed to in tripped\n// * state, only outputs a zero level DAC-Signal to take external hardware\n// * in a safe state.\n// */\n//int updateActuator_f(float I_set_x, float I_set_y) {\n//    int toPlant_intBuff[2] = { 0, 0 };\n//    int *toPlant_int = &toPlant_intBuff[0];\n//\n//    if (!ASG.tripped) {     ///< only if ASG state is NOT tripped\n\n//        /**< decode the float values to an integral type */\n//        *toPlant_int     = decode_toInt(I_set_x);\n//        *(toPlant_int+1) = decode_toInt(I_set_y);\n\n//        /**\n//         * Check decoded values to be in DAC output range. Clipping\n//         * would be necessary\n//         */\n//        for (uint8_t k=0; k<2; k++) {\n//            if (*(toPlant_int+k) > UPPER_DAC_LIMIT_SIGNED)\n//                    *(toPlant_int+k) = UPPER_DAC_LIMIT_SIGNED;\n//            if (*(toPlant_int+k) < LOWER_DAC_LIMIT_SIGNED)\n//                    *(toPlant_int+k) = LOWER_DAC_LIMIT_SIGNED;\n//        }\n//    }\n//    else{\n//    /**<><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>\n//       <>  This branch eror-handles an ASG integrator_full event i.e.<>\n//       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>\n//       <>                    FUSE TRIPPED                            <>\n//       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<> */\n//       /* All safety related actions are done by the watchdog handler */\n//    }\n\n//   /**\n//    * @brief    Return argument toPlant_int is of type int16_t because\n//    *           it holds the --un--biased DAC output register values...\n//    *           This is a function pointer!\n//    * Casting from (float32_t) toPlant to int16_t type introduces\n//    * rounding errors which couldn't be prevented!\n//    */\n//    DAC_SecureSetDualChanSigned( *toPlant_int, *(toPlant_int+1));\n//\n//    return 0;\n//}\n\n\n\n\n\n/*\n *       @,!,# are newline indicators or line separators\n *\n *       @kp   :=   58\n *       #sin  :=   F F F F  d  d  A  A   A   A\n *       @w:   :=   0.0005452\n *     |______|____|________________|\n *     |  NC  | FS |      NV        |\n *\n *        3      2          16\n *\n *  => UART_BUFF_SIZE = 23 (newline + 21 + \\0)\n *\n */\n\n\n#define IDX_CMD     1       // index 0 is @ or ! or #\n#define IDX_VAL     5   // index 5 \n\n#define UART_BUFF_SIZE      (1+NC+FS+NV+1)\n#define VALUE_BUFF_SIZE     (NV+1)\n#define CMD_BUFF_SIZE       (NC+1)\n\n//void fastConsoleCase (volatile struct PID_DATA *pid) {\n#if  defined (KEIL_IDE)\n#pragma O0\n#elif  defined (__GNUC__)\n#pragma GCC push_options\n#pragma GCC optimize (\"O0\")\n#endif\n\n/**\n * @brief      Fast console command parser.\n *\n *             Interface to a signal generator based on lookup tables.\n *             Implemented waveforms:\t- Śin/Cos\n *\n * @param      pid   Pointer to a pid instance from dsp library.  \n */\nvoid fastConsoleCase (arm_pid_instance_f32 *pid) {\n\t/**\n\t * @brief      private member declarations.\n\t */\n\n\t/**\n\t * @brief      Char buffer to hold received value as substring.\n\t */\n\tchar sUart[UART_BUFF_SIZE];\t\t \n\n\t/**\n\t * @brief      Char buffer to hold selected command as substring.\n\t */\n\tchar sCmd[CMD_BUFF_SIZE];\n\n\t/**\n\t * @brief      Char buffer to hold given value as substring.\n\t *\n\t *             sVal holds the string representation of a received float\n\t *             value. For useing atof(), a buffer of\n\t *              - 4 x sizeof(int8_t)+1 (float32_t) or\n\t *              - 8 x sizeof(int8_t) (double) \n\t *             is necessary.\n\t */ \n\tchar sVal[VALUE_BUFF_SIZE];\n\n\tchar *pCmd = sCmd;\t\t        ///< pointer for buffer arrays\n\tchar *pVal = sVal;\t\t        ///< pointer for buffer arrays\n\n\tCmdItem_t cmd;\n\tWavItems_t wav;\n\tstruct items *choice = NULL;\n\titemsw_t *choicew = NULL;\n\n\tint i;\n\n\tvolatile uint8_t nChars = TM_USART_Gets( USART1, &sUart[0], UART_BUFF_SIZE);\n\n\t/**< Check for serial data frames >= UART_BUFF_SIZE */\n\tif (nChars < UART_BUFF_SIZE) {\n\t\tMD_DISCO_LedOn(LED_RED);\n\t\tmemset(&sUart, 0, UART_BUFF_SIZE * sizeof(char));  ///< malloc the receive buffer\n\t\treturn;\n\t}\n\n\tMD_DISCO_LedOff(LED_RED);\n\tMD_DISCO_LedOn(LED_GREEN);\n\tticks = 100000;   // 200k *10us = 2s\n\t/**\n\t * @brief      Char buffer to hold given value as substring.\n\t */\n\n\t/**< malloc() if a frame received where sizeoff() >= UART_BUFF_SIZE */\n\tmemset(&sCmd, 0, CMD_BUFF_SIZE * sizeof(char));  ///< malloc command buffer\n\tmemset(&sVal, 0, VALUE_BUFF_SIZE * sizeof(char));   ///< malloc value buffer\n\n\t/**< Check leading character via receive buffer\n\t *      @   frame indicator for pid related config/param.\n\t *      !   frame indicator for a misc command\n\t *      #   frame indicator for a signal generator command\n\t */\n\tif ( sUart[0] == '@') {\n\t\t/* pid related config/param */\n\t\tstrncpy( pCmd, &sUart[IDX_CMD], NC);\t\t///< command substring\n\t\tstrncpy( pVal, &sUart[IDX_VAL], NV);\t\t///< Value substring\n\n\t\t/* Check for end of char coded float representation\n\t\t * numeric char:            0...9\n\t\t * decimal delimiter:       . or ,  !!!Take caution for forbidden thousands separator!!!\n\t\t * exponental indicator:    e or E\n\t\t * signdness:               -\n\t\t */\n\t\tfor (uint8_t k = 0; k <= NV; k++) {                 ///< Max NC numbers ...\n\t\t\tif ( ((*pVal >= '0') && (*pVal <= '9')) || \\\n\t\t\t        (*pVal == '.') || (*pVal == ',')  || \\\n\t\t\t        (*pVal == 'e') || (*pVal == 'E') || \\\n\t\t\t        (*pVal == '-') ) {\n\t\t\t\tpVal++;\n\t\t\t}\n\t\t\telse {\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\n\t\t*pVal = '\\0';\t              ///< place EOF marker\n\t\tpVal = &sVal[0];\n\n\t\twhile ( *pCmd != '=' ) {    ///< check for end of command  indicator '='\n\t\t\tpCmd++;\n\t\t}\n\t\t*(pCmd - 1) = '\\0';\t\t    ///< place EOS marker\n\t\tpCmd = &sCmd[0];\n\n\t\t/* parse sCmd buffer and enumerate the command/error */\n\t\tfor (i = 0, choice = NULL; i < sizeof items_list / sizeof (struct items); i++) {\n\t\t\tif (strcasecmp(sCmd, items_list[i].name) == 0)\n\t\t\t{\n\t\t\t\tchoice = items_list + i;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\n\t\tcmd = choice ? choice->id : UNKNOWN;\n\n\t\tchar sValtemp1[] = {\"-0.7e-09\"};\n\n\t\t/* FIXME */\n\t\tvolatile float fl1 __attribute__ ((unused)) = atof(&sValtemp1[0]);\n\n#ifdef  FLOAT_PARAMETERS\n\t\t//            volatile float valueDecoded = (float)tmp/SLIDER_VAL_DEVIDER;\n\t\tvolatile float valueDecoded = atof( pVal );\n\n#elif   DOUBLE_PARAMETERS\n\t\tdouble valueDecoded = (double)tmp / SLIDER_VAL_DEVIDER;\n#else\n\t\terror \"datatype?\"\n#endif\n\n\t\tswitch (cmd) {\n\t\tcase KP:\t{\n\t\t\tpid->Kp = valueDecoded;\n#ifndef NO_FPU\n\t\t\tarm_pid_init_f32(&PIDY, 0);\n#endif\n\t\t\tprintf(\"Kp % f set!\\n\", valueDecoded);\n\t\t}\n\t\tbreak;\n\n\t\tcase KI:\t{\n\t\t\tpid->Ki = valueDecoded;\n#ifndef NO_FPU\n\t\t\tarm_pid_init_f32(&PIDY, 0);\n#endif\n\t\t\tprintf(\"Ki % f set!\\n\", valueDecoded);\n\t\t\t//                            printf(\"Ki %s given\\n\", &sval[0]);\n\t\t}\n\t\tbreak;\n\n\t\tcase KD:\t{\n\t\t\tpid->Kd = valueDecoded;\n#ifndef NO_FPU\n\t\t\tarm_pid_init_f32(&PIDY, 0);\n#endif\n\t\t\tprintf(\"Kd % f set!\\n\", valueDecoded);\n\t\t\t//                         printf(\"Kd %s given\\n\", &sval);\n\t\t}\n\t\tbreak;\n\n\t\tcase W:\t\t{\n\t\t\tpidDataX.W_remf = valueDecoded;\n\t\t\tpidDataY.W_remf = valueDecoded;\n\t\t\tpidDataY.remoteCmdActive = 1;\n\t\t\tprintf(\"W = % g\\n\", pidDataY.W_remf);\n\t\t}\n\t\tbreak;\n\n\t\tdefault:\n\t\t\tprintf(\"unknown choice\\n\");\n\t\t\tbreak;\n\t\t}\n\n\n\t}\n\telse {\n\n\n\t\t/** A trailing ! char in a new Rx frame indicates that a misc command\n\t\t * follows...\n\t\t */\n\t\tif (sUart[0] == '#') {   ///< True if signal generator command received\n\n\t\t\t/**\n\t\t\t * Trailing # indicates a command frame for signal generation\n\t\t\t *\n\t\t\t * Frame Layout:\n\t\t\t *    c     waveform\n\t\t\t *    v     freq\n\t\t\t *    d  dutycycle\n\t\t\t *\n\t\t\t * # c c c : = v v v v  d  d\n\t\t\t * 0 1 2 3 4 5 6 7 8 9 10  11 12\n\t\t\t *\n\t\t\t *\n\t\t\t *\n\t\t\t * ------ Aus Qt software v8.3\n\t\t\t * Frame Layout:\n\t\t\t * cwaveform\n\t\t\t * vfreq\n\t\t\t * d dutycycle\n\t\t\t *\n\t\t\t * # c c c : = F F F F  d  d  A  A   A   A\n\t\t\t * 0 1 2 3 4 5 6 7 8 9 10  11 12 13  14  15\n\t\t\t *\n\t\t\t * Amplitude als char coded float\n\t\t\t *\n\t\t\t * # c c c : = F F F F  d  d  A ..16x.. A\n\t\t\t * 0 1 2 3 4 5 6 7 8 9 10  11 12 13  14  .... 27\n\t\t\t *\n\t\t\t */\n\n\t\t\t//char  sWav[NC+1],    ///< string buffer to hold selected waveform as substring\n\t\t\t//        sFreq[NV+1], ///< string buffer to hold given frequency as substring\n\t\t\t//        sDuty[ND+1]; ///< string buffer to hold given duty cycle as substring\n\n\t\t\tuint8_t NC = 3;      // index 0...3\n\t\t\t//      uint8_t FS = 2;      // index 4...5 (fieldsep)\n\t\t\tuint8_t NV = 4;      // index 6...9\n\t\t\tuint8_t ND = 2;      // index 10...11\n\t\t\tuint8_t NA = 16;     // index 12...15\n\n\t\t\tchar  sWav[NC + 1],  ///< string buffer to hold selected waveform as substring\n\t\t\t      sFreq[NV + 1], ///< string buffer to hold given frequency as substring\n\t\t\t      sDuty[ND + 1], ///< string buffer to hold given duty cycle as substring\n\t\t\t      sAmp[16];     ///< string buffer to hold given amplitude as substring\n\n\t\t\t//            char *pWav = sWav;\n\t\t\tchar *pDuty = sDuty;\n\t\t\tchar *pFreq = sFreq;\n\t\t\tchar *pAmp = sAmp;\n\n\t\t\tstrncpy(sWav,  &sUart[1], NC);   ///< waveform substring\n\t\t\tstrncpy(sFreq, &sUart[6],  4);      ///< frequency substring\n\t\t\tstrncpy(sDuty, &sUart[10], 2);      ///< duty cycle substring\n\t\t\tstrncpy(sAmp, &sUart[12], 16);      ///< peak amplitude substring\n\n\n\t\t\t/* Check for end of char coded float representation\n\t\t\t * numeric char:            0...9\n\t\t\t * decimal delimiter:       . or ,  !!!Take caution for forbidden thousands separator!!!\n\t\t\t * exponental indicator:    e or E\n\t\t\t * signdness:               -\n\t\t\t */\n\t\t\tfor (uint8_t k = 0; k < NC; k++) { ///< check for end of value (padding) char ~\n\t\t\t\tif ( *pCmd == RX_FRAME_PADDING_CHAR )\n\t\t\t\t\tbreak;\n\t\t\t\tpCmd++;\n\t\t\t}\n\t\t\t*(pCmd - 1) = '\\0';   ///< place EOS marker\n\t\t\tpCmd = &sCmd[0];\n\n\t\t\tfor (uint8_t k = 0; k < NV; k++) { ///< check for end of command  indicator '='\n\t\t\t\tif ( *pFreq == RX_FRAME_PADDING_CHAR )\n\t\t\t\t\tbreak;\n\t\t\t\tpFreq++;\n\t\t\t}\n\t\t\t*pFreq = '\\0';     ///< place EOS marker\n\t\t\tpFreq = &sFreq[0];\n\n\t\t\tfor (uint8_t k = 0; k < ND; k++) { ///< check for end of command  indicator '='\n\t\t\t\tif ( *pDuty == RX_FRAME_PADDING_CHAR )\n\t\t\t\t\tbreak;\n\t\t\t\tpDuty++;\n\t\t\t}\n\t\t\t*pDuty = '\\0';     ///< place EOS marker\n\t\t\tpDuty = &sDuty[0];\n\n\t\t\tfor (uint8_t k = 0; k <= NA; k++) {                 ///< Max NC numbers ...\n\t\t\t\tif ( ((*pAmp >= '0') && (*pAmp <= '9')) || \\\n\t\t\t\t        (*pAmp == '.') || (*pAmp == ',')  || \\\n\t\t\t\t        (*pAmp == 'e') || (*pAmp == 'E') || \\\n\t\t\t\t        (*pAmp == '-') ) {\n\t\t\t\t\tpAmp++;\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t\t*pAmp = '\\0';   ///< place EOF marker\n\t\t\tpAmp = &sWav[0];\n\n\n\t\t\t/* parse sCmd buffer and enumerate the command/error */\n\t\t\tfor (i = 0, choicew = NULL; i < sizeof itemsw_list / sizeof (itemsw_t); i++) {\n\t\t\t\tif (strcasecmp(sWav, itemsw_list[i].name) == 0)\n\t\t\t\t{\n\t\t\t\t\tchoicew = itemsw_list + i;\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\twav = choicew ? choicew->idw : NN;\n\t\t\t//    /**\n\t\t\t//     * Check for invalied chars in command string\n\t\t\t//     *\tOnly [a-zA-Z] is threated as part of command string\n\t\t\t//     *\n\t\t\t//     */\n\t\t\t//            while ( (*pWav >= 0x41) && (*pWav <= 0x5A) ||\n\t\t\t//                            (*pWav >= 0x61) && (*pWav <= 0x7A) ) {\n\t\t\t//                pWav++;\n\t\t\t//            }\n\n\t\t\t//    /**\n\t\t\t//     * Same item structure used for PID-param and\n\t\t\t//     * waveform generation commands! Don't forget\n\t\t\t//     * to offset the for loop while while read in\n\t\t\t//     * a waveform command.\n\t\t\t//     *\n\t\t\t//     */\n\t\t\t//            for(i = 0, choicew = NULL; i < sizeof itemsw_list/sizeof (struct itemsw_t); i++)\n\t\t\t//            {\n\t\t\t//                if (strcasecmp(sWav, itemsw_list[i].name) == 0)\n\t\t\t//                {\n\t\t\t//                    choicew = itemsw_list + i;\n\t\t\t//                    break;\n\t\t\t//                }\n\t\t\t//            }\n\n\t\t\t//            wav = choicew ? choicew->idw : NN;\n\t\t\t/* FIXME */\n\t\t\tvolatile float valueDecoded __attribute__ ((unused)) = atof( pVal );\n\n\t\t\tg.waveForm \t= wav;\n\t\t\tg.freq\t\t= atoi(sFreq);\n\t\t\tg.duty \t\t= atoi(sDuty);\n\t\t\tg.ampl_f \t= (float)atof(sAmp);\n\t\t\tg.ampl      = (int) g.ampl_f * 1000;\n\n\t\t\t//g.ampl_f = (float)g.ampl / (float)AMPL_FLOAT_DIVISOR;\n\n\t\t\tif (g.ampl_f > (float)AREF_IN_VOLT / 2)\n\t\t\t\tg.ampl_f = (float)AREF_IN_VOLT / 2;\n\t\t\tif (g.ampl_f < -(float)AREF_IN_VOLT / 2)\n\t\t\t\tg.ampl_f = -(float)AREF_IN_VOLT / 2;\n\t\t\t//            g.ampl_f = (float)g.ampl / (float)AMPL_FLOAT_DIVISOR;\n\t\t\t//\n\t\t\t//            if (g.ampl_f > (float)AREF_IN_VOLT/2)\n\t\t\t//                g.ampl_f = (float)AREF_IN_VOLT/2;\n\t\t\t//            if (g.ampl_f < -(float)AREF_IN_VOLT/2)\n\t\t\t//                g.ampl_f = -(float)AREF_IN_VOLT/2;\n\n\t\t\t/**\n\t\t\t *\tCalculate the interval for lookup table index increment\n\t\t\t *\tbased on @SAMPLE_INTERVAL / TS, sizeof table and given\n\t\t\t *  waveform frequency.\n\t\t\t *\n\t\t\t *\tg.freq  \t[Hz]\n\t\t\t *\tTS\t\t\t[us]\t* 10^(-6)\n\t\t\t *\n\t\t\t *  g.lookAt = g.freq/(TABLESIZE * TS * 10^(-6))\n\t\t\t *           = g.freq * 10^4 / TS\n\t\t\t */\n\n\n\t\t\t//        g.lookAt = (short) 1/((double)TABLESIZE * TS * 10^(-6));\n\t\t\t//\t\tg.lookAt = (uint32_t) g.freq * pow(10,6) / (TABLESIZE * TS);\n\t\t\t//        printf(\" g.lookAt: %i\", g.lookAt);\n\n\t\t\t//        g.lookAt = g.lookAt / 100;\n\t\t\t//        printf(\" g.lookAt/100: %i\", g.lookAt);\n\t\t\tg.tctr = g.lookAt;\n\n\t\t\t/**\n\t\t\t *  Precalculate a lookup table based on normed array\n\t\t\t *\n\t\t\t */\n\t\t\tfor (uint16_t k = 0; k < TABLESIZE; k++) {\n\t\t\t\tcalcTab[k] = (uint16_t) g.ampl * CosineN[k];\n\t\t\t};\n\n\t\t\tswitch (wav) {\n\t\t\tcase COS:\t\t\t{\n\t\t\t\tprintf(\"Cosine \\n\");\n\t\t\t\tpSeq = &Cosine[0];\n\t\t\t\tg.pBase = pSeq;\n\t\t\t\tg.gen = EN;\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase TRIANG:\t\t{\n\t\t\t\tprintf(\"Triangle \\n\");\n\t\t\t\t//\t\t\t\t\t\t\t\t\t\tpSeq = &Triangle[0];\n\t\t\t\t/* 450/g.freq --> 100 Timer Ovf / periode */\n\t\t\t\ttriStruct.bottom = ((float)VA_BIAS - g.ampl_f / 2);\n\t\t\t\ttriStruct.top = ((float)VA_BIAS + g.ampl_f / 2);\n\t\t\t\ttriStruct.derivate = g.ampl_f / (float)100;\n\t\t\t\t//                                            g.pBase = pSeq;\n\t\t\t\tg.waveForm = TRIANG;\n\t\t\t\ttriStruct.triCtr = 0;\n\t\t\t\tTM_Timer4_config(ENABLE, ENABLE, 450 / g.freq);\n\t\t\t\tg.gen = EN;\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase SQUAREWAV:\t{\n\t\t\t\tprintf(\"Squarewave\\n\");\n\t\t\t\tTM_Timer4_config(ENABLE, ENABLE, 45000 / g.freq);\n\t\t\t\tg.setpointSrc = REMOTE_INTERNAL_MIXED;\n\t\t\t\tg.waveForm = SQUAREWAV;\n\t\t\t\tg.gen = EN;\n\t\t\t\tpSeq_f = &squarewaveBuff[0];\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase QUADRATIC:\t{\n\t\t\t\tprintf(\"Quadratic\\n\");\n\t\t\t\tpSeq = &Quadratic[0];\n\t\t\t\tg.gen = EN;\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase I_QUADRATIC:\t{\n\t\t\t\tprintf(\"Inv Quadratic\\n\");\n\t\t\t\tpSeq = &I_Quadratic[0];\n\t\t\t\tg.gen = EN;\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase SAWTOOTH:\t\t{\n\t\t\t\tprintf(\"Sawtooth\\n\");\n\t\t\t\tpSeq = &Sawtooth[0];\n\t\t\t\tg.gen = EN;\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase CMD_REMOTE_SETPOINT: {\n\t\t\t\tprintf(\"CMD_REMOTE_SETPOINT\\n\");\n\t\t\t\tg.setpointSrc = REMOTE_SETPOINT;\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase CMD_OPENLOOP_REMOTE: {\n\t\t\t\tprintf(\"CMD_OPENLOOP_REMOTE\\n\");\n\t\t\t\tg.setpointSrc = REMOTE_OPENLOOP;\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase CMD_ANALOG_SETPOINT: {\n\t\t\t\tprintf(\"CMD_ANALOG_SETPOINT\\n\");\n\t\t\t\tg.setpointSrc = ANALOG_SETPOINT;\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase CMD_INTERNAL_SETPOINT: {\n\t\t\t\tprintf(\"CMD_INTERNAL_SETPOINT\\n\");\n\t\t\t\tg.setpointSrc = INTERNAL_SETPOINT;\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase CMD_TESTVECT: {\n\t\t\t\tprintf(\"CMD_TESTVECT\\n\");\n\t\t\t\t//                                            g.setpointSrc = INTERNAL_SETPOINT;\n\t\t\t\tdir = 1;\n\t\t\t\tg.waveForm = CMD_TESTVECT;\n\t\t\t\tTM_Timer4_config(ENABLE, ENABLE, 45000 / g.freq);\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tcase CMD_MATLAB_LINK: {\n\t\t\t\t/* Matlab link integrieren\n\t\t\t\t * #mat:=1~~~0~1.6635~~~..  vector #1, beam off, xpos=1.6635\n\t\t\t\t * #mat:=2~~~0~1.2635~~~..\n\t\t\t\t * #mat:=3~~~1~-1.663~~~..  vector #1, beam on, xpos=-1.663\n\t\t\t\t */\n\t\t\t}\n\t\t\tbreak;\n\n\t\t\tdefault: {\n\t\t\t\tprintf(\"unknown choice\\n\");\n\t\t\t\tg.waveForm = NN;\n\t\t\t\tg.duty \t= 999;\n\t\t\t\tg.freq\t= 999;\n\t\t\t\tg.lookAt = 999;\n\t\t\t\tg.pBase \t= pSeq;\n\t\t\t\tg.tctr\t= 999;\n\t\t\t\tg.gen\t\t= DIS;\n\t\t\t}\n\n\t\t\t\t/* Disable waveform generation if wgm-off command received */\n\t\t\t}\n\n\t\t\t//\t\tg.pBase = (uint32_t)&pSeq;\n\n\n\n\t\t}\n\t\telse {                   ///< True if a misc command received\n\t\t\t/**\n\t\t\t * Trailing ! indicates that a misc command frame was received\n\t\t\t *\n\t\t\t * Frame Layout:\n\t\t\t * \tc\tcommand\n\t\t\t *\n\t\t\t * ! c c c c c c c c c c  c  c\n\t\t\t * 0 1 2 3 4 5 6 7 8 9 10 11 12\n\t\t\t *\n\t\t\t */\n#define MISC_CMD_LENGTH     35  // + trailing !\n\t\t\tMiscItem_t misc;\n\t\t\tMiscCmds_t *choicem = NULL;\n\n\t\t\t///< string buffer to hold given command substring\n\t\t\tchar sMisc[MISC_CMD_LENGTH + 1];\n\t\t\tchar *pMisc = sMisc;\n\n\t\t\tstrncpy(sMisc, \t&sUart[1],  MISC_CMD_LENGTH);\t///< command substring\n\n\t\t\t/**< Check for valied characters and substitute first unvalied char\n\t\t\t * by EOS char\n\t\t\t */\n\n\t\t\twhile ( ((*pMisc >= 'A') && (*pMisc <= 'Z')) || \\\n\t\t\t        ((*pMisc >= 'a') && (*pMisc <= 'z')) || \\\n\t\t\t        ((*pMisc >= '0') && (*pMisc <= '9')) || \\\n\t\t\t        ((*pMisc == '-') || (*pMisc == '_')) || \\\n\t\t\t        ((*pMisc == '.') || (*pMisc == ',')) || \\\n\t\t\t        ((*pMisc == 'e') || (*pMisc == 'E')) ) {\n\n\t\t\t\tpMisc++;\n\t\t\t}\n\n\t\t\t*pMisc = '\\0';\t\t\t\t///< End of string\n\n\n\t\t\tfor (i = 0, choicem = NULL; i < sizeof itemsm_list / sizeof (MiscCmds_t); i++)\n\t\t\t{\n\t\t\t\tif (strcasecmp(sMisc, itemsm_list[i].name) == 0)\n\t\t\t\t{\n\t\t\t\t\tchoicem = itemsm_list + i;\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tmisc = choicem ? choicem->idm : misc_NN;\n\n\t\t\tg.miscReq \t= misc;\n\n\t\t\tswitch (misc) {\n\t\t\tcase misc_assOnOff_cmd:\n\t\t\t\tbreak;\n\t\t\tcase misc_assUpperLim_cmd:\n\t\t\t\tbreak;\n\t\t\tcase misc_assLowerLim_cmd:\n\t\t\t\tbreak;\n\t\t\tcase misc_assTrippTime_cmd:\n\t\t\t\tbreak;\n\t\t\tcase misc_assSaveVal_cmd:\n\t\t\t\tbreak;\n\n\t\t\tcase misc_pid_init:\n\t\t\t\t//                    pid_Init(KP_INIT, KI_INIT, KD_INIT, TF_INIT, TS, &pidDataY, NONBUFFERED);\n\t\t\t\tresetPID();\n\t\t\t\tbreak;\n\t\t\tcase misc_beamOff_cmd:\n\t\t\t\tMDB_GPIO_BeamPin(BEAM_INTERRUPT, GPIO_DRIVER_OFF);\n\t\t\t\tbreak;\n\t\t\tcase misc_beamOn_cmd:\n\t\t\t\tMDB_GPIO_BeamPin(BEAM_INTERRUPT, GPIO_DRIVER_ON);\n\t\t\t\tbreak;\n\n\t\t\tdefault:\n\t\t\t\tprintf(\"function unknown\\n\");\n\t\t\t}\n\t\t}\n\t\tmemset(&sUart, 0, UART_BUFF_SIZE * sizeof(char));\n\t}\n\n}\n#if  defined (KEIL_IDE)\n#pragma O2\n#elif  defined (__GNUC__)\n#pragma GCC pop_options\n#endif\n\n/** @} */\n\n/** @} */\n\n/** @} */\n\n/** @} */\n\n/** @} */\n\n\n\n\n// #ifdef MULTI_SETPOINT\n//     if (g.setpointSrc == INTERNAL_SETPOINT) {\n//         W_now = pidDataY.W_int;\n//     }  else {\n//     if (g.setpointSrc == ANALOG_SETPOINT) {\n//         W_now = ADC_fBuff[INDEX_Wx];\n//     }  else {\n//     if (g.setpointSrc == REMOTE_SETPOINT) {\n//         W_now = pidDataY.W_rem;\n//     }  else {\n//     if (g.setpointSrc == REMOTE_OPENLOOP) {\n//         W_now = pidDataY.W_rem;\n//     }}}}\n// #endif\n\n//    gpio_init_mco1();\n//    RCC_MCO1Config(RCC_MCO1Source_HSE,RCC_MCO1Div_1);\n//    gpio_init();\n\n\n\n\n// ==============================================================\n//     IRQ callback:    Timer 5 overrun     Heartbeat timer\n// ==============================================================\n// void TIM5_IRQHandler(void) {\n//    if (TIM_GetITStatus(TIM5, TIM_IT_Update) != RESET) {\n// \t\tTIM_ClearITPendingBit(TIM5, TIM_IT_Update);\n\n//    }\n// }\n// ==============================================================\n//     IRQ callback:    Timer 4 overrun     Waveform Generator\n// ==============================================================\n// #ifdef NO1\n// void TIM4_IRQHandler(void) {\n//    if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {\n// \t\tTIM_ClearITPendingBit(TIM4, TIM_IT_Update);\n\n//        if (ASG.tripped) {\n//            MDB_GPIO_Toggle(BEAM_INTERRUPT);\n//        }\n\n//         Check which waveform mode is active \n//        if (g.waveForm == SQUAREWAV) {\n//            if (*pSeq_f == '\\0') {\n//                pSeq_f = &squarewaveBuff[0];\n//                pInt = &interrupterBuff[0];\n//                MDB_GPIO_Toggle(TRIGGER_SRC);\n//            }\n//            setpoint_tgl = (float)*pSeq_f++ * g.ampl_f;\n//            beamCtrl(BEAM_CTRL_SOURCE_MANUAL, (*pInt++) ? GPIO_ON : GPIO_OFF );\n//            return;\n//        }\n\n//        if (g.waveForm == TRIANG) {\n//            if (setpoint_tgl  <= triStruct.top) {\n//                setpoint_tgl += triStruct.derivate;\n//            }\n//            else {\n//                setpoint_tgl = triStruct.bottom;\n//            }\n//        }\n//    }\n// }\n// #else\n// void TIM4_IRQHandler(void) {\n// fff\n// volatile float ft=0;\n\n//    if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET) {\n// \t\tTIM_ClearITPendingBit(TIM4, TIM_IT_Update);\n\n//        /* Check which waveform mode is active \n//        if (g.waveForm == SQUAREWAV) {\n//            if (vectorCtr >= NVECTORS) {\n//                vectorCtr = 0;\n//            }\n//            setpoint_tgl = (float)line1[vectorCtr][1] * g.ampl_f;\n//            if (line1[vectorCtr++][0] == 0)\n//                beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );\n//            else\n//                beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_ON );\n\n//        }\n//    }\n// }\n// #endif\n\n\n\n///**< Das analoge symmetrische Positionssignal muss vor der AD- Wandlung einen positiven\n// * Offset erhalten wegen des Eingangsspannungsbereichs der intergrierten ADC-Zellen.\n// * Analog wird also das sym. Pos. Signal um AREF/2 nach oben geschoben.\n// * Hier wird der Offset digital wieder abgezogen damit auch Regler-Intern mit symmetrischen\n// * Sequenzen gearbeitet werden kann.\n// *\n// * ==>  Fuer die DAC-Hardware gilt das Gleiche, der +Offset (von vor ADC) wird also nach dem\n// *      DA-Wandler analog wieder subtrahiert. Darum muss dem intern symmetrischen Signal\n// *      vor dem beschreiben des DAC-Data-hold-registers wieder AREF/2 aufaddiert werden.\n// */\n//\n///**<\n//* Take a copy of direct-memory-accessed array ADC_MultiConvBuff\n//* Up to this point, the access macros SETPOINT_Y_FLOAT, POS_Y_FLOAT ...\n//* also holds the new values\n//*/\n//    for (__IO uint8_t k=0; k<4; k++) {\n//        ADC_fBuff[k] = (float) ((float) (ADC_MultiConvBuff[k] - AN_BIAS_INT) * VLSB);\n//    }\n\n//// ==============================================================\n////            Laser interrupter control\n//// ==============================================================\n///* To implement a blanking function controled by setpoint vectors,\n// * simply add a blanking information column to the setpoint datastream\n// *\n// * [x-coordinate; y-coordinate; blankingBit]\n// */\n\n//// ==============================================================\n////            Setpoint source selector\n//// ==============================================================\n//    while (1) {\n//        if (g.setpointSrc == INTERNAL_SETPOINT) {   ///< Internal only, no remote offset or something else\n//            pidErr_x =  setpoint_tgl - POS_X_FLOAT;\n//            pidErr_y =  setpoint_tgl - POS_Y_FLOAT;\n//        }\n//        if (g.setpointSrc == ANALOG_SETPOINT) {     ///< setpoint is sourced by analog input\n//                // flot conversion!\n//        }\n//        if (g.setpointSrc == REMOTE_SETPOINT) {     ///< Remote only, no internal signal or offset\n//            pidErr_x =  pidDataX.W_remf - POS_X_FLOAT;\n//            pidErr_y =  pidDataY.W_remf - POS_Y_FLOAT;\n//        }\n//        if (g.setpointSrc == REMOTE_OPENLOOP) {     ///< PID bypassed, remote setpoint feed throgh\n//            updateActuator_f( /*pidDataY.W_remf*/pidDataY.W_remf, pidDataY.W_remf);\n//            break;\n//        }\n//        if (g.setpointSrc == REMOTE_INTERNAL_MIXED) {     ///< Mixed mode, summing internal + external setpoint\n//            pidErr_x = ((float)(setpoint_tgl + pidDataX.W_remf)) - POS_X_FLOAT;\n//            pidErr_y = ((float)(setpoint_tgl + pidDataY.W_remf)) - POS_Y_FLOAT;\n//        }\n//        if (  (g.setpointSrc != INTERNAL_SETPOINT) && (g.setpointSrc != ANALOG_SETPOINT)  && (g.setpointSrc != REMOTE_OPENLOOP)   && (g.setpointSrc == REMOTE_OPENLOOP) ) {\n//             /* Error state, halt */\n//             MD_DISCO_LedOn(LED_GREEN);\n//             MD_DISCO_LedOn(LED_RED);\n//        }\n//\n//        /**< Calculate PID here */\n//        DBG_PID_TIMING_TOG();\n//        updateActuator_f(   arm_pid_f32(&PIDY, pidErr_y), arm_pid_f32(&PIDY, pidErr_y));\n//        DBG_PID_TIMING_TOG();\n\n//        break;\n//    }\n\n//    /* Set LEDs according to which angular position is greater */\n////    if ( POS_Y_FLOAT > SETPOINT_Y_FLOAT) {\n////        MD_DISCO_LedOn(LED_GREEN);\n////        MD_DISCO_LedOff(LED_RED);\n////    } else if ( POS_Y_FLOAT <  SETPOINT_Y_FLOAT) {\n////        MD_DISCO_LedOn(LED_RED);\n////        MD_DISCO_LedOff(LED_GREEN);\n////    } else {\n////        MD_DISCO_LedOff(LED_ALL);\n////    }\n//\n//}\n\n//// ==============================================================\n////     IRQ callback:    ADC end-of-conversion\n////                      Analog Watchdog IRQ\n//// ==============================================================\n//void ADC_IRQHandler(void) {\n//    if (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == SET) {\n//        ADC_ClearITPendingBit(ADC1, ADC_IT_EOC);\n//        /* End of conversion interrupt occured */\n\n////        /* Error state */\n////        MD_DISCO_LedOn(LED_ALL);\n////        uint16_t W_now = ADC_MultiConvBuff[1];   // setpoint (Isens_y)\n//        while (1);;\n////        return;\n//    }\n//\n//\n//    /* Analog watchdog interrupt occured */\n//    if (ADC_GetFlagStatus(ADC1, ADC_FLAG_AWD) == SET) {\n//        ADC_ClearITPendingBit(ADC1, ADC_IT_AWD);\n//        if ((ASG.state == ASG_STATIONARY_INTEGRATOR) ||\n//            (ASG.state == ASG_DISCHARGING_INTEGRATOR)) {\n//            ASG.state = ASG_CHARGING_INTEGRATOR;\n//            printf(\"ASS:charging_start...\\n\");\n//        }\n//        if ((ASG.integrator <= ASG.lowerVal) || (ASG.integrator >= ASG.upperVal)) {   /**< check for integrator limit */\n//            if (! ASG.tripped) {\n//                ASG.tripped = 1;                    /**< Set \"tripped\" state if it is so */\n//                DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned_Tripped;  /**< set function pointer to the \"ASG tripped\" handler*/\n//            }\n//            return;\n//        }\n//        else {                                  /**< else increment integrator */\n//            ASG.integrator+= ASG.upperVal * (double)TS*1e-6/(ASG.tripTime);\n//        }\n//        return;\n//    }\n//    printf(\"bad ADC IntReq source\\n\");\n//}\n//\n",
+			"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/usb_cdc_device/usbd_cdc_core.c",
+			"settings":
+			{
+				"buffer_size": 25160,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h",
+			"settings":
+			{
+				"buffer_size": 26665,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/tm_stm32f4_disco.h",
+			"settings":
+			{
+				"buffer_size": 11678,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/tm_stm32f4_gpio.h",
+			"settings":
+			{
+				"buffer_size": 14868,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/main.c",
-			"file_size": 45313,
-			"file_write_time": 131303062249153005,
 			"settings":
 			{
-				"buffer_size": 45311,
+				"buffer_size": 44577,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "00-STM32F4_LIBRARY_MDB/mdb_gpio.c",
+			"settings":
+			{
+				"buffer_size": 8569,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "PC6         USART6 Tx\nPC7         USART6 Rx",
+			"settings":
+			{
+				"buffer_size": 43,
+				"line_ending": "Unix",
+				"name": "PC6         USART6 Tx"
+			}
+		},
+		{
+			"contents": "//\n// This file is part of the GNU ARM Eclipse distribution.\n// Copyright (c) 2014 Liviu Ionescu.\n//\n\n// ----------------------------------------------------------------------------\n\n#include <stdio.h>\n#include <stdlib.h>\n#include \"diag/Trace.h\"\n\n#include \"Timer.h\"\n#include \"BlinkLed.h\"\n\n// ----------------------------------------------------------------------------\n//\n// Standalone STM32F4 led blink sample (trace via ITM).\n//\n// In debug configurations, demonstrate how to print a greeting message\n// on the trace device. In release configurations the message is\n// simply discarded.\n//\n// Then demonstrates how to blink a led with 1 Hz, using a\n// continuous loop and SysTick delays.\n//\n// Trace support is enabled by adding the TRACE macro definition.\n// By default the trace messages are forwarded to the ITM output,\n// but can be rerouted to any device or completely suppressed, by\n// changing the definitions required in system/src/diag/trace_impl.c\n// (currently OS_USE_TRACE_ITM, OS_USE_TRACE_SEMIHOSTING_DEBUG/_STDOUT).\n//\n\n// ----- Timing definitions -------------------------------------------------\n\n// Keep the LED on for 2/3 of a second.\n#define BLINK_ON_TICKS  (TIMER_FREQUENCY_HZ * 3 / 4)\n#define BLINK_OFF_TICKS (TIMER_FREQUENCY_HZ - BLINK_ON_TICKS)\n\n// ----- main() ---------------------------------------------------------------\n\n// Sample pragmas to cope with warnings. Please note the related line at\n// the end of this function, used to pop the compiler diagnostics status.\n#pragma GCC diagnostic push\n#pragma GCC diagnostic ignored \"-Wunused-parameter\"\n#pragma GCC diagnostic ignored \"-Wmissing-declarations\"\n#pragma GCC diagnostic ignored \"-Wreturn-type\"\n\nint\nmain(int argc, char* argv[])\n{\n  // Send a greeting to the trace device (skipped on Release).\n//  trace_puts(\"Hello ARM World!\");\n\n  // At this stage the system clock should have already been configured\n  // at high speed.\n//  trace_printf(\"System clock: %u Hz\\n\", SystemCoreClock);\n\n  timer_start();\n\n  blink_led_init();\n  \n  uint32_t seconds = 0;\n\n  // Infinite loop\n  while (1)\n    {\n      blink_led_on();\n      timer_sleep(seconds == 0 ? TIMER_FREQUENCY_HZ : BLINK_ON_TICKS);\n\n      blink_led_off();\n      timer_sleep(BLINK_OFF_TICKS);\n\n      ++seconds;\n      // Count seconds on the trace device.\n//      trace_printf(\"Second %u\\n\", seconds);\n    }\n  // Infinite loop, never return.\n}\n\n#pragma GCC diagnostic pop\n\n// ----------------------------------------------------------------------------\n",
+			"file": "/media/data/CODES/sw4stm32_workbench_hal_tm/CROSS_TM_USB_VCP/src/main.c",
+			"file_size": 2487,
+			"file_write_time": 131307133547610037,
+			"settings":
+			{
+				"buffer_size": 2487,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#define STM32F429xx\n#define USE_HAL_DRIVER\n#define ARM_MATH_CM4\n#define __FPU_PRESENT\t1\n#define STM32F4XX\n#define STM32F429_DISCOVERY\n#define HSE_VALUE\t8000000\n#define RCC_OSCILLATORTYPE\tRCC_OSCILLATORTYPE_HSE\n#define RCC_PLLSOURCE\tRCC_PLLSOURCE_HSE\n#define RCC_PLLM\t8\n#define RCC_PLLN\t360\n#define RCC_PLLP\t2\n#define RCC_PLLQ\t7\n",
+			"settings":
+			{
+				"buffer_size": 328,
+				"line_ending": "Unix",
+				"name": "#define STM32F429xx"
+			}
+		},
+		{
+			"file": "/media/data/CODES/sw4stm32_workbench_hal/TM_GITHUB/21-STM32Fxxx_USB_TO_UART/User/defines.h",
+			"settings":
+			{
+				"buffer_size": 2105,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n  ******************************************************************************\n  * @file    usbd_msc.h\n  * @author  MCD Application Team\n  * @version V2.4.1\n  * @date    19-June-2015\n  * @brief   Header for the usbd_msc.c file\n  ******************************************************************************\n  * @attention\n  *\n  * <h2><center>&copy; COPYRIGHT 2015 STMicroelectronics</center></h2>\n  *\n  * Licensed under MCD-ST Liberty SW License Agreement V2, (the \"License\");\n  * You may not use this file except in compliance with the License.\n  * You may obtain a copy of the License at:\n  *\n  *        http://www.st.com/software_license_agreement_liberty_v2\n  *\n  * Unless required by applicable law or agreed to in writing, software \n  * distributed under the License is distributed on an \"AS IS\" BASIS, \n  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n  * See the License for the specific language governing permissions and\n  * limitations under the License.\n  *\n  ******************************************************************************\n  */ \n\n/* Define to prevent recursive inclusion -------------------------------------*/\n#ifndef __USBD_MSC_H\n#define __USBD_MSC_H\n\n#ifdef __cplusplus\n extern \"C\" {\n#endif\n\n/* Includes ------------------------------------------------------------------*/\n#include  \"usbd_msc_bot.h\"\n#include  \"usbd_msc_scsi.h\"\n#include  \"usbd_ioreq.h\"\n\n/** @addtogroup USBD_MSC_BOT\n  * @{\n  */\n  \n/** @defgroup USBD_MSC\n  * @brief This file is the Header file for usbd_msc.c\n  * @{\n  */ \n\n\n/** @defgroup USBD_BOT_Exported_Defines\n  * @{\n  */ \n#define MSC_MAX_FS_PACKET            0x40\n#define MSC_MAX_HS_PACKET            0x200\n\n#define BOT_GET_MAX_LUN              0xFE\n#define BOT_RESET                    0xFF\n#define USB_MSC_CONFIG_DESC_SIZ      32\n \n\n#define MSC_EPIN_ADDR                0x81 \n#define MSC_EPOUT_ADDR               0x01 \n\n/**\n  * @}\n  */ \n\n/** @defgroup USB_CORE_Exported_Types\n  * @{\n  */ \ntypedef struct _USBD_STORAGE\n{\n  int8_t (* Init) (uint8_t lun);\n  int8_t (* GetCapacity) (uint8_t lun, uint32_t *block_num, uint16_t *block_size);\n  int8_t (* IsReady) (uint8_t lun);\n  int8_t (* IsWriteProtected) (uint8_t lun);\n  int8_t (* Read) (uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t blk_len);\n  int8_t (* Write)(uint8_t lun, uint8_t *buf, uint32_t blk_addr, uint16_t blk_len);\n  int8_t (* GetMaxLun)(void);\n  int8_t *pInquiry;\n  \n}USBD_StorageTypeDef;\n\n\ntypedef struct\n{\n  uint32_t                 max_lun;   \n  uint32_t                 interface; \n  uint8_t                  bot_state;\n  uint8_t                  bot_status;  \n  uint16_t                 bot_data_length;\n  uint8_t                  bot_data[MSC_MEDIA_PACKET];  \n  USBD_MSC_BOT_CBWTypeDef  cbw;\n  USBD_MSC_BOT_CSWTypeDef  csw;\n  \n  USBD_SCSI_SenseTypeDef   scsi_sense [SENSE_LIST_DEEPTH];\n  uint8_t                  scsi_sense_head;\n  uint8_t                  scsi_sense_tail;\n  \n  uint16_t                 scsi_blk_size;\n  uint32_t                 scsi_blk_nbr;\n  \n  uint32_t                 scsi_blk_addr;\n  uint32_t                 scsi_blk_len;\n}\nUSBD_MSC_BOT_HandleTypeDef; \n\n/* Structure for MSC process */\nextern USBD_ClassTypeDef  USBD_MSC;\n#define USBD_MSC_CLASS    &USBD_MSC\n\nuint8_t  USBD_MSC_RegisterStorage  (USBD_HandleTypeDef   *pdev, \n                                    USBD_StorageTypeDef *fops);\n/**\n  * @}\n  */ \n\n/**\n  * @}\n  */ \n\n#ifdef __cplusplus\n}\n#endif\n\n#endif  /* __USBD_MSC_H */\n/**\n  * @}\n  */ \n  \n/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/\n",
+			"file": "/media/data/CODES/sw4stm32_workbench_hal/21-STM32F4_HAL_TM_USB_TO_USART/TM/USB_Device/Class/MSC/Inc/usbd_msc.h",
+			"file_size": 3572,
+			"file_write_time": 131307096356702390,
+			"settings":
+			{
+				"buffer_size": 3572,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "CMSIS/device/stm32f4xx.h",
+			"settings":
+			{
+				"buffer_size": 872676,
+				"encoding": "Western (Windows 1252)",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/system_stm32f4xx.c",
+			"settings":
+			{
+				"buffer_size": 46660,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
@@ -340,155 +551,160 @@
 			"file": "inc/main.h",
 			"settings":
 			{
-				"buffer_size": 8576,
-				"encoding": "UTF-8",
+				"buffer_size": 10969,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "inc/mdb_gpio.h",
+			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.h",
 			"settings":
 			{
-				"buffer_size": 4791,
+				"buffer_size": 2574,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c",
+			"settings":
+			{
+				"buffer_size": 2529,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/irq_callbacks.h",
+			"settings":
+			{
+				"buffer_size": 2039,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
-			"settings":
-			{
-				"buffer_size": 13550,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/actuators.h",
-			"settings":
-			{
-				"buffer_size": 6555,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/mdb_gpio.c",
-			"settings":
-			{
-				"buffer_size": 6055,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/actuators.c",
-			"settings":
-			{
-				"buffer_size": 3961,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "Doxyfile",
 			"settings":
 			{
-				"buffer_size": 109370,
+				"buffer_size": 109662,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "README.mmd",
+			"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/usb_cdc_device/usb_conf.h",
 			"settings":
 			{
-				"buffer_size": 2962,
-				"encoding": "UTF-8",
+				"buffer_size": 10182,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "DoxyfileStdErr.log",
+			"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/usb_cdc_device/usbd_conf.h",
 			"settings":
 			{
-				"buffer_size": 4602,
+				"buffer_size": 3369,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/stm32f4xx_it.c",
+			"file": "/media/data/CODES/sw4stm32_workbench/24-STM32F4_USB_VCP/ub_lib/usb_cdc_lolevel/usbd_cdc_core.c",
 			"settings":
 			{
-				"buffer_size": 5202,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/Log.sublime-syntax",
-			"settings":
-			{
-				"buffer_size": 1499,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/adc_dac_dma.c",
-			"settings":
-			{
-				"buffer_size": 29961,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/pid.h",
-			"settings":
-			{
-				"buffer_size": 11686,
-				"encoding": "UTF-8",
+				"buffer_size": 14254,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/pid.c",
+			"file": "/media/data/CODES/sw4stm32_workbench/24-STM32F4_USB_VCP/ub_lib/usb_cdc_lolevel/usbd_cdc_core.h",
 			"settings":
 			{
-				"buffer_size": 14234,
-				"encoding": "UTF-8 with BOM",
-				"line_ending": "Unix"
+				"buffer_size": 2512,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "Searching 846 files for \"caller\"\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Doxyfile:\n 2345  CALL_GRAPH             = NO\n 2346  \n 2347: # If the CALLER_GRAPH tag is set to YES then doxygen will generate a caller\n 2348  # dependency graph for every global function or class method.\n 2349  #\n 2350  # Note that enabling this option will significantly increase the time of a run.\n 2351: # So in most cases it will be better to enable caller graphs for selected\n 2352: # functions only using the \\callergraph command. Disabling a caller graph can be\n 2353: # accomplished by means of the command \\hidecallergraph.\n 2354  # The default value is: NO.\n 2355  # This tag requires that the tag HAVE_DOT is set to YES.\n 2356  \n 2357: CALLER_GRAPH           = NO\n 2358  \n 2359  # If the GRAPHICAL_HIERARCHY tag is set to YES then doxygen will graphical\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.h:\n  112  \n  113  /**\n  114:  * Generate period and prescaller for given timer frequency\n  115   * \n  116   * Parameters:\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/pid.h:\n  381   * @param      pid          Pointer to structure which holds PID instance data.\n  382   *\n  383:  * @callergraph\n  384   */\n  385  int pid_Controller (int16_t setPoint, int16_t processValue, struct PID_DATA *pid);\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/main.c:\n  338   *             Provides endless loop functionality.\n  339   *             \n  340:  * @callergraph\n  341   */\n  342  int main(void) {\n\n/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.h:\n  112  \n  113  /**\n  114:  * Generate period and prescaller for given timer frequency\n  115   * \n  116   * Parameters:\n\n11 matches across 5 files\n",
+			"file": "inc/actuators.h",
 			"settings":
 			{
-				"buffer_size": 1866,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
+				"buffer_size": 8205,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/DoxyDoxygen/Doxy.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/DoxyDoxygen/Doxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/DoxyDoxygen/Doxy.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "tras",
+		"last_filter": "tran",
 		"selected_items":
 		[
 			[
-				"tras",
-				"DoxyDoxygen: Translate Selection"
-			],
-			[
-				"trim",
-				"Trimmer: Trim trailing whitespace."
+				"tran",
+				"DoxyDoxygen: Translate Selection To..."
 			],
 			[
 				"tra",
@@ -499,8 +715,32 @@
 				"DoxyDoxygen: Translate Selection To..."
 			],
 			[
-				"tran",
-				"DoxyDoxygen: Translate Selection To..."
+				"open",
+				"Open URL"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"trim tra",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"trimm",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"tras",
+				"DoxyDoxygen: Translate Selection"
+			],
+			[
+				"trim",
+				"Trimmer: Trim trailing whitespace."
 			],
 			[
 				"set sy Cm",
@@ -509,10 +749,6 @@
 			[
 				"set sy C",
 				"Set Syntax: CMdb"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"tr",
@@ -679,10 +915,6 @@
 				"MarkdownEditing: New Footnote"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"markdown link",
 				"Snippet: Markdown Hyperlink"
 			],
@@ -815,60 +1047,118 @@
 	],
 	"file_history":
 	[
+		"/media/data/CODES/sw4stm32_workbench_hal_tm/TM_GITHUB/21-STM32Fxxx_USB_TO_UART/project.uvguix.MajerleT",
+		"/media/data/CODES/sw4stm32_workbench_hal_tm/\u001b[35m\u001b[KTM_GITHUB/21-STM32Fxxx_USB_TO_UART/project.uvguix.MajerleT\u001b[m\u001b[K\u001b[36m\u001b[K",
+		"/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/defines_example.h",
+		"/media/data/CODES/sw4stm32_workbench_tm/24-STM32F429_USB_VCP/User/defines.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/DoxyfileStdErr.log.bak",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/stm32f4xx_it.c",
+		"/media/data/CODES/sw4stm32_workbench_tm/MD_24_STM32_USB_VCP/inc/stm32f4xx_it.h",
+		"/media/data/CODES/sw4stm32_workbench_tm/MD_24_STM32_USB_VCP/include-.list",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/DoxyfileStdErr.log",
+		"/media/data/CODES/sw4stm32_workbench/trash/tm_stm32f4_usb_vcp/tm_stm32f4_usb_vcp.c",
+		"/media/data/CODES/sw4stm32_workbench_tm/MD_24_STM32_USB_VCP/project_md1.uvprojx",
+		"/media/data/CODES/sw4stm32_workbench/README.md",
+		"/media/data/CODES/sw4stm32_workbench_tm/stm32f4_tm/24-STM32F429_USB_VCP/project.uvprojx",
+		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Default (Linux).sublime-keymap",
+		"/media/data/CODES/sw4stm32_workbench_tm/stm32f4_tm/24-STM32F429_USB_VCP/User/readme.txt",
+		"/media/data/CODES/sw4stm32_workbench/trash/tm_stm32f4_usb_vcp/tm_stm32f4_usb_vcp.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Doxyfile",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/irq_callbacks.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/main.c",
+		"/media/data/routerpassview165/RouterPassView.cfg",
+		"/media/data/routerpassview165/readme.txt",
+		"/media/data/arcadyan_decrypter_v0.05a/out.txt",
+		"/media/data/arcadyan_decrypter_v0.05a/Out.txt",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.c~",
+		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_pwm.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/arm_architect.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/console.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/globals.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/helper.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/nvic_config.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/pid.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/stm32_eval_legacy.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/stm32f4xx_it.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/system_stm32f4xx.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/isr_callbacks.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/mdb_gpio.c",
+		"/home/mainster/scripts/placeCFuncHead.sh",
+		"/home/mainster/scripts/placeQtHead",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/CfuncHead.sublime-snippet",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/pid.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_rcc.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/adc_dac_dma.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/periph2dma_conf.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/actuators.c",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/doxyGroups.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/hlines.sublime-snippet",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/isr_callbacks.c",
+		"/home/mainster/.config/sublime-text-3/Packages/User/CfuncHead.sublime-snippet",
+		"/media/data/SoundWireServer/README.txt",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/helper.c",
+		"/home/mainster/CODES_local/sw4stm32_workbench/02-STM32F429_MD_LED_BUTTON/inc/defines.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.h~",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/signalGen.c",
+		"/home/mainster/CODES_local/c_linux/array2d_sizeoff.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/console.c",
+		"/media/data/whz/modulunterlagen/ELT236_EmbeddedSystems/Anleitungen/2013-SS_Prak1.txt",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/tools.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/list",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.h",
+		"/home/mainster/.config/sublime-text-3/Packages/User/customSnippets/hlines.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/nonUserBaseConfigPlacer.sh",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/hlines.sublime-snippet",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/defines.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/nvic_config.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/README.mmd",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Log.sublime-syntax",
 		"/home/mainster/.config/sublime-text-3/Packages/User/CMdb.sublime-syntax",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/DoxyfileStdErr.log",
 		"/home/mainster/.config/sublime-text-3/Packages/User/mkDoxy.sublime-build",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/INTRUDUCTION.md",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/mainpage.dox",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/isr_callbacks.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/console.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/adc_dac_dma.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/actuators.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/console.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/main.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/arm_architect.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/defines.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/isr_callbacks.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/tools.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/dsp_lib/Examples/arm_class_marks_example/ARM/arm_class_marks_example_f32.c",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core/arm_math.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.h",
 		"/home/mainster/scripts/stripPath.sh",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/NEwDoxy",
 		"/tmp/.searchDocTEMPLATE_2017-01-30_011333_pdfs",
 		"/home/mainster/scripts/searchDocTEMPLATE.sh",
 		"/home/mainster/scripts/searchDocWhz.sh",
 		"/tmp/Doxyfile",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/mdb_gpio.c",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/src/stm32f4xx_pwr.c",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/dsp_lib/Examples/arm_dotproduct_example/ARM/arm_dotproduct_example_f32.c",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug/20-STM32F4_PRJ_GALVO_v2.elf",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/DoxyfilePart",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/signalGen.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/stm32f4xx_it.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/tools.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/pid.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/system_stm32f4xx.c",
 		"/home/mainster/scripts/doxyDateRefresh.sh",
 		"/home/mainster/.config/sublime-text-3/Packages/User/udev_reload.sublime-build",
 		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-word.sublime-build",
 		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/INTRUDUCTION.mmd",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/system_stm32f4xx.h",
 		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeAStyleFormatter.sublime-settings",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/pid.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c",
 		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
 		"/home/mainster/.config/sublime-text-3/Packages/SublimeAStyleFormatter/SublimeAStyleFormatter.sublime-settings",
@@ -879,70 +1169,12 @@
 		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015__07-06-2015/PROJECT-03-STM32F4xx_PID_galvo_21-05-2015/User/main.h",
 		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_13-05-2015/User/tools.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/README.md",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/attributes.h",
 		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Default (Linux).sublime-mousemap",
 		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
 		"/media/data/CODES/sw4stm32_workbench_olds_and_others/uVision_mdk_28-12-2016_galvos/PROJECT-03-STM32F4xx_PID_galvo_13-05-2015/User/main.c",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/attributes.h",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.c",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.c",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.c",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.h",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.c",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart_dma.c",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart_dma.h",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.h",
-		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/templateDoxy.txt",
-		"/home/mainster/scripts/move2src-inc.sh",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/move2src-inc.sh",
-		"/media/data/CODES/sw4stm32_workbench/makeLibsRo.sh",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/stm324x9i_eval.c",
-		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/README.md",
-		"/home/mainster/scripts/makeLibsRo.sh",
-		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO_MKFILE/.cproject",
-		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/src/main.c",
-		"/media/data/CODES/sw4stm32_workbench/.metadata/.plugins/org.eclipse.cdt.ui/01-STM32F4_MD_HELLO.build.log",
-		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO_MKFILE/makefile",
-		"/media/data/whz/projectGalvoDocu/README.md",
-		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/Debug/makefile",
-		"/home/mainster/.config/terminator/config",
-		"/home/mainster/CODES_local/sw4stm32_workbench/01-STM32F4_MD_HELLO/01-STM32F4_MD_HELLO.sublime-project",
-		"/home/mainster/CODES_local/sw4stm32_workbench/01-STM32F4_MD_HELLO/src/main.c",
-		"/home/mainster/scripts/psswitch.sh",
-		"/home/mainster/CODES_local/sw4stm32_workbench/01-STM32F4_MD_HELLO/00-STM32F4_LIBRARY_MDB_SN/md_stm32f4_disco.h",
-		"/home/mainster/.bashrc",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/Main.sublime-menu",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/doxy_libs/CrashReportHelpers.pyc",
-		"/home/mainster/.config/sublime-text-3/Packages/User/README.md",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/Doxy.py",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/Doxy2.py",
-		"/home/mainster/.config/sublime-text-3/Packages/PackageResourceViewer/PackageResourceViewer.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/Diagram.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/Table Editor/Default (Linux).sublime-keymap",
-		"/home/mainster/.config/sublime-text-3/Packages/User/Open-Include.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/Open-Include/Open-Include.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/nonUserBaseConfigPlacer.sh",
-		"/home/mainster/.config/sublime-text-3/Packages/ToggleFold/Default (Linux).sublime-keymap",
-		"/home/mainster/.config/sublime-text-3/Packages/Open-Include/Default (Linux).sublime-keymap",
-		"/home/mainster/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/CTags/CTags.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/Default (Linux).sublime-keymap",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/Doxy.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/Doxy.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoc/DoxyDoc.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoc/Doxydoc.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoc/Main.sublime-menu",
-		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoc/README.md",
-		"/home/mainster/.config/sublime-text-3/Packages/User/DoxyDoc.sublime-settings",
-		"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO_EXTLIB/README.md",
-		"/media/data/CODES/sw4stm32_workbench/WORKSPACE_DOCU/README.md",
-		"/media/data/CODES/sw4stm32_workbench/.gitignore",
-		"/media/data/CODES/sw4stm32_workbench/README.md"
+		"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/attributes.h"
 	],
 	"find":
 	{
@@ -953,6 +1185,8 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"<open folders>,/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB",
+			"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB,/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src,/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc",
 			"<open folders>,/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB"
 		]
 	},
@@ -961,141 +1195,203 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"caller",
-			"br>",
-			"color",
-			"KEIL_IDE",
-			"example-c",
-			"source",
-			"source.example-c",
-			"source.log",
-			"example-c",
-			"log",
-			"exclude",
-			"defined",
-			"Keep preprocessor clean from",
-			"MDB_GPIO_t",
-			"MDB_GPIO_DRIVER_STATE_t",
-			"TRIGGER_SRC",
-			"///<",
-			"updateActuator_f",
-			"toPlant",
-			"ASS",
-			"@b",
-			" ASS_",
-			"ASS_",
-			"guarding",
-			"This group includes all functions related to safety and guarding",
-			"This group includes all functions related to safety and guarding.",
-			"EXTENSION_MAPPING",
-			"README.md",
-			"TOC_",
-			"extensio",
-			"DAC_DHR12R1_Reg_Offset",
-			"//!<",
-			"NVIC_Init",
-			"NVIC_Configuration",
-			"nvic_cfg",
-			"NVIC_Configuration",
-			"//!<",
-			"\t * ",
-			"CmdItem_t",
-			"DacLimit_t",
-			"@enum  ",
-			"AutoSafetyShutdown",
-			"PidStructType_t",
-			"\\link",
-			"ADC_CCR_ADDRESS",
-			"ADC_W_CHAN",
-			"^",
-			"APP_Analog",
-			"DAC_SecureSetDualChanSigned",
-			"\\(",
-			"DMA_Configuration",
-			"ADC_MultiConvBuff",
-			"DAC_Chx",
-			"DAC.*NoiseConfig",
-			"DAC_Chx_NoiseConfig",
-			"__IO",
-			"ADC_MultiConvBuff",
-			"POS_Y_FLOAT",
-			"SETPOINT_Y_FLOAT",
-			"DMA_IT_TC",
-			"FIXME: DMA_IT_TC",
-			"/** @} */",
-			"APP_IRQ-Callbacks",
-			"*/",
-			"\\/\\*\\*?<?",
-			"DMA2_Stream0_IRQHandler",
-			"<GROUP>",
-			"SAMPLE_INTERVAL",
-			"href",
-			"<url",
-			"APP_Pid",
-			"APP_Global_Macros",
-			"warning",
-			"APP_",
-			"APP_Callback",
-			"pdfs",
-			"ARR",
-			"asg",
-			"CMD_MATLAB_LINK",
-			"wav_items_t",
-			"itemsm",
-			"struct itemsm",
-			"itemsm",
-			"dac_lim_t",
-			"misc_items_t",
-			"setpoint_src_t",
-			"enum cmd_items",
-			"PidInstanceStructType_t",
-			"structType",
-			"APP_Actuators_",
-			"APP_Main_",
-			"APP_Main",
-			"MD_APP_Main",
-			"MD_APP_Main_Variables",
-			"MD_APP_Main_Typedefs",
-			"\\\\b",
-			"([^pPl])ass([\\. ])",
-			"([^pPl])ass([\\. ]?)",
-			"[^pPl]ass[\\. ]",
-			"[^pP]ass[\\. ]",
-			"ass[\\. ]",
-			" ass",
-			"ass",
+			"=",
+			",",
+			"symbols",
+			"\\\\",
+			"usbd_desc.c",
 			"\\n",
-			"\\*\\s+",
-			"ass",
-			"stateCtr",
-			"updateActuator",
-			"doc",
-			"updateActuator",
-			"ASS_TRIPPING_LOWER_DEFAULT",
+			"\\.\\.",
+			"\\\\",
+			"<\\/?FilePath>",
+			"<FilePath>(.*)<\\/FilePath>",
+			";",
+			"isr_callbacks",
+			"TIM2_IRQHandler",
+			"TIM4_IRQHandler",
+			"ADC_IRQHandler",
+			"svg",
+			"DMA2_Stream0_IRQ_Handler",
+			"ADC_IRQ",
+			"DBG_PID_TIMING_TOG",
+			"Internal only, no remote offset or something else",
+			"AnalogWatchdogIntHandler",
+			"APP_IRQ_Handler",
+			"/* C++ detection */",
+			"extern C {",
+			"ADC_ContScanMode_w_DMA_timeTrigd",
+			"DMA_Config (",
+			"DMA_Config",
+			"RCC_Configuration",
+			"Timer controlled group scan restart",
+			"RCC_Configuration",
+			"memSize",
+			"ADC_Config",
+			"ADC_Configuration",
+			"Analog_WDG_Configuration",
+			"DMA_Configuration",
+			"TIM2_DMA_triggerConfiguration",
+			"AnalogWatchdog_Configuration",
+			"FunctionalState",
+			"RCC_Configuration",
+			"pid_Init_Tp",
+			"[us]",
+			"\\/\\*\\*<(.*)\\*\\/$",
+			"@addtogroup .*\\_Functions",
+			"addtogroup",
+			"UPPER_DAC_LIMIT",
+			"\\s{2,}.*",
+			"^[\\d\\w]*$",
+			"^[\\w]*$",
+			"^([\\w\\_0-9]+)$",
+			"void /*",
+			"ALGORITHM",
+			"ADJUSTING_SETPOINT",
+			"ALGO_OLD",
+			"addtogroup",
+			"init_globalStructs",
+			"ASG_TRIPPING_UPPER_DEFAULT",
+			"ASG_TRIPPING_LOWER_DEFAULT",
+			"lowerThreshold",
+			"intUpperLimit",
+			"intLowerLimit",
+			"ASG_DISCHARGING_INTEGRATOR",
+			"intLowerLimit",
+			"upperVal",
+			"lowerVal",
+			"IntUpperLimit",
+			"IntUpper",
+			"IntLower",
+			"upperVal",
+			"lowerVal",
+			"ass_int_state_t",
 			"autoSaveSystem_t",
-			"_GPIO_PORT",
-			"BEAM_CTRL_SOURCE_MANUAL",
-			"beamCtrlSource_t",
-			"struct autoSaveSystem ",
-			"autoSaveSystem",
-			"wav_items_t",
-			"wav_items ",
-			"itemsw_t_list",
-			"itemsw",
-			"structType",
-			"DB_ADCx_DUAL_t",
-			"MD_App",
-			"MD_APP",
-			"MD\\_App ",
-			"MD_App",
-			"([[:alnum:]\\_]*)."
+			"Auto Safestate System",
+			" ASS",
+			"ASS",
+			"APP_Actuators",
+			"Analog Subsystem",
+			"Analog subsystem",
+			"ticks",
+			"tools.h",
+			" _Macros",
+			"tools.h",
+			" _Macros",
+			"MD_DAC_",
+			"@{",
+			"@{.",
+			" * @retval     None.   { description }\n",
+			" * @retval     None.      { description }\n",
+			" * @return     { description_of_the_return_value }\n",
+			"(@(brief|note|param|retval).*[^\\.])$",
+			"@((brief|note|param|retval).*[^\\.])$",
+			"enumerations",
+			"LED_GREEN_A",
+			"GPIO_AHB_CLK",
+			"MDB_GPIO_DRIVER_STATE_t",
+			"MDB_GPIO_NAME_t",
+			"Actuator function definitions. ",
+			"stm32f4xx_gpio.h",
+			"stm32f4_gpio.h",
+			"[^\\_]stm32f4\\_gpio\\.h",
+			"[^_]stm32f4_gpio.h",
+			"stm32f4_gpio.h",
+			"GPIO_Pin_4",
+			"APP_Pid_",
+			"APP_Analog",
+			"Analog Subsystem",
+			"addtogroup",
+			"Signal generator",
+			"(@author +Manuel Del Basso) \\(\\)",
+			"@author +Manuel Del Basso \\(\\)",
+			"Pid_Macr",
+			"PID__",
+			"APP_Pid",
+			"APP_Analog",
+			"The physical unit",
+			"SOURCE_BROWSER",
+			"},",
+			"href=\\\"(.[^\\\"]*)\"",
+			"line1",
+			"vectorCtr",
+			"TABLESIZE",
+			"line1",
+			"line11",
+			"TABLESIZE",
+			"cSeq",
+			"pSeq_f",
+			"pSeq",
+			"FIXME",
+			"triStruct"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"\\t",
+			"\n#define ",
+			"/",
+			"  ",
+			".",
+			"/",
+			"",
+			"\n",
+			"irq_callbacks",
+			"TIM2_IRQ_Handler",
+			"TIM4_IRQ_Handler",
+			"ADC_IRQ_Handler",
+			"",
+			"extern \"C\" {",
+			"RCC_Periph2DMA_Conf",
+			"ADC_Scan_Group_Config",
+			"ADC_Config",
+			"AN_Watchdog_Config",
+			"DMA_Config",
+			"TIM2_DMA_Trigger_Config",
+			"Analog_WDG_Configuration",
+			"@si{us}",
+			"//!<\\1",
+			"",
+			"/*",
+			"ASG_UPPER_THRESHOLD_DEFAULT",
+			"ASG_LOWER_THRESHOLD_DEFAULT",
+			"upperThreshold",
+			"lowerThreshold",
+			"intUpperLimit",
+			"intLowerLimit",
+			"intUpperLimit",
+			"intUpper",
+			"IntUpperLimit",
+			"IntLowerLimit",
+			"ASG_INT_STATE_t",
+			"ActuatorSafestateGuard_t",
+			"Actuator Safestate Guard",
+			" ASG",
+			"helper.h",
+			"DAC_",
+			"\n * @{",
+			"@{",
+			"",
+			"\\1.",
+			"\\2.",
+			"enumeration",
+			"MD_GPIO_DRIVER_STATE_t",
+			"MD_GPIO_NAME_t",
+			"Pid_",
+			"\\1 (mainster)",
+			"PID_",
+			"}, \n",
+			" ",
+			"TODO",
+			"MD_GPIO_STATE_t",
+			"misc_asg",
+			"\\1.",
+			"",
+			"(\\1)",
+			"globals.h",
+			"global.h",
 			"THEFLAG",
 			"html",
 			"text",
@@ -1161,41 +1457,7 @@
 			"plantValue",
 			"intMethode",
 			" AltFunct",
-			"//\\1",
-			"\\1",
-			"float",
-			"//",
-			"\\1",
-			" */",
-			"",
-			"//!< ",
-			"//!<",
-			". */",
-			"\\1. */",
-			"\\t",
-			"\\t\"\\1\"",
-			"GPIO",
-			"\\1,\\t/*",
-			"\\1\\t/*",
-			"\\t",
-			"0x00\\1",
-			"0x00",
-			"\\1,\\t/*",
-			"\\t",
-			" ",
-			" |\\1|\\2|\\3|\\4",
-			" ",
-			"const char const _",
-			"const char const_",
-			"const char",
-			"\\1\\t",
-			"];...",
-			".",
-			"\\1];...",
-			"[\\1",
-			"\\n",
-			"V-Modell_XT",
-			""
+			"//\\1"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1206,24 +1468,136 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 14,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "inc/defines.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8465,
+						"buffer_size": 5248,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										311,
+										360
+									],
+									[
+										701,
+										750
+									],
+									[
+										1094,
+										1112
+									],
+									[
+										1344,
+										1362
+									],
+									[
+										1440,
+										1458
+									],
+									[
+										1631,
+										1649
+									],
+									[
+										1768,
+										1786
+									],
+									[
+										2223,
+										2230
+									],
+									[
+										2537,
+										2544
+									],
+									[
+										2738,
+										2745
+									],
+									[
+										3087,
+										3094
+									],
+									[
+										3437,
+										3444
+									],
+									[
+										3856,
+										3863
+									],
+									[
+										4225,
+										4232
+									],
+									[
+										4477,
+										4484
+									],
+									[
+										4731,
+										4738
+									],
+									[
+										5128,
+										5152
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								5137,
+								5137
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 4,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1800.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/irq_callbacks.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15278,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1347,
-								1347
+								1489,
+								1489
 							]
 						],
 						"settings":
@@ -1233,36 +1607,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 624.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "inc/nvic_config.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1982,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1099,
-								1099
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 741.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 23,
@@ -1270,101 +1615,101 @@
 				},
 				{
 					"buffer": 2,
-					"file": "src/nvic_config.c",
+					"file": "inc/mdb_gpio.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2103,
+						"buffer_size": 6256,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								179,
-								179
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "inc/adc_dac_dma.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8428,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2015,
-								2015
+								2008,
+								2008
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2262.0,
+						"translation.y": 545.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/isr_callbacks.c",
+					"buffer": 3,
+					"file": "StdPeriph_Driver/inc/stm32f4xx_adc.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13210,
+						"buffer_size": 32265,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7042,
-								7042
+								26741,
+								26741
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax",
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7025.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/usb_cdc_device/usbd_cdc_core.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25160,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								669,
+								669
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": -0.0,
-						"translation.y": 2113.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "inc/isr_callbacks.h",
+					"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1919,
+						"buffer_size": 26665,
 						"regions":
 						{
 						},
@@ -1378,413 +1723,51 @@
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 741.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3755,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1366,
-								1366
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 546.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 45311,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9984,
-								9983
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3934.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "inc/main.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8576,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8514,
-								8514
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2881.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "inc/mdb_gpio.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4791,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1426,
-								1426
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 312.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13550,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1663,
-								1663
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 273.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 9,
-			"sheets":
-			[
-				{
-					"buffer": 11,
-					"file": "inc/actuators.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6555,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2163,
-								2163
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 649.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "src/mdb_gpio.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6055,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1160,
-								1160
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 176.0,
+						"translation.x": -0.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "src/actuators.c",
+					"buffer": 6,
+					"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/tm_stm32f4_disco.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3961,
+						"buffer_size": 11678,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2304,
-								2304
+								4707,
+								4707
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1126.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "Doxyfile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 109370,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								100375,
-								100375
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/DoxyDoxygen/INI.tmLanguage",
-							"tab_size": 5,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": -0.0,
-						"translation.y": 29275.0,
+						"translation.y": 1530.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
-					"file": "README.mmd",
+					"buffer": 7,
+					"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/tm_stm32f4_gpio.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2962,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2103,
-								2103
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"parser": "markdown",
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"target": "disk"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "DoxyfileStdErr.log",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4602,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2348,
-								2348
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/User/Log.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "src/stm32f4xx_it.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5202,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4217,
-								4217
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1655.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13550,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6179,
-								6179
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2048.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/Log.sublime-syntax",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1499,
+						"buffer_size": 14868,
 						"regions":
 						{
 						},
@@ -1797,39 +1780,155 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"syntax": "Packages/C++/C++.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1305.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
-					"file": "src/adc_dac_dma.c",
+					"buffer": 8,
+					"file": "src/main.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 29961,
+						"buffer_size": 44577,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1282,
-								1282
+								10069,
+								10069
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax",
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4849.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "00-STM32F4_LIBRARY_MDB/mdb_gpio.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8569,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1085,
+								1085
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 43,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"auto_name": "PC6         USART6 Tx",
+							"default_dir": "/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/media/data/CODES/sw4stm32_workbench_hal_tm/CROSS_TM_USB_VCP/src/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1115,
+								1115
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								328,
+								328
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#define STM32F429xx",
+							"default_dir": "/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1839,20 +1938,196 @@
 					"type": "text"
 				},
 				{
-					"buffer": 20,
-					"file": "inc/pid.h",
+					"buffer": 13,
+					"file": "/media/data/CODES/sw4stm32_workbench_hal/TM_GITHUB/21-STM32Fxxx_USB_TO_UART/User/defines.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11686,
+						"buffer_size": 2105,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11130,
-								11130
+								1139,
+								1139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/media/data/CODES/sw4stm32_workbench_hal/21-STM32F4_HAL_TM_USB_TO_USART/TM/USB_Device/Class/MSC/Inc/usbd_msc.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "CMSIS/device/stm32f4xx.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 872676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								148603,
+								148603
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 31321.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "src/system_stm32f4xx.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20522,
+								20522
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6274.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "inc/main.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10969,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1698,
+								1698
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2574,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1692,
+								1692
 							]
 						],
 						"settings":
@@ -1861,127 +2136,253 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4671.0,
+						"translation.y": 626.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 20,
+					"file": "inc/irq_callbacks.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1894,
+								1894
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 889.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/irq_callbacks.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15278,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13382,
+								13382
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5441.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "Doxyfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 109662,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								35291,
+								35291
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/DoxyDoxygen/INI.tmLanguage",
+							"tab_size": 5,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11671.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/usb_cdc_device/usb_conf.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10182,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 2745.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/usb_cdc_device/usbd_conf.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
-					"file": "src/pid.c",
+					"buffer": 24,
+					"file": "/media/data/CODES/sw4stm32_workbench/24-STM32F4_USB_VCP/ub_lib/usb_cdc_lolevel/usbd_cdc_core.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14234,
+						"buffer_size": 14254,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								96,
-								96
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 25,
+					"file": "/media/data/CODES/sw4stm32_workbench/24-STM32F4_USB_VCP/ub_lib/usb_cdc_lolevel/usbd_cdc_core.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1866,
+						"buffer_size": 2512,
 						"regions":
 						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										164,
-										170
-									],
-									[
-										224,
-										230
-									],
-									[
-										450,
-										456
-									],
-									[
-										512,
-										518
-									],
-									[
-										545,
-										551
-									],
-									[
-										616,
-										622
-									],
-									[
-										743,
-										749
-									],
-									[
-										1030,
-										1036
-									],
-									[
-										1277,
-										1283
-									],
-									[
-										1557,
-										1563
-									],
-									[
-										1773,
-										1779
-									]
-								],
-								"scope": ""
-							}
 						},
 						"selection":
 						[
 							[
-								1561,
-								1561
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"default_dir": "/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2",
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": -0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "inc/actuators.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 25,
 					"type": "text"
 				}
 			]
@@ -1989,7 +2390,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 21.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -2015,7 +2416,7 @@
 		"cols":
 		[
 			0.0,
-			0.456030897207,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -2059,12 +2460,20 @@
 		"selected_items":
 		[
 			[
-				"pid",
-				"src/pid.c"
+				"isr_callbacks",
+				"src/isr_callbacks.c"
+			],
+			[
+				"mdb_gpio",
+				"src/mdb_gpio.c"
 			],
 			[
 				"main",
 				"inc/main.h"
+			],
+			[
+				"pid",
+				"src/pid.c"
 			]
 		],
 		"width": 0.0
@@ -2099,7 +2508,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 237.0,
+	"side_bar_width": 291.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
