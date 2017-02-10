@@ -3,27 +3,6 @@ tm_stm32f4_usart.h:44: warning: missing title after \defgroup TM_USART
 tm_stm32f4_usart.h:240: warning: missing title after \defgroup TM_USART_Typedefs
 tm_stm32f4_usart.h:273: warning: missing title after \defgroup TM_USART_Macros
 tm_stm32f4_usart.h:471: warning: missing title after \defgroup TM_USART_Functions
-tm_stm32f4_usart_dma.h:44: warning: missing title after \defgroup TM_USART_DMA
-tm_stm32f4_usart_dma.h:108: warning: missing title after \defgroup TM_USART_DMA_Macros
-tm_stm32f4_usart_dma.h:166: warning: missing title after \defgroup TM_USART_DMA_Typedefs
-tm_stm32f4_usart_dma.h:176: warning: missing title after \defgroup TM_USART_DMA_Functions
-mdb_gpio.c:2: warning: the name `mdb_gpio.c' supplied as the second argument in the \file statement matches the following input files:
-mdb_gpio.c
-mdb_gpio.c
-Please use a more specific name by including a (larger) part of the path!
-mdb_gpio.h:2: warning: the name `mdb_gpio.h' supplied as the second argument in the \file statement matches the following input files:
-mdb_gpio.h
-mdb_gpio.h
-Please use a more specific name by including a (larger) part of the path!
-mdb_gpio.h:2: warning: the name `mdb_gpio.h' supplied as the second argument in the \file statement matches the following input files:
-mdb_gpio.h
-mdb_gpio.h
-Please use a more specific name by including a (larger) part of the path!
-stm32f4xx_it.h' supplied as the second argument in the \file statement is not an input file
-mdb_gpio.c:2: warning: the name `mdb_gpio.c' supplied as the second argument in the \file statement matches the following input files:
-mdb_gpio.c
-mdb_gpio.c
-Please use a more specific name by including a (larger) part of the path!
 signalGen.h:96: warning: documented symbol `static float CosineN' was not declared or defined.
 signalGen.h:103: warning: documented symbol `static int16_t calcTab' was not declared or defined.
 signalGen.h:109: warning: documented symbol `static int16_t Quadratic' was not declared or defined.
@@ -155,6 +134,11 @@ md_stm32f4_gpio.h:107: warning: Member GPIO_Pin_13 (macro definition) of group M
 md_stm32f4_gpio.h:108: warning: Member GPIO_Pin_14 (macro definition) of group MD_GPIO_Macros is not documented.
 md_stm32f4_gpio.h:109: warning: Member GPIO_Pin_15 (macro definition) of group MD_GPIO_Macros is not documented.
 md_stm32f4_gpio.h:110: warning: Member GPIO_Pin_All (macro definition) of group MD_GPIO_Macros is not documented.
+mdb_gpio.c:182: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
+mdb_gpio.c:197: warning: Member gpio_init_mco2(void) (function) of group GPIO_Functions is not documented.
+mdb_gpio.h:213: warning: Member MDB_GPIO_Toggle_m2(s) (macro definition) of group GPIO_Functions is not documented.
+mdb_gpio.h:219: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
+mdb_gpio.h:220: warning: Member gpio_init_mco2(void) (function) of group GPIO_Functions is not documented.
 periph2dma_conf.c:89: warning: Member AN_Watchdog_Config(void) (function) of group Periph2dma_Functions is not documented.
 periph2dma_conf.c:99: warning: Member DMA_Config(__IO int16_t *MultiConvBuff, uint8_t memSize) (function) of file periph2dma_conf.c is not documented.
 periph2dma_conf.h:140: warning: Member AN_Watchdog_Config(void) (function) of group Periph2dma_Functions is not documented.
@@ -321,6 +305,7 @@ stm32_eval_legacy.h:194: warning: Member Line8 (macro definition) of file stm32_
 stm32_eval_legacy.h:195: warning: Member Line9 (macro definition) of file stm32_eval_legacy.h is not documented.
 stm32_eval_legacy.h:196: warning: Member Horizontal (macro definition) of file stm32_eval_legacy.h is not documented.
 stm32_eval_legacy.h:197: warning: Member Vertical (macro definition) of file stm32_eval_legacy.h is not documented.
+stm32f4xx_it.h:52: warning: Member SysTick_Handler(void) (function) of file stm32f4xx_it.h is not documented.
 system_stm32f4xx.c:321: warning: Member PLL_M (macro definition) of group STM32F4xx_System_Private_Defines is not documented.
 system_stm32f4xx.c:326: warning: Member PLL_Q (macro definition) of group STM32F4xx_System_Private_Defines is not documented.
 system_stm32f4xx.c:387: warning: Member AHBPrescTable[16] (variable) of group STM32F4xx_System_Private_Variables is not documented.
@@ -377,22 +362,6 @@ tm_stm32f4_usart.h:449: warning: Member TM_UART8_STOP_BITS (macro definition) of
 tm_stm32f4_usart.h:452: warning: Member TM_UART8_WORD_LENGTH (macro definition) of group TM_USART_Macros is not documented.
 tm_stm32f4_usart.h:459: warning: Member USART_WAIT(USARTx) (macro definition) of group TM_USART_Macros is not documented.
 tm_stm32f4_usart.h:600: warning: Found unknown command `\ef'
-tm_stm32f4_usart_dma.h:115: warning: Member USART1_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:116: warning: Member USART1_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:121: warning: Member USART2_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:122: warning: Member USART2_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:127: warning: Member USART3_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:128: warning: Member USART3_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:133: warning: Member UART4_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:134: warning: Member UART4_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:139: warning: Member UART5_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:140: warning: Member UART5_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:145: warning: Member USART6_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:146: warning: Member USART6_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:151: warning: Member UART7_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:152: warning: Member UART7_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:157: warning: Member UART8_DMA_TX_STREAM (macro definition) of group TM_USART_DMA_Macros is not documented.
-tm_stm32f4_usart_dma.h:158: warning: Member UART8_DMA_TX_CHANNEL (macro definition) of group TM_USART_DMA_Macros is not documented.
 md_stm32f4_dac_waveform.h:104: warning: Member DAC_DHR12R2_ADDRESS (macro definition) of group General_Notes is not documented.
 md_stm32f4_dac_waveform.h:105: warning: Member DAC_DHR8R1_ADDRESS (macro definition) of group General_Notes is not documented.
 md_stm32f4_dac_waveform.h:106: warning: Member DAC_DHR8R2_ADDRESS (macro definition) of group General_Notes is not documented.
@@ -435,10 +404,6 @@ md_stm32f4_gpio.h:108: warning: Member GPIO_Pin_14 (macro definition) of group M
 md_stm32f4_gpio.h:109: warning: Member GPIO_Pin_15 (macro definition) of group MD_GPIO_Macros is not documented.
 md_stm32f4_gpio.h:110: warning: Member GPIO_Pin_All (macro definition) of group MD_GPIO_Macros is not documented.
 md_stm32f4_gpio.h:191: warning: argument 'GPIO_Mode' of command @param is not found in the argument list of MD_GPIO_InitAlternate(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t AltFunct)
-mdb_gpio.h:213: warning: Member MDB_GPIO_Toggle_m2(s) (macro definition) of group GPIO_Functions is not documented.
-mdb_gpio.h:210: warning: Member MDB_GPIO_Toggle_m2(s) (macro definition) of group GPIO_Functions is not documented.
-mdb_gpio.h:219: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
-mdb_gpio.h:220: warning: Member gpio_init_mco2(void) (function) of group GPIO_Functions is not documented.
 tm_stm32f4_usart.h:40: warning: Found unknown command `\website'
 ' for \link command
 tm_stm32f4_usart.h:42: warning: Illegal command version as part of a \link
@@ -505,6 +470,9 @@ main.h:321: warning: Member pidErrBuff[2] (variable) of group Main_Variables is 
 main.h:322: warning: Member toPlantBuff[2] (variable) of group Main_Variables is not documented.
 main.c:74: warning: Member g (variable) of group Main_Variables is not documented.
 main.c:75: warning: Member ticks (variable) of group Main_Variables is not documented.
+mdb_gpio.h:213: warning: Member MDB_GPIO_Toggle_m2(s) (macro definition) of group GPIO_Functions is not documented.
+mdb_gpio.h:219: warning: Member gpio_init_mco1(void) (function) of group GPIO_Functions is not documented.
+mdb_gpio.h:220: warning: Member gpio_init_mco2(void) (function) of group GPIO_Functions is not documented.
 periph2dma_conf.h:140: warning: Member AN_Watchdog_Config(void) (function) of group Periph2dma_Functions is not documented.
 periph2dma_conf.h:146: warning: Member ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff) (function) of group Periph2dma_Functions is not documented.
 periph2dma_conf.h:147: warning: Member ADC_ContScanMode_w_DMA(__IO int16_t *MultiConvBuff) (function) of group Periph2dma_Functions is not documented.
@@ -549,8 +517,6 @@ tm_stm32f4_timer_properties.h:94: warning: Member MaxPrescaler (variable) of cla
 tm_stm32f4_timer_properties.h:95: warning: Member Period (variable) of class TM_TIMER_PROPERTIES_t is not documented.
 tm_stm32f4_timer_properties.h:96: warning: Member Prescaler (variable) of class TM_TIMER_PROPERTIES_t is not documented.
 tm_stm32f4_timer_properties.h:97: warning: Member Frequency (variable) of class TM_TIMER_PROPERTIES_t is not documented.
-tm_stm32f4_usart_dma.c:23: warning: Member DMA_Channel (variable) of class TM_USART_DMA_INT_t is not documented.
-tm_stm32f4_usart_dma.c:24: warning: Member DMA_Stream (variable) of class TM_USART_DMA_INT_t is not documented.
 tm_stm32f4_usart.c:25: warning: Member Buffer (variable) of class TM_USART_t is not documented.
 tm_stm32f4_usart.c:26: warning: Member Size (variable) of class TM_USART_t is not documented.
 tm_stm32f4_usart.c:27: warning: Member Num (variable) of class TM_USART_t is not documented.

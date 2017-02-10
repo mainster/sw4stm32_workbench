@@ -154,15 +154,15 @@ typedef enum {
  *             configuration array MDB_GPIO.
  */
 typedef struct {
-  const uint16_t      _GPIO_PIN;        //!< GPIO pin address.
-  const uint32_t      _GPIO_AHB_CLK;    //!< GPIO AHB peripheral clock source .
-  GPIO_TypeDef*       _GPIO_PORT;       //!< GPIO port pointer.
-  GPIOMode_TypeDef    _GPIO_Mode;       //!< GPIO mode.
-  GPIOOType_TypeDef   _GPIO_OType;      //!< GPIO output type.
-  GPIOPuPd_TypeDef    _GPIO_PuPd;       //!< GPIO pull resistor.
-  GPIOSpeed_TypeDef   _GPIO_Speed;      //!< GPIO driving strength.
-  MD_GPIO_NAME_t      _GPIO_NAME;       //!< GPIO name
-  MD_GPIO_STATE_t     _GPIO_INIT;       //!< Initial GPIO state
+	MD_GPIO_NAME_t      _GPIO_NAME;       //!< GPIO name
+	GPIO_TypeDef*       _GPIO_PORT;       //!< GPIO port pointer.
+	const uint16_t      _GPIO_PIN;        //!< GPIO pin address.
+	const uint32_t      _GPIO_AHB_CLK;    //!< GPIO AHB peripheral clock source .
+	GPIOMode_TypeDef    _GPIO_Mode;       //!< GPIO mode.
+	GPIOOType_TypeDef   _GPIO_OType;      //!< GPIO output type.
+	GPIOPuPd_TypeDef    _GPIO_PuPd;       //!< GPIO pull resistor.
+	GPIOSpeed_TypeDef   _GPIO_Speed;      //!< GPIO driving strength.
+	MD_GPIO_STATE_t     _GPIO_INIT;       //!< Initial GPIO state
 } MDB_GPIO_t;
 
 /** @} */
@@ -207,8 +207,10 @@ void MDB_GPIO_On(MD_GPIO_NAME_t name);
 //#define MDB_GPIO_On_m(name)     MDB_GPIO[name]._GPIO_PORT->BSRRL = MDB_GPIO[name]._GPIO_PIN
 //#define MDB_GPIO_Toggle_m(name) MDB_GPIO[name]._GPIO_PORT->ODR ^= MDB_GPIO[name]._GPIO_PIN
 
-#define   MDB_GPIO_Toggle_m2(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE6)) \
-												: (MDB_GPIO_Off(DBG_TIMING_PE6))
+//#define   MDB_GPIO_Toggle_m2(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE6)) \
+//												: (MDB_GPIO_Off(DBG_TIMING_PE6))
+
+#define   MDB_GPIO_Toggle_m2(s)       MDB_GPIO_Toggle(s)
 
 
 void MDB_GPIO_Off(MD_GPIO_NAME_t name);

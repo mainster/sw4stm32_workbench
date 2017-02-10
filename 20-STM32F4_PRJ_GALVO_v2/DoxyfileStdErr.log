@@ -1,21 +1,4 @@
 
-mdb_gpio.c:2: warning: the name `mdb_gpio.c' supplied as the second argument in the \file statement matches the following input files:
-mdb_gpio.c
-mdb_gpio.c
-Please use a more specific name by including a (larger) part of the path!
-mdb_gpio.h:2: warning: the name `mdb_gpio.h' supplied as the second argument in the \file statement matches the following input files:
-mdb_gpio.h
-mdb_gpio.h
-Please use a more specific name by including a (larger) part of the path!
-mdb_gpio.h:2: warning: the name `mdb_gpio.h' supplied as the second argument in the \file statement matches the following input files:
-mdb_gpio.h
-mdb_gpio.h
-Please use a more specific name by including a (larger) part of the path!
-stm32f4xx_it.h' supplied as the second argument in the \file statement is not an input file
-mdb_gpio.c:2: warning: the name `mdb_gpio.c' supplied as the second argument in the \file statement matches the following input files:
-mdb_gpio.c
-mdb_gpio.c
-Please use a more specific name by including a (larger) part of the path!
 actuators.h:173: warning: Found unknown command `\ASG_INTEGRATOR_TRIPPING_DEFAULT'
 irq_callbacks.c, found it 0 times
 
