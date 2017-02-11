@@ -1,5 +1,4 @@
 
-actuators.h:173: warning: Found unknown command `\ASG_INTEGRATOR_TRIPPING_DEFAULT'
 irq_callbacks.c, found it 0 times
 
 md_stm32f4_disco.h:192: warning: argument 'None' of command @param is not found in the argument list of MD_DISCO_ButtonPressed()
@@ -9,13 +8,9 @@ md_stm32f4_disco.h:183: warning: argument 'None' of command @param is not found 
 md_stm32f4_gpio.h:191: warning: argument 'GPIO_Mode' of command @param is not found in the argument list of MD_GPIO_InitAlternate(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t AltFunct)
 ' for \link command
 
-actuators.h:173: warning: Found unknown command `\ASG_INTEGRATOR_TRIPPING_DEFAULT'
 irq_callbacks.c:150: warning: Illegal command ref as part of a title section
 periph2dma_conf.h:150: warning: argument 'int16_t' of command @param is not found in the argument list of ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize)
   parameter 'MultiConvBuff'
-pid.c:266: warning: Found unknown command `\ingr'
-pid.h:358: warning: unable to resolve reference to `PID_struct_type' for \ref command
-pid.h:388: warning: unable to resolve reference to `PID_struct_type' for \ref command
 system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
 system_stm32f4xx.c:412: warning: argument 'None' of command @param is not found in the argument list of SystemInit(void)
 stm32f4xx_it.c:112: warning: argument 'None' of command @param is not found in the argument list of BusFault_Handler(void)

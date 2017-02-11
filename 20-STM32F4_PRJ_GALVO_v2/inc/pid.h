@@ -1,25 +1,25 @@
 /**
- * @file        pid.h
- *
- * @date        
- * @author      Manuel Del Basso (mainster)
- * @email       manuel.delbasso@gmail.com
- *
- * @ide         System Workbench ac6 (eclipse stm32)
- * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
- * @license     GNU GPL v3
- * 
- * @brief       PID compensator implementation.
- * 
-   @verbatim
+* @file        pid.h
+*
+* @date
+* @author      Manuel Del Basso (mainster)
+* @email       manuel.delbasso@gmail.com
+*
+* @ide         System Workbench ac6 (eclipse stm32)
+* @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+* @license     GNU GPL v3
+*
+* @brief       PID compensator implementation.
+*
+    @verbatim
 
     Copyright (C) 2016  Manuel Del Basso
-    
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-    
+
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -28,15 +28,15 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     @endverbatim
- *
- */
+*
+*/
 #ifndef _PID_H_
 #define _PID_H_
 
 #ifdef __cplusplus
- extern "C" {
-#endif 
-    
+extern "C" {
+#endif
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -49,7 +49,7 @@
 #endif
 
 /**
- * @addtogroup MD_APP
+ * @addtogroup  MD_APP MD_Application
  * @{
  */
 
@@ -69,8 +69,8 @@
  */
 
 /**
- * @addtogroup Pid_Macros
- * @brief      PID methods related macro definitions. @{
+ * @addtogroup  Pid_Macros
+ * @brief       PID methods related macro definitions. @{
  */
 
 /**
@@ -90,6 +90,7 @@
  * @param      var    The variable or structure.
  * @param      type   The type of var.
  *
+ * @return     { description_of_the_return_value }
  */
 #define InitStruct(var, type) type var; memset(&var, 0, sizeof(type))
 
@@ -103,19 +104,19 @@
 #define MAX_I_TERM      (MAX_LONG / 2)
 
 /**
- * @brief      Range limits for different data types. Needed to avoid
- *             sign/overflow problems
- */
+* @brief      Range limits for different data types. Needed to avoid
+*             sign/overflow problems
+*/
 #define UPPER_SAT       100
 #define LOWER_SAT      -100
 #define FLOAT_MAX       1000
 #define MAX_F_I_TERM    (FLOAT_MAX / 2)
 
-/** @} */   /* PID_Macros */
+/** @} */
 
 /**
- * @addtogroup Pid_Variables
- * @brief      PID compensator variables. @{
+ * @addtogroup  Pid_Variables
+ * @brief       PID compensator variables. @{
  */
 
 /**
@@ -166,10 +167,10 @@ TF_INIT = 0;
  * @brief      Integration methods enumeration.
  */
 typedef enum {
-    PID_IntMethode_FwdRect = 19,    //!< Use method "Forward Rectangle".
-    PID_IntMethode_RwdRect = 20,    //!< Use method "Reward Rectangle".
-    PID_IntMethode_Trapez = 21,     //!< Use method "Trapezoidal".
-} PID_IntMethode_t;
+    PID_Intmethod_FwdRect = 19,    //!< Use method "Forward Rectangle".
+    PID_Intmethod_RwdRect = 20,    //!< Use method "Reward Rectangle".
+    PID_Intmethod_Trapez = 21,     //!< Use method "Trapezoidal".
+} PID_Intmethod_t;
 
 /**
  * @brief      PID structure type enumeration.
@@ -201,26 +202,24 @@ typedef struct PID_DATA {
     uint16_t ind;                   //!< Index
 
     /**
-     * FIXME:   Avoid overflow!
-     * (W - P) !!<=!! maxError.
+     * FIXME:   Avoid overflow! (W - P) !!<=!! maxError.
      */
     int16_t maxError;               //!< Max. value of error signal */
 
     /**
-     * FIXME:   Avoid overflow!
-     * E(k) !!<=!! maxSumError.
+     * FIXME:   Avoid overflow! E(k) !!<=!! maxSumError.
      *
      * TODO:    Implement failsafe anti-windup system.
      */
     int16_t maxSumError;            //!< Max. value of integral error.
 
 #ifdef FLOAT_PARAMETERS
-    float b0, b1, b2;               //!< PID algorithm coefficents [float].
+    float b0, b1, b2;               //!< PID algorithm coefficients [float].
     float Kp;                       //!< PID proportional gain [float].
     float Ki;                       //!< PID integral gain [float].
     float Kd;                       //!< PID derivative gain [float].
 #elif DOUBLE_PARAMETERS
-    double b0, b1, b2;              //!< PID algorithm coefficents [double].
+    double b0, b1, b2;              //!< PID algorithm coefficients [double].
     double Kp;                      //!< PID proportional gain [double].
     double Ki;                      //!< PID integral gain [double].
     double Kd;                      //!< PID derivative gain [double].
@@ -252,14 +251,12 @@ typedef struct PID_DATA_NEW {
     uint16_t Ts;                //!< Sample time @si{us}.
 
     /**
-     * FIXME:   Avoid overflow!
-     * (W - P) !!<=!! maxError.
+     * FIXME:   Avoid overflow! (W - P) !!<=!! maxError.
      */
     int16_t maxError;           //!< Max. value of error signal */
 
     /**
-     * FIXME:   Avoid overflow!
-     * E(k) !!<=!! maxSumError.
+     * FIXME:   Avoid overflow! E(k) !!<=!! maxSumError.
      *
      * TODO:    Implement fail-safe anti-windup system.
      */
@@ -295,14 +292,12 @@ typedef struct FPID_DATA {
     uint16_t Ts;                //!< Sample time @si{us}.
 
     /**
-     * FIXME:   Avoid overflow!
-     * (W - P) !!<=!! maxError.
+     * FIXME:   Avoid overflow! (W - P) !!<=!! maxError.
      */
     float maxError;             //!< Max. value of error signal */
 
     /**
-     * FIXME:   Avoid overflow!
-     * E(k) !!<=!! maxSumError.
+     * FIXME:   Avoid overflow! E(k) !!<=!! maxSumError.
      *
      * TODO:    Implement fail-safe anti-windup system.
      */
@@ -316,8 +311,8 @@ typedef struct FPID_DATA {
 } pidDatafloat_t;
 
 /**
- * @brief      External declared PID instances.
- */
+* @brief      External declared PID instances.
+*/
 extern struct PID_DATA   pidDataX, pidDataY;
 
 
@@ -331,23 +326,22 @@ extern struct PID_DATA   pidDataX, pidDataY;
 /** @} */
 
 /**
- * @addtogroup Pid_Functions
- * @brief      PID methods related macro definitions. @{
+ * @addtogroup  Pid_Functions
+ * @brief       PID methods related macro definitions. @{
  */
 
 /**
- * @brief      Initialisation of PID controller parameters. Initialise the
+ * @brief      Initialization of PID controller parameters. Initialize the
  *             variables used by the PID algorithm.
- *
  */
 void pid_Init_Tp (void);
 
 
 /**
- * @brief      Initialiasation methode for integral type PID instance.
+ * @brief      Initialization method for integral type PID instance.
  *
- *             Initialisation of integral type PID controller parameters.
- *             Initialise the variables used by the PID algorithm.
+ *             Initialization of integral type PID controller parameters.
+ *             Initialize the variables used by the PID algorithm.
  *
  * @param      Kp       PID proportional gain value.
  * @param      Ki       PID integral gain value.
@@ -356,23 +350,24 @@ void pid_Init_Tp (void);
  *                      constant @si{us}.
  * @param[in]  setTs    Sample rate @si{us};
  * @param      pid      Pointer to the instances PID structure.
- * @param[in]  stType   Select buffered or unbuffered PID structure (See @ref
+ * @param[in]  stType   Select buffered or unbuffered PID structure (See
  *                      PID_struct_type enumeration).
  */
-void pid_Init (float Kp, float Ki, float Kd, uint16_t setTf, uint16_t setTs, 
+void pid_Init (float Kp, float Ki, float Kd, uint16_t setTf, uint16_t setTs,
                struct PID_DATA *pid, PID_StructType_t stType);
 
 
 /**
- * @brief      Initialiasation methode for double type PID instance.
+ * @brief      Initialization method for double type PID instance.
  *
- *             Initialisation of double type PID controller parameters.
- *             Initialise the variables used by the PID algorithm.
+ *             Initialization of double type PID controller parameters.
+ *             Initialize the variables used by the PID algorithm.
  *
  * @param      Kp      PID proportional gain value.
  * @param      Ki      PID integral gain value.
  * @param      Kd      PID derivate gain value.
- * @param[in]  setTf   Initial value for 1.st order D-filter time constant @si{us}.
+ * @param[in]  setTf   Initial value for 1.st order D-filter time constant
+ *                     @si{us}.
  * @param[in]  setTs   Sample rate @si{us};
  * @param      pid     Pointer to the instances PID structure.
  */
@@ -386,21 +381,21 @@ void fpid_Init (double Kp, double Ki, double Kd, uint16_t setTf,
  *             anti-windup system, after over current tripping etc.
  *
  * @param      pid      Pointer to the instances PID structure.
- * @param[in]  stType   Select buffered or unbuffered PID structure (See @ref
+ * @param[in]  stType   Select buffered or unbuffered PID structure (See
  *                      PID_struct_type enumeration).
  */
 void pid_Reset_Integrator (volatile struct PID_DATA *pid, PID_StructType_t stType);
 
 /**
- * @brief      Pre-Calculates PID coeffizients.
+ * @brief      Pre-Calculates PID coefficients.
  *
- *             Pre-Calculation of coeffizients after a parameter update can
+ *             Pre-Calculation of coefficients after a parameter update can
  *             speedup the underlying algorithms.
  *
- * @param      pid          Pointer to the instances PID structure.
- * @param[in]  intMethode   The integration method
+ * @param      pid         Pointer to the instances PID structure.
+ * @param[in]  intmethod   The integration method
  */
-void PID_Calc_Coeffs (struct PID_DATA *pid, PID_IntMethode_t intMethode);
+void PID_Calc_Coeffs (struct PID_DATA *pid, PID_Intmethod_t intmethod);
 
 /**
  * @brief      Update the compensator parameters of a given PID instance.
@@ -421,10 +416,10 @@ void update_pid_data (float Kp, float Ki, float Kd,
  *             integral type PID instance.
  *
  * @param[in]  setPoint       Pass next set-point value via setPoint.
- * @param[in]  processValue   Pass actual process (e.g. plunt output) value.
- * @param      pid            Pointer to the instances PID structure. 
+ * @param[in]  processValue   Pass actual process (e.g. plant output) value.
+ * @param      pid            Pointer to the instances PID structure.
  *
- * @return     Compensator output, next actuator control signal.   
+ * @return     Compensator output, next actuator control signal.
  */
 int pid_Controller (int16_t setPoint, int16_t processValue,
                     struct PID_DATA *pid);
@@ -436,8 +431,8 @@ int pid_Controller (int16_t setPoint, int16_t processValue,
  *             integral type PID instance.
  *
  * @param[in]  setPoint       Pass next set-point value via setPoint.
- * @param[in]  processValue   Pass actual process (e.g. plunt output) value.
- * @param      pid            Pointer to the instances PID structure. 
+ * @param[in]  processValue   Pass actual process (e.g. plant output) value.
+ * @param      pid            Pointer to the instances PID structure.
  *
  * @return     Compensator output, next actuator control signal.
  */

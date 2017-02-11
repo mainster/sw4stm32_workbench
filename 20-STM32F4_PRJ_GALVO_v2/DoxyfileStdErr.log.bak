@@ -10,7 +10,6 @@ signalGen.h:115: warning: documented symbol `static int16_t I_Quadratic' was not
 signalGen.h:121: warning: documented symbol `static int16_t Sawtooth' was not declared or defined.
 signalGen.h:128: warning: documented symbol `static float squarewaveBuff' was not declared or defined.
 signalGen.h:150: warning: documented symbol `static float line2' was not declared or defined.
-actuators.h:173: warning: Found unknown command `\ASG_INTEGRATOR_TRIPPING_DEFAULT'
 actuators.c:39: warning: Member ASG (variable) of group IRQ_Handler_Variables is not documented.
 adc_dac_dma.c:35: warning: Member ASG (variable) of file adc_dac_dma.c is not documented.
 arm_architect.h:53: warning: Member TARGET_ARCH_ARM[] (variable) of file arm_architect.h is not documented.
@@ -144,14 +143,15 @@ periph2dma_conf.c:99: warning: Member DMA_Config(__IO int16_t *MultiConvBuff, ui
 periph2dma_conf.h:140: warning: Member AN_Watchdog_Config(void) (function) of group Periph2dma_Functions is not documented.
 periph2dma_conf.h:146: warning: Member ADC_DMA_DualModeConfig(__IO int16_t *MultiConvBuff) (function) of group Periph2dma_Functions is not documented.
 periph2dma_conf.h:147: warning: Member ADC_ContScanMode_w_DMA(__IO int16_t *MultiConvBuff) (function) of group Periph2dma_Functions is not documented.
+pid.c:193: warning: Member PID_Calc_Coeffs(struct PID_DATA *pid, PID_IntMethode_t intMethode) (function) of file pid.c is not documented.
 pid.c:34: warning: Member ADC_Buff[5] (variable) of file pid.c is not documented.
-pid.h:101: warning: Member MAX_INT (macro definition) of group Pid_Macros is not documented.
-pid.h:102: warning: Member MAX_LONG (macro definition) of group Pid_Macros is not documented.
-pid.h:103: warning: Member MAX_I_TERM (macro definition) of group Pid_Macros is not documented.
-pid.h:110: warning: Member LOWER_SAT (macro definition) of group Pid_Macros is not documented.
-pid.h:111: warning: Member FLOAT_MAX (macro definition) of group Pid_Macros is not documented.
-pid.h:112: warning: Member MAX_F_I_TERM (macro definition) of group Pid_Macros is not documented.
-pid.h:125: warning: Member P_now (variable) of group Pid_Variables is not documented.
+pid.h:102: warning: Member MAX_INT (macro definition) of group Pid_Macros is not documented.
+pid.h:103: warning: Member MAX_LONG (macro definition) of group Pid_Macros is not documented.
+pid.h:104: warning: Member MAX_I_TERM (macro definition) of group Pid_Macros is not documented.
+pid.h:111: warning: Member LOWER_SAT (macro definition) of group Pid_Macros is not documented.
+pid.h:112: warning: Member FLOAT_MAX (macro definition) of group Pid_Macros is not documented.
+pid.h:113: warning: Member MAX_F_I_TERM (macro definition) of group Pid_Macros is not documented.
+pid.h:126: warning: Member P_now (variable) of group Pid_Variables is not documented.
 signalGen.c:39: warning: Member dummyDeclare(void) (function) of file signalGen.c is not documented.
 signalGen.h:125: warning: Member interrupterBuff[] (variable) of group Signal_Gen_Arrays is not documented.
 signalGen.h:133: warning: Member line1[][N_TUPEL] (variable) of group Signal_Gen_Arrays is not documented.
@@ -412,16 +412,15 @@ tm_stm32f4_usart.h:45: warning: Illegal command verbatim as part of a \link
 tm_stm32f4_usart.h:62: warning: Illegal command endverbatim as part of a \link
 tm_stm32f4_usart.h:63: warning: Unexpected end of comment while inside link command
 
-actuators.h:173: warning: Found unknown command `\ASG_INTEGRATOR_TRIPPING_DEFAULT'
 globals.h:78: warning: Member hi (macro definition) of group Global_Macros is not documented.
 globals.h:79: warning: Member lo (macro definition) of group Global_Macros is not documented.
 globals.h:288: warning: Member SAMPLE_INTERVAL (macro definition) of group Pid_Macros is not documented.
-pid.h:101: warning: Member MAX_INT (macro definition) of group Pid_Macros is not documented.
-pid.h:102: warning: Member MAX_LONG (macro definition) of group Pid_Macros is not documented.
-pid.h:103: warning: Member MAX_I_TERM (macro definition) of group Pid_Macros is not documented.
-pid.h:110: warning: Member LOWER_SAT (macro definition) of group Pid_Macros is not documented.
-pid.h:111: warning: Member FLOAT_MAX (macro definition) of group Pid_Macros is not documented.
-pid.h:112: warning: Member MAX_F_I_TERM (macro definition) of group Pid_Macros is not documented.
+pid.h:102: warning: Member MAX_INT (macro definition) of group Pid_Macros is not documented.
+pid.h:103: warning: Member MAX_LONG (macro definition) of group Pid_Macros is not documented.
+pid.h:104: warning: Member MAX_I_TERM (macro definition) of group Pid_Macros is not documented.
+pid.h:111: warning: Member LOWER_SAT (macro definition) of group Pid_Macros is not documented.
+pid.h:112: warning: Member FLOAT_MAX (macro definition) of group Pid_Macros is not documented.
+pid.h:113: warning: Member MAX_F_I_TERM (macro definition) of group Pid_Macros is not documented.
 helper.h:91: warning: Member decode_toInt(float value) (function) of group Helper_Functions is not documented.
 helper.h:92: warning: Member decode_toUint(float value) (function) of group Helper_Functions is not documented.
 helper.h:93: warning: Member decodeDbl_toInt(double value) (function) of group Helper_Functions is not documented.
@@ -479,10 +478,7 @@ periph2dma_conf.h:147: warning: Member ADC_ContScanMode_w_DMA(__IO int16_t *Mult
 periph2dma_conf.h:150: warning: argument 'int16_t' of command @param is not found in the argument list of ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize)
 periph2dma_conf.h:159: warning: The following parameters of ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize) are not documented:
   parameter 'MultiConvBuff'
-pid.h:125: warning: Member P_now (variable) of group Pid_Variables is not documented.
-pid.c:266: warning: Found unknown command `\ingr'
-pid.h:358: warning: unable to resolve reference to `PID_struct_type' for \ref command
-pid.h:388: warning: unable to resolve reference to `PID_struct_type' for \ref command
+pid.h:126: warning: Member P_now (variable) of group Pid_Variables is not documented.
 signalGen.h:125: warning: Member interrupterBuff[] (variable) of group Signal_Gen_Arrays is not documented.
 signalGen.h:133: warning: Member line1[][N_TUPEL] (variable) of group Signal_Gen_Arrays is not documented.
 system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)

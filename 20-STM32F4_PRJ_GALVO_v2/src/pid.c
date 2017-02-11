@@ -236,10 +236,10 @@ void PID_Calc_Coeffs (struct PID_DATA *pid, PID_IntMethode_t intMethode) {
 #pragma GCC optimize ("O0")
 #endif
 
-int pid_Controller(int16_t setPoint, int16_t processValue, struct PID_DATA *pid) {
 
 #define LARGE_PID
 
+int pid_Controller(int16_t setPoint, int16_t processValue, struct PID_DATA *pid) {
 #ifdef LARGE_PID
     /* Incremented index counter */
     /* int k = ((pid->ind + 1) & (PID_BUFF_LENGTH - 1)); */
@@ -290,7 +290,6 @@ int pid_Controller(int16_t setPoint, int16_t processValue, struct PID_DATA *pid)
 
     /**
      * @brief      Test algorithm differences.
-     * @ingr
      *
     @verbatim
 

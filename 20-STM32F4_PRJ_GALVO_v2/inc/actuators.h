@@ -170,7 +170,7 @@ typedef struct {
 
     /**
      * @brief      Represents the remote configureable integrator tripping level
-     *             (see @ASG_INTEGRATOR_TRIPPING_DEFAULT). If the integrator
+     *             (see ASG_INTEGRATOR_TRIPPING_DEFAULT). If the integrator
      *             reaches this level, the ASG systems "digital fuse" will be
      *             tripped and the DAC outputs are forced into safe state (see
      * @see        feVal). @si{V}
