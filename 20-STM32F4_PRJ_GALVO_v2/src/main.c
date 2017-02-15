@@ -85,20 +85,20 @@ extern DAC_WP_t (*DAC_SecureSetDualChanSigned)(int16_t, int16_t);
 // ==============================================================
 //   This is needed in order to provide printf functionality
 // ==============================================================
-#define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#define PUTCHAR_PROTOTYPE int fputc(int c, FILE *f)
 
 //struct __FILE { int handle; };
 FILE __stdout;
 
 PUTCHAR_PROTOTYPE {
 	/* Place implementation of device specific fputc here */
-	USART_SendData(USART1, (uint8_t) ch);
+	USART_SendData(USART1, (uint8_t) c);
 
 	/* Polling loop until the end of transmission */
 	while (USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET) {
 	}
 
-	return ch;
+	return c;
 }
 
 // ==============================================================
@@ -279,8 +279,8 @@ static MiscCmds_t itemsm_list[] = {
 
 void resetPID(void) {
 	pid_Init(KP_INIT, KI_INIT, KD_INIT, TF_INIT, TS, 
-            &pidDataY, PID_StructType_Unbuffered);
-	PID_Calc_Coeffs(&pidDataY, PID_IntMethode_RwdRect);
+			&pidDataY, PID_StructType_Unbuffered);
+	PID_Calc_Coeffs(&pidDataY, PID_IntMethod_RwdRect);
 }
 
 double lastVal = 0;
@@ -318,11 +318,8 @@ typedef enum {
  */
 int main(void) {
 
-	/**< Define private main variables */
+	/**< Private main variables */
 	TM_PWM_TIM_t TIM_Data;    //!< Timer data for PWM
-	//    volatile uint8_t c = 0;
-	//    volatile uint16_t rxval = 0;
-	//    volatile uint16_t test = 0;
 
 	/**< Initialize System */
 	SystemInit();
@@ -330,7 +327,7 @@ int main(void) {
 	/**< Enable some AHB clock sources */
 	RCC_Periph2DMA_Conf();
 
-	/**< All used GPIOs should be initialized by this call */
+	/**< All used GPIOs should be initialized via this call */
 	MDB_GPIO_Init();
 	//  beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
 

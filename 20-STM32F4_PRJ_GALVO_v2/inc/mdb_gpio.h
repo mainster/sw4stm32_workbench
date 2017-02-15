@@ -207,8 +207,7 @@ void MDB_GPIO_On(MD_GPIO_NAME_t name);
 //#define MDB_GPIO_On_m(name)     MDB_GPIO[name]._GPIO_PORT->BSRRL = MDB_GPIO[name]._GPIO_PIN
 //#define MDB_GPIO_Toggle_m(name) MDB_GPIO[name]._GPIO_PORT->ODR ^= MDB_GPIO[name]._GPIO_PIN
 
-//#define   MDB_GPIO_Toggle_m2(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE6)) \
-//												: (MDB_GPIO_Off(DBG_TIMING_PE6))
+//#define   MDB_GPIO_Toggle_m2(s)       ((s) > 0) ? (MDB_GPIO_On(DBG_TIMING_PE6))	: (MDB_GPIO_Off(DBG_TIMING_PE6))
 
 #define   MDB_GPIO_Toggle_m2(s)       MDB_GPIO_Toggle(s)
 

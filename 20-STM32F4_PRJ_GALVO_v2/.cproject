@@ -20,7 +20,7 @@
 							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.2097023914" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu" value="STM32F429ZITx" valueType="string"/>
 							<option id="fr.ac6.managedbuild.option.gnu.cross.board.341994207" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board" value="STM32F429I-DISC1" valueType="string"/>
 							<option id="fr.ac6.managedbuild.option.gnu.cross.fpu.1960902159" name="Floating point hardware" superClass="fr.ac6.managedbuild.option.gnu.cross.fpu" value="fr.ac6.managedbuild.option.gnu.cross.fpu.fpv4-sp-d16" valueType="enumerated"/>
-							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.123438802" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi" value="fr.ac6.managedbuild.option.gnu.cross.floatabi.softfp" valueType="enumerated"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.123438802" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi" value="fr.ac6.managedbuild.option.gnu.cross.floatabi.hard" valueType="enumerated"/>
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="fr.ac6.managedbuild.targetPlatform.gnu.cross.2040547118" isAbstract="false" osList="all" superClass="fr.ac6.managedbuild.targetPlatform.gnu.cross"/>
 							<builder buildPath="${workspace_loc:/04_STM32F4_MD_HELLO}/Debug" id="fr.ac6.managedbuild.builder.gnu.cross.1478354709" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="fr.ac6.managedbuild.builder.gnu.cross"/>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.812686938" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler">
@@ -37,7 +37,7 @@
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1095875095" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F429ZITx"/>
 									<listOptionValue builtIn="false" value="STM32F429ZI"/>
-									<listOptionValue builtIn="false" value="__SOFTFP__"/>
+									<listOptionValue builtIn="false" value="__FPU_PRESENT=1"/>
 									<listOptionValue builtIn="false" value="ARM_MATH_CM4"/>
 									<listOptionValue builtIn="false" value="STM32F429I_DISC1"/>
 									<listOptionValue builtIn="false" value="STM32F4"/>
@@ -50,6 +50,7 @@
 									<listOptionValue builtIn="false" value="KEIL_IDE"/>
 									<listOptionValue builtIn="false" value="NO_FPU"/>
 								</option>
+								<option id="gnu.c.compiler.option.dialect.std.1002234228" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.c11" valueType="enumerated"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c.240025978" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.c"/>
 								<inputType id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s.666066082" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.input.s"/>
 							</tool>
@@ -58,7 +59,9 @@
 								<option id="gnu.cpp.compiler.option.debugging.level.1973565612" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 							</tool>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.975684112" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker">
-								<option id="gnu.c.link.option.libs.767924775" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
+								<option id="gnu.c.link.option.libs.767924775" name="Libraries (-l)" superClass="gnu.c.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="arm_cortexM4lf_math"/>
+								</option>
 								<option id="gnu.c.link.option.paths.376954293" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS/lib/GCC}&quot;"/>
 								</option>
@@ -95,7 +98,7 @@
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry excluding="00-STM32F4_LIBRARY_MDB/TM|console.h|00-STM32F4_LIBRARY_MDB/~~md_stm32f4_gpio.h|00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.h|00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
-						<entry excluding="console.c|00-STM32F4_LIBRARY_MDB/~~md_stm32f4_gpio.c|00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart_dma.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.c|main2.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="syscalls.c|console.c|00-STM32F4_LIBRARY_MDB/~~md_stm32f4_gpio.c|00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart_dma.c|00-STM32F4_LIBRARY_MDB/md_stm32f4_usart.c|main2.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.c|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalh|00-STM32F4_LIBRARY_MDB/FFFFmdb_stm32f4_dac_signalc|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.c|00-STM32F4_LIBRARY_MDB/mdb_stm32f4_dac.h|00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
 				</configuration>
@@ -223,4 +226,5 @@
 		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

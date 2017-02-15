@@ -190,7 +190,7 @@ int fpid_Controller(int16_t setPoint, int16_t processValue,
 
 
 
-void PID_Calc_Coeffs (struct PID_DATA *pid, PID_IntMethode_t intMethode) {
+void PID_Calc_Coeffs (struct PID_DATA *pid, PID_IntMethod_t intMethod) {
     float Kp = pid->Kp;
     float Ki = pid->Ki;
     float Kd = pid->Kd;
@@ -201,18 +201,18 @@ void PID_Calc_Coeffs (struct PID_DATA *pid, PID_IntMethode_t intMethode) {
     /* Sampletime [s] NOT [us] */
     float Ts = (float)pid->Ts / 1000000;
 
-    switch (intMethode) {
-        case PID_IntMethode_FwdRect:  {
+    switch (intMethod) {
+        case PID_IntMethod_FwdRect:  {
             /* TODO: Implement forward rectangle integration algorith */
         } break;
 
-        case PID_IntMethode_RwdRect:  {
+        case PID_IntMethod_RwdRect:  {
             pid->b0 = Kp + Ki * Ts + Kd / Ts;
             pid->b1 = -(Kp + 2 * Kd / Ts);
             pid->b2 = Kd / Ts;
         } break;
 
-        case PID_IntMethode_Trapez:  {
+        case PID_IntMethod_Trapez:  {
             pid->b0 = Kp + Ki * Ts / 2 + Kd / Ts;
             pid->b1 = -(Kp - Ki * Ts / 2 + 2 * Kd / Ts);
             pid->b2 = Kd / Ts;

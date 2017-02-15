@@ -130,7 +130,7 @@ static float squarewaveBuff[] __attribute__ ((unused)) =     { 1, -1, '\0' };
 // extern uint16_t vectorCtr;
 
 /* TODO */
-static float line1[ ][N_TUPEL] = {
+static float line1[ ][N_TUPEL] __attribute__ ((unused)) = {
     { 0.000000, -1.250019,  0.000000},
     { 1.000000, -1.015640,  0.000000},
     { 0.000000, -0.844739,  0.000000},
@@ -188,7 +188,7 @@ extern struct triangWave triStruct;
  *             This pointer is used in case of enabled waveform generator and
  *             provides dynamically switching between different waveforms.
  */
-static int16_t *pSeq = NULL;
+static int16_t *pSeq __attribute__ ((unused)) = NULL;
 
 /**
  * @brief      DAC values sequence pointer for float represented waveform buffers.
@@ -196,7 +196,7 @@ static int16_t *pSeq = NULL;
  *             This pointer is used in case of enabled waveform generator and
  *             provides dynamically switching between different waveforms.
  */
-static float *pSeq_f = NULL;
+static float *pSeq_f __attribute__ ((unused)) = NULL;
 
 /**
  * Feature in progress.

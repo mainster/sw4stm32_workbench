@@ -167,10 +167,10 @@ TF_INIT = 0;
  * @brief      Integration methods enumeration.
  */
 typedef enum {
-    PID_Intmethod_FwdRect = 19,    //!< Use method "Forward Rectangle".
-    PID_Intmethod_RwdRect = 20,    //!< Use method "Reward Rectangle".
-    PID_Intmethod_Trapez = 21,     //!< Use method "Trapezoidal".
-} PID_Intmethod_t;
+    PID_IntMethod_FwdRect = 19,    //!< Use method "Forward Rectangle".
+    PID_IntMethod_RwdRect = 20,    //!< Use method "Reward Rectangle".
+    PID_IntMethod_Trapez = 21,     //!< Use method "Trapezoidal".
+} PID_IntMethod_t;
 
 /**
  * @brief      PID structure type enumeration.
@@ -393,9 +393,9 @@ void pid_Reset_Integrator (volatile struct PID_DATA *pid, PID_StructType_t stTyp
  *             speedup the underlying algorithms.
  *
  * @param      pid         Pointer to the instances PID structure.
- * @param[in]  intmethod   The integration method
+ * @param[in]  intMethod   The integration method
  */
-void PID_Calc_Coeffs (struct PID_DATA *pid, PID_Intmethod_t intmethod);
+void PID_Calc_Coeffs (struct PID_DATA *pid, PID_IntMethod_t intMethod);
 
 /**
  * @brief      Update the compensator parameters of a given PID instance.

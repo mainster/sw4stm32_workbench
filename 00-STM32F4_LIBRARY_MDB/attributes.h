@@ -51,6 +51,11 @@
 		#define   __weak  __attribute__((weak))
 	#endif	
 
+
+	#ifndef asm
+		#define asm __attribute__((__asm__))
+	#endif
+
 	/**
 	 * The packed attribute specifies that a variable or structure field should
 	 * have the smallest possible alignment--one byte for a variable, and one
