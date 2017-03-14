@@ -399,16 +399,69 @@
 			"file": "src/main.c",
 			"settings":
 			{
-				"buffer_size": 44458,
+				"buffer_size": 41113,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "00-STM32F4_LIBRARY_MDB/TM/tm_stm32f4_usart.h",
+			"file": "inc/main.h",
 			"settings":
 			{
-				"buffer_size": 22496,
+				"buffer_size": 10955,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/syscalls.c",
+			"settings":
+			{
+				"buffer_size": 4356,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/system_stm32f4xx.c",
+			"settings":
+			{
+				"buffer_size": 46660,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/stm32f4xx_it.c",
+			"settings":
+			{
+				"buffer_size": 4721,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Doxyfile",
+			"settings":
+			{
+				"buffer_size": 109666,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/pid.h",
+			"settings":
+			{
+				"buffer_size": 14378,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/pid.c",
+			"settings":
+			{
+				"buffer_size": 16270,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
@@ -426,7 +479,7 @@
 			"file": "DoxyfileStdErr.log",
 			"settings":
 			{
-				"buffer_size": 2875,
+				"buffer_size": 2634,
 				"line_ending": "Unix"
 			}
 		},
@@ -434,9 +487,27 @@
 			"file": "inc/actuators.h",
 			"settings":
 			{
-				"buffer_size": 8204,
+				"buffer_size": 7079,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "licverbatim",
+			"settings":
+			{
+				"buffer_size": 1096,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/actuators.c",
+			"settings":
+			{
+				"buffer_size": 4755,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -507,10 +578,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 152.0,
-		"last_filter": "",
+		"height": 392.0,
+		"last_filter": "cle",
 		"selected_items":
 		[
+			[
+				"cle",
+				"Clear Console"
+			],
+			[
+				"tra",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"bea",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
 			[
 				"doxy",
 				"DoxyDoxygen: Update Comment With Preferred Style"
@@ -545,10 +628,6 @@
 			],
 			[
 				"tran",
-				"DoxyDoxygen: Translate Selection To..."
-			],
-			[
-				"tra",
 				"DoxyDoxygen: Translate Selection To..."
 			],
 			[
@@ -618,10 +697,6 @@
 			[
 				"ena",
 				"Package Control: Enable Package"
-			],
-			[
-				"cle",
-				"Clear Console"
 			],
 			[
 				"to",
@@ -764,7 +839,7 @@
 	},
 	"console":
 	{
-		"height": 236.0,
+		"height": 206.0,
 		"history":
 		[
 			"sublime.run_command(\"toggle_fold\", {\"args\": true})",
@@ -873,6 +948,9 @@
 	],
 	"file_history":
 	[
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/20-STM32F4_PRJ_GALVO_v2.sublime-project",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/TM/tm_stm32f4_usart.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/DoxyfileStdErr.log",
 		"/media/data/media/PICSlistSort2k2",
 		"/media/data/media/PICSlist",
 		"/media/data/media/PICSlistSort1",
@@ -908,7 +986,6 @@
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/system_stm32f4xx.c",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/system_stm32f4xx.h",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/DoxyfileStdErr.log",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.h",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c",
 		"/home/mainster/Desktop/renaul",
@@ -998,9 +1075,7 @@
 		"/home/mainster/scripts/searchDocTEMPLATE.sh",
 		"/home/mainster/scripts/searchDocWhz.sh",
 		"/tmp/Doxyfile",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/src/stm32f4xx_pwr.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/dsp_lib/Examples/arm_dotproduct_example/ARM/arm_dotproduct_example_f32.c",
-		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug/20-STM32F4_PRJ_GALVO_v2.elf"
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/src/stm32f4xx_pwr.c"
 	],
 	"find":
 	{
@@ -1021,6 +1096,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"call",
+			"pidData\\_t",
+			"\t\\/\\*",
 			"$",
 			"^",
 			"'",
@@ -1145,10 +1223,7 @@
 			"stm32f4_gpio.h",
 			"GPIO_Pin_4",
 			"APP_Pid_",
-			"APP_Analog",
-			"Analog Subsystem",
-			"addtogroup",
-			"Signal generator"
+			"APP_Analog"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1156,6 +1231,7 @@
 		"regex": true,
 		"replace_history":
 		[
+			"\\t/**<",
 			"\"",
 			"",
 			"\n",
@@ -1282,8 +1358,7 @@
 			"",
 			"//!< \\1",
 			"//!<",
-			"@f",
-			"Galvo_Global_Macros"
+			"@f"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1294,7 +1369,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -1303,15 +1378,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 44458,
+						"buffer_size": 41113,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10310,
-								10310
+								1216,
+								1216
 							]
 						],
 						"settings":
@@ -1320,50 +1395,229 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4729.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "00-STM32F4_LIBRARY_MDB/TM/tm_stm32f4_usart.h",
+					"file": "inc/main.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 22496,
+						"buffer_size": 10955,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8227,
-								8227
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/syscalls.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4356,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/system_stm32f4xx.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5343.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/stm32f4xx_it.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2922,
+								2922
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 716.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Doxyfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 109666,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								102817,
+								102817
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/DoxyDoxygen (evolution)/INI.tmLanguage",
+							"tab_size": 5,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 30094.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "inc/pid.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10433,
+								10433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5247.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 7,
+					"file": "src/pid.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2433,
+								2433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 515.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "inc/stm32f4xx_it.h",
 					"semi_transient": false,
 					"settings":
@@ -1389,24 +1643,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 9,
 					"file": "DoxyfileStdErr.log",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2875,
+						"buffer_size": 2634,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2875,
-								2875
+								1870,
+								1870
 							]
 						],
 						"settings":
@@ -1418,24 +1672,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 10,
 					"file": "inc/actuators.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8204,
+						"buffer_size": 7079,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5265,
-								5265
+								6740,
+								6740
 							]
 						],
 						"settings":
@@ -1445,10 +1699,68 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1929.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "licverbatim",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1096,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								608,
+								608
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/actuators.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4755,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
@@ -1526,6 +1838,10 @@
 		"selected_items":
 		[
 			[
+				"syscalls",
+				"src/syscalls.c"
+			],
+			[
 				"main",
 				"src/main.c"
 			],
@@ -1566,7 +1882,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

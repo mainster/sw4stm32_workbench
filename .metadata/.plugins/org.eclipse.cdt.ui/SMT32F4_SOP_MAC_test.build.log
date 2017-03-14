@@ -1,0 +1,38 @@
+17:19:06 **** Build of configuration Debug for project SMT32F4_SOP_MAC_test ****
+make all 
+Building file: ../startup/startup_stm32.s
+Invoking: MCU GCC Assembler
+/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/inc" -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/StdPeriph_Driver/inc" -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Finished building: ../startup/startup_stm32.s
+ 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DSTM32F429ZITx -Darm_cortexM4lf_math -D__FPU_PRESENT=1 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/inc" -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/StdPeriph_Driver/inc" -O3 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/syscalls.c
+Invoking: MCU GCC Compiler
+/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DSTM32F429ZITx -Darm_cortexM4lf_math -D__FPU_PRESENT=1 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/inc" -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/SMT32F4_SOP_MAC_test/StdPeriph_Driver/inc" -O3 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/syscalls.d" -MT"src/syscalls.o" -o "src/syscalls.o" "../src/syscalls.c"
+../src/syscalls.c:63:27: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'asm'
+ register char * stack_ptr asm("sp");
+                           ^
+../src/syscalls.c: In function '_sbrk':
+../src/syscalls.c:116:18: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'asm'
+  extern char end asm("end");
+                  ^
+../src/syscalls.c:116:18: warning: implicit declaration of function 'asm' [-Wimplicit-function-declaration]
+../src/syscalls.c:121:15: error: 'end' undeclared (first use in this function)
+   heap_end = &end;
+               ^
+src/subdir.mk:24: recipe for target 'src/syscalls.o' failed
+../src/syscalls.c:121:15: note: each undeclared identifier is reported only once for each function it appears in
+../src/syscalls.c:124:24: error: 'stack_ptr' undeclared (first use in this function)
+  if (heap_end + incr > stack_ptr)
+                        ^
+make: *** [src/syscalls.o] Error 1
+
+17:19:07 Build Finished (took 466ms)
+

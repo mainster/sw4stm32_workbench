@@ -11,23 +11,27 @@
  *
  * @brief       Main source implementation (29-04-2015)
  *
- * @verbatim
+   @verbatim
 
- Copyright (C) 2016  Manuel Del Basso
+	------------------------------------------------------------------------
 
- This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
+	Copyright (C) 2016	Manuel Del Basso
 
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- You should have received a copy of the GNU General Public License
- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
 
- @endverbatim
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	------------------------------------------------------------------------
+
+ * @endverbatim
  *
  *  Additional symbol definitions under "C/C++" > "Symbols"
  *      - ARM_MATH_CM4
@@ -36,6 +40,7 @@
 
 /* Include */
 #include "main.h"
+#include <string.h>
 
 /* ARM architecture names */
 #include "arm_architect.h"
@@ -369,8 +374,10 @@ int main(void) {
 
 	/**< Initialize Delay library. */
 	//  TM_DELAY_Init();
+
 	/**< Initialize TIM5, heart beat timer */
 	//MD_Timer5_config(ENABLE, ENABLE, 48000);        // 48MHz*1ms
+
 	/**< Initialize DAC outputs DAC1-> PA4  DAC2-> PA5 */
 	MD_DAC_Init(MD_DAC1);
 	MD_DAC_Init(MD_DAC2);
@@ -379,7 +386,7 @@ int main(void) {
 	DAC_SecureSetDualChanSigned = &DAC_SetDualChanSigned;
 	printf("connect Write pointer to DAC output register\n");
 
-	/* Configure the nested Vector interrupt controller */
+	/**< Configure the nested Vector interrupt controller */
 	NVIC_Configuration();
 
 	/**< Initialize TIM2 as part of sampling hw, also enable DMA trigger source */
@@ -519,19 +526,7 @@ int main(void) {
 		}
 	}
 }
-/*
- while (1) {
- / * Read temperature 1, reference temperature * /
- //        MD_DS18B20_Read(&OneWire, device[0], &SETPOINT_Y_FLOAT);
 
-
- / * Format string * /
- printf("W: % 3.2f\tPy: % 3.2f\tE: % 3.2f\tDuty: % 3.2f%%\n", \
-            SETPOINT_Y_FLOAT, POS_Y_FLOAT, pidErr_y, toPlant_y);
- Delayms(g.refresh);
- }
- */
-/* End of main function */
 
 /** @} */
 
@@ -1181,84 +1176,6 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 #pragma GCC pop_options
 #endif
 
-///**
-// * @brief   Set beam control source and new state
-// */
-//int beamCtrl(beamCtrlSource_t src, MD_GPIO_STATE_t newState ) {
-//    if ((src == BEAM_CTRL_SOURCE_GLOBAL) && (newState != DNI)) {
-//        printf("Error, Beam source can't be GLOBAL if new state is not DNI");
-//        return -1;
-//    }
-
-//    if ((src == BEAM_CTRL_SOURCE_GLOBAL) && (newState == DNI)) {
-//        MDB_GPIO_Switch(BEAM_INTERRUPT, g.beamEnabled);
-//        return 0;
-//    }
-
-//    if (src == BEAM_CTRL_SOURCE_MANUAL) {
-//        MDB_GPIO_Switch(BEAM_INTERRUPT, newState);
-//        return 0;
-//    }
-//
-//    return -1;
-//}
-
-///**
-// * @brief   Safely update actuator control signals
-// * Safely means in terms of missplaced or oscillating controller outputs.
-// * The analog watchdog peripheral takes care about "out of normal range"
-// * events. If a converted position signal is out of range, the watchdog
-// * handler starts time integration and after "out of range" integrator
-// * reaches a defineable limit, the watchdog takes the system to into
-// * "Tripped" state.
-// * Therefor a global error flag becomes true AND the function pointer
-// * DAC_SetDualChanSigned() that points to a wraper function, gots to be
-// * replaced by a pointer that points to DAC_SetDualChanSigned_Tripped().
-// * In the DAC_SetDualChanSigned() function, that is pointed to in tripped
-// * state, only outputs a zero level DAC-Signal to take external hardware
-// * in a safe state.
-// */
-//int updateActuator_f(float I_set_x, float I_set_y) {
-//    int toPlant_intBuff[2] = { 0, 0 };
-//    int *toPlant_int = &toPlant_intBuff[0];
-//
-//    if (!ASG.tripped) {     //!< only if ASG state is NOT tripped
-
-//        /**< decode the float values to an integral type */
-//        *toPlant_int     = decode_toInt(I_set_x);
-//        *(toPlant_int+1) = decode_toInt(I_set_y);
-
-//        /**
-//         * Check decoded values to be in DAC output range. Clipping
-//         * would be necessary
-//         */
-//        for (uint8_t k=0; k<2; k++) {
-//            if (*(toPlant_int+k) > UPPER_DAC_LIMIT_SIGNED)
-//                    *(toPlant_int+k) = UPPER_DAC_LIMIT_SIGNED;
-//            if (*(toPlant_int+k) < LOWER_DAC_LIMIT_SIGNED)
-//                    *(toPlant_int+k) = LOWER_DAC_LIMIT_SIGNED;
-//        }
-//    }
-//    else{
-//    /**<><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>
-//       <>  This branch eror-handles an ASG integrator_full event i.e.<>
-//       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>
-//       <>                    FUSE TRIPPED                            <>
-//       <><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<> */
-//       /* All safety related actions are done by the watchdog handler */
-//    }
-
-//   /**
-//    * @brief    Return argument toPlant_int is of type int16_t because
-//    *           it holds the --un--biased DAC output register values...
-//    *           This is a function pointer!
-//    * Casting from (float32_t) toPlant to int16_t type introduces
-//    * rounding errors which couldn't be prevented!
-//    */
-//    DAC_SecureSetDualChanSigned( *toPlant_int, *(toPlant_int+1));
-//
-//    return 0;
-//}
 
 // #ifdef MULTI_SETPOINT
 //     if (g.setpointSrc == INTERNAL_SETPOINT) {

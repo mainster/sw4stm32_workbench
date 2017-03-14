@@ -89,8 +89,7 @@ extern "C" {
  *
  * @param      var    The variable or structure.
  * @param      type   The type of var.
- *
- * @return     { description_of_the_return_value }
+ * @return     None
  */
 #define InitStruct(var, type) type var; memset(&var, 0, sizeof(type))
 
@@ -104,9 +103,9 @@ extern "C" {
 #define MAX_I_TERM      (MAX_LONG / 2)
 
 /**
-* @brief      Range limits for different data types. Needed to avoid
-*             sign/overflow problems
-*/
+ * @brief      Range limits for different data types. Needed to avoid
+ *             sign/overflow problems
+ */
 #define UPPER_SAT       100
 #define LOWER_SAT      -100
 #define FLOAT_MAX       1000
@@ -135,10 +134,12 @@ static volatile float   KP_INIT = 1;
  * @var        float KI_INIT
  * @brief      Initial value of integral gain.
  */
+
 /**
  * @var        float KD_INIT
  * @brief      Initial value of derivative gain.
  */
+
 /**
  * @var        float TF_INIT
  * @brief      Initial value of D-term filter proportional gain.
@@ -187,7 +188,6 @@ typedef enum {
  *             single PID instance.
  */
 typedef struct PID_DATA {
-
     float W_remf;                   //!< Angle set-point value [float]. (Updated via Qt interface).
     int16_t W_int;                  //!< Internal set-point (Updated via Qt interface).
     int16_t W_rem;                  //!< Angle set-point value [int16]. (Updated via Qt interface).
@@ -340,8 +340,7 @@ void pid_Init_Tp (void);
 /**
  * @brief      Initialization method for integral type PID instance.
  *
- *             Initialization of integral type PID controller parameters.
- *             Initialize the variables used by the PID algorithm.
+ *             Initial load an integral type PID instances controller parameters.
  *
  * @param      Kp       PID proportional gain value.
  * @param      Ki       PID integral gain value.
@@ -360,8 +359,7 @@ void pid_Init (float Kp, float Ki, float Kd, uint16_t setTf, uint16_t setTs,
 /**
  * @brief      Initialization method for double type PID instance.
  *
- *             Initialization of double type PID controller parameters.
- *             Initialize the variables used by the PID algorithm.
+ *             Initial load an double type PID instances controller parameters.
  *
  * @param      Kp      PID proportional gain value.
  * @param      Ki      PID integral gain value.

@@ -1,4 +1,4 @@
-17:09:40 **** Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
+13:57:32 **** Incremental Build of configuration Debug for project 20-STM32F4_PRJ_GALVO_v2 ****
 make all 
 Building file: ../startup/startup_stm32.s
 Invoking: MCU GCC Assembler
@@ -88,12 +88,8 @@ Building file: ../src/main.c
 Invoking: MCU GCC Compiler
 /media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c11 -DSTM32F429ZITx -DSTM32F429ZI -D__FPU_PRESENT=1 -DARM_MATH_CM4 -DSTM32F429I_DISC1 -DSTM32F4 -DSTM32 -DDEBUG -DUSE_STDPERIPH_DRIVER -DSTM32F429_439xx -UKEIL_IDE -UNO_FPU -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB" -I"/media/data/CODES/sw4stm32_workbench/00-STM32F4_LIBRARY_MDB/TM" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core" -I"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c: In function 'main':
-../src/main.c:389:2: warning: implicit declaration of function 'DMA_Config' [-Wimplicit-function-declaration]
-  DMA_Config(ADC_MultiConvBuff, ADC_N_REGULAR_CHANNELS);
-  ^
 ../src/main.c: In function 'fastConsoleCase':
-../src/main.c:743:8: warning: implicit declaration of function 'strcasecmp' [-Wimplicit-function-declaration]
+../src/main.c:738:8: warning: implicit declaration of function 'strcasecmp' [-Wimplicit-function-declaration]
     if (strcasecmp(sCmd, items_list[i].name) == 0) {
         ^
 Finished building: ../src/main.c
@@ -398,16 +394,12 @@ Finished building: ../StdPeriph_Driver/src/stm32f4xx_wwdg.c
  
 Building target: 20-STM32F4_PRJ_GALVO_v2.elf
 Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -L"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/lib/GCC" -T"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "20-STM32F4_PRJ_GALVO_v2.elf" @"objects.list"  -larm_cortexM4lf_math
-Finished building target: 20-STM32F4_PRJ_GALVO_v2.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "20-STM32F4_PRJ_GALVO_v2.elf" "20-STM32F4_PRJ_GALVO_v2.bin"
-arm-none-eabi-size "20-STM32F4_PRJ_GALVO_v2.elf"
-   text	   data	    bss	    dec	    hex	filename
-   3772	   1364	   1072	   6208	   1840	20-STM32F4_PRJ_GALVO_v2.elf
- 
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -L"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/lib/GCC" -T"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "20-STM32F4_PRJ_GALVO_v2.elf" @"objects.list"  
+src/main.o: In function `main':
+/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Debug/../src/main.c:345: undefined reference to `arm_pid_init_f32'
+makefile:37: recipe for target '20-STM32F4_PRJ_GALVO_v2.elf' failed
+collect2: error: ld returned 1 exit status
+make: *** [20-STM32F4_PRJ_GALVO_v2.elf] Error 1
 
-17:09:52 Build Finished (took 12s.0ms)
+13:57:43 Build Finished (took 10s.634ms)
 

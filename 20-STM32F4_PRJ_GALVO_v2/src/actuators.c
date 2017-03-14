@@ -65,7 +65,27 @@ int beamCtrl(beamCtrlSource_t src, tribool_state_t newState ) {
     return -1;
 }
 
-
+/**
+ * @brief      Safely update actuator control signals.
+ *
+ *             Safely means in terms of missplaced or oscillating controller
+ *             outputs. The analog watchdog peripheral takes care about
+ *             "out of normal range" events. If a converted position signal is
+ *             out of range, the watchdog handler starts time integration and
+ *             after "out of range" integrator reaches a defineable limit, the
+ *             watchdog takes the system to into "Tripped" state. Therefor a
+ *             global error flag becomes true AND the function pointer
+ *             DAC_SetDualChanSigned() that points to a wraper function, gots to
+ *             be replaced by a pointer that points to
+ *             DAC_SetDualChanSigned_Tripped(). In the DAC_SetDualChanSigned()
+ *             function, that is pointed to in tripped state, only outputs a
+ *             zero level DAC-Signal to take external hardware in a safe state.
+ *
+ * @param[in]  I_set_x   Pass current setpoint for x-channel.
+ * @param[in]  I_set_y   Pass current setpoint for y-channel.
+ *
+ * @return     Is Zero.
+ */
 int updateActuator_f(float I_set_x, float I_set_y) {
     int toPlant_intBuff[2] = { 0, 0 };
     int *toPlant_int = &toPlant_intBuff[0];
