@@ -8,8 +8,8 @@ md_stm32f4_disco.h:183: warning: argument 'None' of command @param is not found 
 md_stm32f4_gpio.h:191: warning: argument 'GPIO_Mode' of command @param is not found in the argument list of MD_GPIO_InitAlternate(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t AltFunct)
 ' for \link command
 
-irq_callbacks.c:150: warning: Illegal command ref as part of a title section
-periph2dma_conf.h:150: warning: argument 'int16_t' of command @param is not found in the argument list of ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize)
+irq_callbacks.c:154: warning: Illegal command ref as part of a title section
+periph2dma_conf.h:154: warning: argument 'int16_t' of command @param is not found in the argument list of ADC_ContScanMode_w_DMA_timeTrigd(__IO int16_t *MultiConvBuff, uint8_t memSize)
   parameter 'MultiConvBuff'
 system_stm32f4xx.c:460: warning: argument 'None' of command @param is not found in the argument list of SystemCoreClockUpdate(void)
 system_stm32f4xx.c:412: warning: argument 'None' of command @param is not found in the argument list of SystemInit(void)

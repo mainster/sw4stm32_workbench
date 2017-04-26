@@ -10,7 +10,7 @@
  *
  * @brief       Controlling beam and primary actuators.
  *
- * @verbatim
+   @verbatim
 
     ------------------------------------------------------------------------
 
@@ -30,7 +30,7 @@
 
     ------------------------------------------------------------------------
 
- * @endverbatim
+   @endverbatim
  *
  */
 #ifndef _ACTUATORS_H_

@@ -11,7 +11,9 @@
 *
 * @brief       PID compensator implementation.
 *
-    @verbatim
+   @verbatim
+
+    ------------------------------------------------------------------------
 
     Copyright (C) 2016  Manuel Del Basso
 
@@ -27,7 +29,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    @endverbatim
+    ------------------------------------------------------------------------
+
+   @endverbatim
 *
 */
 #ifndef _PID_H_

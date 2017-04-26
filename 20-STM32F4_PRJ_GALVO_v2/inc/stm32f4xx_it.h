@@ -1,45 +1,50 @@
 /**
-  ******************************************************************************
-  * @file    stm32f4xx_it.h 
-  * @author  MCD Application Team
-  * @version V1.3.0
-  * @date    13-November-2013
-  * @brief   This file contains the headers of the interrupt handlers.
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT 2013 STMicroelectronics</center></h2>
-  *
-  * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
-  * You may not use this file except in compliance with the License.
-  * You may obtain a copy of the License at:
-  *
-  *        http://www.st.com/software_license_agreement_liberty_v2
-  *
-  * Unless required by applicable law or agreed to in writing, software 
-  * distributed under the License is distributed on an "AS IS" BASIS, 
-  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  * See the License for the specific language governing permissions and
-  * limitations under the License.
-  *
-  ******************************************************************************
-  */
+ * @file        stm32f4xx_it.h
+ *
+ * @date        14 Mar 2017
+ * @author      Manuel Del Basso (mainster)
+ * @email       manuel.delbasso@gmail.com
+ *
+ * @ide         System Workbench ac6 (eclipse stm32)
+ * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
+ * @license     GNU GPL v3
+ *
+ * @brief       Provides interrupt callback handlers
+ *  
+   @verbatim
 
-/* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F4xx_IT_H
-#define __STM32F4xx_IT_H
+  ------------------------------------------------------------------------
+
+  Copyright (C) 2016  Manuel Del Basso
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+  ------------------------------------------------------------------------
+
+   @endverbatim
+ *
+ *
+ */
+
+#ifndef _STM32F4xx_IT_H_
+#define _STM32F4xx_IT_H_
 
 #ifdef __cplusplus
- extern "C" {
+  extern "C" {
 #endif 
 
-/* Includes ------------------------------------------------------------------*/
+/* Includes */
 #include "stm32f4xx.h"
-
-/* Exported types ------------------------------------------------------------*/
-/* Exported constants --------------------------------------------------------*/
-/* Exported macro ------------------------------------------------------------*/
-/* Exported functions ------------------------------------------------------- */
 
 void NMI_Handler(void);
 void HardFault_Handler(void);
@@ -53,9 +58,7 @@ void SysTick_Handler(void);
 void TimingDelay_Decrement(void);
 
 #ifdef __cplusplus
-}
+  }
 #endif
 
-#endif /* __STM32F4xx_IT_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+#endif /* _STM32F4xx_IT_H_ */

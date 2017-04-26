@@ -1,4 +1,4 @@
-/Debug/
-doc/
-DoxyfileStdErr.log
-*.md.html
+doxygen/*
+Debug/*
+DoxyfileStdErr.**
+*.sublime-workspace
