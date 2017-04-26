@@ -9,9 +9,12 @@
  * @stdperiph   STM32F4xx Standard peripheral drivers version 1.4.0 or greater required
  * @license		GNU GPL v3
  *
- * @verbatim
+ *
+   @verbatim
 
-	Copyright (C) 2016	Manuel Del Basso
+	------------------------------------------------------------------------
+
+	Copyright (C) 2016  Manuel Del Basso
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -25,7 +28,9 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	@endverbatim
+	------------------------------------------------------------------------
+
+   @endverbatim
  *
  */
 #include "md_stm32f4_gpio.h"

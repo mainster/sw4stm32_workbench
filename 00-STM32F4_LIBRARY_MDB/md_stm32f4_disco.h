@@ -11,9 +11,12 @@
  *
  * @brief       Definitions to extend board support for STM32F429i-DISCO and equivalent boards.
  *
- * @verbatim
+ *
+   @verbatim
 
-	Copyright (C) 2016	Manuel Del Basso
+	------------------------------------------------------------------------
+
+	Copyright (C) 2016  Manuel Del Basso
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -27,7 +30,9 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	@endverbatim
+	------------------------------------------------------------------------
+
+   @endverbatim
  *
  */
 #ifndef _MD_DISCO_H_

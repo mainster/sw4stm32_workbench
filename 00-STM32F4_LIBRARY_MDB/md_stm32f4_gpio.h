@@ -11,7 +11,10 @@
  *
  * @brief       Provides generic methods for GPIO module initialization and manipulation.
  *
+ *
    @verbatim
+
+    ------------------------------------------------------------------------
 
     Copyright (C) 2016  Manuel Del Basso
 
@@ -27,7 +30,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    @endverbatim
+    ------------------------------------------------------------------------
+
+   @endverbatim
  *
  */
 #ifndef MD_GPIO_H_
