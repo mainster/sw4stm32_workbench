@@ -17,4 +17,6 @@ trash/*
 README.html
 *.swp
 **/doxygen
+.metadata/**
+**/.git
 DoxyfileStdErr.log
