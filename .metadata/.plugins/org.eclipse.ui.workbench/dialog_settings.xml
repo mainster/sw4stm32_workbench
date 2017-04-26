@@ -19,19 +19,19 @@
 		<item value="1077" key="DIALOG_WIDTH"/>
 		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="828" key="DIALOG_HEIGHT"/>
-		<item value="166" key="DIALOG_X_ORIGIN"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="166" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="FileExtensionDialogSettings">
 		<item value="525" key="DIALOG_WIDTH"/>
 		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="319" key="DIALOG_HEIGHT"/>
-		<item value="759" key="DIALOG_X_ORIGIN"/>
 		<item value="162" key="DIALOG_Y_ORIGIN"/>
+		<item value="759" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="241" key="DIALOG_X_ORIGIN"/>
 		<item value="39" key="DIALOG_Y_ORIGIN"/>
+		<item value="241" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="-1" key="dialogHeight"/>
@@ -79,13 +79,15 @@
 	<section name="ZipFileImportWizard">
 	</section>
 	<section name="PreferencesExportWizard">
-		<item value="/media/data/CODES/sw4stm32_workbench/sw4-eclipse-prefs-03-02-2017.epf" key=""/>
+		<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-16-03-2017.epf" key=""/>
 		<item value="false" key="WizardPreferencesExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID"/>
 		<item value="true" key="WizardPreferencesExportPage1.EXPORT_ALL_PREFERENCES_ID"/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="/home/mainster/CODES_local/ccs6_workspaces/ccsv6.2.0_config_all_18-03-2017.epf"/>
+			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-16-03-2017.epf"/>
+			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-03-02-2017.epf"/>
 			<item value="/media/data/CODES/sw4stm32_workbench/sw4-eclipse-prefs-03-02-2017.epf"/>
 			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-21-01-2017.epf"/>
-			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-18-01-2017.epf"/>
 		</list>
 	</section>
 	<section name="FileSystemImportWizard">
@@ -93,8 +95,8 @@
 		<item value="PROJECT_LOC" key="WizardFileSystemResourceImportPage1.STORE_PATH_VARIABLE_NAME_ID"/>
 		<item value="true" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<item value="true" key="WizardFileSystemResourceImportPage1.STORE_CREATE_VIRTUAL_FOLDERS_ID"/>
-		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_LINKS_IN_WORKSPACE_ID"/>
 		<item value="true" key="WizardFileSystemResourceImportPage1.STORE_PATH_VARIABLE_SELECTED_ID"/>
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_LINKS_IN_WORKSPACE_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
 			<item value="/tmp/Show_10_Oszi/stm32f429"/>
 			<item value="/home/mainster/CODES_local/sw4stm32_workbench/00-STM32F429_LIBRARIES"/>

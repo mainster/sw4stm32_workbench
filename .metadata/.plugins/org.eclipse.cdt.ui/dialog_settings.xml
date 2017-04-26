@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="306" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_x"/>
-	<item value="5" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.last_focus"/>
 	<item value="0" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_y"/>
+	<item value="5" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.last_focus"/>
 	<item value="0" key="org.eclipse.cdt.uiformatter_page.white_space_tab_page.node"/>
 	<item value="Default C source template" key="LastUsedSourceTemplate"/>
+	<item value="7" key="formatter_page.modify_dialog_tab_page.last_focus_index"/>
 	<item value="Default C header template" key="LastUsedHeaderTemplate"/>
 	<item value="10" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.inner"/>
-	<item value="7" key="formatter_page.modify_dialog_tab_page.last_focus_index"/>
 	<item value="9" key="org.eclipse.cdt.uiformatter_page.line_wrapping_tab_page.last_category_index"/>
 	<item value="arm_cortexM4l_math" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<item value="3" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.option"/>
@@ -15,26 +15,24 @@
 	<item value="1139" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_width"/>
 	<item value="1053" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_height"/>
 	<item value="40" key="org.eclipse.cdt.ui.codeformatter.line_wrapping_tab_page.preview_line_width"/>
-	<section name="org.eclipse.cdt.ui.OPEN_ACTION_SELECTION_DIALOG_SECTION">
-		<item value="935" key="DIALOG_WIDTH"/>
-		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="590" key="DIALOG_HEIGHT"/>
-		<item value="769" key="DIALOG_X_ORIGIN"/>
-		<item value="219" key="DIALOG_Y_ORIGIN"/>
-	</section>
 	<section name="org.eclipse.cdt.internal.ui.text.QuickOutline">
 		<item value="true" key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_USE_PERSISTED_SIZE"/>
 		<item value="439" key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_Y_ORIGIN"/>
 		<item value="424" key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_WIDTH"/>
 		<item value="true" key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
-		<item value="412" key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_HEIGHT"/>
 		<item value="914" key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_X_ORIGIN"/>
+		<item value="412" key="org.eclipse.cdt.internal.ui.text.COutlineInformationControlDIALOG_HEIGHT"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.OPEN_ACTION_SELECTION_DIALOG_SECTION">
+		<item value="935" key="DIALOG_WIDTH"/>
+		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="590" key="DIALOG_HEIGHT"/>
+		<item value="219" key="DIALOG_Y_ORIGIN"/>
+		<item value="769" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
 		<item value="174" key="size.height"/>
 		<item value="539" key="size.width"/>
-	</section>
-	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>
 	<section name="PDOMSearchPage">
 		<item value="true" key="caseSensitive"/>
@@ -50,16 +48,18 @@
 			<item value="pragmaO0"/>
 		</list>
 	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+	</section>
 	<section name="org.eclipse.cdt.internal.ui.preferences.EditTemplateDialog_dialogBounds">
 		<item value="627" key="DIALOG_WIDTH"/>
 		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="738" key="DIALOG_HEIGHT"/>
-		<item value="535" key="DIALOG_X_ORIGIN"/>
 		<item value="83" key="DIALOG_Y_ORIGIN"/>
+		<item value="535" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="OptionalMessageDialog.hide.">
-		<item value="true" key="askReindex"/>
 		<item value="0" key="askReindex.detail"/>
+		<item value="true" key="askReindex"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>

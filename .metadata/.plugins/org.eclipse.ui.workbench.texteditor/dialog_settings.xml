@@ -9,12 +9,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="SystemCoreClock" key="selection"/>
+		<item value="Safely update actuator control signals" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Safely update actuator control signals"/>
 			<item value="SystemCoreClock"/>
 			<item value="MD_GPIO_LED_RD"/>
 			<item value="ADC_X_CHAN"/>
@@ -22,7 +23,6 @@
 			<item value="///&lt;"/>
 			<item value="TABLESIZE"/>
 			<item value="nRows"/>
-			<item value="NVECTORS"/>
 		</list>
 		<list key="replacehistory">
 			<item value="MD_GPIO_Cfg"/>
