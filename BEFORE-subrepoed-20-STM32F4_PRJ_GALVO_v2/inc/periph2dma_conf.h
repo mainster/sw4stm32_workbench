@@ -136,7 +136,7 @@ void RCC_Periph2DMA_Conf (void);
 void TIM2_DMA_Trigger_Config (FunctionalState TimerRun,
                               FunctionalState IntOn, uint16_t peri);
 
-// void DMA_Config ( __IO int16_t *MultiConvBuff, uint8_t memSize);
+void DMA_Config ( __IO int16_t *MultiConvBuff, uint8_t memSize);
 void AN_Watchdog_Config (void);
 
 /**

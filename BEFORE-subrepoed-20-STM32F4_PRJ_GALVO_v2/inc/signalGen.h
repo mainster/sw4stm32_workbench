@@ -188,7 +188,7 @@ extern struct triangWave triStruct;
  *             This pointer is used in case of enabled waveform generator and
  *             provides dynamically switching between different waveforms.
  */
-static int16_t *pSeq = NULL;
+static int16_t *pSeq __attribute__ ((unused)) = NULL;
 
 /**
  * @brief      DAC values sequence pointer for float represented waveform buffers.

@@ -1,0 +1,55 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+    "settings":
+    {
+        "font_size": 8,
+
+        "block_layout": {
+            "Doxygen": [
+                {
+                    "tags": [
+                        "@_brief"
+                    ],
+                    "context": [
+                        { "key": "kind",        "operator": "regex_match",  "operand": "^(?:var|constant)$" },
+                        { "key": "language",    "operator": "regex_match",  "operand": "^(?:json)$" }
+                    ]
+                },
+                {
+                    "tags": [
+                        "","","",
+                    // QT Doc Style ("\\") may replace "@" but it's NOT necessary
+
+                    // "@addtogroup",                           // GROUP_NAME may be auto-filled (search GROUP_NAME in this file)
+                    // "@memberof {file_base_name}",
+                    // "@copyright 2014-{now:%Y} {user_name}",  // fixed date from "current"
+                    // "@author {user_name}",                   // fixed author name
+                    // "@author",                               // author name have to be entered manually
+                    // "@author {user_name:doxy_capitalize();.1}. {user_name:doxy_chars(1,);doxy_capitalize();}",
+                    // "@date {now:%Y-%m-%dT%H:%M:%S%z}",       // iso format (see https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior)
+                    // "@date {now:%d-%b-%Y}",                  // dd-mon-YYYY format
+                    "@brief",  // or "@_brief" if you prefer have no explicit @brief (auto-brief approach)
+                    // "@details",
+                    "",
+                    "@param",
+                    "@tparam",
+                    "",
+                    "@return",
+                    //"@throws",
+                    //"",
+                    //"@\remark Complexity",
+                    ""
+                ],
+                    "context": [
+                        { "key": "kind",    "operator": "not_equal",  "operand": "" }
+                    ]
+                }
+            ],
+        },    
+    }
+}

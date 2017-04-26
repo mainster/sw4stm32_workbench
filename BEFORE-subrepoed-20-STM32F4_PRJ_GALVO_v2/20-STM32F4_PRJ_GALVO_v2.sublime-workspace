@@ -1,0 +1,1898 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"LED_RE",
+				"LED_RED_A"
+			],
+			[
+				"Std",
+				"StdPeriph_Driver/\tDir"
+			],
+			[
+				"end",
+				"endif\t(pid.h)"
+			],
+			[
+				"initi",
+				"initialization\t(md_stm32f4_gpio.h)"
+			],
+			[
+				"int16",
+				"int16_t"
+			],
+			[
+				"out",
+				"output"
+			],
+			[
+				"int",
+				"integrator"
+			],
+			[
+				"type",
+				"typedef"
+			],
+			[
+				"struc",
+				"structure\t(md_stm32f4_gpio.h)"
+			],
+			[
+				"occ",
+				"occured\t(isr_callbacks.c)"
+			],
+			[
+				"watch",
+				"watchdog"
+			],
+			[
+				"e",
+				"enumeration"
+			],
+			[
+				"initiali",
+				"initialization"
+			],
+			[
+				"Pu",
+				"PURPOSE"
+			],
+			[
+				"func",
+				"functionality"
+			],
+			[
+				"MD_GP",
+				"MD_GPIO_Init\t(md_stm32f4_gpio.h)"
+			],
+			[
+				"Ma",
+				"Main"
+			],
+			[
+				"Com",
+				"Compensator\t(main.c)"
+			],
+			[
+				"Seq",
+				"pSeq_f"
+			],
+			[
+				"incl",
+				"include\t(globals.h)"
+			],
+			[
+				"def",
+				"definition"
+			],
+			[
+				"Implen",
+				"Implement\t(main.c)"
+			],
+			[
+				"rep",
+				"represented\t(globals.h)"
+			],
+			[
+				"tria",
+				"triangWave"
+			],
+			[
+				"not",
+				"@note\tDoxygen"
+			],
+			[
+				"enum",
+				"enumerations"
+			],
+			[
+				"decla",
+				"declarations\t(main.c)"
+			],
+			[
+				"misc",
+				"miscellaneous"
+			],
+			[
+				"instance",
+				"instances\t(main.c)"
+			],
+			[
+				"init",
+				"initialized\t(main.c)"
+			],
+			[
+				"Misc",
+				"Miscellaneous"
+			],
+			[
+				"wav",
+				"waveform"
+			],
+			[
+				"select",
+				"selection"
+			],
+			[
+				"enumeration",
+				"enumerations"
+			],
+			[
+				"co",
+				"commands"
+			],
+			[
+				"set",
+				"set-point"
+			],
+			[
+				"ma",
+				"main\tmain()"
+			],
+			[
+				"bord",
+				"border-color"
+			],
+			[
+				"bor",
+				"border-width"
+			],
+			[
+				"Da",
+				"Data1"
+			],
+			[
+				"str",
+				"stripPath.sh\tFile"
+			],
+			[
+				"Doxyf",
+				"Doxyfile\tFile"
+			],
+			[
+				"A",
+				"ARGS"
+			],
+			[
+				"ga",
+				"galvo_pdfs/\tDir"
+			],
+			[
+				"add",
+				"@addtogroup\tDoxygen"
+			],
+			[
+				"ver",
+				"@verbatim\tDoxygen"
+			],
+			[
+				"PID",
+				"PID_IntMethode_t"
+			],
+			[
+				"PKG",
+				"PKG_DOXYDOXYGEN_EVOLUTION"
+			],
+			[
+				"SUB",
+				"SUBL_PACKAGE_CFG"
+			],
+			[
+				"SUBL",
+				"SUBL_USER_CFG"
+			],
+			[
+				"Ope",
+				"Open-Include"
+			],
+			[
+				"00",
+				"00-STM32F4"
+			],
+			[
+				"li",
+				"library"
+			],
+			[
+				"pro",
+				"project"
+			],
+			[
+				"sou",
+				"sources"
+			],
+			[
+				"Div",
+				"Divby3"
+			],
+			[
+				"border-lef",
+				"border-left-style"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"alig",
+				"text-align"
+			],
+			[
+				"Speicher",
+				"Speicherverwaltung"
+			],
+			[
+				"ARMv",
+				"ARMv7-A"
+			],
+			[
+				"Architektur",
+				"Architektur-Profile"
+			],
+			[
+				"Holdi",
+				"Holdings"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"bo",
+				"border-color"
+			],
+			[
+				"ali",
+				"vertical-align"
+			],
+			[
+				"mod1",
+				"mod1.mod.c\tFile"
+			],
+			[
+				"b",
+				"border-color"
+			],
+			[
+				"border-",
+				"border-style"
+			],
+			[
+				"boa",
+				"border-image"
+			],
+			[
+				"Inf",
+				"Informationen"
+			],
+			[
+				"ArmRoadMap",
+				"ArmRoadMap2.png\tFile"
+			],
+			[
+				"Ar",
+				"ArmRoadMap.png"
+			],
+			[
+				"fid",
+				"finden"
+			],
+			[
+				"Ent",
+				"Entwicklungsboard"
+			],
+			[
+				"JTAG",
+				"JTAGICE"
+			],
+			[
+				"Arch",
+				"Architektur"
+			],
+			[
+				"hardware",
+				"hardwarenaher"
+			],
+			[
+				"Progr",
+				"Programmierung"
+			],
+			[
+				"Pr",
+				"Projektes"
+			],
+			[
+				"Projektpla",
+				"Projektplanung"
+			],
+			[
+				"V-",
+				"V-Modell-XT-Bund"
+			],
+			[
+				"fnV",
+				"fnV-Modell-XT-Bund"
+			],
+			[
+				"V",
+				"V-Modell"
+			],
+			[
+				"V-Mo",
+				"V-Modell-XT"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"Cortex-M3",
+				"Cortex-M3-M4.png\tFile"
+			],
+			[
+				"pic",
+				"pics"
+			],
+			[
+				"Na",
+				"Nachfolgend"
+			],
+			[
+				"erä",
+				"erwähnt"
+			],
+			[
+				"STM",
+				"STM32F429i"
+			],
+			[
+				"Kap",
+				"Kapitel"
+			],
+			[
+				"subl",
+				"sublime-text-3"
+			],
+			[
+				"con",
+				".config/\tDir"
+			],
+			[
+				"Beze",
+				"Bezeichnung"
+			],
+			[
+				"Informa",
+				"Informationstechnik"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/main.c",
+			"settings":
+			{
+				"buffer_size": 41113,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/main.h",
+			"settings":
+			{
+				"buffer_size": 10955,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/syscalls.c",
+			"settings":
+			{
+				"buffer_size": 4356,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/system_stm32f4xx.c",
+			"settings":
+			{
+				"buffer_size": 46660,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/stm32f4xx_it.c",
+			"settings":
+			{
+				"buffer_size": 4721,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Doxyfile",
+			"settings":
+			{
+				"buffer_size": 109666,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/pid.h",
+			"settings":
+			{
+				"buffer_size": 14378,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/pid.c",
+			"settings":
+			{
+				"buffer_size": 16270,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/stm32f4xx_it.h",
+			"settings":
+			{
+				"buffer_size": 2160,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "DoxyfileStdErr.log",
+			"settings":
+			{
+				"buffer_size": 2634,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/actuators.h",
+			"settings":
+			{
+				"buffer_size": 7079,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "licverbatim",
+			"settings":
+			{
+				"buffer_size": 1096,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/actuators.c",
+			"settings":
+			{
+				"buffer_size": 4755,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/DoxyDoxygen/Doxy.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/DoxyDoxygen/Doxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/DoxyDoxygen/Doxy.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "cle",
+		"selected_items":
+		[
+			[
+				"cle",
+				"Clear Console"
+			],
+			[
+				"tra",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"bea",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"doxy",
+				"DoxyDoxygen: Update Comment With Preferred Style"
+			],
+			[
+				"set syn c",
+				"Set Syntax: C"
+			],
+			[
+				"set syn",
+				"Set Syntax: C++"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"trans",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"trim",
+				"Trimmer: Trim leading whitespace."
+			],
+			[
+				"trasn",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"tran",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"open",
+				"Open URL"
+			],
+			[
+				"trim tra",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"trimm",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"tras",
+				"DoxyDoxygen: Translate Selection"
+			],
+			[
+				"set sy Cm",
+				"Set Syntax: CMdb"
+			],
+			[
+				"set sy C",
+				"Set Syntax: CMdb"
+			],
+			[
+				"tr",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"buil",
+				"Build With: mkDoxy"
+			],
+			[
+				"set ba",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"set C",
+				"Set Syntax: C Improved"
+			],
+			[
+				"form",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"shell",
+				"ShellCommand"
+			],
+			[
+				"forma",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"for",
+				"SublimeAStyleFormatter: Format Current File"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"to",
+				"Toggle Fold selected text"
+			],
+			[
+				"clear",
+				"Clear Console"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"toggle",
+				"Toggle Fold selected text"
+			],
+			[
+				"fold",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"dia",
+				"Package Control: Disable Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta\t",
+				"Package Control: Install Package"
+			],
+			[
+				"synta C",
+				"Set Syntax: C"
+			],
+			[
+				"giti",
+				"Gitignore: New gitignore"
+			],
+			[
+				"set mark",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"shell_md",
+				"shell_mdmerge"
+			],
+			[
+				"clea",
+				"Clear Console"
+			],
+			[
+				"mark pre",
+				"Markdown HTML Preview"
+			],
+			[
+				"mar",
+				"Markdown HTML Preview"
+			],
+			[
+				"md",
+				"shell_mdmerge"
+			],
+			[
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"mark prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Markdown HTML Preview"
+			],
+			[
+				"markdownEd",
+				"MarkdownEditing: Fold Level 4 Sections"
+			],
+			[
+				"syntax ma",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"syntax c",
+				"Set Syntax: C"
+			],
+			[
+				"foot",
+				"MarkdownEditing: New Footnote"
+			],
+			[
+				"markdown link",
+				"Snippet: Markdown Hyperlink"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"diag",
+				"Diagram: Generate Diagrams for Active View"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"add repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"markdow",
+				"Markdown HTML Preview"
+			]
+		],
+		"width": 629.0
+	},
+	"console":
+	{
+		"height": 206.0,
+		"history":
+		[
+			"sublime.run_command(\"toggle_fold\", {\"args\": true})",
+			"sublime.run_command(\"toggle_fold\", true)",
+			"sublime.run_command(\"word_wrap\")",
+			"sublime.run_command(\"toggle_fold\")",
+			"sublime.run_command(\"open_include_edit_settings\", {\"base_file\":\"${packages}/${module_name}/Doxy.sublime-settings\", \"user_file\": \"${packages}/User/Doxy.sublime-settings\",})",
+			"sublime.run_command(\"doxy_edit_settings\", {\"base_file\":\"${packages}/${module_name}/Doxy.sublime-settings\", \"user_file\": \"${packages}/User/Doxy.sublime-settings\",})",
+			"sublime.run_command(\"open_include_edit_settings\", {\"base_file\":\"${packages}/${module_name}/Doxy.sublime-settings\", \"user_file\": \"${packages}/User/Doxy.sublime-settings\",})",
+			"sublime.run_command(\"doxy_edit_settings\", {\"base_file\":\"${packages}/${module_name}/Doxy.sublime-settings\", \"user_file\": \"${packages}/User/Doxy.sublime-settings\",})",
+			"import open_include.py",
+			"import open_include",
+			"import sublime_plugin.MultiCmdSelf",
+			"import sublime.MultiCmdSelf",
+			"MultiCmdSelf",
+			"import MultiCmdSelf",
+			"window.extract_variables()",
+			"l",
+			"os.syst",
+			"os.system",
+			"os.system('reset')",
+			"os.system('clear')",
+			"def cls(): os.system('clear')",
+			"def cls():",
+			"import os",
+			"window.clear",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\"})",
+			"view.run_command(\"show_panel\", {\"console\", \"visible\": \"false\"})",
+			"view.run_command(\"show_panel\", \"panel\": \"console\", \"visible\": \"false\")",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"visible\": \"false\"})",
+			"view.run_command(\"show_panel\", {\"panel\": \"glue\", \"toggle\": \"false\"})",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"toggle\": \"false\"})",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"toggle\": \"true\"})",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"toggle\": \"true\"}})",
+			"view.run_command(\"show_panel\", {\"panel\": {\"console\": \"hide\"}})",
+			"view.run_command(\"show_panel\", {\"panel\": {\"console\": \"open\"}})",
+			"windows.show_panel",
+			"window.extract_variables()",
+			"extract_variables()",
+			"window.extract_variables()",
+			"window.extract_variables(packages)",
+			"window.extract_variables({packages})",
+			"window.extract_variables({\"packages\"})",
+			"window.extract_variables()",
+			"window.extract_variables(\"packages\")",
+			"sublime.Settings.has(dd)",
+			"sublime.Settings.has(\"s\")",
+			"sublime.Settings",
+			"sublime.settings",
+			"window.extract_variables(\"packages\")",
+			"window.extract_variables()",
+			"sublime.Window extract_variables()",
+			"sublime.extract_variables()",
+			"sublime.extract_variables",
+			"sublime.show_settings(\"Non-text-files\")",
+			"sublime.load_settings(\"Non-text-files\")",
+			"sublime.load_settings(base_name)",
+			"view.run_command(\"new_file\", {\"file\": {\"${package}/Non-text-files.sublime-settings\"}})",
+			"view.run_command(\"new_file\", {\"file\": \"${package}/Non-text-files.sublime-settings\"})",
+			"view.run_command(\"open_file\", {\"file\": \"${package}/Non-text-files.sublime-settings\"})",
+			"view.run_command(\"goto_line\", {\"line\": 10})",
+			"view.run_command(\"goto_line\", \"4\" )",
+			"view.run_command(\"goto_line\", \"line\": 4)",
+			"view.run_command(\"goto_line\", 4)",
+			"view.run_command(\"goto_line\")",
+			"view.run_command(\"open_file\")",
+			"view.run_command(\"open_file\", {\"file\": \"${packages}/Non-text-files.sublime-settings\"})",
+			"import ",
+			"import help",
+			".env",
+			"env",
+			"view.help",
+			"view.list",
+			"view",
+			"view.run_command(\"open_file\", {\"file\": \"${packages}/Non-text-files.sublime-settings\"})",
+			"view.run_command(\"goto_line\", {\"line\": 10})",
+			" os.environ",
+			"os",
+			"import os",
+			"print os.environ['HOME']",
+			"import os",
+			"view.packages",
+			"$packages",
+			"Help",
+			"help",
+			"?",
+			"reset"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/TM",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src"
+	],
+	"file_history":
+	[
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/20-STM32F4_PRJ_GALVO_v2.sublime-project",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/TM/tm_stm32f4_usart.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/DoxyfileStdErr.log",
+		"/media/data/media/PICSlistSort2k2",
+		"/media/data/media/PICSlist",
+		"/media/data/media/PICSlistSort1",
+		"/media/data/media/PICSlistSort2",
+		"/media/data/media/PICSfound",
+		"/media/data/media/PICSlistSort2s",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_rcc.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/pid.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/pid.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/irq_callbacks.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/stm32f4xx_it.c",
+		"/home/mainster/.config/sublime-text-3/Packages/Verbose/README.md",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/mdb_gpio.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/mdb_gpio.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/irq_callbacks.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/Doxyfile",
+		"/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/usb_cdc_device/usb_conf.h",
+		"/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/usb_cdc_device/usbd_conf.h",
+		"/media/data/CODES/sw4stm32_workbench/24-STM32F4_USB_VCP/ub_lib/usb_cdc_lolevel/usbd_cdc_core.c",
+		"/media/data/CODES/sw4stm32_workbench/24-STM32F4_USB_VCP/ub_lib/usb_cdc_lolevel/usbd_cdc_core.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/actuators.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/mdb_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_adc.h",
+		"/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/usb_cdc_device/usbd_cdc_core.c",
+		"/media/data/CODES/sw4stm32_workbench_tm/00-STM32F4xx_STANDARD_PERIPHERAL_DRIVERS/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/tm_stm32f4_disco.h",
+		"/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/tm_stm32f4_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/main.c",
+		"/media/data/CODES/sw4stm32_workbench_hal_tm/CROSS_TM_USB_VCP/src/main.c",
+		"/media/data/CODES/sw4stm32_workbench_hal/TM_GITHUB/21-STM32Fxxx_USB_TO_UART/User/defines.h",
+		"/media/data/CODES/sw4stm32_workbench_hal/21-STM32F4_HAL_TM_USB_TO_USART/TM/USB_Device/Class/MSC/Inc/usbd_msc.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/device/stm32f4xx.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/system_stm32f4xx.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/main.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/system_stm32f4xx.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_delay.c",
+		"/home/mainster/Desktop/renaul",
+		"/media/data/CODES/sw4stm32_workbench_hal_tm/TM_GITHUB/21-STM32Fxxx_USB_TO_UART/project.uvguix.MajerleT",
+		"/media/data/CODES/sw4stm32_workbench_hal_tm/\u001b[35m\u001b[KTM_GITHUB/21-STM32Fxxx_USB_TO_UART/project.uvguix.MajerleT\u001b[m\u001b[K\u001b[36m\u001b[K",
+		"/media/data/CODES/sw4stm32_workbench_tm/00-STM32F429_LIBRARIES/defines_example.h",
+		"/media/data/CODES/sw4stm32_workbench_tm/24-STM32F429_USB_VCP/User/defines.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/DoxyfileStdErr.log.bak",
+		"/media/data/CODES/sw4stm32_workbench_tm/MD_24_STM32_USB_VCP/inc/stm32f4xx_it.h",
+		"/media/data/CODES/sw4stm32_workbench_tm/MD_24_STM32_USB_VCP/include-.list",
+		"/media/data/CODES/sw4stm32_workbench/trash/tm_stm32f4_usb_vcp/tm_stm32f4_usb_vcp.c",
+		"/media/data/CODES/sw4stm32_workbench_tm/MD_24_STM32_USB_VCP/project_md1.uvprojx",
+		"/media/data/CODES/sw4stm32_workbench/README.md",
+		"/media/data/CODES/sw4stm32_workbench_tm/stm32f4_tm/24-STM32F429_USB_VCP/project.uvprojx",
+		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Default (Linux).sublime-keymap",
+		"/media/data/CODES/sw4stm32_workbench_tm/stm32f4_tm/24-STM32F429_USB_VCP/User/readme.txt",
+		"/media/data/CODES/sw4stm32_workbench/trash/tm_stm32f4_usb_vcp/tm_stm32f4_usb_vcp.h",
+		"/media/data/routerpassview165/RouterPassView.cfg",
+		"/media/data/routerpassview165/readme.txt",
+		"/media/data/arcadyan_decrypter_v0.05a/out.txt",
+		"/media/data/arcadyan_decrypter_v0.05a/Out.txt",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_timer.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart_dma.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.c~",
+		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_disco.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_pwm.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/adc_dac_dma.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/arm_architect.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/console.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/globals.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/helper.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/nvic_config.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/periph2dma_conf.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/signalGen.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/stm32_eval_legacy.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/stm32f4xx_it.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/isr_callbacks.h",
+		"/home/mainster/scripts/placeCFuncHead.sh",
+		"/home/mainster/scripts/placeQtHead",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/CfuncHead.sublime-snippet",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/adc_dac_dma.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/periph2dma_conf.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/actuators.c",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/doxyGroups.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/hlines.sublime-snippet",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/isr_callbacks.c",
+		"/home/mainster/.config/sublime-text-3/Packages/User/CfuncHead.sublime-snippet",
+		"/media/data/SoundWireServer/README.txt",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/helper.c",
+		"/home/mainster/CODES_local/sw4stm32_workbench/02-STM32F429_MD_LED_BUTTON/inc/defines.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/md_stm32f4_dac_waveform.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_gpio.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/inc/stm32f4xx_conf.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_usart.h~",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/signalGen.c",
+		"/home/mainster/CODES_local/c_linux/array2d_sizeoff.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/console.c",
+		"/media/data/whz/modulunterlagen/ELT236_EmbeddedSystems/Anleitungen/2013-SS_Prak1.txt",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/tools.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/list",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.h",
+		"/home/mainster/.config/sublime-text-3/Packages/User/customSnippets/hlines.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/nonUserBaseConfigPlacer.sh",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/hlines.sublime-snippet",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/defines.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/nvic_config.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/README.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Log.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/User/CMdb.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/User/mkDoxy.sublime-build",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/INTRUDUCTION.md",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/mainpage.dox",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc/tools.h",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/dsp_lib/Examples/arm_class_marks_example/ARM/arm_class_marks_example_f32.c",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/CMSIS/core/arm_math.h",
+		"/home/mainster/scripts/stripPath.sh",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/NEwDoxy",
+		"/tmp/.searchDocTEMPLATE_2017-01-30_011333_pdfs",
+		"/home/mainster/scripts/searchDocTEMPLATE.sh",
+		"/home/mainster/scripts/searchDocWhz.sh",
+		"/tmp/Doxyfile",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/StdPeriph_Driver/src/stm32f4xx_pwr.c"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<open folders>,/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB",
+			"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB,/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src,/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/inc",
+			"<open folders>,/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"call",
+			"pidData\\_t",
+			"\t\\/\\*",
+			"$",
+			"^",
+			"'",
+			"' '",
+			".*F-107.*\n",
+			".*trash.*\n",
+			".*texmf-dist.*\n",
+			".*/doc/html.*\n",
+			".*android-sdk.*\n",
+			".*highspeed-team.*\n",
+			".*Hockenheim.*\n",
+			".*FSS.*\n",
+			".*FS_Italy.*\n",
+			"orig",
+			"methode",
+			"Initialisation",
+			"Initialise",
+			"PID_struct_type",
+			"ingr",
+			"ASG_INTEGRATOR_TRIPPING_DEFAULT",
+			"Main_func",
+			"=",
+			",",
+			"symbols",
+			"\\\\",
+			"usbd_desc.c",
+			"\\n",
+			"\\.\\.",
+			"\\\\",
+			"<\\/?FilePath>",
+			"<FilePath>(.*)<\\/FilePath>",
+			";",
+			"isr_callbacks",
+			"TIM2_IRQHandler",
+			"TIM4_IRQHandler",
+			"ADC_IRQHandler",
+			"svg",
+			"DMA2_Stream0_IRQ_Handler",
+			"ADC_IRQ",
+			"DBG_PID_TIMING_TOG",
+			"Internal only, no remote offset or something else",
+			"AnalogWatchdogIntHandler",
+			"APP_IRQ_Handler",
+			"/* C++ detection */",
+			"extern C {",
+			"ADC_ContScanMode_w_DMA_timeTrigd",
+			"DMA_Config (",
+			"DMA_Config",
+			"RCC_Configuration",
+			"Timer controlled group scan restart",
+			"RCC_Configuration",
+			"memSize",
+			"ADC_Config",
+			"ADC_Configuration",
+			"Analog_WDG_Configuration",
+			"DMA_Configuration",
+			"TIM2_DMA_triggerConfiguration",
+			"AnalogWatchdog_Configuration",
+			"FunctionalState",
+			"RCC_Configuration",
+			"pid_Init_Tp",
+			"[us]",
+			"\\/\\*\\*<(.*)\\*\\/$",
+			"@addtogroup .*\\_Functions",
+			"addtogroup",
+			"UPPER_DAC_LIMIT",
+			"\\s{2,}.*",
+			"^[\\d\\w]*$",
+			"^[\\w]*$",
+			"^([\\w\\_0-9]+)$",
+			"void /*",
+			"ALGORITHM",
+			"ADJUSTING_SETPOINT",
+			"ALGO_OLD",
+			"addtogroup",
+			"init_globalStructs",
+			"ASG_TRIPPING_UPPER_DEFAULT",
+			"ASG_TRIPPING_LOWER_DEFAULT",
+			"lowerThreshold",
+			"intUpperLimit",
+			"intLowerLimit",
+			"ASG_DISCHARGING_INTEGRATOR",
+			"intLowerLimit",
+			"upperVal",
+			"lowerVal",
+			"IntUpperLimit",
+			"IntUpper",
+			"IntLower",
+			"upperVal",
+			"lowerVal",
+			"ass_int_state_t",
+			"autoSaveSystem_t",
+			"Auto Safestate System",
+			" ASS",
+			"ASS",
+			"APP_Actuators",
+			"Analog Subsystem",
+			"Analog subsystem",
+			"ticks",
+			"tools.h",
+			" _Macros",
+			"tools.h",
+			" _Macros",
+			"MD_DAC_",
+			"@{",
+			"@{.",
+			" * @retval     None.   { description }\n",
+			" * @retval     None.      { description }\n",
+			" * @return     { description_of_the_return_value }\n",
+			"(@(brief|note|param|retval).*[^\\.])$",
+			"@((brief|note|param|retval).*[^\\.])$",
+			"enumerations",
+			"LED_GREEN_A",
+			"GPIO_AHB_CLK",
+			"MDB_GPIO_DRIVER_STATE_t",
+			"MDB_GPIO_NAME_t",
+			"Actuator function definitions. ",
+			"stm32f4xx_gpio.h",
+			"stm32f4_gpio.h",
+			"[^\\_]stm32f4\\_gpio\\.h",
+			"[^_]stm32f4_gpio.h",
+			"stm32f4_gpio.h",
+			"GPIO_Pin_4",
+			"APP_Pid_",
+			"APP_Analog"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\t/**<",
+			"\"",
+			"",
+			"\n",
+			"",
+			"method",
+			"Initialization",
+			"Initialize",
+			"\\t",
+			"\n#define ",
+			"/",
+			"  ",
+			".",
+			"/",
+			"",
+			"\n",
+			"irq_callbacks",
+			"TIM2_IRQ_Handler",
+			"TIM4_IRQ_Handler",
+			"ADC_IRQ_Handler",
+			"",
+			"extern \"C\" {",
+			"RCC_Periph2DMA_Conf",
+			"ADC_Scan_Group_Config",
+			"ADC_Config",
+			"AN_Watchdog_Config",
+			"DMA_Config",
+			"TIM2_DMA_Trigger_Config",
+			"Analog_WDG_Configuration",
+			"@si{us}",
+			"//!<\\1",
+			"",
+			"/*",
+			"ASG_UPPER_THRESHOLD_DEFAULT",
+			"ASG_LOWER_THRESHOLD_DEFAULT",
+			"upperThreshold",
+			"lowerThreshold",
+			"intUpperLimit",
+			"intLowerLimit",
+			"intUpperLimit",
+			"intUpper",
+			"IntUpperLimit",
+			"IntLowerLimit",
+			"ASG_INT_STATE_t",
+			"ActuatorSafestateGuard_t",
+			"Actuator Safestate Guard",
+			" ASG",
+			"helper.h",
+			"DAC_",
+			"\n * @{",
+			"@{",
+			"",
+			"\\1.",
+			"\\2.",
+			"enumeration",
+			"MD_GPIO_DRIVER_STATE_t",
+			"MD_GPIO_NAME_t",
+			"Pid_",
+			"\\1 (mainster)",
+			"PID_",
+			"}, \n",
+			" ",
+			"TODO",
+			"MD_GPIO_STATE_t",
+			"misc_asg",
+			"\\1.",
+			"",
+			"(\\1)",
+			"globals.h",
+			"global.h",
+			"THEFLAG",
+			"html",
+			"text",
+			"text.html",
+			"text",
+			"log",
+			"//!<",
+			"",
+			" ASG_",
+			"/*",
+			"NVIC_Configuration",
+			"NVIC_Init",
+			"NVIC_InitStruct_TIM",
+			"",
+			" *     ",
+			" (",
+			"",
+			"//!<",
+			"MD_APP",
+			"PDFS",
+			"ARGS",
+			"ASG",
+			"WavItems_t",
+			"MiscCmds_t",
+			"DacLimit_t",
+			"MiscItem_t",
+			"SetPointSrc_t",
+			"CmdItem_t",
+			"PidStructType_t",
+			"PidInstanceStructType_t",
+			"Actuators_",
+			"Main_",
+			"APP_Main",
+			"APP_Main_Variables",
+			"APP_Main_Typedefs",
+			"@b",
+			"\\1asg\\2",
+			"",
+			"autoSaveSystem_t ",
+			"wav_items_t",
+			"itemsw_list",
+			"itemsw_t",
+			"MD_APP",
+			"",
+			"MD_APP ",
+			"MD_APP",
+			"\\1: ${\\1}\\\\n",
+			"",
+			"\\1: ${\\1}\\\\n",
+			"",
+			"\"",
+			"\"\\1: ${\\1}\\\\n\"",
+			"",
+			"${\\1}\\n",
+			"",
+			"//!< \\1",
+			"//!<",
+			"@f"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 41113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1216,
+								1216
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "inc/main.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10955,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/syscalls.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4356,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/system_stm32f4xx.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 46660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5343.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/stm32f4xx_it.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2922,
+								2922
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 716.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Doxyfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 109666,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								102817,
+								102817
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/DoxyDoxygen (evolution)/INI.tmLanguage",
+							"tab_size": 5,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 30094.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "inc/pid.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10433,
+								10433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5247.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "src/pid.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2433,
+								2433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 515.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "inc/stm32f4xx_it.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2160,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								364,
+								364
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "DoxyfileStdErr.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2634,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1870,
+								1870
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/User/Log.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "inc/actuators.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7079,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6740,
+								6740
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "licverbatim",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1096,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								608,
+								608
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/actuators.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4755,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.ShellCommand":
+	{
+		"height": 88.0
+	},
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 88.0
+	},
+	"pinned_build_system": "Packages/User/mkDoxy.sublime-build",
+	"project": "20-STM32F4_PRJ_GALVO_v2.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"syscalls",
+				"src/syscalls.c"
+			],
+			[
+				"main",
+				"src/main.c"
+			],
+			[
+				"mdb_gpio",
+				"00-STM32F4_LIBRARY_MDB/mdb_gpio.c"
+			],
+			[
+				"isr_callbacks",
+				"src/isr_callbacks.c"
+			],
+			[
+				"pid",
+				"src/pid.c"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/media/data/CODES/sw4stm32_workbench/01-STM32F4_MD_HELLO/01-STM32F4_MD_HELLO.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 291.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
