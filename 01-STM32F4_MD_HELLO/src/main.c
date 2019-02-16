@@ -61,14 +61,14 @@ int main(int a, char **arg) {
 			/* Do here stuff only once */
 			/* This function will return 0 until you release button and press it again */
 			/* For example, you can send data here to USART, but only once when button is pressed */
-			GPIOD->BSRRL = LED_BLUE;
+//			GPIOD->BSRRL = LED_BLUE;
 		}
 
 		/* Do the stuff only once when button is released */
 		if (MD_DISCO_ButtonOnReleased()) {
 			/* DO here stuff only once */
 			/* This function will return 0 until you press button and release it again */
-			GPIOD->BSRRH = LED_BLUE;
+//			GPIOD->BSRRH = LED_BLUE;
 		}
     }
 }
