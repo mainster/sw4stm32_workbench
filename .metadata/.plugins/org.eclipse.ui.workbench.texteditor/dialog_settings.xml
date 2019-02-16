@@ -8,31 +8,31 @@
 		<item value="384" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="false" key="isRegEx"/>
-		<item value="Safely update actuator control signals" key="selection"/>
+		<item value="true" key="isRegEx"/>
+		<item value="MD_USART_GetUsartNumber" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="MD_USART_GetUsartNumber"/>
+			<item value="TM_USART_Buffer"/>
+			<item value="^ [0-9]+ "/>
+			<item value=" 248 "/>
 			<item value="Safely update actuator control signals"/>
 			<item value="SystemCoreClock"/>
 			<item value="MD_GPIO_LED_RD"/>
 			<item value="ADC_X_CHAN"/>
-			<item value="MD_GPIO_Init"/>
-			<item value="///&lt;"/>
-			<item value="TABLESIZE"/>
-			<item value="nRows"/>
 		</list>
 		<list key="replacehistory">
+			<item value="MD_USART_Buffer"/>
+			<item value=""/>
 			<item value="MD_GPIO_Cfg"/>
 			<item value="//!&lt;"/>
 			<item value="nRows"/>
 			<item value="//!&lt; \1"/>
 			<item value="//*!"/>
 			<item value="MD_GPIO_PuPd_NOPULL"/>
-			<item value="MD_"/>
-			<item value="coefficients"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

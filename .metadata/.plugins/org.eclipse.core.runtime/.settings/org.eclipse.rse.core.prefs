@@ -1,3 +1,4 @@
+activeuserprofiles=Team;XPS;x58a;xps
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=mainster
-useridperkey=XPS.Local\=mainster;
+useridperkey=XPS.Local\=mainster;x58a.Local\=mainster;

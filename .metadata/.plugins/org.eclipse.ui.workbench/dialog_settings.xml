@@ -46,8 +46,9 @@
 		</list>
 	</section>
 	<section name="PreferencesImportWizard">
-		<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-18-01-2017.epf" key=""/>
+		<item value="/media/data/CODES/ccs7_theBeast/ccs7_theBeast_cfg_26-05-17.epf" key=""/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="/media/data/CODES/ccs7_theBeast/ccs7_theBeast_cfg_26-05-17.epf"/>
 			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-18-01-2017.epf"/>
 			<item value="/tmp/theme-6093.epf"/>
 		</list>
@@ -68,7 +69,7 @@
 	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.export.Preferences" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
-		<item value="org.eclipse.ui.wizards.import.FileSystem" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="org.eclipse.ui.wizards.import.Preferences" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
