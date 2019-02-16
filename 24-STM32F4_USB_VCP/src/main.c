@@ -19,8 +19,8 @@
 //              "cmsis_boot/stm32f4xx.h"
 //              "cmsis_boot/system_stm32f4xx.c"
 //
-// Librarys : Die eingesetzen Library für USB-CDC und UART
-//            sind abgeänderte Versionen und tragen daher
+// Librarys : Die eingesetzen Library fï¿½r USB-CDC und UART
+//            sind abgeï¿½nderte Versionen und tragen daher
 //            eine Alpha-Versions-Nr (V:0.1)
 //
 // Portpins :
@@ -49,7 +49,7 @@ int main(void)
   SystemInit(); // Quarz Einstellungen aktivieren
 
   // init vom CDC
-  UB_USB_CDC_Init();
+  UB_USB_CDC_Init(USB_OTG_HS_CORE_ID);
 
   // init vom UART
   UB_Uart_Init();

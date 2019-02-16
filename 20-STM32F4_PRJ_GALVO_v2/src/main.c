@@ -323,9 +323,7 @@ typedef enum {
 /*                              Main entry point                              */
 /******************************************************************************/
 int main(void) {
-
     /**< Private main variables */
-    TM_PWM_TIM_t TIM_Data;    //!< Timer data for PWM
 
     /**< Initialize System */
     SystemInit();
@@ -362,16 +360,7 @@ int main(void) {
     }
 
     /**< Initialize USART1-> TX: PA9, RX: PA10. */
-    TM_USART_Init(USART1, (TM_USART_PinsPack_t) 0, 115200);
-
-    /**< Initialize TIM3, 1kHz frequency */
-    TM_PWM_InitTimer(TIM3, &TIM_Data, 1000);
-
-    /**< Initialize TIM2, Channel 1, PinsPack 2 = PA5 */
-    TM_PWM_InitChannel(TIM3, TM_PWM_Channel_3, TM_PWM_PinsPack_2);   // ???? PB0
-
-    /* Set default duty cycle */
-    TM_PWM_SetChannelPercent(TIM3, &TIM_Data, TM_PWM_Channel_3, duty);
+    MD_USART_Init(USART1, (MD_USART_PinsPack_t) 0, 115200);
 
     /**< Initialize Delay library. */
     //  TM_DELAY_Init();
@@ -446,7 +435,7 @@ int main(void) {
             fastConsoleCase(&PIDY);
 
             for (uint8_t k = 0; k < 20; k++) {
-                //                if (TM_USART_BufferFull(USART1)) {
+                //                if (MD_USART_BufferFull(USART1)) {
                 //                    printf( MSG_GUI_UART1_RECV_BUFF_FULL );
                 //                    fastConsoleCase(&PIDY);
                 //                    TM_USART_ClearBuffer(USART1);
@@ -474,7 +463,7 @@ int main(void) {
             g.setpointSrc = REMOTE_OPENLOOP;
 
             for (uint8_t k = 0; k < 20; k++) {
-                if (TM_USART_BufferFull(USART1)) {
+                if (MD_USART_BufferFull(USART1)) {
                     printf( MSG_GUI_UART1_RECV_BUFF_FULL);
                     fastConsoleCase(&PIDY);
                     TM_USART_ClearBuffer(USART1);
@@ -494,7 +483,7 @@ int main(void) {
             fastConsoleCase(&PIDY);
 
             for (uint8_t k = 0; k < 20; k++) {
-                if (TM_USART_BufferFull(USART1)) {
+                if (MD_USART_BufferFull(USART1)) {
                     printf( MSG_GUI_UART1_RECV_BUFF_FULL);
                     fastConsoleCase(&PIDY);
                     TM_USART_ClearBuffer(USART1);
@@ -514,7 +503,7 @@ int main(void) {
             fastConsoleCase(&PIDY);
 
             for (uint8_t k = 0; k < 20; k++) {
-                if (TM_USART_BufferFull(USART1)) {
+                if (MD_USART_BufferFull(USART1)) {
                     printf( MSG_GUI_UART1_RECV_BUFF_FULL);
                     fastConsoleCase(&PIDY);
                     TM_USART_ClearBuffer(USART1);
@@ -662,7 +651,7 @@ void fastConsoleCase(arm_pid_instance_f32 *pid) {
 
     //    int i;
 
-    volatile uint8_t nChars = TM_USART_Gets( USART1, &sUart[0], UART_BUFF_SIZE);
+    volatile uint8_t nChars = MD_USART_Gets( USART1, &sUart[0], UART_BUFF_SIZE);
 
     /**
      * Check for serial data frames >= UART_BUFF_SIZE

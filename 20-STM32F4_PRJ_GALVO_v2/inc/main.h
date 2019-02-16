@@ -52,8 +52,7 @@
 #include "md_stm32f4_delay.h"
 #include "md_stm32f4_disco.h"
 #include "md_stm32f4_timer.h"
-#include "tm_stm32f4_pwm.h"
-#include "tm_stm32f4_usart.h"
+#include "md_stm32f4_usart.h"
 
 /* Core includes */
 #include "core_cm4.h"

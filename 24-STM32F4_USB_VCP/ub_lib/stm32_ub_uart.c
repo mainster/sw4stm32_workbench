@@ -11,7 +11,7 @@
 // Funktion : UART (RS232) In und OUT
 //            Receive wird per Interrupt behandelt
 //
-// Hinweis  : mögliche Pinbelegungen
+// Hinweis  : mï¿½gliche Pinbelegungen
 //            UART1 : TX:[PB6] RX:[PB7]  (PA9 und PA10 sind von USB belegt)
 //            UART2 : TX:[PA2,PD5] RX:[PA3,PD6]
 //            UART3 : TX:[PB10,PC10,PD8] RX:[PB11,PC11,PD9]
@@ -39,7 +39,7 @@ UART_t UART[] = {
   {COM3,RCC_APB1Periph_USART3,GPIO_AF_USART3,USART3,115200,USART3_IRQn, // UART3 mit 115200 Baud
 // PORT , PIN      , Clock              , Source
   {GPIOC,GPIO_Pin_10,RCC_AHB1Periph_GPIOC,GPIO_PinSource10},  // TX an PC10
-  {GPIOC,GPIO_Pin_11,RCC_AHB1Periph_GPIOC,GPIO_PinSource11}}, // RX an PC11
+  {GPIOC,GPIO_Pin_9,RCC_AHB1Periph_GPIOC,GPIO_PinSource9}}, // RX an PC9
 };
 
 
@@ -89,7 +89,7 @@ void UB_Uart_Init(void)
     // Oversampling
     USART_OverSampling8Cmd(UART[nr].UART, ENABLE);
 
-    // init mit Baudrate, 8Databits, 1Stopbit, keine Parität, kein RTS+CTS
+    // init mit Baudrate, 8Databits, 1Stopbit, keine Paritï¿½t, kein RTS+CTS
     USART_InitStructure.USART_BaudRate = UART[nr].BAUD;
     USART_InitStructure.USART_WordLength = USART_WordLength_8b;
     USART_InitStructure.USART_StopBits = USART_StopBits_1;
@@ -193,7 +193,7 @@ void P_UART_Receive(UART_NAME_t uart, uint16_t wert)
 //--------------------------------------------------------------
 // interne Funktion
 // UART-Interrupt-Funktion
-// Interrupt-Nr muss übergeben werden
+// Interrupt-Nr muss ï¿½bergeben werden
 //--------------------------------------------------------------
 void P_UART_RX_INT(uint8_t int_nr, uint16_t wert)
 {

@@ -2,3 +2,4 @@ doxygen/*
 Debug/*
 DoxyfileStdErr.**
 *.sublime-workspace
+/Debug/

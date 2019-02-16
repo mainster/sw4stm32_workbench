@@ -485,7 +485,7 @@
 			"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 			"settings":
 			{
-				"buffer_size": 37397,
+				"buffer_size": 37515,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -494,7 +494,7 @@
 			"file": "/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 2528,
+				"buffer_size": 3248,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -503,7 +503,7 @@
 			"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 			"settings":
 			{
-				"buffer_size": 74801,
+				"buffer_size": 91207,
 				"line_ending": "Unix"
 			}
 		},
@@ -979,11 +979,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/mainster/CODES_local/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2",
-		"/home/mainster/CODES_local/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src"
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/doxygen"
 	],
 	"file_history":
 	[
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/doxygen/html/a00002.js",
 		"/media/data/CODES/ccs7_workspace3/MD_BSP_EXPLORER_F28335/DIMM100_pinout.md",
 		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 		"/home/mainster/.config/sublime-text-3/Packages/Anaconda/Default (Linux).sublime-keymap",
@@ -1110,8 +1111,7 @@
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/src/tools.c",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/list",
 		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/00-STM32F4_LIBRARY_MDB/tm_stm32f4_timer_properties.h",
-		"/home/mainster/.config/sublime-text-3/Packages/User/customSnippets/hlines.sublime-snippet",
-		"/home/mainster/.config/sublime-text-3/Packages/User/nonUserBaseConfigPlacer.sh"
+		"/home/mainster/.config/sublime-text-3/Packages/User/customSnippets/hlines.sublime-snippet"
 	],
 	"find":
 	{
@@ -1483,8 +1483,8 @@
 						"selection":
 						[
 							[
-								1300,
-								1300
+								23853,
+								23853
 							]
 						],
 						"settings":
@@ -1494,7 +1494,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6565.0,
+						"translation.y": 6175.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1523,7 +1523,7 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -1594,15 +1594,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 37397,
+						"buffer_size": 37515,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10504,
-								10504
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1624,15 +1624,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2528,
+						"buffer_size": 3248,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								757,
-								757
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1655,15 +1655,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 74801,
+						"buffer_size": 91207,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								52083,
-								52083
+								0,
+								0
 							]
 						],
 						"settings":

@@ -2,12 +2,12 @@
 <launchConfiguration type="fr.ac6.mcu.debug.config.launchConfigurationType">
 <stringAttribute key="DEBBUGER_BOARD_NAME" value="STM32F429I-DISC1"/>
 <stringAttribute key="DEBBUGER_MCU_NAME" value="STM32F429ZITx"/>
-<stringAttribute key="fr.ac6.mcu.ide.DBG_INTERFACE" value=""/>
 <stringAttribute key="fr.ac6.mcu.ide.OPENOCD_NAME" value="&quot;${openstm32_openocd_path}/openocd&quot;"/>
 <stringAttribute key="fr.ac6.mcu.ide.OPENOCD_OTHER_OPTIONS" value=""/>
 <intAttribute key="fr.ac6.mcu.ide.OPENOCD_PORT" value="3333"/>
-<stringAttribute key="fr.ac6.mcu.ide.OPENOCD_SCRIPT" value="${openstm32_openocd_script_path}/stm32f429i_disc1.cfg"/>
-<stringAttribute key="fr.ac6.mcu.ide.OPENOCD_SCRIPT_CHOICE" value="global"/>
+<stringAttribute key="fr.ac6.mcu.ide.OPENOCD_SCRIPT" value="${openstm32_openocd_legacy_script_root_path}/st_board/stm32f429i_disc1.cfg"/>
+<stringAttribute key="fr.ac6.mcu.ide.OPENOCD_SCRIPT_CHOICE" value="provided"/>
+<stringAttribute key="fr.ac6.mcu.ide.OPENOCD_SCRIPT_IS_LEGACY" value="true"/>
 <intAttribute key="org.eclipse.cdt.debug.gdbjtag.core.delay" value="3"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doHalt" value="true"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.doReset" value="true"/>

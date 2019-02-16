@@ -30,8 +30,8 @@
 //              PA11  -> USB_OTG_DM
 //              PA12  -> USB_OTG_DP
 //
-//              PC10  -> UART_TX  [115200 Baud, 8N1]
-//              PC11  -> UART_RX
+//              PC11  -> UART_TX  [115200 Baud, 8N1]
+//              PC12  -> UART_RX
 //--------------------------------------------------------------
 
 #include "main.h"
@@ -48,7 +48,8 @@ int main(void) {
 	SystemInit();   // Quarz Einstellungen aktivieren
 
 	/**< All used GPIOs should be initialized by this call */
-	MDB_GPIO_Init();
+	MD_GPIO_Init(MD_DISCO_LED_PORT, LED_ALL, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_High);
+
 	//  beamCtrl(BEAM_CTRL_SOURCE_MANUAL, GPIO_OFF );
 	/**< Initialize discovery button and leds */
 	MD_DISCO_ButtonInit();
@@ -59,8 +60,15 @@ int main(void) {
 	/**< Initialize delay library */
 	MD_DELAY_Init();
 
-	MDB_GPIO_On(LED_GREEN_A);
-	MDB_GPIO_Off(LED_RED_A);
+	MD_DISCO_LedOn(LED_GREEN);
+	Delayms(500);
+	MD_DISCO_LedOff(LED_GREEN);
+	MD_DISCO_LedOn(LED_RED);
+	Delayms(500);
+	MD_DISCO_LedOff(LED_RED);
+
+//	MD_GPIO_On(LED_GREEN_A);
+//	MD_GPIO_Off(LED_RED_A);
 
 //	while (1) {
 //		Delayms(500);
@@ -94,6 +102,10 @@ int main(void) {
 				// -> alle Daten per USB senden
 				UB_USB_CDC_SendData(string_buf, rx_uart);
 			}
+			MD_DISCO_LedOn(LED_GREEN);
+		}
+		else {
+			MD_DISCO_LedOff(LED_GREEN);
 		}
 	}
 }

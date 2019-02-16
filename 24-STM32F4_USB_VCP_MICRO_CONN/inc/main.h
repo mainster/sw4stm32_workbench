@@ -13,10 +13,11 @@
 #include "stm32f4xx.h"
 #include "md_stm32f4_disco.h"
 #include "md_stm32f4_gpio.h"
-#include "mdb_gpio.h"
+//#include "mdb_gpio.h"
 #include "md_stm32f4_delay.h"
 
-
+/* Activate USB HS in FS mode */
+#define USE_USB_OTG_HS	1
 
 //--------------------------------------------------------------
 #endif // __STM32F4_UB_MAIN_H
