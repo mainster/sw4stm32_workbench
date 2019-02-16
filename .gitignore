@@ -7,16 +7,20 @@ Packages/
 stm32fxxx_hal_libraries_mj/
 **/Debug/*
 *.zip
+**/.luckybackup-snaphots/*
+
 # ARM CMSIS Library components
 **/StdPeriph_Driver/*
 **/CMSIS/*
 trash/*
+
 # Tests for builds with sublime
 01-STM32F4_MD_HELLO_MKFILE/
 99-*
 README.html
 *.swp
 **/doxygen
-.metadata/**
+**/.metadata/*
+.metadata/
 **/.git
 DoxyfileStdErr.log
