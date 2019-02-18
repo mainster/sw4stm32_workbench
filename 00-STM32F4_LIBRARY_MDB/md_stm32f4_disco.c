@@ -35,6 +35,9 @@
  */
 #include "md_stm32f4_disco.h"
 //#include "md_stm32f4_gpio.h"
+#include "stm32f4xx.h"
+#include "md_stm32f4_gpio.h"
+
 
 /* Button pressed status for onpressed/onreleased events */
 static volatile uint8_t MD_INT_DISCO_ButtonPressed = 0;
@@ -49,16 +52,18 @@ void MD_DISCO_LedInit(void) {
 
 void MD_DISCO_ButtonInit(void) {
 	/* Set pin as input */
-	MD_GPIO_Init(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN, MD_GPIO_Mode_IN, MD_GPIO_OType_PP, MD_DISCO_BUTTON_PULL, MD_GPIO_Speed_Low);
+	MD_GPIO_Init(MD_DISCO_BUTTON_PORT, MD_DISCO_BUTTON_PIN, MD_GPIO_Mode_IN,
+			MD_GPIO_OType_PP, MD_DISCO_BUTTON_PULL, MD_GPIO_Speed_Low);
 }
 
 uint8_t MD_DISCO_ButtonOnPressed(void) {
 	/* If button is now pressed, but was not already pressed */
 	if (MD_DISCO_ButtonPressed()) {
+
 		if (!MD_INT_DISCO_ButtonPressed) {
 			/* Set flag */
 			MD_INT_DISCO_ButtonPressed = 1;
-			
+
 			/* Return button onpressed */
 			return 1;
 		}

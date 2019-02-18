@@ -68,9 +68,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1097581757.303670203" name="mainorig.c" rcbsApplicability="disable" resourcePath="src/mainorig.c" toolsToInvoke="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1393650266.1596780345">
-						<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1393650266.1596780345" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1393650266"/>
-					</fileInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
@@ -80,6 +77,7 @@
 				</configuration>
 			</storageModule>
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+			<storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"/>
 		</cconfiguration>
 		<cconfiguration id="fr.ac6.managedbuild.config.gnu.cross.exe.release.589438066">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="fr.ac6.managedbuild.config.gnu.cross.exe.release.589438066" moduleId="org.eclipse.cdt.core.settings" name="Release">
@@ -147,9 +145,6 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.release.589438066.484069687" name="mainorig.c" rcbsApplicability="disable" resourcePath="src/mainorig.c" toolsToInvoke="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1258791853.1168436969">
-						<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1258791853.1168436969" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1258791853"/>
-					</fileInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
