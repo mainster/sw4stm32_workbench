@@ -9,4 +9,7 @@
 		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="443" key="DIALOG_HEIGHT"/>
 	</section>
+	<section name="RefactoringPropertyPage">
+		<item value="true" key="org.eclipse.ltk.ui.refactoring.sortRefactorings"/>
+	</section>
 </section>

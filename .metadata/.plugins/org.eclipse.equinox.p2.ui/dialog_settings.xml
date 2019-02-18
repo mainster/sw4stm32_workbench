@@ -4,14 +4,14 @@
 		<item value="200" key="DetailsSashWeight"/>
 		<item value="360" key="NameColumnWidth"/>
 		<item value="120" key="VersionColumnWidth"/>
-		<item value="375" key="IDColumnWidth"/>
+		<item value="381" key="IDColumnWidth"/>
 		<item value="800" key="ListSashWeight"/>
 	</section>
 	<section name="AvailableIUsPage">
 		<item value="1" key="AvailableViewType"/>
 		<item value="800" key="AvailableListSashWeight"/>
 		<item value="true" key="HideInstalledContent"/>
-		<item value="405" key="AvailableVersionColumnWidth"/>
+		<item value="411" key="AvailableVersionColumnWidth"/>
 		<item value="false" key="ShowLatestVersionsOnly"/>
 		<item value="200" key="AvailableDetailsSashWeight"/>
 		<item value="true" key="ResolveInstallWithAllSites"/>
@@ -36,13 +36,13 @@
 		<item value="200" key="DetailsSashWeight"/>
 		<item value="400" key="NameColumnWidth"/>
 		<item value="200" key="VersionColumnWidth"/>
-		<item value="255" key="IDColumnWidth"/>
+		<item value="261" key="IDColumnWidth"/>
 		<item value="800" key="ListSashWeight"/>
 	</section>
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.WizardSettings">
-		<item value="873" key="DIALOG_WIDTH"/>
+		<item value="879" key="DIALOG_WIDTH"/>
 		<item value="1|Noto Sans|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="912" key="DIALOG_HEIGHT"/>
+		<item value="996" key="DIALOG_HEIGHT"/>
 		<item value="530" key="DIALOG_X_ORIGIN"/>
 		<item value="32" key="DIALOG_Y_ORIGIN"/>
 	</section>

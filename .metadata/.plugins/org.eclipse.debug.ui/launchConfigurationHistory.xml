@@ -6,9 +6,7 @@
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.debug">
 <mruHistory/>
-<favorites>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/24-STM32F4_USB_VCP_MICRO_CONN/24-STM32F4_USB_VCP_MICRO_CONN Debug (1).launch&quot;/&gt;&#10;"/>
-</favorites>
+<favorites/>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.profile">
 <mruHistory/>
@@ -24,8 +22,6 @@
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.run">
 <mruHistory/>
-<favorites>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/24-STM32F4_USB_VCP_MICRO_CONN/24-STM32F4_USB_VCP_MICRO_CONN Debug (1).launch&quot;/&gt;&#10;"/>
-</favorites>
+<favorites/>
 </launchGroup>
 </launchHistory>

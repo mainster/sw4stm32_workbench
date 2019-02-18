@@ -1,43 +1,7 @@
-12:10:37 **** Programming project 24-STM32F4_USB_VCP on chip ****
-/opt/sw4stm32/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.openocd.linux64_1.21.0.201811131241/tools/openocd/bin/openocd -f stm32.flash.2341776113965407728.cfg -s /mnt/storage/CODES/sw4stm32_workbench/24-STM32F4_USB_VCP -s /opt/sw4stm32/SystemWorkbench/plugins/fr.ac6.mcu.debug_2.3.1.201811131241/resources/openocd/st_scripts -c "program Debug/24-STM32F4_USB_VCP.elf verify reset exit" 
-Open On-Chip Debugger 0.10.0-dev-00015-gaaf1808 (2018-11-13-12:51)
-Licensed under GNU GPL v2
-For bug reports, read
-	http://openocd.org/doc/doxygen/bugs.html
-Warn : Could not determine executable path, using configured BINDIR.
-srst_only separate srst_nogate srst_open_drain connect_assert_srst
-Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
-adapter_nsrst_delay: 100
-adapter speed: 1800 kHz
-Info : clock speed 1800 kHz
-Info : STLINK v2 JTAG v17 API v2 SWIM v0 VID 0x0483 PID 0x3748
-Info : vid/pid are not identical: 0x0483/0x374B 0x0483/0x3748
-Info : using stlink api v2
-Info : Target voltage: 2.882815
-Info : STM32F429ZITx.cpu: hardware has 6 breakpoints, 4 watchpoints
-adapter speed: 1800 kHz
-target halted due to debug-request, current mode: Thread 
-xPSR: 0x01000000 pc: 0x08003158 msp: 0x20030000
-configuring PLL
-adapter speed: 4000 kHz
-** Programming Started **
-auto erase enabled
-Info : device id = 0x10036419
-Info : flash size = 2048kbytes
-target halted due to breakpoint, current mode: Thread 
-xPSR: 0x61000000 pc: 0x20000046 msp: 0x20030000
-wrote 16384 bytes from file Debug/24-STM32F4_USB_VCP.elf in 0.956601s (16.726 KiB/s)
-** Programming Finished **
-** Verify Started **
-target halted due to breakpoint, current mode: Thread 
-xPSR: 0x61000000 pc: 0x2000002e msp: 0x20030000
-target halted due to breakpoint, current mode: Thread 
-xPSR: 0x61000000 pc: 0x2000002e msp: 0x20030000
-verified 14572 bytes in 0.226154s (62.924 KiB/s)
-** Verified OK **
-** Resetting Target **
-adapter speed: 1800 kHz
-shutdown command invoked
+05:52:21 **** Clean-only build of configuration Debug for project 24-STM32F4_USB_VCP ****
+make -j9 clean 
+rm -rf *
+ 
 
-12:10:39 Build Finished (took 1s.892ms)
+05:52:23 Build Finished (took 1s.827ms)
 

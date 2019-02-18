@@ -30,8 +30,8 @@
 		<item value="759" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="39" key="DIALOG_Y_ORIGIN"/>
-		<item value="241" key="DIALOG_X_ORIGIN"/>
+		<item value="47" key="DIALOG_Y_ORIGIN"/>
+		<item value="430" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="-1" key="dialogHeight"/>
@@ -46,8 +46,9 @@
 		</list>
 	</section>
 	<section name="PreferencesImportWizard">
-		<item value="/media/data/CODES/ccs7_theBeast/ccs7_theBeast_cfg_26-05-17.epf" key=""/>
+		<item value="/mnt/wsopt/CODES/STM32/sw4stm32_workbench/CMSIS_StdPeriph_libs/sw4-eclipse-prefs-16-03-2017.epf" key=""/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="/mnt/wsopt/CODES/STM32/sw4stm32_workbench/CMSIS_StdPeriph_libs/sw4-eclipse-prefs-16-03-2017.epf"/>
 			<item value="/media/data/CODES/ccs7_theBeast/ccs7_theBeast_cfg_26-05-17.epf"/>
 			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-18-01-2017.epf"/>
 			<item value="/tmp/theme-6093.epf"/>
@@ -69,26 +70,28 @@
 	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.export.Preferences" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
-		<item value="org.eclipse.ui.wizards.import.Preferences" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="org.eclipse.cdt.autotools.ui.wizards.importWizaed" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.cdt.ui.importWizardCategory"/>
 		</list>
 		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.equinox.p2.category"/>
 		</list>
 	</section>
 	<section name="ZipFileImportWizard">
 	</section>
 	<section name="PreferencesExportWizard">
-		<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-16-03-2017.epf" key=""/>
+		<item value="/mnt/wsopt/CODES/STM32/sw4stm32_cfg_18-02-2019.epf" key=""/>
 		<item value="false" key="WizardPreferencesExportPage1.STORE_OVERWRITE_EXISTING_FILES_ID"/>
 		<item value="true" key="WizardPreferencesExportPage1.EXPORT_ALL_PREFERENCES_ID"/>
 		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="/mnt/wsopt/CODES/STM32/sw4stm32_cfg_18-02-2019.epf"/>
 			<item value="/home/mainster/CODES_local/ccs6_workspaces/ccsv6.2.0_config_all_18-03-2017.epf"/>
 			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-16-03-2017.epf"/>
 			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-03-02-2017.epf"/>
 			<item value="/media/data/CODES/sw4stm32_workbench/sw4-eclipse-prefs-03-02-2017.epf"/>
-			<item value="/home/mainster/CODES_local/sw4stm32_workbench/sw4-eclipse-prefs-21-01-2017.epf"/>
 		</list>
 	</section>
 	<section name="FileSystemImportWizard">

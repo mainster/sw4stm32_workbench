@@ -9,7 +9,7 @@
 	<item value="Default C header template" key="LastUsedHeaderTemplate"/>
 	<item value="10" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.inner"/>
 	<item value="9" key="org.eclipse.cdt.uiformatter_page.line_wrapping_tab_page.last_category_index"/>
-	<item value="arm_cortexM4l_math" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
+	<item value="${workspace_loc:/${ProjName}/CMSIS/core}" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<item value="3" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.option"/>
 	<item value="true" key="org.eclipse.cdt.ui.formatter_page.show_invisible_characters"/>
 	<item value="1139" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_width"/>
@@ -38,6 +38,7 @@
 		<item value="true" key="caseSensitive"/>
 		<item value="227191" key="searchFlags"/>
 		<list key="previousPatterns">
+			<item value="USE_USB_OTG_HS"/>
 			<item value="MD_STM32F4_Libraries"/>
 			<item value="_STM32F4_Libraries"/>
 			<item value="group_title"/>

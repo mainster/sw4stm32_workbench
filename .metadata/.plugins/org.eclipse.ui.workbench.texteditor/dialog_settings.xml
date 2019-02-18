@@ -8,21 +8,21 @@
 		<item value="384" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="true" key="isRegEx"/>
-		<item value="MD_USART_GetUsartNumber" key="selection"/>
-		<item value="true" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="GPIOG" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
-		<item value="true" key="wholeword"/>
+		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="GPIOG"/>
+			<item value="USE_USB_OTG_HS"/>
 			<item value="MD_USART_GetUsartNumber"/>
 			<item value="TM_USART_Buffer"/>
 			<item value="^ [0-9]+ "/>
 			<item value=" 248 "/>
 			<item value="Safely update actuator control signals"/>
 			<item value="SystemCoreClock"/>
-			<item value="MD_GPIO_LED_RD"/>
-			<item value="ADC_X_CHAN"/>
 		</list>
 		<list key="replacehistory">
 			<item value="MD_USART_Buffer"/>
