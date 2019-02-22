@@ -1,0 +1,18 @@
+{
+    "config": {
+        "wifi-ssid": {
+            "help": "WiFi SSID",
+            "value": "Del Basso Cable"
+        },
+        "wifi-password": {
+            "help": "WiFi Password",
+            "value": "youdiditfreakonwpa2_don't_forget_!T"
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-convert-newlines": true,
+            "esp8266.provide-default" : true
+        }
+    }
+}
