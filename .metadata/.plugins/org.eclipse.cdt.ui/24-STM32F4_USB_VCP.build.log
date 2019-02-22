@@ -1,7 +1,6 @@
-05:52:21 **** Clean-only build of configuration Debug for project 24-STM32F4_USB_VCP ****
-make -j9 clean 
-rm -rf *
- 
+11:02:12 **** Incremental Build of configuration Debug for project 24-STM32F4_USB_VCP ****
+make -j9 all 
+make: Nothing to be done for 'all'.
 
-05:52:23 Build Finished (took 1s.827ms)
+11:02:12 Build Finished (took 693ms)
 

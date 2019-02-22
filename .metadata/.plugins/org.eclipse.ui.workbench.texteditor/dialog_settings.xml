@@ -9,12 +9,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="GPIOG" key="selection"/>
+		<item value="USB_VCP" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="usb_vcp"/>
 			<item value="GPIOG"/>
 			<item value="USE_USB_OTG_HS"/>
 			<item value="MD_USART_GetUsartNumber"/>
@@ -22,7 +23,6 @@
 			<item value="^ [0-9]+ "/>
 			<item value=" 248 "/>
 			<item value="Safely update actuator control signals"/>
-			<item value="SystemCoreClock"/>
 		</list>
 		<list key="replacehistory">
 			<item value="MD_USART_Buffer"/>

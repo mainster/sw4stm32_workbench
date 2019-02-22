@@ -9,7 +9,7 @@
 	<item value="Default C header template" key="LastUsedHeaderTemplate"/>
 	<item value="10" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.inner"/>
 	<item value="9" key="org.eclipse.cdt.uiformatter_page.line_wrapping_tab_page.last_category_index"/>
-	<item value="${workspace_loc:/${ProjName}/CMSIS/core}" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
+	<item value="${workspace_loc:/${ProjName}/inc}" key="org.eclipse.cdt.utils.ui.controls.FileListControl"/>
 	<item value="3" key="org.eclipse.cdt.uiformatter_page.white_space.c_view.option"/>
 	<item value="true" key="org.eclipse.cdt.ui.formatter_page.show_invisible_characters"/>
 	<item value="1139" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_width"/>
@@ -38,6 +38,7 @@
 		<item value="true" key="caseSensitive"/>
 		<item value="227191" key="searchFlags"/>
 		<list key="previousPatterns">
+			<item value="Adafruit_ESP8266"/>
 			<item value="USE_USB_OTG_HS"/>
 			<item value="MD_STM32F4_Libraries"/>
 			<item value="_STM32F4_Libraries"/>
@@ -50,6 +51,20 @@
 		</list>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
+		<item value="396" key="size.height"/>
+		<item value="332" key="location.y"/>
+		<item value="406" key="size.width"/>
+		<item value="2315" key="location.x"/>
+	</section>
+	<section name="NewClassWizardPage">
+		<item value="true" key="stubSelected1"/>
+		<item value="true" key="stubVirtual1"/>
+		<item value="false" key="namespaceSelected"/>
+		<item value="false" key="stubInline0"/>
+		<item value="false" key="stubInline1"/>
+		<item value="" key="namespace"/>
+		<item value="false" key="testFileSelected"/>
+		<item value="true" key="stubSelected0"/>
 	</section>
 	<section name="org.eclipse.cdt.internal.ui.preferences.EditTemplateDialog_dialogBounds">
 		<item value="627" key="DIALOG_WIDTH"/>
@@ -63,5 +78,22 @@
 		<item value="true" key="askReindex"/>
 	</section>
 	<section name="completion_proposal_size">
+	</section>
+	<section name="org.eclipse.cdt.internal.ui.wizards.classwizard.NewBaseClassSelectionDialogSettings">
+		<item value="false" key="show_enums"/>
+		<item value="false" key="show_unions"/>
+		<item value="false" key="show_macros"/>
+		<item value="true" key="show_classes"/>
+		<item value="false" key="show_functions"/>
+		<item value="true" key="show_lowlevel"/>
+		<item value="false" key="show_namespaces"/>
+		<item value="false" key="show_enumerators"/>
+		<item value="true" key="show_structs"/>
+		<item value="776" key="x"/>
+		<item value="374" key="width"/>
+		<item value="0" key="y"/>
+		<item value="false" key="show_typedefs"/>
+		<item value="false" key="show_variables"/>
+		<item value="749" key="height"/>
 	</section>
 </section>

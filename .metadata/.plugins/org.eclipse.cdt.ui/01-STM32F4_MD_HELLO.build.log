@@ -1,7 +1,6 @@
-08:06:18 **** Clean-only build of configuration Debug for project 01-STM32F4_MD_HELLO ****
+13:10:52 **** Clean-only build of configuration Debug for project 01-STM32F4_MD_HELLO ****
 make -j9 clean 
-rm -rf *
- 
+make: *** No rule to make target 'clean'.  Stop.
 
-08:06:24 Build Finished (took 6s.235ms)
+13:10:52 Build Finished (took 672ms)
 
